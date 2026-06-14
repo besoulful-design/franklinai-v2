@@ -42,16 +42,16 @@ function Nav() {
       position: 'sticky', top: 0, zIndex: 100,
       backgroundColor: '#070f24',
       borderBottom: '1px solid rgba(96,165,250,0.08)',
-      padding: '14px 0'
+      padding: '20px 0'
     }}>
-      <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 clamp(20px, 5vw, 48px)' }}>
-        <a href="/" style={{ display: 'flex', alignItems: 'center', gap: '14px', textDecoration: 'none' }}>
-          <KiteLogo size={64} />
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
-            <span style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, fontSize: '1.75rem', color: '#ffffff', lineHeight: 1 }}>
+      <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 clamp(20px, 5vw, 48px)', display: 'flex', justifyContent: 'center' }}>
+        <a href="/" style={{ display: 'flex', alignItems: 'center', gap: '18px', textDecoration: 'none' }}>
+          <KiteLogo size={128} />
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+            <span style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, fontSize: '3.5rem', color: '#ffffff', lineHeight: 1 }}>
               Franklin<span style={{ color: '#60a5fa' }}>AI</span>
             </span>
-            <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.25em', textTransform: 'uppercase', color: '#8892a4' }}>
+            <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.8rem', fontWeight: 600, letterSpacing: '0.25em', textTransform: 'uppercase', color: '#8892a4' }}>
               Philadelphia
             </span>
           </div>
