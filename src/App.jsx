@@ -96,7 +96,7 @@ function HowItWorks() {
     <section className="section">
       <div className="container">
         <div className="site-card">
-          <h2 className="card-heading">How It Works</h2>
+          <h2 className="card-heading">How it Works</h2>
           <div className="step-stack">
             {steps.map(step => (
               <div key={step.number} className="step-item">

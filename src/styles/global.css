@@ -37,17 +37,22 @@ body {
   justify-content: center;
 }
 
+/*
+  The kite SVG has the key shaft extending right, making the mark
+  visually right-heavy. We shift the whole brand block left so it
+  reads as optically centered.
+*/
 .site-nav__brand {
   display: flex;
   align-items: center;
   gap: 10px;
   text-decoration: none;
   color: inherit;
+  transform: translateX(-28px);
 }
 
 .site-nav__logo {
   flex-shrink: 0;
-  margin-right: -4px; /* nudge kite and name together */
 }
 
 .site-nav__wordmark {
@@ -101,6 +106,7 @@ body {
   border-radius: 16px;
   padding: 40px;
   max-width: 640px;
+  width: 100%;
   margin: 0 auto;
   text-align: center;
 }
@@ -155,13 +161,13 @@ body {
   font-family: 'Playfair Display', serif;
   font-weight: 800;
   font-size: clamp(24px, 3vw, 36px);
-  color: #ffffff;
+  color: #60a5fa;
   line-height: 1.2;
   letter-spacing: -0.02em;
   margin-bottom: 28px;
 }
 
-/* ── HOW IT WORKS — steps inside a single card ──────────────────────────────────────────────── */
+/* ── HOW IT WORKS ──────────────────────────────────────────────── */
 
 .step-stack {
   display: flex;
@@ -185,11 +191,11 @@ body {
 .step-item__number {
   display: block;
   font-family: 'Inter', sans-serif;
-  font-size: 11px;
+  font-size: 22px;       /* 100% bigger than the previous 11px */
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.1em;
   color: #60a5fa;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .step-item__title {
@@ -229,7 +235,7 @@ body {
 
 .btn--primary {
   background: #60a5fa;
-  color: #070f24;
+  color: #ffffff;
 }
 
 .btn--ghost {
@@ -320,6 +326,7 @@ body {
   padding-left: 16px;
   position: relative;
   line-height: 1.5;
+  text-align: left;
 }
 
 .modal__feature::before {
@@ -362,11 +369,11 @@ body {
   gap: 10px;
   text-decoration: none;
   color: inherit;
+  transform: translateX(-14px); /* optical balance: key shaft extends right */
 }
 
 .site-footer__logo {
   flex-shrink: 0;
-  margin-right: -3px;
 }
 
 .site-footer__wordmark {
@@ -434,7 +441,6 @@ body {
     padding: 28px 20px;
   }
 
-  /* Nav 50% larger on iPhone */
   .site-nav__logo {
     height: 168px !important;
     width: auto !important;
@@ -445,6 +451,6 @@ body {
   }
 
   .site-nav__brand {
-    gap: 10px;
+    transform: translateX(-16px);
   }
 }
