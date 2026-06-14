@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './styles/global.css';
 
 function KiteLogo({ size = 48, className = '' }) {
@@ -111,7 +112,7 @@ function HowItWorks() {
   );
 }
 
-function CaseStudy() {
+function CaseStudyModal({ onClose }) {
   const features = [
     'User login and role-based access',
     'Daily journaling and symptom tracking',
@@ -122,6 +123,37 @@ function CaseStudy() {
   ];
 
   return (
+    <div className="modal-backdrop" onClick={onClose}>
+      <div className="modal" onClick={e => e.stopPropagation()}>
+        <button className="modal__close" onClick={onClose} aria-label="Close">
+          &#x2715;
+        </button>
+        <span className="card-label">Case Study</span>
+        <h2 className="modal__title">McKenzie Arm Care</h2>
+        <p className="modal__text">
+          A custom patient-care web app built for a clinician who needed more
+          than a spreadsheet and less than an enterprise system. Patients log in,
+          journal their progress, track symptoms, and message their clinician directly.
+          The clinician gets a portal with real-time visibility into every
+          patient's journey, plus smart alerts when something needs attention.
+        </p>
+        <ul className="modal__features">
+          {features.map((f, i) => (
+            <li key={i} className="modal__feature">{f}</li>
+          ))}
+        </ul>
+        <p className="modal__stack">
+          Built with React, Supabase, and deployed on Netlify.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function CaseStudy() {
+  const [open, setOpen] = useState(false);
+
+  return (
     <section className="section">
       <div className="container">
         <div className="site-card">
@@ -129,22 +161,16 @@ function CaseStudy() {
           <span className="card-label">Case Study</span>
           <h3 className="card-title">McKenzie Arm Care</h3>
           <p className="card-text">
-            A custom patient-care web app built for a clinician who needed more
-            than a spreadsheet and less than an enterprise system. Patients log in,
-            journal their progress, track symptoms, and message their clinician directly.
-            The clinician gets a portal with real-time visibility into every
-            patient's journey, plus smart alerts when something needs attention.
+            A custom patient-care portal for a clinician who needed more than a
+            spreadsheet. Patient journaling, symptom tracking, in-app messaging,
+            and smart admin alerts.
           </p>
-          <ul className="card-features">
-            {features.map((f, i) => (
-              <li key={i} className="card-feature">{f}</li>
-            ))}
-          </ul>
-          <p className="card-stack">
-            Built with React, Supabase, and deployed on Netlify.
-          </p>
+          <button className="btn btn--ghost" onClick={() => setOpen(true)}>
+            Read the full case study
+          </button>
         </div>
       </div>
+      {open && <CaseStudyModal onClose={() => setOpen(false)} />}
     </section>
   );
 }
