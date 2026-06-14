@@ -58,14 +58,14 @@ function Nav() {
 function Hero() {
   return (
     <section className="hero">
-      <div className="container hero__inner">
+      <div className="container">
         <h1 className="hero__headline">
-          Your workflow is unique.<br />
-          Your software should be too.
+          Your business is one of a kind.<br />
+          Your tools should be too.
         </h1>
         <p className="hero__subtitle">
-          FranklinAI builds custom web apps, dashboards, and internal tools
-          shaped around how your business actually runs — not the other way around.
+          FranklinAI builds custom web apps and tools shaped around
+          how your business actually runs — not the other way around.
         </p>
         <a href="#discovery" className="btn btn--primary">
           Book a free discovery call
@@ -80,12 +80,12 @@ function HowItWorks() {
     {
       number: '01',
       title: 'Discovery',
-      text: 'A free call to understand your workflow, your pain points, and what a custom tool could solve. No pitch decks — just a real conversation about how your business runs.'
+      text: 'A free call to understand how your business runs, what\'s slowing you down, and what a custom tool could solve. No pitch decks — just a real conversation.'
     },
     {
       number: '02',
       title: 'Build',
-      text: 'You get purpose-built software designed around how your team actually operates. User logins, dashboards, messaging, alerts — whatever the workflow needs.'
+      text: 'You get a purpose-built web app designed around how your team actually operates. User logins, admin tools, messaging, alerts — whatever the job needs.'
     },
     {
       number: '03',
@@ -95,10 +95,10 @@ function HowItWorks() {
   ];
 
   return (
-    <section className="how-it-works">
+    <section className="section">
       <div className="container">
         <h2 className="section-heading">How It Works</h2>
-        <div className="how-it-works__grid">
+        <div className="card-grid">
           {steps.map(step => (
             <div key={step.number} className="card step-card">
               <span className="step-card__number">{step.number}</span>
@@ -118,34 +118,32 @@ function CaseStudy() {
     'Daily journaling and symptom tracking',
     'Progress logs with visual history',
     'In-app messaging between patient and clinician',
-    'Admin dashboard with smart alerts',
+    'Admin portal with smart alerts',
     'Automated email notifications'
   ];
 
   return (
-    <section className="case-study">
+    <section className="section">
       <div className="container">
         <h2 className="section-heading">Built for Real Work</h2>
-        <div className="card case-study__card">
-          <div className="case-study__content">
-            <span className="case-study__label">Case Study</span>
-            <h3 className="case-study__title">McKenzie Arm Care</h3>
-            <p className="case-study__text">
-              A custom patient-care web app built for a clinician who needed more
-              than a spreadsheet and less than an enterprise system. Patients log in,
-              journal their progress, track symptoms, and message their clinician directly.
-              The clinician gets a dashboard with real-time visibility into every
-              patient's journey — plus smart alerts when something needs attention.
-            </p>
-            <ul className="case-study__features">
-              {features.map((f, i) => (
-                <li key={i} className="case-study__feature">{f}</li>
-              ))}
-            </ul>
-            <p className="case-study__stack">
-              Built with React, Supabase, and deployed on Netlify.
-            </p>
-          </div>
+        <div className="card case-card">
+          <span className="case-card__label">Case Study</span>
+          <h3 className="case-card__title">McKenzie Arm Care</h3>
+          <p className="case-card__text">
+            A custom patient-care web app built for a clinician who needed more
+            than a spreadsheet and less than an enterprise system. Patients log in,
+            journal their progress, track symptoms, and message their clinician directly.
+            The clinician gets a portal with real-time visibility into every
+            patient's journey — plus smart alerts when something needs attention.
+          </p>
+          <ul className="case-card__features">
+            {features.map((f, i) => (
+              <li key={i} className="case-card__feature">{f}</li>
+            ))}
+          </ul>
+          <p className="case-card__stack">
+            Built with React, Supabase, and deployed on Netlify.
+          </p>
         </div>
       </div>
     </section>
@@ -154,27 +152,25 @@ function CaseStudy() {
 
 function About() {
   return (
-    <section className="about">
+    <section className="section">
       <div className="container">
         <h2 className="section-heading">Who Builds This</h2>
-        <div className="about__inner">
-          <div className="about__content">
-            <h3 className="about__name">David Peterson</h3>
-            <span className="about__role">Founder &amp; Builder</span>
-            <p className="about__text">
-              David has spent 30 years building and running the systems that keep
-              organizations moving — across research, education, healthcare, and
-              small business. He's worked alongside executive leadership at national
-              institutions, built digital tools that transformed how teams operate,
-              and has always been the person who figures out how to make things run better.
-            </p>
-            <p className="about__text">
-              That same drive is what FranklinAI is built on. Building custom apps
-              and tools is the next step in work he's been doing his whole career,
-              now with better technology and a sharper focus on what businesses
-              actually need.
-            </p>
-          </div>
+        <div className="card about-card">
+          <h3 className="about-card__name">David Peterson</h3>
+          <span className="about-card__role">Founder &amp; Builder</span>
+          <p className="about-card__text">
+            David has spent 30 years building and running the systems that keep
+            organizations moving — across research, education, healthcare, and
+            small business. He's worked alongside executive leadership at national
+            institutions, built digital tools that transformed how teams operate,
+            and has always been the person who figures out how to make things run better.
+          </p>
+          <p className="about-card__text">
+            That same drive is what FranklinAI is built on. Building custom apps
+            and tools is the next step in work he's been doing his whole career,
+            now with better technology and a sharper focus on what businesses
+            actually need.
+          </p>
         </div>
       </div>
     </section>
@@ -183,8 +179,8 @@ function About() {
 
 function DiscoveryCTA() {
   return (
-    <section className="discovery" id="discovery">
-      <div className="container discovery__inner">
+    <section className="section" id="discovery">
+      <div className="container discovery">
         <h2 className="discovery__headline">
           Let's build something for your business
         </h2>
