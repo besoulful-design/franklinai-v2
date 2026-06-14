@@ -60,13 +60,8 @@ function Hero() {
     <section className="hero">
       <div className="container">
         <h1 className="hero__headline">
-          Your business is one of a kind.<br />
-          Your tools should be too.
+          FranklinAI builds custom web apps and tools shaped around how your business actually runs.
         </h1>
-        <p className="hero__subtitle">
-          FranklinAI builds custom web apps and tools shaped around
-          how your business actually runs.
-        </p>
         <a href="#discovery" className="btn btn--primary">
           Book a free discovery call
         </a>
@@ -98,7 +93,7 @@ function HowItWorks() {
     <section className="section">
       <div className="container">
         <h2 className="section-heading">How It Works</h2>
-        <div className="card-grid">
+        <div className="step-stack">
           {steps.map(step => (
             <div key={step.number} className="card step-card">
               <span className="step-card__number">{step.number}</span>
@@ -180,17 +175,19 @@ function About() {
 function DiscoveryCTA() {
   return (
     <section className="section" id="discovery">
-      <div className="container discovery">
-        <h2 className="discovery__headline">
-          Let's build something for your business
-        </h2>
-        <p className="discovery__subtitle">
-          Every project starts with a conversation. Tell us what's not working,
-          and we'll figure out what to build.
-        </p>
-        <a href="#discovery" className="btn btn--primary">
-          Book a free discovery call
-        </a>
+      <div className="container">
+        <div className="card content-card content-card--centered discovery-card">
+          <h2 className="discovery__headline">
+            Let's build something for your business
+          </h2>
+          <p className="discovery__subtitle">
+            Every project starts with a conversation. Tell us what's not working,
+            and we'll figure out what to build.
+          </p>
+          <a href="#discovery" className="btn btn--primary">
+            Book a free discovery call
+          </a>
+        </div>
       </div>
     </section>
   );
