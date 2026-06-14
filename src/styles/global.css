@@ -278,7 +278,7 @@ a:hover {
    SHARED SECTION + HEADING
    ============================================================ */
 .section {
-  padding: 64px 0;
+  padding: 40px 0;
 }
 
 .section-heading {
@@ -472,7 +472,7 @@ a:hover {
   .site-nav__name { font-size: 2rem; }
   .site-nav__city { font-size: 0.55rem; }
 
-  .section { padding: 48px 0; }
+  .section { padding: 32px 0; }
 
   .card-grid { grid-template-columns: 1fr; }
 

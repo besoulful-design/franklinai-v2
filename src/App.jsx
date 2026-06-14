@@ -126,7 +126,7 @@ function CaseStudy() {
     <section className="section">
       <div className="container">
         <h2 className="section-heading">Built for Real Work</h2>
-        <div className="card content-card">
+        <div className="card content-card content-card--centered">
           <span className="content-card__label">Case Study</span>
           <h3 className="content-card__title">McKenzie Arm Care</h3>
           <p className="content-card__text">
