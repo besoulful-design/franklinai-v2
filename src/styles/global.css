@@ -43,7 +43,7 @@ body {
   gap: 10px;
   text-decoration: none;
   color: inherit;
-  transform: translateX(-44px); /* optical left shift: key shaft is right-heavy */
+  transform: translateX(-44px);
 }
 
 .site-nav__logo {
@@ -184,7 +184,6 @@ body {
   padding-bottom: 0;
 }
 
-/* Number sits left of the title on the same baseline row */
 .step-item__header {
   display: flex;
   align-items: baseline;
@@ -199,7 +198,7 @@ body {
   letter-spacing: 0.05em;
   color: #60a5fa;
   flex-shrink: 0;
-  width: 40px; /* fixed so titles always align */
+  width: 40px;
 }
 
 .step-item__title {
@@ -215,7 +214,7 @@ body {
   font-size: 15px;
   color: #8892a4;
   line-height: 1.65;
-  padding-left: 54px; /* 40px number width + 14px gap = aligns under title */
+  padding-left: 54px;
 }
 
 /* ── BUTTONS ──────────────────────────────────────────────── */
@@ -364,8 +363,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 14px;
-  text-align: center;
+  gap: 6px; /* tighter — brings copyright close to email */
 }
 
 .site-footer__brand {
@@ -374,7 +372,8 @@ body {
   gap: 12px;
   text-decoration: none;
   color: inherit;
-  transform: translateX(-28px); /* scaled with logo size to keep optical center */
+  transform: translateX(-16px); /* nudged right vs -28px before */
+  margin-bottom: 10px; /* keeps brand separated from the tighter text block below */
 }
 
 .site-footer__logo {
@@ -390,7 +389,7 @@ body {
 .site-footer__name {
   font-family: 'Playfair Display', serif;
   font-weight: 700;
-  font-size: 40px; /* 100% bigger than the previous 20px */
+  font-size: 40px;
   color: #ffffff;
   line-height: 1;
 }
@@ -401,7 +400,7 @@ body {
 
 .site-footer__city {
   font-family: 'Inter', sans-serif;
-  font-size: 12px; /* scaled up to match */
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -439,7 +438,7 @@ body {
   }
 
   .step-item__text {
-    padding-left: 0; /* full width on small screens */
+    padding-left: 0;
   }
 
   .modal__features {
@@ -464,6 +463,6 @@ body {
   }
 
   .site-footer__brand {
-    transform: translateX(-18px);
+    transform: translateX(-10px);
   }
 }
