@@ -165,7 +165,7 @@ a:hover {
 
 .site-nav__city {
   font-family: var(--font-body);
-  font-size: 0.75rem;
+  font-size: 1.05rem;
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
