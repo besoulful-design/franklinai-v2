@@ -289,7 +289,7 @@ a:hover {
   line-height: 1.15;
   pointer-events: none;
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 /* ============================================================
@@ -421,6 +421,11 @@ a:hover {
   border-radius: 50%;
   background-color: var(--color-accent);
   opacity: 0.45;
+}
+
+.content-card--centered {
+  max-width: 640px;
+  margin: 0 auto;
 }
 
 .content-card__stack {

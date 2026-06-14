@@ -154,8 +154,8 @@ function About() {
   return (
     <section className="section">
       <div className="container">
-        <h2 className="section-heading">Who Builds This</h2>
-        <div className="card content-card">
+        <h2 className="section-heading">About</h2>
+        <div className="card content-card content-card--centered">
           <h3 className="content-card__title">David Peterson</h3>
           <span className="content-card__label" style={{ marginBottom: '20px' }}>Founder &amp; Builder</span>
           <p className="content-card__text">
