@@ -1,0 +1,18 @@
+<svg width="32" height="32" viewBox="0 0 220 270" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="220" height="270" rx="32" fill="#070f24"/>
+  <polygon points="110,20 148,88 110,88" fill="#091830"/>
+  <polygon points="110,88 148,88 110,120" fill="#060b18"/>
+  <polygon points="72,88 110,88 110,20"  fill="#060b18"/>
+  <polygon points="72,88 110,120 110,88" fill="#091830"/>
+  <polygon points="110,20 148,88 110,120 72,88" fill="none" stroke="#60a5fa" stroke-width="2.5"/>
+  <line x1="72"  y1="88" x2="148" y2="88"  stroke="#60a5fa" stroke-width="1.5" opacity="0.6"/>
+  <line x1="110" y1="20" x2="110" y2="120" stroke="#60a5fa" stroke-width="1.5" opacity="0.6"/>
+  <line x1="110" y1="120" x2="110" y2="148" stroke="#60a5fa" stroke-width="1.5" opacity="0.7"/>
+  <polygon points="114,148 106,161 111,161 103,173 118,160 113,160 118,148" fill="#60a5fa"/>
+  <line x1="110" y1="173" x2="110" y2="190" stroke="#60a5fa" stroke-width="1.5" opacity="0.7"/>
+  <circle cx="110" cy="203" r="13" fill="none" stroke="#60a5fa" stroke-width="2.5"/>
+  <circle cx="110" cy="203" r="5"  fill="#60a5fa"/>
+  <rect x="122" y="199.5" width="32" height="7" rx="3.5" fill="#60a5fa"/>
+  <rect x="140" y="206.5" width="5" height="9" rx="2" fill="#60a5fa"/>
+  <rect x="148" y="206.5" width="5" height="6" rx="2" fill="#60a5fa"/>
+</svg>
