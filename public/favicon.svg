@@ -1,16 +1,17 @@
-<svg width="32" height="32" viewBox="0 0 220 270" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="220" height="270" rx="32" fill="#070f24"/>
-  <polygon points="110,20 148,88 110,88" fill="#091830"/>
-  <polygon points="110,88 148,88 110,120" fill="#060b18"/>
-  <polygon points="72,88 110,88 110,20"  fill="#060b18"/>
-  <polygon points="72,88 110,120 110,88" fill="#091830"/>
-  <polygon points="110,20 148,88 110,120 72,88" fill="none" stroke="#60a5fa" stroke-width="2.5"/>
-  <line x1="72"  y1="88" x2="148" y2="88"  stroke="#60a5fa" stroke-width="1.5" opacity="0.6"/>
-  <line x1="110" y1="20" x2="110" y2="120" stroke="#60a5fa" stroke-width="1.5" opacity="0.6"/>
-  <line x1="110" y1="120" x2="110" y2="148" stroke="#60a5fa" stroke-width="1.5" opacity="0.7"/>
+<svg width="32" height="32" viewBox="50 5 120 255" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="50" y="5" width="120" height="255" rx="24" fill="#070f24"/>
+  <polygon points="110,20 148,88 110,88" fill="#1e3a5f"/>
+  <polygon points="110,88 148,88 110,120" fill="#0f2340"/>
+  <polygon points="72,88 110,88 110,20"  fill="#0f2340"/>
+  <polygon points="72,88 110,120 110,88" fill="#1e3a5f"/>
+  <polygon points="110,20 148,88 110,120 72,88" fill="none" stroke="#60a5fa" stroke-width="4"/>
+  <line x1="72"  y1="88" x2="148" y2="88"  stroke="#60a5fa" stroke-width="2.5"/>
+  <line x1="110" y1="20" x2="110" y2="120" stroke="#60a5fa" stroke-width="2.5"/>
+  <line x1="110" y1="120" x2="110" y2="148" stroke="#60a5fa" stroke-width="2"/>
   <polygon points="114,148 106,161 111,161 103,173 118,160 113,160 118,148" fill="#60a5fa"/>
-  <line x1="110" y1="173" x2="110" y2="190" stroke="#60a5fa" stroke-width="1.5" opacity="0.7"/>
-  <circle cx="110" cy="203" r="13" fill="none" stroke="#60a5fa" stroke-width="2.5"/>
+  <polygon points="113,151 107,161 111,161 105,171 116,160 112,160 116,151" fill="white" opacity="0.6"/>
+  <line x1="110" y1="173" x2="110" y2="190" stroke="#60a5fa" stroke-width="2"/>
+  <circle cx="110" cy="203" r="13" fill="none" stroke="#60a5fa" stroke-width="3.5"/>
   <circle cx="110" cy="203" r="5"  fill="#60a5fa"/>
   <rect x="122" y="199.5" width="32" height="7" rx="3.5" fill="#60a5fa"/>
   <rect x="140" y="206.5" width="5" height="9" rx="2" fill="#60a5fa"/>
