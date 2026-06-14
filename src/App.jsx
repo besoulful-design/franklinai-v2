@@ -38,22 +38,15 @@ function KiteLogo({ size = 48, className = '' }) {
 
 function Nav() {
   return (
-    <nav style={{
-      position: 'sticky', top: 0, zIndex: 100,
-      backgroundColor: '#070f24',
-      borderBottom: '1px solid rgba(96,165,250,0.08)',
-      padding: '20px 0'
-    }}>
-      <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 clamp(20px, 5vw, 48px)', display: 'flex', justifyContent: 'center' }}>
-        <a href="/" style={{ display: 'flex', alignItems: 'center', gap: '18px', textDecoration: 'none' }}>
-          <KiteLogo size={128} />
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-            <span style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, fontSize: '3.5rem', color: '#ffffff', lineHeight: 1 }}>
-              Franklin<span style={{ color: '#60a5fa' }}>AI</span>
+    <nav className="site-nav">
+      <div className="site-nav__inner">
+        <a href="/" className="site-nav__brand">
+          <KiteLogo size={224} className="site-nav__logo" />
+          <div className="site-nav__wordmark">
+            <span className="site-nav__name">
+              Franklin<span className="site-nav__ai">AI</span>
             </span>
-            <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.8rem', fontWeight: 600, letterSpacing: '0.25em', textTransform: 'uppercase', color: '#8892a4' }}>
-              Philadelphia
-            </span>
+            <span className="site-nav__city">Philadelphia</span>
           </div>
         </a>
       </div>
@@ -64,23 +57,21 @@ function Nav() {
 function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer style={{ padding: '48px 0 32px', borderTop: '1px solid rgba(96,165,250,0.1)', marginTop: '80px' }}>
-      <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 clamp(20px,5vw,48px)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px', textAlign: 'center' }}>
-        <a href="/" style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}>
-          <KiteLogo size={48} />
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
-            <span style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, fontSize: '1.4rem', color: '#ffffff', lineHeight: 1 }}>
-              Franklin<span style={{ color: '#60a5fa' }}>AI</span>
+    <footer className="site-footer">
+      <div className="site-footer__inner">
+        <a href="/" className="site-footer__brand">
+          <KiteLogo size={44} className="site-footer__logo" />
+          <div className="site-footer__wordmark">
+            <span className="site-footer__name">
+              Franklin<span className="site-footer__ai">AI</span>
             </span>
-            <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.6rem', fontWeight: 600, letterSpacing: '0.25em', textTransform: 'uppercase', color: '#8892a4' }}>
-              Philadelphia
-            </span>
+            <span className="site-footer__city">Philadelphia</span>
           </div>
         </a>
-        <a href="mailto:david@franklinaisolutions.com" style={{ fontSize: '0.875rem', color: '#60a5fa', textDecoration: 'none' }}>
+        <a href="mailto:david@franklinaisolutions.com" className="site-footer__email">
           david@franklinaisolutions.com
         </a>
-        <p style={{ fontSize: '0.75rem', color: '#8892a4', opacity: 0.5 }}>
+        <p className="site-footer__copy">
           &copy; {year} FranklinAI &mdash; franklinaisolutions.com
         </p>
       </div>
