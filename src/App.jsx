@@ -211,7 +211,7 @@ function DiscoveryCTA() {
         <div className="site-card">
           <h2 className="card-heading">Let's build something for your business.</h2>
           <p className="card-text">
-            Every project starts with a conversation. Tell us what's not working,
+            Every project starts with a conversation. Tell us what you need or what's not working,
             and we'll figure out what to build.
           </p>
           <a href="#discovery" className="btn btn--primary">

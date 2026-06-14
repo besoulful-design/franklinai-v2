@@ -357,7 +357,7 @@ body {
 /* ── FOOTER ──────────────────────────────────────────────── */
 
 .site-footer {
-  padding: 48px 24px;
+  padding: 24px 24px;
   border-top: 1px solid rgba(96, 165, 250, 0.12);
   margin-top: 24px;
 }
@@ -468,6 +468,6 @@ body {
   }
 
   .site-footer__brand {
-    transform: translateX(-18px);
+    transform: translateX(-28px);
   }
 }
