@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,400&family=Inter:wght@400;500;600;700;800&display=swap');
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -69,15 +69,16 @@ body {
   color: #60a5fa;
 }
 
+/* Philadelphia — Playfair italic, no all-caps */
 .site-nav__city {
-  font-family: 'Inter', sans-serif;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 0.02em;
   color: #8892a4;
-  margin-top: 5px;
-  align-self: center;
+  margin-top: 4px;
+  align-self: flex-start;
 }
 
 /* ── LAYOUT ──────────────────────────────────────────────── */
@@ -162,7 +163,7 @@ body {
   margin-bottom: 28px;
 }
 
-/* ── HOW IT WORKS — number left of title ──────────────────────────────────────────────── */
+/* ── HOW IT WORKS — number + title centered on same line ──────────────────────────────────────────────── */
 
 .step-stack {
   display: flex;
@@ -172,7 +173,7 @@ body {
 .step-item {
   padding: 22px 0;
   border-top: 1px solid rgba(96, 165, 250, 0.1);
-  text-align: left;
+  text-align: center;
 }
 
 .step-item:first-child {
@@ -184,9 +185,11 @@ body {
   padding-bottom: 0;
 }
 
+/* Number and title on one centered row */
 .step-item__header {
   display: flex;
   align-items: baseline;
+  justify-content: center;
   gap: 14px;
   margin-bottom: 10px;
 }
@@ -198,7 +201,6 @@ body {
   letter-spacing: 0.05em;
   color: #60a5fa;
   flex-shrink: 0;
-  width: 40px;
 }
 
 .step-item__title {
@@ -209,12 +211,12 @@ body {
   line-height: 1.2;
 }
 
+/* Description centered, full width */
 .step-item__text {
   font-family: 'Inter', sans-serif;
   font-size: 15px;
   color: #8892a4;
   line-height: 1.65;
-  padding-left: 54px;
 }
 
 /* ── BUTTONS ──────────────────────────────────────────────── */
@@ -363,7 +365,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px; /* tighter — brings copyright close to email */
+  gap: 6px;
 }
 
 .site-footer__brand {
@@ -372,8 +374,8 @@ body {
   gap: 12px;
   text-decoration: none;
   color: inherit;
-  transform: translateX(-16px); /* nudged right vs -28px before */
-  margin-bottom: 10px; /* keeps brand separated from the tighter text block below */
+  transform: translateX(-24px); /* nudged further left */
+  margin-bottom: 10px;
 }
 
 .site-footer__logo {
@@ -398,15 +400,16 @@ body {
   color: #60a5fa;
 }
 
+/* Philadelphia — Playfair italic, no all-caps, matches nav */
 .site-footer__city {
-  font-family: 'Inter', sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 0.02em;
   color: #8892a4;
-  margin-top: 5px;
-  align-self: center;
+  margin-top: 4px;
+  align-self: flex-start;
 }
 
 .site-footer__email {
@@ -437,10 +440,6 @@ body {
     padding: 28px 20px;
   }
 
-  .step-item__text {
-    padding-left: 0;
-  }
-
   .modal__features {
     grid-template-columns: 1fr;
   }
@@ -463,6 +462,6 @@ body {
   }
 
   .site-footer__brand {
-    transform: translateX(-10px);
+    transform: translateX(-14px);
   }
 }
