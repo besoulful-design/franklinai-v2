@@ -69,16 +69,16 @@ body {
   color: #60a5fa;
 }
 
-/* Philadelphia — Playfair italic, no all-caps */
+/* Philadelphia — Playfair, no italic, centered under name */
 .site-nav__city {
   font-family: 'Playfair Display', serif;
-  font-style: italic;
+  font-style: normal;
   font-weight: 400;
   font-size: 14px;
   letter-spacing: 0.02em;
   color: #8892a4;
   margin-top: 4px;
-  align-self: flex-start;
+  align-self: center;
 }
 
 /* ── LAYOUT ──────────────────────────────────────────────── */
@@ -163,7 +163,7 @@ body {
   margin-bottom: 28px;
 }
 
-/* ── HOW IT WORKS — number + title centered on same line ──────────────────────────────────────────────── */
+/* ── HOW IT WORKS ──────────────────────────────────────────────── */
 
 .step-stack {
   display: flex;
@@ -185,7 +185,6 @@ body {
   padding-bottom: 0;
 }
 
-/* Number and title on one centered row */
 .step-item__header {
   display: flex;
   align-items: baseline;
@@ -211,12 +210,14 @@ body {
   line-height: 1.2;
 }
 
-/* Description centered, full width */
+/* Constrained width forces ~3 lines in the browser; iPhone wraps naturally */
 .step-item__text {
   font-family: 'Inter', sans-serif;
   font-size: 15px;
   color: #8892a4;
   line-height: 1.65;
+  max-width: 300px;
+  margin: 0 auto;
 }
 
 /* ── BUTTONS ──────────────────────────────────────────────── */
@@ -365,7 +366,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 4px; /* tight — email and copyright sit close together */
 }
 
 .site-footer__brand {
@@ -374,8 +375,8 @@ body {
   gap: 12px;
   text-decoration: none;
   color: inherit;
-  transform: translateX(-24px); /* nudged further left */
-  margin-bottom: 10px;
+  transform: translateX(-32px); /* nudged further left */
+  margin-bottom: 6px; /* reduced space above email */
 }
 
 .site-footer__logo {
@@ -400,16 +401,16 @@ body {
   color: #60a5fa;
 }
 
-/* Philadelphia — Playfair italic, no all-caps, matches nav */
+/* Philadelphia — Playfair, no italic, centered under name */
 .site-footer__city {
   font-family: 'Playfair Display', serif;
-  font-style: italic;
+  font-style: normal;
   font-weight: 400;
   font-size: 14px;
   letter-spacing: 0.02em;
   color: #8892a4;
   margin-top: 4px;
-  align-self: flex-start;
+  align-self: center;
 }
 
 .site-footer__email {
@@ -440,6 +441,11 @@ body {
     padding: 28px 20px;
   }
 
+  /* Let text flow naturally on mobile — no width constraint needed */
+  .step-item__text {
+    max-width: none;
+  }
+
   .modal__features {
     grid-template-columns: 1fr;
   }
@@ -462,6 +468,6 @@ body {
   }
 
   .site-footer__brand {
-    transform: translateX(-14px);
+    transform: translateX(-18px);
   }
 }
