@@ -1,14 +1,17 @@
 import './styles/global.css';
 
 function KiteLogo({ size = 48, className = '' }) {
-  const width  = size * (220 / 270);
+  /* Tight viewBox cropped around the actual kite-bolt-key mark,
+     eliminating dead space so it sits close to the wordmark */
+  const vbX = 62, vbY = 10, vbW = 101, vbH = 240;
+  const width  = size * (vbW / vbH);
   const height = size;
 
   return (
     <svg
       width={width}
       height={height}
-      viewBox="0 0 220 270"
+      viewBox={`${vbX} ${vbY} ${vbW} ${vbH}`}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
