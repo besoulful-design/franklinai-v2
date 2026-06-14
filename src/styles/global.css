@@ -150,7 +150,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 5px;
+  gap: 3px;
 }
 
 .site-nav__name {
@@ -165,9 +165,9 @@ a:hover {
 
 .site-nav__city {
   font-family: var(--font-body);
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--color-text-muted);
 }
@@ -227,9 +227,9 @@ a:hover {
 
 .site-footer__city {
   font-family: var(--font-body);
-  font-size: 0.55rem;
+  font-size: 0.5rem;
   font-weight: 600;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--color-text-muted);
 }
