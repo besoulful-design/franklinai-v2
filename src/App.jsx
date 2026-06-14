@@ -57,14 +57,16 @@ function Nav() {
 
 function Hero() {
   return (
-    <section className="hero">
+    <section className="section">
       <div className="container">
-        <h1 className="hero__headline">
-          FranklinAI builds custom web apps and tools shaped around how your business actually runs.
-        </h1>
-        <a href="#discovery" className="btn btn--primary">
-          Book a free discovery call
-        </a>
+        <div className="site-card">
+          <h1 className="hero__headline">
+            Custom apps and tools built around how your business runs.
+          </h1>
+          <a href="#discovery" className="btn btn--primary">
+            Book a free discovery call
+          </a>
+        </div>
       </div>
     </section>
   );
@@ -92,15 +94,17 @@ function HowItWorks() {
   return (
     <section className="section">
       <div className="container">
-        <h2 className="section-heading">How It Works</h2>
-        <div className="step-stack">
-          {steps.map(step => (
-            <div key={step.number} className="card step-card">
-              <span className="step-card__number">{step.number}</span>
-              <h3 className="step-card__title">{step.title}</h3>
-              <p className="step-card__text">{step.text}</p>
-            </div>
-          ))}
+        <div className="site-card">
+          <h2 className="card-heading">How It Works</h2>
+          <div className="step-stack">
+            {steps.map(step => (
+              <div key={step.number} className="step-item">
+                <span className="step-item__number">{step.number}</span>
+                <h3 className="step-item__title">{step.title}</h3>
+                <p className="step-item__text">{step.text}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -120,23 +124,23 @@ function CaseStudy() {
   return (
     <section className="section">
       <div className="container">
-        <h2 className="section-heading">Built for Real Work</h2>
-        <div className="card content-card content-card--centered">
-          <span className="content-card__label">Case Study</span>
-          <h3 className="content-card__title">McKenzie Arm Care</h3>
-          <p className="content-card__text">
+        <div className="site-card">
+          <h2 className="card-heading">Built for Real Work</h2>
+          <span className="card-label">Case Study</span>
+          <h3 className="card-title">McKenzie Arm Care</h3>
+          <p className="card-text">
             A custom patient-care web app built for a clinician who needed more
             than a spreadsheet and less than an enterprise system. Patients log in,
             journal their progress, track symptoms, and message their clinician directly.
             The clinician gets a portal with real-time visibility into every
             patient's journey, plus smart alerts when something needs attention.
           </p>
-          <ul className="content-card__features">
+          <ul className="card-features">
             {features.map((f, i) => (
-              <li key={i} className="content-card__feature">{f}</li>
+              <li key={i} className="card-feature">{f}</li>
             ))}
           </ul>
-          <p className="content-card__stack">
+          <p className="card-stack">
             Built with React, Supabase, and deployed on Netlify.
           </p>
         </div>
@@ -149,18 +153,18 @@ function About() {
   return (
     <section className="section">
       <div className="container">
-        <h2 className="section-heading">About</h2>
-        <div className="card content-card content-card--centered">
-          <h3 className="content-card__title">David Peterson</h3>
-          <span className="content-card__label" style={{ marginBottom: '20px' }}>Founder &amp; Builder</span>
-          <p className="content-card__text">
+        <div className="site-card">
+          <h2 className="card-heading">About</h2>
+          <h3 className="card-title">David Peterson</h3>
+          <span className="card-label">Founder &amp; Builder</span>
+          <p className="card-text">
             David has spent 30 years building and running the systems that keep
             organizations moving across research, education, healthcare, and
             small business. He's worked alongside executive leadership at national
             institutions, built digital tools that transformed how teams operate,
             and has always been the person who figures out how to make things run better.
           </p>
-          <p className="content-card__text">
+          <p className="card-text">
             That same drive is what FranklinAI is built on. Building custom apps
             and tools is the next step in work he's been doing his whole career,
             now with better technology and a sharper focus on what businesses
@@ -176,11 +180,9 @@ function DiscoveryCTA() {
   return (
     <section className="section" id="discovery">
       <div className="container">
-        <div className="card content-card content-card--centered discovery-card">
-          <h2 className="discovery__headline">
-            Let's build something for your business
-          </h2>
-          <p className="discovery__subtitle">
+        <div className="site-card">
+          <h2 className="card-heading">Let's build something for your business</h2>
+          <p className="card-text">
             Every project starts with a conversation. Tell us what's not working,
             and we'll figure out what to build.
           </p>

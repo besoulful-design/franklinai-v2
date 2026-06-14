@@ -10,10 +10,6 @@
   color-scheme: only light;
 }
 
-html {
-  font-size: 16px;
-}
-
 body {
   background: #070f24;
   color: #f0e6d3;
@@ -23,7 +19,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ── NAV ──────────────────────────────────────────────────────── */
+/* ── NAV ──────────────────────────────────────────────── */
 
 .site-nav {
   display: flex;
@@ -78,29 +74,181 @@ body {
   align-self: center;
 }
 
-/* ── HERO ──────────────────────────────────────────────────────── */
+/* ── LAYOUT ──────────────────────────────────────────────── */
 
-.hero {
-  padding: 32px 24px 72px;
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 24px 0;
+}
+
+/* ── UNIVERSAL CARD ──────────────────────────────────────────────── */
+/* One class, used everywhere. All cards are identical. */
+
+.site-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(96, 165, 250, 0.18);
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 640px;
+  margin: 0 auto;
   text-align: center;
 }
+
+/* ── CARD HEADING (replaces section-heading — now lives inside the card) ── */
+
+.card-heading {
+  font-family: 'Playfair Display', serif;
+  font-weight: 800;
+  font-size: clamp(28px, 3.5vw, 40px);
+  color: #60a5fa;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+  pointer-events: none;
+}
+
+/* ── CARD TYPOGRAPHY ──────────────────────────────────────────────── */
+
+.card-label {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #60a5fa;
+  margin-bottom: 10px;
+}
+
+.card-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 26px;
+  color: #ffffff;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.card-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: #8892a4;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+
+.card-text:last-of-type {
+  margin-bottom: 0;
+}
+
+/* ── HERO ──────────────────────────────────────────────── */
 
 .hero__headline {
   font-family: 'Playfair Display', serif;
   font-weight: 800;
-  font-size: clamp(26px, 3.5vw, 44px);
+  font-size: clamp(24px, 3vw, 36px);
   color: #ffffff;
-  line-height: 1.18;
+  line-height: 1.2;
   letter-spacing: -0.02em;
-  max-width: 700px;
-  margin: 0 auto 32px;
+  margin-bottom: 28px;
 }
 
-/* ── BUTTONS ──────────────────────────────────────────────────────── */
+/* ── HOW IT WORKS — steps inside a single card ──────────────────────────────────────────────── */
+
+.step-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.step-item {
+  padding: 20px 0;
+  border-top: 1px solid rgba(96, 165, 250, 0.1);
+}
+
+.step-item:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.step-item:last-child {
+  padding-bottom: 0;
+}
+
+.step-item__number {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #60a5fa;
+  margin-bottom: 6px;
+}
+
+.step-item__title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.step-item__text {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  color: #8892a4;
+  line-height: 1.65;
+}
+
+/* ── CASE STUDY FEATURES ──────────────────────────────────────────────── */
+
+.card-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 16px;
+  list-style: none;
+  margin: 20px 0;
+  text-align: left;
+}
+
+.card-feature {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #f0e6d3;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.card-feature::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #60a5fa;
+}
+
+.card-stack {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #8892a4;
+  margin-top: 16px;
+  font-style: italic;
+}
+
+/* ── BUTTONS ──────────────────────────────────────────────── */
 
 .btn {
   display: inline-block;
-  padding: 16px 36px;
+  padding: 15px 34px;
   border-radius: 12px;
   font-family: 'Inter', sans-serif;
   font-size: 15px;
@@ -109,6 +257,7 @@ body {
   cursor: pointer;
   border: none;
   transition: opacity 0.2s ease;
+  margin-top: 8px;
 }
 
 .btn:hover {
@@ -120,179 +269,12 @@ body {
   color: #070f24;
 }
 
-/* ── LAYOUT ──────────────────────────────────────────────────────── */
-
-.container {
-  width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-.section {
-  padding: 64px 0;
-}
-
-.section-heading {
-  font-family: 'Playfair Display', serif;
-  font-weight: 800;
-  font-size: clamp(36px, 5vw, 56px);
-  color: #60a5fa;
-  text-align: center;
-  margin-bottom: 20px;
-  pointer-events: none;
-  letter-spacing: -0.02em;
-}
-
-/* ── CARDS — shared base ──────────────────────────────────────────────────────── */
-
-.card {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(96, 165, 250, 0.18);
-  border-radius: 16px;
-  padding: 32px;
-}
-
-/* ── HOW IT WORKS — vertical stack ──────────────────────────────────────────────────────── */
-
-.step-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  max-width: 640px;
-  margin: 0 auto;
-}
-
-.step-card__number {
-  display: block;
-  font-family: 'Inter', sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  color: #60a5fa;
-  margin-bottom: 10px;
-}
-
-.step-card__title {
-  font-family: 'Playfair Display', serif;
-  font-weight: 700;
-  font-size: 22px;
-  color: #ffffff;
-  margin-bottom: 10px;
-}
-
-.step-card__text {
-  font-family: 'Inter', sans-serif;
-  font-size: 15px;
-  color: #8892a4;
-  line-height: 1.65;
-}
-
-/* ── CONTENT CARDS ──────────────────────────────────────────────────────── */
-
-.content-card--centered {
-  max-width: 640px;
-  margin: 0 auto;
-}
-
-.content-card__label {
-  display: block;
-  font-family: 'Inter', sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #60a5fa;
-  margin-bottom: 12px;
-}
-
-.content-card__title {
-  font-family: 'Playfair Display', serif;
-  font-weight: 700;
-  font-size: 28px;
-  color: #ffffff;
-  margin-bottom: 16px;
-  line-height: 1.2;
-}
-
-.content-card__text {
-  font-family: 'Inter', sans-serif;
-  font-size: 16px;
-  color: #8892a4;
-  line-height: 1.7;
-  margin-bottom: 14px;
-}
-
-.content-card__text:last-of-type {
-  margin-bottom: 0;
-}
-
-.content-card__features {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px 24px;
-  list-style: none;
-  margin: 20px 0;
-}
-
-.content-card__feature {
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  color: #f0e6d3;
-  padding-left: 18px;
-  position: relative;
-  line-height: 1.5;
-}
-
-.content-card__feature::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 7px;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #60a5fa;
-}
-
-.content-card__stack {
-  font-family: 'Inter', sans-serif;
-  font-size: 13px;
-  color: #8892a4;
-  margin-top: 20px;
-  font-style: italic;
-}
-
-/* ── DISCOVERY CTA ──────────────────────────────────────────────────────── */
-
-.discovery-card {
-  text-align: center;
-}
-
-.discovery__headline {
-  font-family: 'Playfair Display', serif;
-  font-weight: 800;
-  font-size: clamp(26px, 3.5vw, 40px);
-  color: #ffffff;
-  margin-bottom: 16px;
-  line-height: 1.18;
-  letter-spacing: -0.02em;
-}
-
-.discovery__subtitle {
-  font-family: 'Inter', sans-serif;
-  font-size: 16px;
-  color: #8892a4;
-  max-width: 440px;
-  margin: 0 auto 28px;
-  line-height: 1.65;
-}
-
-/* ── FOOTER ──────────────────────────────────────────────────────── */
+/* ── FOOTER ──────────────────────────────────────────────── */
 
 .site-footer {
   padding: 48px 24px;
   border-top: 1px solid rgba(96, 165, 250, 0.12);
+  margin-top: 24px;
 }
 
 .site-footer__inner {
@@ -357,22 +339,22 @@ body {
   color: #8892a4;
 }
 
-/* ── MOBILE ──────────────────────────────────────────────────────── */
+/* ── MOBILE ──────────────────────────────────────────────── */
 
 @media (max-width: 768px) {
   .section {
-    padding: 48px 0;
+    padding: 16px 0;
   }
 
-  .card {
-    padding: 24px;
+  .site-card {
+    padding: 28px 20px;
   }
 
-  .content-card__features {
+  .card-features {
     grid-template-columns: 1fr;
   }
 
-  /* Nav: 50% larger on iPhone */
+  /* Nav 50% larger on iPhone */
   .site-nav__logo {
     height: 168px !important;
     width: auto !important;
@@ -380,11 +362,6 @@ body {
 
   .site-nav__name {
     font-size: 42px;
-  }
-
-  .site-nav__city {
-    font-size: 12px;
-    letter-spacing: 0.18em;
   }
 
   .site-nav__brand {
