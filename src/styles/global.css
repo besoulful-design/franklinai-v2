@@ -37,18 +37,13 @@ body {
   justify-content: center;
 }
 
-/*
-  The kite SVG has the key shaft extending right, making the mark
-  visually right-heavy. We shift the whole brand block left so it
-  reads as optically centered.
-*/
 .site-nav__brand {
   display: flex;
   align-items: center;
   gap: 10px;
   text-decoration: none;
   color: inherit;
-  transform: translateX(-28px);
+  transform: translateX(-44px); /* optical left shift: key shaft is right-heavy */
 }
 
 .site-nav__logo {
@@ -167,7 +162,7 @@ body {
   margin-bottom: 28px;
 }
 
-/* ── HOW IT WORKS ──────────────────────────────────────────────── */
+/* ── HOW IT WORKS — number left of title ──────────────────────────────────────────────── */
 
 .step-stack {
   display: flex;
@@ -175,8 +170,9 @@ body {
 }
 
 .step-item {
-  padding: 20px 0;
+  padding: 22px 0;
   border-top: 1px solid rgba(96, 165, 250, 0.1);
+  text-align: left;
 }
 
 .step-item:first-child {
@@ -188,14 +184,22 @@ body {
   padding-bottom: 0;
 }
 
+/* Number sits left of the title on the same baseline row */
+.step-item__header {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 10px;
+}
+
 .step-item__number {
-  display: block;
   font-family: 'Inter', sans-serif;
-  font-size: 22px;       /* 100% bigger than the previous 11px */
+  font-size: 22px;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
   color: #60a5fa;
-  margin-bottom: 8px;
+  flex-shrink: 0;
+  width: 40px; /* fixed so titles always align */
 }
 
 .step-item__title {
@@ -203,7 +207,7 @@ body {
   font-weight: 700;
   font-size: 20px;
   color: #ffffff;
-  margin-bottom: 8px;
+  line-height: 1.2;
 }
 
 .step-item__text {
@@ -211,6 +215,7 @@ body {
   font-size: 15px;
   color: #8892a4;
   line-height: 1.65;
+  padding-left: 54px; /* 40px number width + 14px gap = aligns under title */
 }
 
 /* ── BUTTONS ──────────────────────────────────────────────── */
@@ -366,10 +371,10 @@ body {
 .site-footer__brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   text-decoration: none;
   color: inherit;
-  transform: translateX(-14px); /* optical balance: key shaft extends right */
+  transform: translateX(-28px); /* scaled with logo size to keep optical center */
 }
 
 .site-footer__logo {
@@ -385,7 +390,7 @@ body {
 .site-footer__name {
   font-family: 'Playfair Display', serif;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 40px; /* 100% bigger than the previous 20px */
   color: #ffffff;
   line-height: 1;
 }
@@ -396,12 +401,12 @@ body {
 
 .site-footer__city {
   font-family: 'Inter', sans-serif;
-  font-size: 10px;
+  font-size: 12px; /* scaled up to match */
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: #8892a4;
-  margin-top: 4px;
+  margin-top: 5px;
   align-self: center;
 }
 
@@ -433,6 +438,10 @@ body {
     padding: 28px 20px;
   }
 
+  .step-item__text {
+    padding-left: 0; /* full width on small screens */
+  }
+
   .modal__features {
     grid-template-columns: 1fr;
   }
@@ -451,6 +460,10 @@ body {
   }
 
   .site-nav__brand {
-    transform: translateX(-16px);
+    transform: translateX(-24px);
+  }
+
+  .site-footer__brand {
+    transform: translateX(-18px);
   }
 }

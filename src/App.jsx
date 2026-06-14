@@ -62,7 +62,7 @@ function Hero() {
       <div className="container">
         <div className="site-card">
           <h1 className="hero__headline">
-            Custom apps and tools built around how your business runs.
+            Custom apps and tools built for your business.
           </h1>
           <a href="#discovery" className="btn btn--primary">
             Book a free discovery call
@@ -100,8 +100,10 @@ function HowItWorks() {
           <div className="step-stack">
             {steps.map(step => (
               <div key={step.number} className="step-item">
-                <span className="step-item__number">{step.number}</span>
-                <h3 className="step-item__title">{step.title}</h3>
+                <div className="step-item__header">
+                  <span className="step-item__number">{step.number}</span>
+                  <h3 className="step-item__title">{step.title}</h3>
+                </div>
                 <p className="step-item__text">{step.text}</p>
               </div>
             ))}
@@ -227,7 +229,7 @@ function Footer() {
     <footer className="site-footer">
       <div className="site-footer__inner">
         <a href="/" className="site-footer__brand">
-          <KiteLogo size={44} className="site-footer__logo" />
+          <KiteLogo size={88} className="site-footer__logo" />
           <div className="site-footer__wordmark">
             <span className="site-footer__name">
               Franklin<span className="site-footer__ai">AI</span>
