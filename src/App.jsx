@@ -65,7 +65,7 @@ function Hero() {
         </h1>
         <p className="hero__subtitle">
           FranklinAI builds custom web apps and tools shaped around
-          how your business actually runs — not the other way around.
+          how your business actually runs.
         </p>
         <a href="#discovery" className="btn btn--primary">
           Book a free discovery call
@@ -80,17 +80,17 @@ function HowItWorks() {
     {
       number: '01',
       title: 'Discovery',
-      text: 'A free call to understand how your business runs, what\'s slowing you down, and what a custom tool could solve. No pitch decks — just a real conversation.'
+      text: 'A free call to understand how your business runs, what\'s slowing you down, and what a custom tool could solve. No pitch decks, just a real conversation.'
     },
     {
       number: '02',
       title: 'Build',
-      text: 'You get a purpose-built web app designed around how your team actually operates. User logins, admin tools, messaging, alerts — whatever the job needs.'
+      text: 'You get a purpose-built web app designed around how your team actually operates. User logins, admin tools, messaging, alerts, whatever the job needs.'
     },
     {
       number: '03',
       title: 'Grow',
-      text: 'After launch, we handle hosting and maintenance. As your business evolves, new features get scoped and built — one at a time, on your terms.'
+      text: 'After launch, we handle hosting and maintenance. As your business evolves, new features get scoped and built. One at a time, on your terms.'
     }
   ];
 
@@ -126,22 +126,22 @@ function CaseStudy() {
     <section className="section">
       <div className="container">
         <h2 className="section-heading">Built for Real Work</h2>
-        <div className="card case-card">
-          <span className="case-card__label">Case Study</span>
-          <h3 className="case-card__title">McKenzie Arm Care</h3>
-          <p className="case-card__text">
+        <div className="card content-card">
+          <span className="content-card__label">Case Study</span>
+          <h3 className="content-card__title">McKenzie Arm Care</h3>
+          <p className="content-card__text">
             A custom patient-care web app built for a clinician who needed more
             than a spreadsheet and less than an enterprise system. Patients log in,
             journal their progress, track symptoms, and message their clinician directly.
             The clinician gets a portal with real-time visibility into every
-            patient's journey — plus smart alerts when something needs attention.
+            patient's journey, plus smart alerts when something needs attention.
           </p>
-          <ul className="case-card__features">
+          <ul className="content-card__features">
             {features.map((f, i) => (
-              <li key={i} className="case-card__feature">{f}</li>
+              <li key={i} className="content-card__feature">{f}</li>
             ))}
           </ul>
-          <p className="case-card__stack">
+          <p className="content-card__stack">
             Built with React, Supabase, and deployed on Netlify.
           </p>
         </div>
@@ -155,17 +155,17 @@ function About() {
     <section className="section">
       <div className="container">
         <h2 className="section-heading">Who Builds This</h2>
-        <div className="card about-card">
-          <h3 className="about-card__name">David Peterson</h3>
-          <span className="about-card__role">Founder &amp; Builder</span>
-          <p className="about-card__text">
+        <div className="card content-card">
+          <h3 className="content-card__title">David Peterson</h3>
+          <span className="content-card__label" style={{ marginBottom: '20px' }}>Founder &amp; Builder</span>
+          <p className="content-card__text">
             David has spent 30 years building and running the systems that keep
-            organizations moving — across research, education, healthcare, and
+            organizations moving across research, education, healthcare, and
             small business. He's worked alongside executive leadership at national
             institutions, built digital tools that transformed how teams operate,
             and has always been the person who figures out how to make things run better.
           </p>
-          <p className="about-card__text">
+          <p className="content-card__text">
             That same drive is what FranklinAI is built on. Building custom apps
             and tools is the next step in work he's been doing his whole career,
             now with better technology and a sharper focus on what businesses
@@ -214,7 +214,7 @@ function Footer() {
           david@franklinaisolutions.com
         </a>
         <p className="site-footer__copy">
-          &copy; {year} FranklinAI &mdash; franklinaisolutions.com
+          &copy; {year} FranklinAI · franklinaisolutions.com
         </p>
       </div>
     </footer>
