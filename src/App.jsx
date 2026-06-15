@@ -48,7 +48,7 @@ function Nav() {
             <span className="site-nav__name">
               Franklin<span className="site-nav__ai">AI</span>
             </span>
-            <span className="site-nav__city">Philadelphia</span>
+            <span className="site-nav__city" style={{ fontSize: '24.5px' }}>Philadelphia</span>
           </div>
         </a>
       </div>
@@ -62,7 +62,7 @@ function Hero() {
       <div className="container">
         <div className="site-card">
           <h1 className="hero__headline">
-            Custom apps and tools built for your business.
+            Custom Apps and Tools<br />Built for Your Business.
           </h1>
           <a href="#discovery" className="btn btn--primary">
             Book a free discovery call
@@ -96,7 +96,7 @@ function HowItWorks() {
     <section className="section">
       <div className="container">
         <div className="site-card">
-          <h2 className="card-heading">How it Works</h2>
+          <h2 className="card-heading">How It Works</h2>
           <div className="step-stack">
             {steps.map(step => (
               <div key={step.number} className="step-item">
@@ -209,7 +209,7 @@ function DiscoveryCTA() {
     <section className="section" id="discovery">
       <div className="container">
         <div className="site-card">
-          <h2 className="card-heading">Let's build something for your business.</h2>
+          <h2 className="card-heading">Let's Build Something for Your Business.</h2>
           <p className="card-text">
             Every project starts with a conversation. Tell us what you need or what's not working,
             and we'll figure out what to build.
@@ -234,7 +234,7 @@ function Footer() {
             <span className="site-footer__name">
               Franklin<span className="site-footer__ai">AI</span>
             </span>
-            <span className="site-footer__city">Philadelphia</span>
+            <span className="site-footer__city" style={{ fontSize: '21px' }}>Philadelphia</span>
           </div>
         </a>
         <a href="mailto:david@franklinaisolutions.com" className="site-footer__email">
