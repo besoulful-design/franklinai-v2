@@ -61,7 +61,7 @@ function Hero() {
     <section className="section">
       <div className="container">
         <div className="site-card">
-          <p style={{ fontFamily: "'Playfair Display', serif", fontSize: '25px', fontWeight: '700', letterSpacing: '0.04em', color: '#60a5fa', marginBottom: '14px', lineHeight: '1.3' }}>
+          <p style={{ fontFamily: "'Playfair Display', serif", fontSize: '30px', fontWeight: '700', letterSpacing: '0.04em', color: '#60a5fa', marginBottom: '14px', lineHeight: '1.3' }}>
             Custom Apps<br />&amp; Tools
           </p>
           <h1 className="hero__headline" style={{ color: '#ffffff', fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: '16px' }}>
@@ -108,7 +108,7 @@ function HowItWorks() {
               <div key={step.number} className="step-item">
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                   <span className="step-item__number" style={{ fontSize: '32px', textAlign: 'right' }}>{step.number}</span>
-                  <h3 className="step-item__title" style={{ fontSize: '28px' }}>{step.title}</h3>
+                  <h3 className="step-item__title" style={{ fontSize: '25.2px' }}>{step.title}</h3>
                   <span style={{ fontSize: '32px', visibility: 'hidden' }}>{step.number}</span>
                 </div>
                 <p className="step-item__text">{step.text}</p>
