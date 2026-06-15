@@ -61,7 +61,7 @@ function Hero() {
     <section className="section">
       <div className="container">
         <div className="site-card">
-          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '11px', fontWeight: '700', letterSpacing: '0.22em', textTransform: 'uppercase', color: '#60a5fa', marginBottom: '14px' }}>
+          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '22px', fontWeight: '700', letterSpacing: '0.18em', textTransform: 'uppercase', color: '#60a5fa', marginBottom: '14px' }}>
             Custom Apps &amp; Tools
           </p>
           <h1 className="hero__headline" style={{ color: '#ffffff', fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: '16px' }}>
@@ -106,8 +106,8 @@ function HowItWorks() {
           <div className="step-stack" style={{ marginTop: '-10px' }}>
             {steps.map(step => (
               <div key={step.number} className="step-item">
-                <div style={{ position: 'relative', textAlign: 'center', marginBottom: '10px' }}>
-                  <span className="step-item__number" style={{ fontSize: '28px', position: 'absolute', left: '0', top: '50%', transform: 'translateY(-50%)' }}>{step.number}</span>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'baseline', gap: '10px', marginBottom: '10px' }}>
+                  <span className="step-item__number" style={{ fontSize: '28px' }}>{step.number}</span>
                   <h3 className="step-item__title" style={{ fontSize: '24px' }}>{step.title}</h3>
                 </div>
                 <p className="step-item__text">{step.text}</p>
@@ -239,7 +239,7 @@ function Footer() {
             <span className="site-footer__name">
               Franklin<span className="site-footer__ai">AI</span>
             </span>
-            <span className="site-footer__city" style={{ fontSize: '14px', color: '#8899b0' }}>Philadelphia</span>
+            <span className="site-footer__city" style={{ fontSize: '18px', color: '#8899b0' }}>Philadelphia</span>
           </div>
         </a>
         <a href="mailto:david@franklinaisolutions.com" className="site-footer__email">
