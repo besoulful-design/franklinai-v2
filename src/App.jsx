@@ -61,7 +61,7 @@ function Hero() {
     <section className="section">
       <div className="container">
         <div className="site-card">
-          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '22px', fontWeight: '700', letterSpacing: '0.18em', textTransform: 'uppercase', color: '#60a5fa', marginBottom: '14px' }}>
+          <p style={{ fontFamily: "'Playfair Display', serif", fontSize: '22px', fontWeight: '700', letterSpacing: '0.04em', color: '#60a5fa', marginBottom: '14px' }}>
             Custom Apps &amp; Tools
           </p>
           <h1 className="hero__headline" style={{ color: '#ffffff', fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: '16px' }}>
@@ -106,9 +106,9 @@ function HowItWorks() {
           <div className="step-stack" style={{ marginTop: '-10px' }}>
             {steps.map(step => (
               <div key={step.number} className="step-item">
-                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'baseline', gap: '10px', marginBottom: '10px' }}>
-                  <span className="step-item__number" style={{ fontSize: '28px' }}>{step.number}</span>
-                  <h3 className="step-item__title" style={{ fontSize: '24px' }}>{step.title}</h3>
+                <div style={{ position: 'relative', marginBottom: '10px' }}>
+                  <span className="step-item__number" style={{ fontSize: '32px', position: 'absolute', left: '0', top: '50%', transform: 'translateY(-50%)' }}>{step.number}</span>
+                  <h3 className="step-item__title" style={{ fontSize: '28px', textAlign: 'center' }}>{step.title}</h3>
                 </div>
                 <p className="step-item__text">{step.text}</p>
               </div>
