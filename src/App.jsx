@@ -61,7 +61,7 @@ function Hero() {
     <section className="section">
       <div className="container">
         <div className="site-card">
-          <p style={{ fontFamily: "'Playfair Display', serif", fontSize: '30px', fontWeight: '700', letterSpacing: '0.04em', color: '#60a5fa', marginBottom: '14px', lineHeight: '1.3' }}>
+          <p style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(29px, 4.5vw, 45px)', fontWeight: '700', letterSpacing: '0.04em', color: '#60a5fa', marginBottom: '14px', lineHeight: '1.3' }}>
             Custom Apps<br />&amp; Tools
           </p>
           <h1 className="hero__headline" style={{ color: '#ffffff', fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: '16px' }}>
@@ -106,7 +106,7 @@ function HowItWorks() {
           <div className="step-stack" style={{ marginTop: '-10px' }}>
             {steps.map(step => (
               <div key={step.number} className="step-item">
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr', alignItems: 'baseline', gap: '10px', marginBottom: '10px' }}>
                   <span className="step-item__number" style={{ fontSize: '32px', textAlign: 'right' }}>{step.number}</span>
                   <h3 className="step-item__title" style={{ fontSize: '25.2px' }}>{step.title}</h3>
                   <span style={{ fontSize: '32px', visibility: 'hidden' }}>{step.number}</span>
@@ -137,7 +137,7 @@ function CaseStudyModal({ onClose }) {
         <button className="modal__close" onClick={onClose} aria-label="Close">
           &#x2715;
         </button>
-        <span className="card-label">Case Study</span>
+        <span className="card-label" style={{ fontSize: '1.25em' }}>Case Study</span>
         <h2 className="modal__title">McKenzie Arm Care</h2>
         <p className="modal__text">
           A custom patient-care web app built for a clinician who needed more
@@ -167,7 +167,7 @@ function CaseStudy() {
       <div className="container">
         <div className="site-card">
           <h2 className="card-heading">Built for Real Work</h2>
-          <span className="card-label">Case Study</span>
+          <span className="card-label" style={{ fontSize: '1.25em' }}>Case Study</span>
           <h3 className="card-title">McKenzie Arm Care</h3>
           <p className="card-text">
             A custom patient-care portal for a clinician who needed more than a
