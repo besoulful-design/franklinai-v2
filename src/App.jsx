@@ -40,15 +40,15 @@ function KiteLogo({ size = 48, className = '' }) {
 
 function Nav() {
   return (
-    <nav className="site-nav">
+    <nav className="site-nav" style={{ padding: '10px 24px' }}>
       <div className="site-nav__inner">
         <a href="/" className="site-nav__brand">
-          <KiteLogo size={224} className="site-nav__logo" />
-          <div className="site-nav__wordmark" style={{ marginTop: '-28px' }}>
+          <KiteLogo size={190} className="site-nav__logo" />
+          <div className="site-nav__wordmark" style={{ marginTop: '-24px' }}>
             <span className="site-nav__name">
               Franklin<span className="site-nav__ai">AI</span>
             </span>
-            <span className="site-nav__city" style={{ fontSize: '24.5px', color: '#c8b89a' }}>Philadelphia</span>
+            <span className="site-nav__city" style={{ fontSize: '24.5px', color: '#fbbf24' }}>Philadelphia</span>
           </div>
         </a>
       </div>
@@ -183,7 +183,7 @@ function About() {
       <div className="container">
         <div className="site-card">
           <h2 className="card-heading">About</h2>
-          <h3 className="card-title" style={{ marginTop: '-8px' }}>David Peterson</h3>
+          <h3 className="card-title" style={{ marginTop: '-14px' }}>David Peterson</h3>
           <span className="card-label">Founder &amp; Builder</span>
           <p className="card-text">
             David has spent 30 years building and running the systems that keep
@@ -214,7 +214,7 @@ function DiscoveryCTA() {
             Every project starts with a conversation. Tell us what you need or what's not working,
             and we'll figure out what to build.
           </p>
-          <a href="#discovery" className="btn btn--primary" style={{ marginTop: '12px' }}>
+          <a href="#discovery" className="btn btn--primary" style={{ marginTop: '24px' }}>
             Book a free discovery call
           </a>
         </div>
@@ -227,17 +227,17 @@ function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="site-footer">
-      <div className="site-footer__inner">
+      <div className="site-footer__inner" style={{ gap: '2px' }}>
         <a href="/" className="site-footer__brand">
           <KiteLogo size={132} className="site-footer__logo" />
           <div className="site-footer__wordmark">
             <span className="site-footer__name">
               Franklin<span className="site-footer__ai">AI</span>
             </span>
-            <span className="site-footer__city" style={{ fontSize: '21px', color: '#c8b89a' }}>Philadelphia</span>
+            <span className="site-footer__city" style={{ fontSize: '21px', color: '#fbbf24' }}>Philadelphia</span>
           </div>
         </a>
-        <a href="mailto:david@franklinaisolutions.com" className="site-footer__email" style={{ marginTop: '-8px' }}>
+        <a href="mailto:david@franklinaisolutions.com" className="site-footer__email">
           david@franklinaisolutions.com
         </a>
         <p className="site-footer__copy">
