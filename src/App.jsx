@@ -61,10 +61,13 @@ function Hero() {
     <section className="section">
       <div className="container">
         <div className="site-card">
-          <h1 className="hero__headline" style={{ color: '#ffffff', fontSize: 'clamp(32px, 5vw, 52px)' }}>
-            Custom Apps and Tools<br />Built for Your Business.
+          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '11px', fontWeight: '700', letterSpacing: '0.22em', textTransform: 'uppercase', color: '#60a5fa', marginBottom: '14px' }}>
+            Custom Apps &amp; Tools
+          </p>
+          <h1 className="hero__headline" style={{ color: '#ffffff', fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: '16px' }}>
+            Built for Your<br />Business.
           </h1>
-          <p className="card-text" style={{ marginBottom: '24px', marginTop: '-12px' }}>
+          <p className="card-text" style={{ marginBottom: '28px', marginTop: '0' }}>
             No templates. Built from scratch, around how you actually work.
           </p>
           <a href="#discovery" className="btn btn--primary">
@@ -103,11 +106,9 @@ function HowItWorks() {
           <div className="step-stack" style={{ marginTop: '-10px' }}>
             {steps.map(step => (
               <div key={step.number} className="step-item">
-                <div style={{ textAlign: 'center' }}>
-                  <div style={{ display: 'inline-flex', alignItems: 'baseline', gap: '14px' }}>
-                    <span className="step-item__number" style={{ fontSize: '28px' }}>{step.number}</span>
-                    <h3 className="step-item__title" style={{ fontSize: '24px' }}>{step.title}</h3>
-                  </div>
+                <div style={{ position: 'relative', textAlign: 'center', marginBottom: '10px' }}>
+                  <span className="step-item__number" style={{ fontSize: '28px', position: 'absolute', left: '0', top: '50%', transform: 'translateY(-50%)' }}>{step.number}</span>
+                  <h3 className="step-item__title" style={{ fontSize: '24px' }}>{step.title}</h3>
                 </div>
                 <p className="step-item__text">{step.text}</p>
               </div>
@@ -231,8 +232,8 @@ function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="site-footer" style={{ padding: '24px 24px 20px' }}>
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0px' }}>
-        <a href="/" className="site-footer__brand" style={{ marginBottom: '8px' }}>
+      <div className="site-footer__inner">
+        <a href="/" className="site-footer__brand">
           <KiteLogo size={132} className="site-footer__logo" />
           <div className="site-footer__wordmark" style={{ marginTop: '-16px' }}>
             <span className="site-footer__name">
@@ -241,10 +242,10 @@ function Footer() {
             <span className="site-footer__city" style={{ fontSize: '14px', color: '#8899b0' }}>Philadelphia</span>
           </div>
         </a>
-        <a href="mailto:david@franklinaisolutions.com" className="site-footer__email" style={{ margin: '0' }}>
+        <a href="mailto:david@franklinaisolutions.com" className="site-footer__email">
           david@franklinaisolutions.com
         </a>
-        <p className="site-footer__copy" style={{ margin: '2px 0 0 0' }}>
+        <p className="site-footer__copy">
           &copy; {year} FranklinAI · franklinaisolutions.com
         </p>
       </div>
