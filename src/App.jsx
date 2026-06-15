@@ -48,7 +48,7 @@ function Nav() {
             <span className="site-nav__name">
               Franklin<span className="site-nav__ai">AI</span>
             </span>
-            <span className="site-nav__city" style={{ fontSize: '24.5px', color: '#fbbf24' }}>Philadelphia</span>
+            <span className="site-nav__city" style={{ fontSize: '22px', color: '#d4a020' }}>Philadelphia</span>
           </div>
         </a>
       </div>
@@ -102,7 +102,7 @@ function HowItWorks() {
               <div key={step.number} className="step-item">
                 <div className="step-item__header">
                   <span className="step-item__number" style={{ fontSize: '33px' }}>{step.number}</span>
-                  <h3 className="step-item__title">{step.title}</h3>
+                  <h3 className="step-item__title" style={{ fontSize: '30px' }}>{step.title}</h3>
                 </div>
                 <p className="step-item__text">{step.text}</p>
               </div>
@@ -214,7 +214,7 @@ function DiscoveryCTA() {
             Every project starts with a conversation. Tell us what you need or what's not working,
             and we'll figure out what to build.
           </p>
-          <a href="#discovery" className="btn btn--primary" style={{ marginTop: '24px' }}>
+          <a href="#discovery" className="btn btn--primary" style={{ marginTop: '32px' }}>
             Book a free discovery call
           </a>
         </div>
@@ -230,11 +230,11 @@ function Footer() {
       <div className="site-footer__inner" style={{ gap: '2px' }}>
         <a href="/" className="site-footer__brand">
           <KiteLogo size={132} className="site-footer__logo" />
-          <div className="site-footer__wordmark">
+          <div className="site-footer__wordmark" style={{ marginTop: '-16px' }}>
             <span className="site-footer__name">
               Franklin<span className="site-footer__ai">AI</span>
             </span>
-            <span className="site-footer__city" style={{ fontSize: '21px', color: '#fbbf24' }}>Philadelphia</span>
+            <span className="site-footer__city" style={{ fontSize: '19px', color: '#d4a020' }}>Philadelphia</span>
           </div>
         </a>
         <a href="mailto:david@franklinaisolutions.com" className="site-footer__email">
