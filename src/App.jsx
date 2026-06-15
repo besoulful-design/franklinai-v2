@@ -61,14 +61,14 @@ function Hero() {
     <section className="section">
       <div className="container">
         <div className="site-card">
-          <p style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(29px, 4.5vw, 45px)', fontWeight: '700', letterSpacing: '0.04em', color: '#60a5fa', marginBottom: '14px', lineHeight: '1.3' }}>
+          <p style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(33px, 4.95vw, 49.5px)', fontWeight: '700', letterSpacing: '0.04em', color: '#60a5fa', marginBottom: '14px', lineHeight: '1.3' }}>
             Custom Apps<br />&amp; Tools
           </p>
           <h1 className="hero__headline" style={{ color: '#ffffff', fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: '16px' }}>
             Built for Your<br />Business.
           </h1>
           <p className="card-text" style={{ marginBottom: '28px', marginTop: '0' }}>
-            No templates. Built from scratch, around how you actually work.
+            No templates. Built from scratch for how you actually work.
           </p>
           <a href="#discovery" className="btn btn--primary">
             Book a free discovery call
@@ -102,7 +102,7 @@ function HowItWorks() {
     <section className="section">
       <div className="container">
         <div className="site-card">
-          <h2 className="card-heading">How It Works</h2>
+          <h2 className="card-heading" style={{ fontSize: 'clamp(35px, 4.375vw, 50px)' }}>How It Works</h2>
           <div className="step-stack" style={{ marginTop: '-10px' }}>
             {steps.map(step => (
               <div key={step.number} className="step-item">
@@ -189,7 +189,7 @@ function About() {
     <section className="section">
       <div className="container">
         <div className="site-card">
-          <h2 className="card-heading">About</h2>
+          <h2 className="card-heading" style={{ fontSize: 'clamp(35px, 4.375vw, 50px)' }}>About</h2>
           <h3 className="card-title" style={{ marginTop: '-14px' }}>David Peterson</h3>
           <p className="card-text">
             David has spent 30 years building and running the systems that keep
