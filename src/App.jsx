@@ -48,7 +48,6 @@ function Nav() {
             <span className="site-nav__name">
               Franklin<span className="site-nav__ai">AI</span>
             </span>
-            <span className="site-nav__city" style={{ fontSize: '22px', color: '#d4a020' }}>Philadelphia</span>
           </div>
         </a>
       </div>
@@ -184,7 +183,6 @@ function About() {
         <div className="site-card">
           <h2 className="card-heading">About</h2>
           <h3 className="card-title" style={{ marginTop: '-14px' }}>David Peterson</h3>
-          <span className="card-label">Founder &amp; Builder</span>
           <p className="card-text">
             David has spent 30 years building and running the systems that keep
             organizations moving across research, education, healthcare, and
@@ -234,12 +232,12 @@ function Footer() {
             <span className="site-footer__name">
               Franklin<span className="site-footer__ai">AI</span>
             </span>
-            <span className="site-footer__city" style={{ fontSize: '19px', color: '#d4a020' }}>Philadelphia</span>
           </div>
         </a>
         <a href="mailto:david@franklinaisolutions.com" className="site-footer__email">
           david@franklinaisolutions.com
         </a>
+        <span className="site-footer__city" style={{ fontSize: '14px', color: '#d4a020' }}>Philadelphia</span>
         <p className="site-footer__copy">
           &copy; {year} FranklinAI · franklinaisolutions.com
         </p>
