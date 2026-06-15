@@ -61,9 +61,12 @@ function Hero() {
     <section className="section">
       <div className="container">
         <div className="site-card">
-          <h1 className="hero__headline" style={{ color: '#ffffff', fontSize: 'clamp(28px, 4vw, 44px)' }}>
+          <h1 className="hero__headline" style={{ color: '#ffffff', fontSize: 'clamp(32px, 5vw, 52px)' }}>
             Custom Apps and Tools<br />Built for Your Business.
           </h1>
+          <p className="card-text" style={{ marginBottom: '24px', marginTop: '-12px' }}>
+            No templates. Built from scratch, around how you actually work.
+          </p>
           <a href="#discovery" className="btn btn--primary">
             Book a free discovery call
           </a>
@@ -100,9 +103,11 @@ function HowItWorks() {
           <div className="step-stack" style={{ marginTop: '-10px' }}>
             {steps.map(step => (
               <div key={step.number} className="step-item">
-                <div className="step-item__header">
-                  <span className="step-item__number" style={{ fontSize: '28px' }}>{step.number}</span>
-                  <h3 className="step-item__title" style={{ fontSize: '24px' }}>{step.title}</h3>
+                <div style={{ textAlign: 'center' }}>
+                  <div style={{ display: 'inline-flex', alignItems: 'baseline', gap: '14px' }}>
+                    <span className="step-item__number" style={{ fontSize: '28px' }}>{step.number}</span>
+                    <h3 className="step-item__title" style={{ fontSize: '24px' }}>{step.title}</h3>
+                  </div>
                 </div>
                 <p className="step-item__text">{step.text}</p>
               </div>
@@ -225,9 +230,9 @@ function DiscoveryCTA() {
 function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="site-footer">
-      <div className="site-footer__inner" style={{ gap: '4px' }}>
-        <a href="/" className="site-footer__brand" style={{ marginBottom: '0' }}>
+    <footer className="site-footer" style={{ padding: '24px 24px 20px' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0px' }}>
+        <a href="/" className="site-footer__brand" style={{ marginBottom: '8px' }}>
           <KiteLogo size={132} className="site-footer__logo" />
           <div className="site-footer__wordmark" style={{ marginTop: '-16px' }}>
             <span className="site-footer__name">
@@ -236,10 +241,10 @@ function Footer() {
             <span className="site-footer__city" style={{ fontSize: '14px', color: '#8899b0' }}>Philadelphia</span>
           </div>
         </a>
-        <a href="mailto:david@franklinaisolutions.com" className="site-footer__email">
+        <a href="mailto:david@franklinaisolutions.com" className="site-footer__email" style={{ margin: '0' }}>
           david@franklinaisolutions.com
         </a>
-        <p className="site-footer__copy">
+        <p className="site-footer__copy" style={{ margin: '2px 0 0 0' }}>
           &copy; {year} FranklinAI · franklinaisolutions.com
         </p>
       </div>
