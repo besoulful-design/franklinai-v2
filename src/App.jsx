@@ -97,12 +97,12 @@ function HowItWorks() {
       <div className="container">
         <div className="site-card">
           <h2 className="card-heading">How It Works</h2>
-          <div className="step-stack">
+          <div className="step-stack" style={{ marginTop: '-10px' }}>
             {steps.map(step => (
               <div key={step.number} className="step-item">
                 <div className="step-item__header">
-                  <span className="step-item__number" style={{ fontSize: '33px' }}>{step.number}</span>
-                  <h3 className="step-item__title" style={{ fontSize: '22px' }}>{step.title}</h3>
+                  <span className="step-item__number" style={{ fontSize: '28px' }}>{step.number}</span>
+                  <h3 className="step-item__title" style={{ fontSize: '24px' }}>{step.title}</h3>
                 </div>
                 <p className="step-item__text">{step.text}</p>
               </div>
@@ -226,8 +226,8 @@ function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="site-footer">
-      <div className="site-footer__inner" style={{ gap: '2px' }}>
-        <a href="/" className="site-footer__brand">
+      <div className="site-footer__inner" style={{ gap: '4px' }}>
+        <a href="/" className="site-footer__brand" style={{ marginBottom: '0' }}>
           <KiteLogo size={132} className="site-footer__logo" />
           <div className="site-footer__wordmark" style={{ marginTop: '-16px' }}>
             <span className="site-footer__name">
