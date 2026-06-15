@@ -137,7 +137,7 @@ function CaseStudyModal({ onClose }) {
         <button className="modal__close" onClick={onClose} aria-label="Close">
           &#x2715;
         </button>
-        <span className="card-label" style={{ fontSize: '1.25em' }}>Case Study</span>
+        <span className="card-label" style={{ fontSize: '1.25em', textTransform: 'none' }}>Case Study</span>
         <h2 className="modal__title">McKenzie Arm Care</h2>
         <p className="modal__text">
           A custom patient-care web app built for a clinician who needed more
@@ -167,7 +167,7 @@ function CaseStudy() {
       <div className="container">
         <div className="site-card">
           <h2 className="card-heading">Built for Real Work</h2>
-          <span className="card-label" style={{ fontSize: '1.25em' }}>Case Study</span>
+          <span className="card-label" style={{ fontSize: '1.25em', textTransform: 'none' }}>Case Study</span>
           <h3 className="card-title">McKenzie Arm Care</h3>
           <p className="card-text">
             A custom patient-care portal for a clinician who needed more than a
