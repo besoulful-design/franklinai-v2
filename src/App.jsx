@@ -48,6 +48,7 @@ function Nav() {
             <span className="site-nav__name">
               Franklin<span className="site-nav__ai">AI</span>
             </span>
+            <span className="site-nav__city" style={{ fontSize: '22px', color: '#8899b0' }}>Philadelphia</span>
           </div>
         </a>
       </div>
@@ -60,7 +61,7 @@ function Hero() {
     <section className="section">
       <div className="container">
         <div className="site-card">
-          <h1 className="hero__headline">
+          <h1 className="hero__headline" style={{ color: '#ffffff', fontSize: 'clamp(28px, 4vw, 44px)' }}>
             Custom Apps and Tools<br />Built for Your Business.
           </h1>
           <a href="#discovery" className="btn btn--primary">
@@ -101,7 +102,7 @@ function HowItWorks() {
               <div key={step.number} className="step-item">
                 <div className="step-item__header">
                   <span className="step-item__number" style={{ fontSize: '33px' }}>{step.number}</span>
-                  <h3 className="step-item__title" style={{ fontSize: '30px' }}>{step.title}</h3>
+                  <h3 className="step-item__title" style={{ fontSize: '22px' }}>{step.title}</h3>
                 </div>
                 <p className="step-item__text">{step.text}</p>
               </div>
@@ -232,12 +233,12 @@ function Footer() {
             <span className="site-footer__name">
               Franklin<span className="site-footer__ai">AI</span>
             </span>
+            <span className="site-footer__city" style={{ fontSize: '14px', color: '#8899b0' }}>Philadelphia</span>
           </div>
         </a>
         <a href="mailto:david@franklinaisolutions.com" className="site-footer__email">
           david@franklinaisolutions.com
         </a>
-        <span className="site-footer__city" style={{ fontSize: '14px', color: '#d4a020' }}>Philadelphia</span>
         <p className="site-footer__copy">
           &copy; {year} FranklinAI · franklinaisolutions.com
         </p>
