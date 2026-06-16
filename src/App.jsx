@@ -70,7 +70,7 @@ function Hero() {
           <p className="card-text" style={{ marginBottom: '28px', marginTop: '0' }}>
             No templates. Built from scratch for how you work.
           </p>
-          <a href="#discovery" className="btn btn--primary">
+          <a href="https://cal.com/david-peterson-40s7lw/free-discovery-call" target="_blank" rel="noopener noreferrer" className="btn btn--primary">
             Book a free discovery call
           </a>
         </div>
@@ -272,7 +272,7 @@ function DiscoveryCTA() {
             Every project starts with a conversation. Tell us what you need or what's not working,
             and we'll figure out what to build.
           </p>
-          <a href="#discovery" className="btn btn--primary" style={{ marginTop: '32px' }}>
+          <a href="https://cal.com/david-peterson-40s7lw/free-discovery-call" target="_blank" rel="noopener noreferrer" className="btn btn--primary" style={{ marginTop: '32px' }}>
             Book a free discovery call
           </a>
         </div>
