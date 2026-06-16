@@ -317,15 +317,15 @@ function Footer() {
         style={{
           display: 'flex',
           alignItems: 'flex-start',
-          gap: '8px',
-          transform: 'translateX(-21px)'
+          gap: '10px',
+          transform: 'translateX(-25px)'
         }}
       >
         <span style={{ flexShrink: 0, display: 'flex' }}>
-          <KiteLogo size={80} />
+          <KiteLogo size={100} />
         </span>
 
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '9px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '14px' }}>
           <a
             href="/"
             style={{
@@ -340,7 +340,7 @@ function Footer() {
               style={{
                 fontFamily: "'Playfair Display', serif",
                 fontWeight: 700,
-                fontSize: '24px',
+                fontSize: '30px',
                 color: '#ffffff',
                 lineHeight: 1
               }}
@@ -351,7 +351,7 @@ function Footer() {
               style={{
                 fontFamily: "'Playfair Display', serif",
                 fontWeight: 400,
-                fontSize: '11px',
+                fontSize: '14px',
                 letterSpacing: '0.02em',
                 color: '#8899b0',
                 marginTop: '3px'
@@ -364,10 +364,10 @@ function Footer() {
           <span
             style={{
               fontFamily: "'Inter', sans-serif",
-              fontSize: '10px',
+              fontSize: '11px',
               color: '#8892a4',
               lineHeight: 1.5,
-              marginTop: '6px'
+              marginTop: '8px'
             }}
           >
             franklinaisolutions.com
@@ -375,7 +375,7 @@ function Footer() {
           <span
             style={{
               fontFamily: "'Inter', sans-serif",
-              fontSize: '10px',
+              fontSize: '11px',
               color: '#8892a4',
               lineHeight: 1.5
             }}
