@@ -370,7 +370,7 @@ function Footer() {
               marginTop: '10px'
             }}
           >
-            &copy; {year} FranklinAI
+            franklinaisolutions.com
           </span>
           <span
             style={{
@@ -380,7 +380,7 @@ function Footer() {
               lineHeight: 1.5
             }}
           >
-            franklinaisolutions.com
+            &copy; {year} FranklinAI
           </span>
         </div>
       </div>
