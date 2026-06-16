@@ -303,20 +303,86 @@ function DiscoveryCTA() {
 function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="site-footer" style={{ padding: '24px 24px 20px' }}>
-      <div className="site-footer__inner">
-        <a href="/" className="site-footer__brand">
-          <KiteLogo size={132} className="site-footer__logo" />
-          <div className="site-footer__wordmark" style={{ marginTop: '-16px' }}>
-            <span className="site-footer__name">
-              Franklin<span className="site-footer__ai">AI</span>
+    <footer
+      style={{
+        padding: '24px 24px 20px',
+        borderTop: '1px solid rgba(96, 165, 250, 0.12)',
+        marginTop: '24px',
+        display: 'flex',
+        justifyContent: 'center'
+      }}
+    >
+      {/* kite + text column, nudged left for optical centering (single value, desktop + mobile) */}
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '12px',
+          transform: 'translateX(-32px)'
+        }}
+      >
+        <span style={{ flexShrink: 0, display: 'flex' }}>
+          <KiteLogo size={132} />
+        </span>
+
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <a
+            href="/"
+            style={{
+              textDecoration: 'none',
+              color: 'inherit',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center'
+            }}
+          >
+            <span
+              style={{
+                fontFamily: "'Playfair Display', serif",
+                fontWeight: 700,
+                fontSize: '40px',
+                color: '#ffffff',
+                lineHeight: 1
+              }}
+            >
+              Franklin<span style={{ color: '#60a5fa' }}>AI</span>
             </span>
-            <span className="site-footer__city" style={{ fontSize: '18px', color: '#8899b0' }}>Philadelphia</span>
-          </div>
-        </a>
-        <p className="site-footer__copy">
-          &copy; {year} FranklinAI · franklinaisolutions.com
-        </p>
+            <span
+              style={{
+                fontFamily: "'Playfair Display', serif",
+                fontWeight: 400,
+                fontSize: '18px',
+                letterSpacing: '0.02em',
+                color: '#8899b0',
+                marginTop: '4px'
+              }}
+            >
+              Philadelphia
+            </span>
+          </a>
+
+          <span
+            style={{
+              fontFamily: "'Inter', sans-serif",
+              fontSize: '12px',
+              color: '#8892a4',
+              lineHeight: 1.5,
+              marginTop: '10px'
+            }}
+          >
+            &copy; {year} FranklinAI
+          </span>
+          <span
+            style={{
+              fontFamily: "'Inter', sans-serif",
+              fontSize: '12px',
+              color: '#8892a4',
+              lineHeight: 1.5
+            }}
+          >
+            franklinaisolutions.com
+          </span>
+        </div>
       </div>
     </footer>
   );
