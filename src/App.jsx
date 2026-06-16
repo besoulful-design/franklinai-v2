@@ -325,7 +325,7 @@ function Footer() {
           <KiteLogo size={100} />
         </span>
 
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '14px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '20px' }}>
           <a
             href="/"
             style={{
@@ -367,7 +367,9 @@ function Footer() {
               fontSize: '11px',
               color: '#8892a4',
               lineHeight: 1.5,
-              marginTop: '8px'
+              marginTop: '8px',
+              textAlign: 'center',
+              width: '100%'
             }}
           >
             franklinaisolutions.com
@@ -377,7 +379,9 @@ function Footer() {
               fontFamily: "'Inter', sans-serif",
               fontSize: '11px',
               color: '#8892a4',
-              lineHeight: 1.5
+              lineHeight: 1.5,
+              textAlign: 'center',
+              width: '100%'
             }}
           >
             &copy; {year} FranklinAI
