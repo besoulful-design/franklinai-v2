@@ -186,15 +186,18 @@ function Pricing() {
   const tiers = [
     {
       title: 'The Build',
-      text: 'One flat, per-project fee, scoped after your free discovery call. You know the full cost before any work begins. No hourly meter, no surprises.'
+      price: 'From $8,000',
+      text: 'One flat project fee, set up front. No hourly meter, no surprises.'
     },
     {
       title: 'Monthly Care',
-      text: 'An optional monthly retainer covers hosting, maintenance, and updates, so your app stays fast, secure, and running without you having to think about it.'
+      price: 'From $149 / month',
+      text: 'Optional. Covers hosting, maintenance, and updates.'
     },
     {
       title: 'As You Grow',
-      text: 'New features are scoped and billed separately as the relationship grows. One at a time, on your terms, whenever the business calls for it.'
+      price: 'Quoted per feature',
+      text: 'New features scoped and built one at a time, on your terms.'
     }
   ];
 
@@ -202,12 +205,13 @@ function Pricing() {
     <section className="section">
       <div className="container">
         <div className="site-card">
-          <h2 className="card-heading" style={{ fontSize: 'clamp(35px, 4.375vw, 50px)' }}>Simple Pricing</h2>
+          <h2 className="card-heading" style={{ fontSize: 'clamp(35px, 4.375vw, 50px)' }}>Pricing</h2>
           <div className="step-stack" style={{ marginTop: '-10px' }}>
             {tiers.map(tier => (
               <div key={tier.title} className="step-item">
-                <div style={{ marginBottom: '10px', textAlign: 'center' }}>
+                <div style={{ marginBottom: '6px', textAlign: 'center' }}>
                   <h3 className="step-item__title" style={{ fontSize: '27.7px', textAlign: 'center' }}>{tier.title}</h3>
+                  <p style={{ fontFamily: "'Playfair Display', serif", fontWeight: '700', fontSize: '22px', color: '#60a5fa', marginTop: '4px' }}>{tier.price}</p>
                 </div>
                 <p className="step-item__text">{tier.text}</p>
               </div>
