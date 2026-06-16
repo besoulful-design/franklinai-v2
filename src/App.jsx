@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './styles/global.css';
 
 function KiteLogo({ size = 48, className = '' }) {
@@ -38,6 +38,17 @@ function KiteLogo({ size = 48, className = '' }) {
   );
 }
 
+function EmailOption({ style }) {
+  return (
+    <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', color: '#8892a4', marginTop: '18px', ...style }}>
+      Not ready to schedule?{' '}
+      <a href="mailto:david@franklinaisolutions.com" style={{ color: '#60a5fa', textDecoration: 'none', fontWeight: '600' }}>
+        Email me directly
+      </a>
+    </p>
+  );
+}
+
 function Nav() {
   return (
     <nav className="site-nav" style={{ padding: '10px 24px' }}>
@@ -73,6 +84,7 @@ function Hero() {
           <a href="https://cal.com/david-peterson-40s7lw/free-discovery-call" target="_blank" rel="noopener noreferrer" className="btn btn--primary">
             Book a free discovery call
           </a>
+          <EmailOption />
         </div>
       </div>
     </section>
@@ -120,6 +132,12 @@ function HowItWorks() {
 }
 
 function CaseStudyModal({ onClose }) {
+  useEffect(() => {
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => { document.body.style.overflow = prev; };
+  }, []);
+
   const features = [
     'User login and role-based access',
     'Daily journaling and symptom tracking',
@@ -275,6 +293,7 @@ function DiscoveryCTA() {
           <a href="https://cal.com/david-peterson-40s7lw/free-discovery-call" target="_blank" rel="noopener noreferrer" className="btn btn--primary" style={{ marginTop: '32px' }}>
             Book a free discovery call
           </a>
+          <EmailOption />
         </div>
       </div>
     </section>
@@ -294,9 +313,6 @@ function Footer() {
             </span>
             <span className="site-footer__city" style={{ fontSize: '18px', color: '#8899b0' }}>Philadelphia</span>
           </div>
-        </a>
-        <a href="mailto:david@franklinaisolutions.com" className="site-footer__email">
-          david@franklinaisolutions.com
         </a>
         <p className="site-footer__copy">
           &copy; {year} FranklinAI · franklinaisolutions.com
