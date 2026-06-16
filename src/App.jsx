@@ -205,7 +205,7 @@ function Pricing() {
     <section className="section">
       <div className="container">
         <div className="site-card">
-          <h2 className="card-heading" style={{ fontSize: 'clamp(35px, 4.375vw, 50px)' }}>Pricing</h2>
+          <h2 className="card-heading" style={{ fontSize: 'clamp(40.25px, 5.03vw, 57.5px)' }}>Pricing</h2>
           <div className="step-stack" style={{ marginTop: '-10px' }}>
             {tiers.map(tier => (
               <div key={tier.title} className="step-item">
