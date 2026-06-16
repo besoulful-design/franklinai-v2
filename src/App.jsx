@@ -205,7 +205,7 @@ function Pricing() {
     <section className="section">
       <div className="container">
         <div className="site-card">
-          <h2 className="card-heading" style={{ fontSize: 'clamp(40.25px, 5.03vw, 57.5px)' }}>Pricing Made Easy</h2>
+          <h2 className="card-heading" style={{ fontSize: 'clamp(40.25px, 5.03vw, 57.5px)' }}>Pricing</h2>
           <div className="step-stack" style={{ marginTop: '-10px' }}>
             {tiers.map(tier => (
               <div key={tier.title} className="step-item">
@@ -228,7 +228,7 @@ function About() {
     <section className="section">
       <div className="container">
         <div className="site-card">
-          <h2 className="card-heading" style={{ fontSize: 'clamp(40.25px, 5.03vw, 57.5px)' }}>About</h2>
+          <h2 className="card-heading" style={{ fontSize: 'clamp(44.25px, 5.53vw, 63.25px)' }}>About</h2>
           <img
             src="/david.png"
             alt="David Peterson, founder of FranklinAI"
