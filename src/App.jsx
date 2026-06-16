@@ -45,7 +45,7 @@ function Nav() {
         <a href="/" className="site-nav__brand" style={{ gap: '4px' }}>
           <KiteLogo size={190} className="site-nav__logo" />
           <div className="site-nav__wordmark" style={{ marginTop: '-24px' }}>
-            <span className="site-nav__name" style={{ fontSize: '1.15em' }}>
+            <span className="site-nav__name" style={{ fontSize: 'clamp(48px, 4.6vw, 60px)' }}>
               Franklin<span className="site-nav__ai">AI</span>
             </span>
             <span className="site-nav__city" style={{ fontSize: '22px', color: '#8899b0' }}>Philadelphia</span>
@@ -164,7 +164,7 @@ function CaseStudy() {
     <section className="section">
       <div className="container">
         <div className="site-card">
-          <h2 className="card-heading" style={{ fontSize: 'clamp(42px, 5.25vw, 60px)', marginBottom: '8px' }}>Built for<br />Real Work</h2>
+          <h2 className="card-heading" style={{ fontSize: 'clamp(40px, 5vw, 56px)', marginBottom: '8px' }}>Built for<br />Real Work</h2>
           <span className="card-label" style={{ fontSize: '1.375em', textTransform: 'none', fontFamily: "'Playfair Display', serif", fontWeight: '400', letterSpacing: '0.05em' }}>Case Study</span>
           <h3 className="card-title">McKenzie Arm Care</h3>
           <p className="card-text">
