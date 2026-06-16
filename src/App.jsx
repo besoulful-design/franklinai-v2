@@ -316,16 +316,16 @@ function Footer() {
       <div
         style={{
           display: 'flex',
-          alignItems: 'center',
-          gap: '12px',
-          transform: 'translateX(-32px)'
+          alignItems: 'flex-start',
+          gap: '8px',
+          transform: 'translateX(-21px)'
         }}
       >
         <span style={{ flexShrink: 0, display: 'flex' }}>
-          <KiteLogo size={132} />
+          <KiteLogo size={80} />
         </span>
 
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '9px' }}>
           <a
             href="/"
             style={{
@@ -340,7 +340,7 @@ function Footer() {
               style={{
                 fontFamily: "'Playfair Display', serif",
                 fontWeight: 700,
-                fontSize: '40px',
+                fontSize: '24px',
                 color: '#ffffff',
                 lineHeight: 1
               }}
@@ -351,10 +351,10 @@ function Footer() {
               style={{
                 fontFamily: "'Playfair Display', serif",
                 fontWeight: 400,
-                fontSize: '18px',
+                fontSize: '11px',
                 letterSpacing: '0.02em',
                 color: '#8899b0',
-                marginTop: '4px'
+                marginTop: '3px'
               }}
             >
               Philadelphia
@@ -364,10 +364,10 @@ function Footer() {
           <span
             style={{
               fontFamily: "'Inter', sans-serif",
-              fontSize: '12px',
+              fontSize: '10px',
               color: '#8892a4',
               lineHeight: 1.5,
-              marginTop: '10px'
+              marginTop: '6px'
             }}
           >
             franklinaisolutions.com
@@ -375,7 +375,7 @@ function Footer() {
           <span
             style={{
               fontFamily: "'Inter', sans-serif",
-              fontSize: '12px',
+              fontSize: '10px',
               color: '#8892a4',
               lineHeight: 1.5
             }}
