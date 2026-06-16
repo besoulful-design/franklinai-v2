@@ -42,10 +42,10 @@ function Nav() {
   return (
     <nav className="site-nav" style={{ padding: '10px 24px' }}>
       <div className="site-nav__inner">
-        <a href="/" className="site-nav__brand">
+        <a href="/" className="site-nav__brand" style={{ gap: '4px' }}>
           <KiteLogo size={190} className="site-nav__logo" />
           <div className="site-nav__wordmark" style={{ marginTop: '-24px' }}>
-            <span className="site-nav__name">
+            <span className="site-nav__name" style={{ fontSize: '1.15em' }}>
               Franklin<span className="site-nav__ai">AI</span>
             </span>
             <span className="site-nav__city" style={{ fontSize: '22px', color: '#8899b0' }}>Philadelphia</span>
@@ -164,7 +164,7 @@ function CaseStudy() {
     <section className="section">
       <div className="container">
         <div className="site-card">
-          <h2 className="card-heading">Built for<br />Real Work</h2>
+          <h2 className="card-heading" style={{ fontSize: 'clamp(42px, 5.25vw, 60px)', marginBottom: '8px' }}>Built for<br />Real Work</h2>
           <span className="card-label" style={{ fontSize: '1.375em', textTransform: 'none', fontFamily: "'Playfair Display', serif", fontWeight: '400', letterSpacing: '0.05em' }}>Case Study</span>
           <h3 className="card-title">McKenzie Arm Care</h3>
           <p className="card-text">
@@ -213,7 +213,7 @@ function DiscoveryCTA() {
     <section className="section" id="discovery">
       <div className="container">
         <div className="site-card">
-          <h2 className="card-heading">Let's Build Something for Your Business.</h2>
+          <h2 className="card-heading">Let's Build Something for<br />Your Business.</h2>
           <p className="card-text">
             Every project starts with a conversation. Tell us what you need or what's not working,
             and we'll figure out what to build.
