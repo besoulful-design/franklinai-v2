@@ -53,7 +53,7 @@ function Nav() {
   return (
     <nav className="site-nav" style={{ padding: '10px 24px' }}>
       <div className="site-nav__inner">
-        <a href="/" className="site-nav__brand" style={{ gap: '4px', marginLeft: '30px' }}>
+        <a href="/" className="site-nav__brand" style={{ gap: '4px', marginLeft: '18px' }}>
           <KiteLogo size={190} className="site-nav__logo" />
           <div className="site-nav__wordmark" style={{ marginTop: '-24px' }}>
             <span className="site-nav__name" style={{ fontSize: 'clamp(42px, 4.6vw, 60px)' }}>
