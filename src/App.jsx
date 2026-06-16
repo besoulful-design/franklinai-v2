@@ -62,13 +62,13 @@ function Hero() {
       <div className="container">
         <div className="site-card">
           <p style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(33px, 4.95vw, 49.5px)', fontWeight: '700', letterSpacing: '0.04em', color: '#60a5fa', marginBottom: '14px', lineHeight: '1.3' }}>
-            Custom Apps<br />&amp; Tools
+            Custom<br />Apps &amp; Tools
           </p>
           <h1 className="hero__headline" style={{ color: '#ffffff', fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: '16px' }}>
-            Built for Your<br />Business.
+            Built for<br />Your Business.
           </h1>
           <p className="card-text" style={{ marginBottom: '28px', marginTop: '0' }}>
-            No templates. Built from scratch for how you actually work.
+            No templates. Built from scratch for how you work.
           </p>
           <a href="#discovery" className="btn btn--primary">
             Book a free discovery call
@@ -106,10 +106,8 @@ function HowItWorks() {
           <div className="step-stack" style={{ marginTop: '-10px' }}>
             {steps.map(step => (
               <div key={step.number} className="step-item">
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr', alignItems: 'baseline', gap: '10px', marginBottom: '10px' }}>
-                  <span className="step-item__number" style={{ fontSize: '32px', textAlign: 'right' }}>{step.number}</span>
+                <div style={{ marginBottom: '10px', textAlign: 'center' }}>
                   <h3 className="step-item__title" style={{ fontSize: '27.7px', textAlign: 'center' }}>{step.title}</h3>
-                  <span style={{ fontSize: '32px', visibility: 'hidden' }}>{step.number}</span>
                 </div>
                 <p className="step-item__text">{step.text}</p>
               </div>
@@ -137,7 +135,7 @@ function CaseStudyModal({ onClose }) {
         <button className="modal__close" onClick={onClose} aria-label="Close">
           &#x2715;
         </button>
-        <span className="card-label" style={{ fontSize: '1.25em', textTransform: 'none', fontFamily: "'Playfair Display', serif", fontStyle: 'italic', fontWeight: '400', letterSpacing: '0.05em' }}>Case Study</span>
+        <span className="card-label" style={{ fontSize: '1.375em', textTransform: 'none', fontFamily: "'Playfair Display', serif", fontWeight: '400', letterSpacing: '0.05em' }}>Case Study</span>
         <h2 className="modal__title">McKenzie Arm Care</h2>
         <p className="modal__text">
           A custom patient-care web app built for a clinician who needed more
@@ -166,8 +164,8 @@ function CaseStudy() {
     <section className="section">
       <div className="container">
         <div className="site-card">
-          <h2 className="card-heading">Built for Real Work</h2>
-          <span className="card-label" style={{ fontSize: '1.25em', textTransform: 'none', fontFamily: "'Playfair Display', serif", fontStyle: 'italic', fontWeight: '400', letterSpacing: '0.05em' }}>Case Study</span>
+          <h2 className="card-heading">Built for<br />Real Work</h2>
+          <span className="card-label" style={{ fontSize: '1.375em', textTransform: 'none', fontFamily: "'Playfair Display', serif", fontWeight: '400', letterSpacing: '0.05em' }}>Case Study</span>
           <h3 className="card-title">McKenzie Arm Care</h3>
           <p className="card-text">
             A custom patient-care portal for a clinician who needed more than a
