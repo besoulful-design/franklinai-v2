@@ -42,7 +42,7 @@ function Nav() {
   return (
     <nav className="site-nav" style={{ padding: '10px 24px' }}>
       <div className="site-nav__inner">
-        <a href="/" className="site-nav__brand" style={{ gap: '4px', marginLeft: '10px' }}>
+        <a href="/" className="site-nav__brand" style={{ gap: '4px', marginLeft: '30px' }}>
           <KiteLogo size={190} className="site-nav__logo" />
           <div className="site-nav__wordmark" style={{ marginTop: '-24px' }}>
             <span className="site-nav__name" style={{ fontSize: 'clamp(48px, 4.6vw, 60px)' }}>
@@ -61,7 +61,7 @@ function Hero() {
     <section className="section">
       <div className="container">
         <div className="site-card">
-          <p style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(33px, 4.95vw, 49.5px)', fontWeight: '700', letterSpacing: '0.04em', color: '#60a5fa', marginBottom: '14px', lineHeight: '1.3' }}>
+          <p style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(36px, 5.4vw, 54px)', fontWeight: '700', letterSpacing: '0.04em', color: '#60a5fa', marginBottom: '14px', lineHeight: '1.3' }}>
             Custom<br />Apps &amp; Tools
           </p>
           <h1 className="hero__headline" style={{ color: '#ffffff', fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: '16px' }}>
@@ -187,7 +187,7 @@ function About() {
     <section className="section">
       <div className="container">
         <div className="site-card">
-          <h2 className="card-heading" style={{ fontSize: 'clamp(53px, 6.5vw, 75px)' }}>About</h2>
+          <h2 className="card-heading" style={{ fontSize: 'clamp(35px, 4.375vw, 50px)' }}>About</h2>
           <h3 className="card-title" style={{ marginTop: '-14px' }}>David Peterson</h3>
           <p className="card-text">
             David has spent 30 years building and running the systems that keep
@@ -213,7 +213,7 @@ function DiscoveryCTA() {
     <section className="section" id="discovery">
       <div className="container">
         <div className="site-card">
-          <h2 className="card-heading">Let's Build Something for Your Business.</h2>
+          <h2 className="card-heading">Let's Build<br />Something for<br />Your Business.</h2>
           <p className="card-text">
             Every project starts with a conversation. Tell us what you need or what's not working,
             and we'll figure out what to build.
