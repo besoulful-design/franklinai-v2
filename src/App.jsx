@@ -135,7 +135,7 @@ function CaseStudyModal({ onClose }) {
         <button className="modal__close" onClick={onClose} aria-label="Close">
           &#x2715;
         </button>
-        <span className="card-label" style={{ fontSize: '1.375em', textTransform: 'none', fontFamily: "'Playfair Display', serif", fontWeight: '400', letterSpacing: '0.05em' }}>Case Study</span>
+        <span className="card-label" style={{ fontSize: '1.375em', textTransform: 'none', fontFamily: "'Playfair Display', serif", fontWeight: '400', letterSpacing: '0.05em', color: '#8899b0' }}>Case Study</span>
         <h2 className="modal__title">McKenzie Arm Care</h2>
         <p className="modal__text">
           A custom patient-care web app built for a clinician who needed more
@@ -164,8 +164,8 @@ function CaseStudy() {
     <section className="section">
       <div className="container">
         <div className="site-card">
-          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: '8px' }}>Built for<br />Real Work</h2>
-          <span className="card-label" style={{ fontSize: '1.375em', textTransform: 'none', fontFamily: "'Playfair Display', serif", fontWeight: '400', letterSpacing: '0.05em' }}>Case Study</span>
+          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: '2px' }}>Real Work</h2>
+          <span className="card-label" style={{ fontSize: '1.375em', textTransform: 'none', fontFamily: "'Playfair Display', serif", fontWeight: '400', letterSpacing: '0.05em', color: '#8899b0' }}>Case Study</span>
           <h3 className="card-title">McKenzie Arm Care</h3>
           <p className="card-text">
             A custom patient-care portal for a clinician who needed more than a
@@ -213,7 +213,7 @@ function DiscoveryCTA() {
     <section className="section" id="discovery">
       <div className="container">
         <div className="site-card">
-          <h2 className="card-heading">Let's Build<br />Something for<br />Your Business.</h2>
+          <h2 className="card-heading">Let's Build<br />Your Next App or Tool.</h2>
           <p className="card-text">
             Every project starts with a conversation. Tell us what you need or what's not working,
             and we'll figure out what to build.
