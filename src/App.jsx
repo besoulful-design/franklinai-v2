@@ -41,9 +41,9 @@ function KiteLogo({ size = 48, className = '' }) {
 function EmailOption({ style }) {
   return (
     <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', color: '#8892a4', marginTop: '18px', ...style }}>
-      Not ready to schedule?{' '}
+      Not ready to schedule?<br />
       <a href="mailto:david@franklinaisolutions.com" style={{ color: '#60a5fa', textDecoration: 'none', fontWeight: '600' }}>
-        Email me directly
+        Email me directly.
       </a>
     </p>
   );
@@ -78,11 +78,11 @@ function Hero() {
           <h1 className="hero__headline" style={{ color: '#ffffff', fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: '16px' }}>
             Built for<br />Your Business.
           </h1>
-          <p className="card-text" style={{ marginBottom: '28px', marginTop: '0' }}>
+          <p className="card-text" style={{ marginBottom: '14px', marginTop: '0' }}>
             No templates. Built from scratch for how you work.
           </p>
           <a href="https://cal.com/david-peterson-40s7lw/free-discovery-call" target="_blank" rel="noopener noreferrer" className="btn btn--primary">
-            Book a free discovery call
+            Book a free discovery call.
           </a>
           <EmailOption />
         </div>
@@ -190,8 +190,8 @@ function CaseStudy() {
             spreadsheet. Patient journaling, symptom tracking, in-app messaging,
             and smart admin alerts.
           </p>
-          <button className="btn btn--ghost" onClick={() => setOpen(true)}>
-            Read the full case study
+          <button className="btn btn--ghost" onClick={() => setOpen(true)} style={{ marginTop: '16px' }}>
+            Read the full case study.
           </button>
         </div>
       </div>
@@ -285,13 +285,13 @@ function DiscoveryCTA() {
     <section className="section" id="discovery">
       <div className="container">
         <div className="site-card">
-          <h2 className="card-heading">Let's Build<br />Your Next App or Tool.</h2>
+          <h2 className="card-heading">Let's Build.</h2>
           <p className="card-text">
             Every project starts with a conversation. Tell us what you need or what's not working,
             and we'll figure out what to build.
           </p>
-          <a href="https://cal.com/david-peterson-40s7lw/free-discovery-call" target="_blank" rel="noopener noreferrer" className="btn btn--primary" style={{ marginTop: '32px' }}>
-            Book a free discovery call
+          <a href="https://cal.com/david-peterson-40s7lw/free-discovery-call" target="_blank" rel="noopener noreferrer" className="btn btn--primary" style={{ marginTop: '16px' }}>
+            Book a free discovery call.
           </a>
           <EmailOption />
         </div>
