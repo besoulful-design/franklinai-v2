@@ -75,7 +75,7 @@ function Hero() {
           <p style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(36px, 5.4vw, 54px)', fontWeight: '700', letterSpacing: '0.04em', color: '#60a5fa', marginBottom: '14px', lineHeight: '1.3' }}>
             Custom<br />Apps &amp; Tools
           </p>
-          <h1 className="hero__headline" style={{ color: '#ffffff', fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: '16px' }}>
+          <h1 className="hero__headline" style={{ color: '#ffffff', fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: '10px' }}>
             Built for<br />Your Business.
           </h1>
           <p className="card-text" style={{ marginBottom: 'clamp(4px, 1vw, 8px)', marginTop: '0' }}>
@@ -256,7 +256,7 @@ function About() {
               borderRadius: '50%',
               objectFit: 'cover',
               display: 'block',
-              margin: '12px auto 16px',
+              margin: '4px auto 16px',
               border: '3px solid rgba(96, 165, 250, 0.3)'
             }}
           />
