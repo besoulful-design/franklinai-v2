@@ -322,10 +322,10 @@ function Footer() {
         }}
       >
         <span style={{ flexShrink: 0, display: 'flex' }}>
-          <KiteLogo size={100} />
+          <KiteLogo size={105} />
         </span>
 
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '20px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '21px' }}>
           <a
             href="/"
             style={{
@@ -340,7 +340,7 @@ function Footer() {
               style={{
                 fontFamily: "'Playfair Display', serif",
                 fontWeight: 700,
-                fontSize: '30px',
+                fontSize: '32px',
                 color: '#ffffff',
                 lineHeight: 1
               }}
@@ -351,7 +351,7 @@ function Footer() {
               style={{
                 fontFamily: "'Playfair Display', serif",
                 fontWeight: 400,
-                fontSize: '14px',
+                fontSize: '15px',
                 letterSpacing: '0.02em',
                 color: '#8899b0',
                 marginTop: '3px'
@@ -364,7 +364,7 @@ function Footer() {
           <span
             style={{
               fontFamily: "'Inter', sans-serif",
-              fontSize: '11px',
+              fontSize: '13px',
               color: '#8892a4',
               lineHeight: 1.5,
               marginTop: '8px',
@@ -377,7 +377,7 @@ function Footer() {
           <span
             style={{
               fontFamily: "'Inter', sans-serif",
-              fontSize: '11px',
+              fontSize: '13px',
               color: '#8892a4',
               lineHeight: 1.5,
               textAlign: 'center',
