@@ -318,7 +318,7 @@ function Footer() {
           display: 'flex',
           alignItems: 'flex-start',
           gap: '10px',
-          transform: 'translateX(-25px)'
+          transform: 'translateX(-20px)'
         }}
       >
         <span style={{ flexShrink: 0, display: 'flex' }}>
