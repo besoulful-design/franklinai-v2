@@ -78,7 +78,7 @@ function Hero() {
           <h1 className="hero__headline" style={{ color: '#ffffff', fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: '16px' }}>
             Built for<br />Your Business.
           </h1>
-          <p className="card-text" style={{ marginBottom: '14px', marginTop: '0' }}>
+          <p className="card-text" style={{ marginBottom: 'clamp(4px, 1vw, 8px)', marginTop: '0' }}>
             No templates. Built from scratch for how you work.
           </p>
           <a href="https://cal.com/david-peterson-40s7lw/free-discovery-call" target="_blank" rel="noopener noreferrer" className="btn btn--primary">
@@ -251,16 +251,16 @@ function About() {
             src="/david.png"
             alt="David Peterson, founder of FranklinAI"
             style={{
-              width: '160px',
-              height: '160px',
+              width: '120px',
+              height: '120px',
               borderRadius: '50%',
               objectFit: 'cover',
               display: 'block',
-              margin: '16px auto 30px',
+              margin: '12px auto 16px',
               border: '3px solid rgba(96, 165, 250, 0.3)'
             }}
           />
-          <h3 className="card-title" style={{ marginTop: '-14px' }}>David Peterson</h3>
+          <h3 className="card-title" style={{ marginTop: '-8px' }}>David Peterson</h3>
           <p className="card-text">
             David has spent 30 years building and running the systems that keep
             organizations moving across research, education, healthcare, and
@@ -290,7 +290,7 @@ function DiscoveryCTA() {
             Every project starts with a conversation. Tell us what you need or what's not working,
             and we'll figure out what to build.
           </p>
-          <a href="https://cal.com/david-peterson-40s7lw/free-discovery-call" target="_blank" rel="noopener noreferrer" className="btn btn--primary" style={{ marginTop: '16px' }}>
+          <a href="https://cal.com/david-peterson-40s7lw/free-discovery-call" target="_blank" rel="noopener noreferrer" className="btn btn--primary" style={{ marginTop: 'clamp(4px, 1vw, 8px)' }}>
             Book a free discovery call.
           </a>
           <EmailOption />
