@@ -72,7 +72,7 @@ function Hero() {
     <section className="section">
       <div className="container">
         <div className="site-card" style={{ paddingTop: '20px' }}>
-          <p style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(36px, 5.4vw, 54px)', fontWeight: '700', letterSpacing: '0.04em', color: '#60a5fa', marginBottom: '14px', lineHeight: '1.3' }}>
+          <p style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(36px, 5.5vw, 58px)', fontWeight: '700', letterSpacing: '0.04em', color: '#60a5fa', marginBottom: '14px', lineHeight: '1.3' }}>
             Custom<br />Apps &amp; Tools
           </p>
           <h1 className="hero__headline" style={{ color: '#ffffff', fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: '10px' }}>
@@ -256,7 +256,7 @@ function About() {
               borderRadius: '50%',
               objectFit: 'cover',
               display: 'block',
-              margin: '8px auto 10px',
+              margin: '-12px auto 10px',
               border: '3px solid rgba(96, 165, 250, 0.3)'
             }}
           />
