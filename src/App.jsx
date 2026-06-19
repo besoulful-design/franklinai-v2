@@ -317,8 +317,8 @@ function Footer() {
         style={{
           display: 'flex',
           alignItems: 'flex-start',
-          gap: '10px',
-          transform: 'translateX(-12px)'
+          gap: '4px',
+          transform: 'translateX(-8px)'
         }}
       >
         <span style={{ flexShrink: 0, display: 'flex' }}>
@@ -367,9 +367,7 @@ function Footer() {
               fontSize: '13px',
               color: '#8892a4',
               lineHeight: 1.5,
-              marginTop: '8px',
-              textAlign: 'center',
-              width: '100%'
+              marginTop: '8px'
             }}
           >
             franklinaisolutions.com
@@ -379,9 +377,7 @@ function Footer() {
               fontFamily: "'Inter', sans-serif",
               fontSize: '13px',
               color: '#8892a4',
-              lineHeight: 1.5,
-              textAlign: 'center',
-              width: '100%'
+              lineHeight: 1.5
             }}
           >
             &copy; {year} FranklinAI
