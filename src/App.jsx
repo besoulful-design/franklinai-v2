@@ -312,13 +312,15 @@ function Footer() {
         justifyContent: 'center'
       }}
     >
-      {/* kite + text column, nudged left for optical centering (single value, desktop + mobile) */}
+      {/* kite + text column. The text column sits ~24px right of the lockup's center
+          (half the kite width + gap), so translateX(-24px) lands the wordmark AND the
+          fine print on the page's true center. Single dial, desktop + mobile. */}
       <div
         style={{
           display: 'flex',
           alignItems: 'flex-start',
           gap: '4px',
-          transform: 'translateX(-8px)'
+          transform: 'translateX(-24px)'
         }}
       >
         <span style={{ flexShrink: 0, display: 'flex' }}>
