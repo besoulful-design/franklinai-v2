@@ -71,7 +71,7 @@ function Hero() {
   return (
     <section className="section">
       <div className="container">
-        <div className="site-card">
+        <div className="site-card" style={{ paddingTop: '20px' }}>
           <p style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(36px, 5.4vw, 54px)', fontWeight: '700', letterSpacing: '0.04em', color: '#60a5fa', marginBottom: '14px', lineHeight: '1.3' }}>
             Custom<br />Apps &amp; Tools
           </p>
@@ -113,8 +113,8 @@ function HowItWorks() {
   return (
     <section className="section">
       <div className="container">
-        <div className="site-card">
-          <h2 className="card-heading" style={{ fontSize: 'clamp(35px, 4.375vw, 50px)' }}>How It Works</h2>
+        <div className="site-card" style={{ paddingTop: '20px' }}>
+          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)' }}>How It Works</h2>
           <div className="step-stack" style={{ marginTop: '-10px' }}>
             {steps.map(step => (
               <div key={step.number} className="step-item">
@@ -181,7 +181,7 @@ function CaseStudy() {
   return (
     <section className="section">
       <div className="container">
-        <div className="site-card">
+        <div className="site-card" style={{ paddingTop: '20px' }}>
           <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: '2px' }}>Real Work</h2>
           <span className="card-label" style={{ fontSize: '1.375em', textTransform: 'none', fontFamily: "'Playfair Display', serif", fontWeight: '400', letterSpacing: '0.05em', color: '#8899b0' }}>Case Study</span>
           <h3 className="card-title">McKenzie Arm Care</h3>
@@ -222,8 +222,8 @@ function Pricing() {
   return (
     <section className="section">
       <div className="container">
-        <div className="site-card">
-          <h2 className="card-heading" style={{ fontSize: 'clamp(40.25px, 5.03vw, 57.5px)' }}>Pricing</h2>
+        <div className="site-card" style={{ paddingTop: '20px' }}>
+          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)' }}>Pricing</h2>
           <div className="step-stack" style={{ marginTop: '-10px' }}>
             {tiers.map(tier => (
               <div key={tier.title} className="step-item">
@@ -245,8 +245,8 @@ function About() {
   return (
     <section className="section">
       <div className="container">
-        <div className="site-card">
-          <h2 className="card-heading" style={{ fontSize: 'clamp(44.25px, 5.53vw, 63.25px)' }}>About</h2>
+        <div className="site-card" style={{ paddingTop: '20px' }}>
+          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)' }}>About</h2>
           <img
             src="/david.png"
             alt="David Peterson, founder of FranklinAI"
@@ -256,11 +256,11 @@ function About() {
               borderRadius: '50%',
               objectFit: 'cover',
               display: 'block',
-              margin: '4px auto 16px',
+              margin: '8px auto 10px',
               border: '3px solid rgba(96, 165, 250, 0.3)'
             }}
           />
-          <h3 className="card-title" style={{ marginTop: '-8px' }}>David Peterson</h3>
+          <h3 className="card-title" style={{ marginTop: '0' }}>David Peterson</h3>
           <p className="card-text">
             David has spent 30 years building and running the systems that keep
             organizations moving across research, education, healthcare, and
@@ -284,8 +284,8 @@ function DiscoveryCTA() {
   return (
     <section className="section" id="discovery">
       <div className="container">
-        <div className="site-card">
-          <h2 className="card-heading">Let's Build.</h2>
+        <div className="site-card" style={{ paddingTop: '20px' }}>
+          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)' }}>Let's Build.</h2>
           <p className="card-text">
             Every project starts with a conversation. Tell us what you need or what's not working,
             and we'll figure out what to build.
