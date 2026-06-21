@@ -57,7 +57,7 @@ function Nav() {
           <span style={{ flexShrink: 0, display: 'flex' }}>
             <KiteLogo size={130} />
           </span>
-          <div className="site-nav__wordmark" style={{ marginTop: 'clamp(2.55px, calc(29.5px - 2.325vw), 7.6px)' }}>
+          <div className="site-nav__wordmark" style={{ marginTop: 'clamp(12.3px, calc(39.25px - 2.325vw), 17.35px)' }}>
             <span className="site-nav__name" style={{ fontSize: 'clamp(39px, 4.14vw, 48px)' }}>
               Franklin<span className="site-nav__ai">AI</span>
             </span>
@@ -329,7 +329,7 @@ function Footer() {
           <KiteLogo size={105} />
         </span>
 
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '5.3px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '13.16px' }}>
           <a
             href="/"
             style={{
