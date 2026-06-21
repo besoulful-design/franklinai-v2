@@ -53,7 +53,7 @@ function Nav() {
   return (
     <nav className="site-nav" style={{ padding: '6px 24px' }}>
       <div className="site-nav__inner">
-        <a href="/" className="site-nav__brand" style={{ gap: '4px', alignItems: 'flex-start', transform: 'translateX(-36px)' }}>
+        <a href="/" className="site-nav__brand" style={{ gap: '4px', alignItems: 'flex-start', transform: 'translateX(-30px)' }}>
           <span style={{ flexShrink: 0, display: 'flex' }}>
             <KiteLogo size={130} />
           </span>
