@@ -95,9 +95,9 @@ function Hero() {
 
 function FinancialClarity() {
   const features = [
-    'The six numbers that actually run your practice, in plain English',
-    'A clear read-out of what they mean and where to focus',
-    'Refreshed monthly, so you\'re never flying blind between billing meetings'
+    'The six numbers that actually run your practice, in plain English.',
+    'A clear read-out of what they mean and where to focus.',
+    'Refreshed monthly, so you\'re never flying blind between billing meetings.'
   ];
 
   return (
@@ -470,8 +470,8 @@ export default function App() {
       <Nav />
       <main>
         <Hero />
-        <FinancialClarity />
         <HowItWorks />
+        <FinancialClarity />
         <CaseStudy />
         <Pricing />
         <About />
