@@ -51,15 +51,15 @@ function EmailOption({ style }) {
 
 function Nav() {
   return (
-    <nav className="site-nav" style={{ padding: '10px 24px' }}>
+    <nav className="site-nav" style={{ padding: '6px 24px' }}>
       <div className="site-nav__inner">
         <a href="/" className="site-nav__brand" style={{ gap: '4px', marginLeft: '18px' }}>
-          <KiteLogo size={190} className="site-nav__logo" />
+          <KiteLogo size={130} className="site-nav__logo" />
           <div className="site-nav__wordmark" style={{ marginTop: '-24px' }}>
-            <span className="site-nav__name" style={{ fontSize: 'clamp(42px, 4.6vw, 60px)' }}>
+            <span className="site-nav__name" style={{ fontSize: 'clamp(34px, 3.6vw, 42px)' }}>
               Franklin<span className="site-nav__ai">AI</span>
             </span>
-            <span className="site-nav__city" style={{ fontSize: 'clamp(18px, 3vw, 22px)', color: '#8899b0' }}>Philadelphia</span>
+            <span className="site-nav__city" style={{ fontSize: 'clamp(15px, 2.4vw, 18px)', color: '#8899b0' }}>Philadelphia</span>
           </div>
         </a>
       </div>
