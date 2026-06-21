@@ -53,7 +53,7 @@ function Nav() {
   return (
     <nav className="site-nav" style={{ padding: '6px 24px' }}>
       <div className="site-nav__inner">
-        <a href="/" className="site-nav__brand" style={{ gap: '4px', alignItems: 'flex-start', transform: 'translateX(-28px)' }}>
+        <a href="/" className="site-nav__brand" style={{ gap: '4px', alignItems: 'flex-start', transform: 'translateX(-36px)' }}>
           <span style={{ flexShrink: 0, display: 'flex' }}>
             <KiteLogo size={130} />
           </span>
@@ -287,7 +287,7 @@ function DiscoveryCTA() {
     <section className="section" id="discovery">
       <div className="container">
         <div className="site-card" style={{ paddingTop: '20px' }}>
-          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)' }}>Let's Build.</h2>
+          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: '10px' }}>Let's Build.</h2>
           <p className="card-text">
             Every project starts with a conversation. Tell us what you need or what's not working,
             and we'll figure out what to build.
