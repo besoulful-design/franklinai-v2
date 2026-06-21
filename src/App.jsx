@@ -56,10 +56,10 @@ function Nav() {
         <a href="/" className="site-nav__brand" style={{ gap: '4px', marginLeft: '18px' }}>
           <KiteLogo size={130} className="site-nav__logo" />
           <div className="site-nav__wordmark" style={{ marginTop: '-24px' }}>
-            <span className="site-nav__name" style={{ fontSize: 'clamp(34px, 3.6vw, 42px)' }}>
+            <span className="site-nav__name" style={{ fontSize: 'clamp(39px, 4.14vw, 48px)' }}>
               Franklin<span className="site-nav__ai">AI</span>
             </span>
-            <span className="site-nav__city" style={{ fontSize: 'clamp(15px, 2.4vw, 18px)', color: '#8899b0' }}>Philadelphia</span>
+            <span className="site-nav__city" style={{ fontSize: 'clamp(17px, 2.76vw, 21px)', color: '#8899b0' }}>Philadelphia</span>
           </div>
         </a>
       </div>
