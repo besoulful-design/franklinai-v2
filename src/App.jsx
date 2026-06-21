@@ -93,6 +93,78 @@ function Hero() {
   );
 }
 
+function FinancialClarity() {
+  const features = [
+    'The six numbers that actually run your practice, in plain English',
+    'A clear read-out of what they mean and where to focus',
+    'Refreshed monthly, so you\'re never flying blind between billing meetings'
+  ];
+
+  return (
+    <section className="section">
+      <div className="container">
+        <div className="site-card" style={{ paddingTop: '20px', position: 'relative', overflow: 'hidden' }}>
+          {/* Top accent bar (clipped to the card's 16px radius by overflow:hidden) */}
+          <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: '#60a5fa' }} />
+
+          {/* Featured Service badge */}
+          <span style={{
+            display: 'inline-block',
+            fontFamily: "'Inter', sans-serif",
+            fontSize: '12px',
+            fontWeight: '600',
+            letterSpacing: '0.08em',
+            color: '#60a5fa',
+            background: 'rgba(96, 165, 250, 0.10)',
+            border: '1px solid rgba(96, 165, 250, 0.18)',
+            borderRadius: '999px',
+            padding: '5px 14px',
+            marginBottom: '14px'
+          }}>
+            Featured Service
+          </span>
+
+          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: '10px' }}>
+            Financial Clarity for Clinics
+          </h2>
+
+          <p className="card-text" style={{ marginTop: '0', marginBottom: '20px', color: '#8892a4' }}>
+            You have an EMR, a billing company, and a stack of spreadsheets, and you
+            still don't fully understand your own numbers. Let's fix that.
+          </p>
+
+          {/* Feature lines: centered block, left-aligned rows with a blue check */}
+          <div style={{ display: 'inline-block', textAlign: 'left', margin: '0 0 22px' }}>
+            {features.map((f, i) => (
+              <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', marginBottom: i < features.length - 1 ? '12px' : '0' }}>
+                <span style={{ color: '#60a5fa', fontWeight: '700', flexShrink: 0, lineHeight: '1.5' }} aria-hidden="true">&#10003;</span>
+                <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', color: '#f0e6d3', lineHeight: '1.5' }}>{f}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* Price block: numbers in blue, descriptors muted, both Playfair */}
+          <div style={{ marginBottom: '20px' }}>
+            <p style={{ fontFamily: "'Playfair Display', serif", fontWeight: '700', fontSize: '22px', color: '#60a5fa', lineHeight: '1.45' }}>
+              $750 <span style={{ fontWeight: '400', fontSize: '16px', color: '#8892a4' }}>to build</span>
+            </p>
+            <p style={{ fontFamily: "'Playfair Display', serif", fontWeight: '700', fontSize: '22px', color: '#60a5fa', lineHeight: '1.45' }}>
+              $400 <span style={{ fontWeight: '400', fontSize: '16px', color: '#8892a4' }}>monthly to keep current</span>
+            </p>
+          </div>
+
+          <a href="https://cal.com/david-peterson-40s7lw/free-discovery-call" target="_blank" rel="noopener noreferrer" className="btn btn--primary">
+            Book a free discovery call.
+          </a>
+          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', color: '#8892a4', marginTop: '18px' }}>
+            See it with your own numbers.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function HowItWorks() {
   const steps = [
     {
@@ -206,13 +278,13 @@ function Pricing() {
   const tiers = [
     {
       title: 'The Build',
-      price: 'From $8,000',
+      price: 'From $10,000',
       text: 'One flat project fee, set up front. No hourly meter, no surprises.'
     },
     {
       title: 'Monthly Care',
-      price: 'From $149 / month',
-      text: 'Optional. Covers hosting, maintenance, and updates.'
+      price: '$350 / month',
+      text: 'Optional. Covers hosting, maintenance, security, and updates.'
     },
     {
       title: 'As You Grow',
@@ -398,6 +470,7 @@ export default function App() {
       <Nav />
       <main>
         <Hero />
+        <FinancialClarity />
         <HowItWorks />
         <CaseStudy />
         <Pricing />
