@@ -84,8 +84,8 @@ function Hero() {
             No templates. Built from scratch for how you work.
           </p>
           <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', color: '#8892a4', marginTop: '0', marginBottom: 'clamp(4px, 1vw, 8px)' }}>
-            Run a healthcare practice?{' '}
-            <a href="#financial-clarity" style={{ color: '#60a5fa', textDecoration: 'none', fontWeight: '600' }}>
+            Run a healthcare practice?<br />
+            <a href="https://franklinaisolutions.com/#financial-clarity" style={{ color: '#60a5fa', textDecoration: 'none', fontWeight: '600' }}>
               Start with Financial Clarity.
             </a>
           </p>
