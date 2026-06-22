@@ -83,6 +83,12 @@ function Hero() {
           <p className="card-text" style={{ marginBottom: 'clamp(4px, 1vw, 8px)', marginTop: '0' }}>
             No templates. Built from scratch for how you work.
           </p>
+          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', color: '#8892a4', marginTop: '0', marginBottom: 'clamp(4px, 1vw, 8px)' }}>
+            Run a healthcare practice?{' '}
+            <a href="#financial-clarity" style={{ color: '#60a5fa', textDecoration: 'none', fontWeight: '600' }}>
+              Start with Financial Clarity.
+            </a>
+          </p>
           <a href="https://cal.com/david-peterson-40s7lw/free-discovery-call" target="_blank" rel="noopener noreferrer" className="btn btn--primary">
             Book a free discovery call.
           </a>
@@ -101,13 +107,10 @@ function FinancialClarity() {
   ];
 
   return (
-    <section className="section">
+    <section className="section" id="financial-clarity">
       <div className="container">
-        <div className="site-card" style={{ paddingTop: '20px', position: 'relative', overflow: 'hidden' }}>
-          {/* Top accent bar (clipped to the card's 16px radius by overflow:hidden) */}
-          <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: '#60a5fa' }} />
-
-          {/* Featured Service badge */}
+        <div className="site-card" style={{ paddingTop: '20px' }}>
+          {/* Available Now badge */}
           <span style={{
             display: 'inline-block',
             fontFamily: "'Inter', sans-serif",
@@ -121,7 +124,7 @@ function FinancialClarity() {
             padding: '5px 14px',
             marginBottom: '14px'
           }}>
-            Featured Service
+            Available Now
           </span>
 
           <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: '10px' }}>
@@ -297,7 +300,7 @@ function Pricing() {
     <section className="section">
       <div className="container">
         <div className="site-card" style={{ paddingTop: '20px' }}>
-          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)' }}>Pricing</h2>
+          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)' }}>Custom Pricing</h2>
           <div className="step-stack" style={{ marginTop: '-10px' }}>
             {tiers.map(tier => (
               <div key={tier.title} className="step-item">
@@ -471,9 +474,9 @@ export default function App() {
       <main>
         <Hero />
         <HowItWorks />
-        <FinancialClarity />
         <CaseStudy />
         <Pricing />
+        <FinancialClarity />
         <About />
         <DiscoveryCTA />
       </main>
