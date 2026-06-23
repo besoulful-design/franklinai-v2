@@ -146,10 +146,10 @@ function FinancialClarity() {
           {/* Price block */}
           <div style={{ marginBottom: '20px' }}>
             <p style={{ fontFamily: "'Playfair Display', serif", fontWeight: '700', fontSize: '27.7px', color: '#60a5fa', lineHeight: '1.45' }}>
-              $750 to build
+              $750 <span style={{ fontSize: '20px' }}>to build</span>
             </p>
             <p style={{ fontFamily: "'Playfair Display', serif", fontWeight: '700', fontSize: '27.7px', color: '#60a5fa', lineHeight: '1.45' }}>
-              $400 monthly to keep current
+              $400 <span style={{ fontSize: '20px' }}>monthly to keep current</span>
             </p>
           </div>
 
@@ -278,13 +278,15 @@ function Pricing() {
   const tiers = [
     {
       title: 'The Build',
-      price: 'From $10,000',
+      pricePrefix: 'From',
+      price: '$10,000',
       text: 'One flat project fee, set up front. No hourly meter, no surprises.',
       subtext: 'New features quoted and built one at a time, as you grow.'
     },
     {
       title: 'Monthly Care',
-      price: '$350 / month',
+      price: '$350',
+      priceSuffix: '/ month',
       text: 'Optional. Covers hosting, maintenance, security, and updates.'
     }
   ];
@@ -299,7 +301,11 @@ function Pricing() {
               <div key={tier.title} className="step-item">
                 <div style={{ marginBottom: '6px', textAlign: 'center' }}>
                   <h3 className="step-item__title" style={{ fontSize: '27.7px', textAlign: 'center' }}>{tier.title}</h3>
-                  <p style={{ fontFamily: "'Playfair Display', serif", fontWeight: '700', fontSize: '27.7px', color: '#60a5fa', marginTop: '4px' }}>{tier.price}</p>
+                  <p style={{ fontFamily: "'Playfair Display', serif", fontWeight: '700', fontSize: '27.7px', color: '#60a5fa', marginTop: '4px' }}>
+                    {tier.pricePrefix && <span style={{ fontSize: '20px' }}>{tier.pricePrefix} </span>}
+                    {tier.price}
+                    {tier.priceSuffix && <span style={{ fontSize: '20px' }}> {tier.priceSuffix}</span>}
+                  </p>
                 </div>
                 <p className="step-item__text">{tier.text}</p>
                 {tier.subtext && (
