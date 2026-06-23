@@ -146,10 +146,10 @@ function FinancialClarity() {
           {/* Price block */}
           <div style={{ marginBottom: '20px' }}>
             <p style={{ fontFamily: "'Playfair Display', serif", fontWeight: '700', fontSize: '27.7px', color: '#60a5fa', lineHeight: '1.45' }}>
-              $750 <span style={{ fontSize: '20px' }}>to build</span>
+              $750 <span style={{ fontSize: '20px' }}>/ build</span>
             </p>
             <p style={{ fontFamily: "'Playfair Display', serif", fontWeight: '700', fontSize: '27.7px', color: '#60a5fa', lineHeight: '1.45' }}>
-              $400 <span style={{ fontSize: '20px' }}>monthly to keep current</span>
+              $400 <span style={{ fontSize: '20px' }}>/ month</span>
             </p>
           </div>
 
