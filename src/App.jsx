@@ -143,13 +143,13 @@ function FinancialClarity() {
             ))}
           </div>
 
-          {/* Price block: numbers in blue, descriptors muted, both Playfair */}
+          {/* Price block */}
           <div style={{ marginBottom: '20px' }}>
             <p style={{ fontFamily: "'Playfair Display', serif", fontWeight: '700', fontSize: '27.7px', color: '#60a5fa', lineHeight: '1.45' }}>
-              $750 <span style={{ fontWeight: '400', fontSize: '18px', color: '#8892a4' }}>to build</span>
+              $750 to build
             </p>
             <p style={{ fontFamily: "'Playfair Display', serif", fontWeight: '700', fontSize: '27.7px', color: '#60a5fa', lineHeight: '1.45' }}>
-              $400 <span style={{ fontWeight: '400', fontSize: '18px', color: '#8892a4' }}>monthly to keep current</span>
+              $400 monthly to keep current
             </p>
           </div>
 
