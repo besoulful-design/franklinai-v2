@@ -128,13 +128,13 @@ function FinancialClarity() {
             Financial Clarity for Clinics
           </h2>
 
-          <p className="card-text" style={{ marginTop: '0', marginBottom: '20px', color: '#8892a4' }}>
+          <p className="card-text" style={{ marginTop: '0', marginBottom: '12px', color: '#8892a4' }}>
             You have an EMR, a billing company, and a stack of spreadsheets, and you
             still don't fully understand your own numbers. Let's fix that.
           </p>
 
           {/* Feature lines: centered block, left-aligned rows with a blue check */}
-          <div style={{ display: 'inline-block', textAlign: 'left', margin: '0 0 22px' }}>
+          <div style={{ display: 'inline-block', textAlign: 'left', margin: '0 0 14px' }}>
             {features.map((f, i) => (
               <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', marginBottom: i < features.length - 1 ? '12px' : '0' }}>
                 <span style={{ color: '#60a5fa', fontWeight: '700', flexShrink: 0, lineHeight: '1.5' }} aria-hidden="true">&#10003;</span>
