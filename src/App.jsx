@@ -279,7 +279,8 @@ function Pricing() {
     {
       title: 'The Build',
       price: 'From $10,000',
-      text: 'One flat project fee, set up front. No hourly meter, no surprises.'
+      text: 'One flat project fee, set up front. No hourly meter, no surprises.',
+      subtext: 'New features quoted and built one at a time, as you grow.'
     },
     {
       title: 'Monthly Care',
@@ -301,12 +302,14 @@ function Pricing() {
                   <p style={{ fontFamily: "'Playfair Display', serif", fontWeight: '700', fontSize: '22px', color: '#60a5fa', marginTop: '4px' }}>{tier.price}</p>
                 </div>
                 <p className="step-item__text">{tier.text}</p>
+                {tier.subtext && (
+                  <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', color: '#8892a4', marginTop: '0' }}>
+                    {tier.subtext}
+                  </p>
+                )}
               </div>
             ))}
           </div>
-          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', color: '#8892a4', marginTop: '0' }}>
-            New features quoted and built one at a time, as you grow.
-          </p>
         </div>
       </div>
     </section>
