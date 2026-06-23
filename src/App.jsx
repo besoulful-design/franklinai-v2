@@ -43,7 +43,7 @@ function EmailOption({ style }) {
     <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', color: '#8892a4', marginTop: '18px', ...style }}>
       Not ready to schedule?<br />
       <a href="mailto:david@franklinaisolutions.com" style={{ color: '#60a5fa', textDecoration: 'none', fontWeight: '600' }}>
-        Email me directly.
+        Email me.
       </a>
     </p>
   );
@@ -80,9 +80,6 @@ function Hero() {
           <h1 className="hero__headline" style={{ color: '#ffffff', fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: '10px' }}>
             Built for<br />Your Business.
           </h1>
-          <p className="card-text" style={{ marginBottom: 'clamp(4px, 1vw, 8px)', marginTop: '0' }}>
-            No templates. Built from scratch for how you work.
-          </p>
           <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', color: '#8892a4', marginTop: '0', marginBottom: 'clamp(4px, 1vw, 8px)' }}>
             Run a healthcare practice?<br />
             <a href="https://franklinaisolutions.com/#financial-clarity" style={{ color: '#60a5fa', textDecoration: 'none', fontWeight: '600' }}>
