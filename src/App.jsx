@@ -299,7 +299,7 @@ function Pricing() {
               <div key={tier.title} className="step-item">
                 <div style={{ marginBottom: '6px', textAlign: 'center' }}>
                   <h3 className="step-item__title" style={{ fontSize: '27.7px', textAlign: 'center' }}>{tier.title}</h3>
-                  <p style={{ fontFamily: "'Playfair Display', serif", fontWeight: '700', fontSize: '22px', color: '#60a5fa', marginTop: '4px' }}>{tier.price}</p>
+                  <p style={{ fontFamily: "'Playfair Display', serif", fontWeight: '700', fontSize: '27.7px', color: '#60a5fa', marginTop: '4px' }}>{tier.price}</p>
                 </div>
                 <p className="step-item__text">{tier.text}</p>
                 {tier.subtext && (
