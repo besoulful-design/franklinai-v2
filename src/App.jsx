@@ -258,7 +258,7 @@ function CaseStudy() {
         <div className="site-card" style={{ paddingTop: '20px' }}>
           <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: '2px' }}>Real Work</h2>
           <span className="card-label" style={{ fontSize: '1.375em', textTransform: 'none', fontFamily: "'Playfair Display', serif", fontWeight: '400', letterSpacing: '0.05em', color: '#8899b0' }}>Case Study</span>
-          <h3 className="card-title">McKenzie Arm Care</h3>
+          <h3 className="card-title" style={{ fontSize: 'clamp(24px, 4vw, 28px)' }}>McKenzie Arm Care</h3>
           <p className="card-text">
             A custom patient-care portal for a clinician who needed more than a
             spreadsheet. Patient journaling, symptom tracking, in-app messaging,
@@ -341,7 +341,7 @@ function About() {
               border: '3px solid rgba(96, 165, 250, 0.3)'
             }}
           />
-          <h3 className="card-title" style={{ marginTop: '0' }}>David Peterson</h3>
+          <h3 className="card-title" style={{ marginTop: '0', fontSize: 'clamp(24px, 4vw, 28px)' }}>David Peterson</h3>
           <p className="card-text">
             David has spent 30 years building and running the systems that keep
             organizations moving across research, education, healthcare, and
