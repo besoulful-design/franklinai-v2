@@ -180,7 +180,7 @@ function HowItWorks() {
     {
       number: '03',
       title: 'Grow',
-      text: 'After launch, we handle hosting and maintenance. As your business evolves, new features get scoped and built. One at a time, on your terms.'
+      text: 'After launch, we handle hosting and maintenance. As your business evolves, new features get scoped and built on your terms.'
     }
   ];
 
@@ -285,11 +285,6 @@ function Pricing() {
       title: 'Monthly Care',
       price: '$350 / month',
       text: 'Optional. Covers hosting, maintenance, security, and updates.'
-    },
-    {
-      title: 'As You Grow',
-      price: 'Quoted per feature',
-      text: 'New features scoped and built one at a time, on your terms.'
     }
   ];
 
@@ -309,6 +304,9 @@ function Pricing() {
               </div>
             ))}
           </div>
+          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', color: '#8892a4', marginTop: '0' }}>
+            New features quoted and built one at a time, as you grow.
+          </p>
         </div>
       </div>
     </section>
