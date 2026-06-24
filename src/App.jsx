@@ -78,18 +78,14 @@ function Hero() {
             Custom<br />Apps &amp; Tools
           </p>
           <h1 className="hero__headline" style={{ color: '#ffffff', fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: '10px' }}>
-            Built for<br />Your Business.
+            Built for<br />Your Practice.
           </h1>
           <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', color: '#8892a4', marginTop: '0', marginBottom: 'clamp(4px, 1vw, 8px)' }}>
-            Run a healthcare practice?<br />
-            <a href="https://franklinaisolutions.com/#financial-clarity" style={{ color: '#60a5fa', textDecoration: 'none', fontWeight: '600' }}>
-              Start with Financial Clarity.
-            </a>
+            Built to handle HIPAA.
           </p>
           <a href="https://cal.com/david-peterson-40s7lw/free-discovery-call" target="_blank" rel="noopener noreferrer" className="btn btn--primary">
             Book a free discovery call.
           </a>
-          <EmailOption />
         </div>
       </div>
     </section>
@@ -477,10 +473,10 @@ export default function App() {
       <Nav />
       <main>
         <Hero />
-        <HowItWorks />
-        <CaseStudy />
-        <Pricing />
         <FinancialClarity />
+        <CaseStudy />
+        <HowItWorks />
+        <Pricing />
         <About />
         <DiscoveryCTA />
       </main>
