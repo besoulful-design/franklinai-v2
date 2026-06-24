@@ -469,7 +469,7 @@ function Footer() {
 
 export default function App() {
   return (
-    <>
+    <div style={{ WebkitTextSizeAdjust: '100%' }}>
       <Nav />
       <main>
         <Hero />
@@ -481,6 +481,6 @@ export default function App() {
         <DiscoveryCTA />
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
