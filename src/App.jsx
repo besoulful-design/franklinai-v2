@@ -181,10 +181,10 @@ function Hero() {
     <section className="section">
       <div className="container">
         <div className="site-card" style={{ paddingTop: '20px' }}>
-          <p style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(36px, 5.5vw, 58px)', fontWeight: '700', letterSpacing: '0.04em', color: '#60a5fa', marginBottom: '14px', lineHeight: '1.3' }}>
+          <p style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(40px, 6vw, 64px)', fontWeight: '700', letterSpacing: '0.04em', color: '#60a5fa', marginBottom: '14px', lineHeight: '1.3' }}>
             Custom<br />Apps &amp; Tools
           </p>
-          <h1 className="hero__headline" style={{ color: '#ffffff', fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: '10px' }}>
+          <h1 className="hero__headline" style={{ color: '#ffffff', fontSize: 'clamp(30px, 4.6vw, 46px)', marginBottom: '10px' }}>
             Built for<br />Your Practice.
           </h1>
           <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', color: '#8892a4', marginTop: '0', marginBottom: 'clamp(4px, 1vw, 8px)' }}>
@@ -208,7 +208,7 @@ function AvailableForPractice() {
       <div className="container">
         <div className="site-card" style={{ paddingTop: '20px' }}>
           <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: '18px' }}>
-            Available Now
+            Let Us Help Grow Your Business
           </h2>
 
           {/* GlowPT */}
