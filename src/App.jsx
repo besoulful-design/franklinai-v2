@@ -207,7 +207,7 @@ function AvailableForPractice() {
     <section className="section" id="financial-clarity">
       <div className="container">
         <div className="site-card" style={{ paddingTop: '20px' }}>
-          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: '28px' }}>
+          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: '18px' }}>
             Available for<br />Your Practice.
           </h2>
 
@@ -471,15 +471,15 @@ function Footer() {
         justifyContent: 'center'
       }}
     >
-      {/* kite + text column. The text column sits ~24px right of the lockup's center
-          (half the kite width + gap), so translateX(-24px) lands the wordmark AND the
-          fine print on the page's true center. Single dial, desktop + mobile. */}
+      {/* kite + text column. The text column sits right of the lockup's center
+          (half the kite width + gap), so this translateX lands the wordmark AND the
+          fine print near the page's center. Single dial, desktop + mobile. */}
       <div
         style={{
           display: 'flex',
           alignItems: 'flex-start',
           gap: '4px',
-          transform: 'translateX(-22px)'
+          transform: 'translateX(-18px)'
         }}
       >
         <span style={{ flexShrink: 0, display: 'flex' }}>
