@@ -57,13 +57,13 @@ function GlowPTModal({ onClose }) {
   }, []);
 
   const features = [
-    'A 30-second daily check-in for every patient.',
-    'Warm, encouraging feedback, written by AI.',
-    'A private journal of every past day.',
-    'A weekly read on the whole roster, sent to the clinic.',
-    'A clinic dashboard to follow activity, trends, and flags.',
-    'Patient login with a personal exercise plan.',
-    'One subscription covers the clinic. Patients join free.'
+    'A 30-second daily check-in, with warm encouragement that keeps patients coming back.',
+    'A private journal and a personal exercise plan, in every patient\'s pocket.',
+    'One subscription covers the clinic. Patients join free.',
+    'Reaches every patient, not just the ones you can bill remote monitoring on.',
+    'More completed plans of care, because engaged patients finish their care.',
+    'Zero work for your therapists. No building, no monitoring, no calls.',
+    'A free weekly roster summary and a clinic dashboard to follow activity, trends, and flags.'
   ];
 
   return (
@@ -77,12 +77,10 @@ function GlowPTModal({ onClose }) {
           Clinic subscriptions available.
         </p>
         <p className="modal__text">
-          A daily check-in app that physical therapy clinics give their patients,
-          so recovery doesn't drift between visits. Better daily compliance means
-          more patients finishing their plans of care, which is what keeps a clinic
-          full and its episodes of care complete. Each patient checks in in under a
-          minute and gets warm, encouraging feedback, while the clinic sees how its
-          whole roster is doing.
+          Patients walk out doing great, then drift off before their plan of
+          care is done. GlowPT keeps them engaged between visits, so more of
+          them finish. Completed plans of care are what keep a clinic full and
+          its episodes complete.
         </p>
         <div style={{ marginBottom: '24px' }}>
           {features.map((f, i) => (
