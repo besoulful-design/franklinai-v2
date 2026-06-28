@@ -208,12 +208,12 @@ function AvailableForPractice() {
       <div className="container">
         <div className="site-card" style={{ paddingTop: '20px' }}>
           <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: '18px' }}>
-            Available for<br />Your Practice.
+            Available Now
           </h2>
 
           {/* GlowPT */}
           <div>
-            <h3 style={{ fontFamily: "'Playfair Display', serif", fontWeight: '800', fontSize: 'clamp(32.5px, 5.5vw, 40px)', color: '#ffffff', lineHeight: '1.2', marginBottom: '8px' }}>
+            <h3 style={{ fontFamily: "'Playfair Display', serif", fontWeight: '800', fontSize: 'clamp(24px, 4vw, 28px)', color: '#ffffff', lineHeight: '1.2', marginBottom: '8px' }}>
               GlowPT
             </h3>
             <p className="card-text" style={{ marginTop: '0', marginBottom: '18px', color: '#8892a4' }}>
@@ -229,7 +229,7 @@ function AvailableForPractice() {
 
           {/* Financial Clarity */}
           <div style={{ paddingTop: '32px' }}>
-            <h3 style={{ fontFamily: "'Playfair Display', serif", fontWeight: '800', fontSize: 'clamp(32.5px, 5.5vw, 40px)', color: '#ffffff', lineHeight: '1.2', marginBottom: '8px' }}>
+            <h3 style={{ fontFamily: "'Playfair Display', serif", fontWeight: '800', fontSize: 'clamp(24px, 4vw, 28px)', color: '#ffffff', lineHeight: '1.2', marginBottom: '8px' }}>
               Financial<br />Clarity
             </h3>
             <p className="card-text" style={{ marginTop: '0', marginBottom: '18px', color: '#8892a4' }}>
@@ -276,7 +276,7 @@ function HowItWorks() {
             {steps.map(step => (
               <div key={step.number} className="step-item">
                 <div style={{ marginBottom: '10px', textAlign: 'center' }}>
-                  <h3 className="step-item__title" style={{ fontSize: '27.7px', textAlign: 'center' }}>{step.title}</h3>
+                  <h3 className="step-item__title" style={{ fontSize: 'clamp(24px, 4vw, 28px)', textAlign: 'center' }}>{step.title}</h3>
                 </div>
                 <p className="step-item__text">{step.text}</p>
               </div>
@@ -339,7 +339,7 @@ function CustomWork() {
       <div className="container">
         <div className="site-card" style={{ paddingTop: '20px' }}>
           <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: '10px' }}>Custom Work</h2>
-          <h3 className="card-title" style={{ fontSize: 'clamp(24px, 4vw, 28px)' }}>McKenzie Arm Care</h3>
+          <h3 className="card-title" style={{ fontSize: 'clamp(24px, 4vw, 28px)' }}>McKenzie<br />Arm Care</h3>
           <p className="card-text">
             A custom patient-care portal for a clinician who needed more than a
             spreadsheet. Patient journaling, symptom tracking, in-app messaging,
@@ -381,7 +381,7 @@ function Pricing() {
             {tiers.map(tier => (
               <div key={tier.title} className="step-item">
                 <div style={{ marginBottom: '6px', textAlign: 'center' }}>
-                  <h3 className="step-item__title" style={{ fontSize: '27.7px', textAlign: 'center' }}>{tier.title}</h3>
+                  <h3 className="step-item__title" style={{ fontSize: 'clamp(24px, 4vw, 28px)', textAlign: 'center' }}>{tier.title}</h3>
                   <p style={{ fontFamily: "'Playfair Display', serif", fontWeight: '700', fontSize: '27.7px', color: '#60a5fa', marginTop: '4px' }}>
                     {tier.pricePrefix && <span style={{ fontSize: '20px' }}>{tier.pricePrefix} </span>}
                     {tier.price}
