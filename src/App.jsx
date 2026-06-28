@@ -49,6 +49,115 @@ function EmailOption({ style }) {
   );
 }
 
+function GlowPTModal({ onClose }) {
+  useEffect(() => {
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => { document.body.style.overflow = prev; };
+  }, []);
+
+  const features = [
+    'A 30-second daily check-in for every patient.',
+    'Warm, encouraging feedback, written by AI.',
+    'A private journal of every past day.',
+    'A weekly read on the whole roster, sent to the clinic.',
+    'A clinic dashboard to follow activity, trends, and flags.',
+    'Patient login with a personal exercise plan.',
+    'One subscription covers the clinic. Patients join free.'
+  ];
+
+  return (
+    <div className="modal-backdrop" onClick={onClose}>
+      <div className="modal" onClick={e => e.stopPropagation()}>
+        <button className="modal__close" onClick={onClose} aria-label="Close">
+          &#x2715;
+        </button>
+        <h2 className="modal__title" style={{ marginTop: '6px' }}>GlowPT</h2>
+        <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '14px', fontWeight: '600', color: '#8899b0', marginBottom: '16px' }}>
+          Clinic subscriptions available.
+        </p>
+        <p className="modal__text">
+          A daily check-in app that physical therapy clinics give their patients,
+          so recovery doesn't drift between visits. Better daily compliance means
+          more patients finishing their plans of care, which is what keeps a clinic
+          full and its episodes of care complete. Each patient checks in in under a
+          minute and gets warm, encouraging feedback, while the clinic sees how its
+          whole roster is doing.
+        </p>
+        <div style={{ marginBottom: '24px' }}>
+          {features.map((f, i) => (
+            <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', marginBottom: i < features.length - 1 ? '12px' : '0' }}>
+              <span style={{ color: '#60a5fa', fontWeight: '700', flexShrink: 0, lineHeight: '1.5' }} aria-hidden="true">&#10003;</span>
+              <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', color: '#f0e6d3', lineHeight: '1.5' }}>{f}</span>
+            </div>
+          ))}
+        </div>
+        <div style={{ borderTop: '1px solid rgba(96, 165, 250, 0.12)', paddingTop: '24px', textAlign: 'center' }}>
+          <p style={{ fontFamily: "'Playfair Display', serif", fontWeight: '700', fontSize: '27.7px', color: '#60a5fa', lineHeight: '1.45', marginBottom: '18px' }}>
+            $350 <span style={{ fontSize: '20px' }}>/ month</span>
+          </p>
+          <a href="https://cal.com/david-peterson-40s7lw/free-discovery-call" target="_blank" rel="noopener noreferrer" className="btn btn--primary" style={{ padding: '13px 26px', fontSize: '15px' }}>
+            Book a free discovery call.
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function FCModal({ onClose }) {
+  useEffect(() => {
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => { document.body.style.overflow = prev; };
+  }, []);
+
+  const features = [
+    'The six numbers that actually run your practice, in plain English.',
+    'A clear read-out of what they mean and where to focus.',
+    'Refreshed monthly, so you\'re never flying blind between billing meetings.'
+  ];
+
+  return (
+    <div className="modal-backdrop" onClick={onClose}>
+      <div className="modal" onClick={e => e.stopPropagation()}>
+        <button className="modal__close" onClick={onClose} aria-label="Close">
+          &#x2715;
+        </button>
+        <h2 className="modal__title" style={{ marginTop: '6px' }}>Financial Clarity</h2>
+        <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '14px', fontWeight: '600', color: '#8899b0', marginBottom: '16px' }}>
+          Clinic subscriptions available.
+        </p>
+        <p className="modal__text">
+          You have an EMR, a billing company, and a stack of spreadsheets, and you
+          still don't fully understand your own numbers. Let's fix that.
+        </p>
+        <div style={{ marginBottom: '24px' }}>
+          {features.map((f, i) => (
+            <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', marginBottom: i < features.length - 1 ? '12px' : '0' }}>
+              <span style={{ color: '#60a5fa', fontWeight: '700', flexShrink: 0, lineHeight: '1.5' }} aria-hidden="true">&#10003;</span>
+              <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', color: '#f0e6d3', lineHeight: '1.5' }}>{f}</span>
+            </div>
+          ))}
+        </div>
+        <div style={{ borderTop: '1px solid rgba(96, 165, 250, 0.12)', paddingTop: '24px', textAlign: 'center' }}>
+          <div style={{ marginBottom: '18px' }}>
+            <p style={{ fontFamily: "'Playfair Display', serif", fontWeight: '700', fontSize: '27.7px', color: '#60a5fa', lineHeight: '1.45' }}>
+              $750 <span style={{ fontSize: '20px' }}>/ build</span>
+            </p>
+            <p style={{ fontFamily: "'Playfair Display', serif", fontWeight: '700', fontSize: '27.7px', color: '#60a5fa', lineHeight: '1.45' }}>
+              $400 <span style={{ fontSize: '20px' }}>/ month</span>
+            </p>
+          </div>
+          <a href="https://cal.com/david-peterson-40s7lw/free-discovery-call" target="_blank" rel="noopener noreferrer" className="btn btn--primary" style={{ padding: '13px 26px', fontSize: '15px' }}>
+            Book a free discovery call.
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Nav() {
   return (
     <nav className="site-nav" style={{ padding: '6px 24px' }}>
@@ -92,71 +201,51 @@ function Hero() {
   );
 }
 
-function FinancialClarity() {
-  const features = [
-    'The six numbers that actually run your practice, in plain English.',
-    'A clear read-out of what they mean and where to focus.',
-    'Refreshed monthly, so you\'re never flying blind between billing meetings.'
-  ];
+function AvailableForPractice() {
+  const [glowOpen, setGlowOpen] = useState(false);
+  const [fcOpen, setFcOpen] = useState(false);
 
   return (
     <section className="section" id="financial-clarity">
       <div className="container">
         <div className="site-card" style={{ paddingTop: '20px' }}>
-          {/* Available Now badge */}
-          <span style={{
-            display: 'inline-block',
-            fontFamily: "'Inter', sans-serif",
-            fontSize: '12px',
-            fontWeight: '600',
-            letterSpacing: '0.08em',
-            color: '#60a5fa',
-            background: 'rgba(96, 165, 250, 0.10)',
-            border: '1px solid rgba(96, 165, 250, 0.18)',
-            borderRadius: '999px',
-            padding: '5px 14px',
-            marginBottom: '14px'
-          }}>
-            Available Now
-          </span>
-
-          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: '10px' }}>
-            Financial Clarity for Clinics
+          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: '28px' }}>
+            Available for<br />Your Practice.
           </h2>
 
-          <p className="card-text" style={{ marginTop: '0', marginBottom: '12px', color: '#8892a4' }}>
-            You have an EMR, a billing company, and a stack of spreadsheets, and you
-            still don't fully understand your own numbers. Let's fix that.
-          </p>
-
-          {/* Feature lines: centered block, left-aligned rows with a blue check */}
-          <div style={{ display: 'inline-block', textAlign: 'left', margin: '0 0 14px' }}>
-            {features.map((f, i) => (
-              <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', marginBottom: i < features.length - 1 ? '12px' : '0' }}>
-                <span style={{ color: '#60a5fa', fontWeight: '700', flexShrink: 0, lineHeight: '1.5' }} aria-hidden="true">&#10003;</span>
-                <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', color: '#f0e6d3', lineHeight: '1.5' }}>{f}</span>
-              </div>
-            ))}
+          {/* GlowPT */}
+          <div>
+            <h3 style={{ fontFamily: "'Playfair Display', serif", fontWeight: '800', fontSize: 'clamp(32.5px, 5.5vw, 40px)', color: '#ffffff', lineHeight: '1.2', marginBottom: '8px' }}>
+              GlowPT
+            </h3>
+            <p className="card-text" style={{ marginTop: '0', marginBottom: '18px', color: '#8892a4' }}>
+              Daily patient check-ins that build compliance and complete plans of care.
+            </p>
+            <button className="btn btn--ghost" onClick={() => setGlowOpen(true)}>
+              More info
+            </button>
           </div>
 
-          {/* Price block */}
-          <div style={{ marginBottom: '20px' }}>
-            <p style={{ fontFamily: "'Playfair Display', serif", fontWeight: '700', fontSize: '27.7px', color: '#60a5fa', lineHeight: '1.45' }}>
-              $750 <span style={{ fontSize: '20px' }}>/ build</span>
+          {/* Divider */}
+          <div style={{ borderTop: '1px solid rgba(96, 165, 250, 0.12)', margin: '32px 0 0' }} />
+
+          {/* Financial Clarity */}
+          <div style={{ paddingTop: '32px' }}>
+            <h3 style={{ fontFamily: "'Playfair Display', serif", fontWeight: '800', fontSize: 'clamp(32.5px, 5.5vw, 40px)', color: '#ffffff', lineHeight: '1.2', marginBottom: '8px' }}>
+              Financial<br />Clarity
+            </h3>
+            <p className="card-text" style={{ marginTop: '0', marginBottom: '18px', color: '#8892a4' }}>
+              Your practice's numbers, finally in plain English.
             </p>
-            <p style={{ fontFamily: "'Playfair Display', serif", fontWeight: '700', fontSize: '27.7px', color: '#60a5fa', lineHeight: '1.45' }}>
-              $400 <span style={{ fontSize: '20px' }}>/ month</span>
-            </p>
+            <button className="btn btn--ghost" onClick={() => setFcOpen(true)}>
+              More info
+            </button>
           </div>
 
-          <a href="https://cal.com/david-peterson-40s7lw/free-discovery-call" target="_blank" rel="noopener noreferrer" className="btn btn--primary">
-            Book a free discovery call.
-          </a>
-          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', color: '#8892a4', marginTop: '18px' }}>
-            See it with your own numbers.
-          </p>
         </div>
       </div>
+      {glowOpen && <GlowPTModal onClose={() => setGlowOpen(false)} />}
+      {fcOpen && <FCModal onClose={() => setFcOpen(false)} />}
     </section>
   );
 }
@@ -223,7 +312,6 @@ function CaseStudyModal({ onClose }) {
         <button className="modal__close" onClick={onClose} aria-label="Close">
           &#x2715;
         </button>
-        <span className="card-label" style={{ fontSize: '1.375em', textTransform: 'none', fontFamily: "'Playfair Display', serif", fontWeight: '400', letterSpacing: '0.05em', color: '#8899b0' }}>Case Study</span>
         <h2 className="modal__title">McKenzie Arm Care</h2>
         <p className="modal__text">
           A custom patient-care web app built for a clinician who needed more
@@ -245,15 +333,14 @@ function CaseStudyModal({ onClose }) {
   );
 }
 
-function CaseStudy() {
+function CustomWork() {
   const [open, setOpen] = useState(false);
 
   return (
     <section className="section">
       <div className="container">
         <div className="site-card" style={{ paddingTop: '20px' }}>
-          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: '2px' }}>Real Work</h2>
-          <span className="card-label" style={{ fontSize: '1.375em', textTransform: 'none', fontFamily: "'Playfair Display', serif", fontWeight: '400', letterSpacing: '0.05em', color: '#8899b0' }}>Case Study</span>
+          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: '10px' }}>Custom Work</h2>
           <h3 className="card-title" style={{ fontSize: 'clamp(24px, 4vw, 28px)' }}>McKenzie Arm Care</h3>
           <p className="card-text">
             A custom patient-care portal for a clinician who needed more than a
@@ -261,7 +348,7 @@ function CaseStudy() {
             and smart admin alerts.
           </p>
           <button className="btn btn--ghost" onClick={() => setOpen(true)} style={{ marginTop: '16px' }}>
-            Read the full case study.
+            Case Study
           </button>
         </div>
       </div>
@@ -470,8 +557,8 @@ export default function App() {
       <Nav />
       <main>
         <Hero />
-        <FinancialClarity />
-        <CaseStudy />
+        <AvailableForPractice />
+        <CustomWork />
         <HowItWorks />
         <Pricing />
         <About />
