@@ -425,7 +425,7 @@ function About() {
               border: '3px solid rgba(96, 165, 250, 0.3)'
             }}
           />
-          <h3 className="card-title" style={{ marginTop: '0', fontSize: 'clamp(30px, 5vw, 35px)' }}>David Peterson</h3>
+          <h3 className="card-title" style={{ marginTop: '0', fontSize: 'clamp(30px, 5vw, 35px)', color: '#fbbf24' }}>David Peterson</h3>
           <p className="card-text">
             David is the operations manager for a busy clinical practice. He's
             worked in both nonprofit and for-profit businesses, building systems
