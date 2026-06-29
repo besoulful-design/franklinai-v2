@@ -208,12 +208,15 @@ function AvailableForPractice() {
       <div className="container">
         <div className="site-card" style={{ paddingTop: '20px' }}>
           <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: '18px' }}>
-            Grow Your Business
+            Ready to Use
           </h2>
+
+          {/* Divider under heading */}
+          <div style={{ borderTop: '1px solid rgba(96, 165, 250, 0.12)', margin: '0 0 30px' }} />
 
           {/* GlowPT */}
           <div>
-            <h3 style={{ fontFamily: "'Playfair Display', serif", fontWeight: '800', fontSize: 'clamp(30px, 5vw, 35px)', color: '#ffffff', lineHeight: '1.2', marginBottom: '8px' }}>
+            <h3 style={{ fontFamily: "'Playfair Display', serif", fontWeight: '800', fontSize: 'clamp(30px, 5vw, 35px)', color: '#fbbf24', lineHeight: '1.2', marginBottom: '8px' }}>
               GlowPT
             </h3>
             <p className="card-text" style={{ marginTop: '0', marginBottom: '18px', color: '#8892a4' }}>
@@ -229,7 +232,7 @@ function AvailableForPractice() {
 
           {/* Financial Clarity */}
           <div style={{ paddingTop: '32px' }}>
-            <h3 style={{ fontFamily: "'Playfair Display', serif", fontWeight: '800', fontSize: 'clamp(30px, 5vw, 35px)', color: '#ffffff', lineHeight: '1.2', marginBottom: '8px' }}>
+            <h3 style={{ fontFamily: "'Playfair Display', serif", fontWeight: '800', fontSize: 'clamp(30px, 5vw, 35px)', color: '#fbbf24', lineHeight: '1.2', marginBottom: '8px' }}>
               Financial Clarity
             </h3>
             <p className="card-text" style={{ marginTop: '0', marginBottom: '18px', color: '#8892a4' }}>
