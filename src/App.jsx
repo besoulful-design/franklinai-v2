@@ -122,7 +122,7 @@ function FCModal({ onClose }) {
         <button className="modal__close" onClick={onClose} aria-label="Close">
           &#x2715;
         </button>
-        <h2 className="modal__title" style={{ marginTop: '6px' }}>Financial Clarity</h2>
+        <h2 className="modal__title" style={{ marginTop: '6px' }}>Clarity</h2>
         <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '14px', fontWeight: '600', color: '#8899b0', marginBottom: '16px' }}>
           Clinic subscriptions available.
         </p>
@@ -208,7 +208,7 @@ function AvailableForPractice() {
       <div className="container">
         <div className="site-card" style={{ paddingTop: '20px' }}>
           <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: '18px' }}>
-            Ready to Use
+            Available
           </h2>
 
           {/* Divider under heading */}
@@ -230,10 +230,10 @@ function AvailableForPractice() {
           {/* Divider */}
           <div style={{ borderTop: '1px solid rgba(96, 165, 250, 0.12)', margin: '32px 0 0' }} />
 
-          {/* Financial Clarity */}
+          {/* Clarity */}
           <div style={{ paddingTop: '32px' }}>
             <h3 style={{ fontFamily: "'Playfair Display', serif", fontWeight: '800', fontSize: 'clamp(30px, 5vw, 35px)', color: '#fbbf24', lineHeight: '1.2', marginBottom: '8px' }}>
-              Financial Clarity
+              Clarity
             </h3>
             <p className="card-text" style={{ marginTop: '0', marginBottom: '18px', color: '#8892a4' }}>
               Your practice's numbers, finally in plain English.
