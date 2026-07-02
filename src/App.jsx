@@ -236,7 +236,7 @@ function AvailableForPractice() {
               Clarity
             </h3>
             <p className="card-text" style={{ marginTop: '0', marginBottom: '18px', color: '#8892a4' }}>
-              Your practice's numbers, finally in plain English.
+              Making sense of your practice's numbers.
             </p>
             <button className="btn btn--ghost" onClick={() => setFcOpen(true)}>
               More info
