@@ -216,7 +216,7 @@ function AvailableForPractice() {
 
           {/* GlowPT */}
           <div>
-            <h3 style={{ fontFamily: "'Playfair Display', serif", fontWeight: '800', fontSize: 'clamp(30px, 5vw, 35px)', color: '#fbbf24', lineHeight: '1.2', marginBottom: '8px' }}>
+            <h3 style={{ fontFamily: "'Playfair Display', serif", fontWeight: '800', fontSize: 'clamp(30px, 5vw, 35px)', color: '#ffffff', lineHeight: '1.2', marginBottom: '8px' }}>
               GlowPT
             </h3>
             <p className="card-text" style={{ marginTop: '0', marginBottom: '18px', color: '#8892a4' }}>
@@ -232,7 +232,7 @@ function AvailableForPractice() {
 
           {/* Clarity */}
           <div style={{ paddingTop: '32px' }}>
-            <h3 style={{ fontFamily: "'Playfair Display', serif", fontWeight: '800', fontSize: 'clamp(30px, 5vw, 35px)', color: '#fbbf24', lineHeight: '1.2', marginBottom: '8px' }}>
+            <h3 style={{ fontFamily: "'Playfair Display', serif", fontWeight: '800', fontSize: 'clamp(30px, 5vw, 35px)', color: '#ffffff', lineHeight: '1.2', marginBottom: '8px' }}>
               Clarity
             </h3>
             <p className="card-text" style={{ marginTop: '0', marginBottom: '18px', color: '#8892a4' }}>
@@ -425,7 +425,7 @@ function About() {
               border: '3px solid rgba(96, 165, 250, 0.3)'
             }}
           />
-          <h3 className="card-title" style={{ marginTop: '0', fontSize: 'clamp(30px, 5vw, 35px)', color: '#fbbf24' }}>David Peterson</h3>
+          <h3 className="card-title" style={{ marginTop: '0', fontSize: 'clamp(30px, 5vw, 35px)', color: '#ffffff' }}>David Peterson</h3>
           <p className="card-text">
             David is the operations manager for a busy clinical practice. He's
             worked in both nonprofit and for-profit businesses, building systems
