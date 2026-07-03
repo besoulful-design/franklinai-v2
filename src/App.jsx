@@ -111,7 +111,7 @@ function FCModal({ onClose }) {
   }, []);
 
   const features = [
-    'The six numbers that actually run your practice, in plain English.',
+    'The six numbers that actually run your practice.',
     'A clear read-out of what they mean and where to focus.',
     'Refreshed monthly, so you\'re never flying blind between billing meetings.'
   ];
@@ -236,7 +236,7 @@ function AvailableForPractice() {
               Clarity
             </h3>
             <p className="card-text" style={{ marginTop: '0', marginBottom: '18px', color: '#8892a4' }}>
-              Make sense of your practice's numbers.
+              Make sense of your practice's numbers. A clear read on the six that run it, and where to focus.
             </p>
             <button className="btn btn--ghost" onClick={() => setFcOpen(true)}>
               More info
