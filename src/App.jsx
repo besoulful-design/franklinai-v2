@@ -220,7 +220,7 @@ function AvailableForPractice() {
               GlowPT
             </h3>
             <p className="card-text" style={{ marginTop: '0', marginBottom: '18px', color: '#8892a4' }}>
-              Daily patient check-ins that build compliance and complete plans of care.
+              Daily patient check-ins to help complete plans of care. For cash-based clinics, a between-visit touch that keeps patients coming back.
             </p>
             <button className="btn btn--ghost" onClick={() => setGlowOpen(true)}>
               More info
@@ -236,7 +236,7 @@ function AvailableForPractice() {
               Clarity
             </h3>
             <p className="card-text" style={{ marginTop: '0', marginBottom: '18px', color: '#8892a4' }}>
-              Making sense of your practice's numbers.
+              Make sense of your practice's numbers.
             </p>
             <button className="btn btn--ghost" onClick={() => setFcOpen(true)}>
               More info
