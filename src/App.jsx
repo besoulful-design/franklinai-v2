@@ -220,7 +220,7 @@ function AvailableForPractice() {
               GlowPT
             </h3>
             <p className="card-text" style={{ marginTop: '0', marginBottom: '18px', color: '#8892a4' }}>
-              A daily, warm patient check-in app that keeps patients engaged between visits, so more of them complete their plans of care. Runs alongside any EMR, with zero work for your therapists.
+              A daily check-in app to keep patients engaged between visits. Runs alongside any EMR, with zero work for your therapists.
             </p>
             <button className="btn btn--ghost" onClick={() => setGlowOpen(true)}>
               More info
