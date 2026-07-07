@@ -153,26 +153,18 @@ function AvailableForPractice() {
     <section className="section" id="financial-clarity">
       <div className="container">
         <div className="site-card" style={{ paddingTop: '20px' }}>
-          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: '18px' }}>
+          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: '10px' }}>
             Available
           </h2>
-
-          {/* Divider under heading */}
-          <div style={{ borderTop: '1px solid rgba(96, 165, 250, 0.12)', margin: '0 0 30px' }} />
-
-          {/* GlowPT */}
-          <div>
-            <h3 style={{ fontFamily: "'Playfair Display', serif", fontWeight: '800', fontSize: 'clamp(30px, 5vw, 35px)', color: '#ffffff', lineHeight: '1.2', marginBottom: '8px' }}>
-              GlowPT
-            </h3>
-            <p className="card-text" style={{ marginTop: '0', marginBottom: '18px', color: '#8892a4' }}>
-              Keep your patients engaged between visits with a daily check-in app. Runs alongside any EMR, with zero work for your therapists.
-            </p>
-            <button className="btn btn--ghost" onClick={() => setGlowOpen(true)}>
-              More info
-            </button>
-          </div>
-
+          <h3 style={{ fontFamily: "'Playfair Display', serif", fontWeight: '800', fontSize: 'clamp(30px, 5vw, 35px)', color: '#ffffff', lineHeight: '1.2' }}>
+            GlowPT
+          </h3>
+          <p className="card-text">
+            Keep your patients engaged between visits with a daily check-in app. Runs alongside any EMR, with zero work for your therapists.
+          </p>
+          <button className="btn btn--ghost" onClick={() => setGlowOpen(true)} style={{ marginTop: '16px' }}>
+            More info
+          </button>
         </div>
       </div>
       {glowOpen && <GlowPTModal onClose={() => setGlowOpen(false)} />}
