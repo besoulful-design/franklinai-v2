@@ -42,7 +42,7 @@ function EmailOption({ style }) {
   return (
     <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', color: '#8892a4', marginTop: '18px', ...style }}>
       Not ready to schedule?<br />
-      <a href="mailto:david@franklinaisolutions.com" style={{ color: '#60a5fa', textDecoration: 'none', fontWeight: '600' }}>
+      <a href="mailto:franklinaisolutions@gmail.com" style={{ color: '#60a5fa', textDecoration: 'none', fontWeight: '600' }}>
         Email me.
       </a>
     </p>
