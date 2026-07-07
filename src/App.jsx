@@ -103,59 +103,6 @@ function GlowPTModal({ onClose }) {
   );
 }
 
-function FCModal({ onClose }) {
-  useEffect(() => {
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-    return () => { document.body.style.overflow = prev; };
-  }, []);
-
-  const features = [
-    'The six numbers that actually run your practice.',
-    'A clear read-out of what they mean and where to focus.',
-    'Refreshed monthly, so you\'re never flying blind between billing meetings.'
-  ];
-
-  return (
-    <div className="modal-backdrop" onClick={onClose}>
-      <div className="modal" onClick={e => e.stopPropagation()}>
-        <button className="modal__close" onClick={onClose} aria-label="Close">
-          &#x2715;
-        </button>
-        <h2 className="modal__title" style={{ marginTop: '6px' }}>Clarity</h2>
-        <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '14px', fontWeight: '600', color: '#8899b0', marginBottom: '16px' }}>
-          Clinic subscriptions available.
-        </p>
-        <p className="modal__text">
-          You have an EMR, a billing company, and a stack of spreadsheets, and you
-          still don't fully understand your own numbers. Let's fix that.
-        </p>
-        <div style={{ marginBottom: '24px' }}>
-          {features.map((f, i) => (
-            <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', marginBottom: i < features.length - 1 ? '12px' : '0' }}>
-              <span style={{ color: '#60a5fa', fontWeight: '700', flexShrink: 0, lineHeight: '1.5' }} aria-hidden="true">&#10003;</span>
-              <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', color: '#f0e6d3', lineHeight: '1.5' }}>{f}</span>
-            </div>
-          ))}
-        </div>
-        <div style={{ borderTop: '1px solid rgba(96, 165, 250, 0.12)', paddingTop: '24px', textAlign: 'center' }}>
-          <div style={{ marginBottom: '18px' }}>
-            <p style={{ fontFamily: "'Playfair Display', serif", fontWeight: '700', fontSize: '27.7px', color: '#60a5fa', lineHeight: '1.45' }}>
-              $750 <span style={{ fontSize: '20px' }}>/ build</span>
-            </p>
-            <p style={{ fontFamily: "'Playfair Display', serif", fontWeight: '700', fontSize: '27.7px', color: '#60a5fa', lineHeight: '1.45' }}>
-              $400 <span style={{ fontSize: '20px' }}>/ month</span>
-            </p>
-          </div>
-          <a href="https://cal.com/david-peterson-40s7lw/free-discovery-call" target="_blank" rel="noopener noreferrer" className="btn btn--primary" style={{ padding: '13px 26px', fontSize: '15px' }}>
-            Book a free discovery call.
-          </a>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function Nav() {
   return (
     <nav className="site-nav" style={{ padding: '6px 24px' }}>
@@ -201,7 +148,6 @@ function Hero() {
 
 function AvailableForPractice() {
   const [glowOpen, setGlowOpen] = useState(false);
-  const [fcOpen, setFcOpen] = useState(false);
 
   return (
     <section className="section" id="financial-clarity">
@@ -227,26 +173,9 @@ function AvailableForPractice() {
             </button>
           </div>
 
-          {/* Divider */}
-          <div style={{ borderTop: '1px solid rgba(96, 165, 250, 0.12)', margin: '32px 0 0' }} />
-
-          {/* Clarity */}
-          <div style={{ paddingTop: '32px' }}>
-            <h3 style={{ fontFamily: "'Playfair Display', serif", fontWeight: '800', fontSize: 'clamp(30px, 5vw, 35px)', color: '#ffffff', lineHeight: '1.2', marginBottom: '8px' }}>
-              Clarity
-            </h3>
-            <p className="card-text" style={{ marginTop: '0', marginBottom: '18px', color: '#8892a4' }}>
-              Make sense of your financial numbers. A clear read on the six that run your practice, and where to focus.
-            </p>
-            <button className="btn btn--ghost" onClick={() => setFcOpen(true)}>
-              More info
-            </button>
-          </div>
-
         </div>
       </div>
       {glowOpen && <GlowPTModal onClose={() => setGlowOpen(false)} />}
-      {fcOpen && <FCModal onClose={() => setFcOpen(false)} />}
     </section>
   );
 }
