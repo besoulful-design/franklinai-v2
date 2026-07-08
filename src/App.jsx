@@ -107,15 +107,15 @@ function Nav() {
   return (
     <nav className="site-nav" style={{ padding: '6px 24px' }}>
       <div className="site-nav__inner">
-        <a href="/" className="site-nav__brand" style={{ gap: '4px', alignItems: 'flex-start', transform: 'translateX(-26px)' }}>
+        <a href="/" className="site-nav__brand" style={{ gap: '4px', alignItems: 'flex-start', transform: 'translateX(-22px)' }}>
           <span style={{ flexShrink: 0, display: 'flex' }}>
             <KiteLogo size={130} />
           </span>
-          <div className="site-nav__wordmark" style={{ marginTop: 'clamp(12.3px, calc(39.25px - 2.325vw), 17.35px)' }}>
-            <span className="site-nav__name" style={{ fontSize: 'clamp(39px, 4.14vw, 48px)' }}>
+          <div className="site-nav__wordmark" style={{ marginTop: 'clamp(10.98px, calc(39.25px - 2.44vw), 16.28px)' }}>
+            <span className="site-nav__name" style={{ fontSize: 'clamp(40.95px, 4.35vw, 50.4px)' }}>
               Franklin<span className="site-nav__ai">AI</span>
             </span>
-            <span className="site-nav__city" style={{ fontSize: 'clamp(17px, 2.76vw, 21px)', color: '#8899b0' }}>Philadelphia</span>
+            <span className="site-nav__city" style={{ fontSize: 'clamp(17.85px, 2.9vw, 22.05px)', color: '#8899b0' }}>Philadelphia</span>
           </div>
         </a>
       </div>
