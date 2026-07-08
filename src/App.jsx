@@ -368,7 +368,7 @@ function DiscoveryCTA() {
     <section className="section" id="discovery">
       <div className="container">
         <div className="site-card" style={{ paddingTop: '20px' }}>
-          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: '10px' }}>Let's Build.</h2>
+          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: '10px' }}>Let's Build</h2>
           <p className="card-text">
             Every project starts with a conversation. Tell us what you need or what's not working,
             and we'll figure out what to build.
@@ -390,7 +390,7 @@ function Footer() {
       style={{
         padding: '24px 24px 20px',
         borderTop: '1px solid rgba(96, 165, 250, 0.12)',
-        marginTop: '24px',
+        marginTop: '0',
         display: 'flex',
         justifyContent: 'center'
       }}
@@ -403,7 +403,7 @@ function Footer() {
           display: 'flex',
           alignItems: 'flex-start',
           gap: '4px',
-          transform: 'translateX(-18px)'
+          transform: 'translateX(-14px)'
         }}
       >
         <span style={{ flexShrink: 0, display: 'flex' }}>
