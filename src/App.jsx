@@ -115,7 +115,7 @@ function Nav() {
             <span className="site-nav__name" style={{ fontSize: 'clamp(40.95px, 4.35vw, 50.4px)' }}>
               Franklin<span className="site-nav__ai">AI</span>
             </span>
-            <span className="site-nav__city" style={{ fontSize: 'clamp(17.85px, 2.9vw, 22.05px)', color: '#8899b0' }}>Philadelphia</span>
+            <span className="site-nav__city" style={{ fontSize: 'clamp(17.85px, 2.9vw, 22.05px)', color: '#8899b0', transform: 'translateX(-2px)' }}>Philadelphia</span>
           </div>
         </a>
       </div>
