@@ -440,7 +440,7 @@ function Footer() {
                 letterSpacing: '0.02em',
                 color: '#8899b0',
                 marginTop: '3px',
-                transform: 'translateX(-4px)'
+                transform: 'translateX(-2px)'
               }}
             >
               Philadelphia
@@ -454,7 +454,7 @@ function Footer() {
               color: '#8892a4',
               lineHeight: 1.5,
               marginTop: '8px',
-              transform: 'translateX(-4px)'
+              transform: 'translateX(-2px)'
             }}
           >
             franklinaisolutions.com
@@ -465,7 +465,7 @@ function Footer() {
               fontSize: '13px',
               color: '#8892a4',
               lineHeight: 1.5,
-              transform: 'translateX(-4px)'
+              transform: 'translateX(-2px)'
             }}
           >
             &copy; {year} FranklinAI
