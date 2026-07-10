@@ -112,8 +112,8 @@ function Nav() {
             <KiteLogo size={130} />
           </span>
           <div className="site-nav__wordmark" style={{ marginTop: 'clamp(10.98px, calc(39.25px - 2.44vw), 16.28px)' }}>
-            <span className="site-nav__name" style={{ fontSize: 'clamp(40.95px, 4.35vw, 50.4px)' }}>
-              Franklin<span className="site-nav__ai">AI</span>
+            <span className="site-nav__name" style={{ fontSize: 'clamp(40.95px, 4.35vw, 50.4px)', color: '#60a5fa' }}>
+              Franklin<span className="site-nav__ai" style={{ color: '#ffffff' }}>AI</span>
             </span>
             <span className="site-nav__city" style={{ fontSize: 'clamp(17.85px, 2.9vw, 22.05px)', color: '#8899b0', transform: 'translateX(-2px)' }}>Philadelphia</span>
           </div>
@@ -132,7 +132,7 @@ function Hero() {
             Custom<br />Apps &amp; Tools
           </p>
           <h1 className="hero__headline" style={{ color: '#ffffff', fontSize: 'clamp(37.5px, 5.75vw, 57.5px)', marginBottom: '10px' }}>
-            Built for<br />Your Practice.
+            Built for<br />Your Business.
           </h1>
           <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', color: '#8892a4', marginTop: '0', marginBottom: 'clamp(4px, 1vw, 8px)' }}>
             Built to handle HIPAA.
@@ -160,7 +160,7 @@ function AvailableForPractice() {
             GlowPT
           </h3>
           <p className="card-text">
-            Keep your patients engaged between visits with a daily check-in app. Runs alongside any EMR, with zero work for your therapists.
+            An app for practices to keep your patients engaged between visits. Runs alongside any EMR, with zero work for your therapists.
           </p>
           <button className="btn btn--ghost" onClick={() => setGlowOpen(true)} style={{ marginTop: '16px' }}>
             More info
@@ -426,11 +426,11 @@ function Footer() {
                 fontFamily: "'Playfair Display', serif",
                 fontWeight: 700,
                 fontSize: '32px',
-                color: '#ffffff',
+                color: '#60a5fa',
                 lineHeight: 1
               }}
             >
-              Franklin<span style={{ color: '#60a5fa' }}>AI</span>
+              Franklin<span style={{ color: '#ffffff' }}>AI</span>
             </span>
             <span
               style={{
