@@ -58,7 +58,7 @@ function GlowPTModal({ onClose }) {
 
   const features = [
     'A 30-second daily check-in, with warm encouragement that keeps patients coming back.',
-    'A private journal and a personal exercise plan, in every patient\'s pocket.',
+    'A private journal and weekly streaks, in every patient\'s pocket.',
     'One subscription covers the clinic. Patients join free.',
     'Reaches every patient, not just the ones you can bill remote monitoring on.',
     'More completed plans of care, because engaged patients finish their care.',
