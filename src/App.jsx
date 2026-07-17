@@ -43,7 +43,7 @@ function EmailOption({ style }) {
     <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', color: '#8892a4', marginTop: '18px', ...style }}>
       Not ready to schedule?<br />
       <a href="mailto:franklinaisolutions@gmail.com" style={{ color: '#60a5fa', textDecoration: 'none', fontWeight: '600' }}>
-        Email me.
+        Email
       </a>
     </p>
   );
@@ -132,7 +132,7 @@ function Hero() {
             Custom<br />Apps &amp; Tools
           </p>
           <h1 className="hero__headline" style={{ color: '#ffffff', fontSize: 'clamp(37.5px, 5.75vw, 57.5px)', marginBottom: '10px' }}>
-            Built for<br />Your Business.
+            Built for<br />Your Business
           </h1>
           <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', color: '#8892a4', marginTop: '0', marginBottom: 'clamp(4px, 1vw, 8px)' }}>
             Built to handle HIPAA.
@@ -160,7 +160,7 @@ function AvailableForPractice() {
             GlowPT
           </h3>
           <p className="card-text">
-            An app for practices to keep your patients engaged between visits. Runs alongside any EMR, with zero work for your therapists.
+            An app for physical therapy practices to keep patients engaged between visits. Runs alongside any EMR, with zero work for your therapists.
           </p>
           <button className="btn btn--ghost" onClick={() => setGlowOpen(true)} style={{ marginTop: '16px' }}>
             More info
@@ -355,7 +355,7 @@ function About() {
           <p className="card-text">
             That same drive is what FranklinAI is built on. Custom apps and tools
             are the next step in work he's been doing his whole career, now with
-            better technology and a clear focus on what a practice needs.
+            better technology and a clear focus on what a business needs.
           </p>
         </div>
       </div>
