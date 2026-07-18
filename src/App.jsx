@@ -94,7 +94,7 @@ function GlowPTModal({ onClose }) {
           <p style={{ fontFamily: "'Playfair Display', serif", fontWeight: '700', fontSize: '27.7px', color: '#60a5fa', lineHeight: '1.45', marginBottom: '18px' }}>
             $350 <span style={{ fontSize: '20px' }}>/ month</span>
           </p>
-          <a href="https://cal.com/david-peterson-40s7lw/free-discovery-call" target="_blank" rel="noopener noreferrer" className="btn btn--primary" style={{ padding: '13px 26px', fontSize: '15px' }}>
+          <a href="https://cal.com/david-peterson-40s7lw/free-discovery-call" target="_blank" rel="noopener noreferrer" className="btn btn--primary" style={{ padding: '10px 20px', fontSize: '13px' }}>
             Book a free discovery call.
           </a>
         </div>
@@ -128,7 +128,7 @@ function Hero() {
     <section className="section">
       <div className="container">
         <div className="site-card" style={{ paddingTop: '20px' }}>
-          <p style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(40px, 6vw, 64px)', fontWeight: '700', letterSpacing: '0.04em', color: '#60a5fa', marginBottom: '14px', lineHeight: '1.3' }}>
+          <p style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(40px, 6vw, 64px)', fontWeight: '700', letterSpacing: '0.04em', color: '#60a5fa', marginBottom: 'clamp(6px, 2.2vw, 14px)', lineHeight: '1.3' }}>
             Custom<br />Apps &amp; Tools
           </p>
           <h1 className="hero__headline" style={{ color: '#ffffff', fontSize: 'clamp(37.5px, 5.75vw, 57.5px)', marginBottom: '10px' }}>
@@ -137,7 +137,7 @@ function Hero() {
           <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', color: '#8892a4', marginTop: '0', marginBottom: 'clamp(4px, 1vw, 8px)' }}>
             Built to handle HIPAA.
           </p>
-          <a href="https://cal.com/david-peterson-40s7lw/free-discovery-call" target="_blank" rel="noopener noreferrer" className="btn btn--primary">
+          <a href="https://cal.com/david-peterson-40s7lw/free-discovery-call" target="_blank" rel="noopener noreferrer" className="btn btn--primary" style={{ padding: '11px 22px', fontSize: '14px' }}>
             Book a free discovery call.
           </a>
         </div>
@@ -373,7 +373,7 @@ function DiscoveryCTA() {
             Every project starts with a conversation. Tell us what you need or what's not working,
             and we'll figure out what to build.
           </p>
-          <a href="https://cal.com/david-peterson-40s7lw/free-discovery-call" target="_blank" rel="noopener noreferrer" className="btn btn--primary" style={{ marginTop: 'clamp(4px, 1vw, 8px)' }}>
+          <a href="https://cal.com/david-peterson-40s7lw/free-discovery-call" target="_blank" rel="noopener noreferrer" className="btn btn--primary" style={{ marginTop: 'clamp(4px, 1vw, 8px)', padding: '11px 22px', fontSize: '14px' }}>
             Book a free discovery call.
           </a>
           <EmailOption />
