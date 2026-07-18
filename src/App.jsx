@@ -153,7 +153,7 @@ function AvailableForPractice() {
     <section className="section" id="financial-clarity">
       <div className="container">
         <div className="site-card" style={{ paddingTop: '20px' }}>
-          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: '10px' }}>
+          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: 'clamp(4px, 1.5vw, 10px)' }}>
             Available
           </h2>
           <h3 style={{ fontFamily: "'Playfair Display', serif", fontWeight: '800', fontSize: 'clamp(30px, 5vw, 35px)', color: '#ffffff', lineHeight: '1.2' }}>
@@ -195,8 +195,8 @@ function HowItWorks() {
     <section className="section">
       <div className="container">
         <div className="site-card" style={{ paddingTop: '20px' }}>
-          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)' }}>How It Works</h2>
-          <div className="step-stack" style={{ marginTop: '-10px' }}>
+          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: 'clamp(4px, 1.5vw, 10px)' }}>How It Works</h2>
+          <div className="step-stack" style={{ marginTop: '0' }}>
             {steps.map(step => (
               <div key={step.number} className="step-item">
                 <div style={{ marginBottom: '10px', textAlign: 'center' }}>
@@ -262,7 +262,7 @@ function CustomWork() {
     <section className="section">
       <div className="container">
         <div className="site-card" style={{ paddingTop: '20px' }}>
-          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: '10px' }}>Custom Work</h2>
+          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: 'clamp(4px, 1.5vw, 10px)' }}>Custom Work</h2>
           <h3 className="card-title" style={{ fontSize: 'clamp(30px, 5vw, 35px)' }}>McKenzie Arm Care</h3>
           <p className="card-text">
             A custom patient-care portal for a clinician who needed more than a
@@ -300,8 +300,8 @@ function Pricing() {
     <section className="section">
       <div className="container">
         <div className="site-card" style={{ paddingTop: '20px' }}>
-          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)' }}>Custom Pricing</h2>
-          <div className="step-stack" style={{ marginTop: '-10px' }}>
+          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: 'clamp(4px, 1.5vw, 10px)' }}>Custom Pricing</h2>
+          <div className="step-stack" style={{ marginTop: '0' }}>
             {tiers.map(tier => (
               <div key={tier.title} className="step-item">
                 <div style={{ marginBottom: '6px', textAlign: 'center' }}>
@@ -332,7 +332,7 @@ function About() {
     <section className="section">
       <div className="container">
         <div className="site-card" style={{ paddingTop: '20px' }}>
-          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)' }}>Behind Franklin<span style={{ color: '#ffffff' }}>AI</span></h2>
+          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', lineHeight: '1.1', marginBottom: 'clamp(4px, 1.5vw, 10px)' }}>Behind<br />Franklin<span style={{ color: '#ffffff' }}>AI</span></h2>
           <img
             src="/david.png"
             alt="David Peterson, founder of FranklinAI"
@@ -342,7 +342,7 @@ function About() {
               borderRadius: '50%',
               objectFit: 'cover',
               display: 'block',
-              margin: '-12px auto 10px',
+              margin: '0 auto 10px',
               border: '3px solid rgba(96, 165, 250, 0.3)'
             }}
           />
@@ -368,7 +368,7 @@ function DiscoveryCTA() {
     <section className="section" id="discovery">
       <div className="container">
         <div className="site-card" style={{ paddingTop: '20px' }}>
-          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: '10px' }}>Let's Build</h2>
+          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: 'clamp(4px, 1.5vw, 10px)' }}>Let's Build</h2>
           <p className="card-text">
             Every project starts with a conversation. Tell us what you need or what's not working,
             and we'll figure out what to build.
