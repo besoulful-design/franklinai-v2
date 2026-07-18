@@ -342,7 +342,7 @@ function About() {
               borderRadius: '50%',
               objectFit: 'cover',
               display: 'block',
-              margin: '0 auto 10px',
+              margin: '8px auto 10px',
               border: '3px solid rgba(96, 165, 250, 0.3)'
             }}
           />
