@@ -332,7 +332,7 @@ function About() {
     <section className="section">
       <div className="container">
         <div className="site-card" style={{ paddingTop: '20px' }}>
-          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)' }}>About</h2>
+          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)' }}>Behind Franklin<span style={{ color: '#ffffff' }}>AI</span></h2>
           <img
             src="/david.png"
             alt="David Peterson, founder of FranklinAI"
