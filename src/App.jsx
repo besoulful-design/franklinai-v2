@@ -135,7 +135,7 @@ function Hero() {
             Built for<br />Your Practice
           </h1>
           <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', color: '#8892a4', marginTop: '0', marginBottom: 'clamp(4px, 1vw, 8px)' }}>
-            Built to handle HIPAA.
+            Built to Handle HIPAA
           </p>
           <a href="https://cal.com/david-peterson-40s7lw/free-discovery-call" target="_blank" rel="noopener noreferrer" className="btn btn--primary" style={{ padding: '11px 22px', fontSize: '14px' }}>
             Book a free discovery call.
