@@ -403,7 +403,7 @@ function Footer() {
           display: 'flex',
           alignItems: 'flex-start',
           gap: '4px',
-          transform: 'translateX(-14px)'
+          transform: 'translateX(-16px)'
         }}
       >
         <span style={{ flexShrink: 0, display: 'flex' }}>
@@ -468,7 +468,7 @@ function Footer() {
               transform: 'translateX(-2px)'
             }}
           >
-            &copy; {year} FranklinAI
+            &copy; {year} FranklinAI Solutions, LLC
           </span>
         </div>
       </div>
