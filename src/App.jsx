@@ -410,7 +410,7 @@ function Footer() {
           <KiteLogo size={105} />
         </span>
 
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '13.16px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '13.16px', transform: 'translateX(-14px)' }}>
           <a
             href="/"
             style={{
