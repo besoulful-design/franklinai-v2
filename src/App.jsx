@@ -154,11 +154,11 @@ function NewsletterStrip() {
           <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: 'clamp(4px, 1.5vw, 10px)' }}>
             The Operator
           </h2>
-          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', color: '#8899b0', marginTop: '0', marginBottom: '10px', lineHeight: '1.5' }}>
-            Notes from the ops chair, for people who run physical therapy practices.
+          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', fontWeight: '600', color: '#8899b0', marginTop: '0', marginBottom: '14px', lineHeight: '1.5' }}>
+            Notes from the ops chair, written by someone who runs one.
           </p>
           <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', color: '#8892a4', marginTop: '0', marginBottom: '18px', lineHeight: '1.5' }}>
-            Every other Tuesday, one clear look at what's working in your practice, what isn't, and what to do about it. Written by someone who runs one.
+            A newsletter for people who run physical therapy practices. Every other Tuesday, one clear look at what's working in your practice, what isn't, and what to do about it.
           </p>
           {/* Signup form. Not wired yet. The Kit form endpoint gets added here later. */}
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', justifyContent: 'center', alignItems: 'center' }}>
@@ -174,13 +174,15 @@ function NewsletterStrip() {
                 border: '1px solid rgba(96, 165, 250, 0.3)',
                 borderRadius: '8px',
                 padding: '10px 14px',
+                height: '44px',
+                boxSizing: 'border-box',
                 outline: 'none',
                 WebkitAppearance: 'none',
                 flex: '1 1 220px',
                 maxWidth: '280px'
               }}
             />
-            <button type="button" className="btn btn--ghost">
+            <button type="button" className="btn btn--ghost" style={{ height: '44px', boxSizing: 'border-box', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
               Subscribe
             </button>
           </div>
