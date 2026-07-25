@@ -154,9 +154,6 @@ function NewsletterStrip() {
           <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: 'clamp(4px, 1.5vw, 10px)' }}>
             The Operator
           </h2>
-          <p style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(26px, 4vw, 30px)', fontWeight: '800', color: '#ffffff', marginTop: '0', marginBottom: '14px', lineHeight: '1.1' }}>
-            Notes from<br />the Ops Chair
-          </p>
           <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', color: '#8892a4', marginTop: '0', marginBottom: '18px', lineHeight: '1.5' }}>
             A newsletter for people who run physical therapy practices. Delivered every other Tuesday, it takes a clear look at what's working in your practice, what isn't, and what to do about it.
           </p>
@@ -183,7 +180,7 @@ function NewsletterStrip() {
                 maxWidth: '280px'
               }}
             />
-            <button type="button" className="btn btn--ghost" style={{ height: '44px', minHeight: '44px', boxSizing: 'border-box', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
+            <button type="button" className="btn btn--ghost" style={{ height: '44px', minHeight: '44px', boxSizing: 'border-box', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', marginTop: '0' }}>
               Subscribe
             </button>
           </div>
