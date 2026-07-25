@@ -95,7 +95,7 @@ function GlowPTModal({ onClose }) {
             $350 <span style={{ fontSize: '20px' }}>/ month</span>
           </p>
           <a href="https://cal.com/david-peterson-40s7lw/free-discovery-call" target="_blank" rel="noopener noreferrer" className="btn btn--primary" style={{ padding: '10px 20px', fontSize: '13px' }}>
-            Book a free discovery call.
+            Book a Free Discovery Call
           </a>
         </div>
       </div>
@@ -138,8 +138,52 @@ function Hero() {
             Built to Handle HIPAA
           </p>
           <a href="https://cal.com/david-peterson-40s7lw/free-discovery-call" target="_blank" rel="noopener noreferrer" className="btn btn--primary" style={{ padding: '11px 22px', fontSize: '14px' }}>
-            Book a free discovery call.
+            Book a Free Discovery Call
           </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function NewsletterStrip() {
+  return (
+    <section className="section">
+      <div className="container">
+        <div className="site-card" style={{ paddingTop: '20px' }}>
+          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: 'clamp(4px, 1.5vw, 10px)' }}>
+            The Operator
+          </h2>
+          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', color: '#8899b0', marginTop: '0', marginBottom: '10px', lineHeight: '1.5' }}>
+            Notes from the ops chair, for people who run physical therapy practices.
+          </p>
+          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', color: '#8892a4', marginTop: '0', marginBottom: '18px', lineHeight: '1.5' }}>
+            Every other Tuesday, one clear look at what's working in your practice, what isn't, and what to do about it. Written by someone who runs one.
+          </p>
+          {/* Signup form. Not wired yet. The Kit form endpoint gets added here later. */}
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', justifyContent: 'center', alignItems: 'center' }}>
+            <input
+              type="email"
+              placeholder="Your email"
+              aria-label="Your email address"
+              style={{
+                fontFamily: "'Inter', sans-serif",
+                fontSize: '16px',
+                color: '#f0e6d3',
+                background: 'rgba(255, 255, 255, 0.04)',
+                border: '1px solid rgba(96, 165, 250, 0.3)',
+                borderRadius: '8px',
+                padding: '10px 14px',
+                outline: 'none',
+                WebkitAppearance: 'none',
+                flex: '1 1 220px',
+                maxWidth: '280px'
+              }}
+            />
+            <button type="button" className="btn btn--ghost">
+              Subscribe
+            </button>
+          </div>
         </div>
       </div>
     </section>
@@ -163,7 +207,7 @@ function AvailableForPractice() {
             An app for physical therapy practices to keep patients engaged between visits. Runs alongside any EMR, with zero work for your therapists.
           </p>
           <button className="btn btn--ghost" onClick={() => setGlowOpen(true)} style={{ marginTop: '16px' }}>
-            More info
+            More Info
           </button>
         </div>
       </div>
@@ -374,7 +418,7 @@ function DiscoveryCTA() {
             and we'll figure out what to build.
           </p>
           <a href="https://cal.com/david-peterson-40s7lw/free-discovery-call" target="_blank" rel="noopener noreferrer" className="btn btn--primary" style={{ marginTop: 'clamp(4px, 1vw, 8px)', padding: '11px 22px', fontSize: '14px' }}>
-            Book a free discovery call.
+            Book a Free Discovery Call
           </a>
           <EmailOption />
         </div>
@@ -482,6 +526,7 @@ export default function App() {
       <Nav />
       <main>
         <Hero />
+        <NewsletterStrip />
         <AvailableForPractice />
         <CustomWork />
         <HowItWorks />
