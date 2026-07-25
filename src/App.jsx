@@ -154,11 +154,11 @@ function NewsletterStrip() {
           <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: 'clamp(4px, 1.5vw, 10px)' }}>
             The Operator
           </h2>
-          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', fontWeight: '600', color: '#8899b0', marginTop: '0', marginBottom: '14px', lineHeight: '1.5' }}>
-            Notes from the ops chair, written by someone who runs one.
+          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', fontWeight: '600', color: '#ffffff', marginTop: '0', marginBottom: '14px', lineHeight: '1.5' }}>
+            Notes from the ops chair, drawn from decades of building and running businesses.
           </p>
           <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', color: '#8892a4', marginTop: '0', marginBottom: '18px', lineHeight: '1.5' }}>
-            A newsletter for people who run physical therapy practices. Every other Tuesday, one clear look at what's working in your practice, what isn't, and what to do about it.
+            A newsletter for people who run physical therapy practices. Delivered every other Tuesday, it takes a clear look at what's working in your practice, what isn't, and what to do about it.
           </p>
           {/* Signup form. Not wired yet. The Kit form endpoint gets added here later. */}
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', justifyContent: 'center', alignItems: 'center' }}>
