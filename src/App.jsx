@@ -115,7 +115,7 @@ function Nav() {
             <span className="site-nav__name" style={{ fontSize: 'clamp(40.95px, 4.35vw, 50.4px)', color: '#60a5fa' }}>
               Franklin<span className="site-nav__ai" style={{ color: '#ffffff' }}>AI</span>
             </span>
-            <span className="site-nav__city" style={{ fontSize: 'clamp(17.85px, 2.9vw, 22.05px)', color: '#8899b0', transform: 'translateX(-2px)' }}>Philadelphia</span>
+            <span className="site-nav__city" style={{ fontSize: 'clamp(25.6px, 2.72vw, 31.5px)', color: '#60a5fa', transform: 'translateX(-2px)' }}>Solutions, LLC</span>
           </div>
         </a>
       </div>
@@ -450,14 +450,14 @@ function Footer() {
           display: 'flex',
           alignItems: 'flex-start',
           gap: '4px',
-          transform: 'translateX(8px)'
+          transform: 'translateX(-30px)'
         }}
       >
         <span style={{ flexShrink: 0, display: 'flex' }}>
           <KiteLogo size={105} />
         </span>
 
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '13.16px', transform: 'translateX(-22px)' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '13.16px', transform: 'translateX(6px)' }}>
           <a
             href="/"
             style={{
@@ -483,14 +483,14 @@ function Footer() {
               style={{
                 fontFamily: "'Playfair Display', serif",
                 fontWeight: 400,
-                fontSize: '15px',
+                fontSize: '20px',
                 letterSpacing: '0.02em',
-                color: '#8899b0',
+                color: '#60a5fa',
                 marginTop: '3px',
                 transform: 'translateX(-2px)'
               }}
             >
-              Philadelphia
+              Solutions, LLC
             </span>
           </a>
 
@@ -515,7 +515,7 @@ function Footer() {
               transform: 'translateX(-2px)'
             }}
           >
-            &copy; {year} FranklinAI Solutions, LLC
+            &copy; {year}
           </span>
         </div>
       </div>
