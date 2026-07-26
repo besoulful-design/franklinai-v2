@@ -115,7 +115,7 @@ function Nav() {
             <span className="site-nav__name" style={{ fontSize: 'clamp(40.95px, 4.35vw, 50.4px)', color: '#60a5fa' }}>
               Franklin<span className="site-nav__ai" style={{ color: '#ffffff' }}>AI</span>
             </span>
-            <span className="site-nav__city" style={{ fontSize: 'clamp(25.6px, 2.72vw, 31.5px)', color: '#60a5fa', lineHeight: '1', marginTop: '3px', transform: 'translateX(-2px)' }}>Solutions, LLC</span>
+            <span className="site-nav__city" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700, fontSize: 'clamp(25.6px, 2.72vw, 31.5px)', color: '#60a5fa', lineHeight: '1', marginTop: '3px', transform: 'translateX(-2px)' }}>Solutions, LLC</span>
           </div>
         </a>
       </div>
@@ -481,8 +481,8 @@ function Footer() {
             </span>
             <span
               style={{
-                fontFamily: "'Playfair Display', serif",
-                fontWeight: 400,
+                fontFamily: "'Inter', sans-serif",
+                fontWeight: 700,
                 fontSize: '20px',
                 letterSpacing: '0.02em',
                 color: '#60a5fa',
