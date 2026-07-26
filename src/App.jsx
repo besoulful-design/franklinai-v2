@@ -127,7 +127,7 @@ function Hero() {
   return (
     <section className="section">
       <div className="container">
-        <div className="site-card" style={{ paddingTop: '20px' }}>
+        <div className="site-card" style={{ paddingTop: '16px', paddingBottom: '24px' }}>
           <p style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(40px, 6vw, 64px)', fontWeight: '700', letterSpacing: '0.04em', color: '#60a5fa', marginBottom: 'clamp(6px, 2.2vw, 14px)', lineHeight: '1.3' }}>
             Custom<br />Apps &amp; Tools
           </p>
@@ -150,11 +150,11 @@ function NewsletterStrip() {
   return (
     <section className="section">
       <div className="container">
-        <div className="site-card" style={{ paddingTop: '20px' }}>
-          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: 'clamp(4px, 1.5vw, 10px)' }}>
+        <div className="site-card" style={{ paddingTop: '16px', paddingBottom: '24px' }}>
+          <h2 className="card-heading" style={{ fontSize: 'clamp(34px, 5vw, 50px)', fontStyle: 'italic', lineHeight: '1.2', marginBottom: 'clamp(4px, 1.5vw, 10px)' }}>
             The Operator
           </h2>
-          <p style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(26px, 4vw, 30px)', fontWeight: '800', color: '#ffffff', marginTop: '0', marginBottom: '14px', lineHeight: '1.1' }}>
+          <p style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(30px, 5vw, 35px)', fontWeight: '800', color: '#ffffff', marginTop: '0', marginBottom: '14px', lineHeight: '1.1' }}>
             Newsletter
           </p>
           <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', color: '#8892a4', marginTop: '0', marginBottom: '18px', lineHeight: '1.5' }}>
@@ -184,7 +184,7 @@ function NewsletterStrip() {
               }}
             />
             <button type="button" className="btn btn--ghost" style={{ height: '44px', minHeight: '44px', boxSizing: 'border-box', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', marginTop: '0' }}>
-              Subscribe
+              Subscribe Free
             </button>
           </div>
         </div>
@@ -199,8 +199,8 @@ function AvailableForPractice() {
   return (
     <section className="section" id="financial-clarity">
       <div className="container">
-        <div className="site-card" style={{ paddingTop: '20px' }}>
-          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: 'clamp(4px, 1.5vw, 10px)' }}>
+        <div className="site-card" style={{ paddingTop: '16px', paddingBottom: '24px' }}>
+          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: 'clamp(4px, 1.5vw, 10px)', lineHeight: '1.2' }}>
             Available
           </h2>
           <h3 style={{ fontFamily: "'Playfair Display', serif", fontWeight: '800', fontSize: 'clamp(30px, 5vw, 35px)', color: '#ffffff', lineHeight: '1.2' }}>
@@ -241,8 +241,8 @@ function HowItWorks() {
   return (
     <section className="section">
       <div className="container">
-        <div className="site-card" style={{ paddingTop: '20px' }}>
-          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: 'clamp(4px, 1.5vw, 10px)' }}>How It Works</h2>
+        <div className="site-card" style={{ paddingTop: '16px', paddingBottom: '24px' }}>
+          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: 'clamp(4px, 1.5vw, 10px)', lineHeight: '1.2' }}>How It Works</h2>
           <div className="step-stack" style={{ marginTop: '0' }}>
             {steps.map(step => (
               <div key={step.number} className="step-item">
@@ -308,8 +308,8 @@ function CustomWork() {
   return (
     <section className="section">
       <div className="container">
-        <div className="site-card" style={{ paddingTop: '20px' }}>
-          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: 'clamp(4px, 1.5vw, 10px)' }}>Custom Work</h2>
+        <div className="site-card" style={{ paddingTop: '16px', paddingBottom: '24px' }}>
+          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: 'clamp(4px, 1.5vw, 10px)', lineHeight: '1.2' }}>Custom Work</h2>
           <h3 className="card-title" style={{ fontSize: 'clamp(30px, 5vw, 35px)' }}>McKenzie Arm Care</h3>
           <p className="card-text">
             A custom patient-care portal for a clinician who needed more than a
@@ -346,8 +346,8 @@ function Pricing() {
   return (
     <section className="section">
       <div className="container">
-        <div className="site-card" style={{ paddingTop: '20px' }}>
-          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: 'clamp(4px, 1.5vw, 10px)' }}>Custom Pricing</h2>
+        <div className="site-card" style={{ paddingTop: '16px', paddingBottom: '24px' }}>
+          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: 'clamp(4px, 1.5vw, 10px)', lineHeight: '1.2' }}>Custom Pricing</h2>
           <div className="step-stack" style={{ marginTop: '0' }}>
             {tiers.map(tier => (
               <div key={tier.title} className="step-item">
@@ -378,7 +378,7 @@ function About() {
   return (
     <section className="section">
       <div className="container">
-        <div className="site-card" style={{ paddingTop: '20px' }}>
+        <div className="site-card" style={{ paddingTop: '16px', paddingBottom: '24px' }}>
           <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', lineHeight: '1.1', marginBottom: 'clamp(4px, 1.5vw, 10px)' }}>Behind<br />Franklin<span style={{ color: '#ffffff' }}>AI</span></h2>
           <img
             src="/david.png"
@@ -414,8 +414,8 @@ function DiscoveryCTA() {
   return (
     <section className="section" id="discovery">
       <div className="container">
-        <div className="site-card" style={{ paddingTop: '20px' }}>
-          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: 'clamp(4px, 1.5vw, 10px)' }}>Let's Build</h2>
+        <div className="site-card" style={{ paddingTop: '16px', paddingBottom: '24px' }}>
+          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: 'clamp(4px, 1.5vw, 10px)', lineHeight: '1.2' }}>Let's Build</h2>
           <p className="card-text">
             Every project starts with a conversation. Tell us what you need or what's not working,
             and we'll figure out what to build.
