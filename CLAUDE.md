@@ -1,20 +1,18 @@
-# FranklinAI — Project Instructions (Version 26, Current)
+# FranklinAI — Project Instructions (Version 27, Current)
 
-> **Version 26 updates:** One working session in Claude Code refining the newsletter (Operator) card and the shared card typography. No positioning or copy-strategy changes; "The Operator" name is kept. This was the first session run in Claude Code rather than claude.ai — the instructions file now lives in the repo as `CLAUDE.md` and is the same document as the claude.ai project instructions.
+> **Version 27 updates:** One Claude Code working session refining the nav and footer **wordmark lockup**. The wordmark's second line changed from the city ("Philadelphia") to the legal suffix, so the lockup now reads **"FranklinAI" / "Solutions, LLC"** in both the nav and the footer. The centering *methodology* (F-vs-crossbar, the `translateX` dials) is unchanged, but several locked values moved — see below.
 >
-> **The Operator card was rebalanced.** The masthead was top-heavy and inconsistent with the other cards. Two moves fixed it: (1) **"The Operator" title shrunk** from `clamp(36px, 5.5vw, 58px)` to **`clamp(34px, 5vw, 50px)`** and pulled *out* of the unified section-heading tier — it is now its own smaller treatment; (2) **the "Newsletter" label grew** from `clamp(26px, 4vw, 30px)` to **`clamp(30px, 5vw, 35px)`**, so it now matches the standard secondary sub-title tier (GlowPT, McKenzie). The V25 "Newsletter label is a deliberate smaller exception" rule is **retired**. See Header Sizing and Newsletter Card.
+> **"Philadelphia" in the wordmark is replaced by "Solutions, LLC."** The nav and footer wordmark sublines now read **"Solutions, LLC"** — the company's full legal name is FranklinAI Solutions, LLC, so the lockup now carries the whole name. It is set in **blue #60a5fa to match "Franklin"** (the city had been cool blue-grey #8899b0). The company is still based in Philadelphia — that fact lives in the Business section — but the city no longer appears anywhere in the wordmark. See Business, Brand Kit, Nav, and Footer.
 >
-> **"The Operator" is now set in true italic.** The title is the one heading on the page that is a *publication name* rather than a section label, so it is set in italic Playfair (`fontStyle: 'italic'`) to read as a masthead. This required the font import to load a real italic face — see the font-import fix below. The name itself was reconsidered and **kept**: it names the reader who *operates* the practice, not David, and the italic marks it as a title. See Header Sizing.
+> **The wordmark subline was enlarged for proportion.** It read too small under the wordmark; V27 sizes it to roughly 0.625× the wordmark name on both lockups: **nav `clamp(25.6px, 2.72vw, 31.5px)`** (was `clamp(17.85px, 2.9vw, 22.05px)`) and **footer `20px`** (was `15px`). Both stay Playfair 400 with the per-line `translateX(-2px)` fine-print nudge. See Typography and Locked Inline Styles.
 >
-> **The header-to-subheader gap was tightened on every card.** The real cause was that `card-heading` set no `line-height`, so it inherited the body's `1.6`, padding dead space inside each heading's line box beneath the glyphs. V26 sets **`lineHeight: '1.2'`** on the six single-line section headings (About keeps `1.1` for its two lines; "The Operator" also uses `1.2`). This is what V20's margin-only tighten could never reach. See Card Heading Spacing.
+> **The footer copyright was trimmed to "© {year}."** With "Solutions, LLC" now in the wordmark, the old copyright line "© {year} FranklinAI Solutions, LLC" was redundant; it is now just **"© {year}"** (renders "© 2026"). The full legal name lives in the wordmark subline instead of the copyright now. See Business and Footer.
 >
-> **Card top and bottom padding was tightened.** Every `.site-card` now carries inline **`paddingTop: '16px'`** (was 20) and **`paddingBottom: '24px'`** (was the CSS 40). Left and right stay at 40px. See Card Top & Bottom Padding.
+> **The footer lockup was recentered and its kite tightened to match the nav.** Two moves: (1) the footer **text-column pull `translateX(-22px)` was removed entirely.** It had been sized for the old long copyright line; with that line gone and the subline changed, it dragged the wordmark left *into* the kite. Removing it lets the footer kite **hug the wordmark at a 4px gap, exactly like the nav** — the footer is now built the same way (kite + wordmark, one 4px flex gap, no inner dial). (2) The footer **brand-row dial moved `translateX(8px)` → `translateX(-12px)`** so the whole kite+wordmark *unit* sits balanced; because this offset is a fixed pixel value, it now reads the same on desktop and iPhone (the old ~27px lean was a big fraction of a phone screen). See Horizontal Centering, Vertical Alignment, and Footer.
 >
-> **The Subscribe button now reads "Subscribe Free."** The free newsletter now states its price at the point of action, on-brand for the free engine, with no second visual element. Still a ghost button, title case, no period. See Copy Rules and Newsletter Card.
+> **The nav lockup is net-unchanged.** After tuning it landed back at **`translateX(-26px)`**, its prior value — the nav was already well-placed; only the footer needed the fix. Note the deliberate asymmetry: the nav's kite is *relatively smaller* next to its bigger wordmark (kite-to-text ratio ~0.22 vs the footer's ~0.27), so the nav's whole unit sits a touch further left than the footer's for the two to *look* equally centered. Don't "correct" the nav's larger negative offset to match the footer's number. See Horizontal Centering.
 >
-> **Drift fixes found by reading the live code (V26):** (1) the font import in `index.html` actually shipped `Playfair+Display:wght@700;800` with **no italic at all** — the spec had wrongly claimed a `1,400` italic face. It is now **`ital,wght@0,700;0,800;1,800`** to serve the true-italic masthead. (2) **The `<meta name="description">` in `index.html` was fixed:** it had carried the banned word **"software"** *and* an em dash. Both are gone — it now reads "…Purpose-built around your workflow, not off-the-shelf templates."
->
-> **Everything else from Version 25 remains in force:** the newsletter card (not a "strip") with its three-part title/label/description lockup; "The Operator" as the newsletter's title with the "name never travels alone" standfirst rule retired; the description line wording; the Subscribe/input 44px alignment fix and its `marginTop: '0'` override; the promise-line decoupling (its open item now resolved — "Written by someone who runs one" is being dropped from Issue 1 and going forward, reconciled in the Content Calendar via claude.ai); the niche-forward front door (headline "Built for Your Practice", subline "Built to Handle HIPAA" as moat/proof); all buttons title case with no period; the newsletter platform **Kit**, with Kit Commerce the front-runner for the e-book checkout; the footer legal name "FranklinAI Solutions, LLC" and the July 24 footer dials; the legal entity **FranklinAI Solutions LLC** with "FranklinAI" as the fictitious name; the Content Calendar as the single canonical content/marketing document; the contact email `david@franklinaisolutions.com`; the reconciliation e-book as a planned second Available shelf (~$37, self-serve, external checkout, not built, ships after issue 1); the named offer-ladder rungs and their prices; the Business Plan deleted; the Claude Code vs claude.ai scoping; the Source File Rule; the stack boundary (site + McKenzie → Supabase; GlowPT → AWS); all nav/footer lockup math; Clarity retired from the site; gold logo-bolt-only; "in plain English" and "software" banned site-wide; no em dashes in site copy; the $350 GlowPT price; the GlowPT exercise-plan exclusion.
+> **Everything else from Version 26 remains in force:** the Operator-card rebalance ("The Operator" title `clamp(34px, 5vw, 50px)` in true italic, "Newsletter" label `clamp(30px, 5vw, 35px)`); card-heading `lineHeight: '1.2'` (About keeps 1.1); tightened card padding (`paddingTop: '16px'`, `paddingBottom: '24px'`, sides 40); the "Subscribe Free" ghost-button label; the corrected `index.html` font import (`ital,wght@0,700;0,800;1,800`) and cleaned `<meta name="description">`; the newsletter card (title/label/description lockup) with "The Operator" kept as the title and the "name never travels alone" standfirst retired; the Subscribe/input 44px alignment fix and its `marginTop: '0'` override; the niche-forward front door (headline "Built for Your Practice", subline "Built to Handle HIPAA" as moat/proof); all buttons title case with no period; the newsletter platform **Kit**, with Kit Commerce the front-runner for the e-book checkout; the legal entity **FranklinAI Solutions LLC** with "FranklinAI" as the fictitious name; the Content Calendar as the single canonical content/marketing document; the contact email `david@franklinaisolutions.com`; the reconciliation e-book as a planned second Available shelf (~$37, self-serve, external checkout, not built, ships after issue 1); the named offer-ladder rungs and their prices; the Business Plan deleted; the Claude Code vs claude.ai scoping; the Source File Rule; the stack boundary (site + McKenzie → Supabase; GlowPT → AWS); the F-vs-crossbar vertical-alignment method; Clarity retired from the site; gold logo-bolt-only; "in plain English" and "software" banned site-wide; no em dashes in site copy; the $350 GlowPT price; the GlowPT exercise-plan exclusion.
 
 ---
 
@@ -89,7 +87,7 @@ The Business Plan carried more than the rules this file absorbed. It also held b
 
 FranklinAI builds custom web apps and tools for businesses. The primary offering is purpose-built apps — web apps, internal tools, and client-facing portals — built around a client's specific way of working rather than off-the-shelf templates. Based in Philadelphia, serving local and remote clients.
 
-> **Legal entity (context, not a site-build rule).** The company is formed as **FranklinAI Solutions LLC** (filed in Pennsylvania), and **"FranklinAI"** is the brand / fictitious name (DBA). This is why the footer copyright renders the full legal name "FranklinAI Solutions, LLC" while the wordmark everywhere else is "FranklinAI." The entity, EIN, business banking, AWS BAA, fictitious-name filing, and Philadelphia Commercial Activity License are business tasks tracked in conversation, not here (see What No Longer Has a Home). The only site-facing fact is the footer legal name.
+> **Legal entity (context, not a site-build rule).** The company is formed as **FranklinAI Solutions LLC** (filed in Pennsylvania), and **"FranklinAI"** is the brand / fictitious name (DBA). As of V27 the **wordmark lockup itself carries the full legal name** — it reads "FranklinAI" over "Solutions, LLC" in both the nav and the footer (the "Solutions, LLC" line in blue). The footer copyright is now just "© {year}", since repeating the legal name there was redundant. The entity, EIN, business banking, AWS BAA, fictitious-name filing, and Philadelphia Commercial Activity License are business tasks tracked in conversation, not here (see What No Longer Has a Home). The site-facing facts are the wordmark legal name and the "Based in Philadelphia" positioning; the city no longer appears in the wordmark.
 
 **Packaged products under the FranklinAI umbrella, alongside the custom-build service:**
 
@@ -240,7 +238,7 @@ SVG favicon and 180×180 PNG apple-touch-icon. Both feature the kite mark on nav
 | Role | Value |
 |---|---|
 | Background / Navy | #070f24 — used everywhere: nav, hero, all sections, footer |
-| Accent Blue | #60a5fa — all blues, section headings, links, prices, buttons, logo strokes |
+| Accent Blue | #60a5fa — all blues, section headings, links, prices, buttons, logo strokes, and the wordmark "Solutions, LLC" subline (nav + footer) |
 | Gold / Lightning Bolt | #fbbf24 — **the kite lightning bolt only** (logo mark and favicon). Not used on any heading, sub-title, or copy. See Logo Accent. |
 | Card background | rgba(255, 255, 255, 0.04) — also the newsletter email input fill |
 | Card border | rgba(96, 165, 250, 0.18) |
@@ -249,7 +247,7 @@ SVG favicon and 180×180 PNG apple-touch-icon. Both feature the kite mark on nav
 | Text primary | #f0e6d3 |
 | Text muted | #8892a4 |
 | Kite panel fills | #1e3a5f (lighter) and #0f2340 (darker) |
-| Cool blue-grey sublines | #8899b0 — nav "Philadelphia", footer "Philadelphia", modal sublines |
+| Cool blue-grey sublines | #8899b0 — modal sublines only (e.g. the GlowPT modal "Clinic subscriptions available."). No longer used on the wordmark: the nav/footer sublines went blue in V27. |
 | Headings / white sub-titles | #ffffff — hero headline, wordmark "AI" (nav, footer, and the About heading), the newsletter "Newsletter" label, and every sub-title: GlowPT, McKenzie Arm Care, step titles, pricing-tier titles, David Peterson |
 
 ### Typography
@@ -276,9 +274,9 @@ SVG favicon and 180×180 PNG apple-touch-icon. Both feature the kite mark on nav
 | Modal subline ("Clinic subscriptions available.") | Inter | 600 | 14px, #8899b0, marginBottom 16px |
 | Modal feature rows | Inter | 400 / 700 check | 15px, cream #f0e6d3 text, blue #60a5fa check |
 | Nav name ("FranklinAI") | Playfair Display | 700 | clamp(40.95px, 4.35vw, 50.4px), blue with "AI" white |
-| Nav "Philadelphia" | Playfair Display | 400 | clamp(17.85px, 2.9vw, 22.05px), #8899b0, nudged translateX(-2px) |
+| Nav "Solutions, LLC" | Playfair Display | 400 | clamp(25.6px, 2.72vw, 31.5px), #60a5fa, nudged translateX(-2px) |
 | Footer name | Playfair Display | 700 | 32px, blue with "AI" white |
-| Footer "Philadelphia" | Playfair Display | 400 | 15px, #8899b0, nudged translateX(-2px) |
+| Footer "Solutions, LLC" | Playfair Display | 400 | 20px, #60a5fa, nudged translateX(-2px) |
 | Footer small print | Inter | 400 | 13px, #8892a4, both lines nudged translateX(-2px) |
 | Email option text | Inter | 400 | 15px, #8892a4, link #60a5fa at 600; **"Email"** on its own line, **no period** |
 
@@ -328,7 +326,7 @@ Price numbers are a separate fixed size: **27.7px** (not a heading tier).
 
 > **The sanctioned masthead exception — the newsletter title (V26).** "The Operator" is a `card-heading`, but it is set **smaller than the section-heading tier and in true italic**: `clamp(34px, 5vw, 50px)`, `fontStyle: 'italic'`, lineHeight 1.2. This is deliberate — it is the only heading on the page that is a *publication name* rather than a section label, and the italic reads it as a masthead. Do **not** "correct" it up to the 36–58 tier or set it upright. The **"Newsletter"** label beneath it now sits at the **standard** secondary sub-title tier (`clamp(30px, 5vw, 35px)`), matching GlowPT and McKenzie; the V25 smaller-label exception is **retired**, because with the title shrunk the two no longer compete.
 
-> The nav wordmark ("FranklinAI" + "Philadelphia") is its own lockup and is NOT part of these three tiers — see the Nav section for its clamp values.
+> The nav wordmark ("FranklinAI" + "Solutions, LLC") is its own lockup and is NOT part of these three tiers — see the Nav section for its clamp values.
 
 ---
 
@@ -437,7 +435,7 @@ Set equal to `(crossbar − 3px)` to put the F 3px above the crossbar, then solv
 - **Nav wordmark `marginTop`: `clamp(10.98px, calc(39.25px - 2.44vw), 16.28px)`**
 - **Footer text column `marginTop`: `13.16px`** (font fixed at 32px, single value works everywhere)
 
-> The `translateX(-2px)` nudge on "Philadelphia" (nav and footer) is horizontal only and does not affect this vertical F-vs-crossbar math. Neither does the footer text column's `translateX(-22px)` horizontal snug-pull (see Horizontal Centering).
+> The `translateX(-2px)` nudge on "Solutions, LLC" (nav and footer) is horizontal only and does not affect this vertical F-vs-crossbar math. Neither does the footer brand-row `translateX(-12px)` lockup dial (see Horizontal Centering). (V27 removed the footer text column's former `translateX(-22px)` inner snug-pull entirely.)
 
 ---
 
@@ -445,11 +443,13 @@ Set equal to `(crossbar − 3px)` to put the F 3px above the crossbar, then solv
 
 Both lockups are positioned horizontally by inline `transform: translateX(...)`. Same value on desktop and iPhone. Using a transform (not margin) means it never consumes layout width.
 
-- **Nav brand `<a>`: `transform: 'translateX(-26px)'`**
-- **Footer brand row `<div>`: `transform: 'translateX(8px)'`** — this is the lockup-level dial (moves kite + text column together). *(Updated July 24, 2026 from `-14px` to `8px` after the longer legal name "FranklinAI Solutions, LLC" was added.)*
-- **Footer text column `<div>`: `transform: 'translateX(-22px)'`** — a second, inner dial that re-snugs the wordmark and fine print against the kite. The centered text column stretched rightward when the longer copyright line was added; this pull re-seats it. It is independent of the lockup-level dial above and of the per-line `-2px` fine-print nudges below.
+- **Nav brand `<a>`: `transform: 'translateX(-26px)'`** — the lockup-level dial (moves kite + wordmark together). Net-unchanged in V27 after re-tuning. It is deliberately *more* negative than the footer's because the nav's kite is smaller relative to its wordmark; the extra left lean is what makes the nav *look* as centered as the footer (see the V27 note below).
+- **Footer brand row `<div>`: `transform: 'translateX(-12px)'`** — the footer's single lockup dial (moves kite + text column together). *(V27: changed from `translateX(8px)` to `translateX(-12px)` to recenter the whole kite+wordmark unit. Because it is a fixed pixel offset it centers the same on desktop and iPhone.)*
+- **Footer text column `<div>`: no `transform`.** *(V27 removed the former inner `translateX(-22px)` snug-pull. It had been sized for the old long copyright line; once that line was trimmed to "© {year}" the pull dragged the wordmark left into the kite. With it gone, the footer is built exactly like the nav — kite + wordmark share one 4px flex gap and there is no inner dial.)*
 
-These lockup/column dials are separate from the per-line **fine-print nudges** below, which move only a single text line.
+> **V27 — why the nav and footer dials differ, and why that is correct.** Both wordmarks now sit built the same way (one 4px kite gap). But the nav's lockup dial is `-26px` while the footer's is `-12px`. That asymmetry is intentional: the nav's kite is *relatively smaller* next to its larger wordmark (kite-to-text width ratio ~0.22 vs the footer's ~0.27), so the heavier nav wordmark pulls the optical center rightward more. The extra `-14px` of lean cancels that, landing the nav's *wordmark* at roughly the same small offset-from-center as the footer's. **Do not "reconcile" the two dials to one number** — the visual result, not the pixel value, is what matches.
+
+These lockup dials are separate from the per-line **fine-print nudges** below, which move only a single text line.
 
 ---
 
@@ -459,10 +459,10 @@ A tiny per-line `transform: 'translateX(-2px)'` shifts individual text lines a h
 
 | Location | Element | Nudge |
 |---|---|---|
-| Nav | "Philadelphia" (`site-nav__city` span) | translateX(-2px) |
-| Footer | "Philadelphia" span | translateX(-2px) |
+| Nav | "Solutions, LLC" (`site-nav__city` span) | translateX(-2px) |
+| Footer | "Solutions, LLC" span | translateX(-2px) |
 | Footer | "franklinaisolutions.com" span | translateX(-2px) |
-| Footer | "© {year} FranklinAI Solutions, LLC" span | translateX(-2px) |
+| Footer | "© {year}" span | translateX(-2px) |
 
 Do NOT apply this nudge to the kite, to "FranklinAI" (nav or footer), or to any other element unless David asks.
 
@@ -476,7 +476,7 @@ Do NOT apply this nudge to the kite, to "FranklinAI" (nav or footer), or to any 
 - Brand link inline: `gap: '4px'`, `alignItems: 'flex-start'`, `transform: 'translateX(-26px)'`
 - Kite: `KiteLogo size={130}`, wrapped in `<span style={{ flexShrink: 0, display: 'flex' }}>`, NO className
 - Wordmark div: `marginTop: 'clamp(10.98px, calc(39.25px - 2.44vw), 16.28px)'`
-- Name: `clamp(40.95px, 4.35vw, 50.4px)`, blue #60a5fa with "AI" white #ffffff; Philadelphia: `clamp(17.85px, 2.9vw, 22.05px)`, #8899b0, with `transform: 'translateX(-2px)'`
+- Name: `clamp(40.95px, 4.35vw, 50.4px)`, blue #60a5fa with "AI" white #ffffff; "Solutions, LLC": `clamp(25.6px, 2.72vw, 31.5px)`, blue #60a5fa, with `transform: 'translateX(-2px)'`
 - Responsive sizing via inline `clamp()`, not CSS media queries
 
 ---
@@ -491,15 +491,15 @@ A scaled-down signature (kite 105, name 32px). The kite sits beside a single cen
 
 **Kite** (left): `KiteLogo size={105}`, no className.
 
-**Text column** (right, flex column, centered, `marginTop: '13.16px'`, `transform: 'translateX(-22px)'`):
+**Text column** (right, flex column, centered, `marginTop: '13.16px'`, **no `transform`** — V27 removed the former `translateX(-22px)` inner pull):
 1. FranklinAI — Playfair 700, 32px, blue #60a5fa with "AI" in white #ffffff (in a home link). **No per-line nudge.**
-2. Philadelphia — Playfair 400, 15px, #8899b0, marginTop 3px (in the home link), `transform: 'translateX(-2px)'`
+2. Solutions, LLC — Playfair 400, **20px**, **blue #60a5fa**, marginTop 3px (in the home link), `transform: 'translateX(-2px)'`
 3. franklinaisolutions.com — Inter 400, 13px, #8892a4, marginTop 8px, `transform: 'translateX(-2px)'`
-4. © {year} FranklinAI Solutions, LLC — Inter 400, 13px, #8892a4, `transform: 'translateX(-2px)'`
+4. © {year} — Inter 400, 13px, #8892a4, `transform: 'translateX(-2px)'`
 
 **Footer outer:** padding '24px 24px 20px', borderTop '1px solid rgba(96, 165, 250, 0.12)', marginTop '0', display 'flex', justifyContent 'center'.
 
-**Footer brand row:** display 'flex', alignItems 'flex-start', gap '4px', `transform: 'translateX(8px)'`.
+**Footer brand row:** display 'flex', alignItems 'flex-start', gap '4px', `transform: 'translateX(-12px)'` (V27; was `translateX(8px)`).
 
 No email in the footer.
 
@@ -622,7 +622,7 @@ All files in `public/` are served at the site root by Vite.
 - The "Email" link under the Discovery CTA has **no period** — it is a link, not a button — and points to **david@franklinaisolutions.com**
 - Modal feature lines end with periods
 - GlowPT is always one word, capital G and PT
-- FranklinAI is always one word, capital F and capital AI; wherever the wordmark appears (nav, footer, the "Behind FranklinAI" heading), the "AI" renders white. The footer copyright is the one place the full legal name "FranklinAI Solutions, LLC" appears.
+- FranklinAI is always one word, capital F and capital AI; wherever the wordmark appears (nav, footer, the "Behind FranklinAI" heading), the "AI" renders white. As of V27 the wordmark lockup (nav + footer) carries a second line, "Solutions, LLC", in blue — so the full legal name "FranklinAI Solutions, LLC" now reads down the lockup. The footer copyright is just "© {year}".
 - **The newsletter card copy is: title "The Operator", label "Newsletter", description "For those who run a physical therapy practice. Delivered every other Tuesday, it takes a clear look at what's working in your practice, what isn't, and what to do about it."** "The Operator" is the newsletter's title; the old "Notes from the ops chair" standfirst is retired from the masthead (see Source-of-Truth Documents).
 - **Never describe GlowPT as providing an exercise plan or exercise prescription.** The product has a movement checklist: a record of what the patient did, not a plan telling them what to do. Permanent. See Available.
 
@@ -666,7 +666,7 @@ Set in `App.jsx`, overriding CSS class defaults. Do not change without explicit 
 | Nav wordmark `<div>` | marginTop: 'clamp(10.98px, calc(39.25px - 2.44vw), 16.28px)' |
 | Nav name `<span>` | fontSize: 'clamp(40.95px, 4.35vw, 50.4px)', color: '#60a5fa' |
 | Nav "AI" `<span>` | color: '#ffffff' |
-| Nav Philadelphia `<span>` | fontSize: 'clamp(17.85px, 2.9vw, 22.05px)', color: '#8899b0', transform: 'translateX(-2px)' |
+| Nav "Solutions, LLC" `<span>` | fontSize: 'clamp(25.6px, 2.72vw, 31.5px)', color: '#60a5fa', transform: 'translateX(-2px)' (text "Solutions, LLC") |
 | All `.site-card` divs | paddingTop: '16px', paddingBottom: '24px' (overrides the CSS `.site-card { padding: 40px }` top and bottom; sides stay 40px) |
 | Hero label `<p>` | fontFamily: Playfair Display, fontSize: 'clamp(40px, 6vw, 64px)', fontWeight: '700', letterSpacing: '0.04em', color: '#60a5fa', marginBottom: 'clamp(6px, 2.2vw, 14px)', lineHeight: '1.3' |
 | Hero headline `<h1>` | color: '#ffffff', fontSize: 'clamp(37.5px, 5.75vw, 57.5px)', marginBottom: '10px' (text **"Built for" / "Your Practice"**, **no period**) |
@@ -714,14 +714,14 @@ Set in `App.jsx`, overriding CSS class defaults. Do not change without explicit 
 | EmailOption `<p>` | fontFamily: Inter, fontSize: '15px', color: '#8892a4', marginTop: '18px' (under Discovery CTA only) |
 | EmailOption link `<a>` | href mailto:david@franklinaisolutions.com; color: '#60a5fa', textDecoration: 'none', fontWeight: '600'; link text **"Email"**, no period |
 | Footer `<footer>` | padding: '24px 24px 20px', borderTop: '1px solid rgba(96, 165, 250, 0.12)', marginTop: '0', display: 'flex', justifyContent: 'center' |
-| **Footer brand row `<div>`** | display: 'flex', alignItems: 'flex-start', gap: '4px', **transform: 'translateX(8px)'** |
+| **Footer brand row `<div>`** | display: 'flex', alignItems: 'flex-start', gap: '4px', **transform: 'translateX(-12px)'** (V27; was `translateX(8px)`) |
 | Footer kite wrapper `<span>` | flexShrink: 0, display: 'flex' |
 | Footer kite | `KiteLogo size={105}` |
-| **Footer text column `<div>`** | display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '13.16px', **transform: 'translateX(-22px)'** |
+| **Footer text column `<div>`** | display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '13.16px' (V27 removed the former **`transform: 'translateX(-22px)'`**) |
 | Footer name `<span>` | fontFamily: Playfair Display, fontWeight: 700, fontSize: '32px', color: '#60a5fa', lineHeight: 1 (with "AI" in #ffffff) |
-| Footer Philadelphia `<span>` | fontFamily: Playfair Display, fontWeight: 400, fontSize: '15px', letterSpacing: '0.02em', color: '#8899b0', marginTop: '3px', transform: 'translateX(-2px)' |
+| Footer "Solutions, LLC" `<span>` | fontFamily: Playfair Display, fontWeight: 400, fontSize: '20px', letterSpacing: '0.02em', color: '#60a5fa', marginTop: '3px', transform: 'translateX(-2px)' (text "Solutions, LLC") |
 | Footer address `<span>` | fontFamily: Inter, fontSize: '13px', color: '#8892a4', lineHeight: 1.5, marginTop: '8px', transform: 'translateX(-2px)' |
-| **Footer copyright `<span>`** | fontFamily: Inter, fontSize: '13px', color: '#8892a4', lineHeight: 1.5, transform: 'translateX(-2px)' (text **"© {year} FranklinAI Solutions, LLC"**) |
+| **Footer copyright `<span>`** | fontFamily: Inter, fontSize: '13px', color: '#8892a4', lineHeight: 1.5, transform: 'translateX(-2px)' (text **"© {year}"** — V27 trimmed the legal name) |
 
 ---
 
@@ -776,6 +776,7 @@ Netlify auto-deploys on push. Hard refresh with Cmd+Shift+R after deploy. Favico
 
 ## Change History
 
+- **V27** — **Wordmark lockup: "Philadelphia" → "Solutions, LLC", enlarged sublines, trimmed copyright, and a footer recenter.** One Claude Code session refining the nav and footer wordmark. (1) **The wordmark's second line changed from the city to the legal suffix** — nav and footer now read "FranklinAI" / "Solutions, LLC", set in blue #60a5fa to match "Franklin" (was cool blue-grey #8899b0). The company is still based in Philadelphia (Business section), but the city is gone from the wordmark. (2) **The subline was enlarged** to ~0.625× the wordmark name: nav `clamp(17.85px, 2.9vw, 22.05px)` → `clamp(25.6px, 2.72vw, 31.5px)`; footer `15px` → `20px`. (3) **The footer copyright was trimmed** from "© {year} FranklinAI Solutions, LLC" to just "© {year}" — the legal name now lives in the wordmark, so repeating it was redundant. (4) **The footer lockup was recentered and its kite tightened to match the nav:** the footer text-column inner pull `translateX(-22px)` was removed entirely (it had been sized for the old long copyright line and was dragging the wordmark into the kite), so the footer kite now hugs the wordmark at a 4px gap exactly like the nav; and the footer brand-row dial moved `translateX(8px)` → `translateX(-12px)` to balance the whole unit (fixed-pixel offset, so consistent on desktop and iPhone). (5) **The nav lockup is net-unchanged** at `translateX(-26px)`; its dial stays deliberately more negative than the footer's because its kite is smaller relative to its wordmark — the asymmetry is what makes them *look* equally centered. Sections updated: title, header summary, Business (legal-entity note), Brand Kit colors + typography, Vertical Alignment note, Horizontal Centering (footer dials rewritten + new nav/footer asymmetry note), Fine-Print Left-Nudges, Nav, Footer, Copy Rules, Locked Inline Styles (nav/footer subline, footer brand row, footer text column, footer copyright rows). No copy-strategy, pricing, or card changes this pass.
 - **V26** — **Operator-card rebalance, italic masthead, tighter card typography, and two live-code drift fixes.** First session run in Claude Code (the instructions now live in the repo as `CLAUDE.md`, same document as the claude.ai project instructions). (1) **Operator card rebalanced:** "The Operator" title shrunk to `clamp(34px, 5vw, 50px)` and pulled out of the unified section-heading tier; the "Newsletter" label grown to `clamp(30px, 5vw, 35px)` to match the standard sub-title tier — the V25 smaller-label exception is retired. (2) **"The Operator" set in true italic** (`fontStyle: 'italic'`) to read as a publication masthead; the name was reconsidered and **kept** (it names the reader-operator, not David). (3) **Card-heading `lineHeight: '1.2'`** added to the six single-line headings (About stays 1.1) — the real fix for the header-to-subheader gap, which had been inheriting the body's 1.6. (4) **Card padding tightened:** `paddingTop` 20→16, explicit `paddingBottom: '24px'` (was CSS 40); sides stay 40. (5) **Subscribe button → "Subscribe Free."** (6) **Drift fix:** the live `index.html` font import was `Playfair+Display:wght@700;800` (no italic); corrected to `ital,wght@0,700;0,800;1,800` for the true-italic masthead — the spec's prior `1,400` italic claim was wrong. (7) **Meta description fixed:** removed the banned word "software" and an em dash from the `index.html` `<meta name="description">`. (8) **Promise-line open item resolved:** David is dropping "Written by someone who runs one" from Issue 1 and going forward; that reconciliation is a Content Calendar edit made in claude.ai, recorded here only to close the loop. Sections updated: header summary, Known-lag note, Source-of-Truth Documents (promise-line decision), Brand Kit typography (Newsletter title/label rows + font import), Logo Accent (Operator italic-but-blue note), Header Sizing (masthead exception + tiers rewritten), Card Top & Bottom Padding (renamed), Card Heading Spacing (line-height cause), Design Rules, Copy Rules, Newsletter Card, Page Sections, Locked Inline Styles (Newsletter title/label/Subscribe rows + all card padding + heading line-heights), CSS/JSX Boundary. No other code changed this pass.
 - **V25** — **Newsletter card masthead restructure, Subscribe-button alignment fix, and terminology correction.** (1) **"Strip" retired for "card"** throughout — the component is a full prominent `.site-card`, not a quiet strip; the original goal was only to bring an oversized version down to right-sized. The React component keeps its legacy name `NewsletterStrip`. (2) **Masthead is now title / label / description:** "The Operator" (blue card-heading) → "Newsletter" (white Playfair label, clamp(26px, 4vw, 30px), lineHeight 1.1) → the description line. This replaced the interim "The Operator" + "Notes from the Ops Chair" subhead, which was added and then removed within the session. (3) **"The Operator" is the newsletter's title, not a label for David** — retires the Calendar's "name never travels alone / Notes from the ops chair standfirst" rule; the chair voice survives as the writing register only. Calendar updated the same pass. (4) **Description rewritten:** "For those who run a physical therapy practice. Delivered every other Tuesday, it takes a clear look at what's working in your practice, what isn't, and what to do about it." (5) **Subscribe button aligned to the input:** both pinned to 44px via `height`/`minHeight`/`boxSizing: border-box`; button set to `inline-flex` centered with **`marginTop: '0'`** to cancel the `.btn` class `margin-top: 8px` (the cause of the lingering vertical offset) and to beat the class's `padding: 15px 34px` (the cause of the height mismatch). (6) **Promise-line coupling retired** — the site card carries its own copy and no longer must match the issue-top promise word-for-word; open item flagged (site dropped "Written by someone who runs one"; Issue 1 promise still carries it). Sections updated: header summary, Source-of-Truth Documents (calendar summary + retired rules), Newsletter Card (rewritten), Brand Kit colors + typography, Logo Accent (Newsletter label white), Header Sizing (Newsletter label exception note), Card Top Padding, Card Heading Spacing, Design Rules, Copy Rules, Page Sections (Newsletter subsection), Locked Inline Styles (Newsletter rows + input/button), CSS/JSX Boundary (NewsletterStrip overrides). No other code changed this pass.
 - **V24** — **One session of site changes plus recent-thread drift.** (1) **All buttons title case, no period, as one unified rule** — retiring V23's period-on-buttons rule. (2) **The Operator newsletter signup built and live** between Hero and Available (component `NewsletterStrip`): blue "The Operator" heading, standfirst, promise line, an inline-styled email input, and a **ghost** Subscribe button. **Unwired** — Kit endpoint pending. (3) **Newsletter platform chosen: Kit**; Kit Commerce also the front-runner for the e-book checkout. (4) **New locked promise line** ("what's working in your practice, what isn't, and what to do about it"). (5) **Footer drift folded in (July 24):** copyright → "FranklinAI Solutions, LLC"; brand-row dial → translateX(8px); footer text column added translateX(-22px). (6) **Legal entity note:** FranklinAI Solutions LLC formed, "FranklinAI" as the fictitious name — only the footer legal name is a site fact. *(V25 note: the newsletter masthead and copy from V24 have since been restructured; see V25.)*
