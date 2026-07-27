@@ -107,7 +107,7 @@ function Nav() {
   return (
     <nav className="site-nav" style={{ padding: '6px 24px' }}>
       <div className="site-nav__inner">
-        <a href="/" className="site-nav__brand" style={{ gap: '4px', alignItems: 'flex-start', transform: 'translateX(-22px)' }}>
+        <a href="/" className="site-nav__brand" style={{ gap: '4px', alignItems: 'flex-start', transform: 'translateX(-26px)' }}>
           <span style={{ flexShrink: 0, display: 'flex' }}>
             <KiteLogo size={130} />
           </span>
@@ -115,7 +115,7 @@ function Nav() {
             <span className="site-nav__name" style={{ fontSize: 'clamp(40.95px, 4.35vw, 50.4px)', color: '#60a5fa' }}>
               Franklin<span className="site-nav__ai" style={{ color: '#ffffff' }}>AI</span>
             </span>
-            <span className="site-nav__city" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700, fontSize: 'clamp(25.6px, 2.72vw, 31.5px)', color: '#60a5fa', lineHeight: '1', marginTop: '3px', transform: 'translateX(-2px)' }}>Solutions, LLC</span>
+            <span className="site-nav__city" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 800, fontSize: 'clamp(25.6px, 2.72vw, 31.5px)', color: '#60a5fa', lineHeight: '1', marginTop: '3px', transform: 'translateX(-2px)' }}>Solutions, LLC</span>
           </div>
         </a>
       </div>
@@ -482,7 +482,7 @@ function Footer() {
             <span
               style={{
                 fontFamily: "'Inter', sans-serif",
-                fontWeight: 700,
+                fontWeight: 800,
                 fontSize: '20px',
                 letterSpacing: '0.02em',
                 color: '#60a5fa',
