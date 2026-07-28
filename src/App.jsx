@@ -253,7 +253,7 @@ function AvailableForPractice() {
           <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: 'clamp(4px, 1.5vw, 10px)', lineHeight: '1.2' }}>
             Available
           </h2>
-          <h3 style={{ fontFamily: "'Playfair Display', serif", fontWeight: '800', fontSize: 'clamp(30px, 5vw, 35px)', color: '#ffffff', lineHeight: '1.2', marginTop: '20px', marginBottom: '10px' }}>
+          <h3 style={{ fontFamily: "'Playfair Display', serif", fontWeight: '800', fontSize: 'clamp(30px, 5vw, 35px)', color: '#ffffff', lineHeight: '1.2', marginTop: '12px', marginBottom: '10px' }}>
             What Your Practice Actually Sells
           </h3>
           <p className="card-text" style={{ marginBottom: '0' }}>
@@ -262,7 +262,7 @@ function AvailableForPractice() {
           <button className="btn btn--ghost" onClick={() => setEbookOpen(true)} style={{ marginTop: '16px' }}>
             More Info
           </button>
-          <h3 style={{ fontFamily: "'Playfair Display', serif", fontWeight: '800', fontSize: 'clamp(30px, 5vw, 35px)', color: '#ffffff', lineHeight: '1.2', marginTop: '36px', marginBottom: '10px' }}>
+          <h3 style={{ fontFamily: "'Playfair Display', serif", fontWeight: '800', fontSize: 'clamp(30px, 5vw, 35px)', color: '#ffffff', lineHeight: '1.2', marginTop: '28px', marginBottom: '10px' }}>
             GlowPT
           </h3>
           <p className="card-text">
