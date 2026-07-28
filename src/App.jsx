@@ -103,6 +103,54 @@ function GlowPTModal({ onClose }) {
   );
 }
 
+function EbookModal({ onClose }) {
+  useEffect(() => {
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => { document.body.style.overflow = prev; };
+  }, []);
+
+  return (
+    <div className="modal-backdrop" onClick={onClose}>
+      <div className="modal" onClick={e => e.stopPropagation()}>
+        <button className="modal__close" onClick={onClose} aria-label="Close">
+          &#x2715;
+        </button>
+        <h2 className="modal__title" style={{ marginTop: '6px' }}>What Your Practice Actually Sells</h2>
+        <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '14px', fontWeight: '600', color: '#8899b0', marginBottom: '16px' }}>
+          A self-serve guide. $37, yours to download.
+        </p>
+        <p className="modal__text">
+          Your front desk is selling packages while your therapists are trying
+          to finish plans of care. That's not a marketing problem. You're running
+          two business models in one building, an insurance practice and a cash
+          practice, and they're pulling against each other.
+        </p>
+        <p className="modal__text">
+          Nobody decided to run both. The tactics arrived built for a business
+          you don't own, and none of them came with a label. So the front desk
+          improvises, the therapists get mixed signals, and every patient feels
+          the seams.
+        </p>
+        <p className="modal__text">
+          This guide walks you through the fix: decide what your practice
+          actually is, then say it in one sentence your whole team can repeat.
+          Not a tactic, not a tool. The one thing that lets everything else line
+          up behind it.
+        </p>
+        <div style={{ borderTop: '1px solid rgba(96, 165, 250, 0.12)', paddingTop: '24px', textAlign: 'center' }}>
+          <p style={{ fontFamily: "'Playfair Display', serif", fontWeight: '700', fontSize: '27.7px', color: '#60a5fa', lineHeight: '1.45', marginBottom: '18px' }}>
+            $37
+          </p>
+          <a href="#" className="btn btn--ghost" style={{ padding: '10px 20px', fontSize: '13px' }}>
+            Buy the Guide
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Nav() {
   return (
     <nav className="site-nav" style={{ padding: '6px 24px' }}>
@@ -195,6 +243,7 @@ function NewsletterStrip() {
 
 function AvailableForPractice() {
   const [glowOpen, setGlowOpen] = useState(false);
+  const [ebookOpen, setEbookOpen] = useState(false);
 
   return (
     <section className="section" id="financial-clarity">
@@ -203,7 +252,16 @@ function AvailableForPractice() {
           <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', marginBottom: 'clamp(4px, 1.5vw, 10px)', lineHeight: '1.2' }}>
             Available
           </h2>
-          <h3 style={{ fontFamily: "'Playfair Display', serif", fontWeight: '800', fontSize: 'clamp(30px, 5vw, 35px)', color: '#ffffff', lineHeight: '1.2' }}>
+          <h3 style={{ fontFamily: "'Playfair Display', serif", fontWeight: '800', fontSize: 'clamp(30px, 5vw, 35px)', color: '#ffffff', lineHeight: '1.2', marginTop: '32px' }}>
+            What Your Practice Actually Sells
+          </h3>
+          <p className="card-text" style={{ marginBottom: '0' }}>
+            A short, downloadable guide for owners running one clinic that bills insurance and sells advanced care without the two halves fighting. Name what your practice actually sells, so your whole team can say it.
+          </p>
+          <button className="btn btn--ghost" onClick={() => setEbookOpen(true)} style={{ marginTop: '16px' }}>
+            More Info
+          </button>
+          <h3 style={{ fontFamily: "'Playfair Display', serif", fontWeight: '800', fontSize: 'clamp(30px, 5vw, 35px)', color: '#ffffff', lineHeight: '1.2', marginTop: '48px' }}>
             GlowPT
           </h3>
           <p className="card-text">
@@ -214,6 +272,7 @@ function AvailableForPractice() {
           </button>
         </div>
       </div>
+      {ebookOpen && <EbookModal onClose={() => setEbookOpen(false)} />}
       {glowOpen && <GlowPTModal onClose={() => setGlowOpen(false)} />}
     </section>
   );
