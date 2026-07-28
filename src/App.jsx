@@ -63,6 +63,7 @@ function GlowPTModal({ onClose }) {
     'Reaches every patient, not just the ones you can bill remote monitoring on.',
     'More completed plans of care, because engaged patients finish their care.',
     'Zero work for your therapists. No building, no monitoring, no calls.',
+    'Runs alongside any EMR. Nothing to set up, nothing to integrate.',
     'A free weekly roster summary and a clinic dashboard to follow activity, trends, and flags.'
   ];
 
@@ -256,7 +257,7 @@ function AvailableForPractice() {
             What Your Practice Actually Sells
           </h3>
           <p className="card-text" style={{ marginBottom: '0' }}>
-            A downloadable guide for owners running one clinic that bills insurance and sells advanced care without the two halves fighting.
+            A short guide for owners running two business models in one building, an insurance practice and a cash practice, and making them work together.
           </p>
           <button className="btn btn--ghost" onClick={() => setEbookOpen(true)} style={{ marginTop: '16px' }}>
             More Info
@@ -265,7 +266,7 @@ function AvailableForPractice() {
             GlowPT
           </h3>
           <p className="card-text">
-            An app for physical therapy practices to keep patients engaged between visits. Runs alongside any EMR, with zero work for your therapists.
+            An app for physical therapy practices to keep patients engaged between visits, with zero work for your therapists.
           </p>
           <button className="btn btn--ghost" onClick={() => setGlowOpen(true)} style={{ marginTop: '16px' }}>
             More Info
