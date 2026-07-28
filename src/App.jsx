@@ -199,11 +199,11 @@ function NewsletterStrip() {
     <section className="section">
       <div className="container">
         <div className="site-card" style={{ paddingTop: '16px', paddingBottom: '24px' }}>
-          <h2 className="card-heading" style={{ fontSize: 'clamp(34px, 5vw, 50px)', fontStyle: 'italic', lineHeight: '1.2', marginBottom: 'clamp(4px, 1.5vw, 10px)' }}>
-            The Operator
+          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', lineHeight: '1.2', marginBottom: 'clamp(4px, 1.5vw, 10px)' }}>
+            Newsletter
           </h2>
           <p style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(30px, 5vw, 35px)', fontWeight: '800', color: '#ffffff', marginTop: '0', marginBottom: '14px', lineHeight: '1.1' }}>
-            Newsletter
+            The Operator
           </p>
           <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', color: '#8892a4', marginTop: '0', marginBottom: '18px', lineHeight: '1.5' }}>
             For those who run a physical therapy practice. Delivered every other Tuesday, it takes a clear look at what's working in your practice, what isn't, and what to do about it.
@@ -256,7 +256,7 @@ function AvailableForPractice() {
             What Your Practice Actually Sells
           </h3>
           <p className="card-text" style={{ marginBottom: '0' }}>
-            A downloadable guide for owners running one clinic that bills insurance and sells advanced care without the two halves fighting. Name what your practice actually sells, so your whole team can say it.
+            A downloadable guide for owners running one clinic that bills insurance and sells advanced care without the two halves fighting.
           </p>
           <button className="btn btn--ghost" onClick={() => setEbookOpen(true)} style={{ marginTop: '16px' }}>
             More Info
