@@ -195,21 +195,28 @@ function Hero() {
   );
 }
 
-function NewsletterStrip() {
+function NewsletterModal({ onClose }) {
+  useEffect(() => {
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => { document.body.style.overflow = prev; };
+  }, []);
+
   return (
-    <section className="section">
-      <div className="container">
-        <div className="site-card" style={{ paddingTop: '16px', paddingBottom: '24px' }}>
-          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', lineHeight: '1.2', marginBottom: 'clamp(4px, 1.5vw, 10px)' }}>
-            Newsletter
-          </h2>
-          <p style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(30px, 5vw, 35px)', fontWeight: '800', color: '#ffffff', marginTop: '0', marginBottom: '14px', lineHeight: '1.1' }}>
-            The Operator
-          </p>
-          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', color: '#8892a4', marginTop: '0', marginBottom: '18px', lineHeight: '1.5' }}>
-            For those who run a physical therapy practice. Delivered every other Tuesday, it takes a clear look at what's working in your practice, what isn't, and what to do about it.
-          </p>
-          {/* Signup form. Not wired yet. The Kit form endpoint gets added here later. */}
+    <div className="modal-backdrop" onClick={onClose}>
+      <div className="modal" onClick={e => e.stopPropagation()}>
+        <button className="modal__close" onClick={onClose} aria-label="Close">
+          &#x2715;
+        </button>
+        <h2 className="modal__title" style={{ marginTop: '6px' }}>The Operator</h2>
+        <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '14px', fontWeight: '600', color: '#8899b0', marginBottom: '16px' }}>
+          Free to subscribe.
+        </p>
+        <p className="modal__text">
+          For those who run a physical therapy practice. Delivered every other Tuesday, it takes a clear look at what's working in your practice, what isn't, and what to do about it.
+        </p>
+        {/* Signup form. Not wired yet. The Kit form endpoint gets added here later. */}
+        <div style={{ borderTop: '1px solid rgba(96, 165, 250, 0.12)', paddingTop: '24px' }}>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', justifyContent: 'center', alignItems: 'center' }}>
             <input
               type="email"
@@ -238,6 +245,32 @@ function NewsletterStrip() {
           </div>
         </div>
       </div>
+    </div>
+  );
+}
+
+function NewsletterStrip() {
+  const [newsletterOpen, setNewsletterOpen] = useState(false);
+
+  return (
+    <section className="section">
+      <div className="container">
+        <div className="site-card" style={{ paddingTop: '16px', paddingBottom: '24px' }}>
+          <h2 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', lineHeight: '1.2', marginBottom: 'clamp(4px, 1.5vw, 10px)' }}>
+            Newsletter
+          </h2>
+          <p style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(30px, 5vw, 35px)', fontWeight: '800', color: '#ffffff', marginTop: '0', marginBottom: '14px', lineHeight: '1.1' }}>
+            The Operator
+          </p>
+          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', color: '#8892a4', marginTop: '0', marginBottom: '18px', lineHeight: '1.5' }}>
+            For those who run a physical therapy practice. Delivered every other Tuesday, it takes a clear look at what's working in your practice, what isn't, and what to do about it.
+          </p>
+          <button type="button" className="btn btn--ghost" onClick={() => setNewsletterOpen(true)} style={{ marginTop: '0' }}>
+            Subscribe for Free
+          </button>
+        </div>
+      </div>
+      {newsletterOpen && <NewsletterModal onClose={() => setNewsletterOpen(false)} />}
     </section>
   );
 }
