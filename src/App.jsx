@@ -176,7 +176,7 @@ function Hero() {
     <section className="section">
       <div className="container">
         <div className="site-card" style={{ paddingTop: '16px', paddingBottom: '24px' }}>
-          <p style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(40px, 6vw, 64px)', fontWeight: '700', letterSpacing: '0.04em', color: '#60a5fa', marginBottom: 'clamp(6px, 2.2vw, 14px)', lineHeight: '1.3' }}>
+          <p style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(40px, 6vw, 64px)', fontWeight: '700', letterSpacing: '0.04em', color: '#60a5fa', marginBottom: 'clamp(2px, 1vw, 8px)', lineHeight: '1.1' }}>
             Custom<br />Apps &amp; Tools
           </p>
           <h1 className="hero__headline" style={{ color: '#ffffff', fontSize: 'clamp(37.5px, 5.75vw, 57.5px)', marginBottom: '10px' }}>
@@ -256,7 +256,7 @@ function AvailableForPractice() {
             What Your Practice Actually Sells
           </h3>
           <p className="card-text" style={{ marginBottom: '0' }}>
-            A short, downloadable guide for owners running one clinic that bills insurance and sells advanced care without the two halves fighting. Name what your practice actually sells, so your whole team can say it.
+            A downloadable guide for owners running one clinic that bills insurance and sells advanced care without the two halves fighting. Name what your practice actually sells, so your whole team can say it.
           </p>
           <button className="btn btn--ghost" onClick={() => setEbookOpen(true)} style={{ marginTop: '16px' }}>
             More Info
