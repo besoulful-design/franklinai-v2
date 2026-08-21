@@ -490,12 +490,12 @@ function About() {
           />
           <h3 className="card-title" style={{ marginTop: '0', fontSize: 'clamp(30px, 5vw, 35px)', color: '#ffffff' }}>David Peterson</h3>
           <p className="card-text">
-            David is the operations manager for a busy clinical practice. He's
-            worked in both nonprofit and for-profit businesses, building systems
-            and processes to keep everything running smoothly.
+            David has spent decades building systems and processes in both
+            nonprofit and for-profit businesses, across healthcare, research,
+            and education.
           </p>
           <p className="card-text">
-            That same drive is what FranklinAI is built on. Custom apps and tools
+            That experience is what FranklinAI is built on. Custom apps and tools
             are the next step in work he's been doing his whole career, now with
             better technology and a clear focus on what a business needs.
           </p>
