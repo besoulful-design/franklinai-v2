@@ -122,16 +122,18 @@ function EbookModal({ onClose }) {
           A self-serve guide. $37, yours to download.
         </p>
         <p className="modal__text">
-          Your front desk is selling packages while your therapists are trying
-          to finish plans of care. That's not a marketing problem. You're running
-          two business models in one building, an insurance practice and a cash
-          practice, and they're pulling against each other.
+          Your whole team is being asked to sell advanced care and get patients
+          to the end of their plan of care at the same time. That's not a
+          marketing problem. You're running two business models in one building,
+          an insurance practice and a cash practice, and they're pulling against
+          each other.
         </p>
         <p className="modal__text">
-          Nobody decided to run both. The tactics arrived built for a business
-          you don't own, and none of them came with a label. So the front desk
-          improvises, the therapists get mixed signals, and every patient feels
-          the seams.
+          You didn't set out to run two businesses, but you chose every piece
+          that built the second one. The tactics arrived built for a business
+          you don't own, and none of them came with a label. So the team gets
+          mixed signals about what the practice is driving at, and every patient
+          feels the seams.
         </p>
         <p className="modal__text">
           This guide walks you through the fix: decide what your practice
@@ -213,7 +215,7 @@ function NewsletterModal({ onClose }) {
           Free to subscribe.
         </p>
         <p className="modal__text">
-          For those who run a physical therapy practice. Delivered every other Tuesday, it takes a clear look at what's working in your practice, what isn't, and what to do about it.
+          For physical therapy practices. Delivered every other Tuesday, it takes a clear look at what's working in your practice, what isn't, and what to do about it.
         </p>
         {/* Signup form. Not wired yet. The Kit form endpoint gets added here later. */}
         <div style={{ borderTop: '1px solid rgba(96, 165, 250, 0.12)', paddingTop: '24px' }}>
@@ -263,7 +265,7 @@ function NewsletterStrip() {
             The Operator
           </p>
           <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', color: '#8892a4', marginTop: '0', marginBottom: '18px', lineHeight: '1.5' }}>
-            For those who run a physical therapy practice. Delivered every other Tuesday, it takes a clear look at what's working in your practice, what isn't, and what to do about it.
+            For physical therapy practices. Delivered every other Tuesday, it takes a clear look at what's working in your practice, what isn't, and what to do about it.
           </p>
           <button type="button" className="btn btn--ghost" onClick={() => setNewsletterOpen(true)} style={{ marginTop: '0' }}>
             Subscribe for Free
