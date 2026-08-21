@@ -215,7 +215,7 @@ function NewsletterModal({ onClose }) {
           Free to subscribe.
         </p>
         <p className="modal__text">
-          For physical therapy practices. Delivered every other Tuesday, it takes a clear look at what's working in your practice, what isn't, and what to do about it.
+          For physical therapy practices. Delivered every other Tuesday, it takes a clear look at what's working and not working in your practice, and what to do about it.
         </p>
         {/* Signup form. Not wired yet. The Kit form endpoint gets added here later. */}
         <div style={{ borderTop: '1px solid rgba(96, 165, 250, 0.12)', paddingTop: '24px' }}>
@@ -265,7 +265,7 @@ function NewsletterStrip() {
             The Operator
           </p>
           <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', color: '#8892a4', marginTop: '0', marginBottom: '18px', lineHeight: '1.5' }}>
-            For physical therapy practices. Delivered every other Tuesday, it takes a clear look at what's working in your practice, what isn't, and what to do about it.
+            For physical therapy practices. Delivered every other Tuesday, it takes a clear look at what's working and not working in your practice, and what to do about it.
           </p>
           <button type="button" className="btn btn--ghost" onClick={() => setNewsletterOpen(true)} style={{ marginTop: '0' }}>
             Subscribe for Free
@@ -292,7 +292,7 @@ function AvailableForPractice() {
             What Your Practice Actually Sells
           </h3>
           <p className="card-text" style={{ marginBottom: '0' }}>
-            A short guide for owners running two business models in one building, an insurance practice and a cash practice, and making them work together.
+            A downloadable guide for owners running two business models in one building, an insurance practice and a cash practice, and making them work together.
           </p>
           <button className="btn btn--ghost" onClick={() => setEbookOpen(true)} style={{ marginTop: '16px' }}>
             More Info
@@ -301,7 +301,7 @@ function AvailableForPractice() {
             GlowPT
           </h3>
           <p className="card-text">
-            An app for physical therapy practices to keep patients engaged between visits, with zero work for your therapists.
+            An app for physical therapy patients to keep them engaged between visits, with zero work for your therapists.
           </p>
           <button className="btn btn--ghost" onClick={() => setGlowOpen(true)} style={{ marginTop: '16px' }}>
             More Info
