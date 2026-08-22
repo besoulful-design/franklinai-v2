@@ -301,7 +301,7 @@ function AvailableForPractice() {
             GlowPT
           </h3>
           <p className="card-text">
-            An app for physical therapy patients to keep them engaged between visits, with zero work for your therapists.
+            An app for physical therapy patients to stay engaged between visits, with zero work for your therapists.
           </p>
           <button className="btn btn--ghost" onClick={() => setGlowOpen(true)} style={{ marginTop: '16px' }}>
             More Info
