@@ -536,15 +536,19 @@ function Footer() {
         justifyContent: 'center'
       }}
     >
-      {/* kite + text column. The text column sits right of the lockup's center
-          (half the kite width + gap), so this translateX lands the wordmark AND the
-          fine print near the page's center. Single dial, desktop + mobile. */}
+      {/* kite + text column. The text column sits to the RIGHT of the kite, so it
+          inherits an offset of exactly (kiteWidth + gap) / 2 from the brand row's
+          center. Kite at size 105 renders 105 * 101/240 = 44.19px wide, gap 4px,
+          so the offset is (44.19 + 4) / 2 = 24.09px. This dial is that number,
+          negated, which lands the wordmark AND the fine print exactly on the
+          page's center line (same axis as every card above). Derived, not tuned by
+          eye: if the kite size or gap ever changes, recompute it, do not nudge it. */}
       <div
         style={{
           display: 'flex',
           alignItems: 'flex-start',
           gap: '4px',
-          transform: 'translateX(-14px)'
+          transform: 'translateX(-24.09px)'
         }}
       >
         <span style={{ flexShrink: 0, display: 'flex' }}>
