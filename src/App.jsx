@@ -79,9 +79,8 @@ function GlowPTModal({ onClose }) {
         </p>
         <p className="modal__text">
           Patients walk out doing great, then drift off before their plan of
-          care is done. GlowPT keeps them engaged between visits, so more of
-          them finish. Completed plans of care are what keep a clinic full and
-          its episodes complete.
+          care is done. The GlowPT app keeps patients engaged between visits, so
+          more plans of care get completed and the clinic stays full.
         </p>
         <div style={{ marginBottom: '24px' }}>
           {features.map((f, i) => (
@@ -552,7 +551,7 @@ function Footer() {
           <KiteLogo size={105} />
         </span>
 
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '13.16px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', marginTop: '13.16px' }}>
           <a
             href="/"
             style={{
@@ -595,7 +594,9 @@ function Footer() {
               fontSize: '13px',
               color: '#8892a4',
               lineHeight: 1.5,
-              marginTop: '8px'
+              marginTop: '8px',
+              alignSelf: 'stretch',
+              textAlign: 'center'
             }}
           >
             franklinaisolutions.com
@@ -605,7 +606,9 @@ function Footer() {
               fontFamily: "'Inter', sans-serif",
               fontSize: '13px',
               color: '#8892a4',
-              lineHeight: 1.5
+              lineHeight: 1.5,
+              alignSelf: 'stretch',
+              textAlign: 'center'
             }}
           >
             &copy; {year}
