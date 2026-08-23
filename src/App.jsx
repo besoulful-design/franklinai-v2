@@ -623,7 +623,7 @@ function Footer() {
               fontSize: '13px',
               color: '#8892a4',
               lineHeight: 1.5,
-              transform: 'translateX(-2px)'
+              transform: 'translateX(-3px)'
             }}
           >
             {/* Tightened gap after the (c) symbol: a fixed 2px margin replaces the
