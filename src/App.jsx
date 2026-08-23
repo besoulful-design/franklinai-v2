@@ -614,7 +614,13 @@ function Footer() {
               lineHeight: 1.5
             }}
           >
-            &copy; {year}
+            {/* Tightened gap after the (c) symbol. The line is geometrically
+                centered, but (c) is a light hollow circle next to four solid
+                digits, so the ink weight leans right and the line reads
+                off-centre. A fixed 2px margin replaces the 3.66px word space:
+                deterministic in every browser, unlike a thin-space glyph, which
+                depends on the font having it. Do not put the plain space back. */}
+            &copy;<span style={{ marginLeft: '2px' }}>{year}</span>
           </span>
         </div>
       </div>
