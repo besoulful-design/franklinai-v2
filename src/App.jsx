@@ -605,17 +605,19 @@ function Footer() {
           >
             franklinaisolutions.com
           </span>
-          {/* The copyright line carries a deliberate -2px optical correction, and
+          {/* The copyright line carries a deliberate -3px optical correction, and
               it is the ONLY line on the page that does. Why it is not a leftover:
               the line is geometrically centered to 0.00px, but "(c)" is a light
               hollow circle sitting next to four solid digits, so its ink weight
               leans right and the eye reads the line as pushed right. The gap was
               already tightened to 2px below; the math says no gap can finish the
               job (solving for a balanced gap returns a negative number), so the
-              residual ~2px is corrected here. V31 stripped a -2px nudge from this
-              line as a "Philadelphia leftover" - on this one line that was an
-              over-correction, and this restores it on purpose. It moves this line
-              only: do not add one to any other line, and do not touch the lockup. */}
+              residual lean is corrected here. Landed at -3px by David's eye on the
+              live site (-2px measured closer on paper, but -3px is what reads
+              centered). V31 stripped a -2px nudge from this line as a "Philadelphia
+              leftover" - on this one line that was an over-correction, and this
+              restores it on purpose. It moves this line only: do not add one to any
+              other line, and DO NOT touch the footer lockup. */}
           <span
             style={{
               display: 'block',
