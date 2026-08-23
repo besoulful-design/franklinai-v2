@@ -551,19 +551,23 @@ function Footer() {
           <KiteLogo size={105} />
         </span>
 
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', marginTop: '13.16px' }}>
+        {/* Block layout + text-align, NO flex. Every line is display:block and
+            centers via the column's textAlign:center. Deliberately not a flex
+            column: flex shrink-to-content centering computes differently across
+            engines (Safari), which is what kept the copyright reading off-center.
+            Block max-content + text-align is identical in every browser. */}
+        <div style={{ textAlign: 'center', marginTop: '13.16px' }}>
           <a
             href="/"
             style={{
               textDecoration: 'none',
               color: 'inherit',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center'
+              display: 'block'
             }}
           >
             <span
               style={{
+                display: 'block',
                 fontFamily: "'Playfair Display', serif",
                 fontWeight: 700,
                 fontSize: '32px',
@@ -575,6 +579,7 @@ function Footer() {
             </span>
             <span
               style={{
+                display: 'block',
                 fontFamily: "'Inter', sans-serif",
                 fontWeight: 800,
                 fontSize: '20px',
@@ -590,25 +595,23 @@ function Footer() {
 
           <span
             style={{
+              display: 'block',
               fontFamily: "'Inter', sans-serif",
               fontSize: '13px',
               color: '#8892a4',
               lineHeight: 1.5,
-              marginTop: '8px',
-              alignSelf: 'stretch',
-              textAlign: 'center'
+              marginTop: '8px'
             }}
           >
             franklinaisolutions.com
           </span>
           <span
             style={{
+              display: 'block',
               fontFamily: "'Inter', sans-serif",
               fontSize: '13px',
               color: '#8892a4',
-              lineHeight: 1.5,
-              alignSelf: 'stretch',
-              textAlign: 'center'
+              lineHeight: 1.5
             }}
           >
             &copy; {year}
