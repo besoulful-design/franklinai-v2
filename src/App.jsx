@@ -605,21 +605,30 @@ function Footer() {
           >
             franklinaisolutions.com
           </span>
+          {/* The copyright line carries a deliberate -2px optical correction, and
+              it is the ONLY line on the page that does. Why it is not a leftover:
+              the line is geometrically centered to 0.00px, but "(c)" is a light
+              hollow circle sitting next to four solid digits, so its ink weight
+              leans right and the eye reads the line as pushed right. The gap was
+              already tightened to 2px below; the math says no gap can finish the
+              job (solving for a balanced gap returns a negative number), so the
+              residual ~2px is corrected here. V31 stripped a -2px nudge from this
+              line as a "Philadelphia leftover" - on this one line that was an
+              over-correction, and this restores it on purpose. It moves this line
+              only: do not add one to any other line, and do not touch the lockup. */}
           <span
             style={{
               display: 'block',
               fontFamily: "'Inter', sans-serif",
               fontSize: '13px',
               color: '#8892a4',
-              lineHeight: 1.5
+              lineHeight: 1.5,
+              transform: 'translateX(-2px)'
             }}
           >
-            {/* Tightened gap after the (c) symbol. The line is geometrically
-                centered, but (c) is a light hollow circle next to four solid
-                digits, so the ink weight leans right and the line reads
-                off-centre. A fixed 2px margin replaces the 3.66px word space:
-                deterministic in every browser, unlike a thin-space glyph, which
-                depends on the font having it. Do not put the plain space back. */}
+            {/* Tightened gap after the (c) symbol: a fixed 2px margin replaces the
+                3.66px word space, deterministic in every browser, unlike a
+                thin-space glyph which depends on the font having it. */}
             &copy;<span style={{ marginLeft: '2px' }}>{year}</span>
           </span>
         </div>
