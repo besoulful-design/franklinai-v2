@@ -532,34 +532,30 @@ function Footer() {
         padding: '24px 24px 20px',
         borderTop: '1px solid rgba(96, 165, 250, 0.12)',
         marginTop: '0',
-        textAlign: 'center'
+        display: 'flex',
+        justifyContent: 'center'
       }}
     >
-      {/* The footer is a plain block with textAlign:center. Two centered things
-          stack inside it: the kite+wordmark lockup, then the fine print. The fine
-          print is deliberately NOT inside the lockup's text column any more: the
-          kite hangs off the left, so a line tucked under the wordmark can never sit
-          on the page's center line. Kept out here, each fine-print line is its own
-          full-width block centered by text-align, which is identical in every
-          browser. Do not move them back beside the kite. */}
-
-      {/* Lockup: kite + wordmark, centered as one unit. inline-flex so the parent's
-          textAlign:center centers it. NO translateX dial: the old -14px lean existed
-          to drag the text column (which then held the fine print) back toward the
-          page's center. The fine print now centers itself out here, so that job is
-          gone and the lean would only push the signature off the axis the fine print
-          and every card sit on. One axis, nothing hand-tuned. */}
+      {/* kite + text column. The text column sits right of the lockup's center
+          (half the kite width + gap), so this translateX lands the wordmark AND the
+          fine print near the page's center. Single dial, desktop + mobile. */}
       <div
         style={{
-          display: 'inline-flex',
+          display: 'flex',
           alignItems: 'flex-start',
-          gap: '4px'
+          gap: '4px',
+          transform: 'translateX(-14px)'
         }}
       >
         <span style={{ flexShrink: 0, display: 'flex' }}>
           <KiteLogo size={105} />
         </span>
 
+        {/* Block layout + text-align, NO flex. Every line is display:block and
+            centers via the column's textAlign:center. Deliberately not a flex
+            column: flex shrink-to-content centering computes differently across
+            engines (Safari), which is what kept the copyright reading off-center.
+            Block max-content + text-align is identical in every browser. */}
         <div style={{ textAlign: 'center', marginTop: '13.16px' }}>
           <a
             href="/"
@@ -596,33 +592,32 @@ function Footer() {
               Solutions, LLC
             </span>
           </a>
+
+          <span
+            style={{
+              display: 'block',
+              fontFamily: "'Inter', sans-serif",
+              fontSize: '13px',
+              color: '#8892a4',
+              lineHeight: 1.5,
+              marginTop: '8px'
+            }}
+          >
+            franklinaisolutions.com
+          </span>
+          <span
+            style={{
+              display: 'block',
+              fontFamily: "'Inter', sans-serif",
+              fontSize: '13px',
+              color: '#8892a4',
+              lineHeight: 1.5
+            }}
+          >
+            &copy; {year}
+          </span>
         </div>
       </div>
-
-      {/* Fine print: its own centered lines beneath the whole lockup. */}
-      <span
-        style={{
-          display: 'block',
-          fontFamily: "'Inter', sans-serif",
-          fontSize: '13px',
-          color: '#8892a4',
-          lineHeight: 1.5,
-          marginTop: '8px'
-        }}
-      >
-        franklinaisolutions.com
-      </span>
-      <span
-        style={{
-          display: 'block',
-          fontFamily: "'Inter', sans-serif",
-          fontSize: '13px',
-          color: '#8892a4',
-          lineHeight: 1.5
-        }}
-      >
-        &copy; {year}
-      </span>
     </footer>
   );
 }
