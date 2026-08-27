@@ -75,7 +75,7 @@ function GlowPTModal({ onClose }) {
         </button>
         <h2 className="modal__title" style={{ marginTop: '6px' }}>GlowPT</h2>
         <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '14px', fontWeight: '600', color: '#8899b0', marginBottom: '16px' }}>
-          Clinic subscriptions available.
+          Sign up online, or book a call first.
         </p>
         <p className="modal__text">
           Patients walk out doing great, then drift off before their plan of
@@ -94,15 +94,18 @@ function GlowPTModal({ onClose }) {
           <p style={{ fontFamily: "'Playfair Display', serif", fontWeight: '700', fontSize: '27.7px', color: '#60a5fa', lineHeight: '1.45', marginBottom: '18px' }}>
             $350 <span style={{ fontSize: '20px' }}>/ month</span>
           </p>
-          <a href="https://cal.com/david-peterson-40s7lw/free-discovery-call" target="_blank" rel="noopener noreferrer" className="btn btn--primary" style={{ padding: '10px 20px', fontSize: '13px' }}>
-            Book a Free Discovery Call
+          {/* Self-serve door, deliberately FIRST so the buttons read in the same
+              order as the subline above them ("Sign up online, or book a call first").
+              Same label as glowpt.app's own primary button, and the same destination
+              (/onboard), so it never lands on a page showing a duplicate button.
+              Styles were NOT flipped with the order: the filled style stays exclusive
+              to the discovery call, site-wide. Only the order changed. */}
+          <a href="https://glowpt.app/onboard" target="_blank" rel="noopener noreferrer" className="btn btn--ghost" style={{ padding: '10px 20px', fontSize: '13px' }}>
+            Bring GlowPT to Your Clinic
           </a>
-          {/* Self-serve door. Same label as glowpt.app's own primary button, and the
-              same destination (/onboard), so it never lands on a duplicate button.
-              Ghost on purpose: the filled style stays exclusive to the discovery call. */}
           <div style={{ marginTop: '12px' }}>
-            <a href="https://glowpt.app/onboard" target="_blank" rel="noopener noreferrer" className="btn btn--ghost" style={{ padding: '10px 20px', fontSize: '13px', marginTop: '0' }}>
-              Bring GlowPT to Your Clinic
+            <a href="https://cal.com/david-peterson-40s7lw/free-discovery-call" target="_blank" rel="noopener noreferrer" className="btn btn--primary" style={{ padding: '10px 20px', fontSize: '13px', marginTop: '0' }}>
+              Book a Free Discovery Call
             </a>
           </div>
         </div>
