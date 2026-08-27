@@ -97,6 +97,14 @@ function GlowPTModal({ onClose }) {
           <a href="https://cal.com/david-peterson-40s7lw/free-discovery-call" target="_blank" rel="noopener noreferrer" className="btn btn--primary" style={{ padding: '10px 20px', fontSize: '13px' }}>
             Book a Free Discovery Call
           </a>
+          {/* Self-serve door. Same label as glowpt.app's own primary button, and the
+              same destination (/onboard), so it never lands on a duplicate button.
+              Ghost on purpose: the filled style stays exclusive to the discovery call. */}
+          <div style={{ marginTop: '12px' }}>
+            <a href="https://glowpt.app/onboard" target="_blank" rel="noopener noreferrer" className="btn btn--ghost" style={{ padding: '10px 20px', fontSize: '13px', marginTop: '0' }}>
+              Bring GlowPT to Your Clinic
+            </a>
+          </div>
         </div>
       </div>
     </div>
