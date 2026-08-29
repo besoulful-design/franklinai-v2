@@ -64,7 +64,7 @@ function GlowPTModal({ onClose }) {
     'More completed plans of care, because engaged patients finish their care.',
     'Zero work for your therapists. No building, no monitoring, no calls.',
     'Runs alongside any EMR. Nothing to set up, nothing to integrate.',
-    'A free weekly roster summary and a clinic dashboard to follow activity, trends, and flags.'
+    'A weekly roster summary and a clinic dashboard to follow activity, trends, and flags.'
   ];
 
   return (
