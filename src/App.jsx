@@ -78,8 +78,8 @@ function GlowPTModal({ onClose }) {
           Sign up online, or book a call first.
         </p>
         <p className="modal__text">
-          The GlowPT app keeps patients engaged between visits, so more plans of
-          care get completed and the clinic stays full.
+          The GlowPT app keeps physical therapy patients engaged between visits.
+          More plans of care get completed and the clinic stays full.
         </p>
         <div style={{ marginBottom: '24px' }}>
           {features.map((f, i) => (
@@ -310,7 +310,7 @@ function AvailableForPractice() {
             GlowPT
           </h3>
           <p className="card-text">
-            The GlowPT app keeps patients engaged between visits, so more plans of care get completed and the clinic stays full.
+            The GlowPT app keeps physical therapy patients engaged between visits. More plans of care get completed and the clinic stays full.
           </p>
           <button className="btn btn--ghost" onClick={() => setGlowOpen(true)} style={{ marginTop: '16px' }}>
             More Info
