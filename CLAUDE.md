@@ -1,23 +1,24 @@
-# FranklinAI — Project Instructions (Version 51, Current)
+# FranklinAI — Project Instructions (Version 52, Current)
 
 > **READ THIS FILE BEFORE MAKING ANY CHANGE TO THIS REPO.** Not "skim the section you think applies" — read it. V48 exists partly because a Code session spent an entire morning re-deriving a footer geometry this document already specified, and shipped four wrong pushes doing it. **If a value looks arbitrary, it is almost certainly hand-tuned and documented. Look it up here first.**
 
-> **Version 51 updates:** **The GlowPT pitch became two sentences, and the two sites now deliberately DIFFER.** V50 made one identical sentence run on all four public surfaces. David rewrote it a day later, splitting it in two and **putting the niche back on this site only**: **"The GlowPT app keeps physical therapy patients engaged between visits. More plans of care get completed and the clinic stays full."** **glowpt.app carries a shorter first sentence with no niche** ("The GlowPT app engages patients between visits.") because that page is already GlowPT-branded, so the words would be redundant there. **The second sentence is identical on all four surfaces and must stay that way.** **Three changes shipped to `App.jsx`.** **(1) The card teaser and (2) the modal description** both took the new two-sentence text, so this site names the practice in its GlowPT copy again. **(3) Feature bullet 8 dropped the word "free"** and now reads "A weekly roster summary and a clinic dashboard to follow activity, trends, and flags.", matching glowpt.app word for word. **(4) V50's retirement of the niche clause is REVERSED** — see *Where the niche is named and where it is not*, which names the GlowPT teaser again. **(5) The 5-versus-8 bullet split between the two sites is REAFFIRMED as deliberate.** A session read it as drift and raised it as a problem; it is not, and the shared bullets are now word-identical, leaving only the count and the order different by design. **(6) `App.jsx` still measures 669 lines** on the pushed file. Sections updated: title, header summary (V50 folded into a carried-forward paragraph), Business, Available/GlowPT Modal, Flagship Example, Change History.
+> **Version 52 updates:** **The two sites' feature bullets are now IDENTICAL, and the 5-versus-8 split is REVERSED.** For several versions this file recorded the count difference as deliberate and told sessions not to reconcile it. **David overruled that on 2026-08-30:** a buyer reads both surfaces in one sitting and must never meet two descriptions of the same product. glowpt.app was expanded from 5 bullets to **8**, word-identical **and in the same order** as this site's, since matching counts with a shuffled order is not actually matching. **Nothing changed in this repo's bullet list except bullet 3 and a comment.** **Three changes shipped to `App.jsx`.** **(1) The card teaser and (2) the modal description** both took a rewritten second sentence: **"More completed plans of care and the clinic stays full."**, replacing "More plans of care get completed and the clinic stays full." David lifted the noun phrase straight out of feature bullet 5 so the lead sentence and the bullet now use the same words; **the echo is deliberate.** **(3) Feature bullet 3 was rewritten** to **"One subscription covers the clinic and all its patients for free."**, retiring V49's "no matter how many patients you have. Patients join free." — David never liked the "no matter" construction, which is defensive phrasing doing work the sentence does not need. **(4) A five-line comment sits above `features`** naming the GlowPT repo's twin list, matched by an identical comment there, because **nothing enforces the match at build time.** **(5) V51's niche clause is UNTOUCHED** — this site still names "physical therapy patients" in its GlowPT copy and glowpt.app still does not. **(6) `App.jsx` now measures 674 lines** on the pushed file. Sections updated: title, header summary (V51 folded into a carried-forward paragraph), GlowPT (the deltas section rewritten), Pricing Model (the `$350` decoy line numbers moved), Available/GlowPT Modal, Copy Rules, Change History.
 
-> **Everything else from Version 50 remains in force:** the discipline that **the GlowPT pitch is one shared idea across four surfaces**, with the second sentence identical everywhere; that **"Zero work for your therapists" survives only as modal bullet 6**; that **the repetition between glowpt.app's hero and its More Info modal is deliberate** and must not be "fixed"; and that the GlowPT-repo `docs/commercial-handoff.md` is the source for GlowPT commercial facts, **with the GlowPT code winning on any disagreement.** *(V51 supersedes only the two copy strings and the niche clause.)*
+> **Everything else from Version 51 remains in force:** **the GlowPT pitch is two sentences, and the two sites deliberately DIFFER on the first one.** This site says **"The GlowPT app keeps physical therapy patients engaged between visits."**; **glowpt.app carries a shorter first sentence with no niche** ("The GlowPT app engages patients between visits.") because that page is already GlowPT-branded, so the words would be redundant there. **The second sentence is identical on all four surfaces and must stay that way** *(V52 changed what that sentence says, not the rule)*. **V50's retirement of the niche clause stays REVERSED** — see *Where the niche is named and where it is not*. *(V52 supersedes only the second sentence, feature bullet 3, and the bullet-count delta.)*
 
-> **Everything else from Version 49 remains in force:** **GlowPT is a two-door product and the modal says so.** The modal carries a **ghost** "Bring GlowPT to Your Clinic" to **`https://glowpt.app/onboard`** in a new tab, above a **filled** "Book a Free Discovery Call"; the subline reads **"Sign up online, or book a call first."**; the buttons are ordered self-serve first with **the styles NOT flipped**, so the filled style stays exclusive to the discovery call site-wide; feature bullet 3 states there is no patient limit; V44's open item on bullet 8's word "flags" is closed. The two standing rules from V49 also hold: **copy rules travel with the VOICE, not the repo**, and **edit and push directly in this repo, never hand David a copy-paste command.** *(V50 supersedes only the modal description and the card teaser. Everything else about the two doors is untouched.)*
+> **Everything else from Version 50 remains in force:** the discipline that **the GlowPT pitch is one shared idea across four surfaces**; that **"Zero work for your therapists" survives only as modal bullet 6**; that **the repetition between glowpt.app's hero and its More Info modal is deliberate** and must not be "fixed"; and that the GlowPT-repo `docs/commercial-handoff.md` is the source for GlowPT commercial facts, **with the GlowPT code winning on any disagreement.**
 
+> **Everything else from Version 49 remains in force:** **GlowPT is a two-door product and the modal says so.** The modal carries a **ghost** "Bring GlowPT to Your Clinic" to **`https://glowpt.app/onboard`** in a new tab, above a **filled** "Book a Free Discovery Call"; the subline reads **"Sign up online, or book a call first."**; the buttons are ordered self-serve first with **the styles NOT flipped**, so the filled style stays exclusive to the discovery call site-wide; **feature bullet 3 still states there is no patient limit** *(V52 compressed the wording, not the claim)*; V44's open item on bullet 8's word "flags" is closed. The two standing rules from V49 also hold: **copy rules travel with the VOICE, not the repo**, and **edit and push directly in this repo, never hand David a copy-paste command.**
 
 > **Everything else from Version 48 remains in force:** **the footer copyright line is fixed and the footer lockup is closed.** The gap after the `©` symbol is a **fixed 2px CSS margin** (`&copy;<span style={{ marginLeft: '2px' }}>{year}</span>`), deterministic in every browser unlike a thin-space glyph. The copyright line carries a deliberate **`translateX(-3px)`** optical correction, the only per-line nudge anywhere on the page: the line is geometrically centered to 0.00px, but `©` is a light hollow circle beside four solid digits, so the ink weight leans right by roughly 2.2px, and solving for a balancing gap returns a *negative* number, which proves no amount of tightening can fix it. **`-3px` was landed by David's eye against the live site**; the arithmetic favored `-2px`. This partially reverses V31. The footer lockup is **closed**: brand row `display: flex`, `alignItems: 'flex-start'`, `gap: '4px'`, **`transform: 'translateX(-14px)'`**, kite left, text column holding all four lines. **Four things were tried against it and all reverted; the list is in Footer so nobody repeats them.** Both V48 process rules stand: read this document before changing anything, and do not regenerate it until David confirms the fix works.
 
 > **Everything else from Version 47 remains in force:** the footer text column is **block layout, not flex** — a plain block with `textAlign: 'center'` in which every line is `display: 'block'` and centers by `text-align`. **The V47 general rule is the house standard: center a stack of differently-sized lines by block + `text-align`, never by flex shrink-to-content.**
 
-> **Everything else from Version 46 remains in force:** the Copy Rules clarification that the one-word product-name rule governs the token "GlowPT" itself, not whether the word "app" may sit beside it. *(**V46's two-sentence modal description is RETIRED by V50** — the setup sentence "Patients walk out doing great..." is deleted and the paragraph is now the single sentence alone.)*
+> **Everything else from Version 46 remains in force:** the Copy Rules clarification that the one-word product-name rule governs the token "GlowPT" itself, not whether the word "app" may sit beside it. *(**V46's two-sentence modal description is RETIRED by V50** — the setup sentence "Patients walk out doing great..." is deleted and stays deleted on both sites.)*
 
 > **Everything else from Version 45 remains in force:** the process change that made **Claude Code the maintainer of this document.** Decisions are argued in claude.ai, a handoff note carries the strings *and the editorial reasoning* into Code, Code pushes the code and **then** regenerates `CLAUDE.md` whole as a separate second step. **Four conditions keep it honest:** (1) **regenerate whole, never patch**; (2) **the doc is written last, after the code push**, and as of V48 not until David confirms the change worked; (3) **the handoff note must carry the reasoning, not just find/replace strings**; (4) **the repo copy is authoritative and the claude.ai project instructions are the copy that can lag**, with a version-number mismatch as the tell. The Content Calendar stays a claude.ai document, and strategy, positioning, copy decisions, and newsletter drafting all stay in claude.ai. What moved is the *recording*, not the *deciding*.
 
-> **Everything else from Version 44 remains in force:** the three V44 copy records (the newsletter description's tail reads **"what's working and not working in your practice, and what to do about it"**; the e-book teaser opens **"A downloadable guide"**; **the V44 GlowPT teaser is RETIRED**, replaced in V50 and rewritten again in V51, and now reads **"The GlowPT app keeps physical therapy patients engaged between visits. More plans of care get completed and the clinic stays full."**), and the correction that the GlowPT modal's **EMR bullet sits seventh, not eighth**. *(V49 closes V44's open item on bullet 8's word "flags": it is confirmed live in the product.)*
+> **Everything else from Version 44 remains in force:** the two surviving V44 copy records (the newsletter description's tail reads **"what's working and not working in your practice, and what to do about it"**; the e-book teaser opens **"A downloadable guide"**), and the correction that the GlowPT modal's **EMR bullet sits seventh, not eighth**. **The V44 GlowPT teaser is RETIRED**, replaced in V50, rewritten in V51, and rewritten again in V52. *(V49 closes V44's open item on bullet 8's word "flags": it is confirmed live in the product.)*
 >
 > **Also carried forward from Version 43:** the rule that **a predicted line count is an estimate, never a verification, and never a fact for this file** — string checks are the proof, and any line count here must be measured on the pushed file.
 >
@@ -48,6 +49,8 @@
 > **Note on the GlowPT repo.** GlowPT is a *different* repo at `~/Downloads/glowpt` with its own `CLAUDE.md` and its own AWS backend. This file does not govern its architecture. **Any handoff into Code should name the repo in its first line.**
 >
 > **But copy rules DO cross the boundary (V49).** See **Copy Rules Travel With the Voice** below. Architecture stays separate; the writing voice does not.
+>
+> **And as of V52, one CONTENT LIST is now shared across the two repos.** The eight GlowPT feature bullets must stay word-identical and in the same order in both. See **The two sites' shared bullet list** below.
 
 **Which tool for which job:**
 
@@ -65,7 +68,7 @@
 
 ---
 
-## Copy Rules Travel With the Voice, Not the Repo — NEW, V49
+## Copy Rules Travel With the Voice, Not the Repo — V49
 
 **David's rule, set 2026-08-27.** The **Copy Rules** and **Forbidden Words** in this document bind **anywhere a PT owner reads FranklinAI's words**, including the GlowPT product site and app. They are a property of the voice, not of a folder.
 
@@ -81,6 +84,23 @@
 - **The AI prompt must carry the rule or generated text escapes it.** GlowPT's daily patient reflection is written by a model, so no amount of cleaning static strings governs it. Its prompt now ends "Do not use em dashes in your response." **Any future FranklinAI feature that generates user-facing text owes the same instruction.**
 
 > **Code comments and this document are exempt.** Both are full of em dashes, including this sentence's neighbours. The rule governs shipped strings a visitor can read.
+
+---
+
+## The two sites' shared bullet list — NEW, V52
+
+**The eight GlowPT feature bullets are one list living in two repos.** They must stay **word-identical and in the same order** in both:
+
+- **Here:** `features` inside `GlowPTModal`, `src/App.jsx`.
+- **There:** `whatGlowptIs.points` in `glowpt/src/lib/marketing.js`.
+
+**Both arrays carry a five-line comment naming the other.** That comment is the only safeguard there is: **nothing enforces the match at build time**, the two files are in different repos, and a session working in one will not see the other unless it is told to look.
+
+**Why this reversed a standing rule.** Through V51 this file recorded the count difference — 5 on glowpt.app, 8 here — as deliberate, on the reasoning that the FranklinAI modal was the fuller pitch and glowpt.app the short version. **David overruled it on 2026-08-30.** His reasoning is simpler and better: a buyer arrives from one site and reads the other, and meeting two different descriptions of the same product makes the product look unsettled. **The three that were missing on glowpt.app are back** — the journal/streaks bullet, the one-subscription bullet, and the remote-monitoring bullet — **and glowpt.app was also reordered to this site's order**, since matching counts with a shuffled order is not actually matching.
+
+> **How to verify the match rather than eyeballing it.** Parse both arrays and compare element by element. Reading two eight-item lists side by side is exactly the task human attention is worst at, and a single reordered pair looks identical at a glance.
+
+**What still differs between the two sites, and is still deliberate:** the **first sentence** of the pitch (this site names the niche, glowpt.app does not — see V51), and the fact that glowpt.app's modal carries **a price line and a signup path** this one does not need. **The bullets are no longer on that list of differences.**
 
 ---
 
@@ -148,7 +168,7 @@ Everything else is **custom-build work** — scoped after a discovery call, pric
 
 > **Where the niche is named and where it is not.** The **headline** and the **newsletter card** name the practice. The **About bio** names it nowhere. **Naming the niche on the headline and the newsletter is specificity. Naming it in the bio would be a wall.**
 >
-> **✅ RESTORED IN V51: the GlowPT teaser names the niche again**, as **"physical therapy patients"**. V50 briefly dropped it in favour of one sentence shared with glowpt.app; V51 accepts that **the two sites read differently here** rather than lengthening glowpt.app's copy to match. **The reasoning, worth keeping:** on glowpt.app the page is already GlowPT-branded, so the words are redundant; on this card the brand name sits in a product stack and is scanned rather than parsed, so the words earn their place. **Both the headline and the GlowPT teaser name the practice again.**
+> **✅ The GlowPT teaser names the niche, as "physical therapy patients" (restored V51, untouched by V52).** V50 briefly dropped it in favour of one sentence shared with glowpt.app; V51 accepted that **the two sites read differently here** rather than lengthening glowpt.app's copy to match. **The reasoning, worth keeping:** on glowpt.app the page is already GlowPT-branded, so the words are redundant; on this card the brand name sits in a product stack and is scanned rather than parsed, so the words earn their place. **Both the headline and the GlowPT teaser name the practice.**
 
 ## Flagship Example
 
@@ -169,7 +189,7 @@ The McKenzie Arm Care app — a custom patient-care web app with user login, jou
 | **A BAA is click-through at signup**, recorded with a version stamp, under an org-level AWS BAA active since August 2026. | Nothing yet. See the constraint below. |
 | **There is no billing in the product. Zero Stripe.** Collection is manual today. Stripe subscriptions are on the backlog, unstarted. | **No renewal, cancellation, refund or trial claims of any kind.** |
 | **Demo data only** until the clinic-facing BAA text clears attorney review. | **Nothing implying live clinics are in production.** |
-| **$350 covers the clinic with no patient limit.** Everything is included. | Feature bullet 3 now says so. This was true from the start and appeared nowhere until V49. |
+| **$350 covers the clinic with no patient limit.** Everything is included. | Feature bullet 3 says so. This was true from the start and appeared nowhere until V49. |
 
 ### Hard constraints on GlowPT copy
 
@@ -186,13 +206,17 @@ The GlowPT handoff note flagged that **no discovery call exists anywhere in the 
 
 **Two doors, one gate, and the gate was already built.** That is why the modal can carry both buttons honestly.
 
-### The known deltas between the two sites — DELIBERATE, not drift
+### The known deltas between the two sites — REWRITTEN, V52
 
-**glowpt.app's More Info modal carries 5 of the FranklinAI modal's 8 bullets. This is on purpose and must not be "reconciled."** The three cut are the patient-facing journal/streaks bullet, the "one subscription covers the clinic" bullet (its content became glowpt.app's price line), and the **remote-monitoring (RTM) billing** bullet, which is strong for owners who know RTM but needs explaining.
+**The bullet lists are no longer a delta. They are identical: eight bullets, same words, same order, both repos.** See **The two sites' shared bullet list** above for the rule and how to verify it. **The old "glowpt.app carries 5 of the 8, and this must not be reconciled" instruction is RETIRED. Do not reinstate it.**
 
-**The division of labor: the FranklinAI card and modal are the fuller pitch; glowpt.app is the short version plus the price plus the signup path.** glowpt.app's landing header is also deliberately self-sufficient, because that site is reached by direct URL, search, QR and clinic forwards, not only from here.
+**What still differs, deliberately:**
 
-> **A thin "handoff-only" FranklinAI modal was proposed and rejected on this reasoning.** Do not re-propose it without reading the GlowPT handoff note first.
+1. **The first sentence of the pitch.** This site names the niche ("physical therapy patients"); glowpt.app does not, because that page is already GlowPT-branded. **The second sentence is identical on all four surfaces.** *(V51, still in force.)*
+2. **glowpt.app carries the price line and the signup path**; this site carries the price inside the modal footer and links out. That is a difference in *function*, not in how the product is described.
+3. **glowpt.app's landing header is deliberately self-sufficient**, because that site is reached by direct URL, search, QR and clinic forwards, not only from here. **Do not thin it on the assumption the visitor read this site first.**
+
+> **A thin "handoff-only" FranklinAI modal was proposed and rejected.** Do not re-propose it without reading the GlowPT handoff note first. **Note the reasoning has shifted:** the old defence was that this modal was the fuller pitch. It no longer is — both modals now carry the same eight bullets. **The surviving defence is that a visitor should reach the price and the feature list before they reach a signup link**, which is why the self-serve door is one level in rather than on the card.
 
 ---
 
@@ -229,14 +253,16 @@ The GlowPT handoff note flagged that **no discovery call exists anywhere in the 
 - **The Build** — From $10,000. Whisper subtext: "New features quoted and built one at a time, as you grow." (Inter 15px, #8892a4, marginTop: '0')
 - **Monthly Care** — $350 / month. Optional.
 
-> ## ⚠️ THE `$350` DECOY — read before changing GlowPT's price (V49)
+> ## ⚠️ THE `$350` DECOY — read before changing GlowPT's price (V49, line numbers refreshed V52)
 >
 > **`$350` appears TWICE in `App.jsx` and only one of them is GlowPT.**
 >
-> - **Line ~95**, inside `GlowPTModal`'s footer: **this is GlowPT.**
-> - **Line ~434**, the `Monthly Care` tier in `Pricing()`: **this is the custom build's optional hosting-and-maintenance retainer.** A completely unrelated product that happens to cost the same.
+> - **Line 99**, inside `GlowPTModal`'s footer: **this is GlowPT.**
+> - **Line 449**, the `Monthly Care` tier in `Pricing()`: **this is the custom build's optional hosting-and-maintenance retainer.** A completely unrelated product that happens to cost the same.
 >
-> Previous versions of this file said "if the GlowPT price changes, two places move" without warning that a naive grep returns a decoy. **If GlowPT's price ever moves, line ~434 must NOT move with it.**
+> Previous versions of this file said "if the GlowPT price changes, two places move" without warning that a naive grep returns a decoy. **If GlowPT's price ever moves, line 449 must NOT move with it.**
+>
+> **These line numbers drift every time anything above them changes** (V49 recorded ~95 and ~434; V52's five-line comment above `features` pushed both down). **Treat them as a hint, not an address — confirm by reading the surrounding function name.**
 
 **Order rationale.** The e-book sits first (cheapest paid yes, under the newsletter whose diagnosis it answers), GlowPT second (recurring flagship), then Custom Work as proof, bridging into How It Works and Custom Pricing.
 
@@ -273,7 +299,7 @@ The GlowPT handoff note flagged that **no discovery call exists anywhere in the 
 - **Subhead "The Operator"** — white Playfair sub-title, `clamp(30px, 5vw, 35px)`, 800, `lineHeight: '1.1'`, `marginTop: '0'`, `marginBottom: '14px'`, upright.
 - **Description** (Inter 15px, #8892a4, `marginTop: '0'`, `marginBottom: '18px'`, `lineHeight: '1.5'`): **"For physical therapy practices. Delivered every other Tuesday, it takes a clear look at what's working and not working in your practice, and what to do about it."**
 
-> **The audience line appears TWICE.** The identical sentence lives in the card description and the `NewsletterModal` description. **They must always move together.** Verify with `grep -c "For physical therapy practices\."` — expected count **2**.
+> **The audience line appears TWICE.** The identical sentence lives in the card description and the `NewsletterModal` description. **They must always move together.** Verify with `grep -c "For physical therapy practices\."` — expected count **2**. *(Measured 2 at V52.)*
 
 **The card's action:**
 - **One ghost button: "Subscribe for Free"** (`btn btn--ghost`, inline `marginTop: '0'`), opening `NewsletterModal`. **No email field on the card.**
@@ -340,7 +366,7 @@ SVG favicon and 180×180 PNG apple-touch-icon, kite mark on navy with the bolt i
 
 > **A note carried from the Instagram work:** the footer navy **#070f24 reads as dark blue only as a large filled block.** As thin text on a light field it reads flat black; the posts use **#1e3a5f** for text on white. On the site every ground is navy, so this never bites here.
 
-> **GlowPT keeps its own amber/navy brand on glowpt.app and inside the app.** On the FranklinAI site it wears FranklinAI's navy-and-blue. **Do not carry GlowPT amber into this repo, and do not carry FranklinAI blue into that one.** The two brands are deliberately separate; only the *voice* crosses (V49).
+> **GlowPT keeps its own amber/navy brand on glowpt.app and inside the app.** On the FranklinAI site it wears FranklinAI's navy-and-blue. **Do not carry GlowPT amber into this repo, and do not carry FranklinAI blue into that one.** The two brands are deliberately separate; only the *voice* crosses (V49), and as of V52 one shared bullet list.
 
 ### Typography
 
@@ -376,6 +402,8 @@ Google Fonts import (locked, in `index.html`):
 `Playfair+Display:ital,wght@0,700;0,800;1,800&family=Inter:wght@400;500;600;700;800`
 
 > **Font-import note:** since V36 nothing on the page is italic, so the `1,800` italic face is unused — left in for now. **The site and the Instagram graphics differ on purpose:** the posts set "The Operator" in **Inter**, the site's subhead stays **Playfair**. Do not "reconcile" them.
+>
+> ⚠️ **A cautionary tale from the sibling repo, worth knowing here.** glowpt.app's landing page loaded only two instances of its serif (upright-300 and italic-400) and left `fontStyle` unset on the hero. **Safari rendered the hero italic while Chrome rendered it upright**, because `font-style` is inherited and one browser's font-matching landed on the italic face. The fix was an explicit `fontStyle: 'normal'`. **This site's four-instance import makes it less exposed, but the lesson holds: if a rule does not state `fontStyle`, it is one inherited value away from a face you did not choose.**
 
 ---
 
@@ -452,7 +480,7 @@ Each `card-heading` carries **`marginBottom: 'clamp(4px, 1.5vw, 10px)'`** and an
 - **Center a stack of differently-sized lines by block layout + `text-align: center`, never by flex shrink-to-content (V47).** Make the container a block with `text-align: center` and every line `display: block`. **This is the house standard for any centered stack, not just the footer.**
 - **Geometric centering is not always optical centering (V48).** A line whose ink is unevenly weighted can measure 0.00px centered and still read as off-centre. **Verify centering against the reference the eye uses**, and if a line is provably centered but still looks wrong, the remedy is an explicit documented optical correction, not a re-derivation of the layout around it.
 - **In a stacked pair of buttons, the BOTTOM one is the stronger position (V49).** It is the terminal action, which is why dialogs put confirm last. Combined with the filled style being the loudest element, **a filled button placed last is the most dominant thing in the block.** Order and weight are two separate levers; do not reach for order when the intent is weight.
-- **Copy that appears twice must move twice.** Two strings are duplicated by design: the newsletter description (card + modal) and the "Subscribe for Free" label (card + modal).
+- **Copy that appears twice must move twice.** Two strings are duplicated *within this file* by design: the newsletter description (card + modal) and the "Subscribe for Free" label (card + modal). **A third duplication now crosses repos: the GlowPT pitch's second sentence and the eight feature bullets (V52).**
 
 ---
 
@@ -605,6 +633,8 @@ No email in the footer.
 
 All four modals (`EbookModal`, `GlowPTModal`, `CaseStudyModal`, `NewsletterModal`) lock page scroll via a `useEffect` setting `document.body.style.overflow = 'hidden'` on mount, restoring on unmount. Each closes on X click or backdrop click.
 
+> **The sibling repo now does this too, via a shared hook.** glowpt.app's three modals call one `useScrollLock` hook rather than repeating the effect. **This repo still repeats the effect four times.** Not a bug and not urgent, but if a fifth modal ever arrives, extracting a hook here is the better move than a fifth copy.
+
 ---
 
 ## Page Sections (in order)
@@ -646,10 +676,10 @@ Component **`AvailableForPractice`**. Two products: the e-book first, GlowPT sec
 
 **Product 2 — GlowPT (SECOND):**
 - **Title** (same treatment, marginTop 28px, marginBottom 10px): "GlowPT"
-- **Teaser** (`card-text`, `:last-of-type`): **"The GlowPT app keeps physical therapy patients engaged between visits. More plans of care get completed and the clinic stays full."** *(V51. **Identical to the modal description below.** Two sentences. **Names the niche**, which V50 had briefly dropped. glowpt.app carries a shorter first sentence without the niche, deliberately; **the second sentence is identical on all four surfaces.** The V44 close, "with zero work for your therapists", is still given up and survives as **modal bullet 6**.)*
+- **Teaser** (`card-text`, `:last-of-type`): **"The GlowPT app keeps physical therapy patients engaged between visits. More completed plans of care and the clinic stays full."** *(V52 rewrote the second sentence. **Identical to the modal description below.** Two sentences. **Names the niche** (V51). glowpt.app carries a shorter first sentence without the niche, deliberately; **the second sentence is identical on all four surfaces.** The V44 close, "with zero work for your therapists", is still given up and survives as **modal bullet 6**.)*
 - **Button:** "More Info" (btn--ghost, marginTop 16px) → `GlowPTModal`
 
-> **The card WAS changed in V50** (the teaser string only). **The CTAs were not, and must not be.** All the GlowPT *buttons* remain inside the modal: a visitor should reach the price and the feature list before they reach a signup link, which is why the self-serve door is one level in. **Do not move it up to the card.**
+> **The card's teaser string has now moved in V50, V51 and V52. The CTAs have never moved, and must not.** All the GlowPT *buttons* remain inside the modal: a visitor should reach the price and the feature list before they reach a signup link, which is why the self-serve door is one level in. **Do not move it up to the card.**
 
 **EbookModal:** Scroll-locked, mirrors `GlowPTModal`.
 - **Title** (`modal__title`, marginTop 6px): **"What Your Practice Actually Sells"**
@@ -665,15 +695,17 @@ Component **`AvailableForPractice`**. Two products: the e-book first, GlowPT sec
 
 - **Subline (V49):** **"Sign up online, or book a call first."** *(Was "Clinic subscriptions available.", written when subscribing meant emailing David. The new line names both doors and its word order deliberately matches the button order below it. **It promises nothing about timing**, because signup is self-serve but activation is not.)*
 
-- **Description paragraph (V51):** **"The GlowPT app keeps physical therapy patients engaged between visits. More plans of care get completed and the clinic stays full."** *(Two sentences, **identical to the card teaser above**. The V46 setup sentence "Patients walk out doing great, then drift off before their plan of care is done." was deleted in V50 and stays deleted on both sites. **Do not reintroduce it on one site only.** glowpt.app's equivalent opens "The GlowPT app engages patients between visits." with no niche, on purpose.)*
+- **Description paragraph (V52):** **"The GlowPT app keeps physical therapy patients engaged between visits. More completed plans of care and the clinic stays full."** *(Two sentences, **identical to the card teaser above**. The V46 setup sentence "Patients walk out doing great, then drift off before their plan of care is done." was deleted in V50 and stays deleted on both sites. **Do not reintroduce it on one site only.** glowpt.app's equivalent opens "The GlowPT app engages patients between visits." with no niche, on purpose.)*
 
-**The eight feature lines, in live order (read this before quoting a bullet by number):**
+  > **Why the second sentence reads the way it does (V52).** David rewrote "More plans of care get completed and the clinic stays full." into **"More completed plans of care and the clinic stays full."**, lifting the noun phrase straight out of **feature bullet 5** ("More completed plans of care, because engaged patients finish their care."). **The echo between the lead sentence and the bullet is deliberate — do not "vary" it for freshness.** It also drops a passive construction for a noun phrase, which reads faster at the top of a modal.
+
+**The eight feature lines, in live order (read this before quoting a bullet by number).** ⚠️ **This exact list, in this exact order, also lives in `glowpt/src/lib/marketing.js`. Change one, change the other. See The two sites' shared bullet list.**
 
 1. "A 30-second daily check-in, with warm encouragement that keeps patients coming back."
 2. "A private journal and weekly streaks, in every patient's pocket."
-3. **"One subscription covers the clinic, no matter how many patients you have. Patients join free."** *(V49. The no-limit clause is new. Every owner reading "per clinic" is silently doing per-seat math, because that is how every other tool they buy is priced; answering it out loud is worth more than leaving it implied. The claim was always true and appeared on neither site.)*
+3. **"One subscription covers the clinic and all its patients for free."** *(V52 rewrote this, retiring V49's "One subscription covers the clinic, no matter how many patients you have. Patients join free." **David never liked the "no matter" construction** — it is defensive phrasing doing work the sentence does not need. **The V49 claim survives, compressed into "all its patients":** every owner reading "per clinic" is silently doing per-seat math, because that is how every other tool they buy is priced, and answering it out loud is worth more than leaving it implied. ⚠️ **One reading risk was flagged to David and accepted:** "covers the clinic and all its patients for free" can read for a beat as the *subscription* being free, since a price sits below it. If it ever needs fixing, "...and every patient in it, free." removes the ambiguity without losing his phrasing.)*
 4. "Reaches every patient, not just the ones you can bill remote monitoring on."
-5. "More completed plans of care, because engaged patients finish their care."
+5. **"More completed plans of care, because engaged patients finish their care."** *(V52: the pitch's second sentence now opens with this bullet's own noun phrase. Deliberate.)*
 6. "Zero work for your therapists. No building, no monitoring, no calls."
 7. **"Runs alongside any EMR. Nothing to set up, nothing to integrate."** *(V37 called it "the eighth" — it brought the count to eight but sits **seventh**.)*
 8. **"A weekly roster summary and a clinic dashboard to follow activity, trends, and flags."** *(V51 dropped the word "free" so this matches glowpt.app word for word.)* ✅ **V44's open item on the word "flags" is CLOSED (V49):** the live clinic dashboard carries a "Need Attention / flagged" tile and per-patient flag badges ("Inactive", "Low Mood"), verified by looking at the running app. **The bullet is accurate. Bullets 1–7 were never in question.**
@@ -689,7 +721,7 @@ Component **`AvailableForPractice`**. Two products: the e-book first, GlowPT sec
 
 - Both are `padding: '10px 20px', fontSize: '13px'`, both `target="_blank" rel="noopener noreferrer"`.
 - The **second** button sits in a `<div style={{ marginTop: '12px' }}>` with its own `marginTop: '0'`, so the 12px gap is controlled in one place and the first button keeps `.btn`'s inherited 8px above it. **If the order is ever changed again, the wrapper moves to whichever button is second.**
-- **The ghost's label and destination both match glowpt.app's own primary button**, which is a `<Link to="/onboard">`. That is deliberate: identical words landing on a page showing an identical button reads as a dead end.
+- **The ghost's label and destination both match glowpt.app's own primary button**, which is a `<Link to="/onboard">`. That is deliberate: identical words landing on a page showing an identical button reads as a dead end. ⚠️ **This is a live cross-repo dependency: if glowpt.app's primary button label ever changes, this one must change with it.**
 
 > **Three things about this footer that were argued and settled. Do not silently redo them.**
 >
@@ -759,6 +791,7 @@ Heading **"Let's Build"**. Copy: "Every project starts with a conversation. Tell
 - **GlowPT is always one word, capital G and PT.** It may be named plainly as **"the GlowPT app"** in running copy.
 - FranklinAI is always one word, capital F and capital AI; the "AI" renders white wherever the wordmark appears. The footer copyright is just "© {year}".
 - **The newsletter description is duplicated on purpose (card + modal). Any edit changes BOTH.** `grep -c "For physical therapy practices\."` → **2**.
+- **The GlowPT pitch's second sentence and the eight feature bullets are duplicated ACROSS REPOS (V52). Any edit changes BOTH repos.** `grep -c "More completed plans of care and the clinic stays full"` → **2** here, **1** in `glowpt/src/lib/marketing.js`.
 - **Two retired framings are banned from all site copy.** Never write **"nobody decided"**; never **split the building into the front desk versus the therapists.**
 - **"cash practice" and "advanced care" are interchangeable and neither is retired.**
 - **No job title, employer, or present-tense employment fact anywhere in site copy (V42).**
@@ -846,7 +879,7 @@ Set in `App.jsx`, overriding CSS class defaults. Do not change without explicit 
 | **E-book "Buy the Guide" `<a>`** | href="#", `btn btn--ghost`, padding '10px 20px', fontSize '13px' |
 | GlowPT modal title `<h2>` | marginTop '6px' |
 | **GlowPT modal subline `<p>`** | Inter, '14px', 600, #8899b0, marginBottom '16px'. **Text (V49): "Sign up online, or book a call first."** |
-| **GlowPT modal description `<p>`** | `modal__text`, no inline overrides. **Text as of V46.** |
+| **GlowPT modal description `<p>`** | `modal__text`, no inline overrides. **Text as of V52.** |
 | Modal feature list wrapper `<div>` | marginBottom '24px' |
 | Modal feature row `<div>` | flex, alignItems 'flex-start', gap '10px', marginBottom '12px' (last '0') |
 | Modal feature check `<span>` | #60a5fa, 700, flexShrink 0, lineHeight '1.5', aria-hidden |
@@ -914,15 +947,15 @@ Set in `App.jsx`, overriding CSS class defaults. Do not change without explicit 
 
 ### In Claude Code
 
-Edit the repo in place. **Read this file first.** (The GlowPT repo is separate for *architecture* — **confirm the working directory before touching anything.** Copy rules do cross; see V49.)
+Edit the repo in place. **Read this file first.** (The GlowPT repo is separate for *architecture* — **confirm the working directory before touching anything.** Copy rules do cross; see V49. One bullet list now crosses too; see V52.)
 
-> ## ✍️ EDIT AND PUSH DIRECTLY — NEW, V49
+> ## ✍️ EDIT AND PUSH DIRECTLY — V49
 >
 > **David's rule, set 2026-08-27: make the change, then run `git commit` and `git push` yourself. Do not hand him a copy-paste command.** This replaces the old "Commit when David says so" and the copy-paste push command that used to close every change.
 >
 > **Why it changed:** GlowPT's `CLAUDE.md` already said to push directly while this file said the opposite. Same person, same machine, opposite instructions, so every FranklinAI change stopped one step short and waited on a paste. He asked for the two repos to match.
 >
-> ⚠️ **This governs CODE, not this DOCUMENT.** The V48 rule still stands: **`CLAUDE.md` is not regenerated until David confirms the change actually works on the live site.** Push code freely; still wait on the doc.
+> ⚠️ **This governs CODE, not this DOCUMENT.** The V48 rule still stands: **`CLAUDE.md` is not regenerated until David confirms the change actually works on the live site.**
 
 **Code maintains this document (V45).** The sequence is fixed:
 
@@ -933,25 +966,29 @@ Edit the repo in place. **Read this file first.** (The GlowPT repo is separate f
 5. **Then regenerate `CLAUDE.md` whole**, as a separate step, and push it. Bump the version, rewrite the header summary, fold the prior version into "everything else remains in force," add a Change History entry.
 6. **Tell David the new version number** and that it needs pasting into the claude.ai project instructions.
 
+> ⚠️ **V52 was cut on David's direct instruction, in the same session as the code, WITHOUT step 4.** He asked for the regeneration explicitly and the changes are copy strings rather than geometry, which is the low-risk case. **This is an exception, not a new rule.** Step 4 exists because V46 and V47 were both written against unverified visual fixes and both had to be superseded within hours. **Keep waiting on anything visual.**
+
 **Rules on the regeneration:**
 
 - **Regenerate whole. Never patch.** Write the entire file out, reading the live code as you go. Targeted edits are how a document rots: the GlowPT EMR bullet was recorded as "the eighth" for seven versions and the real eighth went unrecorded, because no pass forced a full read.
 - **Record the reasoning, not just the strings.** Most of this document's weight is *why*. Carry those arguments forward verbatim unless a decision actually changed. **A version that reduces to a changelog has failed.**
-- **Never write the doc before the push, and never before David confirms.** V46 and V47 were both cut against unverified fixes and both had to be superseded within hours.
+- **When a rule is REVERSED, say so loudly and delete the old instruction.** V52 reversed the "do not reconcile the bullet counts" rule, which four earlier versions had reaffirmed. **Leaving a retired rule in place next to its replacement is worse than either one alone** — the next session cannot tell which is live.
+- **Never write the doc before the push.** V46 and V47 were both cut against unverified fixes and both had to be superseded within hours.
 
 **Two rules David set explicitly on 2026-08-23:**
 
 1. **READ `CLAUDE.md` BEFORE MAKING ANY CHANGE.** Not the section you assume is relevant — the document.
-2. **DO NOT UPDATE THIS DOCUMENT UNTIL DAVID CONFIRMS THE FIX WORKS.** Verification by measurement is not confirmation. His eyes on the live site are.
+2. **DO NOT UPDATE THIS DOCUMENT UNTIL DAVID CONFIRMS THE FIX WORKS.** Verification by measurement is not confirmation. His eyes on the live site are. *(He waived this for V52; see above.)*
 
-### Working across the two repos (V49)
+### Working across the two repos (V49, extended V52)
 
-It is legitimate for a session in this repo to edit the GlowPT repo, and it happened on 2026-08-27 for the copy pass. **The conditions:**
+It is legitimate for a session in this repo to edit the GlowPT repo, and vice versa. It happened on 2026-08-27 for the copy pass and again on 2026-08-30 from the GlowPT side. **The conditions:**
 
 - **David asks for it explicitly.** Do not reach across on your own initiative.
 - **Read the other repo's `CLAUDE.md` first.** GlowPT has its own house copy rule (statements get sentence case and a period; labels get Title Case and none; no all-caps; AP preposition conventions) and its own push preference.
 - **Say plainly which repo each change landed in**, with commit hashes. Bouncing between projects is confusing from the outside, and the confusion is a real cost even when the change is safe.
 - **Prefer the GlowPT session for anything touching GlowPT's behavior.** Copy is the safe case because it is self-contained and reversible.
+- **⚠️ A session in the GlowPT repo cannot preview this site (V52).** `preview_start` resolves `.claude/launch.json` from the session's own project folder, so asking for `franklinai-dev` from a GlowPT session silently starts the GlowPT server instead. **A cross-repo copy change to this site can be verified by build and string check, but not by eye, from over there.** Say which of the two you actually did.
 
 ### In claude.ai
 
@@ -969,9 +1006,11 @@ A good one **names the repo in its first line**, states the scope and what not t
 
 ### Both
 
-**Strategic discussion before code.** David thinks decisions through conversationally first. **Flag conflicts with established decisions proactively rather than executing silently**, then hold the position if the reasoning is sound — **and if David reaffirms, it is his call: execute it in full and record the argument here so it is not re-run.** *(V49's button order is the standing example.)* **"Don't touch nothing else" means strict boundaries.**
+**Strategic discussion before code.** David thinks decisions through conversationally first. **Flag conflicts with established decisions proactively rather than executing silently**, then hold the position if the reasoning is sound — **and if David reaffirms, it is his call: execute it in full and record the argument here so it is not re-run.** *(V49's button order is the standing example. V52's bullet-count reversal is the newer one: the doc said "do not reconcile", David said reconcile, and he was right.)*
 
 **When David says a thing is settled, it is closed.** The footer lockup is the standing example (see Footer). A closed item is not reopened by a clever measurement.
+
+> **But "settled" belongs to David, not to this document.** V52 overturned a rule this file had reaffirmed four times. **A rule recorded here is a record of a decision, not a veto over the person who made it.** When David asks for something this file forbids, say what the file says and why, then do what he asks.
 
 **Document versioning.** Complete drop-in replacement, never a patch, with full change history. Read live code as the source of truth when producing a new version, to catch drift.
 
@@ -994,17 +1033,20 @@ A good one **names the repo in its first line**, states the scope and what not t
 | **GlowPT billing** | No Stripe anywhere. Collection manual. Backlog, unstarted, and it belongs in the GlowPT repo. |
 | **GlowPT auto-renewal statutes** | Open with counsel. **No renewal or cancellation claims on either site until answered.** |
 | **Click-through vs signature** on the clinic BAA | Undecided. If signature wins, self-serve onboarding gains a manual step and the copy here must reflect it. |
+| **Bullet 3's "for free" reading (V52)** | Flagged to David and **accepted as-is.** "covers the clinic and all its patients for free" can read for a beat as the subscription being free. Fix if it ever bothers him: "...and every patient in it, free." |
+| **The GlowPT modal's V52 render was not seen by eye** | The two copy strings were verified by clean build and string check from a GlowPT-repo session, which cannot preview this site. **Worth a glance next time anyone is in this repo.** |
 
 ---
 
 ## Change History
 
-- **V51** — **The GlowPT pitch became two sentences and the two sites deliberately diverged.** The card teaser and modal description both took **"The GlowPT app keeps physical therapy patients engaged between visits. More plans of care get completed and the clinic stays full."**, putting the niche back on this site, while glowpt.app keeps a shorter niche-free first sentence because that page is already GlowPT-branded. The second sentence stays identical on all four surfaces. Bullet 8 dropped "free" to match glowpt.app. **Reverses V50's retirement of the niche clause** and **reaffirms the 5-versus-8 bullet split as deliberate** after a session misread it as drift. `App.jsx` measured **669 lines** on the pushed file. *(Companion GlowPT-repo commits: `14d512b`, `3008119`. Also shipped there and not governed by this file: modal close controls, a pinned two-line `/onboard` title, and a hero measure retune.)*
-- **V50** — **GlowPT collapsed to ONE sentence across all four public surfaces**, two here and two on glowpt.app: **"The GlowPT app keeps patients engaged between visits, so more plans of care get completed and the clinic stays full."** Two strings changed in `App.jsx`: the Available card teaser (retiring the V44 string, which named the niche and closed on "zero work for your therapists") and the GlowPT modal description (retiring the V46 two-sentence version by deleting the "Patients walk out doing great" setup sentence). **David chose repetition over variation deliberately**, having been told first that the hero and modal on glowpt.app would then repeat each other. Retires the *GlowPT teaser names the niche* clause; the headline still does. `App.jsx` measured **669 lines** on the pushed file. *(Companion GlowPT-repo commits: `cf9f7c1`, `d703338`. Also shipped there and NOT governed by this file: an upright `fontStyle` pin on the glowpt.app hero after Safari rendered it italic, and a line on `/onboard` telling a new clinic it starts closed.)*
-- **V49** — **GlowPT became a two-door product, and the modal changed to say so.** GlowPT finished its AWS migration and grew a self-serve front door at glowpt.app (automated per-clinic provisioning, click-through BAA with a version stamp, org-level AWS BAA), so a ready owner no longer needs a call to buy. **Four changes to `GlowPTModal`:** a **ghost** "Bring GlowPT to Your Clinic" → `https://glowpt.app/onboard`; the subline **"Clinic subscriptions available." → "Sign up online, or book a call first."**; the two CTAs **re-ordered** self-serve first (**styles deliberately not flipped** — the filled style stays exclusive to the discovery call, and flipping them was proposed and declined); and **bullet 3 gained the no-patient-limit clause**, a true claim that had appeared on neither site. **V44's open item on "flags" is CLOSED** — confirmed live in the clinic dashboard. **Two new standing rules from David:** *copy rules travel with the voice, not the repo* (the forbidden-words list and em-dash ban now bind on glowpt.app, where `treatment rooms` and 22 em dashes were fixed from this session — GlowPT commits `731708f`, `06bbb5b`, `8ce4dad`), and *edit and push directly, never hand over a copy-paste command* (code only; the doc still waits for confirmation). **New sections:** GlowPT (the two-door product, with its marketing constraints and the deliberate 5-vs-8 bullet delta), Copy Rules Travel With the Voice, Working across the two repos, Open Items. **New traps recorded:** the **`$350` decoy** (line ~434 is Monthly Care, an unrelated product at the same price), and the design rule that **bottom is the stronger position in a stacked button pair**, so order and weight are separate levers. `App.jsx` measures **670 lines** on the pushed file.
+- **V52** — **The two sites' feature bullets became identical, reversing a rule this file had reaffirmed four times.** glowpt.app went from 5 bullets to **8**, word-identical and in the same order as this site's; the "do not reconcile the counts" instruction is **retired and deleted**, not merely superseded. David's reasoning: a buyer reads both surfaces in one sitting and must not meet two descriptions of one product. **Three changes to `App.jsx`:** the card teaser and the modal description both took a rewritten second sentence, **"More completed plans of care and the clinic stays full."** (lifted from feature bullet 5, so the lead and the bullet now echo on purpose); **feature bullet 3 was rewritten** to **"One subscription covers the clinic and all its patients for free."**, retiring V49's "no matter how many patients you have" as defensive phrasing while keeping the no-limit claim; and a **five-line comment above `features`** naming the GlowPT repo's twin list, matched by an identical comment there, because nothing enforces the match at build time. **New section: The two sites' shared bullet list.** **New process rules:** when a rule is reversed, delete the old instruction rather than parking it beside the new one; and "settled" belongs to David, not to this document. **The `$350` decoy line numbers moved to 99 and 449** and are now flagged as a hint rather than an address. `App.jsx` measured **674 lines** on the pushed file. ⚠️ **Cut without David's live-site confirmation, on his direct instruction — an exception, not a new rule.** *(Companion GlowPT-repo commits: `9b0ead5`, `169e137`. This repo: `27d68d3`, `9068baf`.)*
+- **V51** — **The GlowPT pitch became two sentences and the two sites deliberately diverged.** The card teaser and modal description both put the niche back on this site, while glowpt.app keeps a shorter niche-free first sentence because that page is already GlowPT-branded. The second sentence stays identical on all four surfaces. Bullet 8 dropped "free" to match glowpt.app. **Reverses V50's retirement of the niche clause** and **reaffirmed the 5-versus-8 bullet split as deliberate** after a session misread it as drift — *that reaffirmation is itself reversed by V52.* `App.jsx` measured **669 lines** on the pushed file. *(Companion GlowPT-repo commits: `14d512b`, `3008119`.)*
+- **V50** — **GlowPT collapsed to ONE sentence across all four public surfaces.** Two strings changed in `App.jsx`: the Available card teaser (retiring the V44 string, which named the niche and closed on "zero work for your therapists") and the GlowPT modal description (retiring the V46 two-sentence version by deleting the "Patients walk out doing great" setup sentence). **David chose repetition over variation deliberately**, having been told first that the hero and modal on glowpt.app would then repeat each other. Retired the *GlowPT teaser names the niche* clause; the headline still did. `App.jsx` measured **669 lines**. *(Companion GlowPT-repo commits: `cf9f7c1`, `d703338`. Also shipped there and NOT governed by this file: an upright `fontStyle` pin on the glowpt.app hero after Safari rendered it italic, and a line on `/onboard` telling a new clinic it starts closed.)*
+- **V49** — **GlowPT became a two-door product, and the modal changed to say so.** GlowPT finished its AWS migration and grew a self-serve front door at glowpt.app, so a ready owner no longer needs a call to buy. **Four changes to `GlowPTModal`:** a **ghost** "Bring GlowPT to Your Clinic" → `https://glowpt.app/onboard`; the subline **"Clinic subscriptions available." → "Sign up online, or book a call first."**; the two CTAs **re-ordered** self-serve first (**styles deliberately not flipped**); and **bullet 3 gained the no-patient-limit clause**, a true claim that had appeared on neither site. **V44's open item on "flags" is CLOSED.** **Two new standing rules from David:** *copy rules travel with the voice, not the repo* (GlowPT commits `731708f`, `06bbb5b`, `8ce4dad`), and *edit and push directly, never hand over a copy-paste command*. **New sections:** GlowPT (the two-door product), Copy Rules Travel With the Voice, Working across the two repos, Open Items. **New traps recorded:** the **`$350` decoy**, and the design rule that **bottom is the stronger position in a stacked button pair**. `App.jsx` measured **670 lines**.
 - **V48** — **The footer copyright line fixed, and the footer lockup closed.** Five code pushes, four reverted. The gap after `©` became a fixed 2px CSS margin; the line carries `translateX(-3px)`, the only per-line nudge on the page, because the hollow `©` beside four solid digits leans the ink ~2.2px right and solving for a balancing gap returns a negative number. `-3px` landed by David's eye. **This partially reverses V31.** The footer lockup is **CLOSED**, with four failed attempts listed so they are not repeated. A verification lesson: the copyright measured "0.00px centered" for three rounds while visibly wrong, because both it and its reference were off the page axis together. A wrong-file trap recorded: `src/components/KiteLogo.jsx` is dead code with a different mark. Two binding process rules: read the document first, and do not regenerate it until David confirms.
 - **V47** — **Footer text column rebuilt from a flex column into a plain block**, every line `display: block`, centered by `text-align`. Established the house standard. *(Correct and standing, but it did not fix the copyright, whose problem was optical.)*
-- **V46** — A first footer-centering attempt (`alignSelf: 'stretch'` while the column stayed flex) that measured centered in Chromium and still read wrong in Safari; **superseded by V47 and V48.** Also the **GlowPT modal description reworded**, which stands.
+- **V46** — A first footer-centering attempt (`alignSelf: 'stretch'` while the column stayed flex) that measured centered in Chromium and still read wrong in Safari; **superseded by V47 and V48.** Also the **GlowPT modal description reworded**, since retired.
 - **V45** — **Process change: Claude Code now maintains this document.** Four conditions: regenerate whole never patch; doc written after the push; the handoff note carries reasoning; the repo copy is authoritative.
 - **V44** — **Documentation only.** Recorded three live copy changes and two corrections found by reading the file (the EMR bullet sits **seventh**; the real eighth had never been recorded). Opened the "flags" question, **closed in V49**.
 - **V43** — **Documentation only.** Added the rule that a predicted line count is never a fact for this file.
