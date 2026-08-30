@@ -56,6 +56,11 @@ function GlowPTModal({ onClose }) {
     return () => { document.body.style.overflow = prev; };
   }, []);
 
+  // These 8 bullets are word-identical AND in the same order as the GlowPT More
+  // Info modal on glowpt.app (glowpt/src/lib/marketing.js, `whatGlowptIs.points`).
+  // David's call 2026-08-30: the two lists must match exactly, so a buyer who
+  // reads both surfaces never sees the product described two different ways.
+  // Change one list, change the other.
   const features = [
     'A 30-second daily check-in, with warm encouragement that keeps patients coming back.',
     'A private journal and weekly streaks, in every patient\'s pocket.',
@@ -79,7 +84,7 @@ function GlowPTModal({ onClose }) {
         </p>
         <p className="modal__text">
           The GlowPT app keeps physical therapy patients engaged between visits.
-          More plans of care get completed and the clinic stays full.
+          More completed plans of care and the clinic stays full.
         </p>
         <div style={{ marginBottom: '24px' }}>
           {features.map((f, i) => (
@@ -310,7 +315,7 @@ function AvailableForPractice() {
             GlowPT
           </h3>
           <p className="card-text">
-            The GlowPT app keeps physical therapy patients engaged between visits. More plans of care get completed and the clinic stays full.
+            The GlowPT app keeps physical therapy patients engaged between visits. More completed plans of care and the clinic stays full.
           </p>
           <button className="btn btn--ghost" onClick={() => setGlowOpen(true)} style={{ marginTop: '16px' }}>
             More Info
