@@ -1,10 +1,14 @@
-# FranklinAI — Project Instructions (Version 53, Current)
+# FranklinAI — Project Instructions (Version 54, Current)
 
 > **READ THIS FILE BEFORE MAKING ANY CHANGE TO THIS REPO.** Not "skim the section you think applies" — read it. V48 exists partly because a Code session spent an entire morning re-deriving a footer geometry this document already specified, and shipped four wrong pushes doing it. **If a value looks arbitrary, it is almost certainly hand-tuned and documented. Look it up here first.**
 
-> **Version 53 updates:** **One string changed, and the reason it changed is worth more than the string.** Feature bullet 3 now reads **"One subscription covers the clinic and the patients join for free."**, replacing V52's "One subscription covers the clinic and all its patients for free." **The problem was a bare "for free" at the end of a clause:** it attaches to whatever the reader last held in mind, and with a `$350` price sitting directly below it, that was the *subscription*. Giving the phrase an explicit subject — *the patients* join for free — pins it. **The general rule this leaves behind is in Copy Rules: never end a clause on a floating "for free" or "free" where a price is nearby.** **David found this himself**, after being told the same thing when V52 shipped and choosing to keep his wording; he came back to it unprompted a few minutes later. **Everything else about V52 stands unchanged:** the two sites' bullet lists are still identical at eight, the pitch's second sentence is unchanged, and the niche still sits on this site's copy only. **`App.jsx` still measures 674 lines** on the pushed file. Sections updated: title, header summary (V52 folded into a carried-forward paragraph), GlowPT Modal bullet 3, Copy Rules, Open Items, Change History.
+> **Version 54 updates:** **Two characters were deleted and nothing else moved. The legal name in the nav and footer lockups is now `FranklinAI Solutions LLC`, with NO comma.** Both lockups previously read "Solutions, LLC"; both now read "Solutions LLC". **Why the no-comma form won:** it is the form used in both attorney-review contract drafts, in glowpt.app's own in-app legal copy (`src/lib/legal.js`), and — the decisive one — in the **AWS management account's Company-name field, which the org-level BAA binds to.** The comma was a display-only variant that existed nowhere the entity is legally named. **David's call, made while adding an entity line to glowpt.app's footer** and finding the two sites disagreed; he chose this site as the one to change, which is correct, because the contracts do not have a comma.
+>
+> **The change was two text nodes and nothing else.** No style, no structure, no dial. **The nav `-26px`, footer `-14px` and copyright `-3px` transforms are untouched and verified present.** `App.jsx` still measures **674 lines**. **Neither lockup moves, and this was measured rather than assumed:** in both lockups **"FranklinAI" is the widest line and sets the column width** (nav 252.8px vs the subline's 222.6px; footer 160.5px vs 146.9px), so the comma was never load-bearing. Confirmed live by toggling the comma back and forth in the running DOM: **the nav brand box is byte-identical** (left 460.77, right 767.23, width 306.46) and **the footer text column is byte-identical at 160.51px**, which is exactly the "FranklinAI" measurement. Only the subline itself is ~10px (nav) and ~7px (footer) narrower, pulling its own two edges inward by half that. **David then confirmed it by eye across browsers**, which is what closes it. Sections updated: title, header summary (V53 folded into a carried-forward paragraph), Business, Brand Kit colors and typography, Fine-Print Left-Nudges, Nav, Footer, Locked Inline Styles, Working across the two repos, Open Items, Change History.
 
-> **Everything else from Version 52 remains in force:** **the two sites' feature bullets are ONE list living in two repos** — eight bullets, word-identical, same order, `features` here and `whatGlowptIs.points` in `glowpt/src/lib/marketing.js`, each carrying a comment naming the other. **The old "glowpt.app carries 5 of the 8, do not reconcile" instruction stays retired and deleted.** The pitch's second sentence is **"More completed plans of care and the clinic stays full."** on all four surfaces, lifted from feature bullet 5 so the lead and the bullet echo **on purpose**. The `$350` decoy sits at **lines 99 and 449**, and those numbers are a hint rather than an address. The two V52 process rules also stand: **when a rule is reversed, delete the old instruction rather than parking it beside the new one**, and **"settled" belongs to David, not to this document.** *(V53 supersedes only feature bullet 3.)*
+> **Everything else from Version 53 remains in force:** feature bullet 3 reads **"One subscription covers the clinic and the patients join for free."** **The problem it fixed was a bare "for free" at the end of a clause:** it attaches to whatever the reader last held in mind, and with a `$350` price sitting directly below it, that was the *subscription*. Giving the phrase an explicit subject — *the patients* join for free — pins it. **The general rule this left behind is in Copy Rules: never end a clause on a floating "for free" or "free" where a price is nearby.** **David found this himself**, after being told the same thing when V52 shipped and choosing to keep his wording; he came back to it unprompted minutes later. That produced the standing process rule that **a flagged-and-declined concern is parked in Open Items, not dropped.**
+
+> **Everything else from Version 52 remains in force:** **the two sites' feature bullets are ONE list living in two repos** — eight bullets, word-identical, same order, `features` here and `whatGlowptIs.points` in `glowpt/src/lib/marketing.js`, each carrying a comment naming the other. **The old "glowpt.app carries 5 of the 8, do not reconcile" instruction stays retired and deleted.** The pitch's second sentence is **"More completed plans of care and the clinic stays full."** on all four surfaces, lifted from feature bullet 5 so the lead and the bullet echo **on purpose**. The `$350` decoy sits at **lines 99 and 449** *(re-measured at V54, unmoved)*, and those numbers are a hint rather than an address. The two V52 process rules also stand: **when a rule is reversed, delete the old instruction rather than parking it beside the new one**, and **"settled" belongs to David, not to this document.**
 
 > **Everything else from Version 51 remains in force:** **the GlowPT pitch is two sentences, and the two sites deliberately DIFFER on the first one.** This site says **"The GlowPT app keeps physical therapy patients engaged between visits."**; **glowpt.app carries a shorter first sentence with no niche** ("The GlowPT app engages patients between visits.") because that page is already GlowPT-branded, so the words would be redundant there. **The second sentence is identical on all four surfaces and must stay that way.** **V50's retirement of the niche clause stays REVERSED** — see *Where the niche is named and where it is not*.
 
@@ -28,7 +32,7 @@
 
 > **Everything else from Version 41 remains in force:** the **e-book modal's first two body paragraphs** carrying the corrected editorial frame (the retired "nobody decided" accident framing and the retired front-desk-versus-therapist split are both gone), and the **newsletter audience line "For physical therapy practices."** in **both** places it appears; the V41 documentation corrections (**Issue 1 ships September 1, 2026**; the spearhead reads "insurance practice with cash-model marketing"; the e-book's card and modal are live while the book itself is unwritten and the checkout unwired; "cash practice" and "advanced care" are interchangeable and neither is retired); and the V41 standing rules (*copy that appears twice must move twice*, the ban on both retired framings, a handoff note superseding this file for its session, and dates pointing at the Content Calendar).
 >
-> **Also carried forward from Version 40:** the newsletter form's **wiring and success behavior**, still unbuilt pending the Kit form ID — a **JS-handled submit** (a `fetch`, not a plain form POST); on success **an in-modal confirmation then auto-close**; **confirmation copy tracking Kit's double opt-in setting**; and a **keep-the-modal-open error state** with a brief "Subscribing…" disabled button state, field named `email_address`. Full plan in **Tech Stack**. Also carried forward: the V39 newsletter signup in `NewsletterModal`; the V38 Available-card spacing; the V37 parallel product teasers and the EMR modal bullet; the V36 newsletter-masthead flip; the V35 hero-label tightening; the reconciliation e-book's card and modal live as the first product on the Available card ($37, `EbookModal`, ghost "Buy the Guide" at `href="#"`); four intentional `borderTop` dividers; the four-modal scroll-lock; the "Solutions, LLC" subline in **Inter 800** in nav and footer; the nav lockup dial `translateX(-26px)` and its F-level-with-crossbar `marginTop`; the **footer lockup dial `translateX(-14px)`**; the footer copyright trimmed to **"© {year}"**; card-heading `lineHeight: '1.2'`; card padding (`paddingTop: '16px'`, `paddingBottom: '24px'`, sides 40); the "Subscribe for Free" ghost-button label; the `index.html` font import and cleaned meta description; the Subscribe/input 44px alignment fix; the niche-forward front door; all buttons title case with no period; **Kit** as the newsletter platform with Kit Commerce the front-runner for the book's checkout; the legal entity **FranklinAI Solutions LLC**; the Content Calendar as the single canonical content/marketing document; `david@franklinaisolutions.com`; the offer-ladder rungs and prices; the Business Plan deleted; the Claude Code vs claude.ai scoping; the Source File Rule; the stack boundary; the F-vs-crossbar method; Clarity retired; gold logo-bolt-only; "in plain English" and "software" banned; no em dashes in site copy; the $350 GlowPT price; the GlowPT exercise-plan exclusion.
+> **Also carried forward from Version 40:** the newsletter form's **wiring and success behavior**, still unbuilt pending the Kit form ID — a **JS-handled submit** (a `fetch`, not a plain form POST); on success **an in-modal confirmation then auto-close**; **confirmation copy tracking Kit's double opt-in setting**; and a **keep-the-modal-open error state** with a brief "Subscribing…" disabled button state, field named `email_address`. Full plan in **Tech Stack**. Also carried forward: the V39 newsletter signup in `NewsletterModal`; the V38 Available-card spacing; the V37 parallel product teasers and the EMR modal bullet; the V36 newsletter-masthead flip; the V35 hero-label tightening; the reconciliation e-book's card and modal live as the first product on the Available card ($37, `EbookModal`, ghost "Buy the Guide" at `href="#"`); four intentional `borderTop` dividers; the four-modal scroll-lock; the **"Solutions LLC" subline in Inter 800** in nav and footer *(comma dropped in V54)*; the nav lockup dial `translateX(-26px)` and its F-level-with-crossbar `marginTop`; the **footer lockup dial `translateX(-14px)`**; the footer copyright trimmed to **"© {year}"**; card-heading `lineHeight: '1.2'`; card padding (`paddingTop: '16px'`, `paddingBottom: '24px'`, sides 40); the "Subscribe for Free" ghost-button label; the `index.html` font import and cleaned meta description; the Subscribe/input 44px alignment fix; the niche-forward front door; all buttons title case with no period; **Kit** as the newsletter platform with Kit Commerce the front-runner for the book's checkout; the legal entity **FranklinAI Solutions LLC**; the Content Calendar as the single canonical content/marketing document; `david@franklinaisolutions.com`; the offer-ladder rungs and prices; the Business Plan deleted; the Claude Code vs claude.ai scoping; the Source File Rule; the stack boundary; the F-vs-crossbar method; Clarity retired; gold logo-bolt-only; "in plain English" and "software" banned; no em dashes in site copy; the $350 GlowPT price; the GlowPT exercise-plan exclusion.
 
 ---
 
@@ -85,6 +89,8 @@
   2. **A dash used as a LABEL SEPARATOR becomes the middot `·`**, which GlowPT's footer byline already used.
 - **The AI prompt must carry the rule or generated text escapes it.** GlowPT's daily patient reflection is written by a model, so no amount of cleaning static strings governs it. Its prompt now ends "Do not use em dashes in your response." **Any future FranklinAI feature that generates user-facing text owes the same instruction.**
 
+> **A later GlowPT session found the same rule had missed a whole directory.** The 2026-08-27 sweep was scoped to `src/`, so the two AWS Lambdas — which write the weekly clinic email and the patient's AI reflection fallback — kept their em dashes for four days. **The generalisable lesson: user-facing copy does not all live in the obvious folder.** Before declaring a copy rule applied anywhere, check the delivery surfaces too, not just the app.
+
 > **Code comments and this document are exempt.** Both are full of em dashes, including this sentence's neighbours. The rule governs shipped strings a visitor can read.
 
 ---
@@ -100,7 +106,7 @@
 
 **Why this reversed a standing rule.** Through V51 this file recorded the count difference — 5 on glowpt.app, 8 here — as deliberate, on the reasoning that the FranklinAI modal was the fuller pitch and glowpt.app the short version. **David overruled it on 2026-08-30.** His reasoning is simpler and better: a buyer arrives from one site and reads the other, and meeting two different descriptions of the same product makes the product look unsettled. **The three that were missing on glowpt.app are back** — the journal/streaks bullet, the one-subscription bullet, and the remote-monitoring bullet — **and glowpt.app was also reordered to this site's order**, since matching counts with a shuffled order is not actually matching.
 
-> **How to verify the match rather than eyeballing it.** Parse both arrays and compare element by element. Reading two eight-item lists side by side is exactly the task human attention is worst at, and a single reordered pair looks identical at a glance.
+> **How to verify the match rather than eyeballing it.** Parse both arrays and compare element by element. Reading two eight-item lists side by side is exactly the task human attention is worst at, and a single reordered pair looks identical at a glance. *(Verified this way at V54: 8 and 8, `IDENTICAL AND SAME ORDER: True`.)*
 
 **What still differs between the two sites, and is still deliberate:** the **first sentence** of the pitch (this site names the niche, glowpt.app does not — see V51), and the fact that glowpt.app's modal carries **a price line and a signup path** this one does not need. **The bullets are no longer on that list of differences.**
 
@@ -144,7 +150,11 @@ The Business Plan also held **market sizing, unit economics, the HIPAA architect
 
 FranklinAI builds custom web apps and tools for businesses — web apps, internal tools, and client-facing portals — built around a client's specific way of working rather than off-the-shelf templates. Based in Philadelphia, serving local and remote clients.
 
-> **Legal entity (context, not a site-build rule).** Formed as **FranklinAI Solutions LLC** (Pennsylvania); **"FranklinAI"** is the brand / fictitious name. The **wordmark lockup carries the full legal name** — "FranklinAI" over "Solutions, LLC" in both nav and footer. The footer copyright is just "© {year}".
+> **Legal entity (context, not a site-build rule).** Formed as **FranklinAI Solutions LLC** (Pennsylvania); **"FranklinAI"** is the brand / fictitious name. The **wordmark lockup carries the full legal name** — "FranklinAI" over **"Solutions LLC"** in both nav and footer. The footer copyright is just "© {year}".
+>
+> **⚠️ NO COMMA, as of V54. `FranklinAI Solutions LLC`, never `FranklinAI Solutions, LLC`.** Both lockups carried the comma until 2026-09-01. **The no-comma form is the one that appears everywhere the entity is actually named:** both attorney-review contract drafts in the GlowPT repo, glowpt.app's in-app legal copy (`src/lib/legal.js`), and the **AWS management account's Company-name field, which the org-level BAA binds to.** The comma was display-only and matched nothing. **If a future surface needs the entity name, use the no-comma form and do not reintroduce the comma for typographic taste.**
+>
+> **The sibling site now names the entity too (V54).** glowpt.app's landing footer carries a second line under its byline: **`© {year} FranklinAI Solutions LLC`**, computed at render. Its byline stays a credit ("A FranklinAI product · Philadelphia") and the new line is the legal name — two lines doing two jobs, the same division this site's footer uses. **Both sites now spell the entity identically.**
 
 **Packaged products under the FranklinAI umbrella:**
 
@@ -218,6 +228,8 @@ The GlowPT handoff note flagged that **no discovery call exists anywhere in the 
 2. **glowpt.app carries the price line and the signup path**; this site carries the price inside the modal footer and links out. That is a difference in *function*, not in how the product is described.
 3. **glowpt.app's landing header is deliberately self-sufficient**, because that site is reached by direct URL, search, QR and clinic forwards, not only from here. **Do not thin it on the assumption the visitor read this site first.**
 
+**What stopped differing in V54: the spelling of the legal entity.** Both sites now render **FranklinAI Solutions LLC** with no comma. See **Business**.
+
 > **A thin "handoff-only" FranklinAI modal was proposed and rejected.** Do not re-propose it without reading the GlowPT handoff note first. **Note the reasoning has shifted:** the old defence was that this modal was the fuller pitch. It no longer is — both modals now carry the same eight bullets. **The surviving defence is that a visitor should reach the price and the feature list before they reach a signup link**, which is why the self-serve door is one level in rather than on the card.
 
 ---
@@ -248,6 +260,8 @@ The GlowPT handoff note flagged that **no discovery call exists anywhere in the 
 
 - **GlowPT** — $350 / month, flat, **with no patient limit**. Displayed inside the GlowPT modal. **If this price changes, THREE places move together: `App.jsx`, this file, and the GlowPT repo's `src/lib/marketing.js` (`MONTHLY_PRICE_USD`).**
   > ⚠️ **The GlowPT price line at `glowpt.app/onboard` is a CONTRACT REQUIREMENT, not decoration.** The Subscription Agreement §5.1 says "the subscription fee of $350 per month, **or the amount stated at sign-up**", and that on-screen line IS the amount stated at sign-up. Never remove it, and never edit it as if it were marketing copy.
+  >
+  > **A related structural note from the GlowPT side (2026-09-01).** That price line is now **two constants rendered as two stacked lines** — `PRICE_LINE` ("$350 per month, per clinic.") and `PATIENTS_FREE_LINE` ("Patients join free.") — because as one string the wrap point was decided by the viewport and stranded "free." alone in iPhone portrait. `PRICE_LINE` is still the §5.1 statement of the amount. **Do not recombine them.**
 - **The reconciliation e-book** — **$37**, one-time, displayed inside `EbookModal` (subline + Playfair price line). Not shown on the card. **If this changes, three places move: `App.jsx` (both spots), this file, and the external checkout.**
 
 **Custom Pricing:**
@@ -255,7 +269,7 @@ The GlowPT handoff note flagged that **no discovery call exists anywhere in the 
 - **The Build** — From $10,000. Whisper subtext: "New features quoted and built one at a time, as you grow." (Inter 15px, #8892a4, marginTop: '0')
 - **Monthly Care** — $350 / month. Optional.
 
-> ## ⚠️ THE `$350` DECOY — read before changing GlowPT's price (V49, line numbers refreshed V52)
+> ## ⚠️ THE `$350` DECOY — read before changing GlowPT's price (V49, line numbers re-measured V54)
 >
 > **`$350` appears TWICE in `App.jsx` and only one of them is GlowPT.**
 >
@@ -264,7 +278,7 @@ The GlowPT handoff note flagged that **no discovery call exists anywhere in the 
 >
 > Previous versions of this file said "if the GlowPT price changes, two places move" without warning that a naive grep returns a decoy. **If GlowPT's price ever moves, line 449 must NOT move with it.**
 >
-> **These line numbers drift every time anything above them changes** (V49 recorded ~95 and ~434; V52's five-line comment above `features` pushed both down). **Treat them as a hint, not an address — confirm by reading the surrounding function name.**
+> **These line numbers drift every time anything above them changes** (V49 recorded ~95 and ~434; V52's five-line comment above `features` pushed both down; **V54 changed no line counts and both are unmoved**). **Treat them as a hint, not an address — confirm by reading the surrounding function name.**
 
 **Order rationale.** The e-book sits first (cheapest paid yes, under the newsletter whose diagnosis it answers), GlowPT second (recurring flagship), then Custom Work as proof, bridging into How It Works and Custom Pricing.
 
@@ -301,7 +315,7 @@ The GlowPT handoff note flagged that **no discovery call exists anywhere in the 
 - **Subhead "The Operator"** — white Playfair sub-title, `clamp(30px, 5vw, 35px)`, 800, `lineHeight: '1.1'`, `marginTop: '0'`, `marginBottom: '14px'`, upright.
 - **Description** (Inter 15px, #8892a4, `marginTop: '0'`, `marginBottom: '18px'`, `lineHeight: '1.5'`): **"For physical therapy practices. Delivered every other Tuesday, it takes a clear look at what's working and not working in your practice, and what to do about it."**
 
-> **The audience line appears TWICE.** The identical sentence lives in the card description and the `NewsletterModal` description. **They must always move together.** Verify with `grep -c "For physical therapy practices\."` — expected count **2**. *(Measured 2 at V53.)*
+> **The audience line appears TWICE.** The identical sentence lives in the card description and the `NewsletterModal` description. **They must always move together.** Verify with `grep -c "For physical therapy practices\."` — expected count **2**. *(Measured 2 at V54.)*
 
 **The card's action:**
 - **One ghost button: "Subscribe for Free"** (`btn btn--ghost`, inline `marginTop: '0'`), opening `NewsletterModal`. **No email field on the card.**
@@ -354,7 +368,7 @@ SVG favicon and 180×180 PNG apple-touch-icon, kite mark on navy with the bolt i
 | Role | Value |
 |---|---|
 | Background / Navy | #070f24 |
-| Accent Blue | #60a5fa — all blues, section headings, links, prices, buttons, logo strokes, "Solutions, LLC" |
+| Accent Blue | #60a5fa — all blues, section headings, links, prices, buttons, logo strokes, "Solutions LLC" |
 | Gold / Lightning Bolt | #fbbf24 — **the kite lightning bolt only** |
 | Card background | rgba(255, 255, 255, 0.04) |
 | Card border | rgba(96, 165, 250, 0.18) |
@@ -394,9 +408,9 @@ SVG favicon and 180×180 PNG apple-touch-icon, kite mark on navy with the bolt i
 | Modal sublines | Inter | 600 | 14px, #8899b0, marginBottom 16px |
 | Modal feature rows | Inter | 400 / 700 check | 15px, #f0e6d3 text, #60a5fa check |
 | Nav name | Playfair Display | 700 | clamp(40.95px, 4.35vw, 50.4px), blue with "AI" white |
-| Nav "Solutions, LLC" | Inter | 800 | clamp(25.6px, 2.72vw, 31.5px), #60a5fa |
+| **Nav "Solutions LLC"** | Inter | 800 | clamp(25.6px, 2.72vw, 31.5px), #60a5fa. **No comma (V54).** |
 | Footer name | Playfair Display | 700 | 32px, blue with "AI" white |
-| Footer "Solutions, LLC" | Inter | 800 | 20px, #60a5fa |
+| **Footer "Solutions LLC"** | Inter | 800 | 20px, #60a5fa. **No comma (V54).** |
 | Footer small print (2 lines) | Inter | 400 | 13px, #8892a4, each `display: block`, centered by the column's `text-align`. **The "© {year}" line additionally carries `translateX(-3px)` — a deliberate optical correction, the only nudge on the page (V48). See Footer.** |
 | Email option text | Inter | 400 | 15px, #8892a4, link #60a5fa at 600 |
 
@@ -483,6 +497,7 @@ Each `card-heading` carries **`marginBottom: 'clamp(4px, 1.5vw, 10px)'`** and an
 - **Geometric centering is not always optical centering (V48).** A line whose ink is unevenly weighted can measure 0.00px centered and still read as off-centre. **Verify centering against the reference the eye uses**, and if a line is provably centered but still looks wrong, the remedy is an explicit documented optical correction, not a re-derivation of the layout around it.
 - **In a stacked pair of buttons, the BOTTOM one is the stronger position (V49).** It is the terminal action, which is why dialogs put confirm last. Combined with the filled style being the loudest element, **a filled button placed last is the most dominant thing in the block.** Order and weight are two separate levers; do not reach for order when the intent is weight.
 - **Copy that appears twice must move twice.** Two strings are duplicated *within this file* by design: the newsletter description (card + modal) and the "Subscribe for Free" label (card + modal). **A third duplication crosses repos: the GlowPT pitch's second sentence and the eight feature bullets (V52).**
+- **When a two-sentence line must break the same way everywhere, make it two elements, not one string (V54, learned on glowpt.app).** A single string wraps wherever the measure happens to fall, so the same copy breaks cleanly at one width and strands a word at another. Two stacked block elements break identically at every width. **This is the same family as the block + `text-align` standard: control the break, do not hope for it.**
 
 ---
 
@@ -554,6 +569,8 @@ Both lockups are positioned horizontally by inline `transform: translateX(...)`,
 
 > **Do not "derive" the footer dial from box math (V48).** A session computed that the footer text column inherits an offset of exactly `(kiteWidth 44.19 + gap 4) / 2 = 24.09px`, concluded the dial "should" be `-24.09px`, and shipped it. It is true arithmetic and the wrong change: it dragged the whole signature left, and David rejected it immediately. **The dial is an optical judgement about how the lockup reads, not a centering equation.** The kite deliberately hangs left of the centered text; that is the design.
 
+> **The V54 comma removal did NOT touch either dial, and did not need to (V54).** Both dials were tuned by eye against a subline that carried a comma, so a narrower subline is a fair thing to worry about. **It was measured instead of assumed, and the answer is that neither lockup box moves:** in both, **"FranklinAI" is the widest line and sets the column width** — nav 252.8px vs the subline's 222.6px, footer 160.5px vs 146.9px — so the subline was never what the lockup was sized against. Toggling the comma in the live DOM left the **nav brand box byte-identical** (460.77 → 767.23, width 306.46) and the **footer text column byte-identical at 160.51px**. Only the subline's own edges pull in ~5px (nav) and ~3px (footer) per side. **David confirmed it across browsers.** *(The measuring technique generalises: to prove a text change cannot move a lockup, toggle the string in the running DOM and compare the container's box, not the text's.)*
+
 ---
 
 ## Fine-Print Left-Nudges — RETIRED except ONE documented exception (V48)
@@ -562,8 +579,8 @@ Both lockups are positioned horizontally by inline `transform: translateX(...)`,
 
 | Line | Nudge |
 |---|---|
-| Nav "Solutions, LLC" | none |
-| Footer "Solutions, LLC" | none |
+| Nav "Solutions LLC" | none |
+| Footer "Solutions LLC" | none |
 | Footer "franklinaisolutions.com" | none |
 | **Footer "© {year}"** | **`translateX(-3px)` — deliberate optical correction (V48)** |
 
@@ -581,10 +598,12 @@ Both lockups are positioned horizontally by inline `transform: translateX(...)`,
 - Brand link: `gap: '4px'`, `alignItems: 'flex-start'`, `transform: 'translateX(-26px)'`
 - Kite: `KiteLogo size={130}` (the **inline** one), wrapped in `<span style={{ flexShrink: 0, display: 'flex' }}>`, NO className
 - Wordmark div: `marginTop: 'clamp(13.98px, calc(42.25px - 2.44vw), 19.28px)'`
-- Name `clamp(40.95px, 4.35vw, 50.4px)` blue with "AI" white; "Solutions, LLC" **Inter 800**, `clamp(25.6px, 2.72vw, 31.5px)`, blue, **no `transform`**
+- Name `clamp(40.95px, 4.35vw, 50.4px)` blue with "AI" white; **"Solutions LLC"** (no comma, V54) **Inter 800**, `clamp(25.6px, 2.72vw, 31.5px)`, blue, **no `transform`**
 - Responsive sizing via inline `clamp()`, not media queries
 
 > The nav wordmark is still a flex column and has **not** shown the footer's centering problem — its subline sits directly under a single-line wordmark, so there is no differently-sized-sibling shrink-centering to go wrong. If it ever does, apply the block + `text-align` standard here too.
+
+> **The wordmark column is `align-items: flex-start` (in `global.css`), and the name is the widest line**, so the subline can never set the lockup's width. That is why V54's comma removal moved nothing here.
 
 ---
 
@@ -594,7 +613,7 @@ Both lockups are positioned horizontally by inline `transform: translateX(...)`,
 
 > ## THE FOOTER LOCKUP IS CLOSED. DO NOT CHANGE IT.
 >
-> **The structure below is correct, hand-tuned, and settled.** The kite sits on the **left**, and a single text column to its right holds **all four lines** — wordmark, "Solutions, LLC", the domain, and the copyright — centered with each other. **Do not restructure it, do not move the fine print out of the column, and do not recompute the `-14px` dial.**
+> **The structure below is correct, hand-tuned, and settled.** The kite sits on the **left**, and a single text column to its right holds **all four lines** — wordmark, "Solutions LLC", the domain, and the copyright — centered with each other. **Do not restructure it, do not move the fine print out of the column, and do not recompute the `-14px` dial.**
 >
 > **Everything in this list was tried in one session and reverted.** Do not try them again:
 > 1. **`alignSelf: 'stretch'` on the fine-print spans while the column stayed flex** (V46) — no effect, because the *column* was still a flex container.
@@ -603,6 +622,8 @@ Both lockups are positioned horizontally by inline `transform: translateX(...)`,
 > 4. **Removing the `-14px` dial entirely** so the lockup centered as a unit — same rejection.
 >
 > **What actually fixed it:** the two per-line changes to the copyright, documented below. Nothing structural.
+>
+> **V54 changed the TEXT of line 2 and nothing else.** A copy change inside the lockup is not a structural change, and this one was proven not to move the box before it shipped. **The lockup stays closed.**
 
 ### Footer Structure
 
@@ -616,8 +637,8 @@ A scaled-down signature (kite 105, name 32px). Kite-to-wordmark gap `4px`.
 
 **Text column** (right — a **plain block**, `textAlign: 'center'`, `marginTop: '13.16px'`, **no flex, no `transform`**). Every line inside is `display: block` and centers by the column's `text-align`:
 
-1. **FranklinAI** — Playfair 700, 32px, blue with "AI" white, inside a `display: block` home link `<a>`. The widest line, so it sets the column width.
-2. **Solutions, LLC** — Inter 800, 20px, blue, `letterSpacing: '0.02em'`, marginTop 2px (inside the same link).
+1. **FranklinAI** — Playfair 700, 32px, blue with "AI" white, inside a `display: block` home link `<a>`. **The widest line at 160.5px, so it sets the column width** *(measured at V54)*.
+2. **Solutions LLC** — Inter 800, 20px, blue, `letterSpacing: '0.02em'`, marginTop 2px (inside the same link). **No comma, as of V54.**
 3. **franklinaisolutions.com** — Inter 400, 13px, #8892a4, lineHeight 1.5, marginTop 8px. **No transform.**
 4. **© {year}** — Inter 400, 13px, #8892a4, lineHeight 1.5, **`transform: 'translateX(-3px)'`**, with the year in a nested span carrying **`marginLeft: '2px'`** and **no literal space** between it and the `&copy;` entity.
 
@@ -627,6 +648,8 @@ A scaled-down signature (kite 105, name 32px). Kite-to-wordmark gap `4px`.
 >
 > **(b) The line carries `translateX(-3px)`, the only per-line nudge on the page.** See **Fine-Print Left-Nudges**. **This moves the copyright line only.**
 
+> **Note the spans are `display: block`, so each one's BOX is the full column width regardless of its text.** A session measuring "did this line get narrower" by reading the span's bounding box will get the column width every time and conclude nothing changed. **Measure the column against the widest line, or measure the text itself.**
+
 No email in the footer.
 
 ---
@@ -635,7 +658,7 @@ No email in the footer.
 
 All four modals (`EbookModal`, `GlowPTModal`, `CaseStudyModal`, `NewsletterModal`) lock page scroll via a `useEffect` setting `document.body.style.overflow = 'hidden'` on mount, restoring on unmount. Each closes on X click or backdrop click.
 
-> **The sibling repo now does this too, via a shared hook.** glowpt.app's three modals call one `useScrollLock` hook rather than repeating the effect. **This repo still repeats the effect four times.** Not a bug and not urgent, but if a fifth modal ever arrives, extracting a hook here is the better move than a fifth copy.
+> **The sibling repo has moved further ahead here.** glowpt.app's three modals now call **one shared `useModal` hook** that locks scroll, closes on **Escape**, **traps focus**, and restores focus to whatever opened the modal, with `role="dialog"` and `aria-modal` on each panel. *(It was `useScrollLock`; it absorbed the other jobs on 2026-08-31.)* **This repo still repeats a scroll-lock-only effect four times and has no Escape key or focus trap.** Not urgent and not a bug, but it is now a real accessibility gap rather than just duplication, and **if a fifth modal ever arrives, port the hook rather than writing a fifth copy.**
 
 ---
 
@@ -792,6 +815,7 @@ Heading **"Let's Build"**. Copy: "Every project starts with a conversation. Tell
 - Modal feature lines end with periods
 - **GlowPT is always one word, capital G and PT.** It may be named plainly as **"the GlowPT app"** in running copy.
 - FranklinAI is always one word, capital F and capital AI; the "AI" renders white wherever the wordmark appears. The footer copyright is just "© {year}".
+- **⚠️ THE LEGAL ENTITY IS WRITTEN `FranklinAI Solutions LLC`, WITH NO COMMA (V54).** Both lockups carried "Solutions, LLC" until 2026-09-01. The no-comma form matches the contracts, glowpt.app's `src/lib/legal.js`, and the AWS Company-name field the org BAA binds to. **Do not reintroduce the comma anywhere, on either site.**
 - **⚠️ NEVER END A CLAUSE ON A FLOATING "FOR FREE" OR "FREE" WHERE A PRICE IS NEARBY (V53).** A trailing "for free" attaches to whatever the reader last held in mind, which on a page carrying a price is usually the thing being sold. **Give it an explicit subject.** GlowPT feature bullet 3 shipped as "...covers the clinic and all its patients **for free**", which read for a beat as the *subscription* being free with `$350` a few lines below; **"...and the patients join for free"** fixes it by naming who is joining. The same trap applies to "included", "at no cost" and "on us".
 - **The newsletter description is duplicated on purpose (card + modal). Any edit changes BOTH.** `grep -c "For physical therapy practices\."` → **2**.
 - **The GlowPT pitch's second sentence and the eight feature bullets are duplicated ACROSS REPOS (V52). Any edit changes BOTH repos.** `grep -c "More completed plans of care and the clinic stays full"` → **2** here, **1** in `glowpt/src/lib/marketing.js`.
@@ -850,7 +874,7 @@ Set in `App.jsx`, overriding CSS class defaults. Do not change without explicit 
 | Nav wordmark `<div>` | marginTop: 'clamp(13.98px, calc(42.25px - 2.44vw), 19.28px)' |
 | Nav name `<span>` | fontSize: 'clamp(40.95px, 4.35vw, 50.4px)', color: '#60a5fa' |
 | Nav "AI" `<span>` | color: '#ffffff' |
-| Nav "Solutions, LLC" `<span>` | Inter, 800, 'clamp(25.6px, 2.72vw, 31.5px)', #60a5fa, lineHeight '1', marginTop '3px', **no `transform`** |
+| **Nav "Solutions LLC" `<span>`** | Inter, 800, 'clamp(25.6px, 2.72vw, 31.5px)', #60a5fa, lineHeight '1', marginTop '3px', **no `transform`**. **Text carries NO comma (V54).** |
 | All `.site-card` divs | paddingTop: '16px', paddingBottom: '24px' |
 | Hero label `<p>` | Playfair, 'clamp(40px, 6vw, 64px)', 700, letterSpacing '0.04em', #60a5fa, marginBottom 'clamp(2px, 1vw, 8px)', lineHeight '1.1' |
 | Hero headline `<h1>` | #ffffff, 'clamp(37.5px, 5.75vw, 57.5px)', marginBottom '10px' |
@@ -919,7 +943,7 @@ Set in `App.jsx`, overriding CSS class defaults. Do not change without explicit 
 | **Footer text column `<div>`** | **textAlign 'center'**, marginTop '13.16px' (**block layout — no flex, no `transform`**) |
 | **Footer wordmark home link `<a>`** | textDecoration 'none', color 'inherit', **display 'block'** |
 | Footer name `<span>` | **display 'block'**, Playfair 700, '32px', #60a5fa, lineHeight 1 (with "AI" #ffffff) |
-| Footer "Solutions, LLC" `<span>` | **display 'block'**, Inter 800, '20px', letterSpacing '0.02em', #60a5fa, marginTop '2px', **no `transform`** |
+| **Footer "Solutions LLC" `<span>`** | **display 'block'**, Inter 800, '20px', letterSpacing '0.02em', #60a5fa, marginTop '2px', **no `transform`**. **Text carries NO comma (V54).** |
 | Footer address `<span>` | **display 'block'**, Inter, '13px', #8892a4, lineHeight 1.5, marginTop '8px', **no `transform`** |
 | **Footer copyright `<span>`** | **display 'block'**, Inter, '13px', #8892a4, lineHeight 1.5, **`transform: 'translateX(-3px)'`** — the **only** per-line nudge on the page (V48) |
 | **Footer copyright year `<span>`** (nested) | **`marginLeft: '2px'`** — replaces the plain word space after `&copy;` |
@@ -932,7 +956,7 @@ Set in `App.jsx`, overriding CSS class defaults. Do not change without explicit 
 
 **Footer:** Fully self-contained, inline styles, NO CSS classes. **The text column is block layout, not flex**, every line `display: block`, centered by `text-align`. The **copyright line** additionally carries `translateX(-3px)` and its year sits in a nested span with `marginLeft: '2px'`. **The lockup structure and its `-14px` dial are closed.**
 
-**Nav:** `global.css` classes for layout plus inline overrides. The nav kite no longer uses `.site-nav__logo`.
+**Nav:** `global.css` classes for layout plus inline overrides. The nav kite no longer uses `.site-nav__logo`. **`.site-nav__wordmark` is `display: flex; flex-direction: column; align-items: flex-start`** — worth knowing, because it means the subline can never widen the lockup.
 
 **Newsletter card (`NewsletterStrip`):** `.section` / `.container` / `.site-card` / `.card-heading` plus inline styles. The card's **only action** is a `.btn`/`.btn--ghost` button opening `NewsletterModal`. **The input and the form's Subscribe button live in the modal.** The input is fully inline-styled. The modal's Subscribe button needs its inline overrides — `marginTop: '0'` and `height`/`minHeight: '44px'` with `boxSizing: 'border-box'` — or it falls out of alignment. **Placeholder styling would require a `global.css` `::placeholder` rule** and is deliberately not added.
 
@@ -970,29 +994,36 @@ Edit the repo in place. **Read this file first.** (The GlowPT repo is separate f
 6. **Tell David the new version number** and that it needs pasting into the claude.ai project instructions.
 
 > ⚠️ **V52 and V53 were both cut on David's direct instruction, in the same session as their code, WITHOUT step 4.** He asked for the regenerations explicitly and both were copy strings rather than geometry, which is the low-risk case. **This is an exception, not a new rule.** Step 4 exists because V46 and V47 were both written against unverified visual fixes and both had to be superseded within hours. **Keep waiting on anything visual.**
+>
+> ✅ **V54 followed the full sequence, step 4 included.** The change touched the lockups, which is the highest-risk area in this repo, so the code was pushed, David checked it across browsers, and only then was this document cut. **That is the intended shape.**
 
 **Rules on the regeneration:**
 
 - **Regenerate whole. Never patch.** Write the entire file out, reading the live code as you go. Targeted edits are how a document rots: the GlowPT EMR bullet was recorded as "the eighth" for seven versions and the real eighth went unrecorded, because no pass forced a full read.
 - **Record the reasoning, not just the strings.** Most of this document's weight is *why*. Carry those arguments forward verbatim unless a decision actually changed. **A version that reduces to a changelog has failed.**
 - **When a rule is REVERSED, say so loudly and delete the old instruction.** V52 reversed the "do not reconcile the bullet counts" rule, which four earlier versions had reaffirmed. **Leaving a retired rule in place next to its replacement is worse than either one alone** — the next session cannot tell which is live.
-- **A version bump for one string is legitimate.** V43 and V44 were documentation-only; V53 changed a single bullet. **The cost of a stale document is higher than the cost of a small version**, and a file that quotes a string the code no longer contains is exactly the rot the whole-regeneration rule exists to prevent.
+- **A version bump for one string is legitimate.** V43 and V44 were documentation-only; V53 changed a single bullet; **V54 deleted two characters.** **The cost of a stale document is higher than the cost of a small version**, and a file that quotes a string the code no longer contains is exactly the rot the whole-regeneration rule exists to prevent.
 - **Never write the doc before the push.** V46 and V47 were both cut against unverified fixes and both had to be superseded within hours.
 
 **Two rules David set explicitly on 2026-08-23:**
 
 1. **READ `CLAUDE.md` BEFORE MAKING ANY CHANGE.** Not the section you assume is relevant — the document.
-2. **DO NOT UPDATE THIS DOCUMENT UNTIL DAVID CONFIRMS THE FIX WORKS.** Verification by measurement is not confirmation. His eyes on the live site are. *(He waived this for V52 and V53; see above.)*
+2. **DO NOT UPDATE THIS DOCUMENT UNTIL DAVID CONFIRMS THE FIX WORKS.** Verification by measurement is not confirmation. His eyes on the live site are. *(He waived this for V52 and V53; V54 observed it.)*
 
-### Working across the two repos (V49, extended V52)
+### Working across the two repos (V49, extended V52, corrected V54)
 
-It is legitimate for a session in this repo to edit the GlowPT repo, and vice versa. It happened on 2026-08-27 for the copy pass and again on 2026-08-30 from the GlowPT side. **The conditions:**
+It is legitimate for a session in this repo to edit the GlowPT repo, and vice versa. It happened on 2026-08-27 for the copy pass, on 2026-08-30 from the GlowPT side, and on 2026-09-01 from the GlowPT side for the V54 comma. **The conditions:**
 
 - **David asks for it explicitly.** Do not reach across on your own initiative.
 - **Read the other repo's `CLAUDE.md` first.** GlowPT has its own house copy rule (statements get sentence case and a period; labels get Title Case and none; no all-caps; AP preposition conventions) and its own push preference.
 - **Say plainly which repo each change landed in**, with commit hashes. Bouncing between projects is confusing from the outside, and the confusion is a real cost even when the change is safe.
 - **Prefer the GlowPT session for anything touching GlowPT's behavior.** Copy is the safe case because it is self-contained and reversible.
-- **⚠️ A session in the GlowPT repo cannot preview this site (V52).** `preview_start` resolves `.claude/launch.json` from the session's own project folder, so asking for `franklinai-dev` from a GlowPT session silently starts the GlowPT server instead. **A cross-repo copy change to this site can be verified by build and string check, but not by eye, from over there.** Say which of the two you actually did.
+
+> **⚠️ V52 said a GlowPT session "cannot preview this site." That is TOO STRONG, and V54 previewed it from over there.** The real constraint: **`preview_start` resolves `.claude/launch.json` from the session's own project folder**, so asking for `franklinai-dev` from a GlowPT session silently starts the GlowPT server instead. **The workaround is to add a temporary configuration to the session folder's own `launch.json`** pointing at the other app (`runtimeArgs: ["--prefix", "/Users/mac/Downloads/franklinai-v2", "run", "dev"]`), start it, verify, then **restore the file with `git checkout` and confirm that repo is clean again.** Port 5173 is shared, so stop the other server first.
+>
+> **Two dead ends, so nobody repeats them:** a `vite build --base=./` opened over `file://` renders **blank**, because ES modules are blocked by CORS on the file protocol; and the Browser pane's screenshot did not follow a scroll down this long page, so the footer had to be brought into view by temporarily setting a negative `document.body.style.marginTop` in the live DOM (vertical only, reverted immediately, horizontal layout untouched).
+>
+> **Say which verification you actually did.** Build and string checks are not the same as looking at it.
 
 ### In claude.ai
 
@@ -1017,6 +1048,8 @@ A good one **names the repo in its first line**, states the scope and what not t
 **When David says a thing is settled, it is closed.** The footer lockup is the standing example (see Footer). A closed item is not reopened by a clever measurement.
 
 > **But "settled" belongs to David, not to this document.** V52 overturned a rule this file had reaffirmed four times. **A rule recorded here is a record of a decision, not a veto over the person who made it.** When David asks for something this file forbids, say what the file says and why, then do what he asks.
+>
+> **A closed section can still take a copy change (V54).** The footer lockup is closed, and its legal-name line was still edited — because "closed" governs the *geometry*, not every character inside it. **The test is whether the change moves anything.** Prove it does not before you touch a closed area, and say how you proved it.
 
 **Document versioning.** Complete drop-in replacement, never a patch, with full change history. Read live code as the source of truth when producing a new version, to catch drift.
 
@@ -1039,14 +1072,18 @@ A good one **names the repo in its first line**, states the scope and what not t
 | **GlowPT billing** | No Stripe anywhere. Collection manual. Backlog, unstarted, and it belongs in the GlowPT repo. |
 | **GlowPT auto-renewal statutes** | Open with counsel. **No renewal or cancellation claims on either site until answered.** |
 | **Click-through vs signature** on the clinic BAA | Undecided. If signature wins, self-serve onboarding gains a manual step and the copy here must reflect it. |
+| **🆕 Fictitious-name registration** | **Raised 2026-09-01, not acted on.** Both public sites lead with the brand name "FranklinAI" while the registered entity is FranklinAI Solutions LLC, and PA generally requires a fictitious-name registration to trade publicly under a name that is not the registered one. **Nobody involved is a lawyer and nothing was changed on this basis.** It is a cheap question to add to the attorney engagement that is already open. |
+| **🆕 Modal accessibility** | The four modals lock scroll but have **no Escape key and no focus trap**. glowpt.app solved this with a shared `useModal` hook on 2026-08-31. **Port it if a fifth modal arrives, or sooner.** |
+| **The GlowPT modal's V52/V53 renders have still not been seen by eye** | **Narrowed at V54.** The **Available card teaser** was rendered and seen on 2026-09-01, so that string is confirmed live. **The modal itself was never opened**, so bullets 3 and 5 and the description paragraph remain build-and-string-verified only. **Open the modal next time anyone is in this repo — it is one click.** |
 | ~~Bullet 3's "for free" reading~~ | **✅ CLOSED in V53** by naming the subject: "the patients join for free". |
-| **The GlowPT modal's V52/V53 renders were not seen by eye** | Both copy changes were verified by clean build and string check from a GlowPT-repo session, which cannot preview this site. **Worth a glance next time anyone is in this repo.** |
+| ~~The two sites spell the legal entity differently~~ | **✅ CLOSED in V54.** Both now read **FranklinAI Solutions LLC**, no comma. |
 
 ---
 
 ## Change History
 
-- **V53** — **One string, and a rule worth more than the string.** Feature bullet 3 became **"One subscription covers the clinic and the patients join for free."**, replacing V52's "...and all its patients for free." **A bare "for free" at the end of a clause attaches to whatever the reader last held in mind**, and with `$350` a few lines below that was the subscription, not the patients. **Naming the subject pins it.** The general form is now a Copy Rule: never end a clause on a floating "for free", "free", "included" or "at no cost" where a price is nearby. **David found this himself** after being told the same thing when V52 shipped and choosing to keep his wording, which produced a second new process rule: **a flagged-and-declined concern is parked in Open Items, not dropped**, so circling back costs one line instead of a re-derivation. Also recorded: a version bump for one string is legitimate, because a document quoting a string the code no longer contains is the exact rot whole-regeneration exists to prevent. `App.jsx` still measures **674 lines**. ⚠️ **Cut without live-site confirmation, on David's direct instruction — still an exception.** *(Companion GlowPT-repo commit: `f57d000`. This repo: `269baa2`.)*
+- **V54** — **Two characters deleted from the two most protected elements on the page, and nothing moved.** The nav and footer lockups now read **"Solutions LLC"** instead of "Solutions, LLC". **The no-comma form won because it is the one used everywhere the entity is legally named:** both attorney-review contract drafts, glowpt.app's `src/lib/legal.js`, and the **AWS Company-name field the org BAA binds to.** The comma was display-only. **David's call, made while adding `© {year} FranklinAI Solutions LLC` to glowpt.app's own footer** and finding the two sites disagreed; he chose to change this site, which is right, because the contracts have no comma. **The diff was two text nodes**: no style, no structure, and the `-26px`, `-14px` and `-3px` dials all verified untouched. **Neither lockup moves, and it was measured before it shipped:** "FranklinAI" is the widest line in both (nav 252.8 vs 222.6, footer 160.5 vs 146.9) and sets the column width, and toggling the comma in the live DOM left the nav brand box and the footer text column byte-identical. **David confirmed across browsers before this document was cut — the full six-step process including step 4, unlike V52 and V53.** New rules recorded: **the entity is written with no comma anywhere, on either site**; **a two-sentence line that must break identically everywhere should be two elements, not one string**; **"closed" governs geometry, not every character** — a closed section can take a copy change if you prove it moves nothing. Also corrected: **V52's claim that a GlowPT session cannot preview this site is too strong** — the workaround, and two dead ends, are recorded under *Working across the two repos*. `App.jsx` still measures **674 lines**; the `$350` decoy is unmoved at **99 and 449**. *(This repo: `84f74c9`. Companion GlowPT-repo commits: `b44e8f6`, `ed5c8b7`, `74356c1`.)*
+- **V53** — **One string, and a rule worth more than the string.** Feature bullet 3 became **"One subscription covers the clinic and the patients join for free."**, replacing V52's "...and all its patients for free." **A bare "for free" at the end of a clause attaches to whatever the reader last held in mind**, and with `$350` a few lines below that was the subscription, not the patients. **Naming the subject pins it.** The general form is now a Copy Rule: never end a clause on a floating "for free", "free", "included" or "at no cost" where a price is nearby. **David found this himself** after being told the same thing when V52 shipped and choosing to keep his wording, which produced a second new process rule: **a flagged-and-declined concern is parked in Open Items, not dropped**, so circling back costs one line instead of a re-derivation. Also recorded: a version bump for one string is legitimate, because a document quoting a string the code no longer contains is the exact rot whole-regeneration exists to prevent. `App.jsx` measured **674 lines**. ⚠️ **Cut without live-site confirmation, on David's direct instruction — an exception.** *(Companion GlowPT-repo commit: `f57d000`. This repo: `269baa2`.)*
 - **V52** — **The two sites' feature bullets became identical, reversing a rule this file had reaffirmed four times.** glowpt.app went from 5 bullets to **8**, word-identical and in the same order as this site's; the "do not reconcile the counts" instruction is **retired and deleted**, not merely superseded. David's reasoning: a buyer reads both surfaces in one sitting and must not meet two descriptions of one product. **Three changes to `App.jsx`:** the card teaser and the modal description both took a rewritten second sentence, **"More completed plans of care and the clinic stays full."** (lifted from feature bullet 5, so the lead and the bullet now echo on purpose); **feature bullet 3 was rewritten**, retiring V49's "no matter how many patients you have" as defensive phrasing while keeping the no-limit claim; and a **five-line comment above `features`** naming the GlowPT repo's twin list, matched by an identical comment there, because nothing enforces the match at build time. **New section: The two sites' shared bullet list.** **New process rules:** when a rule is reversed, delete the old instruction rather than parking it beside the new one; and "settled" belongs to David, not to this document. **The `$350` decoy line numbers moved to 99 and 449** and are now flagged as a hint rather than an address. `App.jsx` measured **674 lines**. *(Companion GlowPT-repo commits: `9b0ead5`, `169e137`. This repo: `27d68d3`, `9068baf`.)*
 - **V51** — **The GlowPT pitch became two sentences and the two sites deliberately diverged.** The card teaser and modal description both put the niche back on this site, while glowpt.app keeps a shorter niche-free first sentence because that page is already GlowPT-branded. The second sentence stays identical on all four surfaces. Bullet 8 dropped "free" to match glowpt.app. **Reverses V50's retirement of the niche clause** and **reaffirmed the 5-versus-8 bullet split as deliberate** after a session misread it as drift — *that reaffirmation is itself reversed by V52.* `App.jsx` measured **669 lines**. *(Companion GlowPT-repo commits: `14d512b`, `3008119`.)*
 - **V50** — **GlowPT collapsed to ONE sentence across all four public surfaces.** Two strings changed in `App.jsx`: the Available card teaser (retiring the V44 string, which named the niche and closed on "zero work for your therapists") and the GlowPT modal description (retiring the V46 two-sentence version by deleting the "Patients walk out doing great" setup sentence). **David chose repetition over variation deliberately**, having been told first that the hero and modal on glowpt.app would then repeat each other. Retired the *GlowPT teaser names the niche* clause; the headline still did. `App.jsx` measured **669 lines**. *(Companion GlowPT-repo commits: `cf9f7c1`, `d703338`. Also shipped there and NOT governed by this file: an upright `fontStyle` pin on the glowpt.app hero after Safari rendered it italic, and a line on `/onboard` telling a new clinic it starts closed.)*
@@ -1072,7 +1109,7 @@ A good one **names the repo in its first line**, states the scope and what not t
 - **V30** — Nav lockup dial returned to `-26px`; both sublines to **Inter 800**.
 - **V29** — Wordmark subline font: Playfair Display 400 → Inter 700, a deliberate mixed-type lockup.
 - **V28** — Nav/footer lockup micro-adjustments; "Subscribe Free" → "Subscribe for Free". A newsletter modal was considered and declined *(reversed in V39)*.
-- **V27** — **"Philadelphia" → "Solutions, LLC"** in the wordmark; the copyright trimmed to "© {year}".
+- **V27** — **"Philadelphia" → "Solutions, LLC"** in the wordmark; the copyright trimmed to "© {year}". *(The comma this introduced was removed in **V54**; the entity is now written with no comma.)*
 - **V26** — Operator-card rebalance, italic masthead, card-heading `lineHeight: '1.2'`, tighter card padding. First session run in Claude Code. *(The italic masthead was retired in V36.)*
 - **V25** — Newsletter card masthead restructure; the Subscribe button pinned to the input's 44px.
 - **V24** — Title-case button sweep; The Operator signup built and live; Kit chosen.
