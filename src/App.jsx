@@ -211,12 +211,57 @@ function Hero() {
   );
 }
 
+// Kit form "The Operator site signup". Double opt-in is ON in Kit, so success
+// copy says "check your email". If double opt-in is ever turned off, change
+// the success line to "You're in."
+const KIT_FORM_URL = 'https://app.kit.com/forms/9962049/subscriptions';
+
 function NewsletterModal({ onClose }) {
+  const [email, setEmail] = useState('');
+  const [status, setStatus] = useState('idle'); // idle | submitting | success | error
+  const [errorMessage, setErrorMessage] = useState('');
+
   useEffect(() => {
     const prev = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
     return () => { document.body.style.overflow = prev; };
   }, []);
+
+  useEffect(() => {
+    if (status !== 'success') return;
+    const timer = setTimeout(onClose, 2500);
+    return () => clearTimeout(timer);
+  }, [status, onClose]);
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setStatus('submitting');
+    setErrorMessage('');
+    try {
+      const body = new FormData();
+      body.append('email_address', email.trim());
+      const res = await fetch(KIT_FORM_URL, {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body,
+      });
+      const data = await res.json().catch(() => ({}));
+      if (res.ok && data.status === 'success') {
+        setStatus('success');
+        return;
+      }
+      const invalid = data.errors && data.errors.fields && data.errors.fields.includes('email_address');
+      setErrorMessage(invalid
+        ? "That email address doesn't look right. Check it and try again."
+        : 'That didn’t go through. Please try again in a moment.');
+      setStatus('error');
+    } catch {
+      setErrorMessage('That didn’t go through. Please try again in a moment.');
+      setStatus('error');
+    }
+  }
+
+  const submitting = status === 'submitting';
 
   return (
     <div className="modal-backdrop" onClick={onClose}>
@@ -231,11 +276,21 @@ function NewsletterModal({ onClose }) {
         <p className="modal__text">
           For physical therapy practices. Delivered every other Tuesday, it takes a clear look at what's working and not working in your practice, and what to do about it.
         </p>
-        {/* Signup form. Not wired yet. The Kit form endpoint gets added here later. */}
+        {/* Signup form. JS-handled submit to Kit (a plain POST would navigate away and destroy the modal). */}
         <div style={{ borderTop: '1px solid rgba(96, 165, 250, 0.12)', paddingTop: '24px' }}>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', justifyContent: 'center', alignItems: 'center' }}>
+          {status === 'success' ? (
+            <p role="status" style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', color: '#f0e6d3', lineHeight: '1.5', minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0' }}>
+              Almost there. Check your email to confirm.
+            </p>
+          ) : (
+          <form onSubmit={handleSubmit} style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', justifyContent: 'center', alignItems: 'center' }}>
             <input
               type="email"
+              name="email_address"
+              required
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+              disabled={submitting}
               placeholder="Your email"
               aria-label="Your email address"
               style={{
@@ -255,10 +310,16 @@ function NewsletterModal({ onClose }) {
                 maxWidth: '280px'
               }}
             />
-            <button type="button" className="btn btn--ghost" style={{ height: '44px', minHeight: '44px', boxSizing: 'border-box', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', marginTop: '0' }}>
-              Subscribe for Free
+            <button type="submit" disabled={submitting} className="btn btn--ghost" style={{ height: '44px', minHeight: '44px', boxSizing: 'border-box', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', marginTop: '0' }}>
+              {submitting ? 'Subscribing…' : 'Subscribe for Free'}
             </button>
-          </div>
+          </form>
+          )}
+          {status === 'error' && (
+            <p role="alert" style={{ fontFamily: "'Inter', sans-serif", fontSize: '14px', color: '#8899b0', lineHeight: '1.5', textAlign: 'center', marginTop: '12px', marginBottom: '0' }}>
+              {errorMessage}
+            </p>
+          )}
         </div>
       </div>
     </div>
