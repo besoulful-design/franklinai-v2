@@ -137,13 +137,13 @@ function EbookModal({ onClose }) {
         </p>
         <p className="modal__text">
           Your whole team is being asked to sell advanced care and get patients
-          to the end of their plan of care at the same time. That's not a
+          to the end of their care at the same time. That's not a
           marketing problem. You're running two business models in one building,
           an insurance practice and a cash practice, and they're pulling against
           each other.
         </p>
         <p className="modal__text">
-          You didn't set out to run two businesses, but you chose every piece
+          You didn't set out to build two businesses, but you chose every piece
           that built the second one. The tactics arrived built for a business
           you don't own, and none of them came with a label. So the team gets
           mixed signals about what the practice is driving at, and every patient
