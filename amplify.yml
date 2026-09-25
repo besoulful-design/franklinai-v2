@@ -1,0 +1,25 @@
+# AWS Amplify Hosting build spec for franklinaisolutions.com (moving off
+# Netlify, 2026-09). Hosting ONLY: no Amplify backend, auth or data. This is
+# a pure static Vite build with no functions and no env files.
+#
+# Node is pinned by .nvmrc (read by `nvm install` / `nvm use`) rather than
+# trusting the build image default. Bump it there, not here.
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - nvm install
+        - nvm use
+        - node --version
+        - npm ci
+    build:
+      commands:
+        - npm run build
+  artifacts:
+    baseDirectory: dist
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
