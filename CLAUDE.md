@@ -1,14 +1,16 @@
-# FranklinAI — Project Instructions (Version 55, Current)
+# FranklinAI — Project Instructions (Version 56, Current)
 
 > **READ THIS FILE BEFORE MAKING ANY CHANGE TO THIS REPO.** Not "skim the section you think applies" — read it. V48 exists partly because a Code session spent an entire morning re-deriving a footer geometry this document already specified, and shipped four wrong pushes doing it. **If a value looks arbitrary, it is almost certainly hand-tuned and documented. Look it up here first.**
 
-> **Version 55 updates:** **Process only — zero code diff, the site is untouched.** One rule is added to *Working across the two repos*: **a session's ROOT project sets its powers, and any session that will touch AWS, the database, deploys, or legal work must be STARTED in the GlowPT project, not this one.** The GlowPT repo carries the AWS permission allowlist (`.claude/settings.local.json`), the per-project memory, and its own auto-loaded `CLAUDE.md`; a session rooted here has none of those and hits permission walls the moment it reaches for the bastion or `cdk deploy`. Copy and layout work on either site keeps running from either root under the existing conditions. **Why it is recorded:** the V54 session was rooted in this repo and did the GlowPT layout work first — legitimate, and it worked because it was copy — but from the outside a franklinai-rooted thread doing GlowPT work read as a stray thread running by itself, and untangling that cost a real session in the GlowPT project on 2026-09-01. The companion rule is recorded in the GlowPT repo's `CLAUDE.md` the same day. Sections updated: title, header summary (V54 folded into a carried-forward paragraph), Working across the two repos, Change History.
+> **Version 56 updates:** **franklinaisolutions.com moved off Netlify onto AWS Amplify Hosting on 2026-09-25, with no downtime and no lost mail.** It lives in a **new AWS account, `franklinai-web` (359813812260)**, in the org's `Workloads` OU beside `glowpt-prod`, region `us-east-1`. DNS moved from Netlify DNS to a **Route 53 zone in the same account**; GoDaddy is still the registrar only. **The site's code did not change**: the only repo change is three build files (`amplify.yml`, `.nvmrc` pinning Node 24, `customHttp.yml`), commit `0279ffe`, and a clean Node 24 build was proven byte-identical to what Netlify had been serving. **Every push to `main` now deploys through Amplify.** The page is untouched; the footer, lockups, copy and every locked value are exactly as V55 recorded them. **The one trap, and why it went well:** David's work email (`david@franklinaisolutions.com`, Microsoft 365 bought through GoDaddy) is delivered by records in this domain's DNS, so the whole zone was inventoried from Netlify's panel, copied **exactly**, and checked record by record against both providers' nameservers **before** the nameserver switch; David then tested mail both ways. A new section, **Hosting and DNS (AWS)**, records the whole setup, the records, the settings that live outside the repo, and the traps met on the way. **Netlify is a standby until David deletes the franklinai site and its DNS zone after a few quiet days**; after that Netlify hosts only McKenzie. Sections updated: title, header summary (V55 folded into a carried-forward paragraph), Business, the new Hosting and DNS (AWS) section, Tech Stack, Repo, Domain, Process, Open Items, Change History. `App.jsx` still measures **674 lines**; the `$350` decoy is unmoved at **99 and 449**.
 
-> **Everything else from Version 54 remains in force:** **the legal name in both lockups is `FranklinAI Solutions LLC` with NO comma** — the form used in both attorney-review contract drafts, in glowpt.app's `src/lib/legal.js`, and in the **AWS Company-name field the org BAA binds to**. The change was two text nodes with every dial (`-26px`, `-14px`, `-3px`) untouched, measured to move neither lockup ("FranklinAI" is the widest line and sets both column widths) and confirmed by David across browsers. The V54 rules stand: **the entity is written with no comma anywhere, on either site**; **a two-sentence line that must break identically everywhere is two elements, not one string**; **"closed" governs geometry, not every character** — a closed section can take a copy change if you prove it moves nothing. `App.jsx` measures **674 lines**; the `$350` decoy sits at **99 and 449**.
+> **Everything else from Version 55 remains in force:** the *Working across the two repos* rule that **a session's ROOT project sets its powers**, recorded after the V54 session (rooted here, doing GlowPT layout work) read from the outside as a stray thread and cost a 2026-09-01 GlowPT session to untangle. The companion rule lives in the GlowPT repo's `CLAUDE.md`.
+
+> **Everything else from Version 54 remains in force:** **the legal name in both lockups is `FranklinAI Solutions LLC` with NO comma** — the form used in both attorney-review contract drafts, in glowpt.app's `src/lib/legal.js`, and in the **AWS Company-name field the org BAA binds to**. The change was two text nodes with every dial (`-26px`, `-14px`, `-3px`) untouched, measured to move neither lockup ("FranklinAI" is the widest line and sets both column widths) and confirmed by David across browsers. The V54 rules stand: **the entity is written with no comma anywhere, on either site**; **a two-sentence line that must break identically everywhere is two elements, not one string**; **"closed" governs geometry, not every character** — a closed section can take a copy change if you prove it moves nothing.
 
 > **Everything else from Version 53 remains in force:** feature bullet 3 reads **"One subscription covers the clinic and the patients join for free."** **The problem it fixed was a bare "for free" at the end of a clause:** it attaches to whatever the reader last held in mind, and with a `$350` price sitting directly below it, that was the *subscription*. Giving the phrase an explicit subject — *the patients* join for free — pins it. **The general rule this left behind is in Copy Rules: never end a clause on a floating "for free" or "free" where a price is nearby.** **David found this himself**, after being told the same thing when V52 shipped and choosing to keep his wording; he came back to it unprompted minutes later. That produced the standing process rule that **a flagged-and-declined concern is parked in Open Items, not dropped.**
 
-> **Everything else from Version 52 remains in force:** **the two sites' feature bullets are ONE list living in two repos** — eight bullets, word-identical, same order, `features` here and `whatGlowptIs.points` in `glowpt/src/lib/marketing.js`, each carrying a comment naming the other. **The old "glowpt.app carries 5 of the 8, do not reconcile" instruction stays retired and deleted.** The pitch's second sentence is **"More completed plans of care and the clinic stays full."** on all four surfaces, lifted from feature bullet 5 so the lead and the bullet echo **on purpose**. The `$350` decoy sits at **lines 99 and 449** *(re-measured at V54, unmoved)*, and those numbers are a hint rather than an address. The two V52 process rules also stand: **when a rule is reversed, delete the old instruction rather than parking it beside the new one**, and **"settled" belongs to David, not to this document.**
+> **Everything else from Version 52 remains in force:** **the two sites' feature bullets are ONE list living in two repos** — eight bullets, word-identical, same order, `features` here and `whatGlowptIs.points` in `glowpt/src/lib/marketing.js`, each carrying a comment naming the other. **The old "glowpt.app carries 5 of the 8, do not reconcile" instruction stays retired and deleted.** The pitch's second sentence is **"More completed plans of care and the clinic stays full."** on all four surfaces, lifted from feature bullet 5 so the lead and the bullet echo **on purpose**. The `$350` decoy sits at **lines 99 and 449** *(re-measured at V56, unmoved)*, and those numbers are a hint rather than an address. The two V52 process rules also stand: **when a rule is reversed, delete the old instruction rather than parking it beside the new one**, and **"settled" belongs to David, not to this document.**
 
 > **Everything else from Version 51 remains in force:** **the GlowPT pitch is two sentences, and the two sites deliberately DIFFER on the first one.** This site says **"The GlowPT app keeps physical therapy patients engaged between visits."**; **glowpt.app carries a shorter first sentence with no niche** ("The GlowPT app engages patients between visits.") because that page is already GlowPT-branded, so the words would be redundant there. **The second sentence is identical on all four surfaces and must stay that way.** **V50's retirement of the niche clause stays REVERSED** — see *Where the niche is named and where it is not*.
 
@@ -118,7 +120,7 @@
 
 - **Content Calendar** — the source of truth for all content and marketing. These instructions intentionally contain **no** content/marketing specifics. The calendar is **newsletter-led**: the engine is *The Operator*, every other Tuesday, 400–600 words, free, written Sunday on a phone. **Instagram is the only discovery surface.** **The discovery call is the only door** *(for the custom build; see the V49 note in **The Offer Ladder** — GlowPT now has a second door)*. The addressee is the **owner**; the office manager is the multiplier who forwards it. The spearhead is **model confusion** ("You're running an insurance practice with cash-model marketing"), across **six spines**: (A) model confusion, (B) plan-of-care completion, (C) team, hiring, retention, and modeling, (D) your numbers, (E) AI in your practice, (F) systems and delegation. The four-video YouTube arc is **parked whole**, not deleted.
   > **Calendar points worth knowing here (do not restate the craft rules — read the calendar):**
-  > - **Issue 1 ships September 1, 2026.** Issue 2 September 15, Issue 3 September 29, Issue 4 October 13. The Instagram carousel drops a few days before September 1. **This file has been wrong about this date twice; check the calendar rather than quoting from here.**
+  > - **Issue 1 ships September 1, 2026.** Issue 2 September 15, Issue 3 September 29, Issue 4 October 13. The Instagram carousel drops a few days before September 1. **This file has been wrong about this date twice; check the calendar rather than quoting from here.** *(V56 note: as of 2026-09-25 the newsletter form and the e-book checkout are both still unwired in `App.jsx`. Whether the schedule above moved is a Calendar question, not one this file can answer.)*
   > - **The spearhead is the front door, not a leash.** Only **D** and **C** are genuinely downstream of it. **E's lift half and F stand on their own feet.**
   > - **Spine E is two wells: the line and the lift.** Leading with the line is a **strong default, not a law**.
   > - **Two retired framings the site copy must never reintroduce.** **"nobody decided"**, and **the front-desk-versus-therapist split**.
@@ -128,7 +130,7 @@
   > - **The readiness ladder** holds: newsletter (cold follow) → email (a self-paced question) → discovery call (the door).
   > **Read the calendar before drafting anything.**
 
-**This file** covers the **website build**: structure, styling, copy rules, locked values, the product facts the site displays, and the **pricing of every rung**. **This file is the authority for everything it states.**
+**This file** covers the **website build**: structure, styling, copy rules, locked values, the product facts the site displays, the **pricing of every rung**, and (as of V56) **where the site is hosted and how its DNS is set up**. **This file is the authority for everything it states.**
 
 ---
 
@@ -144,6 +146,8 @@ The Business Plan also held **market sizing, unit economics, the HIPAA architect
 
 > **V49 exception, narrow and deliberate.** The **GlowPT** section below records a handful of GlowPT commercial facts — that signup is self-serve, that activation is manual, that a BAA is click-through, that there is no billing yet. They are here **only because the FranklinAI site now links into that flow and its copy must not lie about it.** They are recorded as *marketing constraints*, never as architecture. The GlowPT repo's own `docs/commercial-handoff.md` is the source, and **the GlowPT code wins if the two ever disagree.**
 
+> **V56 note: the marketing site's own hosting is NOT homeless.** It is this site's infrastructure, not GlowPT's, so it is recorded in full under **Hosting and DNS (AWS)**. Only the org-level AWS setup that serves every account (the management account, the org BAA, Identity Center) stays out of this file beyond the facts needed to operate this site.
+
 ---
 
 ## Business
@@ -156,11 +160,13 @@ FranklinAI builds custom web apps and tools for businesses — web apps, interna
 >
 > **The sibling site now names the entity too (V54).** glowpt.app's landing footer carries a second line under its byline: **`© {year} FranklinAI Solutions LLC`**, computed at render. Its byline stays a credit ("A FranklinAI product · Philadelphia") and the new line is the legal name — two lines doing two jobs, the same division this site's footer uses. **Both sites now spell the entity identically.**
 
+> **The company's work email lives on this domain (V56).** `david@franklinaisolutions.com` is **Microsoft 365, bought through GoDaddy**. It is also David's AWS Identity Center username, the destination of the org's budget alerts, and his AWS Builder ID. **Its delivery depends on records in this domain's DNS**, which now lives in Route 53. Treat those records as the most dangerous thing in this repo's orbit; see **Hosting and DNS (AWS)**.
+
 **Packaged products under the FranklinAI umbrella:**
 
 - **GlowPT** — a daily patient check-in app for physical therapy clinics. Clinics subscribe; their patients use it free. Separately branded (amber/navy, its own logo, its own site at **glowpt.app**), but on the FranklinAI site it wears FranklinAI's navy-and-blue. **Live on the site, and as of V49 self-serve.** See **GlowPT** below.
 
-- **The reconciliation e-book** — a one-time, self-serve product ($37) titled **"What Your Practice Actually Sells."** **The card and the modal are live**; **the book itself is not written yet and the checkout is not wired** (`href="#"`). Both due before Issue 1 ships September 1.
+- **The reconciliation e-book** — a one-time, self-serve product ($37) titled **"What Your Practice Actually Sells."** **The card and the modal are live**; **the book itself is not written yet and the checkout is not wired** (`href="#"`, still so at V56). Both were due before Issue 1 shipped September 1.
 
   > **Say this precisely.** The *shelf listing* is live; the *product* is not. The Calendar's rule governs the endgame: **write it complete, then list it** — and if the file does not exist by ship day, take the card down rather than leave a listed product nobody can buy.
 
@@ -230,6 +236,8 @@ The GlowPT handoff note flagged that **no discovery call exists anywhere in the 
 
 **What stopped differing in V54: the spelling of the legal entity.** Both sites now render **FranklinAI Solutions LLC** with no comma. See **Business**.
 
+**What stopped differing in V56: the hosting.** Both sites are now served by **AWS Amplify Hosting**, each in its own AWS account (this one in `franklinai-web`, GlowPT in `glowpt-prod`), both hosting-only. See **Hosting and DNS (AWS)**.
+
 > **A thin "handoff-only" FranklinAI modal was proposed and rejected.** Do not re-propose it without reading the GlowPT handoff note first. **Note the reasoning has shifted:** the old defence was that this modal was the fuller pitch. It no longer is — both modals now carry the same eight bullets. **The surviving defence is that a visitor should reach the price and the feature list before they reach a signup link**, which is why the self-serve door is one level in rather than on the card.
 
 ---
@@ -241,7 +249,7 @@ The GlowPT handoff note flagged that **no discovery call exists anywhere in the 
 | Rung | Price | Sells how | On the site | Status |
 |---|---|---|---|---|
 | **The Operator newsletter** | Free | The free engine. Runs on **Kit**. **Not a product.** | Its own card between Hero and Available | **Live (unwired)** |
-| **The reconciliation e-book** | $37, one-time | **Self-serve.** The first paid yes. | **First** product on the Available card; More Info opens `EbookModal` | **Card and modal live; book unwritten, checkout unwired. Both due before Sept 1.** |
+| **The reconciliation e-book** | $37, one-time | **Self-serve.** The first paid yes. | **First** product on the Available card; More Info opens `EbookModal` | **Card and modal live; book unwritten, checkout unwired.** |
 | **GlowPT** | $350 / month | **Two doors (V49): self-serve at `glowpt.app/onboard`, OR the discovery call.** Both land at the same manual activation gate. | Available card (live); both CTAs in `GlowPTModal` | Live |
 | **The custom build** | From $10,000 | Needs the discovery call. | Custom Pricing (live) | Live |
 
@@ -251,7 +259,7 @@ The GlowPT handoff note flagged that **no discovery call exists anywhere in the 
 
 - **Book one is reconciliation** — the spearhead's paid answer. The newsletter gives the diagnosis away free; the book sells the way out.
 - **The checkout is external.** **Kit Commerce is the front-runner** (buyer auto-joins the list; processing fee only, ~3.5% + $0.30). **Gumroad and Payhip remain the fallback.** **The tradeoff to decide, not default into: Gumroad is merchant of record** and handles US sales tax and EU VAT; **Kit Commerce is not**, so that liability sits with FranklinAI Solutions LLC. What Kit buys instead is that the buyer auto-joins the list, which is the whole point of the $37 rung. **Provider not finally locked.** Do not assume Stripe for a one-time file sale.
-- **Sequence:** written, live, and buyable ahead of Issue 1 (September 1, 2026).
+- **Sequence:** written, live, and buyable ahead of Issue 1 (September 1, 2026). *(That date has passed; see the V56 note under Source-of-Truth Documents.)*
 - **Open items:** the checkout provider and URL, **the book itself**, and whether the last chapter points back to the discovery call.
 
 ---
@@ -269,7 +277,7 @@ The GlowPT handoff note flagged that **no discovery call exists anywhere in the 
 - **The Build** — From $10,000. Whisper subtext: "New features quoted and built one at a time, as you grow." (Inter 15px, #8892a4, marginTop: '0')
 - **Monthly Care** — $350 / month. Optional.
 
-> ## ⚠️ THE `$350` DECOY — read before changing GlowPT's price (V49, line numbers re-measured V54)
+> ## ⚠️ THE `$350` DECOY — read before changing GlowPT's price (V49, line numbers re-measured V56)
 >
 > **`$350` appears TWICE in `App.jsx` and only one of them is GlowPT.**
 >
@@ -278,7 +286,7 @@ The GlowPT handoff note flagged that **no discovery call exists anywhere in the 
 >
 > Previous versions of this file said "if the GlowPT price changes, two places move" without warning that a naive grep returns a decoy. **If GlowPT's price ever moves, line 449 must NOT move with it.**
 >
-> **These line numbers drift every time anything above them changes** (V49 recorded ~95 and ~434; V52's five-line comment above `features` pushed both down; **V54 changed no line counts and both are unmoved**). **Treat them as a hint, not an address — confirm by reading the surrounding function name.**
+> **These line numbers drift every time anything above them changes** (V49 recorded ~95 and ~434; V52's five-line comment above `features` pushed both down; **V54, V55 and V56 changed no line counts and both are unmoved**). **Treat them as a hint, not an address — confirm by reading the surrounding function name.**
 
 **Order rationale.** The e-book sits first (cheapest paid yes, under the newsletter whose diagnosis it answers), GlowPT second (recurring flagship), then Custom Work as proof, bridging into How It Works and Custom Pricing.
 
@@ -303,7 +311,7 @@ The GlowPT handoff note flagged that **no discovery call exists anywhere in the 
 
 *The Operator* has **its own card**, between Hero and Available. **Not wired** — the Kit form endpoint gets added later.
 
-> **⏳ STILL THE OLDEST OPEN ITEM ON THE SITE.** The form is fully specced (see **Tech Stack**) and blocked on exactly two facts from David's Kit account: **the form ID** and **whether double opt-in is on**. Everything else is written. Issue 1 ships September 1, 2026.
+> **⏳ STILL THE OLDEST OPEN ITEM ON THE SITE.** The form is fully specced (see **Tech Stack**) and blocked on exactly two facts from David's Kit account: **the form ID** and **whether double opt-in is on**. Everything else is written. **David chose to move the site to AWS before wiring Kit (V56)**, because Kit's sender authentication will want DNS records, and those belong in Route 53 now, added once in their final home.
 
 > **It is a card, not a "strip."** The React component is still named `NewsletterStrip` (legacy name). Do not reintroduce "quiet strip" sizing.
 
@@ -315,7 +323,7 @@ The GlowPT handoff note flagged that **no discovery call exists anywhere in the 
 - **Subhead "The Operator"** — white Playfair sub-title, `clamp(30px, 5vw, 35px)`, 800, `lineHeight: '1.1'`, `marginTop: '0'`, `marginBottom: '14px'`, upright.
 - **Description** (Inter 15px, #8892a4, `marginTop: '0'`, `marginBottom: '18px'`, `lineHeight: '1.5'`): **"For physical therapy practices. Delivered every other Tuesday, it takes a clear look at what's working and not working in your practice, and what to do about it."**
 
-> **The audience line appears TWICE.** The identical sentence lives in the card description and the `NewsletterModal` description. **They must always move together.** Verify with `grep -c "For physical therapy practices\."` — expected count **2**. *(Measured 2 at V54.)*
+> **The audience line appears TWICE.** The identical sentence lives in the card description and the `NewsletterModal` description. **They must always move together.** Verify with `grep -c "For physical therapy practices\."` — expected count **2**. *(Measured 2 at V56.)*
 
 **The card's action:**
 - **One ghost button: "Subscribe for Free"** (`btn btn--ghost`, inline `marginTop: '0'`), opening `NewsletterModal`. **No email field on the card.**
@@ -327,9 +335,9 @@ The GlowPT handoff note flagged that **no discovery call exists anywhere in the 
 
 ## Tech Stack
 
-React + Vite, plain CSS (no Tailwind), Netlify, GitHub. Supabase for backend and auth where needed.
+React + Vite, plain CSS (no Tailwind), **AWS Amplify Hosting** (V56; Netlify until 2026-09-25), GitHub. **This site has no backend of its own.** *(Through V55 this line also said "Supabase for backend and auth where needed". Nothing in this repo uses Supabase; that phrase described McKenzie, not this site, and is removed.)*
 
-> **This site is a pure static build with NO serverless functions and no env files.** Kit's form endpoint and any Stripe payment link both work from the browser, so **none of the remaining wiring requires adding a backend here.** Do not propose one.
+> **This site is a pure static build with NO serverless functions and no env files.** Kit's form endpoint and any Stripe payment link both work from the browser, so **none of the remaining wiring requires adding a backend here.** Do not propose one. **Amplify stays hosting-only**, the same role Netlify had and the same role Amplify plays for GlowPT.
 
 **Newsletter platform: Kit.** The form lives inside `NewsletterModal` and is **still unwired**.
 
@@ -343,7 +351,92 @@ React + Vite, plain CSS (no Tailwind), Netlify, GitHub. Supabase for backend and
 
 **The e-book's checkout is an external service** — Kit Commerce front-runner, Gumroad/Payhip fallback. Not part of the React app.
 
-> **Stack boundary.** This document governs the **FranklinAI marketing site** and **McKenzie Arm Care**, both on **Supabase**. **GlowPT's backend migration to AWS is COMPLETE (V49)** and lives in its own repo: infrastructure as CDK code, automated per-clinic provisioning, org-level AWS BAA. **site + McKenzie → Supabase; GlowPT → AWS.** This note is the boundary only, never the design.
+> **Stack boundary (rewritten V56).** This document governs the **FranklinAI marketing site**. **site → AWS Amplify Hosting, account `franklinai-web`, hosting only. GlowPT → AWS, account `glowpt-prod`, its own repo. McKenzie Arm Care → Supabase, still hosted on Netlify, its own folder.** This note is the boundary only, never the design; GlowPT's backend architecture lives in the GlowPT repo.
+
+---
+
+## Hosting and DNS (AWS) — V56
+
+**franklinaisolutions.com moved from Netlify to AWS Amplify Hosting on 2026-09-25.** David decided to do it before go-live and **before** wiring Kit and Stripe, because both will want DNS records (Kit sender authentication, Stripe domain verification), and those should be added once, in their final home. **Add them in Route 53 now, never in Netlify.**
+
+### Where everything lives
+
+| Thing | Value |
+|---|---|
+| **AWS account** | **`franklinai-web`, 359813812260**, in the org's **`Workloads`** OU beside `glowpt-prod`. Root email `besoulful+aws-franklinai-web@gmail.com`. **Not** the management account (billing, org BAA, Bedrock) and **never** `glowpt-prod` (patient data). |
+| **Region** | **`us-east-1`**, always. |
+| **Access** | IAM Identity Center user `david`, permission set `AdministratorAccess`. CLI profile **`franklinai-web`** in `~/.aws/config` (same `sso_session = glowpt` as the other two profiles; one login covers all three for 8 hours). |
+| **Amplify app** | name **`franklinai-web`**, appId **`dtrvxjb8lde3p`**, branch **`main`**, default address `https://main.dtrvxjb8lde3p.amplifyapp.com`. Framework "None", SSR disabled, Standard build instance, default build image, **no environment variables**. |
+| **Custom domain** | `franklinaisolutions.com` and `www`, both → `main`. Certificate **AMPLIFY_MANAGED** (`*.franklinaisolutions.com`, Amazon RSA 2048), renews itself. CloudFront target `dbgirmwp1juc8.cloudfront.net`. |
+| **Route 53 zone** | **`Z0616895187ZTAR49DY5P`**. Nameservers: `ns-561.awsdns-06.net`, `ns-389.awsdns-48.com`, `ns-1501.awsdns-59.org`, `ns-1898.awsdns-45.co.uk`. |
+| **Registrar** | **GoDaddy, registrar only.** The only thing that changed there is the nameserver list. **Do not touch anything else at GoDaddy, and never touch the Microsoft 365 tenant, as part of site work.** |
+| **GitHub link** | GitHub app **"AWS Amplify (us-east-1)"** on the `besoulful-design` account, repository access **`glowpt` + `franklinai-v2` only**. Removing `glowpt` from that list would break GlowPT's builds. |
+| **Cost** | About $1–2/month: ~$0.50 for the zone plus cents per build. The org's $150 budget alarm covers every account. |
+
+### What lives in the repo, and what does NOT
+
+**In the repo (commit `0279ffe`):**
+- **`amplify.yml`** — `nvm install`, `nvm use`, `node --version`, `npm ci`, `npm run build`; artifacts `dist`; caches `node_modules`. Copied from GlowPT with the PHI comments stripped.
+- **`.nvmrc`** — **`24`**. Bump Node here, not in `amplify.yml`.
+- **`customHttp.yml`** — **HSTS** (`max-age=31536000`) on every response, **`no-cache`** (`public, max-age=0, must-revalidate`) on `**/*.html` so a new deploy shows on the next load. Vite's asset files are content-hashed, so the CDN may cache them hard.
+
+**NOT in the repo — Amplify app settings, read with `aws amplify get-app --app-id dtrvxjb8lde3p --profile franklinai-web`:**
+- **Rewrites and redirects, in this order:**
+  1. **`https://www.franklinaisolutions.com` → `https://franklinaisolutions.com`, 301.** Added so `www` behaves exactly as it did on Netlify, which 301'd to the apex. Without it Amplify served the page on `www` with a 200.
+  2. **`/<*>` → `/index.html`, `404-200`** — Amplify's default. Left as is. This site has no router and is a single page, so GlowPT's worst Amplify surprise (deep links 301ing to a trailing slash, then 404) cannot happen here. **If a router is ever added, do not trust this default rule**: GlowPT had to replace it with a regex SPA rewrite.
+- **The domain association** (apex + `www`, managed certificate).
+
+> **Any change to those settings must be recorded here**, because nothing in git will show it.
+
+### The DNS records, and why the mail ones are sacred
+
+**The zone was copied from Netlify's panel, not from `dig`**, because `dig` cannot list a zone, and GlowPT's zone turned out to hold SES records nobody knew were there. Netlify's panel showed **seven records**; the inventory found one the pre-move note had missed (`email`).
+
+| Name | Type | Value | What it does |
+|---|---|---|---|
+| apex | **MX** | `0 franklinaisolutions-com.mail.protection.outlook.com.` | **Delivers David's mail.** |
+| apex | **TXT** | `"MS=ms21263178"` | Microsoft 365 domain ownership. |
+| apex | **TXT** | `"v=spf1 include:secureserver.net -all"` | SPF. **Looks wrong, is correct**: GoDaddy's SPF chain (`secureserver.net` → `spf-0.secureserver.net`) itself includes `spf.protection.outlook.com`. This is GoDaddy's standard record for Microsoft 365 bought through GoDaddy. **Do not "fix" it.** |
+| `autodiscover` | CNAME | `autodiscover.outlook.com.` | Outlook auto-setup. |
+| `email` | CNAME | `email.secureserver.net.` | GoDaddy webmail shortcut. |
+| `_b3bc49b38926936e06504b90ca148550` | CNAME | `_2319b19e5e61a60fb914625982143e7d.wzccmgtwzk.acm-validations.aws.` | Certificate validation. **Keep it forever**: renewals re-check it. |
+| apex | A (alias) | Amplify / CloudFront | The website. Managed by Amplify. |
+| `www` | CNAME | `dbgirmwp1juc8.cloudfront.net` | The website. Managed by Amplify. |
+
+**Not present, deliberately:** AAAA, CAA, DMARC, Microsoft 365 DKIM, **DNSSEC (no DS record at the registry)**. **Do not add any of them as a side effect of other work.** Adding DMARC or DKIM is a legitimate future improvement, as its own change, tested with a mail round-trip.
+
+> **The rule for every future DNS change on this domain:** one change at a time; **copy any mail or verification record exactly, oddities included**; verify by querying a Route 53 nameserver directly (`dig @ns-561.awsdns-06.net franklinaisolutions.com MX`) before believing it; and after anything that could touch mail, **David sends a test email both ways** (to and from an outside address).
+
+### How the switch was made safe (the method, for next time)
+
+This is the method that made GlowPT's move safe, and it worked again here. **Reuse it for McKenzie.**
+
+1. **Inventory** the old zone from the provider's panel, all of it.
+2. **Build and prove the new host first** on its private address. Here the Amplify copy was compared **file by file** with the live site: `index.html`, both hashed assets, the favicon, the touch icon and the headshot were **byte-identical**.
+3. **Create the new zone and copy every record** except the old host's own website and NS/SOA records.
+4. **Issue the certificate BEFORE the switch** by adding Amplify's validation CNAME in the **old** DNS as well (it had to live in Netlify, because Netlify was what the world was reading). This was the one live DNS change before the switch: a brand-new name nothing else used. It validated in about two minutes.
+5. **Rehearse the switch** with `curl --resolve <domain>:443:<cloudfront ip>`: this fetches the site from the new host under the real domain name, so the certificate and the `www` redirect can be checked before any visitor sees them.
+6. **Compare every record on both providers' nameservers directly**, and check the registry for a **DS record** (a DNSSEC DS left pointing at the old provider would break resolution after the switch). There was none.
+7. **Only then, the real switch:** David replaced the four `nsone.net` nameservers at GoDaddy with the four Route 53 ones. The `.com` registry had them within a minute; Cloudflare, Google and Quad9 resolvers were on Route 53 within minutes; Amplify marked the domain AVAILABLE about twenty minutes later. **No downtime, no lost mail**, confirmed by David's test emails both ways.
+
+**The reassurances that were true, and are worth repeating next time:** the nameserver change is reversible (put the old nameservers back); sending mail servers retry for days, so a mistake delays mail rather than losing it; and while resolvers still cache the old nameservers, both providers serve identical mail records and an identical site, so nobody can land on a wrong answer.
+
+### Traps met on the way — do not repeat them
+
+- **`.nvmrc` is read by Netlify too.** Adding it pinned Node for Netlify's builds of the live site as well. That was checked before pushing: a clean Node 24 build produced asset hashes identical to what was live. **Any file Amplify reads may also be read by whatever else still builds the repo.**
+- **The Amplify console defaulted to the wrong region.** The GitHub authorization page read **"AWS Amplify (us-east-2)"**. It was cancelled before anything was created. **Check the account name and the region in the console header before every Amplify or Route 53 click.**
+- **Safari's pop-up handling breaks the GitHub step inside the Amplify console.** The fix was to go to GitHub directly: **github.com/settings/installations → AWS Amplify (us-east-1) → Configure → Repository access → pick the repo → Save**, then refresh the repository list in Amplify. In that GitHub dropdown, **clicking a repository name is what adds it**; there is no Add button, and already-selected repos do not appear in the dropdown.
+- **Never click "Edit YML file" in the Amplify console.** The Amplify GitHub app has write access to `amplify.yml` and can commit it back into the repo. The file in git is the source.
+- **No Amplify firewall (WAF).** It is a flat monthly fee that this site does not justify. The console's "Enable firewall" card is to be ignored.
+- **The Claude Code safety system blocks `aws organizations` writes and Identity Center permission grants** (creating an account, moving it between OUs, assigning access). Those were done by David in the console with step-by-step clicks. **Everything inside `franklinai-web`** (Amplify, Route 53) ran from the CLI without trouble.
+- **The `--hosted-zone-config Comment=...` shorthand splits on commas.** Pass it as JSON.
+- **The AWS console and the terminal are different sessions.** A `aws sso login --profile …` run in the background opens Safari; David approves with Touch ID. **Do not hand him a command to paste.**
+
+### Netlify: standby, then gone
+
+**After the switch, Netlify still builds this repo on every push and still holds the old zone, but nothing points at either.** It is a harmless standby. **After a few quiet days, David deletes the franklinai site and the franklinaisolutions.com DNS zone in Netlify** (the validation CNAME added there goes with the zone; Route 53 keeps its own copy). **Leave McKenzie (`mckenziearmcare.com`) alone**: after that, Netlify hosts only McKenzie, on the Free plan that takes effect 2026-09-27. McKenzie's own move is separate work, rooted in its own folder.
+
+---
 
 ## Repo
 
@@ -351,9 +444,11 @@ github.com/besoulful-design/franklinai-v2 · local path `~/Downloads/franklinai-
 
 *(Sibling, separate: github.com/besoulful-design/glowpt · `~/Downloads/glowpt`)*
 
+**Pushing to `main` deploys the live site through Amplify (V56).** Every push is a build: cheap (cents), but batching commits still reads better.
+
 ## Domain
 
-franklinaisolutions.com (owned and active). GlowPT's own site: **glowpt.app**.
+franklinaisolutions.com (owned and active). **Registrar GoDaddy; DNS in Route 53 in `franklinai-web` (V56); hosting on Amplify.** GlowPT's own site: **glowpt.app**.
 
 ## Favicon / iPhone Icon
 
@@ -760,7 +855,7 @@ Component **`AvailableForPractice`**. Two products: the e-book first, GlowPT sec
 
 Heading "Custom Work". Title (card-title, white) "McKenzie Arm Care"; two-sentence teaser; **"Case Study"** ghost button (marginTop 16px) → `CaseStudyModal`.
 
-**CaseStudyModal:** Scroll-locked. No "Case Study" label inside. Title "McKenzie Arm Care"; full description; 2-column feature list; tech-stack note "Built with React, Supabase, and deployed on Netlify."
+**CaseStudyModal:** Scroll-locked. No "Case Study" label inside. Title "McKenzie Arm Care"; full description; 2-column feature list; tech-stack note "Built with React, Supabase, and deployed on Netlify." *(That note describes McKenzie, which is still on Supabase and Netlify, so it stays true after V56. If McKenzie ever moves, this string is site copy and moves with it.)*
 
 ### How It Works
 
@@ -988,14 +1083,14 @@ Edit the repo in place. **Read this file first.** (The GlowPT repo is separate f
 
 1. **Read this document and the real files.** Do not touch `CLAUDE.md` yet.
 2. **Make the code change** and verify by string checks — old strings at zero, new strings present, no em dashes, no forbidden words. A predicted line count is not a verification (V43). For a **visual** change, measure the rendered result in the browser — **and measure against the reference the eye actually uses**, not a convenient neighbour (V48).
-3. **Push the code** (V49: directly, no command handed over).
+3. **Push the code** (V49: directly, no command handed over). **As of V56 the push deploys through Amplify.**
 4. **Wait for David to confirm the change actually works.** (V48)
 5. **Then regenerate `CLAUDE.md` whole**, as a separate step, and push it. Bump the version, rewrite the header summary, fold the prior version into "everything else remains in force," add a Change History entry.
 6. **Tell David the new version number** and that it needs pasting into the claude.ai project instructions.
 
 > ⚠️ **V52 and V53 were both cut on David's direct instruction, in the same session as their code, WITHOUT step 4.** He asked for the regenerations explicitly and both were copy strings rather than geometry, which is the low-risk case. **This is an exception, not a new rule.** Step 4 exists because V46 and V47 were both written against unverified visual fixes and both had to be superseded within hours. **Keep waiting on anything visual.**
 >
-> ✅ **V54 followed the full sequence, step 4 included.** The change touched the lockups, which is the highest-risk area in this repo, so the code was pushed, David checked it across browsers, and only then was this document cut. **That is the intended shape.**
+> ✅ **V54 and V56 followed the full sequence, step 4 included.** V54 touched the lockups; V56 moved the whole site and David's mail DNS, and was cut only after David confirmed his test emails both ways. **That is the intended shape.**
 
 **Rules on the regeneration:**
 
@@ -1008,7 +1103,7 @@ Edit the repo in place. **Read this file first.** (The GlowPT repo is separate f
 **Two rules David set explicitly on 2026-08-23:**
 
 1. **READ `CLAUDE.md` BEFORE MAKING ANY CHANGE.** Not the section you assume is relevant — the document.
-2. **DO NOT UPDATE THIS DOCUMENT UNTIL DAVID CONFIRMS THE FIX WORKS.** Verification by measurement is not confirmation. His eyes on the live site are. *(He waived this for V52 and V53; V54 observed it.)*
+2. **DO NOT UPDATE THIS DOCUMENT UNTIL DAVID CONFIRMS THE FIX WORKS.** Verification by measurement is not confirmation. His eyes on the live site are. *(He waived this for V52 and V53; V54 and V56 observed it.)*
 
 ### Working across the two repos (V49, extended V52, corrected V54, extended V55)
 
@@ -1030,7 +1125,9 @@ It is legitimate for a session in this repo to edit the GlowPT repo, and vice ve
 
 **What still lives here:** strategy, positioning, copy decisions, arguing a call through, newsletter drafting, and the **Content Calendar**. Handoff notes into Code are written here. **This document is no longer authored here (V45)** — Code regenerates it; claude.ai receives it as a pasted copy and reads it as spec.
 
-Netlify auto-deploys on push, in both repos. Hard refresh with Cmd+Shift+R. Favicon changes require closing and reopening the tab.
+**Amplify auto-deploys on push to `main`, in both repos (V56; this repo left Netlify on 2026-09-25, GlowPT on 2026-09-13).** Hard refresh with Cmd+Shift+R. Favicon changes require closing and reopening the tab. **HTML is served `no-cache`, so a new deploy shows on the next load once the build finishes** (about a minute and a half).
+
+> **Working with David in the AWS console and other web consoles (V56).** David uses **Safari**, not Chrome. The Claude app's built-in browser pane is a separate browser that is not logged in to his accounts and is probably not visible on his screen, so **do not tell him to look at it**; give him Safari links instead. For console steps, **one step per message, say before each step whether it is invisible or visible, and ask for a screenshot before any Save or Create button** that changes something. When his AWS login has expired, run `aws sso login --profile <profile>` in the background so Safari opens and he approves with Touch ID.
 
 ### Handoff notes into Code
 
@@ -1054,7 +1151,7 @@ A good one **names the repo in its first line**, states the scope and what not t
 
 **Document versioning.** Complete drop-in replacement, never a patch, with full change history. Read live code as the source of truth when producing a new version, to catch drift.
 
-**No phantom sources.** Two documents exist in this project: this one and the Content Calendar. The GlowPT/AWS architecture and the legal/entity work are **not** documents here. *(The GlowPT repo's `docs/commercial-handoff.md` is a real file in a real repo, and it is the source for the GlowPT section above.)*
+**No phantom sources.** Two documents exist in this project: this one and the Content Calendar. The GlowPT/AWS architecture and the legal/entity work are **not** documents here. *(The GlowPT repo's `docs/commercial-handoff.md` is a real file in a real repo, and it is the source for the GlowPT section above. `AWS-MIGRATION-HANDOFF.md` at this repo's root is a temporary working note from the V56 move, uncommitted, and is deleted once Netlify is retired; everything in it that matters is recorded in **Hosting and DNS (AWS)**.)*
 
 **Dates live in the Content Calendar, not here.** This file has been wrong about Issue 1's ship date twice. **Check the calendar.**
 
@@ -1066,23 +1163,27 @@ A good one **names the repo in its first line**, states the scope and what not t
 
 | Item | Status |
 |---|---|
-| **Newsletter form wiring** | Blocked on the **Kit form ID** and the **double opt-in setting**. Everything else specced. **Issue 1 ships Sept 1, 2026.** |
+| **🆕 Retire Netlify for this site** | **After a few quiet days from 2026-09-25**, David deletes the **franklinai site** and the **franklinaisolutions.com DNS zone** in Netlify. **Leave McKenzie alone.** Then delete `AWS-MIGRATION-HANDOFF.md` from the repo root. Until then Netlify is a harmless standby that still builds on every push. |
+| **Newsletter form wiring** | Blocked on the **Kit form ID** and the **double opt-in setting**. Everything else specced. **Kit's sender-authentication DNS records go in Route 53** (V56), one change at a time, followed by a mail test. The Issue 1 date (Sept 1, 2026) has passed with the form still unwired; the Calendar owns the schedule. |
 | **The e-book itself** | **Unwritten.** Card and modal are live. Rule: write it complete then list it, or take the card down. |
-| **E-book checkout provider** | Kit Commerce vs Gumroad. **Decide the merchant-of-record tradeoff, do not default into it.** |
+| **E-book checkout provider** | Kit Commerce vs Gumroad. **Decide the merchant-of-record tradeoff, do not default into it.** Any domain-verification record it needs goes in **Route 53**. |
 | **GlowPT clinic BAA text** | With the attorney. **Demo data only until it clears.** |
 | **GlowPT billing** | No Stripe anywhere. Collection manual. Backlog, unstarted, and it belongs in the GlowPT repo. |
 | **GlowPT auto-renewal statutes** | Open with counsel. **No renewal or cancellation claims on either site until answered.** |
 | **Click-through vs signature** on the clinic BAA | Undecided. If signature wins, self-serve onboarding gains a manual step and the copy here must reflect it. |
-| **🆕 Fictitious-name registration** | **Raised 2026-09-01, not acted on.** Both public sites lead with the brand name "FranklinAI" while the registered entity is FranklinAI Solutions LLC, and PA generally requires a fictitious-name registration to trade publicly under a name that is not the registered one. **Nobody involved is a lawyer and nothing was changed on this basis.** It is a cheap question to add to the attorney engagement that is already open. |
-| **🆕 Modal accessibility** | The four modals lock scroll but have **no Escape key and no focus trap**. glowpt.app solved this with a shared `useModal` hook on 2026-08-31. **Port it if a fifth modal arrives, or sooner.** |
-| **The GlowPT modal's V52/V53 renders have still not been seen by eye** | **Narrowed at V54.** The **Available card teaser** was rendered and seen on 2026-09-01, so that string is confirmed live. **The modal itself was never opened**, so bullets 3 and 5 and the description paragraph remain build-and-string-verified only. **Open the modal next time anyone is in this repo — it is one click.** |
+| **Fictitious-name registration** | **Raised 2026-09-01, not acted on.** Both public sites lead with the brand name "FranklinAI" while the registered entity is FranklinAI Solutions LLC, and PA generally requires a fictitious-name registration to trade publicly under a name that is not the registered one. **Nobody involved is a lawyer and nothing was changed on this basis.** It is a cheap question to add to the attorney engagement that is already open. |
+| **🆕 Mail authentication (DMARC, Microsoft 365 DKIM)** | **Noticed during the V56 move, deliberately not touched.** The domain has SPF but no DMARC and no DKIM. Mail works today. Adding them is a real deliverability improvement, done later as its own change in Route 53, with a mail test both ways. |
+| **Modal accessibility** | The four modals lock scroll but have **no Escape key and no focus trap**. glowpt.app solved this with a shared `useModal` hook on 2026-08-31. **Port it if a fifth modal arrives, or sooner.** |
+| **The GlowPT modal's V52/V53 renders have still not been seen by eye** | **Narrowed at V54.** The **Available card teaser** was rendered and seen on 2026-09-01, so that string is confirmed live. **The modal itself was never opened**, so bullets 3 and 5 and the description paragraph remain build-and-string-verified only. **Open the modal next time anyone is in this repo — it is one click.** *(V56 proved the whole deployed page byte-identical to the pre-move build, which says the strings shipped, not that anyone has looked at them.)* |
 | ~~Bullet 3's "for free" reading~~ | **✅ CLOSED in V53** by naming the subject: "the patients join for free". |
 | ~~The two sites spell the legal entity differently~~ | **✅ CLOSED in V54.** Both now read **FranklinAI Solutions LLC**, no comma. |
+| ~~Move the site off Netlify~~ | **✅ CLOSED in V56.** Live on Amplify since 2026-09-25; only the Netlify clean-up above remains. |
 
 ---
 
 ## Change History
 
+- **V56** — **franklinaisolutions.com moved from Netlify to AWS Amplify Hosting on 2026-09-25, with no downtime and no lost mail.** New account **`franklinai-web` (359813812260)** in the `Workloads` OU, `us-east-1`; Amplify app `dtrvxjb8lde3p` on `main`; Route 53 zone `Z0616895187ZTAR49DY5P`; GoDaddy stays registrar only. **The site's code did not change.** The repo gained `amplify.yml`, `.nvmrc` (24) and `customHttp.yml` (commit `0279ffe`); a clean Node 24 build was proven byte-identical to the live Netlify build before pushing, which mattered because **Netlify reads `.nvmrc` too**. **The one real risk was David's work email**, whose MX, TXT and autodiscover records live in this zone: the zone was inventoried from Netlify's panel (finding an `email` CNAME the pre-move note had missed), copied exactly, checked record by record on both providers' nameservers, the certificate was issued before the switch by adding its validation CNAME in Netlify, the switch was rehearsed with `curl --resolve`, and the registry was checked for a DNSSEC DS record (none). David then swapped the nameservers at GoDaddy (~07:28), and **confirmed mail both ways**. A `www` → apex 301 was added as an Amplify app setting so `www` behaves as it did on Netlify. The SPF record that names GoDaddy was found to be **correct** (GoDaddy's chain includes Microsoft's). **Organizations and Identity Center writes were done by David in the console** (the Claude Code safety system blocks them); everything inside the new account ran from the CLI. New section **Hosting and DNS (AWS)**; Tech Stack loses the Supabase phrase, which described McKenzie, not this site; new Open Items for Netlify retirement and for DMARC/DKIM. `App.jsx` still measures **674 lines**; the `$350` decoy is unmoved at **99 and 449**. *(This repo: `0279ffe`, plus this document.)*
 - **V55** — **Process only; zero code diff.** The session-rooting rule added to *Working across the two repos*: AWS-, DB-, deploy-, or legal-touching work runs from a session **rooted in the GlowPT project**, where the permission allowlist, per-project memory, and auto-loaded doc live; copy and layout work runs from either root. Recorded after the V54 session — rooted here, legitimately doing GlowPT layout work — read from the outside as a stray thread and cost a 2026-09-01 GlowPT session to untangle. Companion rule in the GlowPT repo's `CLAUDE.md` the same day. *(Doc-only; no site change to verify.)*
 - **V54** — **Two characters deleted from the two most protected elements on the page, and nothing moved.** The nav and footer lockups now read **"Solutions LLC"** instead of "Solutions, LLC". **The no-comma form won because it is the one used everywhere the entity is legally named:** both attorney-review contract drafts, glowpt.app's `src/lib/legal.js`, and the **AWS Company-name field the org BAA binds to.** The comma was display-only. **David's call, made while adding `© {year} FranklinAI Solutions LLC` to glowpt.app's own footer** and finding the two sites disagreed; he chose to change this site, which is right, because the contracts have no comma. **The diff was two text nodes**: no style, no structure, and the `-26px`, `-14px` and `-3px` dials all verified untouched. **Neither lockup moves, and it was measured before it shipped:** "FranklinAI" is the widest line in both (nav 252.8 vs 222.6, footer 160.5 vs 146.9) and sets the column width, and toggling the comma in the live DOM left the nav brand box and the footer text column byte-identical. **David confirmed across browsers before this document was cut — the full six-step process including step 4, unlike V52 and V53.** New rules recorded: **the entity is written with no comma anywhere, on either site**; **a two-sentence line that must break identically everywhere should be two elements, not one string**; **"closed" governs geometry, not every character** — a closed section can take a copy change if you prove it moves nothing. Also corrected: **V52's claim that a GlowPT session cannot preview this site is too strong** — the workaround, and two dead ends, are recorded under *Working across the two repos*. `App.jsx` still measures **674 lines**; the `$350` decoy is unmoved at **99 and 449**. *(This repo: `84f74c9`. Companion GlowPT-repo commits: `b44e8f6`, `ed5c8b7`, `74356c1`.)*
 - **V53** — **One string, and a rule worth more than the string.** Feature bullet 3 became **"One subscription covers the clinic and the patients join for free."**, replacing V52's "...and all its patients for free." **A bare "for free" at the end of a clause attaches to whatever the reader last held in mind**, and with `$350` a few lines below that was the subscription, not the patients. **Naming the subject pins it.** The general form is now a Copy Rule: never end a clause on a floating "for free", "free", "included" or "at no cost" where a price is nearby. **David found this himself** after being told the same thing when V52 shipped and choosing to keep his wording, which produced a second new process rule: **a flagged-and-declined concern is parked in Open Items, not dropped**, so circling back costs one line instead of a re-derivation. Also recorded: a version bump for one string is legitimate, because a document quoting a string the code no longer contains is the exact rot whole-regeneration exists to prevent. `App.jsx` measured **674 lines**. ⚠️ **Cut without live-site confirmation, on David's direct instruction — an exception.** *(Companion GlowPT-repo commit: `f57d000`. This repo: `269baa2`.)*
