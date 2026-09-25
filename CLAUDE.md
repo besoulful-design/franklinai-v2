@@ -1,22 +1,24 @@
-# FranklinAI — Project Instructions (Version 56, Current)
+# FranklinAI — Project Instructions (Version 57, Current)
 
 > **READ THIS FILE BEFORE MAKING ANY CHANGE TO THIS REPO.** Not "skim the section you think applies" — read it. V48 exists partly because a Code session spent an entire morning re-deriving a footer geometry this document already specified, and shipped four wrong pushes doing it. **If a value looks arbitrary, it is almost certainly hand-tuned and documented. Look it up here first.**
 
-> **Version 56 updates:** **franklinaisolutions.com moved off Netlify onto AWS Amplify Hosting on 2026-09-25, with no downtime and no lost mail.** It lives in a **new AWS account, `franklinai-web` (359813812260)**, in the org's `Workloads` OU beside `glowpt-prod`, region `us-east-1`. DNS moved from Netlify DNS to a **Route 53 zone in the same account**; GoDaddy is still the registrar only. **The site's code did not change**: the only repo change is three build files (`amplify.yml`, `.nvmrc` pinning Node 24, `customHttp.yml`), commit `0279ffe`, and a clean Node 24 build was proven byte-identical to what Netlify had been serving. **Every push to `main` now deploys through Amplify.** The page is untouched; the footer, lockups, copy and every locked value are exactly as V55 recorded them. **The one trap, and why it went well:** David's work email (`david@franklinaisolutions.com`, Microsoft 365 bought through GoDaddy) is delivered by records in this domain's DNS, so the whole zone was inventoried from Netlify's panel, copied **exactly**, and checked record by record against both providers' nameservers **before** the nameserver switch; David then tested mail both ways. A new section, **Hosting and DNS (AWS)**, records the whole setup, the records, the settings that live outside the repo, and the traps met on the way. **Netlify is a standby until David deletes the franklinai site and its DNS zone after a few quiet days**; after that Netlify hosts only McKenzie. Sections updated: title, header summary (V55 folded into a carried-forward paragraph), Business, the new Hosting and DNS (AWS) section, Tech Stack, Repo, Domain, Process, Open Items, Change History. `App.jsx` still measures **674 lines**; the `$350` decoy is unmoved at **99 and 449**.
+> **Version 57 updates:** **The Operator's signup is live and wired to Kit, and Kit now sends as franklinaisolutions.com.** Everything was done on 2026-09-25 from a claude.ai handoff note, and David confirmed each piece before this document was cut. **Three code changes, all pushed:** (1) **`d89f4f0`** lines the `EbookModal`'s first two paragraphs up with the finished book ("the end of their **care**", "set out to **build** two businesses"), **superseding V41's locked paragraph text**, because **the book is now the source every surface lines up behind**; (2) **`8024666`** wires `NewsletterModal` to **Kit form `9962049`** exactly per the V40 plan (a `fetch`, field `email_address`, **"Almost there. Check your email to confirm."** because double opt-in is ON, auto-close, a gentle error, a `Subscribing…` state), confirmed end to end by David **on the Mac and on an iPhone**; (3) **`fb01e32`** gitignores `.claude/settings.local.json`. **Outside the repo:** a Kit account now exists and its settings are recorded in a new section, **Kit (newsletter platform)**, because nothing in git shows them; and **four records were added to the Route 53 zone** so Kit sends as the domain (`ckespa`, `cka._domainkey`, `cka2._domainkey`, and a **monitor-only DMARC `p=none`**, added deliberately with David's yes). Kit validated the domain, Gmail's "via n.convertkit.com" label is gone, and **David tested his work email both ways afterwards**. **Two process facts are new:** David **waived the V55 "AWS work runs from a GlowPT-rooted session" rule for this domain's DNS** and created a narrow Claude Code permission file for it; and **Claude cannot grant itself permissions**, so any such rule is David's to add. **Next session: the e-book checkout on Kit Commerce** (decided, not built; "Buy the Guide" is still `href="#"`). **Also open: a "mystery third signup"** whose iPhone confirm tap never reached Kit; see Open Items. `App.jsx` now measures **735 lines**; the `$350` decoy sits at **lines 99 and 510**.
 
-> **Everything else from Version 55 remains in force:** the *Working across the two repos* rule that **a session's ROOT project sets its powers**, recorded after the V54 session (rooted here, doing GlowPT layout work) read from the outside as a stray thread and cost a 2026-09-01 GlowPT session to untangle. The companion rule lives in the GlowPT repo's `CLAUDE.md`.
+> **Everything else from Version 56 remains in force:** **franklinaisolutions.com moved off Netlify onto AWS Amplify Hosting on 2026-09-25, with no downtime and no lost mail.** It lives in AWS account **`franklinai-web` (359813812260)** in the org's `Workloads` OU, region `us-east-1`; DNS is a **Route 53 zone in the same account**; GoDaddy is registrar only. The move changed three build files (`amplify.yml`, `.nvmrc` pinning Node 24, `customHttp.yml`, commit `0279ffe`) and no site code; every push to `main` deploys through Amplify. David's work email is delivered by records in this zone, which is why the V56 method (inventory, copy exactly, verify on both providers, test mail both ways) exists and was reused in V57. **Netlify is a standby until David deletes the franklinai site and its DNS zone**; after that Netlify hosts only McKenzie.
+
+> **Everything else from Version 55 remains in force:** the *Working across the two repos* rule that **a session's ROOT project sets its powers**, recorded after the V54 session (rooted here, doing GlowPT layout work) read from the outside as a stray thread and cost a 2026-09-01 GlowPT session to untangle. *(V57 narrows it for one case: Route 53 record work for franklinaisolutions.com may now run from this root. See that section.)* The companion rule lives in the GlowPT repo's `CLAUDE.md`.
 
 > **Everything else from Version 54 remains in force:** **the legal name in both lockups is `FranklinAI Solutions LLC` with NO comma** — the form used in both attorney-review contract drafts, in glowpt.app's `src/lib/legal.js`, and in the **AWS Company-name field the org BAA binds to**. The change was two text nodes with every dial (`-26px`, `-14px`, `-3px`) untouched, measured to move neither lockup ("FranklinAI" is the widest line and sets both column widths) and confirmed by David across browsers. The V54 rules stand: **the entity is written with no comma anywhere, on either site**; **a two-sentence line that must break identically everywhere is two elements, not one string**; **"closed" governs geometry, not every character** — a closed section can take a copy change if you prove it moves nothing.
 
 > **Everything else from Version 53 remains in force:** feature bullet 3 reads **"One subscription covers the clinic and the patients join for free."** **The problem it fixed was a bare "for free" at the end of a clause:** it attaches to whatever the reader last held in mind, and with a `$350` price sitting directly below it, that was the *subscription*. Giving the phrase an explicit subject — *the patients* join for free — pins it. **The general rule this left behind is in Copy Rules: never end a clause on a floating "for free" or "free" where a price is nearby.** **David found this himself**, after being told the same thing when V52 shipped and choosing to keep his wording; he came back to it unprompted minutes later. That produced the standing process rule that **a flagged-and-declined concern is parked in Open Items, not dropped.**
 
-> **Everything else from Version 52 remains in force:** **the two sites' feature bullets are ONE list living in two repos** — eight bullets, word-identical, same order, `features` here and `whatGlowptIs.points` in `glowpt/src/lib/marketing.js`, each carrying a comment naming the other. **The old "glowpt.app carries 5 of the 8, do not reconcile" instruction stays retired and deleted.** The pitch's second sentence is **"More completed plans of care and the clinic stays full."** on all four surfaces, lifted from feature bullet 5 so the lead and the bullet echo **on purpose**. The `$350` decoy sits at **lines 99 and 449** *(re-measured at V56, unmoved)*, and those numbers are a hint rather than an address. The two V52 process rules also stand: **when a rule is reversed, delete the old instruction rather than parking it beside the new one**, and **"settled" belongs to David, not to this document.**
+> **Everything else from Version 52 remains in force:** **the two sites' feature bullets are ONE list living in two repos** — eight bullets, word-identical, same order, `features` here and `whatGlowptIs.points` in `glowpt/src/lib/marketing.js`, each carrying a comment naming the other. **The old "glowpt.app carries 5 of the 8, do not reconcile" instruction stays retired and deleted.** The pitch's second sentence is **"More completed plans of care and the clinic stays full."** on all four surfaces, lifted from feature bullet 5 so the lead and the bullet echo **on purpose**. The `$350` decoy sits at **lines 99 and 510** *(re-measured at V57; V57's newsletter wiring pushed the second one down from 449)*, and those numbers are a hint rather than an address. The two V52 process rules also stand: **when a rule is reversed, delete the old instruction rather than parking it beside the new one**, and **"settled" belongs to David, not to this document.**
 
 > **Everything else from Version 51 remains in force:** **the GlowPT pitch is two sentences, and the two sites deliberately DIFFER on the first one.** This site says **"The GlowPT app keeps physical therapy patients engaged between visits."**; **glowpt.app carries a shorter first sentence with no niche** ("The GlowPT app engages patients between visits.") because that page is already GlowPT-branded, so the words would be redundant there. **The second sentence is identical on all four surfaces and must stay that way.** **V50's retirement of the niche clause stays REVERSED** — see *Where the niche is named and where it is not*.
 
 > **Everything else from Version 50 remains in force:** the discipline that **the GlowPT pitch is one shared idea across four surfaces**; that **"Zero work for your therapists" survives only as modal bullet 6**; that **the repetition between glowpt.app's hero and its More Info modal is deliberate** and must not be "fixed"; and that the GlowPT-repo `docs/commercial-handoff.md` is the source for GlowPT commercial facts, **with the GlowPT code winning on any disagreement.**
 
-> **Everything else from Version 49 remains in force:** **GlowPT is a two-door product and the modal says so.** The modal carries a **ghost** "Bring GlowPT to Your Clinic" to **`https://glowpt.app/onboard`** in a new tab, above a **filled** "Book a Free Discovery Call"; the subline reads **"Sign up online, or book a call first."**; the buttons are ordered self-serve first with **the styles NOT flipped**, so the filled style stays exclusive to the discovery call site-wide; **feature bullet 3 still states there is no patient limit** *(V52 and V53 both rephrased it; the claim is unchanged)*; V44's open item on bullet 8's word "flags" is closed. The two standing rules from V49 also hold: **copy rules travel with the VOICE, not the repo**, and **edit and push directly in this repo, never hand David a copy-paste command.**
+> **Everything else from Version 49 remains in force:** **GlowPT is a two-door product and the modal says so.** The modal carries a **ghost** "Bring GlowPT to Your Clinic" to **`https://glowpt.app/onboard`** in a new tab, above a **filled** "Book a Free Discovery Call"; the subline reads **"Sign up online, or book a call first."**; the buttons are ordered self-serve first with **the styles NOT flipped**, so the filled style stays exclusive to the discovery call site-wide; **feature bullet 3 still states there is no patient limit** *(V52 and V53 both rephrased it; the claim is unchanged)*; V44's open item on bullet 8's word "flags" is closed. The two standing rules from V49 also hold: **copy rules travel with the VOICE, not the repo**, and **edit and push directly in this repo, never hand David a copy-paste command** *(V57 records the one exception: a permission only David can grant)*.
 
 > **Everything else from Version 48 remains in force:** **the footer copyright line is fixed and the footer lockup is closed.** The gap after the `©` symbol is a **fixed 2px CSS margin** (`&copy;<span style={{ marginLeft: '2px' }}>{year}</span>`), deterministic in every browser unlike a thin-space glyph. The copyright line carries a deliberate **`translateX(-3px)`** optical correction, the only per-line nudge anywhere on the page: the line is geometrically centered to 0.00px, but `©` is a light hollow circle beside four solid digits, so the ink weight leans right by roughly 2.2px, and solving for a balancing gap returns a *negative* number, which proves no amount of tightening can fix it. **`-3px` was landed by David's eye against the live site**; the arithmetic favored `-2px`. This partially reverses V31. The footer lockup is **closed**: brand row `display: flex`, `alignItems: 'flex-start'`, `gap: '4px'`, **`transform: 'translateX(-14px)'`**, kite left, text column holding all four lines. **Four things were tried against it and all reverted; the list is in Footer so nobody repeats them.** Both V48 process rules stand: read this document before changing anything, and do not regenerate it until David confirms the fix works.
 
@@ -32,9 +34,9 @@
 >
 > **Also carried forward from Version 42:** the two V42 copy edits in `About` — bio paragraph 1 replaced whole, paragraph 2's opening changed to **"That experience"**. The bio names **no job title, no employer, and no niche**, all deliberate, with the four-point guard in **Bio (About Section)**. The **Copy Rule banning any job title, employer, or present-tense employment fact from all site copy** stands.
 
-> **Everything else from Version 41 remains in force:** the **e-book modal's first two body paragraphs** carrying the corrected editorial frame (the retired "nobody decided" accident framing and the retired front-desk-versus-therapist split are both gone), and the **newsletter audience line "For physical therapy practices."** in **both** places it appears; the V41 documentation corrections (**Issue 1 ships September 1, 2026**; the spearhead reads "insurance practice with cash-model marketing"; the e-book's card and modal are live while the book itself is unwritten and the checkout unwired; "cash practice" and "advanced care" are interchangeable and neither is retired); and the V41 standing rules (*copy that appears twice must move twice*, the ban on both retired framings, a handoff note superseding this file for its session, and dates pointing at the Content Calendar).
+> **Everything else from Version 41 remains in force:** the **e-book modal's first two body paragraphs** carrying the corrected editorial frame (the retired "nobody decided" accident framing and the retired front-desk-versus-therapist split are both gone) *(V57 changed two words in them to match the book; the frame is untouched)*, and the **newsletter audience line "For physical therapy practices."** in **both** places it appears; the V41 documentation corrections (the spearhead reads "insurance practice with cash-model marketing"; "cash practice" and "advanced care" are interchangeable and neither is retired); and the V41 standing rules (*copy that appears twice must move twice*, the ban on both retired framings, a handoff note superseding this file for its session, and dates pointing at the Content Calendar).
 >
-> **Also carried forward from Version 40:** the newsletter form's **wiring and success behavior**, still unbuilt pending the Kit form ID — a **JS-handled submit** (a `fetch`, not a plain form POST); on success **an in-modal confirmation then auto-close**; **confirmation copy tracking Kit's double opt-in setting**; and a **keep-the-modal-open error state** with a brief "Subscribing…" disabled button state, field named `email_address`. Full plan in **Tech Stack**. Also carried forward: the V39 newsletter signup in `NewsletterModal`; the V38 Available-card spacing; the V37 parallel product teasers and the EMR modal bullet; the V36 newsletter-masthead flip; the V35 hero-label tightening; the reconciliation e-book's card and modal live as the first product on the Available card ($37, `EbookModal`, ghost "Buy the Guide" at `href="#"`); four intentional `borderTop` dividers; the four-modal scroll-lock; the **"Solutions LLC" subline in Inter 800** in nav and footer *(comma dropped in V54)*; the nav lockup dial `translateX(-26px)` and its F-level-with-crossbar `marginTop`; the **footer lockup dial `translateX(-14px)`**; the footer copyright trimmed to **"© {year}"**; card-heading `lineHeight: '1.2'`; card padding (`paddingTop: '16px'`, `paddingBottom: '24px'`, sides 40); the "Subscribe for Free" ghost-button label; the `index.html` font import and cleaned meta description; the Subscribe/input 44px alignment fix; the niche-forward front door; all buttons title case with no period; **Kit** as the newsletter platform with Kit Commerce the front-runner for the book's checkout; the legal entity **FranklinAI Solutions LLC**; the Content Calendar as the single canonical content/marketing document; `david@franklinaisolutions.com`; the offer-ladder rungs and prices; the Business Plan deleted; the Claude Code vs claude.ai scoping; the Source File Rule; the stack boundary; the F-vs-crossbar method; Clarity retired; gold logo-bolt-only; "in plain English" and "software" banned; no em dashes in site copy; the $350 GlowPT price; the GlowPT exercise-plan exclusion.
+> **Also carried forward from Version 40:** the newsletter form's **wiring and success behavior**, **built in V57 exactly as planned** — a **JS-handled submit** (a `fetch`, not a plain form POST); on success **an in-modal confirmation then auto-close**; **confirmation copy tracking Kit's double opt-in setting**; and a **keep-the-modal-open error state** with a brief "Subscribing…" disabled button state, field named `email_address`. Also carried forward: the V39 newsletter signup in `NewsletterModal`; the V38 Available-card spacing; the V37 parallel product teasers and the EMR modal bullet; the V36 newsletter-masthead flip; the V35 hero-label tightening; the reconciliation e-book's card and modal live as the first product on the Available card ($37, `EbookModal`, ghost "Buy the Guide" at `href="#"`, **still a placeholder at V57**); four intentional `borderTop` dividers; the four-modal scroll-lock; the **"Solutions LLC" subline in Inter 800** in nav and footer *(comma dropped in V54)*; the nav lockup dial `translateX(-26px)` and its F-level-with-crossbar `marginTop`; the **footer lockup dial `translateX(-14px)`**; the footer copyright trimmed to **"© {year}"**; card-heading `lineHeight: '1.2'`; card padding (`paddingTop: '16px'`, `paddingBottom: '24px'`, sides 40); the "Subscribe for Free" ghost-button label; the `index.html` font import and cleaned meta description; the Subscribe/input 44px alignment fix; the niche-forward front door; all buttons title case with no period; **Kit** as the newsletter platform and **Kit Commerce as the book's checkout (decided V57)**; the legal entity **FranklinAI Solutions LLC**; the Content Calendar as the single canonical content/marketing document; `david@franklinaisolutions.com`; the offer-ladder rungs and prices; the Business Plan deleted; the Claude Code vs claude.ai scoping; the Source File Rule; the stack boundary; the F-vs-crossbar method; Clarity retired; gold logo-bolt-only; "in plain English" and "software" banned; no em dashes in site copy; the $350 GlowPT price; the GlowPT exercise-plan exclusion.
 
 ---
 
@@ -65,6 +67,7 @@
 | Job | Tool |
 |---|---|
 | Editing `App.jsx`, the repo, anything on disk | Claude Code |
+| Route 53 records for franklinaisolutions.com (V57) | Claude Code, from this root (see *Working across the two repos*) |
 | Strategy, positioning, copy decisions, arguing a call through | claude.ai |
 | Regenerating **this file** (`CLAUDE.md`) after a push | Claude Code (V45) |
 | Producing or revising the **Content Calendar** | claude.ai |
@@ -78,7 +81,7 @@
 
 ## Copy Rules Travel With the Voice, Not the Repo — V49
 
-**David's rule, set 2026-08-27.** The **Copy Rules** and **Forbidden Words** in this document bind **anywhere a PT owner reads FranklinAI's words**, including the GlowPT product site and app. They are a property of the voice, not of a folder.
+**David's rule, set 2026-08-27.** The **Copy Rules** and **Forbidden Words** in this document bind **anywhere a PT owner reads FranklinAI's words**, including the GlowPT product site and app. They are a property of the voice, not of a folder. **As of V57 that includes Kit:** the confirmation email, the Kit Commerce product page, and every broadcast.
 
 **Why it came up.** glowpt.app shipped copy that broke two FranklinAI rules: the dashboard QR hint said "front desk and **treatment rooms**", and the app carried em dashes throughout. A buyer reads glowpt.app and franklinaisolutions.com in one sitting; they are one house. Worse, "treatment room" is banned *because it is wrong about the buyer's building* — therapists work on the floor, in the gym, in the open clinic — so it does more damage on the product page than it ever could here.
 
@@ -91,7 +94,7 @@
   2. **A dash used as a LABEL SEPARATOR becomes the middot `·`**, which GlowPT's footer byline already used.
 - **The AI prompt must carry the rule or generated text escapes it.** GlowPT's daily patient reflection is written by a model, so no amount of cleaning static strings governs it. Its prompt now ends "Do not use em dashes in your response." **Any future FranklinAI feature that generates user-facing text owes the same instruction.**
 
-> **A later GlowPT session found the same rule had missed a whole directory.** The 2026-08-27 sweep was scoped to `src/`, so the two AWS Lambdas — which write the weekly clinic email and the patient's AI reflection fallback — kept their em dashes for four days. **The generalisable lesson: user-facing copy does not all live in the obvious folder.** Before declaring a copy rule applied anywhere, check the delivery surfaces too, not just the app.
+> **A later GlowPT session found the same rule had missed a whole directory.** The 2026-08-27 sweep was scoped to `src/`, so the two AWS Lambdas — which write the weekly clinic email and the patient's AI reflection fallback — kept their em dashes for four days. **The generalisable lesson: user-facing copy does not all live in the obvious folder.** Before declaring a copy rule applied anywhere, check the delivery surfaces too, not just the app. **Kit is now one of those surfaces (V57).**
 
 > **Code comments and this document are exempt.** Both are full of em dashes, including this sentence's neighbours. The rule governs shipped strings a visitor can read.
 
@@ -120,7 +123,8 @@
 
 - **Content Calendar** — the source of truth for all content and marketing. These instructions intentionally contain **no** content/marketing specifics. The calendar is **newsletter-led**: the engine is *The Operator*, every other Tuesday, 400–600 words, free, written Sunday on a phone. **Instagram is the only discovery surface.** **The discovery call is the only door** *(for the custom build; see the V49 note in **The Offer Ladder** — GlowPT now has a second door)*. The addressee is the **owner**; the office manager is the multiplier who forwards it. The spearhead is **model confusion** ("You're running an insurance practice with cash-model marketing"), across **six spines**: (A) model confusion, (B) plan-of-care completion, (C) team, hiring, retention, and modeling, (D) your numbers, (E) AI in your practice, (F) systems and delegation. The four-video YouTube arc is **parked whole**, not deleted.
   > **Calendar points worth knowing here (do not restate the craft rules — read the calendar):**
-  > - **Issue 1 ships September 1, 2026.** Issue 2 September 15, Issue 3 September 29, Issue 4 October 13. The Instagram carousel drops a few days before September 1. **This file has been wrong about this date twice; check the calendar rather than quoting from here.** *(V56 note: as of 2026-09-25 the newsletter form and the e-book checkout are both still unwired in `App.jsx`. Whether the schedule above moved is a Calendar question, not one this file can answer.)*
+  > - **Issue dates live in the Calendar, not here.** This file was wrong about Issue 1's date three times (it recorded September 1, 2026 long after the Calendar moved it). **As of the Calendar's September 25 pass, Issue 1 ships Tuesday, September 29, 2026.** For that and every later issue date, **read the Calendar.**
+  > - **The book is now the source (Calendar, September 25 pass).** *What Your Practice Actually Sells* is finished and David declared it the text every other surface lines up behind. **On a sentence a reader meets on more than one surface, the book's wording wins** — a deliberate exception to "the deployed page wins". Issue 1 and the site's `EbookModal` were both brought into line with it (V57).
   > - **The spearhead is the front door, not a leash.** Only **D** and **C** are genuinely downstream of it. **E's lift half and F stand on their own feet.**
   > - **Spine E is two wells: the line and the lift.** Leading with the line is a **strong default, not a law**.
   > - **Two retired framings the site copy must never reintroduce.** **"nobody decided"**, and **the front-desk-versus-therapist split**.
@@ -130,7 +134,7 @@
   > - **The readiness ladder** holds: newsletter (cold follow) → email (a self-paced question) → discovery call (the door).
   > **Read the calendar before drafting anything.**
 
-**This file** covers the **website build**: structure, styling, copy rules, locked values, the product facts the site displays, the **pricing of every rung**, and (as of V56) **where the site is hosted and how its DNS is set up**. **This file is the authority for everything it states.**
+**This file** covers the **website build**: structure, styling, copy rules, locked values, the product facts the site displays, the **pricing of every rung**, **where the site is hosted and how its DNS is set up** (V56), and **how the Kit account behind the site is configured** (V57). **This file is the authority for everything it states.**
 
 ---
 
@@ -146,7 +150,7 @@ The Business Plan also held **market sizing, unit economics, the HIPAA architect
 
 > **V49 exception, narrow and deliberate.** The **GlowPT** section below records a handful of GlowPT commercial facts — that signup is self-serve, that activation is manual, that a BAA is click-through, that there is no billing yet. They are here **only because the FranklinAI site now links into that flow and its copy must not lie about it.** They are recorded as *marketing constraints*, never as architecture. The GlowPT repo's own `docs/commercial-handoff.md` is the source, and **the GlowPT code wins if the two ever disagree.**
 
-> **V56 note: the marketing site's own hosting is NOT homeless.** It is this site's infrastructure, not GlowPT's, so it is recorded in full under **Hosting and DNS (AWS)**. Only the org-level AWS setup that serves every account (the management account, the org BAA, Identity Center) stays out of this file beyond the facts needed to operate this site.
+> **The marketing site's own hosting (V56) and its Kit account (V57) are NOT homeless.** Both are this site's infrastructure, not GlowPT's, so they are recorded in full under **Hosting and DNS (AWS)** and **Kit (newsletter platform)**. Only the org-level AWS setup that serves every account (the management account, the org BAA, Identity Center) stays out of this file beyond the facts needed to operate this site.
 
 ---
 
@@ -156,19 +160,19 @@ FranklinAI builds custom web apps and tools for businesses — web apps, interna
 
 > **Legal entity (context, not a site-build rule).** Formed as **FranklinAI Solutions LLC** (Pennsylvania); **"FranklinAI"** is the brand / fictitious name. The **wordmark lockup carries the full legal name** — "FranklinAI" over **"Solutions LLC"** in both nav and footer. The footer copyright is just "© {year}".
 >
-> **⚠️ NO COMMA, as of V54. `FranklinAI Solutions LLC`, never `FranklinAI Solutions, LLC`.** Both lockups carried the comma until 2026-09-01. **The no-comma form is the one that appears everywhere the entity is actually named:** both attorney-review contract drafts in the GlowPT repo, glowpt.app's in-app legal copy (`src/lib/legal.js`), and the **AWS management account's Company-name field, which the org-level BAA binds to.** The comma was display-only and matched nothing. **If a future surface needs the entity name, use the no-comma form and do not reintroduce the comma for typographic taste.**
+> **⚠️ NO COMMA, as of V54. `FranklinAI Solutions LLC`, never `FranklinAI Solutions, LLC`.** Both lockups carried the comma until 2026-09-01. **The no-comma form is the one that appears everywhere the entity is actually named:** both attorney-review contract drafts in the GlowPT repo, glowpt.app's in-app legal copy (`src/lib/legal.js`), and the **AWS management account's Company-name field, which the org-level BAA binds to.** The comma was display-only and matched nothing. **If a future surface needs the entity name, use the no-comma form and do not reintroduce the comma for typographic taste.** *(V57: the Kit Commerce payout setup will ask for the business behind the account. That is `FranklinAI Solutions LLC`, no comma.)*
 >
 > **The sibling site now names the entity too (V54).** glowpt.app's landing footer carries a second line under its byline: **`© {year} FranklinAI Solutions LLC`**, computed at render. Its byline stays a credit ("A FranklinAI product · Philadelphia") and the new line is the legal name — two lines doing two jobs, the same division this site's footer uses. **Both sites now spell the entity identically.**
 
-> **The company's work email lives on this domain (V56).** `david@franklinaisolutions.com` is **Microsoft 365, bought through GoDaddy**. It is also David's AWS Identity Center username, the destination of the org's budget alerts, and his AWS Builder ID. **Its delivery depends on records in this domain's DNS**, which now lives in Route 53. Treat those records as the most dangerous thing in this repo's orbit; see **Hosting and DNS (AWS)**.
+> **The company's work email lives on this domain (V56).** `david@franklinaisolutions.com` is **Microsoft 365, bought through GoDaddy**. It is also David's AWS Identity Center username, the destination of the org's budget alerts, his AWS Builder ID, **and (V57) the Kit account login and The Operator's sending address**. **Its delivery depends on records in this domain's DNS**, which now lives in Route 53. Treat those records as the most dangerous thing in this repo's orbit; see **Hosting and DNS (AWS)**.
 
 **Packaged products under the FranklinAI umbrella:**
 
 - **GlowPT** — a daily patient check-in app for physical therapy clinics. Clinics subscribe; their patients use it free. Separately branded (amber/navy, its own logo, its own site at **glowpt.app**), but on the FranklinAI site it wears FranklinAI's navy-and-blue. **Live on the site, and as of V49 self-serve.** See **GlowPT** below.
 
-- **The reconciliation e-book** — a one-time, self-serve product ($37) titled **"What Your Practice Actually Sells."** **The card and the modal are live**; **the book itself is not written yet and the checkout is not wired** (`href="#"`, still so at V56). Both were due before Issue 1 shipped September 1.
+- **The reconciliation e-book** — a one-time, self-serve product ($37) titled **"What Your Practice Actually Sells."** **As of V57 the book is written** (about 6,300 words, eleven chapters; the file is David's) and **the card and modal are live**, but **the checkout is not wired**: "Buy the Guide" is still `href="#"`. **Kit Commerce is the decided checkout** and it is the next session's work.
 
-  > **Say this precisely.** The *shelf listing* is live; the *product* is not. The Calendar's rule governs the endgame: **write it complete, then list it** — and if the file does not exist by ship day, take the card down rather than leave a listed product nobody can buy.
+  > **Say this precisely.** The *book* exists and the *shelf listing* is live; **the product is not buyable yet.** The Calendar's rule governs: **a listed product nobody can buy comes off the shelf.** If the checkout is not live by Issue 1, **ask David before touching the card** — it is a Calendar decision, not a Code one — and **do not ship a coming-soon strip or a pre-sell.**
 
 Everything else is **custom-build work** — scoped after a discovery call, priced from $10,000.
 
@@ -187,6 +191,8 @@ Everything else is **custom-build work** — scoped after a discovery call, pric
 > **Where the niche is named and where it is not.** The **headline** and the **newsletter card** name the practice. The **About bio** names it nowhere. **Naming the niche on the headline and the newsletter is specificity. Naming it in the bio would be a wall.**
 >
 > **✅ The GlowPT teaser names the niche, as "physical therapy patients" (restored V51, untouched since).** V50 briefly dropped it in favour of one sentence shared with glowpt.app; V51 accepted that **the two sites read differently here** rather than lengthening glowpt.app's copy to match. **The reasoning, worth keeping:** on glowpt.app the page is already GlowPT-branded, so the words are redundant; on this card the brand name sits in a product stack and is scanned rather than parsed, so the words earn their place. **Both the headline and the GlowPT teaser name the practice.**
+>
+> **The e-book's Kit Commerce product page MAY name physical therapy (V57).** It is standalone and findable from anywhere, so it has to say who it is for. **The site's e-book card and modal deliberately do not.** Same copy rules on the product page: no em dashes, no forbidden words.
 
 ## Flagship Example
 
@@ -248,8 +254,8 @@ The GlowPT handoff note flagged that **no discovery call exists anywhere in the 
 
 | Rung | Price | Sells how | On the site | Status |
 |---|---|---|---|---|
-| **The Operator newsletter** | Free | The free engine. Runs on **Kit**. **Not a product.** | Its own card between Hero and Available | **Live (unwired)** |
-| **The reconciliation e-book** | $37, one-time | **Self-serve.** The first paid yes. | **First** product on the Available card; More Info opens `EbookModal` | **Card and modal live; book unwritten, checkout unwired.** |
+| **The Operator newsletter** | Free | The free engine. Runs on **Kit**. **Not a product.** | Its own card between Hero and Available | **Live and wired (V57)**, Kit form `9962049`, double opt-in |
+| **The reconciliation e-book** | $37, one-time | **Self-serve.** The first paid yes. | **First** product on the Available card; More Info opens `EbookModal` | **Book written; card and modal live; checkout NOT wired** (Kit Commerce decided, next session) |
 | **GlowPT** | $350 / month | **Two doors (V49): self-serve at `glowpt.app/onboard`, OR the discovery call.** Both land at the same manual activation gate. | Available card (live); both CTAs in `GlowPTModal` | Live |
 | **The custom build** | From $10,000 | Needs the discovery call. | Custom Pricing (live) | Live |
 
@@ -258,9 +264,9 @@ The GlowPT handoff note flagged that **no discovery call exists anywhere in the 
 **The e-book, in detail:**
 
 - **Book one is reconciliation** — the spearhead's paid answer. The newsletter gives the diagnosis away free; the book sells the way out.
-- **The checkout is external.** **Kit Commerce is the front-runner** (buyer auto-joins the list; processing fee only, ~3.5% + $0.30). **Gumroad and Payhip remain the fallback.** **The tradeoff to decide, not default into: Gumroad is merchant of record** and handles US sales tax and EU VAT; **Kit Commerce is not**, so that liability sits with FranklinAI Solutions LLC. What Kit buys instead is that the buyer auto-joins the list, which is the whole point of the $37 rung. **Provider not finally locked.** Do not assume Stripe for a one-time file sale.
-- **Sequence:** written, live, and buyable ahead of Issue 1 (September 1, 2026). *(That date has passed; see the V56 note under Source-of-Truth Documents.)*
-- **Open items:** the checkout provider and URL, **the book itself**, and whether the last chapter points back to the discovery call.
+- **The checkout is Kit Commerce (DECIDED 2026-09-25, not defaulted into).** The merchant-of-record tradeoff was weighed: **Gumroad is merchant of record** and handles US sales tax and EU VAT; **Kit Commerce is not**, so that liability sits with FranklinAI Solutions LLC. **David chose Kit anyway because every buyer lands on the list on purchase, which is the point of the $37 rung.** Record it as decided. **Gumroad and Payhip are the alternative only if Kit Commerce fails in practice.** Do not assume Stripe directly for a one-time file sale (Kit Commerce itself pays out through a Stripe connection, set up inside Kit).
+- **The build, for the next session:** David connects payouts in **Kit → Settings → Revenue** (his bank and tax details, entered by him); creates the product (title *What Your Practice Actually Sells*, **$37**, the final file uploaded, a product-page description that may name physical therapy); then Code puts the live product URL on "Buy the Guide" with `target="_blank" rel="noopener noreferrer"`, **styles unchanged**. See **Open Items** for the verification table.
+- **Price appears in three places and they move together:** `App.jsx` (the `EbookModal` subline and its Playfair price line), this file, and the Kit product. **$37 in all three.**
 
 ---
 
@@ -270,23 +276,23 @@ The GlowPT handoff note flagged that **no discovery call exists anywhere in the 
   > ⚠️ **The GlowPT price line at `glowpt.app/onboard` is a CONTRACT REQUIREMENT, not decoration.** The Subscription Agreement §5.1 says "the subscription fee of $350 per month, **or the amount stated at sign-up**", and that on-screen line IS the amount stated at sign-up. Never remove it, and never edit it as if it were marketing copy.
   >
   > **A related structural note from the GlowPT side (2026-09-01).** That price line is now **two constants rendered as two stacked lines** — `PRICE_LINE` ("$350 per month, per clinic.") and `PATIENTS_FREE_LINE` ("Patients join free.") — because as one string the wrap point was decided by the viewport and stranded "free." alone in iPhone portrait. `PRICE_LINE` is still the §5.1 statement of the amount. **Do not recombine them.**
-- **The reconciliation e-book** — **$37**, one-time, displayed inside `EbookModal` (subline + Playfair price line). Not shown on the card. **If this changes, three places move: `App.jsx` (both spots), this file, and the external checkout.**
+- **The reconciliation e-book** — **$37**, one-time, displayed inside `EbookModal` (subline + Playfair price line). Not shown on the card. **If this changes, three places move: `App.jsx` (both spots), this file, and the Kit Commerce product.**
 
 **Custom Pricing:**
 
 - **The Build** — From $10,000. Whisper subtext: "New features quoted and built one at a time, as you grow." (Inter 15px, #8892a4, marginTop: '0')
 - **Monthly Care** — $350 / month. Optional.
 
-> ## ⚠️ THE `$350` DECOY — read before changing GlowPT's price (V49, line numbers re-measured V56)
+> ## ⚠️ THE `$350` DECOY — read before changing GlowPT's price (V49, line numbers re-measured V57)
 >
 > **`$350` appears TWICE in `App.jsx` and only one of them is GlowPT.**
 >
 > - **Line 99**, inside `GlowPTModal`'s footer: **this is GlowPT.**
-> - **Line 449**, the `Monthly Care` tier in `Pricing()`: **this is the custom build's optional hosting-and-maintenance retainer.** A completely unrelated product that happens to cost the same.
+> - **Line 510**, the `Monthly Care` tier's `price: '$350'` in `Pricing()`: **this is the custom build's optional hosting-and-maintenance retainer.** A completely unrelated product that happens to cost the same.
 >
-> Previous versions of this file said "if the GlowPT price changes, two places move" without warning that a naive grep returns a decoy. **If GlowPT's price ever moves, line 449 must NOT move with it.**
+> Previous versions of this file said "if the GlowPT price changes, two places move" without warning that a naive grep returns a decoy. **If GlowPT's price ever moves, line 510 must NOT move with it.**
 >
-> **These line numbers drift every time anything above them changes** (V49 recorded ~95 and ~434; V52's five-line comment above `features` pushed both down; **V54, V55 and V56 changed no line counts and both are unmoved**). **Treat them as a hint, not an address — confirm by reading the surrounding function name.**
+> **These line numbers drift every time anything above them changes** (V49 recorded ~95 and ~434; V52 pushed them to 99 and 449; **V57's newsletter wiring added 61 lines above `Pricing()` and moved the second to 510**). **Treat them as a hint, not an address — confirm by reading the surrounding function name.**
 
 **Order rationale.** The e-book sits first (cheapest paid yes, under the newsletter whose diagnosis it answers), GlowPT second (recurring flagship), then Custom Work as proof, bridging into How It Works and Custom Pricing.
 
@@ -299,7 +305,7 @@ The GlowPT handoff note flagged that **no discovery call exists anywhere in the 
 
 **Scheduling link:** `https://cal.com/david-peterson-40s7lw/free-discovery-call`, opened in a new tab (`target="_blank" rel="noopener noreferrer"`).
 
-> **The filled style is still exclusive to the discovery call, site-wide (reaffirmed V49).** When the GlowPT modal gained a second CTA, the buttons were re-ordered but their **styles were deliberately not swapped**. Every transaction button on the site is a ghost: "Buy the Guide", "Bring GlowPT to Your Clinic". **Flipping a transaction button to `btn--primary` requires David's explicit say-so**, and it was specifically considered and declined in V49.
+> **The filled style is still exclusive to the discovery call, site-wide (reaffirmed V49).** When the GlowPT modal gained a second CTA, the buttons were re-ordered but their **styles were deliberately not swapped**. Every transaction button on the site is a ghost: "Buy the Guide", "Bring GlowPT to Your Clinic", "Subscribe for Free". **Flipping a transaction button to `btn--primary` requires David's explicit say-so**, and it was specifically considered and declined in V49.
 
 ## Email Option Under the Discovery CTA
 
@@ -307,11 +313,9 @@ The GlowPT handoff note flagged that **no discovery call exists anywhere in the 
 
 > **Where it sits in the readiness ladder:** the middle rung — a self-paced question for the warm-but-cautious visitor.
 
-## Newsletter Card — Live (Unwired)
+## Newsletter Card — Live and Wired (V57)
 
-*The Operator* has **its own card**, between Hero and Available. **Not wired** — the Kit form endpoint gets added later.
-
-> **⏳ STILL THE OLDEST OPEN ITEM ON THE SITE.** The form is fully specced (see **Tech Stack**) and blocked on exactly two facts from David's Kit account: **the form ID** and **whether double opt-in is on**. Everything else is written. **David chose to move the site to AWS before wiring Kit (V56)**, because Kit's sender authentication will want DNS records, and those belong in Route 53 now, added once in their final home.
+*The Operator* has **its own card**, between Hero and Available. **As of V57 the form in its modal is wired to Kit** and was confirmed end to end by David on 2026-09-25, on the Mac and on an iPhone. See **Kit (newsletter platform)** for the account behind it.
 
 > **It is a card, not a "strip."** The React component is still named `NewsletterStrip` (legacy name). Do not reintroduce "quiet strip" sizing.
 
@@ -323,41 +327,47 @@ The GlowPT handoff note flagged that **no discovery call exists anywhere in the 
 - **Subhead "The Operator"** — white Playfair sub-title, `clamp(30px, 5vw, 35px)`, 800, `lineHeight: '1.1'`, `marginTop: '0'`, `marginBottom: '14px'`, upright.
 - **Description** (Inter 15px, #8892a4, `marginTop: '0'`, `marginBottom: '18px'`, `lineHeight: '1.5'`): **"For physical therapy practices. Delivered every other Tuesday, it takes a clear look at what's working and not working in your practice, and what to do about it."**
 
-> **The audience line appears TWICE.** The identical sentence lives in the card description and the `NewsletterModal` description. **They must always move together.** Verify with `grep -c "For physical therapy practices\."` — expected count **2**. *(Measured 2 at V56.)*
+> **The audience line appears TWICE.** The identical sentence lives in the card description and the `NewsletterModal` description. **They must always move together.** Verify with `grep -c "For physical therapy practices\."` — expected count **2**. *(Measured 2 at V57.)*
 
 **The card's action:**
 - **One ghost button: "Subscribe for Free"** (`btn btn--ghost`, inline `marginTop: '0'`), opening `NewsletterModal`. **No email field on the card.**
 - **`NewsletterModal`** — the site's **fourth** modal: title **"The Operator"**, subline **"Free to subscribe."** (Inter 14px/600/#8899b0), the **same description line as the card**, then a `borderTop` divider wrapping the form row.
-- **The form row:** an email input (cream #f0e6d3 on rgba(255,255,255,0.04), 1px border rgba(96,165,250,0.3), 8px radius, **16px font to prevent iOS zoom**, `WebkitAppearance: 'none'`, flex `1 1 220px`, maxWidth 280px, 44px tall) and the ghost Subscribe button.
+- **The form row (a `<form>` since V57):** an email input (cream #f0e6d3 on rgba(255,255,255,0.04), 1px border rgba(96,165,250,0.3), 8px radius, **16px font to prevent iOS zoom**, `WebkitAppearance: 'none'`, flex `1 1 220px`, maxWidth 280px, 44px tall, **`name="email_address"`, `required`**) and the ghost Subscribe button (**`type="submit"`**).
 - **The 44px alignment fix:** `height`/`minHeight: '44px'`, `boxSizing: 'border-box'`, `display: 'inline-flex'`, centering, and **`marginTop: '0'`** (cancels `.btn`'s `margin-top: 8px`). Keep all of them.
+
+**How the wired form behaves (built V57 to the V40 plan):**
+
+| Moment | What happens |
+|---|---|
+| Submit | `fetch` POST of a `FormData` with **`email_address`** to **`https://app.kit.com/forms/9962049/subscriptions`** (the `KIT_FORM_URL` constant above `NewsletterModal`), header `Accept: application/json`. Kit's endpoint answers any origin (`access-control-allow-origin: *`) with JSON `{"status":"success"}` or `{"status":"failed","errors":{"fields":[...]}}`. |
+| In flight | Input and button disabled; the button reads **"Subscribing…"**. |
+| Success | The form row is replaced by **"Almost there. Check your email to confirm."** (`role="status"`), and the modal **closes itself after 2.5 seconds**; the X works sooner. *(The plan said "about 2s"; 2.5s was chosen so the line can be read.)* |
+| Kit rejects the address | Modal stays open; under the row: **"That email address doesn't look right. Check it and try again."** (`role="alert"`) |
+| Anything else fails | Modal stays open; **"That didn’t go through. Please try again in a moment."** |
+
+> **If Kit's double opt-in is ever turned OFF, change the success line to "You're in."** The constant's comment says so too. **Double opt-in is ON** and David chose to keep it on (it keeps fake and mistyped addresses off the list).
+>
+> **A small nit:** the two error strings are the only strings on the site using a curly apostrophe (`’`, from `’` in the code); every other string uses a straight one. Harmless; make them straight whenever that code is next touched.
 
 > **The email field lives in a modal (V39 — reverses V28).** A bold Subscribe button is the visual magnet, so many visitors reach for the button first; with an inline field that was a dead click. **Keep the modal. Do not re-propose the inline field unless David asks.**
 
 ## Tech Stack
 
-React + Vite, plain CSS (no Tailwind), **AWS Amplify Hosting** (V56; Netlify until 2026-09-25), GitHub. **This site has no backend of its own.** *(Through V55 this line also said "Supabase for backend and auth where needed". Nothing in this repo uses Supabase; that phrase described McKenzie, not this site, and is removed.)*
+React + Vite, plain CSS (no Tailwind), **AWS Amplify Hosting** (V56; Netlify until 2026-09-25), GitHub. **This site has no backend of its own.**
 
-> **This site is a pure static build with NO serverless functions and no env files.** Kit's form endpoint and any Stripe payment link both work from the browser, so **none of the remaining wiring requires adding a backend here.** Do not propose one. **Amplify stays hosting-only**, the same role Netlify had and the same role Amplify plays for GlowPT.
+> **This site is a pure static build with NO serverless functions and no env files.** Kit's form endpoint works from the browser (proved V57), and the Kit Commerce checkout is a plain external link, so **none of the remaining wiring requires adding a backend here.** Do not propose one. **Amplify stays hosting-only**, the same role Netlify had and the same role Amplify plays for GlowPT. **The Kit form ID `9962049` is public by nature** (it sits in every Kit embed), so it lives in `App.jsx` as a constant, not in an env file.
 
-**Newsletter platform: Kit.** The form lives inside `NewsletterModal` and is **still unwired**.
+**Newsletter platform: Kit.** The form lives inside `NewsletterModal` and is **wired (V57)**. The locked V40 plan is now the built behavior; see **Newsletter Card**.
 
-> **Newsletter wiring plan — locked V40:**
-> - **JS-handled submit, not a plain form POST.** A plain POST to `https://app.convertkit.com/forms/{FORM_ID}/subscriptions` navigates away and destroys the modal. Use a `fetch` (or Kit's v3 API / React embed). **The field must be named `email_address`.**
-> - **On success: confirm in the modal, then auto-close** (~2s), X available sooner.
-> - **Confirmation copy tracks Kit's double opt-in setting** — **"Almost there. Check your email to confirm."** if on (Kit's default), **"You're in."** if off. **No em dashes, no forbidden words.**
-> - **On error: keep the modal open** with a gentle inline message; the button takes a brief disabled **"Subscribing…"** state.
->
-> **A small, self-contained JSX addition.** No structural change to the card or modal.
+**The e-book's checkout is an external service** — **Kit Commerce, decided V57**, not yet built. Not part of the React app beyond one `href`.
 
-**The e-book's checkout is an external service** — Kit Commerce front-runner, Gumroad/Payhip fallback. Not part of the React app.
-
-> **Stack boundary (rewritten V56).** This document governs the **FranklinAI marketing site**. **site → AWS Amplify Hosting, account `franklinai-web`, hosting only. GlowPT → AWS, account `glowpt-prod`, its own repo. McKenzie Arm Care → Supabase, still hosted on Netlify, its own folder.** This note is the boundary only, never the design; GlowPT's backend architecture lives in the GlowPT repo.
+> **Stack boundary (rewritten V56, extended V57).** This document governs the **FranklinAI marketing site**. **site → AWS Amplify Hosting, account `franklinai-web`, hosting only. Newsletter and (soon) the e-book checkout → Kit, a third-party service configured through its own web app. GlowPT → AWS, account `glowpt-prod`, its own repo. McKenzie Arm Care → Supabase, still hosted on Netlify, its own folder.** This note is the boundary only, never the design; GlowPT's backend architecture lives in the GlowPT repo.
 
 ---
 
-## Hosting and DNS (AWS) — V56
+## Hosting and DNS (AWS) — V56, records extended V57
 
-**franklinaisolutions.com moved from Netlify to AWS Amplify Hosting on 2026-09-25.** David decided to do it before go-live and **before** wiring Kit and Stripe, because both will want DNS records (Kit sender authentication, Stripe domain verification), and those should be added once, in their final home. **Add them in Route 53 now, never in Netlify.**
+**franklinaisolutions.com moved from Netlify to AWS Amplify Hosting on 2026-09-25.** David decided to do it before go-live and **before** wiring Kit and Stripe, because both would want DNS records, and those should be added once, in their final home. **That paid off the same day: Kit's four records went straight into Route 53 (V57).** **Add any future records in Route 53, never in Netlify.**
 
 ### Where everything lives
 
@@ -368,10 +378,12 @@ React + Vite, plain CSS (no Tailwind), **AWS Amplify Hosting** (V56; Netlify unt
 | **Access** | IAM Identity Center user `david`, permission set `AdministratorAccess`. CLI profile **`franklinai-web`** in `~/.aws/config` (same `sso_session = glowpt` as the other two profiles; one login covers all three for 8 hours). |
 | **Amplify app** | name **`franklinai-web`**, appId **`dtrvxjb8lde3p`**, branch **`main`**, default address `https://main.dtrvxjb8lde3p.amplifyapp.com`. Framework "None", SSR disabled, Standard build instance, default build image, **no environment variables**. |
 | **Custom domain** | `franklinaisolutions.com` and `www`, both → `main`. Certificate **AMPLIFY_MANAGED** (`*.franklinaisolutions.com`, Amazon RSA 2048), renews itself. CloudFront target `dbgirmwp1juc8.cloudfront.net`. |
-| **Route 53 zone** | **`Z0616895187ZTAR49DY5P`**. Nameservers: `ns-561.awsdns-06.net`, `ns-389.awsdns-48.com`, `ns-1501.awsdns-59.org`, `ns-1898.awsdns-45.co.uk`. |
+| **Route 53 zone** | **`Z0616895187ZTAR49DY5P`**. Nameservers: `ns-561.awsdns-06.net`, `ns-389.awsdns-48.com`, `ns-1501.awsdns-59.org`, `ns-1898.awsdns-45.co.uk`. SOA negative-caching TTL is effectively **900s (15 minutes)**, which matters for new records (see Traps). |
 | **Registrar** | **GoDaddy, registrar only.** The only thing that changed there is the nameserver list. **Do not touch anything else at GoDaddy, and never touch the Microsoft 365 tenant, as part of site work.** |
 | **GitHub link** | GitHub app **"AWS Amplify (us-east-1)"** on the `besoulful-design` account, repository access **`glowpt` + `franklinai-v2` only**. Removing `glowpt` from that list would break GlowPT's builds. |
 | **Cost** | About $1–2/month: ~$0.50 for the zone plus cents per build. The org's $150 budget alarm covers every account. |
+
+> **Observed, not measured (V57):** David reports the site loads noticeably faster on Amplify than it did on Netlify. The likely reasons are CloudFront edges near Philadelphia, the hard caching of Vite's hashed assets that `customHttp.yml` allows, and a tiny single-page site where delivery is most of the load time. **Nobody has timed it**; do not quote a number.
 
 ### What lives in the repo, and what does NOT
 
@@ -386,26 +398,34 @@ React + Vite, plain CSS (no Tailwind), **AWS Amplify Hosting** (V56; Netlify unt
   2. **`/<*>` → `/index.html`, `404-200`** — Amplify's default. Left as is. This site has no router and is a single page, so GlowPT's worst Amplify surprise (deep links 301ing to a trailing slash, then 404) cannot happen here. **If a router is ever added, do not trust this default rule**: GlowPT had to replace it with a regex SPA rewrite.
 - **The domain association** (apex + `www`, managed certificate).
 
+**NOT in the repo — the Kit account's settings (V57).** See **Kit (newsletter platform)**.
+
+**In the repo but NOT in git (V57): `.claude/settings.local.json`**, David's narrow Claude Code permission for this zone, gitignored in `fb01e32`. See *Working across the two repos*.
+
 > **Any change to those settings must be recorded here**, because nothing in git will show it.
 
 ### The DNS records, and why the mail ones are sacred
 
-**The zone was copied from Netlify's panel, not from `dig`**, because `dig` cannot list a zone, and GlowPT's zone turned out to hold SES records nobody knew were there. Netlify's panel showed **seven records**; the inventory found one the pre-move note had missed (`email`).
+**The zone was copied from Netlify's panel, not from `dig`**, because `dig` cannot list a zone, and GlowPT's zone turned out to hold SES records nobody knew were there. Netlify's panel showed **seven records**; the inventory found one the pre-move note had missed (`email`). **V57 added four for Kit.** Route 53's own listing (`aws route53 list-resource-record-sets --hosted-zone-id Z0616895187ZTAR49DY5P --profile franklinai-web`) is now the authority for what is in the zone.
 
 | Name | Type | Value | What it does |
 |---|---|---|---|
 | apex | **MX** | `0 franklinaisolutions-com.mail.protection.outlook.com.` | **Delivers David's mail.** |
 | apex | **TXT** | `"MS=ms21263178"` | Microsoft 365 domain ownership. |
-| apex | **TXT** | `"v=spf1 include:secureserver.net -all"` | SPF. **Looks wrong, is correct**: GoDaddy's SPF chain (`secureserver.net` → `spf-0.secureserver.net`) itself includes `spf.protection.outlook.com`. This is GoDaddy's standard record for Microsoft 365 bought through GoDaddy. **Do not "fix" it.** |
+| apex | **TXT** | `"v=spf1 include:secureserver.net -all"` | SPF. **Looks wrong, is correct**: GoDaddy's SPF chain (`secureserver.net` → `spf-0.secureserver.net`) itself includes `spf.protection.outlook.com`. This is GoDaddy's standard record for Microsoft 365 bought through GoDaddy. **Do not "fix" it, and Kit does not need it changed** (Kit aligns through `ckespa`). |
 | `autodiscover` | CNAME | `autodiscover.outlook.com.` | Outlook auto-setup. |
 | `email` | CNAME | `email.secureserver.net.` | GoDaddy webmail shortcut. |
 | `_b3bc49b38926936e06504b90ca148550` | CNAME | `_2319b19e5e61a60fb914625982143e7d.wzccmgtwzk.acm-validations.aws.` | Certificate validation. **Keep it forever**: renewals re-check it. |
 | apex | A (alias) | Amplify / CloudFront | The website. Managed by Amplify. |
 | `www` | CNAME | `dbgirmwp1juc8.cloudfront.net` | The website. Managed by Amplify. |
+| **`ckespa`** *(V57)* | CNAME | `spf.dm-3a041db7.sg2.convertkit.com.` | **Kit return path / SPF alignment.** TTL 300. |
+| **`cka._domainkey`** *(V57)* | CNAME | `dkim.dm-0ecde6d9.sg2.convertkit.com.` | **Kit DKIM key 1.** TTL 300. |
+| **`cka2._domainkey`** *(V57)* | CNAME | `dkim2.dm-8d22d771.sg2.convertkit.com.` | **Kit DKIM key 2.** TTL 300. |
+| **`_dmarc`** *(V57)* | TXT | `"v=DMARC1; p=none;"` | **DMARC, monitor-only.** Requested by Kit, **added deliberately with David's explicit yes.** `p=none` never blocks or quarantines anything, so it cannot interfere with Microsoft 365 mail; it satisfies Gmail/Yahoo's bulk-sender expectation. TTL 300. |
 
-**Not present, deliberately:** AAAA, CAA, DMARC, Microsoft 365 DKIM, **DNSSEC (no DS record at the registry)**. **Do not add any of them as a side effect of other work.** Adding DMARC or DKIM is a legitimate future improvement, as its own change, tested with a mail round-trip.
+**Not present, deliberately:** AAAA, CAA, **Microsoft 365 DKIM**, **DNSSEC (no DS record at the registry)**. **Do not add any of them as a side effect of other work.** Tightening DMARC beyond `p=none` (or adding a reporting address) is a legitimate future change, but only as its own change, after checking that both Microsoft 365 mail and Kit mail pass, and tested with a mail round-trip.
 
-> **The rule for every future DNS change on this domain:** one change at a time; **copy any mail or verification record exactly, oddities included**; verify by querying a Route 53 nameserver directly (`dig @ns-561.awsdns-06.net franklinaisolutions.com MX`) before believing it; and after anything that could touch mail, **David sends a test email both ways** (to and from an outside address).
+> **The rule for every future DNS change on this domain:** one change at a time; **copy any mail or verification record exactly, oddities included**; **before writing a record read off a screenshot, confirm its target resolves** (a typo in a CNAME target is then caught before it exists); verify each record by querying a Route 53 nameserver directly (`dig @ns-561.awsdns-06.net <name> <type>`) and **re-read the apex MX and TXT on the same query** before believing it; and after anything that could touch mail, **David sends a test email both ways** (to and from an outside address). *(V57 followed this exactly: four records, each verified with the mail records re-read, then David's round-trip.)*
 
 ### How the switch was made safe (the method, for next time)
 
@@ -428,13 +448,40 @@ This is the method that made GlowPT's move safe, and it worked again here. **Reu
 - **Safari's pop-up handling breaks the GitHub step inside the Amplify console.** The fix was to go to GitHub directly: **github.com/settings/installations → AWS Amplify (us-east-1) → Configure → Repository access → pick the repo → Save**, then refresh the repository list in Amplify. In that GitHub dropdown, **clicking a repository name is what adds it**; there is no Add button, and already-selected repos do not appear in the dropdown.
 - **Never click "Edit YML file" in the Amplify console.** The Amplify GitHub app has write access to `amplify.yml` and can commit it back into the repo. The file in git is the source.
 - **No Amplify firewall (WAF).** It is a flat monthly fee that this site does not justify. The console's "Enable firewall" card is to be ignored.
-- **The Claude Code safety system blocks `aws organizations` writes and Identity Center permission grants** (creating an account, moving it between OUs, assigning access). Those were done by David in the console with step-by-step clicks. **Everything inside `franklinai-web`** (Amplify, Route 53) ran from the CLI without trouble.
-- **The `--hosted-zone-config Comment=...` shorthand splits on commas.** Pass it as JSON.
+- **The Claude Code safety system blocks `aws organizations` writes and Identity Center permission grants** (creating an account, moving it between OUs, assigning access). Those were done by David in the console with step-by-step clicks.
+- **The same system blocks Route 53 record writes from a session rooted here UNLESS the V57 permission file is present** (see *Working across the two repos*). Without it, the first `change-resource-record-sets` in V57 slipped through, and the read-back after it was blocked.
+- **The `--hosted-zone-config Comment=...` shorthand splits on commas.** Pass it as JSON. **And zsh globs unquoted `--query ChangeInfo.[Id,Status]`**; quote any JMESPath containing brackets.
 - **The AWS console and the terminal are different sessions.** A `aws sso login --profile …` run in the background opens Safari; David approves with Touch ID. **Do not hand him a command to paste.**
+- **A brand-new DNS name can "fail validation" for up to 15 minutes (V57).** Kit's first Validate failed although Google, Cloudflare and Quad9 all returned all four records: Kit had looked the names up before they existed and cached the "not found" answer for the zone's negative-caching time. **Wait 15 minutes and validate again; do not change the records.** It passed on the second try.
+- **Never click Kit's "Set this up for me" (V57).** It asks to connect Kit to the DNS provider's account. Records are added by hand, one at a time.
 
 ### Netlify: standby, then gone
 
-**After the switch, Netlify still builds this repo on every push and still holds the old zone, but nothing points at either.** It is a harmless standby. **After a few quiet days, David deletes the franklinai site and the franklinaisolutions.com DNS zone in Netlify** (the validation CNAME added there goes with the zone; Route 53 keeps its own copy). **Leave McKenzie (`mckenziearmcare.com`) alone**: after that, Netlify hosts only McKenzie, on the Free plan that takes effect 2026-09-27. McKenzie's own move is separate work, rooted in its own folder.
+**After the switch, Netlify still builds this repo on every push and still holds the old zone, but nothing points at either.** It is a harmless standby. **After a few quiet days, David deletes the franklinai site and the franklinaisolutions.com DNS zone in Netlify** (the validation CNAME added there goes with the zone; Route 53 keeps its own copy). **Leave McKenzie (`mckenziearmcare.com`) alone**: after that, Netlify hosts only McKenzie, on the Free plan that takes effect 2026-09-27. McKenzie's own move is separate work, rooted in its own folder. **Note that Netlify's copy of the zone does NOT have Kit's four records**, which is fine because nothing reads it.
+
+---
+
+## Kit (newsletter platform) — V57
+
+**Kit's settings live in Kit's web app (`app.kit.com`), not in git.** This section is their record. **Any change made in Kit that affects what readers receive must be recorded here.**
+
+| Thing | Value |
+|---|---|
+| **Account** | Login **`david@franklinaisolutions.com`**, owner David Peterson, account name **FranklinAI**, website `https://franklinaisolutions.com`. Created 2026-09-25; login email confirmed. |
+| **Plan** | **Free "Newsletter" plan.** Kit opened a **14-day Creator-feature trial on 2026-09-25 with NO card entered**; when it lapses (about **2026-10-09**) the account falls back to free. **Do not build anything on features marked 💎 in Kit** (Automation, Apps, sequences; the custom click-tracking domain is Pro), or it breaks when the trial ends. |
+| **Form** | **"The Operator site signup"**, **ID `9962049`**, inline, Kit template "Clare", **published**. Its Kit styling is never shown: the site posts to its endpoint from its own form. Its "General → success message" setting is likewise unused by the site. |
+| **Double opt-in** | **ON.** Form Settings → Confirmation email: *Send confirmation email* ticked, *Auto-confirm new subscribers* unticked. After confirming, readers land on Kit's default `https://app.kit.com/confirm-subscription` page (kept on purpose: sending them to the site would show no sign they had confirmed). |
+| **Confirmation email** | **Still Kit's default copy**, subject "Important: confirm your subscription". It passes the copy rules but sounds like Kit, not David. **A draft in David's voice was offered and parked** (Open Items). The copy rules bind it. |
+| **Sender** | From **David Peterson <david@franklinaisolutions.com>**, status confirmed, default. |
+| **Verified sending domain** | **`franklinaisolutions.com`, validated 2026-09-25** with the four Route 53 records in *Hosting and DNS*. Gmail's "David Peterson **via n.convertkit.com**" label disappeared from the next email onward. |
+| **Mailing address (email footer)** | **Kit's shared stand-in: 600 1st Ave, Ste 330 PMB 92768, Seattle, WA 98104-2246.** Kit explicitly allows it for Kit emails only; **mail sent there is not forwarded.** David's home address was considered and declined for privacy. **Replace it with a USPS PO box** (or the LLC registered agent's address, if the agent permits business mail and forwards it) in **Settings → Email → Mailing address**; the change applies to every later email. **Never print Kit's address anywhere outside Kit.** When a real address goes in, prefix it with **`FranklinAI Solutions LLC, `** so the legal entity rides in every footer. |
+| **Brand name in Kit** | "FranklinAI", not the legal name. The legal name belongs in the footer address line (above) and in the Kit Commerce payout setup. |
+| **Privacy settings** | GDPR consent page: **Don't show to anyone.** Unsubscribe survey: **off.** |
+| **Revenue / Kit Commerce** | **Not set up yet.** Next session. Payouts connect Stripe inside Kit (Settings → Revenue); David enters bank and tax details himself. |
+| **Kit MCP** | Available under Settings → Kit MCP; **not connected.** It could let a Claude session read forms and subscribers and draft broadcasts; it would not cover account settings. Connecting it is David's call, and changes Claude Code's configuration. |
+| **Test subscribers** | Four, all `besoulful+kit-…@gmail.com` (first, second, third, fourth), all Confirmed. **Before Issue 1, keep one (so David receives each issue as a reader does) and delete the rest.** |
+
+> **Reading Kit's numbers (V57).** The **summary boxes** at the top of Subscribers (Total, New today) **lag** by minutes to an hour; **the list below them, with its "Total: N", is live.** Twice on 2026-09-25 the box read one short while the list was right. **"Opened" can be inflated by Gmail fetching images on arrival**, so treat open rates as rough. The per-subscriber page (click a row) shows Delivered / Opened / Clicked with **exact times on hover**, which is the tool that diagnosed the mystery third signup.
 
 ---
 
@@ -448,7 +495,7 @@ github.com/besoulful-design/franklinai-v2 · local path `~/Downloads/franklinai-
 
 ## Domain
 
-franklinaisolutions.com (owned and active). **Registrar GoDaddy; DNS in Route 53 in `franklinai-web` (V56); hosting on Amplify.** GlowPT's own site: **glowpt.app**.
+franklinaisolutions.com (owned and active). **Registrar GoDaddy; DNS in Route 53 in `franklinai-web` (V56); hosting on Amplify; Kit sends as this domain (V57).** GlowPT's own site: **glowpt.app**.
 
 ## Favicon / iPhone Icon
 
@@ -472,7 +519,7 @@ SVG favicon and 180×180 PNG apple-touch-icon, kite mark on navy with the bolt i
 | Text primary | #f0e6d3 |
 | Text muted | #8892a4 |
 | Kite panel fills | #1e3a5f and #0f2340 |
-| Cool blue-grey sublines | #8899b0 — modal sublines only |
+| Cool blue-grey sublines | #8899b0 — modal sublines, and (V57) the newsletter form's error line |
 | Headings / white sub-titles | #ffffff |
 
 > **A note carried from the Instagram work:** the footer navy **#070f24 reads as dark blue only as a large filled block.** As thin text on a light field it reads flat black; the posts use **#1e3a5f** for text on white. On the site every ground is navy, so this never bites here.
@@ -490,6 +537,8 @@ SVG favicon and 180×180 PNG apple-touch-icon, kite mark on navy with the bolt i
 | Newsletter subhead ("The Operator") | Playfair Display | 800 | **clamp(30px, 5vw, 35px)**, white, upright, marginBottom 14px, lineHeight 1.1 |
 | Newsletter description (card **and** modal) | Inter | 400 | 15px, #8892a4, lineHeight 1.5. **Both copies move together.** |
 | Newsletter email input | Inter | 400 | **16px** (prevents iOS zoom), 44px tall, box-sizing border-box |
+| Newsletter success line (V57) | Inter | 400 | 15px, #f0e6d3, lineHeight 1.5, min-height 44px so the modal does not jump |
+| Newsletter error line (V57) | Inter | 400 | 14px, #8899b0, lineHeight 1.5, centered |
 | Section card headings (all seven) | Playfair Display | 800 | **clamp(36px, 5.5vw, 58px)**, blue, **lineHeight 1.2** (About 1.1), **marginBottom clamp(4px, 1.5vw, 10px)** |
 | — "Behind FranklinAI" | Playfair Display | 800 | two lines via `<br />`, lineHeight 1.1; "Behind Franklin" blue, **"AI" white** |
 | Secondary sub-titles (unified) | Playfair Display | 700–800 | **clamp(30px, 5vw, 35px)**, **all white** |
@@ -581,7 +630,7 @@ Each `card-heading` carries **`marginBottom: 'clamp(4px, 1.5vw, 10px)'`** and an
 - Card-heading spacing via explicit `lineHeight: '1.2'` + one shared responsive `marginBottom`; no compensating negative margins
 - **No heading on the page is italic**
 - No horizontal dividers between sections or inside cards. Thin `borderTop` rules exist only in **four** spots: the GlowPT modal footer, the e-book modal footer, the newsletter modal form divider, and the page footer. **The two products on the Available card are separated by spacing, not a rule.**
-- No em dashes anywhere in copy, ever — **and as of V49 that applies on glowpt.app too**
+- No em dashes anywhere in copy, ever — **and as of V49 that applies on glowpt.app too, and as of V57 in Kit**
 - Dark mode locked via color-scheme: only light
 - No step numbers in How It Works *(the `steps` array still carries a `number` field that nothing renders — harmless leftover, same class as the `id="financial-clarity"` on the Available section)*
 - Gold is reserved for the logo bolt only
@@ -591,8 +640,9 @@ Each `card-heading` carries **`marginBottom: 'clamp(4px, 1.5vw, 10px)'`** and an
 - **Center a stack of differently-sized lines by block layout + `text-align: center`, never by flex shrink-to-content (V47).** Make the container a block with `text-align: center` and every line `display: block`. **This is the house standard for any centered stack, not just the footer.**
 - **Geometric centering is not always optical centering (V48).** A line whose ink is unevenly weighted can measure 0.00px centered and still read as off-centre. **Verify centering against the reference the eye uses**, and if a line is provably centered but still looks wrong, the remedy is an explicit documented optical correction, not a re-derivation of the layout around it.
 - **In a stacked pair of buttons, the BOTTOM one is the stronger position (V49).** It is the terminal action, which is why dialogs put confirm last. Combined with the filled style being the loudest element, **a filled button placed last is the most dominant thing in the block.** Order and weight are two separate levers; do not reach for order when the intent is weight.
-- **Copy that appears twice must move twice.** Two strings are duplicated *within this file* by design: the newsletter description (card + modal) and the "Subscribe for Free" label (card + modal). **A third duplication crosses repos: the GlowPT pitch's second sentence and the eight feature bullets (V52).**
+- **Copy that appears twice must move twice.** Two strings are duplicated *within this file* by design: the newsletter description (card + modal) and the "Subscribe for Free" label (card + modal). **A third duplication crosses repos: the GlowPT pitch's second sentence and the eight feature bullets (V52).** **A fourth crosses into a document (V57): the `EbookModal`'s first two paragraphs echo the book's chapter 1, and the book wins.**
 - **When a two-sentence line must break the same way everywhere, make it two elements, not one string (V54, learned on glowpt.app).** A single string wraps wherever the measure happens to fall, so the same copy breaks cleanly at one width and strands a word at another. Two stacked block elements break identically at every width. **This is the same family as the block + `text-align` standard: control the break, do not hope for it.**
+- **A state change inside a modal must not make the modal jump (V57).** The newsletter success line carries `minHeight: '44px'` so it occupies the row it replaces.
 
 ---
 
@@ -745,13 +795,13 @@ A scaled-down signature (kite 105, name 32px). Kite-to-wordmark gap `4px`.
 
 > **Note the spans are `display: block`, so each one's BOX is the full column width regardless of its text.** A session measuring "did this line get narrower" by reading the span's bounding box will get the column width every time and conclude nothing changed. **Measure the column against the widest line, or measure the text itself.**
 
-No email in the footer.
+No email in the footer. **No mailing address in the footer either**, which is why Kit's stand-in address (see **Kit**) needs no matching change on the site.
 
 ---
 
 ## Scroll Lock on Modals
 
-All four modals (`EbookModal`, `GlowPTModal`, `CaseStudyModal`, `NewsletterModal`) lock page scroll via a `useEffect` setting `document.body.style.overflow = 'hidden'` on mount, restoring on unmount. Each closes on X click or backdrop click.
+All four modals (`EbookModal`, `GlowPTModal`, `CaseStudyModal`, `NewsletterModal`) lock page scroll via a `useEffect` setting `document.body.style.overflow = 'hidden'` on mount, restoring on unmount. Each closes on X click or backdrop click. **`NewsletterModal` also closes itself 2.5s after a successful signup (V57)**, through a second `useEffect` that clears its timer on unmount.
 
 > **The sibling repo has moved further ahead here.** glowpt.app's three modals now call **one shared `useModal` hook** that locks scroll, closes on **Escape**, **traps focus**, and restores focus to whatever opened the modal, with `role="dialog"` and `aria-modal` on each panel. *(It was `useScrollLock`; it absorbed the other jobs on 2026-08-31.)* **This repo still repeats a scroll-lock-only effect four times and has no Escape key or focus trap.** Not urgent and not a bug, but it is now a real accessibility gap rather than just duplication, and **if a fifth modal ever arrives, port the hook rather than writing a fifth copy.**
 
@@ -776,8 +826,8 @@ The page reads as one sentence: here's what I do → here's the free thing worth
 - **Subhead** (Playfair 800, white, upright, marginBottom 14px): **"The Operator"**
 - **Description** (Inter 15px, #8892a4, marginBottom 18px, lineHeight 1.5): **"For physical therapy practices. Delivered every other Tuesday, it takes a clear look at what's working and not working in your practice, and what to do about it."** **The identical line also lives in `NewsletterModal`; both move together.**
 - **Subscribe button** (`btn btn--ghost`, "Subscribe for Free", marginTop 0), opening the modal. **No email field on the card.**
-- **`NewsletterModal`**: title "The Operator", "Free to subscribe." subline, the same description, then a `borderTop` divider wrapping the input + ghost Subscribe button (both 44px, flush).
-- **Not wired.** A JSX comment marks where the Kit endpoint goes.
+- **`NewsletterModal`**: title "The Operator", "Free to subscribe." subline, the same description, then a `borderTop` divider wrapping the `<form>` of input + ghost Subscribe button (both 44px, flush).
+- **Wired to Kit (V57).** Behavior in **Newsletter Card**.
 
 ### Available (Product Card)
 
@@ -804,12 +854,14 @@ Component **`AvailableForPractice`**. Two products: the e-book first, GlowPT sec
 **EbookModal:** Scroll-locked, mirrors `GlowPTModal`.
 - **Title** (`modal__title`, marginTop 6px): **"What Your Practice Actually Sells"**
 - **Subline** (Inter 14px/600/#8899b0, marginBottom 16px): **"A self-serve guide. $37, yours to download."**
-- **Body — three `modal__text` paragraphs (1 and 2 rewritten in V41; 3 unchanged):**
-  1. *"Your whole team is being asked to sell advanced care and get patients to the end of their plan of care at the same time. That's not a marketing problem. You're running two business models in one building, an insurance practice and a cash practice, and they're pulling against each other."*
-  2. *"You didn't set out to run two businesses, but you chose every piece that built the second one. The tactics arrived built for a business you don't own, and none of them came with a label. So the team gets mixed signals about what the practice is driving at, and every patient feels the seams."*
+- **Body — three `modal__text` paragraphs (1 and 2 rewritten in V41 and brought into line with the book in V57; 3 unchanged):**
+  1. *"Your whole team is being asked to sell advanced care and get patients to the end of their care at the same time. That's not a marketing problem. You're running two business models in one building, an insurance practice and a cash practice, and they're pulling against each other."*
+  2. *"You didn't set out to build two businesses, but you chose every piece that built the second one. The tactics arrived built for a business you don't own, and none of them came with a label. So the team gets mixed signals about what the practice is driving at, and every patient feels the seams."*
   3. *"This guide walks you through the fix: decide what your practice actually is, then say it in one sentence your whole team can repeat. Not a tactic, not a tool. The one thing that lets everything else line up behind it."*
   > **What V41 fixed, and why it must not come back.** The old text carried **two retired framings**: the departmental split and the accident framing. **Do not reintroduce either framing anywhere in site copy.**
-- **Footer** (borderTop hairline, paddingTop 24px, centered): **"$37"** (Playfair 700, 27.7px, blue, no "/ month") then a **ghost** "Buy the Guide" (`padding: '10px 20px', fontSize: '13px'`, `href="#"` placeholder).
+  >
+  > **What V57 changed, and why it must not be undone (`d89f4f0`).** Two words, to match the book's chapter 1: "the end of their **plan of** care" became "the end of their **care**", and "set out to **run** two businesses" became "set out to **build** two businesses". **The book was fine-tuned last and most carefully, so on a sentence a reader meets on more than one surface, the book's wording wins.** Issue 1 was changed to match it in the Calendar; the modal was the last surface on the old wording. **This superseded V41's locked text for paragraphs 1 and 2.** *(A side effect, noticed and parked: paragraph 2 now says "build… built… built" within about twenty words. The book wins; if it ever grates, fix it in the book first. See Open Items.)*
+- **Footer** (borderTop hairline, paddingTop 24px, centered): **"$37"** (Playfair 700, 27.7px, blue, no "/ month") then a **ghost** "Buy the Guide" (`padding: '10px 20px', fontSize: '13px'`, **`href="#"` placeholder until the Kit Commerce product exists**; then the live product URL with `target="_blank" rel="noopener noreferrer"`, styles unchanged).
 
 **GlowPT Modal:** Scroll-locked. Title "GlowPT" (marginTop 6px); the subline; the description; **eight** feature lines; price $350 / month; **then TWO CTAs (V49).**
 
@@ -897,7 +949,7 @@ Heading **"Let's Build"**. Copy: "Every project starts with a conversation. Tell
 
 ## Copy Rules
 
-**These bind anywhere a PT owner reads FranklinAI's words, glowpt.app included (V49). See Copy Rules Travel With the Voice.**
+**These bind anywhere a PT owner reads FranklinAI's words, glowpt.app and Kit included (V49, V57). See Copy Rules Travel With the Voice.**
 
 - No em dashes anywhere, ever
 - No "software" (use "web apps and tools" or "apps")
@@ -914,6 +966,7 @@ Heading **"Let's Build"**. Copy: "Every project starts with a conversation. Tell
 - **⚠️ NEVER END A CLAUSE ON A FLOATING "FOR FREE" OR "FREE" WHERE A PRICE IS NEARBY (V53).** A trailing "for free" attaches to whatever the reader last held in mind, which on a page carrying a price is usually the thing being sold. **Give it an explicit subject.** GlowPT feature bullet 3 shipped as "...covers the clinic and all its patients **for free**", which read for a beat as the *subscription* being free with `$350` a few lines below; **"...and the patients join for free"** fixes it by naming who is joining. The same trap applies to "included", "at no cost" and "on us".
 - **The newsletter description is duplicated on purpose (card + modal). Any edit changes BOTH.** `grep -c "For physical therapy practices\."` → **2**.
 - **The GlowPT pitch's second sentence and the eight feature bullets are duplicated ACROSS REPOS (V52). Any edit changes BOTH repos.** `grep -c "More completed plans of care and the clinic stays full"` → **2** here, **1** in `glowpt/src/lib/marketing.js`.
+- **The book wins on shared sentences (V57).** Where the `EbookModal` (or any other surface) repeats a sentence from *What Your Practice Actually Sells*, the book's wording is canonical and the surface follows it.
 - **Two retired framings are banned from all site copy.** Never write **"nobody decided"**; never **split the building into the front desk versus the therapists.**
 - **"cash practice" and "advanced care" are interchangeable and neither is retired.**
 - **No job title, employer, or present-tense employment fact anywhere in site copy (V42).**
@@ -983,9 +1036,11 @@ Set in `App.jsx`, overriding CSS class defaults. Do not change without explicit 
 | **`NewsletterModal` subline `<p>`** | Inter, '14px', 600, #8899b0, marginBottom '16px' |
 | **`NewsletterModal` description `<p>`** | `modal__text` — same text as the card; **the two move together** |
 | **`NewsletterModal` form divider `<div>`** | borderTop '1px solid rgba(96,165,250,0.12)', paddingTop '24px' |
-| **`NewsletterModal` form row `<div>`** | display 'flex', flexWrap 'wrap', gap '10px', justifyContent 'center', alignItems 'center' |
-| **`NewsletterModal` email `<input>`** | Inter, '16px', #f0e6d3, bg rgba(255,255,255,0.04), 1px border rgba(96,165,250,0.3), radius '8px', padding '10px 14px', height/minHeight '44px', boxSizing 'border-box', outline 'none', WebkitAppearance 'none', flex '1 1 220px', maxWidth '280px' |
-| **`NewsletterModal` Subscribe `<button>`** | `btn btn--ghost`, height/minHeight '44px', boxSizing 'border-box', inline-flex centered, **marginTop '0'** |
+| **`NewsletterModal` form row `<form>` (was a `<div>` until V57)** | onSubmit handleSubmit; display 'flex', flexWrap 'wrap', gap '10px', justifyContent 'center', alignItems 'center' |
+| **`NewsletterModal` email `<input>`** | **type email, name `email_address`, required, disabled while submitting**; Inter, '16px', #f0e6d3, bg rgba(255,255,255,0.04), 1px border rgba(96,165,250,0.3), radius '8px', padding '10px 14px', height/minHeight '44px', boxSizing 'border-box', outline 'none', WebkitAppearance 'none', flex '1 1 220px', maxWidth '280px' |
+| **`NewsletterModal` Subscribe `<button>`** | **type submit, disabled while submitting, label "Subscribing…" while submitting**; `btn btn--ghost`, height/minHeight '44px', boxSizing 'border-box', inline-flex centered, **marginTop '0'** |
+| **`NewsletterModal` success `<p>` (V57)** | role 'status'; Inter, '15px', #f0e6d3, lineHeight '1.5', minHeight '44px', display 'flex', alignItems/justifyContent 'center', margin '0'. Text **"Almost there. Check your email to confirm."** |
+| **`NewsletterModal` error `<p>` (V57)** | role 'alert'; Inter, '14px', #8899b0, lineHeight '1.5', textAlign 'center', marginTop '12px', marginBottom '0' |
 | Available heading `<h2>` | 'clamp(36px, 5.5vw, 58px)', marginBottom 'clamp(4px, 1.5vw, 10px)', lineHeight '1.2' |
 | **E-book product name `<h3>`** | Playfair 800, 'clamp(30px, 5vw, 35px)', #ffffff, lineHeight '1.2', **marginTop '12px'**, **marginBottom '10px'** |
 | **E-book teaser `<p>`** | **marginBottom '0'** |
@@ -995,10 +1050,10 @@ Set in `App.jsx`, overriding CSS class defaults. Do not change without explicit 
 | GlowPT "More Info" `<button>` | marginTop '16px' |
 | **E-book modal title `<h2>`** | marginTop '6px' |
 | **E-book modal subline `<p>`** | Inter, '14px', 600, #8899b0, marginBottom '16px' |
-| **E-book modal body `<p>` × 3** | `modal__text`, no inline overrides |
+| **E-book modal body `<p>` × 3** | `modal__text`, no inline overrides. **Paragraphs 1 and 2 as of V57.** |
 | **E-book modal footer `<div>`** | borderTop, paddingTop '24px', textAlign 'center' |
 | **E-book modal price `<p>`** | Playfair 700, '27.7px', #60a5fa, lineHeight '1.45', marginBottom '18px' |
-| **E-book "Buy the Guide" `<a>`** | href="#", `btn btn--ghost`, padding '10px 20px', fontSize '13px' |
+| **E-book "Buy the Guide" `<a>`** | `btn btn--ghost`, padding '10px 20px', fontSize '13px'. **href="#" at V57**; becomes the Kit Commerce product URL with target `_blank`, rel `noopener noreferrer`, **styles unchanged** |
 | GlowPT modal title `<h2>` | marginTop '6px' |
 | **GlowPT modal subline `<p>`** | Inter, '14px', 600, #8899b0, marginBottom '16px'. **Text (V49): "Sign up online, or book a call first."** |
 | **GlowPT modal description `<p>`** | `modal__text`, no inline overrides. **Text as of V52.** |
@@ -1053,9 +1108,9 @@ Set in `App.jsx`, overriding CSS class defaults. Do not change without explicit 
 
 **Nav:** `global.css` classes for layout plus inline overrides. The nav kite no longer uses `.site-nav__logo`. **`.site-nav__wordmark` is `display: flex; flex-direction: column; align-items: flex-start`** — worth knowing, because it means the subline can never widen the lockup.
 
-**Newsletter card (`NewsletterStrip`):** `.section` / `.container` / `.site-card` / `.card-heading` plus inline styles. The card's **only action** is a `.btn`/`.btn--ghost` button opening `NewsletterModal`. **The input and the form's Subscribe button live in the modal.** The input is fully inline-styled. The modal's Subscribe button needs its inline overrides — `marginTop: '0'` and `height`/`minHeight: '44px'` with `boxSizing: 'border-box'` — or it falls out of alignment. **Placeholder styling would require a `global.css` `::placeholder` rule** and is deliberately not added.
+**Newsletter card (`NewsletterStrip`):** `.section` / `.container` / `.site-card` / `.card-heading` plus inline styles. The card's **only action** is a `.btn`/`.btn--ghost` button opening `NewsletterModal`. **The input and the form's Subscribe button live in the modal, inside a `<form>` whose submit is handled in JS (V57).** The input is fully inline-styled. The modal's Subscribe button needs its inline overrides — `marginTop: '0'` and `height`/`minHeight: '44px'` with `boxSizing: 'border-box'` — or it falls out of alignment. **The success and error lines are fully inline-styled (V57).** **Placeholder styling would require a `global.css` `::placeholder` rule** and is deliberately not added.
 
-**Available card (`AvailableForPractice`):** two products, `.card-heading` / `.card-text` / `.btn` plus inline overrides. Both modals use the modal classes with sublines, bodies, price blocks, and dividers fully inline. `EbookModal`'s Buy button is `btn btn--ghost` with `href="#"`. **`GlowPTModal`'s footer carries TWO anchors (V49): a `btn btn--ghost` to `glowpt.app/onboard` first, then a `btn btn--primary` to cal.com inside a `marginTop: '12px'` wrapper.**
+**Available card (`AvailableForPractice`):** two products, `.card-heading` / `.card-text` / `.btn` plus inline overrides. Both modals use the modal classes with sublines, bodies, price blocks, and dividers fully inline. `EbookModal`'s Buy button is `btn btn--ghost` with `href="#"` until the Kit Commerce URL arrives. **`GlowPTModal`'s footer carries TWO anchors (V49): a `btn btn--ghost` to `glowpt.app/onboard` first, then a `btn btn--primary` to cal.com inside a `marginTop: '12px'` wrapper.**
 
 **Custom Work card:** `.card-title` / `.card-text` / `.btn`; `CaseStudyModal` adds `.modal__features` / `.modal__feature` / `.modal__stack`.
 
@@ -1077,20 +1132,22 @@ Edit the repo in place. **Read this file first.** (The GlowPT repo is separate f
 >
 > **Why it changed:** GlowPT's `CLAUDE.md` already said to push directly while this file said the opposite. Same person, same machine, opposite instructions, so every FranklinAI change stopped one step short and waited on a paste. He asked for the two repos to match.
 >
+> **The one exception (V57): a permission only David can grant.** Claude Code refuses to let Claude write its own permission rules ("Self-Modification"), even with David's go-ahead. When a guard can only be cleared by David, give him **one** Run-able block and say plainly what it does. That happened once, for the Route 53 permission file.
+>
 > ⚠️ **This governs CODE, not this DOCUMENT.** The V48 rule still stands: **`CLAUDE.md` is not regenerated until David confirms the change actually works on the live site.**
 
 **Code maintains this document (V45).** The sequence is fixed:
 
 1. **Read this document and the real files.** Do not touch `CLAUDE.md` yet.
-2. **Make the code change** and verify by string checks — old strings at zero, new strings present, no em dashes, no forbidden words. A predicted line count is not a verification (V43). For a **visual** change, measure the rendered result in the browser — **and measure against the reference the eye actually uses**, not a convenient neighbour (V48).
+2. **Make the code change** and verify by string checks — old strings at zero, new strings present, no em dashes, no forbidden words. A predicted line count is not a verification (V43). For a **visual** change, measure the rendered result in the browser — **and measure against the reference the eye actually uses**, not a convenient neighbour (V48). **For wiring, prove the failure path locally and let David prove the success path on the live site** (V57: a deliberately invalid `a@b` proved the site reaches Kit without creating a subscriber).
 3. **Push the code** (V49: directly, no command handed over). **As of V56 the push deploys through Amplify.**
 4. **Wait for David to confirm the change actually works.** (V48)
 5. **Then regenerate `CLAUDE.md` whole**, as a separate step, and push it. Bump the version, rewrite the header summary, fold the prior version into "everything else remains in force," add a Change History entry.
-6. **Tell David the new version number** and that it needs pasting into the claude.ai project instructions.
+6. **Tell David the new version number, and print the whole document in the chat inside one fenced block** (four backticks, since the document contains triple-backtick blocks) so he can copy it into the claude.ai project instructions. **No clipboard, no file card.**
 
 > ⚠️ **V52 and V53 were both cut on David's direct instruction, in the same session as their code, WITHOUT step 4.** He asked for the regenerations explicitly and both were copy strings rather than geometry, which is the low-risk case. **This is an exception, not a new rule.** Step 4 exists because V46 and V47 were both written against unverified visual fixes and both had to be superseded within hours. **Keep waiting on anything visual.**
 >
-> ✅ **V54 and V56 followed the full sequence, step 4 included.** V54 touched the lockups; V56 moved the whole site and David's mail DNS, and was cut only after David confirmed his test emails both ways. **That is the intended shape.**
+> ✅ **V54, V56 and V57 followed the full sequence, step 4 included.** V54 touched the lockups; V56 moved the whole site and David's mail DNS; **V57 was cut only after David had seen the new modal copy live, completed four real signups (Mac and iPhone), watched Kit validate the domain, and sent mail both ways.** That is the intended shape. **What was not built (the checkout) is recorded as not built.**
 
 **Rules on the regeneration:**
 
@@ -1099,20 +1156,29 @@ Edit the repo in place. **Read this file first.** (The GlowPT repo is separate f
 - **When a rule is REVERSED, say so loudly and delete the old instruction.** V52 reversed the "do not reconcile the bullet counts" rule, which four earlier versions had reaffirmed. **Leaving a retired rule in place next to its replacement is worse than either one alone** — the next session cannot tell which is live.
 - **A version bump for one string is legitimate.** V43 and V44 were documentation-only; V53 changed a single bullet; **V54 deleted two characters.** **The cost of a stale document is higher than the cost of a small version**, and a file that quotes a string the code no longer contains is exactly the rot the whole-regeneration rule exists to prevent.
 - **Never write the doc before the push.** V46 and V47 were both cut against unverified fixes and both had to be superseded within hours.
+- **Record what lives outside git (V56, V57).** Amplify settings, Route 53 records and Kit settings do not show up in any diff. If a session changes them, this document is the only record.
 
 **Two rules David set explicitly on 2026-08-23:**
 
 1. **READ `CLAUDE.md` BEFORE MAKING ANY CHANGE.** Not the section you assume is relevant — the document.
-2. **DO NOT UPDATE THIS DOCUMENT UNTIL DAVID CONFIRMS THE FIX WORKS.** Verification by measurement is not confirmation. His eyes on the live site are. *(He waived this for V52 and V53; V54 and V56 observed it.)*
+2. **DO NOT UPDATE THIS DOCUMENT UNTIL DAVID CONFIRMS THE FIX WORKS.** Verification by measurement is not confirmation. His eyes on the live site are. *(He waived this for V52 and V53; V54, V56 and V57 observed it.)*
 
-### Working across the two repos (V49, extended V52, corrected V54, extended V55)
+### Working across the two repos (V49, extended V52, corrected V54, extended V55, narrowed V57)
 
 It is legitimate for a session in this repo to edit the GlowPT repo, and vice versa. It happened on 2026-08-27 for the copy pass, on 2026-08-30 from the GlowPT side, and on 2026-09-01 from the GlowPT side for the V54 comma. **The conditions:**
 
 - **David asks for it explicitly.** Do not reach across on your own initiative.
 - **Read the other repo's `CLAUDE.md` first.** GlowPT has its own house copy rule (statements get sentence case and a period; labels get Title Case and none; no all-caps; AP preposition conventions) and its own push preference.
 - **Say plainly which repo each change landed in**, with commit hashes. Bouncing between projects is confusing from the outside, and the confusion is a real cost even when the change is safe.
-- **The session's ROOT sets its powers (V55): AWS-, database-, deploy-, or legal-touching work must run from a session STARTED in the GlowPT project.** That repo carries the AWS permission allowlist, the per-project memory, and its auto-loaded `CLAUDE.md`; this one carries none of them. Copy and layout work may run from either root. A session that finds itself rooted here while the task turns toward AWS should say so and stop rather than improvise around missing permissions.
+- **The session's ROOT sets its powers (V55): AWS-, database-, deploy-, or legal-touching work runs from a session STARTED in the GlowPT project.** That repo carries the AWS permission allowlist, the per-project memory, and its auto-loaded `CLAUDE.md`. Copy and layout work may run from either root. A session that finds itself rooted here while the task turns toward AWS should say so and stop rather than improvise around missing permissions.
+- **V57 narrows that rule for ONE job: Route 53 record work for franklinaisolutions.com now runs from this root.** On 2026-09-25 the rule was followed exactly: a record write went through, the read-back was blocked, and the session stopped and offered the GlowPT-rooted route. **David declined it ("it would only confuse things to be bouncing projects") and chose to allow the work here.** He ran one Terminal block that created **`.claude/settings.local.json`** in this repo (gitignored, `fb01e32`) with exactly these allow rules:
+  - `Bash(aws route53 change-resource-record-sets --hosted-zone-id Z0616895187ZTAR49DY5P *)`
+  - `Bash(aws route53 list-resource-record-sets --hosted-zone-id Z0616895187ZTAR49DY5P *)`
+  - `Bash(aws route53 get-change *)`
+  - `Bash(aws route53 wait resource-record-sets-changed *)`
+  - `Bash(dig *)`
+
+  **Everything else AWS (Amplify settings, Organizations, Identity Center, other accounts, `glowpt-prod`) still belongs in a GlowPT-rooted session.** To use the rules, keep each command a single command that starts with the allowed prefix (put `--hosted-zone-id` first), not a `&&` chain. **Claude cannot create or widen this file itself** (V57 tried and was refused); widening it is David's decision and David's keystrokes.
 - **Prefer the GlowPT session for anything touching GlowPT's behavior.** Copy is the safe case because it is self-contained and reversible.
 
 > **⚠️ V52 said a GlowPT session "cannot preview this site." That is TOO STRONG, and V54 previewed it from over there.** The real constraint: **`preview_start` resolves `.claude/launch.json` from the session's own project folder**, so asking for `franklinai-dev` from a GlowPT session silently starts the GlowPT server instead. **The workaround is to add a temporary configuration to the session folder's own `launch.json`** pointing at the other app (`runtimeArgs: ["--prefix", "/Users/mac/Downloads/franklinai-v2", "run", "dev"]`), start it, verify, then **restore the file with `git checkout` and confirm that repo is clean again.** Port 5173 is shared, so stop the other server first.
@@ -1127,33 +1193,35 @@ It is legitimate for a session in this repo to edit the GlowPT repo, and vice ve
 
 **Amplify auto-deploys on push to `main`, in both repos (V56; this repo left Netlify on 2026-09-25, GlowPT on 2026-09-13).** Hard refresh with Cmd+Shift+R. Favicon changes require closing and reopening the tab. **HTML is served `no-cache`, so a new deploy shows on the next load once the build finishes** (about a minute and a half).
 
-> **Working with David in the AWS console and other web consoles (V56).** David uses **Safari**, not Chrome. The Claude app's built-in browser pane is a separate browser that is not logged in to his accounts and is probably not visible on his screen, so **do not tell him to look at it**; give him Safari links instead. For console steps, **one step per message, say before each step whether it is invisible or visible, and ask for a screenshot before any Save or Create button** that changes something. When his AWS login has expired, run `aws sso login --profile <profile>` in the background so Safari opens and he approves with Touch ID.
+> **Working with David in the AWS console, Kit and other web consoles (V56, V57).** David uses **Safari**, not Chrome. The Claude app's built-in browser pane is a separate browser that is not logged in to his accounts and is probably not visible on his screen, so **do not tell him to look at it**; give him Safari links instead. For console steps, **one step per message, say before each step whether it is invisible or visible, and ask for a screenshot before any Save or Create button** that changes something. When his AWS login has expired, run `aws sso login --profile <profile>` in the background so Safari opens and he approves with Touch ID.
+>
+> **What V57 learned about pacing (from the Kit setup).** Several steps at once confused David ("you got me confused with all of this"); one decision per message worked. **Walk him around upsells explicitly:** Kit's onboarding pushed a card-required Creator trial with the annual plan pre-selected, and a "where do you sell today" screen offering to connect Stripe or Gumroad; both were sidestepped. **Never enter or ask him to type card, bank or password details on Claude's behalf**; he types those himself. **He reads his work email on his phone and is wary of Outlook on the web**; a confirmation link can simply be opened on the phone. **When a theory is wrong, say so and stop guessing** (the "Gmail bundled the emails" theory for the mystery third signup was offered with too much confidence and David disproved it; the per-subscriber timeline in Kit settled what could be settled).
 
 ### Handoff notes into Code
 
 A good one **names the repo in its first line**, states the scope and what not to touch, gives exact find/replace strings, says plainly when it supersedes a locked string here, ends with a verification table, and **tells Code to regenerate `CLAUDE.md` after the push** and names the sections that change.
 
-**The note must carry the editorial reasoning, not just the strings (V45).** Code can read the code; it cannot reconstruct why a decision was made, what was rejected, or what must not be reintroduced.
+**The note must carry the editorial reasoning, not just the strings (V45).** Code can read the code; it cannot reconstruct why a decision was made, what was rejected, or what must not be reintroduced. *(The 2026-09-25 Kit handoff is a good model: it carried the book-first reasoning, the merchant-of-record decision, the fallback rule, and the session-root warning.)*
 
 **A predicted line count is an estimate, not a verification, and never a fact for this file (V43).** String checks are the proof. **Any line count here must be measured on the pushed file.**
 
 ### Both
 
-**Strategic discussion before code.** David thinks decisions through conversationally first. **Flag conflicts with established decisions proactively rather than executing silently**, then hold the position if the reasoning is sound — **and if David reaffirms, it is his call: execute it in full and record the argument here so it is not re-run.** *(V49's button order is the standing example. V52's bullet-count reversal is the newer one: the doc said "do not reconcile", David said reconcile, and he was right.)*
+**Strategic discussion before code.** David thinks decisions through conversationally first. **Flag conflicts with established decisions proactively rather than executing silently**, then hold the position if the reasoning is sound — **and if David reaffirms, it is his call: execute it in full and record the argument here so it is not re-run.** *(V49's button order is the standing example. V52's bullet-count reversal is the newer one: the doc said "do not reconcile", David said reconcile, and he was right. V57's DMARC record is a third: the doc said "never as a side effect", the session asked, David said yes, and it went in as its own deliberate change.)*
 
 > **A flagged-and-declined concern is not closed, it is parked (V53).** Bullet 3's "for free" ambiguity was raised when V52 shipped; David kept his wording, and came back to the same objection himself minutes later. **Record such concerns in Open Items rather than dropping them**, so that when the author circles back there is a written account of what the problem was and what the fix would be. That is what made V53 a one-line change instead of a re-derivation.
 
 **When David says a thing is settled, it is closed.** The footer lockup is the standing example (see Footer). A closed item is not reopened by a clever measurement.
 
-> **But "settled" belongs to David, not to this document.** V52 overturned a rule this file had reaffirmed four times. **A rule recorded here is a record of a decision, not a veto over the person who made it.** When David asks for something this file forbids, say what the file says and why, then do what he asks.
+> **But "settled" belongs to David, not to this document.** V52 overturned a rule this file had reaffirmed four times. **A rule recorded here is a record of a decision, not a veto over the person who made it.** When David asks for something this file forbids, say what the file says and why, then do what he asks. *(V57's waiver of the session-root rule for DNS is the latest example.)*
 >
 > **A closed section can still take a copy change (V54).** The footer lockup is closed, and its legal-name line was still edited — because "closed" governs the *geometry*, not every character inside it. **The test is whether the change moves anything.** Prove it does not before you touch a closed area, and say how you proved it.
 
 **Document versioning.** Complete drop-in replacement, never a patch, with full change history. Read live code as the source of truth when producing a new version, to catch drift.
 
-**No phantom sources.** Two documents exist in this project: this one and the Content Calendar. The GlowPT/AWS architecture and the legal/entity work are **not** documents here. *(The GlowPT repo's `docs/commercial-handoff.md` is a real file in a real repo, and it is the source for the GlowPT section above. `AWS-MIGRATION-HANDOFF.md` at this repo's root is a temporary working note from the V56 move, uncommitted, and is deleted once Netlify is retired; everything in it that matters is recorded in **Hosting and DNS (AWS)**.)*
+**No phantom sources.** Two documents exist in this project: this one and the Content Calendar. The GlowPT/AWS architecture and the legal/entity work are **not** documents here. *(The GlowPT repo's `docs/commercial-handoff.md` is a real file in a real repo, and it is the source for the GlowPT section above. `AWS-MIGRATION-HANDOFF.md` at this repo's root is a temporary working note from the V56 move, uncommitted, and is deleted once Netlify is retired; everything in it that matters is recorded in **Hosting and DNS (AWS)**. The claude.ai handoff notes David drops in `~/Downloads/` are session inputs, not sources; what matters in them is recorded here.)*
 
-**Dates live in the Content Calendar, not here.** This file has been wrong about Issue 1's ship date twice. **Check the calendar.**
+**Dates live in the Content Calendar, not here.** This file has been wrong about Issue 1's ship date three times. **Check the calendar.**
 
 **Secrets.** When giving David a command that could return a secret, redact it in the command itself so it never renders on screen.
 
@@ -1163,18 +1231,26 @@ A good one **names the repo in its first line**, states the scope and what not t
 
 | Item | Status |
 |---|---|
-| **🆕 Retire Netlify for this site** | **After a few quiet days from 2026-09-25**, David deletes the **franklinai site** and the **franklinaisolutions.com DNS zone** in Netlify. **Leave McKenzie alone.** Then delete `AWS-MIGRATION-HANDOFF.md` from the repo root. Until then Netlify is a harmless standby that still builds on every push. |
-| **Newsletter form wiring** | Blocked on the **Kit form ID** and the **double opt-in setting**. Everything else specced. **Kit's sender-authentication DNS records go in Route 53** (V56), one change at a time, followed by a mail test. The Issue 1 date (Sept 1, 2026) has passed with the form still unwired; the Calendar owns the schedule. |
-| **The e-book itself** | **Unwritten.** Card and modal are live. Rule: write it complete then list it, or take the card down. |
-| **E-book checkout provider** | Kit Commerce vs Gumroad. **Decide the merchant-of-record tradeoff, do not default into it.** Any domain-verification record it needs goes in **Route 53**. |
+| **🆕 E-book checkout on Kit Commerce — NEXT SESSION** | **Decided, not built.** Steps: (1) David opens **Kit → Settings → Revenue** and connects payouts (Stripe inside Kit; he enters bank and tax details himself; the business is **FranklinAI Solutions LLC**, no comma). (2) David creates the product: *What Your Practice Actually Sells*, **$37**, the final file uploaded, a product-page description that may name physical therapy and obeys the copy rules. (3) Code sets "Buy the Guide" to the live product URL with `target="_blank" rel="noopener noreferrer"`, styles unchanged, and pushes. (4) David buys it or runs Kit's test purchase, and checks the buyer lands on the list. **Verification:** `grep -c 'href="#"' src/App.jsx` → **0**; "$37" matches in both `EbookModal` spots and the Kit product; the `$350` decoy untouched; no em dashes in any new string. **Fallback:** if it is not live by Issue 1, **ask David before touching the card**; no coming-soon strip, no pre-sell. Any domain-verification record Kit Commerce asks for goes in **Route 53**, by the DNS rule. |
+| **🆕 The mystery third signup — WATCH** | On 2026-09-25 David's third test signup (from an iPhone) reached Kit and the confirmation email arrived, but **his tap on Confirm never reached Kit**: the subscriber's timeline shows **Delivered 4:23 PM, Opened 4:23 PM, Clicked 6:21 PM** (the 6:21 click was David clicking later on the Mac, which confirmed it). He saw a "Subscription confirmed!" page on the phone at the time; **Kit shows that page for any confirm link, including an already-used one**, so the phone tap most likely opened a different confirm link, **but which one could not be established**, and the "Gmail bundled the three emails" theory was disproved by David. A clean fourth test, entirely on the iPhone, worked end to end. **Verdict: no fault found in the site or in Kit.** **What to watch after launch:** real readers accumulating as **Unconfirmed** in Kit's Subscribers list (filter by status). If that happens, look at a few of their per-subscriber timelines first; Kit can re-send the confirmation email. |
+| **🆕 Kit mailing address → a real one** | Kit's Seattle stand-in is in use (allowed for Kit emails only, no mail forwarded). **Get a USPS PO box** (or confirm the LLC's registered agent permits business mail and forwards it), then enter it in Kit **Settings → Email → Mailing address** as `FranklinAI Solutions LLC, <address>`. One field; applies to every later email. |
+| **🆕 Kit confirmation email wording** | Still Kit's default ("Important: confirm your subscription" / "Click the link below…" above a button / "It's good to have you!"). A draft in David's voice was offered and **parked**: subject *Confirm your subscription to The Operator*; top line *Thanks for signing up for The Operator. Tap the button below to confirm, and the next issue will come straight to your inbox.*; button *Confirm Your Subscription*; closing *Glad you're here.* / *David*. A copy decision for claude.ai; edited in Kit (form Settings → Confirmation email → Edit Email Contents). |
+| **🆕 Test subscribers** | Four `besoulful+kit-…@gmail.com` addresses, all Confirmed. **Before Issue 1: keep one, delete three** in Kit's Subscribers list. |
+| **🆕 Kit trial lapse (~2026-10-09)** | The Creator-feature trial ends and the account drops to the free plan. **Nothing built so far depends on a paid feature.** Once, open **Settings → Account & Billing** and confirm no card is on file (the profile read "Creator Monthly", which is expected to be the trial's label). |
+| **🆕 `EbookModal` paragraph 2: "build… built… built"** | V57's book-matching change left three forms of "build" within about twenty words. **Parked, book-first:** if it ever grates, change the book, then this modal and any other surface together. |
+| **Retire Netlify for this site** | **After a few quiet days from 2026-09-25**, David deletes the **franklinai site** and the **franklinaisolutions.com DNS zone** in Netlify. **Leave McKenzie alone.** Then delete `AWS-MIGRATION-HANDOFF.md` from the repo root. Until then Netlify is a harmless standby that still builds on every push. |
 | **GlowPT clinic BAA text** | With the attorney. **Demo data only until it clears.** |
 | **GlowPT billing** | No Stripe anywhere. Collection manual. Backlog, unstarted, and it belongs in the GlowPT repo. |
 | **GlowPT auto-renewal statutes** | Open with counsel. **No renewal or cancellation claims on either site until answered.** |
 | **Click-through vs signature** on the clinic BAA | Undecided. If signature wins, self-serve onboarding gains a manual step and the copy here must reflect it. |
-| **Fictitious-name registration** | **Raised 2026-09-01, not acted on.** Both public sites lead with the brand name "FranklinAI" while the registered entity is FranklinAI Solutions LLC, and PA generally requires a fictitious-name registration to trade publicly under a name that is not the registered one. **Nobody involved is a lawyer and nothing was changed on this basis.** It is a cheap question to add to the attorney engagement that is already open. |
-| **🆕 Mail authentication (DMARC, Microsoft 365 DKIM)** | **Noticed during the V56 move, deliberately not touched.** The domain has SPF but no DMARC and no DKIM. Mail works today. Adding them is a real deliverability improvement, done later as its own change in Route 53, with a mail test both ways. |
+| **Fictitious-name registration** | **Raised 2026-09-01, not acted on.** Both public sites lead with the brand name "FranklinAI" while the registered entity is FranklinAI Solutions LLC, and PA generally requires a fictitious-name registration to trade publicly under a name that is not the registered one. **Nobody involved is a lawyer and nothing was changed on this basis.** It is a cheap question to add to the attorney engagement that is already open. *(When a real mailing address goes into Kit with the LLC name in front, every email will carry brand and entity together.)* |
+| **Mail authentication, the remainder** | **V57 added DMARC `p=none` and Kit's DKIM.** Still absent: **Microsoft 365 DKIM** for David's own Outlook mail. Adding it, and later tightening DMARC past `p=none`, are real deliverability steps, each done as its own change in Route 53 with a mail test both ways. |
+| **Newsletter error strings use a curly apostrophe** | Cosmetic nit (see **Newsletter Card**). Make them straight next time `NewsletterModal` is touched. |
 | **Modal accessibility** | The four modals lock scroll but have **no Escape key and no focus trap**. glowpt.app solved this with a shared `useModal` hook on 2026-08-31. **Port it if a fifth modal arrives, or sooner.** |
-| **The GlowPT modal's V52/V53 renders have still not been seen by eye** | **Narrowed at V54.** The **Available card teaser** was rendered and seen on 2026-09-01, so that string is confirmed live. **The modal itself was never opened**, so bullets 3 and 5 and the description paragraph remain build-and-string-verified only. **Open the modal next time anyone is in this repo — it is one click.** *(V56 proved the whole deployed page byte-identical to the pre-move build, which says the strings shipped, not that anyone has looked at them.)* |
+| **The GlowPT modal's V52/V53 renders have still not been seen by eye** | **Narrowed at V54.** The **Available card teaser** was rendered and seen on 2026-09-01, so that string is confirmed live. **The modal itself was never opened**, so bullets 3 and 5 and the description paragraph remain build-and-string-verified only. **Open the modal next time anyone is in this repo — it is one click.** |
+| ~~Newsletter form wiring~~ | **✅ CLOSED in V57.** Wired to Kit form `9962049`; confirmed end to end by David on Mac and iPhone. |
+| ~~The e-book itself~~ | **✅ CLOSED in V57.** Written (about 6,300 words, eleven chapters); the Calendar records it as the source. |
+| ~~E-book checkout provider~~ | **✅ DECIDED in V57: Kit Commerce**, merchant-of-record tradeoff weighed and accepted. Building it is the open item at the top. |
 | ~~Bullet 3's "for free" reading~~ | **✅ CLOSED in V53** by naming the subject: "the patients join for free". |
 | ~~The two sites spell the legal entity differently~~ | **✅ CLOSED in V54.** Both now read **FranklinAI Solutions LLC**, no comma. |
 | ~~Move the site off Netlify~~ | **✅ CLOSED in V56.** Live on Amplify since 2026-09-25; only the Netlify clean-up above remains. |
@@ -1183,9 +1259,10 @@ A good one **names the repo in its first line**, states the scope and what not t
 
 ## Change History
 
-- **V56** — **franklinaisolutions.com moved from Netlify to AWS Amplify Hosting on 2026-09-25, with no downtime and no lost mail.** New account **`franklinai-web` (359813812260)** in the `Workloads` OU, `us-east-1`; Amplify app `dtrvxjb8lde3p` on `main`; Route 53 zone `Z0616895187ZTAR49DY5P`; GoDaddy stays registrar only. **The site's code did not change.** The repo gained `amplify.yml`, `.nvmrc` (24) and `customHttp.yml` (commit `0279ffe`); a clean Node 24 build was proven byte-identical to the live Netlify build before pushing, which mattered because **Netlify reads `.nvmrc` too**. **The one real risk was David's work email**, whose MX, TXT and autodiscover records live in this zone: the zone was inventoried from Netlify's panel (finding an `email` CNAME the pre-move note had missed), copied exactly, checked record by record on both providers' nameservers, the certificate was issued before the switch by adding its validation CNAME in Netlify, the switch was rehearsed with `curl --resolve`, and the registry was checked for a DNSSEC DS record (none). David then swapped the nameservers at GoDaddy (~07:28), and **confirmed mail both ways**. A `www` → apex 301 was added as an Amplify app setting so `www` behaves as it did on Netlify. The SPF record that names GoDaddy was found to be **correct** (GoDaddy's chain includes Microsoft's). **Organizations and Identity Center writes were done by David in the console** (the Claude Code safety system blocks them); everything inside the new account ran from the CLI. New section **Hosting and DNS (AWS)**; Tech Stack loses the Supabase phrase, which described McKenzie, not this site; new Open Items for Netlify retirement and for DMARC/DKIM. `App.jsx` still measures **674 lines**; the `$350` decoy is unmoved at **99 and 449**. *(This repo: `0279ffe`, plus this document.)*
-- **V55** — **Process only; zero code diff.** The session-rooting rule added to *Working across the two repos*: AWS-, DB-, deploy-, or legal-touching work runs from a session **rooted in the GlowPT project**, where the permission allowlist, per-project memory, and auto-loaded doc live; copy and layout work runs from either root. Recorded after the V54 session — rooted here, legitimately doing GlowPT layout work — read from the outside as a stray thread and cost a 2026-09-01 GlowPT session to untangle. Companion rule in the GlowPT repo's `CLAUDE.md` the same day. *(Doc-only; no site change to verify.)*
-- **V54** — **Two characters deleted from the two most protected elements on the page, and nothing moved.** The nav and footer lockups now read **"Solutions LLC"** instead of "Solutions, LLC". **The no-comma form won because it is the one used everywhere the entity is legally named:** both attorney-review contract drafts, glowpt.app's `src/lib/legal.js`, and the **AWS Company-name field the org BAA binds to.** The comma was display-only. **David's call, made while adding `© {year} FranklinAI Solutions LLC` to glowpt.app's own footer** and finding the two sites disagreed; he chose to change this site, which is right, because the contracts have no comma. **The diff was two text nodes**: no style, no structure, and the `-26px`, `-14px` and `-3px` dials all verified untouched. **Neither lockup moves, and it was measured before it shipped:** "FranklinAI" is the widest line in both (nav 252.8 vs 222.6, footer 160.5 vs 146.9) and sets the column width, and toggling the comma in the live DOM left the nav brand box and the footer text column byte-identical. **David confirmed across browsers before this document was cut — the full six-step process including step 4, unlike V52 and V53.** New rules recorded: **the entity is written with no comma anywhere, on either site**; **a two-sentence line that must break identically everywhere should be two elements, not one string**; **"closed" governs geometry, not every character** — a closed section can take a copy change if you prove it moves nothing. Also corrected: **V52's claim that a GlowPT session cannot preview this site is too strong** — the workaround, and two dead ends, are recorded under *Working across the two repos*. `App.jsx` still measures **674 lines**; the `$350` decoy is unmoved at **99 and 449**. *(This repo: `84f74c9`. Companion GlowPT-repo commits: `b44e8f6`, `ed5c8b7`, `74356c1`.)*
+- **V57** — **The Operator's signup went live on Kit, and Kit now sends as the domain.** All on 2026-09-25, from a claude.ai handoff note, each piece confirmed by David before this version was cut. **Code (three pushes):** `d89f4f0` brought the `EbookModal`'s first two paragraphs into line with the finished book ("the end of their care", "set out to build two businesses"), **superseding V41's locked text** under the new rule that **the book wins on shared sentences**; `8024666` wired `NewsletterModal` to **Kit form `9962049`** exactly per the V40 plan (a `fetch` with `email_address`, **"Almost there. Check your email to confirm."** because double opt-in is ON, auto-close after 2.5s, a gentle error that keeps the modal open, a "Subscribing…" state; the failure path was proved locally with `a@b`, the success path by David with four real signups on the Mac and an iPhone); `fb01e32` gitignored `.claude/settings.local.json`. **Outside git:** a **Kit account** was created and configured (sender David Peterson, double opt-in on, Kit's stand-in mailing address pending a PO box, card-free trial sidestepping the paid plan), recorded in the new **Kit (newsletter platform)** section; and **four Route 53 records** went in one at a time, each read back from `ns-561` with the mail records re-read: `ckespa`, `cka._domainkey`, `cka2._domainkey`, and **DMARC `p=none`, added only after David's explicit yes** because this file had said never as a side effect. Kit's first Validate failed on a cached "not found", passed 15 minutes later; Gmail's "via n.convertkit.com" label disappeared; **David's work email tested both ways.** **Process:** the V55 root rule was followed (the session stopped when blocked) and then **waived by David for this domain's DNS**; **Claude could not write its own permission file** ("Self-Modification"), so David created it from one Terminal block, the single recorded exception to "never hand him a command". **Decided but not built:** the e-book checkout on **Kit Commerce** (merchant-of-record tradeoff accepted for list growth); it is the next session. **New watch item:** the mystery third signup, whose iPhone confirm tap never reached Kit, with a clean fourth iPhone test proving the path. Also corrected: Issue 1's date now points at the Calendar (September 29, 2026 as of its September 25 pass); the Tech Stack note that "Kit wiring needs no backend" is now proved rather than predicted. `App.jsx` measures **735 lines**; the `$350` decoy sits at **99 and 510**. *(This repo: `d89f4f0`, `8024666`, `fb01e32`, plus this document.)*
+- **V56** — **franklinaisolutions.com moved from Netlify to AWS Amplify Hosting on 2026-09-25, with no downtime and no lost mail.** New account **`franklinai-web` (359813812260)** in the `Workloads` OU, `us-east-1`; Amplify app `dtrvxjb8lde3p` on `main`; Route 53 zone `Z0616895187ZTAR49DY5P`; GoDaddy stays registrar only. **The site's code did not change.** The repo gained `amplify.yml`, `.nvmrc` (24) and `customHttp.yml` (commit `0279ffe`); a clean Node 24 build was proven byte-identical to the live Netlify build before pushing, which mattered because **Netlify reads `.nvmrc` too**. **The one real risk was David's work email**, whose MX, TXT and autodiscover records live in this zone: the zone was inventoried from Netlify's panel (finding an `email` CNAME the pre-move note had missed), copied exactly, checked record by record on both providers' nameservers, the certificate was issued before the switch by adding its validation CNAME in Netlify, the switch was rehearsed with `curl --resolve`, and the registry was checked for a DNSSEC DS record (none). David then swapped the nameservers at GoDaddy (~07:28), and **confirmed mail both ways**. A `www` → apex 301 was added as an Amplify app setting so `www` behaves as it did on Netlify. The SPF record that names GoDaddy was found to be **correct** (GoDaddy's chain includes Microsoft's). **Organizations and Identity Center writes were done by David in the console** (the Claude Code safety system blocks them); everything inside the new account ran from the CLI. New section **Hosting and DNS (AWS)**; Tech Stack loses the Supabase phrase, which described McKenzie, not this site; new Open Items for Netlify retirement and for DMARC/DKIM. `App.jsx` measured **674 lines**; the `$350` decoy sat at **99 and 449**. *(This repo: `0279ffe`, plus this document.)*
+- **V55** — **Process only; zero code diff.** The session-rooting rule added to *Working across the two repos*: AWS-, DB-, deploy-, or legal-touching work runs from a session **rooted in the GlowPT project**, where the permission allowlist, per-project memory, and auto-loaded doc live; copy and layout work runs from either root. Recorded after the V54 session — rooted here, legitimately doing GlowPT layout work — read from the outside as a stray thread and cost a 2026-09-01 GlowPT session to untangle. Companion rule in the GlowPT repo's `CLAUDE.md` the same day. *(Doc-only; no site change to verify. **Narrowed in V57** for Route 53 record work on this domain.)*
+- **V54** — **Two characters deleted from the two most protected elements on the page, and nothing moved.** The nav and footer lockups now read **"Solutions LLC"** instead of "Solutions, LLC". **The no-comma form won because it is the one used everywhere the entity is legally named:** both attorney-review contract drafts, glowpt.app's `src/lib/legal.js`, and the **AWS Company-name field the org BAA binds to.** The comma was display-only. **David's call, made while adding `© {year} FranklinAI Solutions LLC` to glowpt.app's own footer** and finding the two sites disagreed; he chose to change this site, which is right, because the contracts have no comma. **The diff was two text nodes**: no style, no structure, and the `-26px`, `-14px` and `-3px` dials all verified untouched. **Neither lockup moves, and it was measured before it shipped:** "FranklinAI" is the widest line in both (nav 252.8 vs 222.6, footer 160.5 vs 146.9) and sets the column width, and toggling the comma in the live DOM left the nav brand box and the footer text column byte-identical. **David confirmed across browsers before this document was cut — the full six-step process including step 4, unlike V52 and V53.** New rules recorded: **the entity is written with no comma anywhere, on either site**; **a two-sentence line that must break identically everywhere should be two elements, not one string**; **"closed" governs geometry, not every character** — a closed section can take a copy change if you prove it moves nothing. Also corrected: **V52's claim that a GlowPT session cannot preview this site is too strong** — the workaround, and two dead ends, are recorded under *Working across the two repos*. `App.jsx` still measured **674 lines**; the `$350` decoy was unmoved at **99 and 449**. *(This repo: `84f74c9`. Companion GlowPT-repo commits: `b44e8f6`, `ed5c8b7`, `74356c1`.)*
 - **V53** — **One string, and a rule worth more than the string.** Feature bullet 3 became **"One subscription covers the clinic and the patients join for free."**, replacing V52's "...and all its patients for free." **A bare "for free" at the end of a clause attaches to whatever the reader last held in mind**, and with `$350` a few lines below that was the subscription, not the patients. **Naming the subject pins it.** The general form is now a Copy Rule: never end a clause on a floating "for free", "free", "included" or "at no cost" where a price is nearby. **David found this himself** after being told the same thing when V52 shipped and choosing to keep his wording, which produced a second new process rule: **a flagged-and-declined concern is parked in Open Items, not dropped**, so circling back costs one line instead of a re-derivation. Also recorded: a version bump for one string is legitimate, because a document quoting a string the code no longer contains is the exact rot whole-regeneration exists to prevent. `App.jsx` measured **674 lines**. ⚠️ **Cut without live-site confirmation, on David's direct instruction — an exception.** *(Companion GlowPT-repo commit: `f57d000`. This repo: `269baa2`.)*
 - **V52** — **The two sites' feature bullets became identical, reversing a rule this file had reaffirmed four times.** glowpt.app went from 5 bullets to **8**, word-identical and in the same order as this site's; the "do not reconcile the counts" instruction is **retired and deleted**, not merely superseded. David's reasoning: a buyer reads both surfaces in one sitting and must not meet two descriptions of one product. **Three changes to `App.jsx`:** the card teaser and the modal description both took a rewritten second sentence, **"More completed plans of care and the clinic stays full."** (lifted from feature bullet 5, so the lead and the bullet now echo on purpose); **feature bullet 3 was rewritten**, retiring V49's "no matter how many patients you have" as defensive phrasing while keeping the no-limit claim; and a **five-line comment above `features`** naming the GlowPT repo's twin list, matched by an identical comment there, because nothing enforces the match at build time. **New section: The two sites' shared bullet list.** **New process rules:** when a rule is reversed, delete the old instruction rather than parking it beside the new one; and "settled" belongs to David, not to this document. **The `$350` decoy line numbers moved to 99 and 449** and are now flagged as a hint rather than an address. `App.jsx` measured **674 lines**. *(Companion GlowPT-repo commits: `9b0ead5`, `169e137`. This repo: `27d68d3`, `9068baf`.)*
 - **V51** — **The GlowPT pitch became two sentences and the two sites deliberately diverged.** The card teaser and modal description both put the niche back on this site, while glowpt.app keeps a shorter niche-free first sentence because that page is already GlowPT-branded. The second sentence stays identical on all four surfaces. Bullet 8 dropped "free" to match glowpt.app. **Reverses V50's retirement of the niche clause** and **reaffirmed the 5-versus-8 bullet split as deliberate** after a session misread it as drift — *that reaffirmation is itself reversed by V52.* `App.jsx` measured **669 lines**. *(Companion GlowPT-repo commits: `14d512b`, `3008119`.)*
@@ -1198,8 +1275,8 @@ A good one **names the repo in its first line**, states the scope and what not t
 - **V44** — **Documentation only.** Recorded three live copy changes and two corrections found by reading the file (the EMR bullet sits **seventh**; the real eighth had never been recorded). Opened the "flags" question, **closed in V49**.
 - **V43** — **Documentation only.** Added the rule that a predicted line count is never a fact for this file.
 - **V42** — **Founder bio rewritten.** Job title gone. New Copy Rule banning job titles/employers/present-tense employment facts.
-- **V41** — **Three copy edits plus four documentation corrections.** E-book modal paragraphs 1 and 2 rewritten to remove two retired framings; the newsletter audience line changed in both locations.
-- **V40** — **Newsletter form wiring + success behavior locked (documentation only).**
+- **V41** — **Three copy edits plus four documentation corrections.** E-book modal paragraphs 1 and 2 rewritten to remove two retired framings; the newsletter audience line changed in both locations. *(Two words in those paragraphs changed again in V57 to match the book.)*
+- **V40** — **Newsletter form wiring + success behavior locked (documentation only).** *(Built in V57.)*
 - **V39** — **Newsletter signup moved into a modal**, reversing V28. New `NewsletterModal`, the site's fourth.
 - **V38** — **Available card spacing tightened:** heading→first-product 20px → 12px; between-products 36px → 28px.
 - **V37** — **Both product teasers rewritten for parallel structure; the EMR claim moved into the GlowPT modal.**
