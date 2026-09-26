@@ -26,6 +26,8 @@ section ABOVE section 1 and say what it holds.
 
 Each line below was replaced in place; the new wording is in CLAUDE.md.
 
+- **Measured at V58:** `App.jsx` is **735 lines**; the `$350` decoy sits at **lines 99 and 510**.
+
 # FranklinAI — Project Instructions (Version 58, Current)
 
 > **The version number on the first line is how David tells whether the claude.ai copy is current.** Bump it whenever this file changes and add a one-line Change History entry.
