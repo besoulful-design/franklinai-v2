@@ -1,4 +1,4 @@
-# FranklinAI — Project Instructions (Version 60, Current)
+# FranklinAI — Project Instructions (Version 61, Current)
 
 > **READ THIS FILE BEFORE MAKING ANY CHANGE TO THIS REPO.** Read all of it, not just the section you think applies. **If a value looks arbitrary, it is almost certainly hand-tuned and documented here. Look it up first.** A morning was once lost re-deriving a footer geometry this file already specified.
 
@@ -958,7 +958,7 @@ A good one **names the repo in its first line**, states the scope and what not t
 | **Modal accessibility** | No Escape key or focus trap. Port glowpt.app's `useModal` if a fifth modal arrives, or sooner. |
 | **The GlowPT modal has not been opened by eye since V52/V53** | Bullets 3 and 5 and the description are build-and-string-verified only (the card teaser was seen). **Open the modal next time anyone is in this repo — one click.** |
 | **Dead `src/components/KiteLogo.jsx`** | Nothing imports it; a different mark. Safe to delete in a cleanup. |
-| **Public vs private repos — DECIDED 2026-09-26; one follow-up open** | **`glowpt` made PRIVATE by David** (verified from outside: 404). **`franklinai-v2` stays PUBLIC on purpose**: the claude.ai pointer depends on it, and its code is shipped to every browser anyway. **Accepted cost:** anyone can read this CLAUDE.md (pricing plans, open legal questions, AWS account details; no passwords or keys). **So never commit a secret or anything confidential to this repo, and keep sensitive business or legal detail brief here.** **Follow-up, GlowPT-rooted:** going private does not un-publish what was public, so a GlowPT session should search GlowPT's full git history for any key or password ever committed, rotate anything found, and record the private status in GlowPT's CLAUDE.md. GlowPT's claude.ai project does not use a GitHub pointer, so nothing broke there. |
+| ~~Public vs private repos~~ | **✅ CLOSED 2026-09-26.** `glowpt` is **private** (no forks found; full-history secret scan clean; nothing needed rotating; Amplify still builds; recorded in GlowPT's CLAUDE.md). **`franklinai-v2` stays PUBLIC on purpose** for the claude.ai pointer. **Standing rule: never commit a secret or anything confidential to this repo, and keep sensitive business or legal detail brief here.** |
 
 ---
 
@@ -966,6 +966,7 @@ A good one **names the repo in its first line**, states the scope and what not t
 
 *One line per version. The full entries for V12–V57 are in `docs/history.md` (section 1, "Change History").*
 
+- **V61** (2026-09-26) — GlowPT follow-up done in a GlowPT session: private, no forks, history clean, nothing rotated, builds fine. Open item closed.
 - **V60** (2026-09-26) — **`glowpt` made private; `franklinai-v2` kept public on purpose** (the claude.ai pointer needs it). New rule: never commit a secret here. GlowPT history scan left for a GlowPT session.
 - **V59** (2026-09-26) — **claude.ai now reads this file from GitHub** through a pointer in its project instructions (David pasted it; the V57 paste is gone). One copy only; no more pasting. Recorded that both repos are public, unplanned, as an open decision.
 - **V58** (2026-09-26) — **Trimmed from 167,777 bytes to a guide**, the GlowPT way. The full V57 text, `AWS-MIGRATION-HANDOFF.md` and the trim handoff were banked verbatim in the new `docs/history.md`; the version chain became a CURRENT STATE block; narratives were condensed to rules; the inline-styles table kept only the tuning rows (David will fine-tune them); new **What may be added to this file** section and a pre-commit hook (`scripts/hooks/pre-commit`) enforcing bank-first. Process changed: **edit in place, not regenerate whole; print the whole doc in chat only when David asks.** Version number kept on the first line at David's request.

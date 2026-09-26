@@ -15,11 +15,20 @@ section of CLAUDE.md, copied from the GlowPT repo's 2026-09-12 trim.
 **Sections, newest bank first.** When a later trim banks more, add a new numbered
 section ABOVE section 1 and say what it holds.
 
+0c. Lines replaced in V61 (GlowPT follow-up closed).
 0b. Lines replaced in V60 (glowpt private, this repo public).
 0. Lines replaced in V59 (the claude.ai pointer).
 1. The full text of CLAUDE.md Version 57, exactly as it stood before the V58 trim.
 2. `AWS-MIGRATION-HANDOFF.md`, the working note from the 2026-09-25 move to Amplify.
 3. `CLAUDE-MD-TRIM-HANDOFF.md`, the note that started the V58 trim.
+
+---
+
+# 0c. LINES REPLACED IN V61 (2026-09-26): GlowPT follow-up closed
+
+| **Public vs private repos — DECIDED 2026-09-26; one follow-up open** | **`glowpt` made PRIVATE by David** (verified from outside: 404). **`franklinai-v2` stays PUBLIC on purpose**: the claude.ai pointer depends on it, and its code is shipped to every browser anyway. **Accepted cost:** anyone can read this CLAUDE.md (pricing plans, open legal questions, AWS account details; no passwords or keys). **So never commit a secret or anything confidential to this repo, and keep sensitive business or legal detail brief here.** **Follow-up, GlowPT-rooted:** going private does not un-publish what was public, so a GlowPT session should search GlowPT's full git history for any key or password ever committed, rotate anything found, and record the private status in GlowPT's CLAUDE.md. GlowPT's claude.ai project does not use a GitHub pointer, so nothing broke there. |
+
+- **V60** title line: `# FranklinAI — Project Instructions (Version 60, Current)`
 
 ---
 
