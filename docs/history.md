@@ -15,6 +15,7 @@ section of CLAUDE.md, copied from the GlowPT repo's 2026-09-12 trim.
 **Sections, newest bank first.** When a later trim banks more, add a new numbered
 section ABOVE section 1 and say what it holds.
 
+0f. Lines replaced in V64 (the claude.ai cache-buster).
 0e. Lines replaced in V63 (Kit payouts connected).
 0d. Lines replaced in V62 (playbook), plus the playbook handoff.
 0c. Lines replaced in V61 (GlowPT follow-up closed).
@@ -23,6 +24,16 @@ section ABOVE section 1 and say what it holds.
 1. The full text of CLAUDE.md Version 57, exactly as it stood before the V58 trim.
 2. `AWS-MIGRATION-HANDOFF.md`, the working note from the 2026-09-25 move to Amplify.
 3. `CLAUDE-MD-TRIM-HANDOFF.md`, the note that started the V58 trim.
+
+---
+
+# 0f. LINES REPLACED IN V64 (2026-09-26): the claude.ai cache-buster
+
+# FranklinAI — Project Instructions (Version 63, Current)
+
+> **There is ONE copy of this document: `CLAUDE.md` on `main` in the repo (since V59).** The claude.ai project instructions are a short pointer telling each claude.ai session to fetch `https://raw.githubusercontent.com/besoulful-design/franklinai-v2/main/CLAUDE.md` and state the version it read. **Nothing is pasted into claude.ai any more.** ⚠️ **The pointer works only because this repo is PUBLIC, which David chose deliberately on 2026-09-26.** Never commit a secret here. If it is ever made private, claude.ai needs another route (GitHub linked to the project, or pasting again) and this note must change.
+
+- **V63** (2026-09-26) — **Kit Commerce step 1 done**: Stripe Express payouts as the LLC to Bluevine, descriptor `FRANKLINAI`. Product waits on the final PDF; no placeholder product.
 
 ---
 

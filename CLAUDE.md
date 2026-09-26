@@ -1,4 +1,4 @@
-# FranklinAI — Project Instructions (Version 63, Current)
+# FranklinAI — Project Instructions (Version 64, Current)
 
 > **READ THIS FILE BEFORE MAKING ANY CHANGE TO THIS REPO.** Read all of it, not just the section you think applies. **If a value looks arbitrary, it is almost certainly hand-tuned and documented here. Look it up first.** A morning was once lost re-deriving a footer geometry this file already specified.
 
@@ -49,7 +49,7 @@
 
 > **Known lag:** the project snapshot is hand-replaced, so it can trail the repo by a push. When the snapshot and a just-confirmed push disagree, the push is live and the snapshot is stale — say so rather than silently reverting the newer change.
 
-> **There is ONE copy of this document: `CLAUDE.md` on `main` in the repo (since V59).** The claude.ai project instructions are a short pointer telling each claude.ai session to fetch `https://raw.githubusercontent.com/besoulful-design/franklinai-v2/main/CLAUDE.md` and state the version it read. **Nothing is pasted into claude.ai any more.** ⚠️ **The pointer works only because this repo is PUBLIC, which David chose deliberately on 2026-09-26.** Never commit a secret here. If it is ever made private, claude.ai needs another route (GitHub linked to the project, or pasting again) and this note must change.
+> **There is ONE copy of this document: `CLAUDE.md` on `main` in the repo (since V59).** The claude.ai project instructions are a short pointer telling each claude.ai session to fetch `https://raw.githubusercontent.com/besoulful-design/franklinai-v2/main/CLAUDE.md` and state the version it read. **Nothing is pasted into claude.ai any more.** ⚠️ **The pointer works only because this repo is PUBLIC, which David chose deliberately on 2026-09-26.** Never commit a secret here. If it is ever made private, claude.ai needs another route (GitHub linked to the project, or pasting again) and this note must change. **Two caches can make claude.ai read an older version (found 2026-09-26):** GitHub's raw copy lags a push by **up to 5 minutes** (`max-age=300`), and **claude.ai's fetch tool keeps its own copy of any address it has opened before**. So the pointer (updated by David the same day) tells claude.ai to **add a fresh cache-buster every time** (`?v=` plus date and time). If claude.ai reports a version behind the one pushed, it re-fetches with a new cache-buster.
 
 ---
 
@@ -968,6 +968,7 @@ A good one **names the repo in its first line**, states the scope and what not t
 
 *One line per version. The full entries for V12–V57 are in `docs/history.md` (section 1, "Change History").*
 
+- **V64** (2026-09-26) — claude.ai read a stale V62: recorded the two caches (GitHub raw 5 min, claude.ai's fetch tool) and the cache-buster now in the pointer.
 - **V63** (2026-09-26) — **Kit Commerce step 1 done**: Stripe Express payouts as the LLC to Bluevine, descriptor `FRANKLINAI`. Product waits on the final PDF; no placeholder product.
 - **V62** (2026-09-26) — **"Playbook" replaces "guide" for the e-book on the site** (card teaser, modal subline, modal paragraph 3, button "Buy the Playbook"; `fd6b95a`, confirmed live by David). New copy rule; the book follows later. Checkout waits on the LLC business bank account; Stripe to be set up as the company with the EIN.
 - **V61** (2026-09-26) — GlowPT follow-up done in a GlowPT session: private, no forks, history clean, nothing rotated, builds fine. Open item closed.
