@@ -15,10 +15,21 @@ section of CLAUDE.md, copied from the GlowPT repo's 2026-09-12 trim.
 **Sections, newest bank first.** When a later trim banks more, add a new numbered
 section ABOVE section 1 and say what it holds.
 
+0b. Lines replaced in V60 (glowpt private, this repo public).
 0. Lines replaced in V59 (the claude.ai pointer).
 1. The full text of CLAUDE.md Version 57, exactly as it stood before the V58 trim.
 2. `AWS-MIGRATION-HANDOFF.md`, the working note from the 2026-09-25 move to Amplify.
 3. `CLAUDE-MD-TRIM-HANDOFF.md`, the note that started the V58 trim.
+
+---
+
+# 0b. LINES REPLACED IN V60 (2026-09-26): glowpt made private, this repo kept public
+
+> **There is ONE copy of this document: `CLAUDE.md` on `main` in the repo (since V59).** The claude.ai project instructions are a short pointer telling each claude.ai session to fetch `https://raw.githubusercontent.com/besoulful-design/franklinai-v2/main/CLAUDE.md` and state the version it read. **Nothing is pasted into claude.ai any more.** ⚠️ **The pointer works only while the repo is PUBLIC**; if it is made private, claude.ai needs another route (GitHub linked to the project, or pasting again) and this note must change. See Open Items.
+
+| **Public vs private repos — DECIDE** | Found 2026-09-26: **both `franklinai-v2` and `glowpt` are PUBLIC on GitHub**, never a conscious choice. Anyone can read all code, history and both CLAUDE.md files (here: AWS account number, zone ID, the AWS root-email alias, Kit setup; no passwords or keys). **GlowPT is the bigger concern** (the HIPAA product, contract drafts). Making a repo private is David's click in GitHub (Settings → General → Danger Zone → Change visibility). **Consequences:** Amplify's GitHub app keeps building private repos; **this repo going private breaks the claude.ai pointer**; **going private does not un-publish what was already public**, so any secret ever committed must be rotated regardless. The GlowPT side is GlowPT-rooted work. |
+
+- **V59** title line: `# FranklinAI — Project Instructions (Version 59, Current)`
 
 ---
 
