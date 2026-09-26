@@ -15,12 +15,64 @@ section of CLAUDE.md, copied from the GlowPT repo's 2026-09-12 trim.
 **Sections, newest bank first.** When a later trim banks more, add a new numbered
 section ABOVE section 1 and say what it holds.
 
+0d. Lines replaced in V62 (playbook), plus the playbook handoff.
 0c. Lines replaced in V61 (GlowPT follow-up closed).
 0b. Lines replaced in V60 (glowpt private, this repo public).
 0. Lines replaced in V59 (the claude.ai pointer).
 1. The full text of CLAUDE.md Version 57, exactly as it stood before the V58 trim.
 2. `AWS-MIGRATION-HANDOFF.md`, the working note from the 2026-09-25 move to Amplify.
 3. `CLAUDE-MD-TRIM-HANDOFF.md`, the note that started the V58 trim.
+
+---
+
+# 0d. LINES REPLACED IN V62 (2026-09-26): "guide" becomes "playbook"
+
+# FranklinAI — Project Instructions (Version 61, Current)
+
+- **Next:** the **e-book checkout on Kit Commerce** (decided, not built; "Buy the Guide" is still `href="#"`). Steps in Open Items.
+
+> **The filled style is exclusive to the discovery call, site-wide.** Every transaction button is a ghost: "Buy the Guide", "Bring GlowPT to Your Clinic", "Subscribe for Free". **Flipping a transaction button to `btn--primary` requires David's explicit say-so** (considered and declined in V49).
+
+- **Teaser** (`card-text`): **"A downloadable guide for owners running two business models in one building, an insurance practice and a cash practice, and making them work together."**
+
+- **Subline** (Inter 14px/600/#8899b0, marginBottom 16px): **"A self-serve guide. $37, yours to download."**
+
+  3. *"This guide walks you through the fix: decide what your practice actually is, then say it in one sentence your whole team can repeat. Not a tactic, not a tool. The one thing that lets everything else line up behind it."*
+
+- **Footer** (borderTop hairline, paddingTop 24px, centered): **"$37"** (Playfair 700, 27.7px, blue, lineHeight 1.45, marginBottom 18px, no "/ month") then a **ghost** "Buy the Guide" (`padding: '10px 20px', fontSize: '13px'`, **`href="#"` until the Kit Commerce product exists**; then the live URL with `target="_blank" rel="noopener noreferrer"`, styles unchanged).
+
+| **E-book checkout on Kit Commerce — NEXT** | **Decided, not built.** (1) David opens **Kit → Settings → Revenue** and connects payouts (Stripe inside Kit; he enters bank and tax details; business **FranklinAI Solutions LLC**, no comma). (2) David creates the product: *What Your Practice Actually Sells*, **$37**, final file uploaded, a description that may name physical therapy and obeys the copy rules. (3) Code sets "Buy the Guide" to the live URL with `target="_blank" rel="noopener noreferrer"`, styles unchanged, and pushes. (4) David buys it or runs Kit's test purchase and checks the buyer lands on the list. **Verify:** `grep -c 'href="#"' src/App.jsx` → **0**; "$37" matches in both `EbookModal` spots and the Kit product; the `$350` decoy untouched; no em dashes in new strings. **Fallback:** not live by Issue 1 → **ask David before touching the card**; no coming-soon strip, no pre-sell. Any domain record Kit Commerce asks for goes in **Route 53**, by the DNS rule. |
+
+| **E-book checkout on Kit Commerce — NEXT** | **Decided, not built.** (1) David opens **Kit → Settings → Revenue** and connects payouts (Stripe inside Kit; he enters bank and tax details; business **FranklinAI Solutions LLC**, no comma). (2) David creates the product: *What Your Practice Actually Sells*, **$37**, final file uploaded, a description that may name physical therapy and obeys the copy rules. (3) Code sets "Buy the Playbook" to the live URL with `target="_blank" rel="noopener noreferrer"`, styles unchanged, and pushes. (4) David buys it or runs Kit's test purchase and checks the buyer lands on the list. **Verify:** `grep -c 'href="#"' src/App.jsx` → **0**; "$37" matches in both `EbookModal` spots and the Kit product; the `$350` decoy untouched; no em dashes in new strings. **Fallback:** not live by Issue 1 → **ask David before touching the card**; no coming-soon strip, no pre-sell. Any domain record Kit Commerce asks for goes in **Route 53**, by the DNS rule. |
+
+- **The book wins on shared sentences.** Where any surface repeats a sentence from *What Your Practice Actually Sells*, the book's wording is canonical.
+
+| **`EbookModal` paragraph 2: "build… built… built"** | Three forms of "build" in ~20 words. **Parked, book-first:** if it grates, change the book, then every surface together. |
+
+- **V61** (2026-09-26) — GlowPT follow-up done in a GlowPT session: private, no forks, history clean, nothing rotated, builds fine. Open item closed.
+
+The claude.ai handoff that asked for it, verbatim (`handoff-addendum-playbook-2026-09-26.md`, deleted from ~/Downloads once recorded):
+
+# Handoff addendum, 2026-09-26: three "playbook" strings for the checkout push
+
+**Repo: `franklinai-v2`.** Add to today's Kit Commerce checkout session. Read the 2026-09-25 handoff first; this rides with it.
+
+David's call, 2026-09-26: **"playbook" is the format word for the products on every public surface.** The book's title does not change. The newsletter does not change. Only the word "guide" changes, where it describes the product.
+
+| Find (exact, in `App.jsx`) | Replace with |
+|---|---|
+| `A downloadable guide for owners running two business models in one building` | `A downloadable playbook for owners running two business models in one building` |
+| `A self-serve guide. $37, yours to download.` | `A self-serve playbook. $37, yours to download.` |
+| `Buy the Guide` | `Buy the Playbook` |
+
+The first is the `AvailableForPractice` card teaser; the second is the `EbookModal` subline; the third is the `EbookModal` ghost button label (David's call 2026-09-26: the button follows the format word too). All were locked V44/V32 strings; this note supersedes them. Styles untouched; the button stays `btn btn--ghost`, title case, no period.
+
+Also carry "playbook" into the **Kit Commerce product page description** David writes today, and he changes the book cover line himself ("A guide from The Operator" becomes "A playbook from The Operator") in the book file before uploading it.
+
+Verification adds four rows: `grep -c "downloadable guide" src/App.jsx` → 0; `grep -c "self-serve guide" src/App.jsx` → 0; `grep -c "Buy the Guide" src/App.jsx` → 0; `grep -ci "playbook" src/App.jsx` → 3.
+
+CLAUDE.md V57 sections that change: Business (the e-book paragraph), The Offer Ladder, Available (all three strings), Locked Inline Styles Reference (all three rows), Primary CTA / button notes (the ghost list names "Buy the Guide"), Copy Rules (add: "playbook" is the format word for the products on every public surface; the title and the newsletter name are unchanged), Change History.
+
 
 ---
 

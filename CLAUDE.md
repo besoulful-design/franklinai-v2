@@ -1,4 +1,4 @@
-# FranklinAI — Project Instructions (Version 61, Current)
+# FranklinAI — Project Instructions (Version 62, Current)
 
 > **READ THIS FILE BEFORE MAKING ANY CHANGE TO THIS REPO.** Read all of it, not just the section you think applies. **If a value looks arbitrary, it is almost certainly hand-tuned and documented here. Look it up first.** A morning was once lost re-deriving a footer geometry this file already specified.
 
@@ -9,7 +9,7 @@
 ## CURRENT STATE (edit these lines in place; do not start a new chain)
 
 - **Live:** franklinaisolutions.com on **AWS Amplify** (account `franklinai-web`), DNS in **Route 53**, David's Microsoft 365 mail intact. **The Operator** signup is wired to **Kit form `9962049`**, double opt-in ON, and Kit sends as the domain. Confirmed by David 2026-09-25.
-- **Next:** the **e-book checkout on Kit Commerce** (decided, not built; "Buy the Guide" is still `href="#"`). Steps in Open Items.
+- **Next:** the **e-book checkout on Kit Commerce** (decided, not built; "Buy the Playbook" is still `href="#"`). **Waiting on David opening the LLC's business bank account first** (his choice, 2026-09-26); then Kit → Settings → Revenue, with Stripe set up as the **company**, FranklinAI Solutions LLC, using the LLC's EIN. Steps in Open Items.
 - **Issue 1 of The Operator:** date lives in the Content Calendar (September 29, 2026 as of its September 25 pass).
 - **Watching:** the mystery third signup (Open Items); Netlify still on standby until David deletes the franklinai site and zone.
 - **Coming:** David will fine-tune the nav/footer nudges, kite sizes and F-vs-crossbar margins. The current values and their history are under **Locked Geometry**.
@@ -244,7 +244,7 @@ The McKenzie Arm Care app — a custom patient-care web app with user login, jou
 
 **Scheduling link:** `https://cal.com/david-peterson-40s7lw/free-discovery-call`, new tab (`target="_blank" rel="noopener noreferrer"`).
 
-> **The filled style is exclusive to the discovery call, site-wide.** Every transaction button is a ghost: "Buy the Guide", "Bring GlowPT to Your Clinic", "Subscribe for Free". **Flipping a transaction button to `btn--primary` requires David's explicit say-so** (considered and declined in V49).
+> **The filled style is exclusive to the discovery call, site-wide.** Every transaction button is a ghost: "Buy the Playbook", "Bring GlowPT to Your Clinic", "Subscribe for Free". **Flipping a transaction button to `btn--primary` requires David's explicit say-so** (considered and declined in V49).
 
 ## Email Option Under the Discovery CTA
 
@@ -680,7 +680,7 @@ Two products, the e-book first, GlowPT second. State flags `ebookOpen` and `glow
 
 **Product 1 — the e-book:**
 - **Title:** **"What Your Practice Actually Sells"**
-- **Teaser** (`card-text`): **"A downloadable guide for owners running two business models in one building, an insurance practice and a cash practice, and making them work together."**
+- **Teaser** (`card-text`): **"A downloadable playbook for owners running two business models in one building, an insurance practice and a cash practice, and making them work together."**
 - **Button:** "More Info" (btn--ghost) → `EbookModal`
 
 **Product 2 — GlowPT:**
@@ -692,13 +692,13 @@ Two products, the e-book first, GlowPT second. State flags `ebookOpen` and `glow
 
 **EbookModal** (scroll-locked, mirrors `GlowPTModal`):
 - **Title** (`modal__title`, marginTop 6px): **"What Your Practice Actually Sells"**
-- **Subline** (Inter 14px/600/#8899b0, marginBottom 16px): **"A self-serve guide. $37, yours to download."**
+- **Subline** (Inter 14px/600/#8899b0, marginBottom 16px): **"A self-serve playbook. $37, yours to download."**
 - **Body — three `modal__text` paragraphs:**
   1. *"Your whole team is being asked to sell advanced care and get patients to the end of their care at the same time. That's not a marketing problem. You're running two business models in one building, an insurance practice and a cash practice, and they're pulling against each other."*
   2. *"You didn't set out to build two businesses, but you chose every piece that built the second one. The tactics arrived built for a business you don't own, and none of them came with a label. So the team gets mixed signals about what the practice is driving at, and every patient feels the seams."*
-  3. *"This guide walks you through the fix: decide what your practice actually is, then say it in one sentence your whole team can repeat. Not a tactic, not a tool. The one thing that lets everything else line up behind it."*
+  3. *"This playbook walks you through the fix: decide what your practice actually is, then say it in one sentence your whole team can repeat. Not a tactic, not a tool. The one thing that lets everything else line up behind it."*
   > **Paragraphs 1 and 2 match the book's chapter 1** ("the end of their **care**", "set out to **build**", `d89f4f0`), **and the book wins.** **Never reintroduce the two retired framings** (the accident framing and the departmental split). "build… built… built" in paragraph 2 is parked (Open Items).
-- **Footer** (borderTop hairline, paddingTop 24px, centered): **"$37"** (Playfair 700, 27.7px, blue, lineHeight 1.45, marginBottom 18px, no "/ month") then a **ghost** "Buy the Guide" (`padding: '10px 20px', fontSize: '13px'`, **`href="#"` until the Kit Commerce product exists**; then the live URL with `target="_blank" rel="noopener noreferrer"`, styles unchanged).
+- **Footer** (borderTop hairline, paddingTop 24px, centered): **"$37"** (Playfair 700, 27.7px, blue, lineHeight 1.45, marginBottom 18px, no "/ month") then a **ghost** "Buy the Playbook" (`padding: '10px 20px', fontSize: '13px'`, **`href="#"` until the Kit Commerce product exists**; then the live URL with `target="_blank" rel="noopener noreferrer"`, styles unchanged).
 
 **GlowPT Modal** (scroll-locked): title "GlowPT" (marginTop 6px); subline; description; **eight** feature lines; price $350 / month; **two CTAs.**
 
@@ -784,6 +784,7 @@ Account slug `david-peterson-40s7lw` · Event "Free Discovery Call" · slug `fre
 - **The newsletter description is duplicated on purpose (card + modal). Any edit changes BOTH.** `grep -c "For physical therapy practices\."` → **2**.
 - **The GlowPT pitch's second sentence and the eight bullets are duplicated ACROSS REPOS. Any edit changes BOTH repos.** `grep -c "More completed plans of care and the clinic stays full"` → **2** here, **1** in `glowpt/src/lib/marketing.js`.
 - **The book wins on shared sentences.** Where any surface repeats a sentence from *What Your Practice Actually Sells*, the book's wording is canonical.
+- **"Playbook" is the format word for the products on every public surface** (David, 2026-09-26): the site, the Kit Commerce product page, the book's cover line. Never "guide" for the product. **The book's title and the newsletter's name are unchanged.** **One deliberate exception to "the book wins":** the site switched to "playbook" first; the book is edited to match later (Open Items). **Do not "fix" the site back to "guide."**
 - **Two retired framings are banned from all site copy:** never **"nobody decided"**; never **split the building into the front desk versus the therapists.**
 - **"cash practice" and "advanced care" are interchangeable and neither is retired.**
 - **No job title, employer, or present-tense employment fact anywhere in site copy.**
@@ -940,12 +941,13 @@ A good one **names the repo in its first line**, states the scope and what not t
 
 | Item | Status |
 |---|---|
-| **E-book checkout on Kit Commerce — NEXT** | **Decided, not built.** (1) David opens **Kit → Settings → Revenue** and connects payouts (Stripe inside Kit; he enters bank and tax details; business **FranklinAI Solutions LLC**, no comma). (2) David creates the product: *What Your Practice Actually Sells*, **$37**, final file uploaded, a description that may name physical therapy and obeys the copy rules. (3) Code sets "Buy the Guide" to the live URL with `target="_blank" rel="noopener noreferrer"`, styles unchanged, and pushes. (4) David buys it or runs Kit's test purchase and checks the buyer lands on the list. **Verify:** `grep -c 'href="#"' src/App.jsx` → **0**; "$37" matches in both `EbookModal` spots and the Kit product; the `$350` decoy untouched; no em dashes in new strings. **Fallback:** not live by Issue 1 → **ask David before touching the card**; no coming-soon strip, no pre-sell. Any domain record Kit Commerce asks for goes in **Route 53**, by the DNS rule. |
+| **E-book checkout on Kit Commerce — NEXT** | **Decided, not built.** (1) David opens **Kit → Settings → Revenue** and connects payouts (Stripe inside Kit; he enters bank and tax details; business **FranklinAI Solutions LLC**, no comma). (2) David creates the product: *What Your Practice Actually Sells*, **$37**, final file uploaded (its cover line changed by David to "A playbook from The Operator"), a description that **calls it a playbook**, may name physical therapy, and obeys the copy rules. (3) Code sets "Buy the Playbook" to the live URL with `target="_blank" rel="noopener noreferrer"`, styles unchanged, and pushes. (4) David buys it or runs Kit's test purchase and checks the buyer lands on the list. **Verify:** `grep -c 'href="#"' src/App.jsx` → **0**; "$37" matches in both `EbookModal` spots and the Kit product; the `$350` decoy untouched; no em dashes in new strings. **Fallback:** not live by Issue 1 → **ask David before touching the card**; no coming-soon strip, no pre-sell. Any domain record Kit Commerce asks for goes in **Route 53**, by the DNS rule. |
 | **The mystery third signup — WATCH** | 2026-09-25: an iPhone test signup's confirm tap never reached Kit (timeline: Delivered 4:23 PM, Opened 4:23 PM, Clicked 6:21 PM, the click being David later on the Mac). Kit shows "Subscription confirmed!" for any confirm link, including a used one, so the phone tap likely opened a different link; which one was never established. A clean fourth test entirely on the iPhone worked. **No fault found in the site or Kit.** **Watch for real readers piling up as Unconfirmed** in Kit (filter by status); if so, read a few per-subscriber timelines first; Kit can re-send the confirmation. |
 | **Kit mailing address → a real one** | Get a USPS PO box (or confirm the registered agent forwards business mail), enter it in Kit **Settings → Email → Mailing address** as `FranklinAI Solutions LLC, <address>`. |
 | **Kit confirmation email wording** | Parked draft in David's voice: subject *Confirm your subscription to The Operator*; top line *Thanks for signing up for The Operator. Tap the button below to confirm, and the next issue will come straight to your inbox.*; button *Confirm Your Subscription*; closing *Glad you're here.* / *David*. A claude.ai copy decision; edited in Kit (form Settings → Confirmation email → Edit Email Contents). |
 | **Test subscribers** | Four `besoulful+kit-…` addresses. **Before Issue 1: keep one, delete three.** |
 | **Kit trial lapse (~2026-10-09)** | Nothing built depends on a paid feature. Once, check **Settings → Account & Billing** shows no card on file ("Creator Monthly" is expected to be the trial's label). |
+| **Book text → "playbook"** | The site says "playbook" since 2026-09-26 (`fd6b95a`); the book file may still say "guide" where it describes itself (e.g. the sentence the modal's paragraph 3 echoes). **David edits the book to match**; then the book wins again as normal. |
 | **`EbookModal` paragraph 2: "build… built… built"** | Three forms of "build" in ~20 words. **Parked, book-first:** if it grates, change the book, then every surface together. |
 | **Retire Netlify for this site** | After a few quiet days from 2026-09-25, David deletes the **franklinai site** and the **franklinaisolutions.com zone** in Netlify. **Leave McKenzie alone.** |
 | **GlowPT clinic BAA text** | With the attorney. **Demo data only until it clears.** |
@@ -966,6 +968,7 @@ A good one **names the repo in its first line**, states the scope and what not t
 
 *One line per version. The full entries for V12–V57 are in `docs/history.md` (section 1, "Change History").*
 
+- **V62** (2026-09-26) — **"Playbook" replaces "guide" for the e-book on the site** (card teaser, modal subline, modal paragraph 3, button "Buy the Playbook"; `fd6b95a`, confirmed live by David). New copy rule; the book follows later. Checkout waits on the LLC business bank account; Stripe to be set up as the company with the EIN.
 - **V61** (2026-09-26) — GlowPT follow-up done in a GlowPT session: private, no forks, history clean, nothing rotated, builds fine. Open item closed.
 - **V60** (2026-09-26) — **`glowpt` made private; `franklinai-v2` kept public on purpose** (the claude.ai pointer needs it). New rule: never commit a secret here. GlowPT history scan left for a GlowPT session.
 - **V59** (2026-09-26) — **claude.ai now reads this file from GitHub** through a pointer in its project instructions (David pasted it; the V57 paste is gone). One copy only; no more pasting. Recorded that both repos are public, unplanned, as an open decision.
