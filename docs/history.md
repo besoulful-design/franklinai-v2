@@ -15,6 +15,7 @@ section of CLAUDE.md, copied from the GlowPT repo's 2026-09-12 trim.
 **Sections, newest bank first.** When a later trim banks more, add a new numbered
 section ABOVE section 1 and say what it holds.
 
+0e. Lines replaced in V63 (Kit payouts connected).
 0d. Lines replaced in V62 (playbook), plus the playbook handoff.
 0c. Lines replaced in V61 (GlowPT follow-up closed).
 0b. Lines replaced in V60 (glowpt private, this repo public).
@@ -22,6 +23,20 @@ section ABOVE section 1 and say what it holds.
 1. The full text of CLAUDE.md Version 57, exactly as it stood before the V58 trim.
 2. `AWS-MIGRATION-HANDOFF.md`, the working note from the 2026-09-25 move to Amplify.
 3. `CLAUDE-MD-TRIM-HANDOFF.md`, the note that started the V58 trim.
+
+---
+
+# 0e. LINES REPLACED IN V63 (2026-09-26): Kit payouts connected
+
+# FranklinAI — Project Instructions (Version 62, Current)
+
+- **Next:** the **e-book checkout on Kit Commerce** (decided, not built; "Buy the Playbook" is still `href="#"`). **Waiting on David opening the LLC's business bank account first** (his choice, 2026-09-26); then Kit → Settings → Revenue, with Stripe set up as the **company**, FranklinAI Solutions LLC, using the LLC's EIN. Steps in Open Items.
+
+| **Revenue / Kit Commerce** | **Not set up yet.** Payouts connect Stripe inside Kit (Settings → Revenue); David enters bank and tax details himself. |
+
+| **E-book checkout on Kit Commerce — NEXT** | **Decided, not built.** (1) David opens **Kit → Settings → Revenue** and connects payouts (Stripe inside Kit; he enters bank and tax details; business **FranklinAI Solutions LLC**, no comma). (2) David creates the product: *What Your Practice Actually Sells*, **$37**, final file uploaded (its cover line changed by David to "A playbook from The Operator"), a description that **calls it a playbook**, may name physical therapy, and obeys the copy rules. (3) Code sets "Buy the Playbook" to the live URL with `target="_blank" rel="noopener noreferrer"`, styles unchanged, and pushes. (4) David buys it or runs Kit's test purchase and checks the buyer lands on the list. **Verify:** `grep -c 'href="#"' src/App.jsx` → **0**; "$37" matches in both `EbookModal` spots and the Kit product; the `$350` decoy untouched; no em dashes in new strings. **Fallback:** not live by Issue 1 → **ask David before touching the card**; no coming-soon strip, no pre-sell. Any domain record Kit Commerce asks for goes in **Route 53**, by the DNS rule. |
+
+- **V62** (2026-09-26) — **"Playbook" replaces "guide" for the e-book on the site** (card teaser, modal subline, modal paragraph 3, button "Buy the Playbook"; `fd6b95a`, confirmed live by David). New copy rule; the book follows later. Checkout waits on the LLC business bank account; Stripe to be set up as the company with the EIN.
 
 ---
 
