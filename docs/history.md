@@ -15,9 +15,30 @@ section of CLAUDE.md, copied from the GlowPT repo's 2026-09-12 trim.
 **Sections, newest bank first.** When a later trim banks more, add a new numbered
 section ABOVE section 1 and say what it holds.
 
+0. Lines replaced in V59 (the claude.ai pointer).
 1. The full text of CLAUDE.md Version 57, exactly as it stood before the V58 trim.
 2. `AWS-MIGRATION-HANDOFF.md`, the working note from the 2026-09-25 move to Amplify.
 3. `CLAUDE-MD-TRIM-HANDOFF.md`, the note that started the V58 trim.
+
+---
+
+# 0. LINES REPLACED IN V59 (2026-09-26): claude.ai reads CLAUDE.md from GitHub
+
+Each line below was replaced in place; the new wording is in CLAUDE.md.
+
+# FranklinAI — Project Instructions (Version 58, Current)
+
+> **The version number on the first line is how David tells whether the claude.ai copy is current.** Bump it whenever this file changes and add a one-line Change History entry.
+
+> **Which copy of this document goes stale, and the tell.** Code writes `CLAUDE.md` in the repo, so the repo is current by construction; the **claude.ai project instructions** are the copy that lags. **The tell is a version-number mismatch**, which is why the version is on the first line.
+
+**This file lives in two places and is one file.** In claude.ai it is the project instructions. In the repo it is `CLAUDE.md` at the root. **Do not maintain a Code-tuned variant and a claude.ai-tuned variant.**
+
+6. **Tell David the new version number and report the file's size and delta.** **Print the whole document in chat only when David asks for it** (then in one fenced block with four backticks, since the file contains triple-backtick blocks; no clipboard, no file card).
+
+claude.ai receives it as a pasted copy (or reads it from GitHub, if the project is linked) and reads it as spec.
+
+| **Dead `src/components/KiteLogo.jsx`** | Nothing imports it; a different mark. Safe to delete in a cleanup. |
 
 ---
 

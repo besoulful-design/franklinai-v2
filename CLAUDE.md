@@ -1,8 +1,8 @@
-# FranklinAI — Project Instructions (Version 58, Current)
+# FranklinAI — Project Instructions (Version 59, Current)
 
 > **READ THIS FILE BEFORE MAKING ANY CHANGE TO THIS REPO.** Read all of it, not just the section you think applies. **If a value looks arbitrary, it is almost certainly hand-tuned and documented here. Look it up first.** A morning was once lost re-deriving a footer geometry this file already specified.
 
-> **The version number on the first line is how David tells whether the claude.ai copy is current.** Bump it whenever this file changes and add a one-line Change History entry.
+> **The version number on the first line is how every session says which copy it read.** Bump it whenever this file changes and add a one-line Change History entry.
 
 ---
 
@@ -13,7 +13,7 @@
 - **Issue 1 of The Operator:** date lives in the Content Calendar (September 29, 2026 as of its September 25 pass).
 - **Watching:** the mystery third signup (Open Items); Netlify still on standby until David deletes the franklinai site and zone.
 - **Coming:** David will fine-tune the nav/footer nudges, kite sizes and F-vs-crossbar margins. The current values and their history are under **Locked Geometry**.
-- **Measured at V58:** `App.jsx` is **735 lines**; the `$350` decoy sits at **lines 99 and 510**.
+- **Measured at V58 (unchanged at V59):** `App.jsx` is **735 lines**; the `$350` decoy sits at **lines 99 and 510**.
 - **Older version-by-version narrative (V12 to V57) is in `docs/history.md`.** The "Everything else from Version N remains in force" chain that used to open this file was removed on 2026-09-26. **Do not start a new one.**
 
 ---
@@ -49,13 +49,13 @@
 
 > **Known lag:** the project snapshot is hand-replaced, so it can trail the repo by a push. When the snapshot and a just-confirmed push disagree, the push is live and the snapshot is stale — say so rather than silently reverting the newer change.
 
-> **Which copy of this document goes stale, and the tell.** Code writes `CLAUDE.md` in the repo, so the repo is current by construction; the **claude.ai project instructions** are the copy that lags. **The tell is a version-number mismatch**, which is why the version is on the first line.
+> **There is ONE copy of this document: `CLAUDE.md` on `main` in the repo (since V59).** The claude.ai project instructions are a short pointer telling each claude.ai session to fetch `https://raw.githubusercontent.com/besoulful-design/franklinai-v2/main/CLAUDE.md` and state the version it read. **Nothing is pasted into claude.ai any more.** ⚠️ **The pointer works only while the repo is PUBLIC**; if it is made private, claude.ai needs another route (GitHub linked to the project, or pasting again) and this note must change. See Open Items.
 
 ---
 
 ## Working in Claude Code vs claude.ai
 
-**This file lives in two places and is one file.** In claude.ai it is the project instructions. In the repo it is `CLAUDE.md` at the root. **Do not maintain a Code-tuned variant and a claude.ai-tuned variant.**
+**This file lives in one place: `CLAUDE.md` at the repo root.** Claude Code loads it automatically; claude.ai fetches it from GitHub through the pointer in its project instructions. **Do not maintain a Code-tuned variant and a claude.ai-tuned variant.**
 
 > **The GlowPT repo** is a *different* repo at `~/Downloads/glowpt` with its own `CLAUDE.md` and its own AWS backend. This file does not govern its architecture. **Any handoff into Code should name the repo in its first line.** But **copy rules DO cross** (see *Copy Rules Travel With the Voice*), and **one content list is shared** (see *The two sites' shared bullet list*).
 
@@ -872,7 +872,7 @@ Edit the repo in place. **Read this file first.** **Confirm the working director
 3. **Push the code.** The push deploys through Amplify.
 4. **Wait for David to confirm the change works on the live site.** Verification by measurement is not confirmation; his eyes on the live site are. *(Waived twice for copy-only changes on his direct instruction; keep waiting on anything visual.)*
 5. **Then update `CLAUDE.md`**, as a separate commit: edit the lines that changed **in place** (CURRENT STATE and the affected section), bump the version number on the first line, add a one-line Change History entry. **Put the reasoning of the fix in the commit message, not here.** Anything removed is banked in `docs/history.md` first (the hook enforces it).
-6. **Tell David the new version number and report the file's size and delta.** **Print the whole document in chat only when David asks for it** (then in one fenced block with four backticks, since the file contains triple-backtick blocks; no clipboard, no file card).
+6. **Tell David the new version number and report the file's size and delta.** **Nothing needs pasting into claude.ai**: it reads the pushed file. If David ever asks for the whole text in chat, give it in one fenced block with four backticks (the file contains triple-backtick blocks); no clipboard, no file card.
 
 **Rules on maintaining this file:**
 - **Record the reasoning that governs future decisions, not the story of how it was reached.** A rule plus one line of why belongs here; the narrative belongs in the commit message or `docs/history.md`.
@@ -914,7 +914,7 @@ A session here may edit the GlowPT repo, and vice versa, when:
 
 ### In claude.ai
 
-**What lives there:** strategy, positioning, copy decisions, arguing a call through, newsletter drafting, and the **Content Calendar**. Handoff notes into Code are written there. **This document is maintained in Code**; claude.ai receives it as a pasted copy (or reads it from GitHub, if the project is linked) and reads it as spec.
+**What lives there:** strategy, positioning, copy decisions, arguing a call through, newsletter drafting, and the **Content Calendar**. Handoff notes into Code are written there. **This document is maintained in Code**; claude.ai fetches it from GitHub at the start of each conversation (the pointer, V59) and reads it as spec.
 
 ### Handoff notes into Code
 
@@ -958,6 +958,7 @@ A good one **names the repo in its first line**, states the scope and what not t
 | **Modal accessibility** | No Escape key or focus trap. Port glowpt.app's `useModal` if a fifth modal arrives, or sooner. |
 | **The GlowPT modal has not been opened by eye since V52/V53** | Bullets 3 and 5 and the description are build-and-string-verified only (the card teaser was seen). **Open the modal next time anyone is in this repo — one click.** |
 | **Dead `src/components/KiteLogo.jsx`** | Nothing imports it; a different mark. Safe to delete in a cleanup. |
+| **Public vs private repos — DECIDE** | Found 2026-09-26: **both `franklinai-v2` and `glowpt` are PUBLIC on GitHub**, never a conscious choice. Anyone can read all code, history and both CLAUDE.md files (here: AWS account number, zone ID, the AWS root-email alias, Kit setup; no passwords or keys). **GlowPT is the bigger concern** (the HIPAA product, contract drafts). Making a repo private is David's click in GitHub (Settings → General → Danger Zone → Change visibility). **Consequences:** Amplify's GitHub app keeps building private repos; **this repo going private breaks the claude.ai pointer**; **going private does not un-publish what was already public**, so any secret ever committed must be rotated regardless. The GlowPT side is GlowPT-rooted work. |
 
 ---
 
@@ -965,6 +966,7 @@ A good one **names the repo in its first line**, states the scope and what not t
 
 *One line per version. The full entries for V12–V57 are in `docs/history.md` (section 1, "Change History").*
 
+- **V59** (2026-09-26) — **claude.ai now reads this file from GitHub** through a pointer in its project instructions (David pasted it; the V57 paste is gone). One copy only; no more pasting. Recorded that both repos are public, unplanned, as an open decision.
 - **V58** (2026-09-26) — **Trimmed from 167,777 bytes to a guide**, the GlowPT way. The full V57 text, `AWS-MIGRATION-HANDOFF.md` and the trim handoff were banked verbatim in the new `docs/history.md`; the version chain became a CURRENT STATE block; narratives were condensed to rules; the inline-styles table kept only the tuning rows (David will fine-tune them); new **What may be added to this file** section and a pre-commit hook (`scripts/hooks/pre-commit`) enforcing bank-first. Process changed: **edit in place, not regenerate whole; print the whole doc in chat only when David asks.** Version number kept on the first line at David's request.
 - **V57** (2026-09-25) — The Operator wired to Kit form `9962049` (double opt-in); Kit sends as the domain (four Route 53 records incl. DMARC `p=none`); `EbookModal` paragraphs 1–2 matched to the book; Route 53 permission file for this root. Commits `d89f4f0`, `8024666`, `fb01e32`.
 - **V56** (2026-09-25) — Site moved from Netlify to AWS Amplify, account `franklinai-web`, no downtime, mail intact. Commit `0279ffe`.
