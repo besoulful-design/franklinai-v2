@@ -63,6 +63,21 @@ function ModalCloseButton({ onClose }) {
   );
 }
 
+// The check-mark feature list, shared by the GlowPT and case-study modals so
+// the two lists always look the same. Lines end with periods.
+function ModalFeatureList({ features }) {
+  return (
+    <div style={{ marginBottom: '24px' }}>
+      {features.map((f, i) => (
+        <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', marginBottom: i < features.length - 1 ? '12px' : '0' }}>
+          <span style={{ color: '#60a5fa', fontWeight: '700', flexShrink: 0, lineHeight: '1.5' }} aria-hidden="true">&#10003;</span>
+          <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', color: '#f0e6d3', lineHeight: '1.5' }}>{f}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 function GlowPTModal({ onClose }) {
   useEffect(() => {
     const prev = document.body.style.overflow;
@@ -100,14 +115,7 @@ function GlowPTModal({ onClose }) {
           The GlowPT app keeps physical therapy patients engaged between visits.
           More completed plans of care and the clinic stays full.
         </p>
-        <div style={{ marginBottom: '24px' }}>
-          {features.map((f, i) => (
-            <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', marginBottom: i < features.length - 1 ? '12px' : '0' }}>
-              <span style={{ color: '#60a5fa', fontWeight: '700', flexShrink: 0, lineHeight: '1.5' }} aria-hidden="true">&#10003;</span>
-              <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', color: '#f0e6d3', lineHeight: '1.5' }}>{f}</span>
-            </div>
-          ))}
-        </div>
+        <ModalFeatureList features={features} />
         <div style={{ borderTop: '1px solid rgba(96, 165, 250, 0.12)', paddingTop: '24px', textAlign: 'center' }}>
           <p style={{ fontFamily: "'Playfair Display', serif", fontWeight: '700', fontSize: '27.7px', color: '#60a5fa', lineHeight: '1.45', marginBottom: '18px' }}>
             $350 <span style={{ fontSize: '20px' }}>/ month</span>
@@ -459,12 +467,12 @@ function CaseStudyModal({ onClose }) {
   }, []);
 
   const features = [
-    'User login and role-based access',
-    'Daily journaling and symptom tracking',
-    'Progress logs with visual history',
-    'In-app messaging between patient and clinician',
-    'Admin portal with smart alerts',
-    'Automated email notifications'
+    'User login and role-based access.',
+    'Daily journaling and symptom tracking.',
+    'Progress logs with visual history.',
+    'In-app messaging between patient and clinician.',
+    'Admin portal with smart alerts.',
+    'Automated email notifications.'
   ];
 
   return (
@@ -473,7 +481,7 @@ function CaseStudyModal({ onClose }) {
         <button className="modal__close" onClick={onClose} aria-label="Close">
           &#x2715;
         </button>
-        <h2 className="modal__title">McKenzie Arm Care</h2>
+        <h2 className="modal__title" style={{ marginTop: '6px' }}>McKenzie Arm Care</h2>
         <p className="modal__text">
           A custom patient-care web app built for a clinician who needed more
           than a spreadsheet and less than an enterprise system. Patients log in,
@@ -481,12 +489,8 @@ function CaseStudyModal({ onClose }) {
           The clinician gets a portal with real-time visibility into every
           patient's journey, plus smart alerts when something needs attention.
         </p>
-        <ul className="modal__features">
-          {features.map((f, i) => (
-            <li key={i} className="modal__feature">{f}</li>
-          ))}
-        </ul>
-        <p className="modal__stack">
+        <ModalFeatureList features={features} />
+        <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '14px', color: '#8892a4', lineHeight: '1.5', fontStyle: 'normal', margin: '0' }}>
           Built with React, Supabase, and deployed on Netlify.
         </p>
         <ModalCloseButton onClose={onClose} />
