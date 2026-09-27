@@ -27,6 +27,24 @@ section ABOVE section 1 and say what it holds.
 
 ---
 
+# 0g. LINES REPLACED IN V65 (2026-09-27): Issue 1 moved, the e-book card stays up
+
+# FranklinAI — Project Instructions (Version 64, Current)
+
+- **Next:** the **e-book checkout on Kit Commerce** (decided, not built; "Buy the Playbook" is still `href="#"`). **Step 1 (payouts) DONE 2026-09-26.** **Waiting on the final book PDF** (David, about 2026-09-27); then step 2, create the product. **No placeholder product**: a live product with a stand-in file could sell a real copy. Steps in Open Items.
+
+- **Issue 1 of The Operator:** date lives in the Content Calendar (September 29, 2026 as of its September 25 pass).
+
+  > **Say this precisely:** the book exists and the listing is live; **the product is not buyable yet.** The Calendar's rule: **a listed product nobody can buy comes off the shelf.** If the checkout is not live by Issue 1, **ask David before touching the card**, and **do not ship a coming-soon strip or a pre-sell.**
+
+| **Test subscribers** | Four `besoulful+kit-…@gmail.com` addresses, all Confirmed. **Before Issue 1, keep one and delete three.** |
+
+| **E-book checkout on Kit Commerce — NEXT** | **Decided, not built.** (1) ✅ **Payouts connected 2026-09-26** (see Kit table). (2) David creates the product: *What Your Practice Actually Sells*, **$37**, final file uploaded (its cover line changed by David to "A playbook from The Operator"), a description that **calls it a playbook**, may name physical therapy, and obeys the copy rules. (3) Code sets "Buy the Playbook" to the live URL with `target="_blank" rel="noopener noreferrer"`, styles unchanged, and pushes. (4) David buys it or runs Kit's test purchase and checks the buyer lands on the list. **Verify:** `grep -c 'href="#"' src/App.jsx` → **0**; "$37" matches in both `EbookModal` spots and the Kit product; the `$350` decoy untouched; no em dashes in new strings. **Fallback:** not live by Issue 1 → **ask David before touching the card**; no coming-soon strip, no pre-sell. Any domain record Kit Commerce asks for goes in **Route 53**, by the DNS rule. |
+
+| **Test subscribers** | Four `besoulful+kit-…` addresses. **Before Issue 1: keep one, delete three.** |
+
+---
+
 # 0f. LINES REPLACED IN V64 (2026-09-26): the claude.ai cache-buster
 
 # FranklinAI — Project Instructions (Version 63, Current)

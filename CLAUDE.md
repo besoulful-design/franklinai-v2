@@ -1,4 +1,4 @@
-# FranklinAI — Project Instructions (Version 64, Current)
+# FranklinAI — Project Instructions (Version 65, Current)
 
 > **READ THIS FILE BEFORE MAKING ANY CHANGE TO THIS REPO.** Read all of it, not just the section you think applies. **If a value looks arbitrary, it is almost certainly hand-tuned and documented here. Look it up first.** A morning was once lost re-deriving a footer geometry this file already specified.
 
@@ -9,8 +9,8 @@
 ## CURRENT STATE (edit these lines in place; do not start a new chain)
 
 - **Live:** franklinaisolutions.com on **AWS Amplify** (account `franklinai-web`), DNS in **Route 53**, David's Microsoft 365 mail intact. **The Operator** signup is wired to **Kit form `9962049`**, double opt-in ON, and Kit sends as the domain. Confirmed by David 2026-09-25.
-- **Next:** the **e-book checkout on Kit Commerce** (decided, not built; "Buy the Playbook" is still `href="#"`). **Step 1 (payouts) DONE 2026-09-26.** **Waiting on the final book PDF** (David, about 2026-09-27); then step 2, create the product. **No placeholder product**: a live product with a stand-in file could sell a real copy. Steps in Open Items.
-- **Issue 1 of The Operator:** date lives in the Content Calendar (September 29, 2026 as of its September 25 pass).
+- **Next:** the **e-book checkout on Kit Commerce** (decided, not built; "Buy the Playbook" is still `href="#"`). **Step 1 (payouts) DONE 2026-09-26.** **Waiting on the final book PDF** (David, Tuesday 2026-09-29); then step 2, create the product. **No placeholder product**: a live product with a stand-in file could sell a real copy. Steps in Open Items.
+- **Issue 1 of The Operator:** pushed back a week by David on 2026-09-27 (from September 29 to about October 6, 2026); the Content Calendar holds the exact date.
 - **Watching:** the mystery third signup (Open Items); Netlify still on standby until David deletes the franklinai site and zone.
 - **Coming:** David will fine-tune the nav/footer nudges, kite sizes and F-vs-crossbar margins. The current values and their history are under **Locked Geometry**.
 - **Measured at V58 (unchanged at V59):** `App.jsx` is **735 lines**; the `$350` decoy sits at **lines 99 and 510**.
@@ -147,7 +147,7 @@ FranklinAI builds custom web apps and tools for businesses — web apps, interna
 
 - **GlowPT** — a daily patient check-in app for physical therapy clinics. Clinics subscribe; their patients use it free. Separately branded (amber/navy, its own logo, **glowpt.app**), but on this site it wears FranklinAI's navy-and-blue. **Live, and self-serve since V49.**
 - **The reconciliation e-book** — one-time, self-serve, **$37**, titled **"What Your Practice Actually Sells."** **The book is written** (about 6,300 words, eleven chapters; the file is David's), **the card and modal are live**, **the checkout is not wired**. **Kit Commerce is the decided checkout.**
-  > **Say this precisely:** the book exists and the listing is live; **the product is not buyable yet.** The Calendar's rule: **a listed product nobody can buy comes off the shelf.** If the checkout is not live by Issue 1, **ask David before touching the card**, and **do not ship a coming-soon strip or a pre-sell.**
+  > **Say this precisely:** the book exists and the listing is live; **the product is not buyable yet.** ⛔ **The e-book card is NEVER taken down, whether or not the checkout is live** (David, 2026-09-27). **Do not suggest it.** Still **no coming-soon strip and no pre-sell.**
 
 Everything else is **custom-build work** — scoped after a discovery call, priced from $10,000.
 
@@ -396,7 +396,7 @@ Netlify still builds this repo on every push and holds the old zone, but nothing
 | **Privacy settings** | GDPR consent page: **Don't show to anyone.** Unsubscribe survey: **off.** |
 | **Revenue / Kit Commerce** | **Payouts connected 2026-09-26** (Settings → Revenue → Set up payments): a **Stripe Express** account under Kit, login `david@franklinaisolutions.com`. **Business type Company, Single-member LLC, legal name FranklinAI Solutions LLC** with the LLC's EIN; website `https://franklinaisolutions.com`; industry **Digital products → Books**; David as account representative. **Payout bank: the LLC's Bluevine business checking** (it shows in Stripe as **Coastal Community Bank**, Bluevine's partner bank; that is correct). **Statement descriptor `FRANKLINAI`** in both Stripe and Kit's Commerce settings (Stripe's default truncated to "FRANKLINAISOLUTIONS.CO", which reads as a different domain and invites disputes). Payouts **weekly on Fridays**. Details changed later via **Open in Stripe** on that page. **No product created yet.** ⛔ Never record account numbers, SSN, or home address here (public repo). |
 | **Kit MCP** | Available under Settings → Kit MCP; **not connected.** Connecting it is David's call. |
-| **Test subscribers** | Four `besoulful+kit-…@gmail.com` addresses, all Confirmed. **Before Issue 1, keep one and delete three.** |
+| **Test subscribers** | Five `besoulful+kit-…@gmail.com` addresses, all Confirmed (the fifth, 2026-09-27 10:37 AM, a clean end-to-end run). **Before Issue 1, keep one and delete four.** |
 
 > **Reading Kit's numbers.** The **summary boxes** at the top of Subscribers **lag** by minutes to an hour; **the list below, with its "Total: N", is live.** **"Opened" can be inflated by Gmail fetching images**, so treat open rates as rough. The per-subscriber page shows Delivered / Opened / Clicked with **exact times on hover** — the tool for diagnosing a stuck signup.
 
@@ -941,11 +941,11 @@ A good one **names the repo in its first line**, states the scope and what not t
 
 | Item | Status |
 |---|---|
-| **E-book checkout on Kit Commerce — NEXT** | **Decided, not built.** (1) ✅ **Payouts connected 2026-09-26** (see Kit table). (2) David creates the product: *What Your Practice Actually Sells*, **$37**, final file uploaded (its cover line changed by David to "A playbook from The Operator"), a description that **calls it a playbook**, may name physical therapy, and obeys the copy rules. (3) Code sets "Buy the Playbook" to the live URL with `target="_blank" rel="noopener noreferrer"`, styles unchanged, and pushes. (4) David buys it or runs Kit's test purchase and checks the buyer lands on the list. **Verify:** `grep -c 'href="#"' src/App.jsx` → **0**; "$37" matches in both `EbookModal` spots and the Kit product; the `$350` decoy untouched; no em dashes in new strings. **Fallback:** not live by Issue 1 → **ask David before touching the card**; no coming-soon strip, no pre-sell. Any domain record Kit Commerce asks for goes in **Route 53**, by the DNS rule. |
+| **E-book checkout on Kit Commerce — NEXT** | **Decided, not built.** (1) ✅ **Payouts connected 2026-09-26** (see Kit table). (2) David creates the product: *What Your Practice Actually Sells*, **$37**, final file uploaded (its cover line changed by David to "A playbook from The Operator"), a description that **calls it a playbook**, may name physical therapy, and obeys the copy rules. (3) Code sets "Buy the Playbook" to the live URL with `target="_blank" rel="noopener noreferrer"`, styles unchanged, and pushes. (4) David buys it or runs Kit's test purchase and checks the buyer lands on the list. **Verify:** `grep -c 'href="#"' src/App.jsx` → **0**; "$37" matches in both `EbookModal` spots and the Kit product; the `$350` decoy untouched; no em dashes in new strings. **No fallback that touches the card:** it stays up regardless; no coming-soon strip, no pre-sell. Any domain record Kit Commerce asks for goes in **Route 53**, by the DNS rule. |
 | **The mystery third signup — WATCH** | 2026-09-25: an iPhone test signup's confirm tap never reached Kit (timeline: Delivered 4:23 PM, Opened 4:23 PM, Clicked 6:21 PM, the click being David later on the Mac). Kit shows "Subscription confirmed!" for any confirm link, including a used one, so the phone tap likely opened a different link; which one was never established. A clean fourth test entirely on the iPhone worked. **No fault found in the site or Kit.** **Watch for real readers piling up as Unconfirmed** in Kit (filter by status); if so, read a few per-subscriber timelines first; Kit can re-send the confirmation. |
 | **Kit mailing address → a real one** | Get a USPS PO box (or confirm the registered agent forwards business mail), enter it in Kit **Settings → Email → Mailing address** as `FranklinAI Solutions LLC, <address>`. |
 | **Kit confirmation email wording** | Parked draft in David's voice: subject *Confirm your subscription to The Operator*; top line *Thanks for signing up for The Operator. Tap the button below to confirm, and the next issue will come straight to your inbox.*; button *Confirm Your Subscription*; closing *Glad you're here.* / *David*. A claude.ai copy decision; edited in Kit (form Settings → Confirmation email → Edit Email Contents). |
-| **Test subscribers** | Four `besoulful+kit-…` addresses. **Before Issue 1: keep one, delete three.** |
+| **Test subscribers** | Five `besoulful+kit-…` addresses. **Before Issue 1: keep one, delete four.** |
 | **Kit trial lapse (~2026-10-09)** | Nothing built depends on a paid feature. Once, check **Settings → Account & Billing** shows no card on file ("Creator Monthly" is expected to be the trial's label). |
 | **Book text → "playbook"** | The site says "playbook" since 2026-09-26 (`fd6b95a`); the book file may still say "guide" where it describes itself (e.g. the sentence the modal's paragraph 3 echoes). **David edits the book to match**; then the book wins again as normal. |
 | **`EbookModal` paragraph 2: "build… built… built"** | Three forms of "build" in ~20 words. **Parked, book-first:** if it grates, change the book, then every surface together. |
@@ -968,6 +968,7 @@ A good one **names the repo in its first line**, states the scope and what not t
 
 *One line per version. The full entries for V12–V57 are in `docs/history.md` (section 1, "Change History").*
 
+- **V65** (2026-09-27) — Issue 1 pushed back a week; **the e-book card never comes down** (David); playbook PDF due Tuesday; fifth test subscriber.
 - **V64** (2026-09-26) — claude.ai read a stale V62: recorded the two caches (GitHub raw 5 min, claude.ai's fetch tool) and the cache-buster now in the pointer.
 - **V63** (2026-09-26) — **Kit Commerce step 1 done**: Stripe Express payouts as the LLC to Bluevine, descriptor `FRANKLINAI`. Product waits on the final PDF; no placeholder product.
 - **V62** (2026-09-26) — **"Playbook" replaces "guide" for the e-book on the site** (card teaser, modal subline, modal paragraph 3, button "Buy the Playbook"; `fd6b95a`, confirmed live by David). New copy rule; the book follows later. Checkout waits on the LLC business bank account; Stripe to be set up as the company with the EIN.
