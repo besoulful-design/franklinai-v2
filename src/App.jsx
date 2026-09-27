@@ -49,6 +49,19 @@ function EmailOption({ style }) {
   );
 }
 
+// The bottom Close, shared by all four modals so they match. Deliberately a
+// quiet text button, not a ghost: a ghost "Close" under the GlowPT modal's
+// filled discovery-call button would take the bottom, strongest position.
+function ModalCloseButton({ onClose }) {
+  return (
+    <div style={{ textAlign: 'center', marginTop: '24px' }}>
+      <button type="button" onClick={onClose} style={{ fontFamily: "'Inter', sans-serif", fontSize: '14px', fontWeight: '600', color: '#8892a4', background: 'none', border: 'none', padding: '0 16px', minHeight: '44px', cursor: 'pointer' }}>
+        Close
+      </button>
+    </div>
+  );
+}
+
 function GlowPTModal({ onClose }) {
   useEffect(() => {
     const prev = document.body.style.overflow;
@@ -113,6 +126,7 @@ function GlowPTModal({ onClose }) {
             </a>
           </div>
         </div>
+        <ModalCloseButton onClose={onClose} />
       </div>
     </div>
   );
@@ -163,6 +177,7 @@ function EbookModal({ onClose }) {
             Buy the Playbook
           </a>
         </div>
+        <ModalCloseButton onClose={onClose} />
       </div>
     </div>
   );
@@ -227,12 +242,6 @@ function NewsletterModal({ onClose }) {
     return () => { document.body.style.overflow = prev; };
   }, []);
 
-  useEffect(() => {
-    if (status !== 'success') return;
-    const timer = setTimeout(onClose, 2500);
-    return () => clearTimeout(timer);
-  }, [status, onClose]);
-
   async function handleSubmit(e) {
     e.preventDefault();
     setStatus('submitting');
@@ -253,10 +262,10 @@ function NewsletterModal({ onClose }) {
       const invalid = data.errors && data.errors.fields && data.errors.fields.includes('email_address');
       setErrorMessage(invalid
         ? "That email address doesn't look right. Check it and try again."
-        : 'That didn’t go through. Please try again in a moment.');
+        : "That didn't go through. Please try again in a moment.");
       setStatus('error');
     } catch {
-      setErrorMessage('That didn’t go through. Please try again in a moment.');
+      setErrorMessage("That didn't go through. Please try again in a moment.");
       setStatus('error');
     }
   }
@@ -279,9 +288,17 @@ function NewsletterModal({ onClose }) {
         {/* Signup form. JS-handled submit to Kit (a plain POST would navigate away and destroy the modal). */}
         <div style={{ borderTop: '1px solid rgba(96, 165, 250, 0.12)', paddingTop: '24px' }}>
           {status === 'success' ? (
-            <p role="status" style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', color: '#f0e6d3', lineHeight: '1.5', minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0' }}>
-              Almost there. Check your email to confirm.
-            </p>
+            <div role="status" style={{ textAlign: 'center' }}>
+              <p style={{ fontFamily: "'Playfair Display', serif", fontWeight: '700', fontSize: '24px', fontStyle: 'normal', color: '#ffffff', lineHeight: '1.2', margin: '0 0 10px' }}>
+                Check your email
+              </p>
+              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', color: '#f0e6d3', lineHeight: '1.5', margin: '0 0 8px' }}>
+                We sent a confirmation to <span style={{ fontWeight: '600', overflowWrap: 'anywhere' }}>{email.trim()}</span>. Tap the button inside to subscribe.
+              </p>
+              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '14px', color: '#8899b0', lineHeight: '1.5', margin: '0' }}>
+                Not there in a minute? Check spam or promotions.
+              </p>
+            </div>
           ) : (
           <form onSubmit={handleSubmit} style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', justifyContent: 'center', alignItems: 'center' }}>
             <input
@@ -321,6 +338,7 @@ function NewsletterModal({ onClose }) {
             </p>
           )}
         </div>
+        <ModalCloseButton onClose={onClose} />
       </div>
     </div>
   );
@@ -467,6 +485,7 @@ function CaseStudyModal({ onClose }) {
         <p className="modal__stack">
           Built with React, Supabase, and deployed on Netlify.
         </p>
+        <ModalCloseButton onClose={onClose} />
       </div>
     </div>
   );
