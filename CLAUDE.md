@@ -1,4 +1,4 @@
-# FranklinAI — Project Instructions (Version 65, Current)
+# FranklinAI — Project Instructions (Version 66, Current)
 
 > **READ THIS FILE BEFORE MAKING ANY CHANGE TO THIS REPO.** Read all of it, not just the section you think applies. **If a value looks arbitrary, it is almost certainly hand-tuned and documented here. Look it up first.** A morning was once lost re-deriving a footer geometry this file already specified.
 
@@ -13,7 +13,7 @@
 - **Issue 1 of The Operator:** pushed back a week by David on 2026-09-27 (from September 29 to about October 6, 2026); the Content Calendar holds the exact date.
 - **Watching:** the mystery third signup (Open Items); Netlify still on standby until David deletes the franklinai site and zone.
 - **Coming:** David will fine-tune the nav/footer nudges, kite sizes and F-vs-crossbar margins. The current values and their history are under **Locked Geometry**.
-- **Measured at V58 (unchanged at V59):** `App.jsx` is **735 lines**; the `$350` decoy sits at **lines 99 and 510**.
+- **Measured at V66:** `App.jsx` is **761 lines**; the `$350` decoy sits at **lines 123 and 536**.
 - **Older version-by-version narrative (V12 to V57) is in `docs/history.md`.** The "Everything else from Version N remains in force" chain that used to open this file was removed on 2026-09-26. **Do not start a new one.**
 
 ---
@@ -112,7 +112,7 @@
 > - **Two retired framings the site copy must never reintroduce:** **"nobody decided"**, and **the front-desk-versus-therapist split**.
 > - **"cash practice" and "advanced care" are interchangeable, and neither is retired.**
 > - **"The Operator" is the newsletter's title; the masthead standfirst rule is retired.**
-> - **The promise line reads the same on all three surfaces** (issue top, site card and modal, Instagram graphic): **"For physical therapy practices."**
+> - **The promise line reads the same on all three surfaces** (issue top, **the site's newsletter card**, Instagram graphic): **"For physical therapy practices."** *(Taken out of `NewsletterModal` by David on 2026-09-27 to cut copy; the card keeps it.)*
 > - **The readiness ladder:** newsletter (cold follow) → email (a self-paced question) → discovery call (the door).
 
 **This file** covers the **website build**: structure, styling, copy rules, locked values, the product facts the site displays, the **pricing of every rung**, **hosting and DNS**, and **the Kit account behind the site**. **It is the authority for everything it states.**
@@ -228,10 +228,10 @@ The McKenzie Arm Care app — a custom patient-care web app with user login, jou
 > ## ⚠️ THE `$350` DECOY — read before changing GlowPT's price
 >
 > **`$350` appears TWICE in `App.jsx` and only one is GlowPT.**
-> - **Line 99**, inside `GlowPTModal`'s footer: **GlowPT.**
-> - **Line 510**, `Monthly Care`'s `price: '$350'` in `Pricing()`: **the custom build's hosting-and-maintenance retainer.** Unrelated.
+> - **Line 123**, inside `GlowPTModal`'s footer: **GlowPT.**
+> - **Line 536**, `Monthly Care`'s `price: '$350'` in `Pricing()`: **the custom build's hosting-and-maintenance retainer.** Unrelated.
 >
-> **If GlowPT's price moves, line 510 must NOT move with it.** **The line numbers drift whenever anything above them changes; treat them as a hint and confirm by the surrounding function name.**
+> **If GlowPT's price moves, line 536 must NOT move with it.** **The line numbers drift whenever anything above them changes; treat them as a hint and confirm by the surrounding function name.**
 
 **Order rationale.** The e-book sits first (cheapest paid yes, under the newsletter whose diagnosis it answers), GlowPT second (recurring flagship), then Custom Work as proof, bridging into How It Works and Custom Pricing.
 
@@ -259,11 +259,11 @@ The McKenzie Arm Care app — a custom patient-care web app with user login, jou
 - **Subhead "The Operator"** — white Playfair, `clamp(30px, 5vw, 35px)`, 800, `lineHeight: '1.1'`, `marginTop: '0'`, `marginBottom: '14px'`.
 - **Description** (Inter 15px, #8892a4, `marginTop: '0'`, `marginBottom: '18px'`, `lineHeight: '1.5'`): **"For physical therapy practices. Delivered every other Tuesday, it takes a clear look at what's working and not working in your practice, and what to do about it."**
 
-> **The description appears TWICE** (card and `NewsletterModal`). **They move together.** `grep -c "For physical therapy practices\."` → **2**.
+> **The description appears twice with one difference:** the modal drops the first sentence "For physical therapy practices." (David, 2026-09-27: less copy in the signup modal). **The rest moves together.** `grep -c "For physical therapy practices\."` → **1**; `grep -c "Delivered every other Tuesday"` → **2**.
 
 **The card's action:** one ghost button **"Subscribe for Free"** (`btn btn--ghost`, `marginTop: '0'`) opening `NewsletterModal`. **No email field on the card** — a bold button draws the first click, so an inline field was a dead click (V39 reversed V28). **Do not re-propose the inline field unless David asks.**
 
-**`NewsletterModal`** (the fourth modal): title **"The Operator"**, subline **"Free to subscribe."** (Inter 14px/600/#8899b0), the same description, then a `borderTop` divider wrapping a **`<form>`**: an email input (cream #f0e6d3 on rgba(255,255,255,0.04), 1px border rgba(96,165,250,0.3), 8px radius, **16px font to prevent iOS zoom**, `WebkitAppearance: 'none'`, flex `1 1 220px`, maxWidth 280px, 44px tall, **`name="email_address"`, `required`**) and the ghost Subscribe button (**`type="submit"`**).
+**`NewsletterModal`** (the fourth modal): title **"The Operator"**, subline **"Free to subscribe."** (Inter 14px/600/#8899b0), the description **without "For physical therapy practices."**, then a `borderTop` divider wrapping a **`<form>`**: an email input (cream #f0e6d3 on rgba(255,255,255,0.04), 1px border rgba(96,165,250,0.3), 8px radius, **16px font to prevent iOS zoom**, `WebkitAppearance: 'none'`, flex `1 1 220px`, maxWidth 280px, 44px tall, **`name="email_address"`, `required`**) and the ghost Subscribe button (**`type="submit"`**). Under the form, a note **"Then check your email to confirm."** (Inter 14px, #8892a4, marginTop 12px, centered), **hidden once the success line shows**. Then the shared bottom Close.
 - **The 44px alignment fix:** `height`/`minHeight: '44px'`, `boxSizing: 'border-box'`, `display: 'inline-flex'`, centering, and **`marginTop: '0'`** (cancels `.btn`'s `margin-top: 8px`). Keep all of them.
 
 **How the wired form behaves:**
@@ -272,13 +272,12 @@ The McKenzie Arm Care app — a custom patient-care web app with user login, jou
 |---|---|
 | Submit | `fetch` POST of a `FormData` with **`email_address`** to **`https://app.kit.com/forms/9962049/subscriptions`** (`KIT_FORM_URL`), header `Accept: application/json`. Kit answers any origin with `{"status":"success"}` or `{"status":"failed","errors":{"fields":[...]}}`. |
 | In flight | Input and button disabled; button reads **"Subscribing…"**. |
-| Success | Row replaced by **"Almost there. Check your email to confirm."** (`role="status"`); the modal **closes itself after 2.5 seconds**. |
+| Success | Row replaced by **"Almost there. Check your email to confirm."** (`role="status"`); the modal **closes itself after 2.5 seconds**. *(The note under the form exists because this line can be missed. A three-line success state that stayed open was tried and rejected as too wordy on 2026-09-27; keep the one line and the auto-close.)* |
 | Kit rejects the address | Modal stays open: **"That email address doesn't look right. Check it and try again."** (`role="alert"`) |
 | Anything else fails | Modal stays open: **"That didn’t go through. Please try again in a moment."** |
 
 > **If Kit's double opt-in is ever turned OFF, change the success line to "You're in."** Double opt-in is ON by David's choice (keeps fake and mistyped addresses off the list).
 >
-> **Nit:** the generic error string uses a curly apostrophe (`’`); every other string uses a straight one. Make it straight next time this code is touched.
 
 ## Tech Stack
 
@@ -396,9 +395,9 @@ Netlify still builds this repo on every push and holds the old zone, but nothing
 | **Privacy settings** | GDPR consent page: **Don't show to anyone.** Unsubscribe survey: **off.** |
 | **Revenue / Kit Commerce** | **Payouts connected 2026-09-26** (Settings → Revenue → Set up payments): a **Stripe Express** account under Kit, login `david@franklinaisolutions.com`. **Business type Company, Single-member LLC, legal name FranklinAI Solutions LLC** with the LLC's EIN; website `https://franklinaisolutions.com`; industry **Digital products → Books**; David as account representative. **Payout bank: the LLC's Bluevine business checking** (it shows in Stripe as **Coastal Community Bank**, Bluevine's partner bank; that is correct). **Statement descriptor `FRANKLINAI`** in both Stripe and Kit's Commerce settings (Stripe's default truncated to "FRANKLINAISOLUTIONS.CO", which reads as a different domain and invites disputes). Payouts **weekly on Fridays**. Details changed later via **Open in Stripe** on that page. **No product created yet.** ⛔ Never record account numbers, SSN, or home address here (public repo). |
 | **Kit MCP** | Available under Settings → Kit MCP; **not connected.** Connecting it is David's call. |
-| **Test subscribers** | Five `besoulful+kit-…@gmail.com` addresses, all Confirmed (the fifth, 2026-09-27 10:37 AM, a clean end-to-end run). **Before Issue 1, keep one and delete four.** |
+| **Test subscribers** | Two, both Confirmed: `besoulful+kit-ke…` (Ken) and `besoulful+kit-juli…` (Julie), 2026-09-27; the rest deleted. **Before Issue 1, keep one and delete the other.** |
 
-> **Reading Kit's numbers.** The **summary boxes** at the top of Subscribers **lag** by minutes to an hour; **the list below, with its "Total: N", is live.** **"Opened" can be inflated by Gmail fetching images**, so treat open rates as rough. The per-subscriber page shows Delivered / Opened / Clicked with **exact times on hover** — the tool for diagnosing a stuck signup.
+> **Reading Kit's numbers.** The **summary boxes** at the top of Subscribers **lag** by minutes to an hour; **the list below, with its "Total: N", is live.** **Kit's page does not refresh itself**: a subscriber who has just confirmed still shows **Unconfirmed** (the normal state between signup and the tap) until you reload, and a **"Status is Confirmed" filter hides them** entirely. **"Opened" can be inflated by Gmail fetching images**, so treat open rates as rough. The per-subscriber page shows Delivered / Opened / Clicked with **exact times on hover** — the tool for diagnosing a stuck signup.
 
 ---
 
@@ -452,7 +451,7 @@ SVG favicon and 180×180 PNG apple-touch-icon, kite mark on navy with the bolt i
 | Section card headings (all seven, incl. "Newsletter") | Playfair Display | 800 | **clamp(36px, 5.5vw, 58px)**, blue, **lineHeight 1.2** (About 1.1), **marginBottom clamp(4px, 1.5vw, 10px)** |
 | — "Behind FranklinAI" | Playfair Display | 800 | two lines via `<br />`, lineHeight 1.1; "Behind Franklin" blue, **"AI" white** |
 | Secondary sub-titles (incl. "The Operator") | Playfair Display | 700–800 | **clamp(30px, 5vw, 35px)**, **all white** |
-| Newsletter description (card **and** modal) | Inter | 400 | 15px, #8892a4, lineHeight 1.5 |
+| Newsletter description (card **and** modal; the modal omits the first sentence) | Inter | 400 | 15px, #8892a4, lineHeight 1.5 |
 | Newsletter email input | Inter | 400 | **16px** (prevents iOS zoom), 44px tall |
 | Newsletter success line | Inter | 400 | 15px, #f0e6d3, lineHeight 1.5, min-height 44px so the modal does not jump |
 | Newsletter error line | Inter | 400 | 14px, #8899b0, lineHeight 1.5, centered |
@@ -462,7 +461,7 @@ SVG favicon and 180×180 PNG apple-touch-icon, kite mark on navy with the bolt i
 | Price descriptors | Playfair Display | 700 | 20px, blue |
 | Modal titles | Playfair Display | — | `.modal__title`, marginTop 6px |
 | Modal sublines | Inter | 600 | 14px, #8899b0, marginBottom 16px |
-| Modal feature rows | Inter | 400 / 700 check | 15px, #f0e6d3 text, #60a5fa check |
+| Modal feature rows (GlowPT and case study, one shared `ModalFeatureList`) | Inter | 400 / 700 check | 15px, #f0e6d3 text, #60a5fa check, single column |
 | Nav name | Playfair Display | 700 | clamp(40.95px, 4.35vw, 50.4px), blue with "AI" white |
 | **Nav "Solutions LLC"** | Inter | 800 | clamp(25.6px, 2.72vw, 31.5px), #60a5fa. **No comma.** |
 | Footer name | Playfair Display | 700 | 32px, blue with "AI" white |
@@ -651,7 +650,9 @@ No email in the footer, and **no mailing address**, which is why Kit's stand-in 
 
 ## Scroll Lock on Modals
 
-All four modals (`EbookModal`, `GlowPTModal`, `CaseStudyModal`, `NewsletterModal`) lock page scroll via a `useEffect` setting `document.body.style.overflow = 'hidden'` on mount, restoring on unmount; each closes on X click or backdrop click. **`NewsletterModal` also closes itself 2.5s after a successful signup**, through a second `useEffect` that clears its timer on unmount.
+All four modals (`EbookModal`, `GlowPTModal`, `CaseStudyModal`, `NewsletterModal`) lock page scroll via a `useEffect` setting `document.body.style.overflow = 'hidden'` on mount, restoring on unmount; each closes on the X, a backdrop click, **or the bottom Close**. **`NewsletterModal` also closes itself 2.5s after a successful signup**, through a second `useEffect` that clears its timer on unmount.
+
+**The bottom Close (David, 2026-09-27: close from top or bottom, consistent throughout)** is one shared **`ModalCloseButton`**, the last thing in every modal, 24px below the content above it: "Close", Inter 13px/600, #8892a4, transparent, **1px frame rgba(136, 146, 164, 0.35)**, radius 12px, padding `10px 20px` (the modal-button size). **Grey, not a blue ghost, on purpose:** in `GlowPTModal` it sits under the filled discovery-call button and must not take the bottom, strongest position. Not a divider; the four-divider count is unchanged.
 
 > **Accessibility gap:** no Escape key, no focus trap. glowpt.app solved this with one shared **`useModal`** hook (scroll lock, Escape, focus trap, focus restore, `role="dialog"`, `aria-modal`). **If a fifth modal arrives, port the hook rather than writing a fifth copy.**
 
@@ -735,7 +736,7 @@ Two products, the e-book first, GlowPT second. State flags `ebookOpen` and `glow
 
 ### Custom Work
 
-Heading "Custom Work". Title (card-title, white, clamp(30px, 5vw, 35px)) "McKenzie Arm Care"; two-sentence teaser; **"Case Study"** ghost button (marginTop 16px) → `CaseStudyModal`: title "McKenzie Arm Care" (no "Case Study" label inside); full description; 2-column feature list; tech note "Built with React, Supabase, and deployed on Netlify." *(True of McKenzie; if McKenzie moves, this string moves with it.)*
+Heading "Custom Work". Title (card-title, white, clamp(30px, 5vw, 35px)) "McKenzie Arm Care"; two-sentence teaser; **"Case Study"** ghost button (marginTop 16px) → `CaseStudyModal`: title "McKenzie Arm Care" (marginTop 6px, no "Case Study" label inside); full description; the six features in the **same check-mark list as GlowPT** (`ModalFeatureList`, with `last` so the gap to Close stays 24px), each ending in a period. **The tech note ("Built with React, Supabase…") was removed by David on 2026-09-27; do not restore it.**
 
 ### How It Works
 
@@ -781,7 +782,7 @@ Account slug `david-peterson-40s7lw` · Event "Free Discovery Call" · slug `fre
 - FranklinAI is always one word, capital F and capital AI; the "AI" renders white wherever the wordmark appears. The footer copyright is just "© {year}".
 - **⚠️ THE LEGAL ENTITY IS WRITTEN `FranklinAI Solutions LLC`, WITH NO COMMA.** Do not reintroduce the comma anywhere, on either site.
 - **⚠️ NEVER END A CLAUSE ON A FLOATING "FOR FREE" OR "FREE" WHERE A PRICE IS NEARBY.** It attaches to whatever the reader last held in mind, usually the thing being sold. **Give it an explicit subject** ("the patients join for free"). Same trap for "included", "at no cost" and "on us".
-- **The newsletter description is duplicated on purpose (card + modal). Any edit changes BOTH.** `grep -c "For physical therapy practices\."` → **2**.
+- **The newsletter description is duplicated on purpose (card + modal; the modal omits "For physical therapy practices."). Any edit to the rest changes BOTH.** `grep -c "Delivered every other Tuesday"` → **2**.
 - **The GlowPT pitch's second sentence and the eight bullets are duplicated ACROSS REPOS. Any edit changes BOTH repos.** `grep -c "More completed plans of care and the clinic stays full"` → **2** here, **1** in `glowpt/src/lib/marketing.js`.
 - **The book wins on shared sentences.** Where any surface repeats a sentence from *What Your Practice Actually Sells*, the book's wording is canonical.
 - **"Playbook" is the format word for the products on every public surface** (David, 2026-09-26): the site, the Kit Commerce product page, the book's cover line. Never "guide" for the product. **The book's title and the newsletter's name are unchanged.** **One deliberate exception to "the book wins":** the site switched to "playbook" first; the book is edited to match later (Open Items). **Do not "fix" the site back to "guide."**
@@ -848,7 +849,7 @@ better technology and a clear focus on what a business needs.
 - **Nav:** `global.css` classes for layout plus inline overrides; the nav kite does not use `.site-nav__logo`.
 - **Newsletter card:** `.section` / `.container` / `.site-card` / `.card-heading` plus inline styles; the card's only action is a ghost button opening the modal. The modal's input, button, success and error lines are fully inline-styled. **Placeholder styling would need a `global.css` `::placeholder` rule** and is deliberately not added.
 - **Available card:** `.card-heading` / `.card-text` / `.btn` plus inline overrides; modal sublines, bodies, price blocks and dividers fully inline.
-- **Custom Work:** `.card-title` / `.card-text` / `.btn`; `CaseStudyModal` adds `.modal__features` / `.modal__feature` / `.modal__stack`.
+- **Custom Work:** `.card-title` / `.card-text` / `.btn`; `CaseStudyModal` is inline-styled through the shared `ModalFeatureList` (the `.modal__features` / `.modal__feature` / `.modal__stack` rules in `global.css` are now dead code).
 - **Primary buttons:** all three use `btn btn--primary` plus inline sizing. Do not remove the sizing without setting new explicit sizing.
 - **Fixes are JSX-only via inline styles.** Avoid `global.css` edits. Public assets go in `public/`.
 
@@ -945,7 +946,7 @@ A good one **names the repo in its first line**, states the scope and what not t
 | **The mystery third signup — WATCH** | 2026-09-25: an iPhone test signup's confirm tap never reached Kit (timeline: Delivered 4:23 PM, Opened 4:23 PM, Clicked 6:21 PM, the click being David later on the Mac). Kit shows "Subscription confirmed!" for any confirm link, including a used one, so the phone tap likely opened a different link; which one was never established. A clean fourth test entirely on the iPhone worked. **No fault found in the site or Kit.** **Watch for real readers piling up as Unconfirmed** in Kit (filter by status); if so, read a few per-subscriber timelines first; Kit can re-send the confirmation. |
 | **Kit mailing address → a real one** | Get a USPS PO box (or confirm the registered agent forwards business mail), enter it in Kit **Settings → Email → Mailing address** as `FranklinAI Solutions LLC, <address>`. |
 | **Kit confirmation email wording** | Parked draft in David's voice: subject *Confirm your subscription to The Operator*; top line *Thanks for signing up for The Operator. Tap the button below to confirm, and the next issue will come straight to your inbox.*; button *Confirm Your Subscription*; closing *Glad you're here.* / *David*. A claude.ai copy decision; edited in Kit (form Settings → Confirmation email → Edit Email Contents). |
-| **Test subscribers** | Five `besoulful+kit-…` addresses. **Before Issue 1: keep one, delete four.** |
+| **Test subscribers** | Two (Ken, Julie). **Before Issue 1: keep one, delete the other.** |
 | **Kit trial lapse (~2026-10-09)** | Nothing built depends on a paid feature. Once, check **Settings → Account & Billing** shows no card on file ("Creator Monthly" is expected to be the trial's label). |
 | **Book text → "playbook"** | The site says "playbook" since 2026-09-26 (`fd6b95a`); the book file may still say "guide" where it describes itself (e.g. the sentence the modal's paragraph 3 echoes). **David edits the book to match**; then the book wins again as normal. |
 | **`EbookModal` paragraph 2: "build… built… built"** | Three forms of "build" in ~20 words. **Parked, book-first:** if it grates, change the book, then every surface together. |
@@ -956,9 +957,7 @@ A good one **names the repo in its first line**, states the scope and what not t
 | **Click-through vs signature** on the clinic BAA | Undecided. If signature wins, self-serve onboarding gains a manual step and this copy must reflect it. |
 | **Fictitious-name registration** | Raised 2026-09-01, not acted on. Both sites lead with "FranklinAI" while the entity is FranklinAI Solutions LLC; PA generally requires a fictitious-name registration. **Nobody involved is a lawyer; nothing changed on this basis.** A cheap question for the open attorney engagement. |
 | **Mail authentication, the remainder** | Still absent: **Microsoft 365 DKIM**. Adding it, and later tightening DMARC past `p=none`, are each their own change in Route 53 with a mail test both ways. |
-| **Newsletter error string's curly apostrophe** | Make it straight next time `NewsletterModal` is touched. |
 | **Modal accessibility** | No Escape key or focus trap. Port glowpt.app's `useModal` if a fifth modal arrives, or sooner. |
-| **The GlowPT modal has not been opened by eye since V52/V53** | Bullets 3 and 5 and the description are build-and-string-verified only (the card teaser was seen). **Open the modal next time anyone is in this repo — one click.** |
 | **Dead `src/components/KiteLogo.jsx`** | Nothing imports it; a different mark. Safe to delete in a cleanup. |
 | ~~Public vs private repos~~ | **✅ CLOSED 2026-09-26.** `glowpt` is **private** (no forks found; full-history secret scan clean; nothing needed rotating; Amplify still builds; recorded in GlowPT's CLAUDE.md). **`franklinai-v2` stays PUBLIC on purpose** for the claude.ai pointer. **Standing rule: never commit a secret or anything confidential to this repo, and keep sensitive business or legal detail brief here.** |
 
@@ -968,6 +967,7 @@ A good one **names the repo in its first line**, states the scope and what not t
 
 *One line per version. The full entries for V12–V57 are in `docs/history.md` (section 1, "Change History").*
 
+- **V66** (2026-09-27) — Modals: a framed grey bottom Close on all four; signup modal trimmed (first description sentence out, "Then check your email to confirm." under the form); case study uses GlowPT's check list, tech note removed. Kit read-out and test subscribers updated.
 - **V65** (2026-09-27) — Issue 1 pushed back a week; **the e-book card never comes down** (David); playbook PDF due Tuesday; fifth test subscriber.
 - **V64** (2026-09-26) — claude.ai read a stale V62: recorded the two caches (GitHub raw 5 min, claude.ai's fetch tool) and the cache-buster now in the pointer.
 - **V63** (2026-09-26) — **Kit Commerce step 1 done**: Stripe Express payouts as the LLC to Bluevine, descriptor `FRANKLINAI`. Product waits on the final PDF; no placeholder product.

@@ -27,6 +27,52 @@ section ABOVE section 1 and say what it holds.
 
 ---
 
+# 0h. LINES REPLACED IN V66 (2026-09-27): modal bottom Close, signup trim, case-study list
+
+# FranklinAI — Project Instructions (Version 65, Current)
+
+- **Measured at V58 (unchanged at V59):** `App.jsx` is **735 lines**; the `$350` decoy sits at **lines 99 and 510**.
+
+> - **Line 99**, inside `GlowPTModal`'s footer: **GlowPT.**
+
+> - **Line 510**, `Monthly Care`'s `price: '$350'` in `Pricing()`: **the custom build's hosting-and-maintenance retainer.** Unrelated.
+
+> **If GlowPT's price moves, line 510 must NOT move with it.** **The line numbers drift whenever anything above them changes; treat them as a hint and confirm by the surrounding function name.**
+
+> - **The promise line reads the same on all three surfaces** (issue top, site card and modal, Instagram graphic): **"For physical therapy practices."**
+
+> **The description appears TWICE** (card and `NewsletterModal`). **They move together.** `grep -c "For physical therapy practices\."` → **2**.
+
+**`NewsletterModal`** (the fourth modal): title **"The Operator"**, subline **"Free to subscribe."** (Inter 14px/600/#8899b0), the same description, then a `borderTop` divider wrapping a **`<form>`**: an email input (cream #f0e6d3 on rgba(255,255,255,0.04), 1px border rgba(96,165,250,0.3), 8px radius, **16px font to prevent iOS zoom**, `WebkitAppearance: 'none'`, flex `1 1 220px`, maxWidth 280px, 44px tall, **`name="email_address"`, `required`**) and the ghost Subscribe button (**`type="submit"`**).
+
+| Success | Row replaced by **"Almost there. Check your email to confirm."** (`role="status"`); the modal **closes itself after 2.5 seconds**. |
+
+> **Nit:** the generic error string uses a curly apostrophe (`’`); every other string uses a straight one. Make it straight next time this code is touched.
+
+| **Test subscribers** | Five `besoulful+kit-…@gmail.com` addresses, all Confirmed (the fifth, 2026-09-27 10:37 AM, a clean end-to-end run). **Before Issue 1, keep one and delete four.** |
+
+> **Reading Kit's numbers.** The **summary boxes** at the top of Subscribers **lag** by minutes to an hour; **the list below, with its "Total: N", is live.** **"Opened" can be inflated by Gmail fetching images**, so treat open rates as rough. The per-subscriber page shows Delivered / Opened / Clicked with **exact times on hover** — the tool for diagnosing a stuck signup.
+
+| Newsletter description (card **and** modal) | Inter | 400 | 15px, #8892a4, lineHeight 1.5 |
+
+| Modal feature rows | Inter | 400 / 700 check | 15px, #f0e6d3 text, #60a5fa check |
+
+All four modals (`EbookModal`, `GlowPTModal`, `CaseStudyModal`, `NewsletterModal`) lock page scroll via a `useEffect` setting `document.body.style.overflow = 'hidden'` on mount, restoring on unmount; each closes on X click or backdrop click. **`NewsletterModal` also closes itself 2.5s after a successful signup**, through a second `useEffect` that clears its timer on unmount.
+
+Heading "Custom Work". Title (card-title, white, clamp(30px, 5vw, 35px)) "McKenzie Arm Care"; two-sentence teaser; **"Case Study"** ghost button (marginTop 16px) → `CaseStudyModal`: title "McKenzie Arm Care" (no "Case Study" label inside); full description; 2-column feature list; tech note "Built with React, Supabase, and deployed on Netlify." *(True of McKenzie; if McKenzie moves, this string moves with it.)*
+
+- **Custom Work:** `.card-title` / `.card-text` / `.btn`; `CaseStudyModal` adds `.modal__features` / `.modal__feature` / `.modal__stack`.
+
+- **The newsletter description is duplicated on purpose (card + modal). Any edit changes BOTH.** `grep -c "For physical therapy practices\."` → **2**.
+
+| **Test subscribers** | Five `besoulful+kit-…` addresses. **Before Issue 1: keep one, delete four.** |
+
+| **Newsletter error string's curly apostrophe** | Make it straight next time `NewsletterModal` is touched. |
+
+| **The GlowPT modal has not been opened by eye since V52/V53** | Bullets 3 and 5 and the description are build-and-string-verified only (the card teaser was seen). **Open the modal next time anyone is in this repo — one click.** |
+
+---
+
 # 0g. LINES REPLACED IN V65 (2026-09-27): Issue 1 moved, the e-book card stays up
 
 # FranklinAI — Project Instructions (Version 64, Current)
