@@ -242,6 +242,12 @@ function NewsletterModal({ onClose }) {
     return () => { document.body.style.overflow = prev; };
   }, []);
 
+  useEffect(() => {
+    if (status !== 'success') return;
+    const timer = setTimeout(onClose, 2500);
+    return () => clearTimeout(timer);
+  }, [status, onClose]);
+
   async function handleSubmit(e) {
     e.preventDefault();
     setStatus('submitting');
@@ -288,17 +294,9 @@ function NewsletterModal({ onClose }) {
         {/* Signup form. JS-handled submit to Kit (a plain POST would navigate away and destroy the modal). */}
         <div style={{ borderTop: '1px solid rgba(96, 165, 250, 0.12)', paddingTop: '24px' }}>
           {status === 'success' ? (
-            <div role="status" style={{ textAlign: 'center' }}>
-              <p style={{ fontFamily: "'Playfair Display', serif", fontWeight: '700', fontSize: '24px', fontStyle: 'normal', color: '#ffffff', lineHeight: '1.2', margin: '0 0 10px' }}>
-                Check your email
-              </p>
-              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', color: '#f0e6d3', lineHeight: '1.5', margin: '0 0 8px' }}>
-                We sent a confirmation to <span style={{ fontWeight: '600', overflowWrap: 'anywhere' }}>{email.trim()}</span>. Tap the button inside to subscribe.
-              </p>
-              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '14px', color: '#8899b0', lineHeight: '1.5', margin: '0' }}>
-                Not there in a minute? Check spam or promotions.
-              </p>
-            </div>
+            <p role="status" style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', color: '#f0e6d3', lineHeight: '1.5', minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0' }}>
+              Almost there. Check your email to confirm.
+            </p>
           ) : (
           <form onSubmit={handleSubmit} style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', justifyContent: 'center', alignItems: 'center' }}>
             <input
