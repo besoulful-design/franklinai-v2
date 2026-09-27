@@ -65,9 +65,11 @@ function ModalCloseButton({ onClose }) {
 
 // The check-mark feature list, shared by the GlowPT and case-study modals so
 // the two lists always look the same. Lines end with periods.
-function ModalFeatureList({ features }) {
+// `last` drops the bottom margin when the list is the final content, so the
+// gap to the bottom Close stays 24px like the other modals.
+function ModalFeatureList({ features, last = false }) {
   return (
-    <div style={{ marginBottom: '24px' }}>
+    <div style={{ marginBottom: last ? '0' : '24px' }}>
       {features.map((f, i) => (
         <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', marginBottom: i < features.length - 1 ? '12px' : '0' }}>
           <span style={{ color: '#60a5fa', fontWeight: '700', flexShrink: 0, lineHeight: '1.5' }} aria-hidden="true">&#10003;</span>
@@ -489,10 +491,7 @@ function CaseStudyModal({ onClose }) {
           The clinician gets a portal with real-time visibility into every
           patient's journey, plus smart alerts when something needs attention.
         </p>
-        <ModalFeatureList features={features} />
-        <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '14px', color: '#8892a4', lineHeight: '1.5', fontStyle: 'normal', margin: '0' }}>
-          Built with React, Supabase, and deployed on Netlify.
-        </p>
+        <ModalFeatureList features={features} last />
         <ModalCloseButton onClose={onClose} />
       </div>
     </div>
