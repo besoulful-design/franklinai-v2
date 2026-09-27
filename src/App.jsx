@@ -49,13 +49,14 @@ function EmailOption({ style }) {
   );
 }
 
-// The bottom Close, shared by all four modals so they match. Deliberately a
-// quiet text button, not a ghost: a ghost "Close" under the GlowPT modal's
-// filled discovery-call button would take the bottom, strongest position.
+// The bottom Close, shared by all four modals so they match. Framed like the
+// modal buttons (same size and radius) but in grey, not blue: a blue ghost
+// "Close" under the GlowPT modal's filled discovery-call button would take the
+// bottom, strongest position.
 function ModalCloseButton({ onClose }) {
   return (
     <div style={{ textAlign: 'center', marginTop: '24px' }}>
-      <button type="button" onClick={onClose} style={{ fontFamily: "'Inter', sans-serif", fontSize: '14px', fontWeight: '600', color: '#8892a4', background: 'none', border: 'none', padding: '0 16px', minHeight: '44px', cursor: 'pointer' }}>
+      <button type="button" onClick={onClose} style={{ fontFamily: "'Inter', sans-serif", fontSize: '13px', fontWeight: '600', color: '#8892a4', background: 'transparent', border: '1px solid rgba(136, 146, 164, 0.35)', borderRadius: '12px', padding: '10px 20px', cursor: 'pointer' }}>
         Close
       </button>
     </div>
@@ -289,7 +290,7 @@ function NewsletterModal({ onClose }) {
           Free to subscribe.
         </p>
         <p className="modal__text">
-          For physical therapy practices. Delivered every other Tuesday, it takes a clear look at what's working and not working in your practice, and what to do about it.
+          Delivered every other Tuesday, it takes a clear look at what's working and not working in your practice, and what to do about it.
         </p>
         {/* Signup form. JS-handled submit to Kit (a plain POST would navigate away and destroy the modal). */}
         <div style={{ borderTop: '1px solid rgba(96, 165, 250, 0.12)', paddingTop: '24px' }}>
@@ -332,7 +333,7 @@ function NewsletterModal({ onClose }) {
           )}
           {status !== 'success' && (
             <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '14px', color: '#8892a4', lineHeight: '1.5', textAlign: 'center', marginTop: '12px', marginBottom: '0' }}>
-              After subscribing, check your email to confirm.
+              Then check your email to confirm.
             </p>
           )}
           {status === 'error' && (
