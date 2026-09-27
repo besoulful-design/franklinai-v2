@@ -330,6 +330,11 @@ function NewsletterModal({ onClose }) {
             </button>
           </form>
           )}
+          {status !== 'success' && (
+            <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '14px', color: '#8892a4', lineHeight: '1.5', textAlign: 'center', marginTop: '12px', marginBottom: '0' }}>
+              After subscribing, check your email to confirm.
+            </p>
+          )}
           {status === 'error' && (
             <p role="alert" style={{ fontFamily: "'Inter', sans-serif", fontSize: '14px', color: '#8899b0', lineHeight: '1.5', textAlign: 'center', marginTop: '12px', marginBottom: '0' }}>
               {errorMessage}
