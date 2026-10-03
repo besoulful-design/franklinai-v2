@@ -300,7 +300,7 @@ function NewsletterModal({ onClose }) {
           Free to subscribe.
         </p>
         <p className="modal__text">
-          Delivered every other Tuesday, it takes a clear look at what's working and not working in your practice, and what to do about it.
+          Delivered monthly, it takes a clear look at what's working and not working in your practice, and what to do about it.
         </p>
         {/* Signup form. JS-handled submit to Kit (a plain POST would navigate away and destroy the modal). */}
         <div style={{ borderTop: '1px solid rgba(96, 165, 250, 0.12)', paddingTop: '24px' }}>
@@ -372,7 +372,7 @@ function NewsletterStrip() {
             The Operator
           </p>
           <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', color: '#8892a4', marginTop: '0', marginBottom: '18px', lineHeight: '1.5' }}>
-            For physical therapy practices. Delivered every other Tuesday, it takes a clear look at what's working and not working in your practice, and what to do about it.
+            For physical therapy practices. Delivered monthly, it takes a clear look at what's working and not working in your practice, and what to do about it.
           </p>
           <button type="button" className="btn btn--ghost" onClick={() => setNewsletterOpen(true)} style={{ marginTop: '0' }}>
             Subscribe for Free
