@@ -27,6 +27,16 @@ section ABOVE section 1 and say what it holds.
 
 ---
 
+# 0j. LINES REPLACED IN V68 (2026-10-03): one test subscriber left
+
+# FranklinAI — Project Instructions (Version 67, Current)
+
+| **Test subscribers** | Two, both Confirmed: `besoulful+kit-ke…` (Ken) and `besoulful+kit-juli…` (Julie), 2026-09-27; the rest deleted. **Before Issue 1, keep one and delete the other.** |
+
+| **Test subscribers** | Two (Ken, Julie). **Before Issue 1: keep one, delete the other.** |
+
+---
+
 # 0i. LINES REPLACED IN V67 (2026-10-03): The Operator goes monthly
 
 # FranklinAI — Project Instructions (Version 66, Current)

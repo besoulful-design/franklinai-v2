@@ -1,4 +1,4 @@
-# FranklinAI — Project Instructions (Version 67, Current)
+# FranklinAI — Project Instructions (Version 68, Current)
 
 > **READ THIS FILE BEFORE MAKING ANY CHANGE TO THIS REPO.** Read all of it, not just the section you think applies. **If a value looks arbitrary, it is almost certainly hand-tuned and documented here. Look it up first.** A morning was once lost re-deriving a footer geometry this file already specified.
 
@@ -395,7 +395,7 @@ Netlify still builds this repo on every push and holds the old zone, but nothing
 | **Privacy settings** | GDPR consent page: **Don't show to anyone.** Unsubscribe survey: **off.** |
 | **Revenue / Kit Commerce** | **Payouts connected 2026-09-26** (Settings → Revenue → Set up payments): a **Stripe Express** account under Kit, login `david@franklinaisolutions.com`. **Business type Company, Single-member LLC, legal name FranklinAI Solutions LLC** with the LLC's EIN; website `https://franklinaisolutions.com`; industry **Digital products → Books**; David as account representative. **Payout bank: the LLC's Bluevine business checking** (it shows in Stripe as **Coastal Community Bank**, Bluevine's partner bank; that is correct). **Statement descriptor `FRANKLINAI`** in both Stripe and Kit's Commerce settings (Stripe's default truncated to "FRANKLINAISOLUTIONS.CO", which reads as a different domain and invites disputes). Payouts **weekly on Fridays**. Details changed later via **Open in Stripe** on that page. **No product created yet.** ⛔ Never record account numbers, SSN, or home address here (public repo). |
 | **Kit MCP** | Available under Settings → Kit MCP; **not connected.** Connecting it is David's call. |
-| **Test subscribers** | Two, both Confirmed: `besoulful+kit-ke…` (Ken) and `besoulful+kit-juli…` (Julie), 2026-09-27; the rest deleted. **Before Issue 1, keep one and delete the other.** |
+| **Test subscribers** | **One: `besoulful+dolly@…` (Dolly)**, added 2026-10-01, Confirmed 2026-10-03; Ken and Julie deleted. She is the test reader for Issue 1. |
 
 > **Reading Kit's numbers.** The **summary boxes** at the top of Subscribers **lag** by minutes to an hour; **the list below, with its "Total: N", is live.** **Kit's page does not refresh itself**: a subscriber who has just confirmed still shows **Unconfirmed** (the normal state between signup and the tap) until you reload, and a **"Status is Confirmed" filter hides them** entirely. **"Opened" can be inflated by Gmail fetching images**, so treat open rates as rough. The per-subscriber page shows Delivered / Opened / Clicked with **exact times on hover** — the tool for diagnosing a stuck signup.
 
@@ -946,7 +946,7 @@ A good one **names the repo in its first line**, states the scope and what not t
 | **The mystery third signup — WATCH** | 2026-09-25: an iPhone test signup's confirm tap never reached Kit (timeline: Delivered 4:23 PM, Opened 4:23 PM, Clicked 6:21 PM, the click being David later on the Mac). Kit shows "Subscription confirmed!" for any confirm link, including a used one, so the phone tap likely opened a different link; which one was never established. A clean fourth test entirely on the iPhone worked. **No fault found in the site or Kit.** **Watch for real readers piling up as Unconfirmed** in Kit (filter by status); if so, read a few per-subscriber timelines first; Kit can re-send the confirmation. |
 | **Kit mailing address → a real one** | Get a USPS PO box (or confirm the registered agent forwards business mail), enter it in Kit **Settings → Email → Mailing address** as `FranklinAI Solutions LLC, <address>`. |
 | **Kit confirmation email wording** | Parked draft in David's voice: subject *Confirm your subscription to The Operator*; top line *Thanks for signing up for The Operator. Tap the button below to confirm, and the next issue will come straight to your inbox.*; button *Confirm Your Subscription*; closing *Glad you're here.* / *David*. A claude.ai copy decision; edited in Kit (form Settings → Confirmation email → Edit Email Contents). |
-| **Test subscribers** | Two (Ken, Julie). **Before Issue 1: keep one, delete the other.** |
+| ~~Test subscribers~~ | **✅ Done 2026-10-03:** one left (Dolly). |
 | **Kit trial lapse (~2026-10-09)** | Nothing built depends on a paid feature. Once, check **Settings → Account & Billing** shows no card on file ("Creator Monthly" is expected to be the trial's label). |
 | **Book text → "playbook"** | The site says "playbook" since 2026-09-26 (`fd6b95a`); the book file may still say "guide" where it describes itself (e.g. the sentence the modal's paragraph 3 echoes). **David edits the book to match**; then the book wins again as normal. |
 | **`EbookModal` paragraph 2: "build… built… built"** | Three forms of "build" in ~20 words. **Parked, book-first:** if it grates, change the book, then every surface together. |
@@ -967,6 +967,7 @@ A good one **names the repo in its first line**, states the scope and what not t
 
 *One line per version. The full entries for V12–V57 are in `docs/history.md` (section 1, "Change History").*
 
+- **V68** (2026-10-03) — Kit test subscribers down to one (Dolly), ready for Issue 1.
 - **V67** (2026-10-03) — **The Operator goes monthly**: "Delivered monthly" on the card and in the modal (`3f80dda`, confirmed live by David). Rule: check the live site before saying a push is live.
 - **V66** (2026-09-27) — Modals: a framed grey bottom Close on all four; signup modal trimmed (first description sentence out, "Then check your email to confirm." under the form); case study uses GlowPT's check list, tech note removed. Kit read-out and test subscribers updated.
 - **V65** (2026-09-27) — Issue 1 pushed back a week; **the e-book card never comes down** (David); playbook PDF due Tuesday; fifth test subscriber.
