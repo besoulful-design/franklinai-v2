@@ -27,6 +27,77 @@ section ABOVE section 1 and say what it holds.
 
 ---
 
+# 0i. LINES REPLACED IN V67 (2026-10-03): The Operator goes monthly
+
+# FranklinAI — Project Instructions (Version 66, Current)
+
+**The Content Calendar** (a claude.ai document) is the source of truth for all content and marketing. This file intentionally holds **no** content/marketing specifics beyond what the site displays. The calendar is **newsletter-led**: *The Operator*, every other Tuesday, 400–600 words, free, written Sunday on a phone. **Instagram is the only discovery surface.** **The discovery call is the only door** for the custom build (GlowPT has a second door; see Offer Ladder). The addressee is the **owner**; the office manager is the multiplier. The spearhead is **model confusion** ("You're running an insurance practice with cash-model marketing"), across **six spines**: (A) model confusion, (B) plan-of-care completion, (C) team, hiring, retention, and modeling, (D) your numbers, (E) AI in your practice, (F) systems and delegation. The four-video YouTube arc is **parked whole**.
+
+- **Issue 1 of The Operator:** pushed back a week by David on 2026-09-27 (from September 29 to about October 6, 2026); the Content Calendar holds the exact date.
+
+- **Description** (Inter 15px, #8892a4, `marginTop: '0'`, `marginBottom: '18px'`, `lineHeight: '1.5'`): **"For physical therapy practices. Delivered every other Tuesday, it takes a clear look at what's working and not working in your practice, and what to do about it."**
+
+> **The description appears twice with one difference:** the modal drops the first sentence "For physical therapy practices." (David, 2026-09-27: less copy in the signup modal). **The rest moves together.** `grep -c "For physical therapy practices\."` → **1**; `grep -c "Delivered every other Tuesday"` → **2**.
+
+- **The newsletter description is duplicated on purpose (card + modal; the modal omits "For physical therapy practices."). Any edit to the rest changes BOTH.** `grep -c "Delivered every other Tuesday"` → **2**.
+
+> - **The promise line reads the same on all three surfaces** (issue top, **the site's newsletter card**, Instagram graphic): **"For physical therapy practices."** *(Taken out of `NewsletterModal` by David on 2026-09-27 to cut copy; the card keeps it.)*
+
+3. **Push the code.** The push deploys through Amplify.
+
+## The handoff note, verbatim (handoff-monthly-cadence-2026-10-03.md, deleted from ~/Downloads once used)
+
+# Handoff into Code: repo `franklinai-v2` (~/Downloads/franklinai-v2). The Operator goes monthly.
+FranklinAI project · written Saturday, October 3, 2026, in claude.ai · read CLAUDE.md (V66) first, as always
+
+## Scope
+One copy change, two strings, in `src/App.jsx`. Then the CLAUDE.md update after David confirms it live.
+**Do not touch:** any other copy, any styling or geometry, the first sentence "For physical therapy practices." (card only, stays as is), Kit, Route 53, the GlowPT repo.
+
+## The decision and why (David, October 3)
+The Operator moves from **every other Tuesday** to **monthly**. David's reasons: substance over quantity, not wanting to repeat topics to fill an issue, and a pace he can actually keep. Every three weeks was considered and rejected (hard for readers to hold in their head, awkward to say).
+
+- **The public copy says only "monthly."** The day is not named. Internally the issue ships the first Tuesday of the month (the Content Calendar holds that and the dates), which leaves room to slip a week without breaking a public promise.
+- **"Delivered monthly" was chosen over "Once a month"** as the smallest change to a line already reading well: one phrase swapped, same structure.
+- Issue 1 still ships Tuesday, October 6. The change should be live before then, so the site, Issue 1, and the new Instagram bio all say "monthly" on day one.
+- The Instagram Reel is unaffected (its header carries only "For physical therapy practices.").
+
+## The change
+Two occurrences in `src/App.jsx` (lines ~303 and ~375 in the V66 file; confirm by component, `NewsletterModal` and `NewsletterStrip`):
+
+| Find | Replace |
+|---|---|
+| `Delivered every other Tuesday, it takes` | `Delivered monthly, it takes` |
+
+Both occurrences, nothing else. Resulting card text:
+> For physical therapy practices. Delivered monthly, it takes a clear look at what's working and not working in your practice, and what to do about it.
+
+The modal reads the same without the first sentence. This is the "copy that appears twice must move twice" pair.
+
+## Verify before pushing
+| Check | Expected |
+|---|---|
+| `grep -c "Delivered every other Tuesday" src/App.jsx` | **0** |
+| `grep -c "Delivered monthly, it takes" src/App.jsx` | **2** |
+| `grep -c "For physical therapy practices\." src/App.jsx` | **1** (unchanged) |
+| Em dashes in the changed lines | none |
+| Build | passes |
+
+Then push. **Wait for David to confirm on the live site**, iPhone included: the description is a few characters shorter, so check the card and the modal paragraph still wrap cleanly and nothing jumps.
+
+## After David confirms: update CLAUDE.md (separate commit, edit in place)
+- **Source-of-Truth Documents:** "*The Operator*, every other Tuesday, 400–600 words" becomes "*The Operator*, **monthly** (the first Tuesday internally; the public copy says only "monthly"), 400–600 words".
+- **Newsletter Card section:** the Description string, and the grep note `grep -c "Delivered every other Tuesday"` → **2** becomes `grep -c "Delivered monthly"` → **2**.
+- **Copy Rules:** the same grep in the duplicated-description bullet.
+- **CURRENT STATE, the Issue 1 line:** add that the cadence is monthly as of 2026-10-03 (dates stay in the Calendar).
+- **The promise-line note:** the surfaces carrying it now include the **Instagram bio** of @franklinaisolutions ("a free monthly newsletter for physical therapy practices"), so a future cadence change has one more place to check. One line, no Instagram detail beyond that; the account record lives in the Calendar.
+- Bump to **V67**, one-line Change History entry, reasoning in the commit message, bank anything removed in `docs/history.md` first (the hook enforces it), and report the file's size and delta.
+
+## Not part of this job, but due before Tuesday (from CLAUDE.md Open Items)
+Kit still has two test subscribers (Ken and Julie); keep one, delete the other before Issue 1. That is David in Kit, not Code.
+
+---
+
 # 0h. LINES REPLACED IN V66 (2026-09-27): modal bottom Close, signup trim, case-study list
 
 # FranklinAI — Project Instructions (Version 65, Current)

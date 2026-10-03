@@ -1,4 +1,4 @@
-# FranklinAI — Project Instructions (Version 66, Current)
+# FranklinAI — Project Instructions (Version 67, Current)
 
 > **READ THIS FILE BEFORE MAKING ANY CHANGE TO THIS REPO.** Read all of it, not just the section you think applies. **If a value looks arbitrary, it is almost certainly hand-tuned and documented here. Look it up first.** A morning was once lost re-deriving a footer geometry this file already specified.
 
@@ -10,7 +10,7 @@
 
 - **Live:** franklinaisolutions.com on **AWS Amplify** (account `franklinai-web`), DNS in **Route 53**, David's Microsoft 365 mail intact. **The Operator** signup is wired to **Kit form `9962049`**, double opt-in ON, and Kit sends as the domain. Confirmed by David 2026-09-25.
 - **Next:** the **e-book checkout on Kit Commerce** (decided, not built; "Buy the Playbook" is still `href="#"`). **Step 1 (payouts) DONE 2026-09-26.** **Waiting on the final book PDF** (David, Tuesday 2026-09-29); then step 2, create the product. **No placeholder product**: a live product with a stand-in file could sell a real copy. Steps in Open Items.
-- **Issue 1 of The Operator:** pushed back a week by David on 2026-09-27 (from September 29 to about October 6, 2026); the Content Calendar holds the exact date.
+- **Issue 1 of The Operator:** pushed back a week by David on 2026-09-27 (from September 29 to about October 6, 2026); the Content Calendar holds the exact date. **Cadence is monthly as of 2026-10-03** (was every other Tuesday).
 - **Watching:** the mystery third signup (Open Items); Netlify still on standby until David deletes the franklinai site and zone.
 - **Coming:** David will fine-tune the nav/footer nudges, kite sizes and F-vs-crossbar margins. The current values and their history are under **Locked Geometry**.
 - **Measured at V66:** `App.jsx` is **761 lines**; the `$350` decoy sits at **lines 123 and 536**.
@@ -103,7 +103,7 @@
 
 ## Source-of-Truth Documents
 
-**The Content Calendar** (a claude.ai document) is the source of truth for all content and marketing. This file intentionally holds **no** content/marketing specifics beyond what the site displays. The calendar is **newsletter-led**: *The Operator*, every other Tuesday, 400–600 words, free, written Sunday on a phone. **Instagram is the only discovery surface.** **The discovery call is the only door** for the custom build (GlowPT has a second door; see Offer Ladder). The addressee is the **owner**; the office manager is the multiplier. The spearhead is **model confusion** ("You're running an insurance practice with cash-model marketing"), across **six spines**: (A) model confusion, (B) plan-of-care completion, (C) team, hiring, retention, and modeling, (D) your numbers, (E) AI in your practice, (F) systems and delegation. The four-video YouTube arc is **parked whole**.
+**The Content Calendar** (a claude.ai document) is the source of truth for all content and marketing. This file intentionally holds **no** content/marketing specifics beyond what the site displays. The calendar is **newsletter-led**: *The Operator*, **monthly** (the first Tuesday internally; the public copy says only "monthly"), 400–600 words, free, written Sunday on a phone. **Instagram is the only discovery surface.** **The discovery call is the only door** for the custom build (GlowPT has a second door; see Offer Ladder). The addressee is the **owner**; the office manager is the multiplier. The spearhead is **model confusion** ("You're running an insurance practice with cash-model marketing"), across **six spines**: (A) model confusion, (B) plan-of-care completion, (C) team, hiring, retention, and modeling, (D) your numbers, (E) AI in your practice, (F) systems and delegation. The four-video YouTube arc is **parked whole**.
 
 > **Calendar points worth knowing here (read the calendar for the rest):**
 > - **Issue dates live in the Calendar, not here.** This file was wrong about Issue 1's date three times.
@@ -112,7 +112,7 @@
 > - **Two retired framings the site copy must never reintroduce:** **"nobody decided"**, and **the front-desk-versus-therapist split**.
 > - **"cash practice" and "advanced care" are interchangeable, and neither is retired.**
 > - **"The Operator" is the newsletter's title; the masthead standfirst rule is retired.**
-> - **The promise line reads the same on all three surfaces** (issue top, **the site's newsletter card**, Instagram graphic): **"For physical therapy practices."** *(Taken out of `NewsletterModal` by David on 2026-09-27 to cut copy; the card keeps it.)*
+> - **The promise line reads the same on all three surfaces** (issue top, **the site's newsletter card**, Instagram graphic): **"For physical therapy practices."** *(Taken out of `NewsletterModal` by David on 2026-09-27 to cut copy; the card keeps it.)* **The cadence word ("monthly") also sits in the Instagram bio of @franklinaisolutions** ("a free monthly newsletter for physical therapy practices"), so a cadence change has that place to check too.
 > - **The readiness ladder:** newsletter (cold follow) → email (a self-paced question) → discovery call (the door).
 
 **This file** covers the **website build**: structure, styling, copy rules, locked values, the product facts the site displays, the **pricing of every rung**, **hosting and DNS**, and **the Kit account behind the site**. **It is the authority for everything it states.**
@@ -257,9 +257,9 @@ The McKenzie Arm Care app — a custom patient-care web app with user login, jou
 **The masthead lockup (both lines upright):**
 - **Header "Newsletter"** — blue `card-heading`, `clamp(36px, 5.5vw, 58px)`, `lineHeight: '1.2'`, `marginBottom: 'clamp(4px, 1.5vw, 10px)'`.
 - **Subhead "The Operator"** — white Playfair, `clamp(30px, 5vw, 35px)`, 800, `lineHeight: '1.1'`, `marginTop: '0'`, `marginBottom: '14px'`.
-- **Description** (Inter 15px, #8892a4, `marginTop: '0'`, `marginBottom: '18px'`, `lineHeight: '1.5'`): **"For physical therapy practices. Delivered every other Tuesday, it takes a clear look at what's working and not working in your practice, and what to do about it."**
+- **Description** (Inter 15px, #8892a4, `marginTop: '0'`, `marginBottom: '18px'`, `lineHeight: '1.5'`): **"For physical therapy practices. Delivered monthly, it takes a clear look at what's working and not working in your practice, and what to do about it."**
 
-> **The description appears twice with one difference:** the modal drops the first sentence "For physical therapy practices." (David, 2026-09-27: less copy in the signup modal). **The rest moves together.** `grep -c "For physical therapy practices\."` → **1**; `grep -c "Delivered every other Tuesday"` → **2**.
+> **The description appears twice with one difference:** the modal drops the first sentence "For physical therapy practices." (David, 2026-09-27: less copy in the signup modal). **The rest moves together.** `grep -c "For physical therapy practices\."` → **1**; `grep -c "Delivered monthly"` → **2**.
 
 **The card's action:** one ghost button **"Subscribe for Free"** (`btn btn--ghost`, `marginTop: '0'`) opening `NewsletterModal`. **No email field on the card** — a bold button draws the first click, so an inline field was a dead click (V39 reversed V28). **Do not re-propose the inline field unless David asks.**
 
@@ -782,7 +782,7 @@ Account slug `david-peterson-40s7lw` · Event "Free Discovery Call" · slug `fre
 - FranklinAI is always one word, capital F and capital AI; the "AI" renders white wherever the wordmark appears. The footer copyright is just "© {year}".
 - **⚠️ THE LEGAL ENTITY IS WRITTEN `FranklinAI Solutions LLC`, WITH NO COMMA.** Do not reintroduce the comma anywhere, on either site.
 - **⚠️ NEVER END A CLAUSE ON A FLOATING "FOR FREE" OR "FREE" WHERE A PRICE IS NEARBY.** It attaches to whatever the reader last held in mind, usually the thing being sold. **Give it an explicit subject** ("the patients join for free"). Same trap for "included", "at no cost" and "on us".
-- **The newsletter description is duplicated on purpose (card + modal; the modal omits "For physical therapy practices."). Any edit to the rest changes BOTH.** `grep -c "Delivered every other Tuesday"` → **2**.
+- **The newsletter description is duplicated on purpose (card + modal; the modal omits "For physical therapy practices."). Any edit to the rest changes BOTH.** `grep -c "Delivered monthly"` → **2**.
 - **The GlowPT pitch's second sentence and the eight bullets are duplicated ACROSS REPOS. Any edit changes BOTH repos.** `grep -c "More completed plans of care and the clinic stays full"` → **2** here, **1** in `glowpt/src/lib/marketing.js`.
 - **The book wins on shared sentences.** Where any surface repeats a sentence from *What Your Practice Actually Sells*, the book's wording is canonical.
 - **"Playbook" is the format word for the products on every public surface** (David, 2026-09-26): the site, the Kit Commerce product page, the book's cover line. Never "guide" for the product. **The book's title and the newsletter's name are unchanged.** **One deliberate exception to "the book wins":** the site switched to "playbook" first; the book is edited to match later (Open Items). **Do not "fix" the site back to "guide."**
@@ -871,7 +871,7 @@ Edit the repo in place. **Read this file first.** **Confirm the working director
 
 1. **Read this document and the real files.**
 2. **Make the code change** and verify by string checks — old strings at zero, new strings present, no em dashes, no forbidden words. **A predicted line count is an estimate, never a verification, and never a fact for this file**; any line count here is measured on the pushed file. For a **visual** change, measure the rendered result in the browser **against the reference the eye actually uses**. **For wiring, prove the failure path locally and let David prove the success path on the live site** (e.g. an invalid `a@b` proves the site reaches Kit without creating a subscriber).
-3. **Push the code.** The push deploys through Amplify.
+3. **Push the code.** The push deploys through Amplify (no AWS login needed). **Do not tell David it is live until the live site serves it**: fetch the page, find its `assets/index-*.js`, and grep that for the new string. A build can take longer than the usual minute and a half.
 4. **Wait for David to confirm the change works on the live site.** Verification by measurement is not confirmation; his eyes on the live site are. *(Waived twice for copy-only changes on his direct instruction; keep waiting on anything visual.)*
 5. **Then update `CLAUDE.md`**, as a separate commit: edit the lines that changed **in place** (CURRENT STATE and the affected section), bump the version number on the first line, add a one-line Change History entry. **Put the reasoning of the fix in the commit message, not here.** Anything removed is banked in `docs/history.md` first (the hook enforces it).
 6. **Tell David the new version number and report the file's size and delta.** **Nothing needs pasting into claude.ai**: it reads the pushed file. If David ever asks for the whole text in chat, give it in one fenced block with four backticks (the file contains triple-backtick blocks); no clipboard, no file card.
@@ -967,6 +967,7 @@ A good one **names the repo in its first line**, states the scope and what not t
 
 *One line per version. The full entries for V12–V57 are in `docs/history.md` (section 1, "Change History").*
 
+- **V67** (2026-10-03) — **The Operator goes monthly**: "Delivered monthly" on the card and in the modal (`3f80dda`, confirmed live by David). Rule: check the live site before saying a push is live.
 - **V66** (2026-09-27) — Modals: a framed grey bottom Close on all four; signup modal trimmed (first description sentence out, "Then check your email to confirm." under the form); case study uses GlowPT's check list, tech note removed. Kit read-out and test subscribers updated.
 - **V65** (2026-09-27) — Issue 1 pushed back a week; **the e-book card never comes down** (David); playbook PDF due Tuesday; fifth test subscriber.
 - **V64** (2026-09-26) — claude.ai read a stale V62: recorded the two caches (GitHub raw 5 min, claude.ai's fetch tool) and the cache-buster now in the pointer.
