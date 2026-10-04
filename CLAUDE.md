@@ -1,4 +1,4 @@
-# FranklinAI — Project Instructions (Version 70, Current)
+# FranklinAI — Project Instructions (Version 71, Current)
 
 > **READ THIS FILE BEFORE MAKING ANY CHANGE TO THIS REPO.** Read all of it, not just the section you think applies. **If a value looks arbitrary, it is almost certainly hand-tuned and documented here. Look it up first.** A morning was once lost re-deriving a footer geometry this file already specified.
 
@@ -49,7 +49,7 @@
 
 > **Known lag:** the project snapshot is hand-replaced, so it can trail the repo by a push. When the snapshot and a just-confirmed push disagree, the push is live and the snapshot is stale — say so rather than silently reverting the newer change.
 
-> **There is ONE copy of this document: `CLAUDE.md` on `main` in the repo (since V59).** The claude.ai project instructions are a short pointer telling each claude.ai session to fetch `https://raw.githubusercontent.com/besoulful-design/franklinai-v2/main/CLAUDE.md` and state the version it read. **Nothing is pasted into claude.ai any more.** ⚠️ **The pointer works only because this repo is PUBLIC, which David chose deliberately on 2026-09-26.** Never commit a secret here. If it is ever made private, claude.ai needs another route (GitHub linked to the project, or pasting again) and this note must change. **Two caches can make claude.ai read an older version (found 2026-09-26):** GitHub's raw copy lags a push by **up to 5 minutes** (`max-age=300`), and **claude.ai's fetch tool keeps its own copy of any address it has opened before**. So the pointer (updated by David the same day) tells claude.ai to **add a fresh cache-buster every time** (`?v=` plus date and time). If claude.ai reports a version behind the one pushed, it re-fetches with a new cache-buster.
+> **There is ONE copy of this document: `CLAUDE.md` on `main` in the repo (since V59).** The claude.ai project instructions are a short pointer telling each claude.ai session to read `https://raw.githubusercontent.com/besoulful-design/franklinai-v2/main/CLAUDE.md` and state the version it read. **Nothing is pasted into claude.ai any more.** ⚠️ **The pointer works only because this repo is PUBLIC, which David chose deliberately on 2026-09-26.** Never commit a secret here. If it is ever made private, claude.ai needs another route (GitHub linked to the project, or pasting again) and this note must change. **How the pointer reads it (rewritten in claude.ai and pasted by David on 2026-10-04):** claude.ai's **fetch tool is NOT used**, because it serves a stale saved copy and ignores cache-busters (the 09-26 "add a cache-buster" instruction kept failing and is retired). The pointer tells claude.ai to run, in its own computer, `curl -sL -H 'Cache-Control: no-cache' "https://raw.githubusercontent.com/besoulful-design/franklinai-v2/main/CLAUDE.md?v=$(date +%s)" -o /home/claude/CLAUDE.md`, read the file, and state the version on its first line. **GitHub's raw copy can still lag a push by up to 5 minutes**: if David names a newer version, claude.ai waits, runs the same command again, and never works from an older version than the one he names.
 
 ---
 
@@ -968,6 +968,7 @@ A good one **names the repo in its first line**, states the scope and what not t
 
 *One line per version. The full entries for V12–V57 are in `docs/history.md` (section 1, "Change History").*
 
+- **V71** (2026-10-04) — The claude.ai pointer now reads this file with `curl` in its own computer; its fetch tool served stale copies and is retired for this.
 - **V70** (2026-10-04) — **"Guide" replaces "playbook" everywhere** (reverses V62). `EbookModal`: subline removed, price moved into a larger button "Buy the Guide · $37", "A downloadable PDF." under it (`984c456`, `0ff7be2`, confirmed by David).
 - **V69** (2026-10-04) — Newsletter description is one sentence, identical on card and modal ("A monthly newsletter for physical therapy practices…", `275814d`, `49a754f`, confirmed by David). **Kit MCP connected.** New open item: send new subscribers to the latest issue.
 - **V68** (2026-10-03) — Kit test subscribers down to one (Dolly), ready for Issue 1.

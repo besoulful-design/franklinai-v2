@@ -27,6 +27,14 @@ section ABOVE section 1 and say what it holds.
 
 ---
 
+# 0m. LINES REPLACED IN V71 (2026-10-04): the claude.ai pointer uses curl, not the fetch tool
+
+# FranklinAI — Project Instructions (Version 70, Current)
+
+> **There is ONE copy of this document: `CLAUDE.md` on `main` in the repo (since V59).** The claude.ai project instructions are a short pointer telling each claude.ai session to fetch `https://raw.githubusercontent.com/besoulful-design/franklinai-v2/main/CLAUDE.md` and state the version it read. **Nothing is pasted into claude.ai any more.** ⚠️ **The pointer works only because this repo is PUBLIC, which David chose deliberately on 2026-09-26.** Never commit a secret here. If it is ever made private, claude.ai needs another route (GitHub linked to the project, or pasting again) and this note must change. **Two caches can make claude.ai read an older version (found 2026-09-26):** GitHub's raw copy lags a push by **up to 5 minutes** (`max-age=300`), and **claude.ai's fetch tool keeps its own copy of any address it has opened before**. So the pointer (updated by David the same day) tells claude.ai to **add a fresh cache-buster every time** (`?v=` plus date and time). If claude.ai reports a version behind the one pushed, it re-fetches with a new cache-buster.
+
+---
+
 # 0l. LINES REPLACED IN V70 (2026-10-04): "playbook" back to "guide"; the e-book modal's new footer
 
 # FranklinAI — Project Instructions (Version 69, Current)
