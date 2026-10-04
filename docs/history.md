@@ -27,6 +27,48 @@ section ABOVE section 1 and say what it holds.
 
 ---
 
+# 0l. LINES REPLACED IN V70 (2026-10-04): "playbook" back to "guide"; the e-book modal's new footer
+
+# FranklinAI — Project Instructions (Version 69, Current)
+
+- **Next:** the **e-book checkout on Kit Commerce** (decided, not built; "Buy the Playbook" is still `href="#"`). **Step 1 (payouts) DONE 2026-09-26.** **Waiting on the final book PDF** (David, Tuesday 2026-09-29); then step 2, create the product. **No placeholder product**: a live product with a stand-in file could sell a real copy. Steps in Open Items.
+
+- **Next:** the **e-book checkout on Kit Commerce** (decided, not built; "Buy the Guide · $37" is still `href="#"`). **Step 1 (payouts) DONE 2026-09-26.** **Waiting on the final book PDF** (David, Tuesday 2026-09-29); then step 2, create the product. **No placeholder product**: a live product with a stand-in file could sell a real copy. Steps in Open Items.
+
+- **Measured at V66:** `App.jsx` is **761 lines**; the `$350` decoy sits at **lines 123 and 536**.
+
+> - **Line 536**, `Monthly Care`'s `price: '$350'` in `Pricing()`: **the custom build's hosting-and-maintenance retainer.** Unrelated.
+
+> **If GlowPT's price moves, line 536 must NOT move with it.** **The line numbers drift whenever anything above them changes; treat them as a hint and confirm by the surrounding function name.**
+
+- **Price appears in three places that move together:** `App.jsx` (the `EbookModal` subline and its Playfair price line), this file, and the Kit product. **$37 in all three.**
+
+- **Modal buttons:** `padding: '10px 20px', fontSize: '13px'` — deliberately the smallest.
+
+> **The filled style is exclusive to the discovery call, site-wide.** Every transaction button is a ghost: "Buy the Playbook", "Bring GlowPT to Your Clinic", "Subscribe for Free". **Flipping a transaction button to `btn--primary` requires David's explicit say-so** (considered and declined in V49).
+
+- **Teaser** (`card-text`): **"A downloadable playbook for owners running two business models in one building, an insurance practice and a cash practice, and making them work together."**
+
+- **Subline** (Inter 14px/600/#8899b0, marginBottom 16px): **"A self-serve playbook. $37, yours to download."**
+
+  3. *"This playbook walks you through the fix: decide what your practice actually is, then say it in one sentence your whole team can repeat. Not a tactic, not a tool. The one thing that lets everything else line up behind it."*
+
+- **Footer** (borderTop hairline, paddingTop 24px, centered): **"$37"** (Playfair 700, 27.7px, blue, lineHeight 1.45, marginBottom 18px, no "/ month") then a **ghost** "Buy the Playbook" (`padding: '10px 20px', fontSize: '13px'`, **`href="#"` until the Kit Commerce product exists**; then the live URL with `target="_blank" rel="noopener noreferrer"`, styles unchanged).
+
+- **"Playbook" is the format word for the products on every public surface** (David, 2026-09-26): the site, the Kit Commerce product page, the book's cover line. Never "guide" for the product. **The book's title and the newsletter's name are unchanged.** **One deliberate exception to "the book wins":** the site switched to "playbook" first; the book is edited to match later (Open Items). **Do not "fix" the site back to "guide."**
+
+| **E-book checkout on Kit Commerce — NEXT** | **Decided, not built.** (1) ✅ **Payouts connected 2026-09-26** (see Kit table). (2) David creates the product: *What Your Practice Actually Sells*, **$37**, final file uploaded (its cover line changed by David to "A playbook from The Operator"), a description that **calls it a playbook**, may name physical therapy, and obeys the copy rules. (3) Code sets "Buy the Playbook" to the live URL with `target="_blank" rel="noopener noreferrer"`, styles unchanged, and pushes. (4) David buys it or runs Kit's test purchase and checks the buyer lands on the list. **Verify:** `grep -c 'href="#"' src/App.jsx` → **0**; "$37" matches in both `EbookModal` spots and the Kit product; the `$350` decoy untouched; no em dashes in new strings. **No fallback that touches the card:** it stays up regardless; no coming-soon strip, no pre-sell. Any domain record Kit Commerce asks for goes in **Route 53**, by the DNS rule. |
+
+| **E-book checkout on Kit Commerce — NEXT** | **Decided, not built.** (1) ✅ **Payouts connected 2026-09-26** (see Kit table). (2) David creates the product: *What Your Practice Actually Sells*, **$37**, final file uploaded (**check its cover line says "guide", not "A playbook from The Operator"**), a description that **calls it a guide**, may name physical therapy, and obeys the copy rules. (3) Code sets "Buy the Playbook" to the live URL with `target="_blank" rel="noopener noreferrer"`, styles unchanged, and pushes. (4) David buys it or runs Kit's test purchase and checks the buyer lands on the list. **Verify:** `grep -c 'href="#"' src/App.jsx` → **0**; "$37" matches in both `EbookModal` spots and the Kit product; the `$350` decoy untouched; no em dashes in new strings. **No fallback that touches the card:** it stays up regardless; no coming-soon strip, no pre-sell. Any domain record Kit Commerce asks for goes in **Route 53**, by the DNS rule. |
+
+| **E-book checkout on Kit Commerce — NEXT** | **Decided, not built.** (1) ✅ **Payouts connected 2026-09-26** (see Kit table). (2) David creates the product: *What Your Practice Actually Sells*, **$37**, final file uploaded (**check its cover line says "guide", not "A playbook from The Operator"**), a description that **calls it a guide**, may name physical therapy, and obeys the copy rules. (3) Code sets "Buy the Guide · $37" to the live URL with `target="_blank" rel="noopener noreferrer"`, styles unchanged, and pushes. (4) David buys it or runs Kit's test purchase and checks the buyer lands on the list. **Verify:** `grep -c 'href="#"' src/App.jsx` → **0**; "$37" matches in both `EbookModal` spots and the Kit product; the `$350` decoy untouched; no em dashes in new strings. **No fallback that touches the card:** it stays up regardless; no coming-soon strip, no pre-sell. Any domain record Kit Commerce asks for goes in **Route 53**, by the DNS rule. |
+
+| **Book text → "playbook"** | The site says "playbook" since 2026-09-26 (`fd6b95a`); the book file may still say "guide" where it describes itself (e.g. the sentence the modal's paragraph 3 echoes). **David edits the book to match**; then the book wins again as normal. |
+
+- **The e-book** — **$37**, one-time, in `EbookModal` (subline + price line). Not shown on the card.
+
+---
+
 # 0k. LINES REPLACED IN V69 (2026-10-04): one newsletter description; Kit MCP connected
 
 # FranklinAI — Project Instructions (Version 68, Current)
