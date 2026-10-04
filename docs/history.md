@@ -27,6 +27,26 @@ section ABOVE section 1 and say what it holds.
 
 ---
 
+# 0k. LINES REPLACED IN V69 (2026-10-04): one newsletter description; Kit MCP connected
+
+# FranklinAI — Project Instructions (Version 68, Current)
+
+> - **The promise line reads the same on all three surfaces** (issue top, **the site's newsletter card**, Instagram graphic): **"For physical therapy practices."** *(Taken out of `NewsletterModal` by David on 2026-09-27 to cut copy; the card keeps it.)* **The cadence word ("monthly") also sits in the Instagram bio of @franklinaisolutions** ("a free monthly newsletter for physical therapy practices"), so a cadence change has that place to check too.
+
+- **Description** (Inter 15px, #8892a4, `marginTop: '0'`, `marginBottom: '18px'`, `lineHeight: '1.5'`): **"For physical therapy practices. Delivered monthly, it takes a clear look at what's working and not working in your practice, and what to do about it."**
+
+> **The description appears twice with one difference:** the modal drops the first sentence "For physical therapy practices." (David, 2026-09-27: less copy in the signup modal). **The rest moves together.** `grep -c "For physical therapy practices\."` → **1**; `grep -c "Delivered monthly"` → **2**.
+
+**`NewsletterModal`** (the fourth modal): title **"The Operator"**, subline **"Free to subscribe."** (Inter 14px/600/#8899b0), the description **without "For physical therapy practices."**, then a `borderTop` divider wrapping a **`<form>`**: an email input (cream #f0e6d3 on rgba(255,255,255,0.04), 1px border rgba(96,165,250,0.3), 8px radius, **16px font to prevent iOS zoom**, `WebkitAppearance: 'none'`, flex `1 1 220px`, maxWidth 280px, 44px tall, **`name="email_address"`, `required`**) and the ghost Subscribe button (**`type="submit"`**). Under the form, a note **"Then check your email to confirm."** (Inter 14px, #8892a4, marginTop 12px, centered), **hidden once the success line shows**. Then the shared bottom Close.
+
+| **Kit MCP** | Available under Settings → Kit MCP; **not connected.** Connecting it is David's call. |
+
+| Newsletter description (card **and** modal; the modal omits the first sentence) | Inter | 400 | 15px, #8892a4, lineHeight 1.5 |
+
+- **The newsletter description is duplicated on purpose (card + modal; the modal omits "For physical therapy practices."). Any edit to the rest changes BOTH.** `grep -c "Delivered monthly"` → **2**.
+
+---
+
 # 0j. LINES REPLACED IN V68 (2026-10-03): one test subscriber left
 
 # FranklinAI — Project Instructions (Version 67, Current)
