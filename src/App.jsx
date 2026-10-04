@@ -178,11 +178,11 @@ function EbookModal({ onClose }) {
           up behind it.
         </p>
         <div style={{ borderTop: '1px solid rgba(96, 165, 250, 0.12)', paddingTop: '24px', textAlign: 'center' }}>
-          <a href="#" className="btn btn--ghost" style={{ padding: '10px 20px', fontSize: '13px', marginTop: '0' }}>
+          <a href="#" className="btn btn--ghost" style={{ padding: '12px 26px', fontSize: '15px', marginTop: '0' }}>
             Buy the Guide · $37
           </a>
           <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '14px', color: '#8892a4', lineHeight: '1.5', marginTop: '12px', marginBottom: '0' }}>
-            A PDF guide to download.
+            A downloadable PDF.
           </p>
         </div>
         <ModalCloseButton onClose={onClose} />
