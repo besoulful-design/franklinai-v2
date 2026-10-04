@@ -157,9 +157,6 @@ function EbookModal({ onClose }) {
           &#x2715;
         </button>
         <h2 className="modal__title" style={{ marginTop: '6px' }}>What Your Practice Actually Sells</h2>
-        <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '14px', fontWeight: '600', color: '#8899b0', marginBottom: '16px' }}>
-          A self-serve playbook. $37, yours to download.
-        </p>
         <p className="modal__text">
           Your whole team is being asked to sell advanced care and get patients
           to the end of their care at the same time. That's not a
@@ -175,18 +172,18 @@ function EbookModal({ onClose }) {
           feels the seams.
         </p>
         <p className="modal__text">
-          This playbook walks you through the fix: decide what your practice
+          This guide walks you through the fix: decide what your practice
           actually is, then say it in one sentence your whole team can repeat.
           Not a tactic, not a tool. The one thing that lets everything else line
           up behind it.
         </p>
         <div style={{ borderTop: '1px solid rgba(96, 165, 250, 0.12)', paddingTop: '24px', textAlign: 'center' }}>
-          <p style={{ fontFamily: "'Playfair Display', serif", fontWeight: '700', fontSize: '27.7px', color: '#60a5fa', lineHeight: '1.45', marginBottom: '18px' }}>
-            $37
-          </p>
-          <a href="#" className="btn btn--ghost" style={{ padding: '10px 20px', fontSize: '13px' }}>
-            Buy the Playbook
+          <a href="#" className="btn btn--ghost" style={{ padding: '10px 20px', fontSize: '13px', marginTop: '0' }}>
+            Buy the Guide · $37
           </a>
+          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '14px', color: '#8892a4', lineHeight: '1.5', marginTop: '12px', marginBottom: '0' }}>
+            A PDF guide to download.
+          </p>
         </div>
         <ModalCloseButton onClose={onClose} />
       </div>
@@ -399,7 +396,7 @@ function AvailableForPractice() {
             What Your Practice Actually Sells
           </h3>
           <p className="card-text" style={{ marginBottom: '0' }}>
-            A downloadable playbook for owners running two business models in one building, an insurance practice and a cash practice, and making them work together.
+            A guide for owners running two business models in one building, an insurance practice and a cash practice, and making them work together.
           </p>
           <button className="btn btn--ghost" onClick={() => setEbookOpen(true)} style={{ marginTop: '16px' }}>
             More Info
