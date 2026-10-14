@@ -15,6 +15,7 @@ section of CLAUDE.md, copied from the GlowPT repo's 2026-09-12 trim.
 **Sections, newest bank first.** When a later trim banks more, add a new numbered
 section ABOVE section 1 and say what it holds.
 
+0n. Lines replaced in V72 (book status, Issue 1 moved again).
 0f. Lines replaced in V64 (the claude.ai cache-buster).
 0e. Lines replaced in V63 (Kit payouts connected).
 0d. Lines replaced in V62 (playbook), plus the playbook handoff.
@@ -24,6 +25,24 @@ section ABOVE section 1 and say what it holds.
 1. The full text of CLAUDE.md Version 57, exactly as it stood before the V58 trim.
 2. `AWS-MIGRATION-HANDOFF.md`, the working note from the 2026-09-25 move to Amplify.
 3. `CLAUDE-MD-TRIM-HANDOFF.md`, the note that started the V58 trim.
+
+---
+
+# 0n. LINES REPLACED IN V72 (2026-10-14): book status, Issue 1 moved again, the book stays out of the repo
+
+# FranklinAI — Project Instructions (Version 71, Current)
+
+- **Next:** the **e-book checkout on Kit Commerce** (decided, not built; "Buy the Guide · $37" is still `href="#"`). **Step 1 (payouts) DONE 2026-09-26.** **Waiting on the final book PDF** (David; "almost ready" on 2026-10-03); then step 2, create the product. **No placeholder product**: a live product with a stand-in file could sell a real copy. Steps in Open Items.
+
+- **Issue 1 of The Operator:** pushed back a week by David on 2026-09-27 (from September 29 to about October 6, 2026); the Content Calendar holds the exact date. **Cadence is monthly as of 2026-10-03** (was every other Tuesday).
+
+- **The reconciliation e-book** — one-time, self-serve, **$37**, titled **"What Your Practice Actually Sells."** **The book is written** (about 6,300 words, eleven chapters; the file is David's), **the card and modal are live**, **the checkout is not wired**. **Kit Commerce is the decided checkout.**
+
+> **There is ONE copy of this document: `CLAUDE.md` on `main` in the repo (since V59).** The claude.ai project instructions are a short pointer telling each claude.ai session to read `https://raw.githubusercontent.com/besoulful-design/franklinai-v2/main/CLAUDE.md` and state the version it read. **Nothing is pasted into claude.ai any more.** ⚠️ **The pointer works only because this repo is PUBLIC, which David chose deliberately on 2026-09-26.** Never commit a secret here. If it is ever made private, claude.ai needs another route (GitHub linked to the project, or pasting again) and this note must change. **How the pointer reads it (rewritten in claude.ai and pasted by David on 2026-10-04):** claude.ai's **fetch tool is NOT used**, because it serves a stale saved copy and ignores cache-busters (the 09-26 "add a cache-buster" instruction kept failing and is retired). The pointer tells claude.ai to run, in its own computer, `curl -sL -H 'Cache-Control: no-cache' "https://raw.githubusercontent.com/besoulful-design/franklinai-v2/main/CLAUDE.md?v=$(date +%s)" -o /home/claude/CLAUDE.md`, read the file, and state the version on its first line. **GitHub's raw copy can still lag a push by up to 5 minutes**: if David names a newer version, claude.ai waits, runs the same command again, and never works from an older version than the one he names.
+
+| **E-book checkout on Kit Commerce — NEXT** | **Decided, not built.** (1) ✅ **Payouts connected 2026-09-26** (see Kit table). (2) David creates the product: *What Your Practice Actually Sells*, **$37**, final file uploaded (**check its cover line says "guide", not "A playbook from The Operator"**), a description that **calls it a guide**, may name physical therapy, and obeys the copy rules. (3) Code sets "Buy the Guide · $37" to the live URL with `target="_blank" rel="noopener noreferrer"`, styles unchanged, and pushes. (4) David buys it or runs Kit's test purchase and checks the buyer lands on the list. **Verify:** `grep -c 'href="#"' src/App.jsx` → **0**; "$37" in the button label matches the Kit product; the `$350` decoy untouched; no em dashes in new strings. **No fallback that touches the card:** it stays up regardless; no coming-soon strip, no pre-sell. Any domain record Kit Commerce asks for goes in **Route 53**, by the DNS rule. |
+
+| **Book text says "guide"** | The site went back to "guide" on 2026-10-04. **David is finishing the book in claude.ai**; anywhere the file calls itself a playbook (the cover line was changed to "A playbook from The Operator" in September) goes back to "guide" before the PDF is final. |
 
 ---
 
