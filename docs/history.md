@@ -15,6 +15,7 @@ section of CLAUDE.md, copied from the GlowPT repo's 2026-09-12 trim.
 **Sections, newest bank first.** When a later trim banks more, add a new numbered
 section ABOVE section 1 and say what it holds.
 
+0o. Lines replaced in V73 (Kit on Creator), plus the 2026-10-14 handoff.
 0n. Lines replaced in V72 (book status, Issue 1 moved again).
 0f. Lines replaced in V64 (the claude.ai cache-buster).
 0e. Lines replaced in V63 (Kit payouts connected).
@@ -25,6 +26,92 @@ section ABOVE section 1 and say what it holds.
 1. The full text of CLAUDE.md Version 57, exactly as it stood before the V58 trim.
 2. `AWS-MIGRATION-HANDOFF.md`, the working note from the 2026-09-25 move to Amplify.
 3. `CLAUDE-MD-TRIM-HANDOFF.md`, the note that started the V58 trim.
+
+---
+
+# 0o. LINES REPLACED IN V73 (2026-10-14): Kit on Creator monthly
+
+# FranklinAI — Project Instructions (Version 72, Current)
+
+- **Live:** franklinaisolutions.com on **AWS Amplify** (account `franklinai-web`), DNS in **Route 53**, David's Microsoft 365 mail intact. **The Operator** signup is wired to **Kit form `9962049`**, double opt-in ON, and Kit sends as the domain. Confirmed by David 2026-09-25.
+
+| **Plan** | **Free "Newsletter" plan.** A **14-day Creator trial opened 2026-09-25 with NO card**; it lapses about **2026-10-09**. **Do not build anything on 💎 features** (Automation, Apps, sequences; custom click-tracking domain is Pro). |
+
+| **Kit MCP** | **Connected 2026-10-04** as a claude.ai connector (David's call), so a Code session can read the account directly. **It can also write** (subscribers, broadcasts, products): **read freely, but show David the exact change and get his yes before any write.** `list_forms` is avoided: Kit warns it can publish unsaved form edits. |
+
+| **Test subscribers** | **One: `besoulful+dolly@…` (Dolly)**, added 2026-10-01, Confirmed 2026-10-03; Ken and Julie deleted. She is the test reader for Issue 1. |
+
+| **Kit trial lapse (~2026-10-09)** | Nothing built depends on a paid feature. Once, check **Settings → Account & Billing** shows no card on file ("Creator Monthly" is expected to be the trial's label). |
+
+| **Send new subscribers to the latest issue after they confirm — DAVID WANTS THIS** | A broadcast goes once, to whoever is Confirmed at send time, so a new subscriber waits up to a month. Plan: publish each issue as a web page in Kit, then point the form's after-confirm redirect at the latest one (form Settings → Confirmation email) instead of Kit's default page. **Do after Issue 1 is sent.** Not yet checked that both are on the free plan. The redirect must be updated each issue; record the setting in the Kit table. |
+
+## The claude.ai handoff of 2026-10-14 (used for V72 and V73; the file was gone from ~/Downloads by the time it was banked, so this is the text as read into the session)
+
+# Handoff to Claude Code · repo: franklinai-v2 (`~/Downloads/franklinai-v2`)
+
+From the claude.ai FranklinAI project, Wednesday October 14, 2026, evening. Written against CLAUDE.md **Version 71** (re-read tonight; unchanged since this morning).
+
+## Scope tonight
+
+**Status only. No change to `App.jsx`.** "Buy the Guide · $37" stays `href="#"` until the Kit product exists and has a live URL. This note brings CLAUDE.md up to date on the book and points you at the Content Calendar.
+
+**Read the Content Calendar before editing CLAUDE.md.** David is giving you the current copy alongside this note (`franklinai-content-calendar.md`, the project file as of October 13 to 14). It is read-only for Code: the Calendar is produced and revised in claude.ai. Dates live there, not in CLAUDE.md.
+
+## Where things stand
+
+**The book (What Your Practice Actually Sells)**
+- Text is final: eleven chapters plus "Index: The Numbers Behind This Book", about 7,590 words, a copyright page, and a one-sentence P.S. with franklinaisolutions.com. Zero em dashes, no forbidden words, no "playbook". The cover line reads "A guide from The Operator".
+- David made two wording changes in his October 13 review (chapter 6 drops "The adjunct is covered."; chapter 4 reads "picked the right model"). Neither touches a sentence the site shares: the `EbookModal` still matches chapter 1 word for word.
+- **The PDF is not built in Canva.** It is typeset in claude.ai straight from the guide file, because a Canva import broke the text (words run together, Playfair swapped for a sans). The rule now: any change goes into the guide file first, then the PDF is rebuilt and checked word for word against it.
+- **Layout:** 6 by 9 inches (chosen for reading on phones), about 36 pages, Playfair Display headings and Inter text, the site's colors, the live kite on the cover and back page, and gold on the bolt only.
+- **Ownership:** © 2026 FranklinAI Solutions LLC, which is also the imprint ("Published by FranklinAI Solutions LLC, Philadelphia, Pennsylvania."). No author name anywhere in the book. Copyright registration is optional and is a question for the attorney engagement, not an open build item.
+- **Status:** David is doing a last layout pass in claude.ai. **The final PDF is expected tomorrow, Thursday October 15.**
+
+**What happens after the PDF (unchanged from Open Items, step 2 on)**
+1. David creates the Kit Commerce product: $37, called a guide, the final PDF uploaded. The description may name physical therapy and obeys the copy rules. **No placeholder product.** If you use the Kit MCP here, read freely, but show David the exact write and get his yes first (CLAUDE.md, Kit table).
+2. Code points "Buy the Guide · $37" at the live product URL with `target="_blank" rel="noopener noreferrer"`, styles unchanged, and pushes.
+3. David runs a test purchase and confirms the buyer lands on the list.
+
+## CLAUDE.md edits to make now (in place, then bump to V72)
+
+| Where | Change |
+|---|---|
+| CURRENT STATE, "Next:" | Replace "Waiting on the final book PDF (David; 'almost ready' on 2026-10-03)" with: the book text is final; the PDF is typeset in claude.ai from the guide file (not Canva) and is in David's last layout pass; the product follows the final PDF. Leave the date to the Calendar. |
+| CURRENT STATE, "Issue 1" | The line still says about October 6. **Issue 1 now ships October 20** (David, October 14: the guide goes on the shelf first). Point the line at the Calendar for dates rather than restating them. |
+| Business, the e-book bullet | "about 6,300 words" becomes "about 7,600 words, eleven chapters plus an index". |
+| Open Items, "Book text says guide" | Close it: the book's cover line is "A guide from The Operator" and the text carries no "playbook" (checked October 13). |
+| Open Items, e-book checkout, step 2 | Add: the PDF carries a copyright page, © FranklinAI Solutions LLC, no author name. |
+| New durable rule (one line, near the public-repo rule) | **Never commit the book's text or PDF to this repo.** It is a paid product and the repo is public. The guide file lives in the claude.ai project; the PDF is built there. |
+
+Bank anything you remove in `docs/history.md` first (the hook enforces it). Put the reasoning in the commit message, not in CLAUDE.md. Report the file's size and delta when you're done.
+
+## Do not touch
+
+- `EbookModal` copy, the card, the $37 label, the `$350` decoy.
+- The e-book card stays up regardless (David, 2026-09-27). No coming-soon strip, no pre-sell.
+- No new Route 53 records unless Kit Commerce asks for one, and then by the DNS rule.
+
+## Verification
+
+| Check | Expect |
+|---|---|
+| First line of CLAUDE.md | Version 72, with a one-line Change History entry |
+| `grep -c 'href="#"' src/App.jsx` | Unchanged tonight (the Buy button is still unwired) |
+| `grep -c "6,300" CLAUDE.md` | 0 |
+| `grep -ci "playbook" CLAUDE.md` | Only in history or retired-rule lines, none as a live instruction |
+| No book text or PDF in the repo | `git status` shows CLAUDE.md and `docs/history.md` only |
+
+## Tonight's real job: Kit's lapsed trial
+
+**This is what David wants to work on with you now.** The Creator trial lapsed (about October 9), and since then **new subscribers are not getting the confirmation email until a plan is picked in Kit.** With double opt-in on, that means signups are stuck as Unconfirmed. CLAUDE.md's Kit table assumed the free Newsletter plan simply continued; it did not.
+
+- **David picks the plan in Kit himself** (Settings → Account & Billing). Card and billing details are his to enter. Walk him around upsells explicitly, one step per message, and ask for a screenshot before any button that charges or commits.
+- **Then check, in this order:**
+  1. **A test signup through the site** reaches Kit and the confirmation email arrives (David's test address); tap it and confirm the subscriber shows Confirmed after a reload.
+  2. **Anyone who signed up during the gap** is still Unconfirmed. List them (Kit MCP, read only) and show David; Kit can re-send the confirmation. Re-sending is a write, so it needs his yes.
+  3. **Kit Commerce still works on the chosen plan**, since the guide goes up tomorrow. Payouts were connected September 26; confirm nothing about the plan change touched them.
+- **Record in CLAUDE.md's Kit table:** the plan David chose, the date, and that the lapse stopped confirmations (the rule it leaves: a lapsed trial is not a silent fall back to free; check confirmations after any plan change). Close the "Kit trial lapse" open item.
+
 
 ---
 
