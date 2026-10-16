@@ -15,6 +15,7 @@ section of CLAUDE.md, copied from the GlowPT repo's 2026-09-12 trim.
 **Sections, newest bank first.** When a later trim banks more, add a new numbered
 section ABOVE section 1 and say what it holds.
 
+0s. Lines replaced in V76 (the download name traced).
 0r. Lines replaced in V75 (the first real purchase).
 0q. Lines replaced in V74, plus the 2026-10-16 Kit emails handoff.
 0p. The 2026-10-16 Kit product handoff.
@@ -29,6 +30,14 @@ section ABOVE section 1 and say what it holds.
 1. The full text of CLAUDE.md Version 57, exactly as it stood before the V58 trim.
 2. `AWS-MIGRATION-HANDOFF.md`, the working note from the 2026-09-25 move to Amplify.
 3. `CLAUDE-MD-TRIM-HANDOFF.md`, the note that started the V58 trim.
+
+---
+
+# 0s. LINES REPLACED IN V76 (2026-10-16): the download name traced
+
+# FranklinAI — Project Instructions (Version 75, Current)
+
+| **Downloaded PDF has a long random file name** | David, 2026-10-16: the guide downloads under a string of letters and numbers, not `What-Your-Practice-Actually-Sells.pdf` (Kit lists the uploaded name correctly; the download link serves Kit's storage name). No Kit setting found; Kit's help does not cover it. **Next step: ask Kit support** (chat bubble) whether buyers can receive the original file name. The PDF's own title metadata is correct, so readers that show the title (Books, Preview) display it properly. |
 
 ---
 
