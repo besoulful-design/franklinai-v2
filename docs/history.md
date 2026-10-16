@@ -15,6 +15,7 @@ section of CLAUDE.md, copied from the GlowPT repo's 2026-09-12 trim.
 **Sections, newest bank first.** When a later trim banks more, add a new numbered
 section ABOVE section 1 and say what it holds.
 
+0u. Lines replaced in V78 (guide delivery from this root).
 0t. Lines replaced in V77 (guide delivery plan).
 0s. Lines replaced in V76 (the download name traced).
 0r. Lines replaced in V75 (the first real purchase).
@@ -31,6 +32,14 @@ section ABOVE section 1 and say what it holds.
 1. The full text of CLAUDE.md Version 57, exactly as it stood before the V58 trim.
 2. `AWS-MIGRATION-HANDOFF.md`, the working note from the 2026-09-25 move to Amplify.
 3. `CLAUDE-MD-TRIM-HANDOFF.md`, the note that started the V58 trim.
+
+---
+
+# 0u. LINES REPLACED IN V78 (2026-10-16): guide delivery runs from this root
+
+# FranklinAI — Project Instructions (Version 77, Current)
+
+| **Guide delivery: own link, real file name — NEXT** | **Problem (2026-10-16):** Kit's receipt **Download** opens the PDF in the browser from Kit's `amazonaws.com` storage, so a phone saves it as `5lkoia3rv1pwvcjxzfya8eky39cb`, and in Gmail's viewer there is no clean way to save it at all; David: "this needs fixing better", not workarounds. **Kit support (AI agent Sam, 2026-10-16) confirmed:** no setting; the receipt's download section is fixed; the documented fix is **fulfillment "Go to URL" with the PDF hosted where we control the file name.** **Plan:** (a) host the PDF in AWS account `franklinai-web` (S3, us-east-1) under an unguessable key with `Content-Disposition: attachment; filename="What-Your-Practice-Actually-Sells.pdf"`, so any phone or browser downloads it in one tap with the right name; **never in this repo** (public). AWS writes beyond Route 53 belong in a GlowPT-rooted session by the session-root rule, unless David widens this root's permission file. (b) Kit cannot switch an existing product to "Go to URL", so **create a new product** with that URL (the MCP can: `create_product`, type `url`). To keep every link unchanged, first move the old product (`293598`) to another path with `update_product`, give the new one `what-your-practice-actually-sells`, then David deactivates the old one in Kit. (c) David redoes the page in Kit's editor (description, cover image, button *Buy the Guide*, badges off on page and thank-you page) and repoints the Visual automation "Guide buyers" to the new product. (d) Test with a real purchase. Note: anyone a buyer forwards the link to can download it, as with Kit's link today; the book's protection is that every buyer lands on the list. |
 
 ---
 
