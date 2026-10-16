@@ -15,6 +15,7 @@ section of CLAUDE.md, copied from the GlowPT repo's 2026-09-12 trim.
 **Sections, newest bank first.** When a later trim banks more, add a new numbered
 section ABOVE section 1 and say what it holds.
 
+0t. Lines replaced in V77 (guide delivery plan).
 0s. Lines replaced in V76 (the download name traced).
 0r. Lines replaced in V75 (the first real purchase).
 0q. Lines replaced in V74, plus the 2026-10-16 Kit emails handoff.
@@ -30,6 +31,16 @@ section ABOVE section 1 and say what it holds.
 1. The full text of CLAUDE.md Version 57, exactly as it stood before the V58 trim.
 2. `AWS-MIGRATION-HANDOFF.md`, the working note from the 2026-09-25 move to Amplify.
 3. `CLAUDE-MD-TRIM-HANDOFF.md`, the note that started the V58 trim.
+
+---
+
+# 0t. LINES REPLACED IN V77 (2026-10-16): guide delivery plan
+
+# FranklinAI — Project Instructions (Version 76, Current)
+
+- **Next (David, 2026-10-16):** (1) **Put "FranklinAI" in every email** (Open Items, "Emails never name FranklinAI"). (2) **Issue 1:** test-send the Kit draft to Dolly, schedule on David's word. **The guide is on the shelf and proven:** David's real purchase on 2026-10-16 worked end to end (Open Items, closed). Small open question: the downloaded PDF's file name (Open Items).
+
+| **Downloaded PDF has a long random file name** | Traced 2026-10-16: the receipt email's **Download** button opens the PDF **in the browser** straight from Kit's storage (an `amazonaws.com` link ending in `5lkoia3rv1pwvcjxzfya8eky39cb`), so a buyer who saves it from there (phone: Open in Safari → Share → Save to Files) gets that random name; a direct download carries the real name, `What-Your-Practice-Actually-Sells.pdf`. Every buyer still gets the right book. No account setting controls it. **Next: David asks Kit support:** *"The Download link in my product's receipt email opens the PDF from an amazonaws.com address, so buyers who save it get a random file name instead of the name I uploaded, What-Your-Practice-Actually-Sells.pdf. Can the link deliver the file under its original name?"* |
 
 ---
 
