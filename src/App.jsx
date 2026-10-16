@@ -771,7 +771,7 @@ export default function App() {
   if (isConfirmed) {
     return (
       <div style={{ WebkitTextSizeAdjust: '100%' }}>
-        <main style={{ paddingTop: 'clamp(24px, 8vh, 72px)' }}>
+        <main style={{ paddingTop: 'clamp(56px, 16vh, 160px)' }}>
           <Confirmed />
         </main>
         <Footer />
