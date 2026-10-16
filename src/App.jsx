@@ -158,18 +158,17 @@ function EbookModal({ onClose }) {
         </button>
         <h2 className="modal__title" style={{ marginTop: '6px' }}>What Your Practice Actually Sells</h2>
         <p className="modal__text">
-          Your whole team is being asked to sell advanced care and get patients
-          to the end of their care at the same time. That's not a
-          marketing problem. You're running two business models in one building,
-          an insurance practice and a cash practice, and they're pulling against
-          each other.
+          The marketing pushes the premium programs, the packages, the specialty
+          work, the thing that looks good on a flyer. The money arrives when a
+          patient finishes a plan of care, visit after visit, over weeks. Those
+          are two different businesses.
         </p>
         <p className="modal__text">
-          You didn't set out to build two businesses, but you chose every piece
-          that built the second one. The tactics arrived built for a business
-          you don't own, and none of them came with a label. So the team gets
-          mixed signals about what the practice is driving at, and every patient
-          feels the seams.
+          You are running both. Most practices are. And the two are pulling
+          against each other in every role in the building, because your team is
+          being asked to sell advanced care and get patients to the end of their
+          care at the same time, with nobody telling them which one wins when
+          they collide.
         </p>
         <p className="modal__text">
           This guide walks you through the fix: decide what your practice
@@ -178,7 +177,7 @@ function EbookModal({ onClose }) {
           up behind it.
         </p>
         <div style={{ borderTop: '1px solid rgba(96, 165, 250, 0.12)', paddingTop: '24px', textAlign: 'center' }}>
-          <a href="#" className="btn btn--ghost" style={{ padding: '12px 26px', fontSize: '15px', marginTop: '0' }}>
+          <a href="https://franklinai.kit.com/products/what-your-practice-actually-sells" target="_blank" rel="noopener noreferrer" className="btn btn--ghost" style={{ padding: '12px 26px', fontSize: '15px', marginTop: '0' }}>
             Buy the Guide · $37
           </a>
           <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '14px', color: '#8892a4', lineHeight: '1.5', marginTop: '12px', marginBottom: '0' }}>
