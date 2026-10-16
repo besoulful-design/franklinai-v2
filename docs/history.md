@@ -15,6 +15,7 @@ section of CLAUDE.md, copied from the GlowPT repo's 2026-09-12 trim.
 **Sections, newest bank first.** When a later trim banks more, add a new numbered
 section ABOVE section 1 and say what it holds.
 
+0p. The 2026-10-16 Kit product handoff.
 0o. Lines replaced in V73 (Kit on Creator), plus the 2026-10-14 handoff.
 0n. Lines replaced in V72 (book status, Issue 1 moved again).
 0f. Lines replaced in V64 (the claude.ai cache-buster).
@@ -26,6 +27,73 @@ section ABOVE section 1 and say what it holds.
 1. The full text of CLAUDE.md Version 57, exactly as it stood before the V58 trim.
 2. `AWS-MIGRATION-HANDOFF.md`, the working note from the 2026-09-25 move to Amplify.
 3. `CLAUDE-MD-TRIM-HANDOFF.md`, the note that started the V58 trim.
+
+---
+
+# 0p. HANDOFF USED 2026-10-16: the Kit Commerce product (from claude.ai, deleted from ~/Downloads once used)
+
+# Handoff to Claude Code · repo: franklinai-v2 (`~/Downloads/franklinai-v2`)
+
+From the claude.ai FranklinAI project, Friday October 16, 2026, 4:30 AM. Written against CLAUDE.md **Version 73** (read just now). This picks up Open Items, "E-book checkout on Kit Commerce", at step 2.
+
+## What's done
+
+- **The PDF is final (David, October 16):** `What-Your-Practice-Actually-Sells.pdf`, 36 pages, 6 by 9 inches, about 0.1 MB, fonts embedded. David saves it to `~/Downloads` and uploads it to Kit himself.
+- **Checked before handoff:** every word matches the guide file in the claude.ai project; zero em dashes; no "playbook"; the cover line reads "A guide from The Operator"; page 2 is the copyright page (© 2026 FranklinAI Solutions LLC, imprint the same, no author name); the PDF's author field is FranklinAI Solutions LLC; the Contents entries are tappable; the one web link is https://franklinaisolutions.com in the P.S.
+- **Kit is on Creator monthly** (V73), and confirmations are working again.
+
+## Tonight's steps, in order
+
+**Step 2. David creates the Kit Commerce product.** One step per message; screenshot before any Save, Publish, or charge.
+
+| Field | Value |
+|---|---|
+| Name | What Your Practice Actually Sells |
+| Price | **$37**, one-time (must match the site's "Buy the Guide · $37") |
+| File | `What-Your-Practice-Actually-Sells.pdf` (the final file above; **no placeholder file, ever**) |
+| Description | The draft below, **once David approves it** |
+| Buyer added to the list | On. This is the whole reason the checkout is Kit (CLAUDE.md, The Offer Ladder) |
+
+If you use the Kit MCP here, read freely, but show David the exact write and get his yes first. `list_forms` stays avoided.
+
+**Description draft (for David's yes; he may edit).** Copy rules apply: it calls the book a guide, it may name physical therapy (this page stands alone), and it has no em dashes. The sentences that come from the book and the site modal are word for word, because the book wins on shared sentences.
+
+> **A guide from The Operator, for physical therapy practice owners.**
+>
+> Run one practice that bills insurance and sells advanced care without the two halves fighting. Say what your practice sells in one sentence your whole team can repeat.
+>
+> Your whole team is being asked to sell advanced care and get patients to the end of their care at the same time. That's not a marketing problem. You're running two business models in one building, an insurance practice and a cash practice, and they're pulling against each other.
+>
+> This guide walks you through the fix: decide what your practice actually is, then say it in one sentence your whole team can repeat. Then run everything else behind it: a filter for every tactic, a schedule that protects the back half of a plan of care, five numbers worth reading every week, and a six-week plan to put it in place.
+>
+> A downloadable PDF, sized to read on your phone.
+
+**Step 3. Code wires the button.** Set "Buy the Guide · $37" in `EbookModal` to the live product URL with `target="_blank" rel="noopener noreferrer"`. Styles and label unchanged. Push, then confirm the live site serves it (fetch the page, find `assets/index-*.js`, grep for the URL) before telling David it is live.
+
+**Step 4. Test purchase.** David buys it or runs Kit's test purchase, then checks:
+1. The PDF downloads and opens (on his phone too).
+2. The buyer lands on the list. Note whether a buyer goes through double opt-in or is added directly, and record what Kit does in the Kit table.
+3. The statement descriptor shows `FRANKLINAI`.
+
+## Verification
+
+| Check | Expect |
+|---|---|
+| `grep -c 'href="#"' src/App.jsx` | **0** |
+| Button label | "Buy the Guide · $37", unchanged, and $37 matches the Kit product |
+| The `$350` decoy | Untouched (GlowPT modal and Monthly Care) |
+| New strings | No em dashes |
+| The book in the repo | **None.** Neither the PDF nor its text is committed (public repo, paid product) |
+
+## Then update CLAUDE.md (V74), after David confirms on the live site
+
+- CURRENT STATE, "Next:": the checkout is live; record the product URL.
+- Open Items: close "E-book checkout on Kit Commerce" with the date and the test-purchase result.
+- Kit table, Revenue / Kit Commerce row: the product name, $37, and that buyers join the list (with how: opt-in or direct).
+- The Offer Ladder and Business: the e-book status becomes "live and buyable".
+
+**Not touched by any of this:** the card and modal copy, Issue 1 (it ships after the guide is on the shelf; the date is in the Calendar), and Route 53, unless Kit Commerce asks for a record.
+
 
 ---
 
