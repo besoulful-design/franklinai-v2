@@ -15,6 +15,7 @@ section of CLAUDE.md, copied from the GlowPT repo's 2026-09-12 trim.
 **Sections, newest bank first.** When a later trim banks more, add a new numbered
 section ABOVE section 1 and say what it holds.
 
+0q. Lines replaced in V74, plus the 2026-10-16 Kit emails handoff.
 0p. The 2026-10-16 Kit product handoff.
 0o. Lines replaced in V73 (Kit on Creator), plus the 2026-10-14 handoff.
 0n. Lines replaced in V72 (book status, Issue 1 moved again).
@@ -27,6 +28,258 @@ section ABOVE section 1 and say what it holds.
 1. The full text of CLAUDE.md Version 57, exactly as it stood before the V58 trim.
 2. `AWS-MIGRATION-HANDOFF.md`, the working note from the 2026-09-25 move to Amplify.
 3. `CLAUDE-MD-TRIM-HANDOFF.md`, the note that started the V58 trim.
+
+---
+
+# 0q. LINES REPLACED IN V74 (2026-10-16): the guide on the shelf, Kit emails, one ask per issue
+
+# FranklinAI — Project Instructions (Version 73, Current)
+
+- **Next:** the **e-book checkout on Kit Commerce** (decided, not built; "Buy the Guide · $37" is still `href="#"`). **Step 1 (payouts) DONE 2026-09-26.** **The book text is final**; the PDF is typeset in claude.ai from the guide file (**not Canva**) and is in David's last layout pass. Step 2, create the product, follows the final PDF (date in the Calendar). **No placeholder product**: a live product with a stand-in file could sell a real copy. Steps in Open Items.
+
+- **Issue 1 of The Operator:** not sent yet; moved again by David on 2026-10-14 so the guide is on the shelf first. **Issue dates live in the Content Calendar; read them there.** **Cadence is monthly as of 2026-10-03** (was every other Tuesday).
+
+- **Measured at V70:** `App.jsx` is **758 lines**; the `$350` decoy sits at **lines 123 and 533**.
+
+**The Content Calendar** (a claude.ai document) is the source of truth for all content and marketing. This file intentionally holds **no** content/marketing specifics beyond what the site displays. The calendar is **newsletter-led**: *The Operator*, **monthly** (the first Tuesday internally; the public copy says only "monthly"), 400–600 words, free, written Sunday on a phone. **Instagram is the only discovery surface.** **The discovery call is the only door** for the custom build (GlowPT has a second door; see Offer Ladder). The addressee is the **owner**; the office manager is the multiplier. The spearhead is **model confusion** ("You're running an insurance practice with cash-model marketing"), across **six spines**: (A) model confusion, (B) plan-of-care completion, (C) team, hiring, retention, and modeling, (D) your numbers, (E) AI in your practice, (F) systems and delegation. The four-video YouTube arc is **parked whole**.
+
+- **The reconciliation e-book** — one-time, self-serve, **$37**, titled **"What Your Practice Actually Sells."** **The book is written** (about 7,600 words, eleven chapters plus an index; the file is David's and lives in the claude.ai project), **the card and modal are live**, **the checkout is not wired**. **Kit Commerce is the decided checkout.**
+
+  > **Say this precisely:** the book exists and the listing is live; **the product is not buyable yet.** ⛔ **The e-book card is NEVER taken down, whether or not the checkout is live** (David, 2026-09-27). **Do not suggest it.** Still **no coming-soon strip and no pre-sell.**
+
+| **The reconciliation e-book** | $37, one-time | **Self-serve.** The first paid yes. | **First** product on Available; More Info opens `EbookModal` | **Written; card and modal live; checkout NOT wired** (Kit Commerce, next) |
+
+**Why the extra doors do not break the one door:** the newsletter closes on the discovery call, every issue — one ask. The $37 file sells from the shelf and Instagram, **never from the newsletter's close.** GlowPT's self-serve door lives inside a modal, never in the newsletter. **The "one door" rule governs the newsletter's close, not the site.**
+
+- **Price appears in three places that move together:** `App.jsx` (**once**, inside the `EbookModal` button label "Buy the Guide · $37"), this file, and the Kit product. **$37 in all three.**
+
+| **Form** | **"The Operator site signup"**, **ID `9962049`**, inline, template "Clare", **published**. Its Kit styling and "success message" setting are unused: the site posts to its endpoint from its own form. |
+
+| **Double opt-in** | **ON.** Form Settings → Confirmation email: *Send confirmation email* ticked, *Auto-confirm* unticked. After confirming, readers land on Kit's default `https://app.kit.com/confirm-subscription` page (kept on purpose). |
+
+| **Confirmation email** | **Kit's default copy**, subject "Important: confirm your subscription". A draft in David's voice is parked (Open Items). The copy rules bind it. |
+
+| **Revenue / Kit Commerce** | **Payouts connected 2026-09-26** (Settings → Revenue → Set up payments): a **Stripe Express** account under Kit, login `david@franklinaisolutions.com`. **Business type Company, Single-member LLC, legal name FranklinAI Solutions LLC** with the LLC's EIN; website `https://franklinaisolutions.com`; industry **Digital products → Books**; David as account representative. **Payout bank: the LLC's Bluevine business checking** (it shows in Stripe as **Coastal Community Bank**, Bluevine's partner bank; that is correct). **Statement descriptor `FRANKLINAI`** in both Stripe and Kit's Commerce settings (Stripe's default truncated to "FRANKLINAISOLUTIONS.CO", which reads as a different domain and invites disputes). Payouts **weekly on Fridays**. Details changed later via **Open in Stripe** on that page. **No product created yet.** ⛔ Never record account numbers, SSN, or home address here (public repo). |
+
+| **Kit MCP** | **Connected 2026-10-04** as a claude.ai connector (David's call), so a Code session can read the account directly. **It needs the Creator plan** (lost on Free). **It can also write** (subscribers, broadcasts, products): **read freely, but show David the exact change and get his yes before any write.** `list_forms` is avoided: Kit warns it can publish unsaved form edits. |
+
+| **Test subscribers** | **`besoulful+dolly@…` (Dolly)**, added 2026-10-01, Confirmed 2026-10-03, the test reader for Issue 1. **`besoulful+confirm1@…`**, Confirmed 2026-10-14 (the post-lapse test). **`besoulful+newsytest@…`**, 2026-10-14, never confirmed (signed up during the lapse; its email never went out). Ken and Julie deleted. Real reader: one, since 2026-10-07. |
+
+  > **Paragraphs 1 and 2 match the book's chapter 1** ("the end of their **care**", "set out to **build**", `d89f4f0`), **and the book wins.** **Never reintroduce the two retired framings** (the accident framing and the departmental split). "build… built… built" in paragraph 2 is parked (Open Items).
+
+  1. *"Your whole team is being asked to sell advanced care and get patients to the end of their care at the same time. That's not a marketing problem. You're running two business models in one building, an insurance practice and a cash practice, and they're pulling against each other."*
+
+  2. *"You didn't set out to build two businesses, but you chose every piece that built the second one. The tactics arrived built for a business you don't own, and none of them came with a label. So the team gets mixed signals about what the practice is driving at, and every patient feels the seams."*
+
+- **Footer** (borderTop hairline, paddingTop 24px, centered): one **ghost** button **"Buy the Guide · $37"** (`padding: '12px 26px', fontSize: '15px', marginTop: '0'`; the price lives in the label, joined by a middot; **no standalone price line**), then **"A downloadable PDF."** (Inter 14px, #8892a4, lineHeight 1.5, marginTop 12px), then the shared Close. **`href="#"` until the Kit Commerce product exists**; then the live URL with `target="_blank" rel="noopener noreferrer"`, styles unchanged.
+
+| **E-book checkout on Kit Commerce — NEXT** | **Decided, not built.** (1) ✅ **Payouts connected 2026-09-26** (see Kit table). (2) David creates the product: *What Your Practice Actually Sells*, **$37**, the final PDF uploaded (it carries a copyright page, **© 2026 FranklinAI Solutions LLC**, imprint the same, **no author name**), a description that **calls it a guide**, may name physical therapy, and obeys the copy rules. (3) Code sets "Buy the Guide · $37" to the live URL with `target="_blank" rel="noopener noreferrer"`, styles unchanged, and pushes. (4) David buys it or runs Kit's test purchase and checks the buyer lands on the list. **Verify:** `grep -c 'href="#"' src/App.jsx` → **0**; "$37" in the button label matches the Kit product; the `$350` decoy untouched; no em dashes in new strings. **No fallback that touches the card:** it stays up regardless; no coming-soon strip, no pre-sell. Any domain record Kit Commerce asks for goes in **Route 53**, by the DNS rule. |
+
+| **Send new subscribers to the latest issue after they confirm — DAVID WANTS THIS** | A broadcast goes once, to whoever is Confirmed at send time, so a new subscriber waits up to a month. Plan: publish each issue as a web page in Kit, then point the form's after-confirm redirect at the latest one (form Settings → Confirmation email) instead of Kit's default page. **Do after Issue 1 is sent.** The redirect must be updated each issue; record the setting in the Kit table. |
+
+| **Remove "Built with Kit" — DAVID WANTS THIS** | Creator allows it. The logo shows in the confirmation email and on Kit's confirm page. Find the setting in Kit with David (not yet located). |
+
+| **Email series and automations — DAVID WANTS THIS** | Possible on Creator since 2026-10-14. Candidates: a welcome email or series for new subscribers (may replace the after-confirm redirect plan above), and a follow-up to guide buyers. **The copy is a claude.ai decision; the copy rules bind it**; build in Kit via the MCP only with David's yes on the exact write. |
+
+| **Kit confirmation email wording** | Parked draft in David's voice: subject *Confirm your subscription to The Operator*; top line *Thanks for signing up for The Operator. Tap the button below to confirm, and the next issue will come straight to your inbox.*; button *Confirm Your Subscription*; closing *Glad you're here.* / *David*. A claude.ai copy decision; edited in Kit (form Settings → Confirmation email → Edit Email Contents). |
+
+| **`EbookModal` paragraph 2: "build… built… built"** | Three forms of "build" in ~20 words. **Parked, book-first:** if it grates, change the book, then every surface together. |
+
+- **V73** (2026-10-14) — **Kit on Creator monthly** (the lapsed trial had stopped confirmations; tested working again). New wants: remove Kit branding, email series and automations.
+
+## The claude.ai handoff "Kit emails and Issue 1" of 2026-10-16 (used for V74; gone from ~/Downloads when banked, so this is the text as read into the session)
+
+# Handoff to Code · repo `franklinai-v2` · Kit emails and Issue 1
+
+Friday October 16, 2026, about 8:00 AM. Written in claude.ai after David approved every string below. Read CLAUDE.md first as usual (V73 at the time of writing).
+
+**Scope:** Kit only (two automated emails and the Issue 1 broadcast draft), plus the CLAUDE.md update to V74 at the end. **Do not touch:** `App.jsx`, the site's newsletter card, the GlowPT section, Route 53, the Kit product page (its paragraph 3 stays as is; David's call, Oct 16).
+
+**Every string below is FINAL** unless a heading says otherwise. All were checked: no em dashes, no "software", "upsell", "treatment room", "in plain English" or "playbook", no floating "free" near a price, `FranklinAI Solutions LLC` not used. Check them again in Kit after pasting, since Kit's editor can turn straight quotes and apostrophes into curly ones (fine) or add its own footer text (check it).
+
+---
+
+## Order of work (this matters now)
+
+1. Build the **buyer follow-up** (one-email series, no Kit badge). David sets the trigger "when someone buys the guide" in Kit's Automations screen.
+2. **Test purchase** (delay set to a few minutes; David buys with `besoulful+buyer1@gmail.com`). Check the sale, how the buyer landed on the list, the receipt, and the follow-up arriving. Pick **The Operator line, version A or B** (below) from what the test shows, then set the real delay.
+3. Make the **confirmation email** live (section 4), then build the **welcome email** and test both with one test signup.
+4. Build **Issue 1** as a broadcast **draft**, test-send to Dolly, and show David.
+5. Update CLAUDE.md to V74.
+
+**Why the test purchase must come before Issue 1 sends:** Issue 1 now closes on the guide (decision below), so its readers are the first real buyers. The buyer follow-up has to be live and proven before any of them click.
+
+**Send date: David will send Issue 1 soon, well before October 20.** Schedule it only on his word, with the date and time he gives. The Issue 1 Reel posts on Instagram the same morning, so tell him when the send is scheduled.
+
+---
+
+## 1. Buyer follow-up email · FINAL
+
+- **From:** David Peterson <david@franklinaisolutions.com>
+- **Trigger:** someone buys the guide (David sets it in Automations)
+- **Delay:** **2 days** after purchase (a few minutes for the test only)
+- **Subject:** `Thanks for buying the guide`
+- **Preview text:** `A note about What Your Practice Actually Sells.`
+- **Links:** none in version A. Version B links the text `franklinaisolutions.com` to `https://franklinaisolutions.com`.
+
+**Body:**
+
+```
+Thanks for buying What Your Practice Actually Sells.
+
+The guide opens with a small ask: before you turn to chapter 2, write down in one line what you think your practice sells. Don't overthink it. Most owners write a short description of the care they give, and that's fine. In chapter 4 you'll put it next to a rule and see the difference.
+
+If you've written yours, reply and send it to me. I read every reply, and I'd like to see what you came up with.
+
+If you ever lose the download link, it's in your receipt. If that's gone too, reply and I'll send it again.
+
+[THE OPERATOR LINE: version A or B, its own paragraph]
+
+Warmest wishes,
+David
+```
+
+**The Operator line, picked after the test purchase:**
+
+- **Version A, if buyers land on the list as subscribers** (they will receive The Operator):
+  `You'll also get The Operator, the monthly newsletter this guide comes from. If it's not for you, the unsubscribe link at the bottom of any issue takes you off.`
+- **Version B, if buyers do NOT land on the list as subscribers** (double opt-in, or added some other way that does not receive broadcasts):
+  `This guide comes from The Operator, a free monthly newsletter for physical therapy practices. If you'd like it, you can subscribe at franklinaisolutions.com.`
+
+If the test shows something in between (for example, buyers land on the list but Unconfirmed), stop and tell David what you saw before picking.
+
+**Reasoning (so you don't "improve" it):** the email asks for a reply, not the discovery call. A booking link two days after a $37 purchase reads as bait-and-switch, and the guide already offers the call once, in its P.S. The reply is the middle rung of the readiness ladder and tells David what buyers do with the guide. The subject and preview state plainly what the email is; David rejected a question as the subject and a question-like preview because they make a new buyer feel they owe an answer. The example quote "we help people move better" was removed on David's instruction.
+
+---
+
+## 2. Welcome email for new subscribers · FINAL
+
+- **From:** David Peterson <david@franklinaisolutions.com>
+- **Trigger:** subscriber confirms through form `9962049`
+- **Delay:** right away
+- **Subject:** `Welcome to The Operator`
+- **Preview text:** `A monthly newsletter for physical therapy practices.`
+- **Links:** none
+
+**Body:**
+
+```
+Thanks for confirming. You're on the list for The Operator.
+
+Here's what you signed up for. Once a month, one short issue about what's going on in physical therapy practices and what to do about it. Each one takes about three minutes to read, and each one gives you one thing to look at that week. The next issue will come straight to your inbox.
+
+If there's something in your practice you wish someone would write about, reply and tell me. I read every reply, and they help decide what I write next.
+
+Warmest wishes,
+David
+```
+
+**Reasoning:** it stands on its own and needs no monthly upkeep, so it does **not** link to the latest issue. The open item "send new subscribers to the latest issue" stays open (revisit once issues exist as Kit web pages). No guide, no call: a welcome should not read as a sales email. The preview starts with the site's own newsletter description words. David cut a credentials sentence ("I've spent decades building systems...") and a "one favor" framing; do not restore either.
+
+---
+
+## 3. Issue 1 of The Operator · FINAL text, broadcast as a DRAFT
+
+- **Subject:** `You're Running an Insurance Practice With Cash-Model Marketing.`
+- **Preview text:** `Two business models, one building, and one question to ask this week.`
+- **Send:** David gives the date and time; draft only until then.
+- **The only link:** the text `What Your Practice Actually Sells` in the last paragraph goes to `https://franklinai.kit.com/products/what-your-practice-actually-sells`. **There is no discovery-call link in this issue** (decision below).
+
+**Masthead (top of the email):** `The Operator`, then the promise line in italics:
+`A monthly newsletter for physical therapy practices that takes a look at what's going on in your practice and what to do about it.`
+
+**Body:**
+
+```
+If your whole team is being asked to sell advanced care and get patients to the end of their care at the same time, you don't have a marketing problem. You have two business models in one building.
+
+Look at what your marketing says, then look at where your money comes from. The marketing pushes the premium programs, the packages, the specialty work, the thing that looks good on a flyer. The money arrives when a patient finishes a plan of care, visit after visit, over weeks. Those are two different businesses. One sells the sizzle up front and gets paid at the sale. The other earns its living on completion and gets paid at the end. And you're running both under one roof.
+
+You did not set out to build two businesses, but you chose every piece that built the second one. That's the part worth sitting with. The tactics that push packages and premium add-ons were built for a cash-pay model, where the sale is the revenue. But they don't arrive with a label telling you which business they were written for. They come from everywhere, a talk you went to, a course you bought, a service you signed up for, the clinic down the street that looks like it's winning. It's all just "marketing," and marketing is marketing, so you put it to work. One tactic at a time, none of them wrong on its own, each one a call you made. Every one of them pulls attention toward the sale, which means nothing is pulling attention toward the finish. Your team feels that before you do. They're being pulled in two directions at once.
+
+Here's where it stops being abstract. In an insurance practice, most of a plan of care is collected in the back half. But roughly 70 percent of patients drift off before they finish, and at about $100 a visit, every session that never happens is money left on the table. Not the whole case, the unfinished part of it, and that's hundreds of dollars per patient who stops early. So the marketing pulling attention toward the premium sell is pulling it away from the one thing that actually pays the bills: getting people to the end.
+
+You don't have to fix any of this yet. This week, just look. Pull your last five pieces of marketing, an email, a flyer, a post, whatever went out, and read each one with a single question: which business is this selling? The package up front, or the completed plan of care? You'll know within a line or two. Don't change anything. Just notice how many are selling a business you're not actually running.
+
+If that adds up to more than you'd like, there's a short guide that walks you through the fix: What Your Practice Actually Sells.
+
+Warmest wishes,
+David
+```
+
+**What changed from the October 13 finished text, all approved by David on October 16:**
+
+| Where | Old | New | Why |
+|---|---|---|---|
+| Paragraph 2 | "Look at what your marketing actually says. It pushes the premium stuff, the specialty programs, the packages, the thing that looks impressive on a flyer. Now look at where the money actually comes in. It comes in when a patient finishes their plan of care, visit after visit, over weeks. Those are two different businesses. One sells the sizzle up front. The other earns its living on completion. And you're running both under one roof." | The book's chapter 1 sentences (see body) + "And you're running both under one roof." | The book wins on shared sentences; the site pop-up now carries the book's version, so a reader would meet two versions. |
+| Paragraph 3, opening | "You didn't set out to build two businesses, but you chose every piece that built the second one, and that's the part worth sitting with." | "You did not set out to build two businesses, but you chose every piece that built the second one. That's the part worth sitting with." | Book's sentence word for word. |
+| Paragraph 3, last line | "Nobody has told them what the practice is driving at, so they stop driving at it." | "They're being pulled in two directions at once." | David's edit. |
+| Close | "If that adds up to more than you'd like, that's worth a conversation. Book a free discovery call." | "If that adds up to more than you'd like, there's a short guide that walks you through the fix: What Your Practice Actually Sells." | New close rule (below). |
+| Sign-off | "David" | "Warmest wishes," / "David" | David, Oct 16: matches the two Kit emails. |
+| Preview text | none | as above | New for Kit. |
+
+**Left alone on purpose:** the cost sentence. The book splits it into two sentences, but every clause matches word for word, and the finished Reel speaks the issue's version. The price is not in the close because the product page shows it. The close says "there's a short guide," not "I wrote," because the book carries no author name.
+
+---
+
+## The decision that changes a CLAUDE.md rule
+
+**One ask per issue, matched to the issue (David, October 16).** This **reverses** the August 30 rule that every issue closes on the discovery call and that the $37 guide "never" sells from the newsletter's close. Now that the guide is buyable:
+
+- Issues the guide answers (the model-confusion issues: 1, 2, 4) **close on the guide.**
+- Issues it does not answer (AI, systems, and similar) **close on the discovery call.**
+- **Still one ask per issue**, never both. **GlowPT is still never pitched inside an issue.**
+- The call stays reachable on the site, and the guide's own P.S. offers it, so the path is newsletter, guide, call.
+
+**Why:** most Issue 1 readers are new and cold, from Instagram. $37 is one rung up; a call with a stranger is two. Issue 1 is the diagnosis and the guide is its fix.
+
+**In CLAUDE.md, the lines to change** (bank what you remove, per the hook): the **Offer Ladder** paragraph "Why the extra doors do not break the one door" ("the newsletter closes on the discovery call, every issue — one ask. The $37 file sells from the shelf and Instagram, never from the newsletter's close"), and the **Source-of-Truth Documents** sentence "The discovery call is the only door for the custom build", which can stay but should no longer imply every issue closes on it. The Content Calendar has been updated in claude.ai to match.
+
+---
+
+## 4. Kit confirmation email · FINAL, make it live now
+
+David approved this on October 16; it replaces Kit's default copy ("Important: confirm your subscription"). Edit it in Kit at the form's Settings, then Confirmation email, then Edit Email Contents (form `9962049`; avoid `list_forms`, per CLAUDE.md). Double opt-in stays ON.
+
+- **Subject:** `Confirm your subscription to The Operator`
+- **Top line:** `Thanks for signing up for The Operator. Tap the button below to confirm, and the next issue will come straight to your inbox.`
+- **Button:** `Confirm Your Subscription`
+- **Closing:**
+
+```
+Glad you're here.
+
+Warmest wishes,
+David
+```
+
+**While you are in there:** remove the "Built with Kit" logo from this email and from Kit's confirm page if Creator allows it (Open Items, "DAVID WANTS THIS"). **Test it** with the welcome-email test signup (step 3 in the order of work): the new confirmation should arrive, the button should confirm, and the welcome should follow. Show David the email before it goes live.
+
+---
+
+## Also record in CLAUDE.md (V74), with everything the test purchase proves
+
+- The four facts from the morning handoff (product live at $37, the site button wired `f841663`, the pop-up's first two paragraphs now the book's chapter 1, the test purchase result). The `EbookModal` paragraph text in CLAUDE.md still quotes the **old** paragraphs 1 and 2; replace with the live ones.
+- The **Kit table:** the buyer follow-up series and welcome email exist, their triggers and delays, and how buyers land on the list.
+- **Open Items:** "Email series and automations" done; "send new subscribers to the latest issue" still open (the welcome does not link to an issue); confirmation email wording done (move the parked draft into the Kit table as live); "Built with Kit" removal, if done.
+- **Sign-off:** Kit emails and issues sign "Warmest wishes," / "David" (a copy fact, one line).
+- The new close rule above.
+
+## Verification
+
+| Check | Expect |
+|---|---|
+| Em dashes in each Kit email and the Issue 1 draft | 0 |
+| "Book a free discovery call" in the Issue 1 draft | 0 |
+| Links in Issue 1 | 1, to the Kit product page |
+| Buyer follow-up delay after the test | 2 days |
+| Welcome email delay | none (right away) |
+| The Operator line in the buyer email | version matching the test purchase |
+| Issue 1 status | draft until David gives a send time |
+| Dolly received the Issue 1 test | yes, and David has seen it |
+| Confirmation email subject in Kit | Confirm your subscription to The Operator |
+| Test signup | new confirmation arrives, confirms, then the welcome arrives |
+
 
 ---
 
