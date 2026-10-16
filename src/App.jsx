@@ -740,7 +740,8 @@ function Footer() {
 // Where Kit sends a reader after they tap "Confirm Your Subscription"
 // (form 9962049's after-confirm redirect). Replaces Kit's default page,
 // which carries a "Built with Kit" badge that cannot be switched off.
-// Amplify's 404-200 rewrite serves index.html for /confirmed.
+// The build copies index.html to dist/confirmed/ so it is served with a 200.
+// No nav on this page (David, 2026-10-16): the card leads, then the footer.
 function Confirmed() {
   return (
     <section className="section">
@@ -770,8 +771,7 @@ export default function App() {
   if (isConfirmed) {
     return (
       <div style={{ WebkitTextSizeAdjust: '100%' }}>
-        <Nav />
-        <main>
+        <main style={{ paddingTop: 'clamp(24px, 8vh, 72px)' }}>
           <Confirmed />
         </main>
         <Footer />
