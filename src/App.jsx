@@ -737,7 +737,48 @@ function Footer() {
   );
 }
 
+// Where Kit sends a reader after they tap "Confirm Your Subscription"
+// (form 9962049's after-confirm redirect). Replaces Kit's default page,
+// which carries a "Built with Kit" badge that cannot be switched off.
+// Amplify's 404-200 rewrite serves index.html for /confirmed.
+function Confirmed() {
+  return (
+    <section className="section">
+      <div className="container">
+        <div className="site-card" style={{ paddingTop: '16px', paddingBottom: '24px' }}>
+          <h1 className="card-heading" style={{ fontSize: 'clamp(36px, 5.5vw, 58px)', lineHeight: '1.2', marginBottom: 'clamp(4px, 1.5vw, 10px)' }}>
+            Newsletter
+          </h1>
+          <p style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(30px, 5vw, 35px)', fontWeight: '800', color: '#ffffff', marginTop: '0', marginBottom: '14px', lineHeight: '1.1' }}>
+            The Operator
+          </p>
+          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', color: '#8892a4', marginTop: '0', marginBottom: '18px', lineHeight: '1.5' }}>
+            Thanks for confirming. You're on the list for The Operator. The next issue will come straight to your&nbsp;inbox.
+          </p>
+          <a href="/" className="btn btn--ghost" style={{ marginTop: '0' }}>
+            Visit FranklinAI
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function App() {
+  const isConfirmed = window.location.pathname.replace(/\/+$/, '') === '/confirmed';
+
+  if (isConfirmed) {
+    return (
+      <div style={{ WebkitTextSizeAdjust: '100%' }}>
+        <Nav />
+        <main>
+          <Confirmed />
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
   return (
     <div style={{ WebkitTextSizeAdjust: '100%' }}>
       <Nav />
