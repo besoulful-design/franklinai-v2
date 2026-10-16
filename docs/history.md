@@ -15,6 +15,7 @@ section of CLAUDE.md, copied from the GlowPT repo's 2026-09-12 trim.
 **Sections, newest bank first.** When a later trim banks more, add a new numbered
 section ABOVE section 1 and say what it holds.
 
+0r. Lines replaced in V75 (the first real purchase).
 0q. Lines replaced in V74, plus the 2026-10-16 Kit emails handoff.
 0p. The 2026-10-16 Kit product handoff.
 0o. Lines replaced in V73 (Kit on Creator), plus the 2026-10-14 handoff.
@@ -28,6 +29,24 @@ section ABOVE section 1 and say what it holds.
 1. The full text of CLAUDE.md Version 57, exactly as it stood before the V58 trim.
 2. `AWS-MIGRATION-HANDOFF.md`, the working note from the 2026-09-25 move to Amplify.
 3. `CLAUDE-MD-TRIM-HANDOFF.md`, the note that started the V58 trim.
+
+---
+
+# 0r. LINES REPLACED IN V75 (2026-10-16): the first real purchase
+
+# FranklinAI — Project Instructions (Version 74, Current)
+
+- **Next, in this order (David, 2026-10-16):** (1) **David walks through buying the guide for real** (personal card, `besoulful+buyer1@gmail.com`, from the live site); Code then checks in Kit the sale, **how the buyer lands on the list** (direct or double opt-in), the receipt, and the buyer follow-up arriving, picks **The Operator line A or B** in the follow-up, and sets its **real delay, 2 days** (it is 0 hours for the test). Steps in Open Items. (2) **Put "FranklinAI" in every email** (Open Items, "Emails never name FranklinAI"). (3) **Issue 1:** test-send the Kit draft to Dolly, schedule on David's word. **The guide is on the shelf:** Kit product live, the site button wired (`f841663`).
+
+| **Automated emails** | All from David Peterson on the **"Text only"** template (Classic, the default), **its "Built with Kit" badge off** (Broadcasts → Email templates → Text only → Additional; one switch covers every email). **Welcome:** sequence *The Operator: welcome* (`2931894`), one email, sent right away, triggered by a **Rule** (subscribes to form *The Operator site signup* → this sequence). **Buyer follow-up:** sequence *Guide buyers: follow-up* (`2931893`, email `10441959`), one email with Operator line A, **delay 0 hours for the test, to become 2 days**, triggered by the **Visual automation "Guide buyers"** (Product purchased → this sequence; Rules has no purchase trigger). Copy from the 2026-10-16 claude.ai handoff (banked). **Sender stays David Peterson** (David, 2026-10-16). |
+
+| **Revenue / Kit Commerce** | **Payouts connected 2026-09-26** (Settings → Revenue → Set up payments): a **Stripe Express** account under Kit, login `david@franklinaisolutions.com`. **Business type Company, Single-member LLC, legal name FranklinAI Solutions LLC** with the LLC's EIN; website `https://franklinaisolutions.com`; industry **Digital products → Books**; David as account representative. **Payout bank: the LLC's Bluevine business checking** (it shows in Stripe as **Coastal Community Bank**, Bluevine's partner bank; that is correct). **Statement descriptor `FRANKLINAI`** in both Stripe and Kit's Commerce settings (Stripe's default truncated to "FRANKLINAISOLUTIONS.CO", which reads as a different domain and invites disputes). Payouts **weekly on Fridays**. Details changed later via **Open in Stripe** on that page. **Product live 2026-10-16:** *What Your Practice Actually Sells*, id `293598`, $37 standard one-time, the final PDF delivered as an emailed download link, page `https://franklinai.kit.com/products/what-your-practice-actually-sells` (Kit's subdomain, no DNS); page text is the description David approved 2026-10-16, image the book cover, button *Buy the Guide*, badge off on the page and the thank-you page. Kit collects no sales tax (receipt shows 0.00): an accountant question. ⛔ Never record account numbers, SSN, or home address here (public repo). |
+
+| **E-book: the first real purchase — NEXT** | Product live and button wired 2026-10-16. **To do:** David buys it for real from the live site (personal card, `besoulful+buyer1@gmail.com`); Code checks in Kit the sale, **how the buyer joins the list** (direct or double opt-in), the receipt and download, the descriptor `FRANKLINAI`, and the follow-up arriving. Then the follow-up's **Operator line**: **A** if buyers become subscribers (*You'll also get The Operator, the monthly newsletter this guide comes from. If it's not for you, the unsubscribe link at the bottom of any issue takes you off.*, live now) or **B** if not (*This guide comes from The Operator, a free monthly newsletter for physical therapy practices. If you'd like it, you can subscribe at franklinaisolutions.com.*, linking the domain); anything in between, stop and tell David. Then the **2-day** delay. Record the result in the Kit table. |
+
+| **Issue 1 paragraph 3 near-quotes the book** | Issue 1: "The tactics that push packages and premium add-ons were built for a cash-pay model"; the book: "The tactics that push packages were written for a cash-pay model". Flagged to David 2026-10-16, not yet answered. By the book-wins rule, match it before sending unless David keeps it. (The old pop-up "build… built… built" item closed: that paragraph left the site 2026-10-16.) |
+
+- **V74** (2026-10-16) — **The guide is on the shelf:** Kit product `293598` at $37, site button live, pop-up matches the book. Kit welcome, buyer follow-up, live confirmation email, badges off, `/confirmed` page; Issue 1 drafted. **One ask per issue** (reverses every-issue-closes-on-the-call). Next: the real purchase, then FranklinAI in the emails.
 
 ---
 
