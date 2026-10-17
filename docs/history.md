@@ -15,6 +15,7 @@ section of CLAUDE.md, copied from the GlowPT repo's 2026-09-12 trim.
 **Sections, newest bank first.** When a later trim banks more, add a new numbered
 section ABOVE section 1 and say what it holds.
 
+0x. Lines replaced in V81 (Issue 1 test-sent and approved).
 0w. Lines replaced in V80 (sign-off names the company; download facts corrected).
 0v. Lines replaced in V79 (guide delivery reverted to Kit).
 0u. Lines replaced in V78 (guide delivery from this root).
@@ -34,6 +35,18 @@ section ABOVE section 1 and say what it holds.
 1. The full text of CLAUDE.md Version 57, exactly as it stood before the V58 trim.
 2. `AWS-MIGRATION-HANDOFF.md`, the working note from the 2026-09-25 move to Amplify.
 3. `CLAUDE-MD-TRIM-HANDOFF.md`, the note that started the V58 trim.
+
+---
+
+# 0x. LINES REPLACED IN V81 (2026-10-17): Issue 1 test-sent and approved
+
+# FranklinAI — Project Instructions (Version 80, Current)
+
+- **Next (David, 2026-10-17):** (1) **Issue 1:** David test-sends the Kit draft to Dolly, schedules on his word. (2) **Kit support's answer** on the iPhone file name (Open Items, "Guide delivery"). **The guide is on the shelf and proven** (three purchases), delivered by Kit's own download; **every email now signs off with the company name.**
+
+- **Issue 1 of The Operator:** built in Kit as a broadcast **draft** (id `26443173`, to all subscribers, "Text only" template; one link, the guide's Kit page; **no discovery-call link**). **Not sent:** David sends it soon, on his word only, and the Reel posts the same morning. **Issue dates live in the Content Calendar.** **Cadence is monthly as of 2026-10-03.**
+
+| **Kit MCP** | **Connected 2026-10-04** as a claude.ai connector (David's call), so a Code session can read the account directly. **It needs the Creator plan** (lost on Free). **It can also write** (subscribers, broadcasts, products): **read freely, but show David the exact change and get his yes before any write.** `list_forms` is avoided: Kit warns it can publish unsaved form edits. **It cannot** upload a file, edit a product page, edit forms or the confirmation email, create Rules or Visual automations, edit email templates, or send a test or schedule a broadcast: those are David's clicks. |
 
 ---
 
