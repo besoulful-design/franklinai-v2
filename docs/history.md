@@ -15,6 +15,7 @@ section of CLAUDE.md, copied from the GlowPT repo's 2026-09-12 trim.
 **Sections, newest bank first.** When a later trim banks more, add a new numbered
 section ABOVE section 1 and say what it holds.
 
+0y. Lines replaced in V82 (Netlify gone, Kit address kept, test subscribers cleared).
 0x. Lines replaced in V81 (Issue 1 test-sent and approved).
 0w. Lines replaced in V80 (sign-off names the company; download facts corrected).
 0v. Lines replaced in V79 (guide delivery reverted to Kit).
@@ -35,6 +36,28 @@ section ABOVE section 1 and say what it holds.
 1. The full text of CLAUDE.md Version 57, exactly as it stood before the V58 trim.
 2. `AWS-MIGRATION-HANDOFF.md`, the working note from the 2026-09-25 move to Amplify.
 3. `CLAUDE-MD-TRIM-HANDOFF.md`, the note that started the V58 trim.
+
+---
+
+# 0y. LINES REPLACED IN V82 (2026-10-17): Netlify gone, Kit's address kept, test subscribers cleared
+
+# FranklinAI — Project Instructions (Version 81, Current)
+
+- **Next (David, 2026-10-17):** (1) **Issue 1:** test-sent and approved; **schedule it on David's word only.** (2) **Kit support's answer** on the iPhone file name (Open Items, "Guide delivery"). **The guide is on the shelf and proven** (three purchases), delivered by Kit's own download; **every email signs off with the company name.**
+
+- **Watching:** the mystery third signup (Open Items); Netlify still on standby until David deletes the franklinai site and zone.
+
+### Netlify: standby, then gone
+
+Netlify still builds this repo on every push and holds the old zone, but nothing points at either. **After a few quiet days from 2026-09-25, David deletes the franklinai site and the franklinaisolutions.com zone in Netlify.** **Leave McKenzie (`mckenziearmcare.com`) alone**; after that Netlify hosts only McKenzie, on the Free plan from 2026-09-27. Netlify's zone lacks Kit's records, which is fine because nothing reads it.
+
+| **Mailing address (email footer)** | **Kit's shared stand-in: 600 1st Ave, Ste 330 PMB 92768, Seattle, WA 98104-2246.** Allowed for Kit emails only; **mail there is not forwarded.** David's home address declined for privacy. **Replace with a USPS PO box** (or the registered agent's address if it forwards business mail) in **Settings → Email → Mailing address**, prefixed **`FranklinAI Solutions LLC, `**. **Never print Kit's address anywhere outside Kit.** |
+
+| **Test subscribers** | **`besoulful+dolly@…` (Dolly)**, the test reader for Issue 1; **`besoulful+steve-tester@…`**, David's test of 2026-10-16, still active. Earlier test addresses are unsubscribed (cancelled; deleting them is David's click). **Real reader: Kevin** (`kevin.e.gard@…`, a PT friend, since 2026-10-07); keep him. |
+
+| **Kit mailing address → a real one** | Get a USPS PO box (or confirm the registered agent forwards business mail), enter it in Kit **Settings → Email → Mailing address** as `FranklinAI Solutions LLC, <address>`. |
+
+| **Retire Netlify for this site** | After a few quiet days from 2026-09-25, David deletes the **franklinai site** and the **franklinaisolutions.com zone** in Netlify. **Leave McKenzie alone.** |
 
 ---
 
