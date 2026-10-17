@@ -15,6 +15,7 @@ section of CLAUDE.md, copied from the GlowPT repo's 2026-09-12 trim.
 **Sections, newest bank first.** When a later trim banks more, add a new numbered
 section ABOVE section 1 and say what it holds.
 
+0z. Lines replaced in V83 (iPhone file name: Safari only, with Kit).
 0y. Lines replaced in V82 (Netlify gone, Kit address kept, test subscribers cleared).
 0x. Lines replaced in V81 (Issue 1 test-sent and approved).
 0w. Lines replaced in V80 (sign-off names the company; download facts corrected).
@@ -36,6 +37,16 @@ section ABOVE section 1 and say what it holds.
 1. The full text of CLAUDE.md Version 57, exactly as it stood before the V58 trim.
 2. `AWS-MIGRATION-HANDOFF.md`, the working note from the 2026-09-25 move to Amplify.
 3. `CLAUDE-MD-TRIM-HANDOFF.md`, the note that started the V58 trim.
+
+---
+
+# 0z. LINES REPLACED IN V83 (2026-10-17): the iPhone file name is a Safari quirk, with Kit
+
+# FranklinAI — Project Instructions (Version 82, Current)
+
+- **Next (David, 2026-10-17):** (1) **Issue 1:** test-sent and approved; **schedule it on David's word only.** (2) **Kit support's answer** on the iPhone file name (a human, Ira, took the chat 2026-10-17) (Open Items, "Guide delivery"). **The guide is on the shelf and proven** (three purchases), delivered by Kit's own download; **every email signs off with the company name.**
+
+| **Guide delivery: the iPhone file name — ASKED KIT** | **Kit delivers the guide (product `293598`); the 2026-10-16/17 detour through our own S3 link is over: never again (David).** **Verified 2026-10-17 with three purchases:** checkout, thank-you page, receipt, list join and follow-up all work. The receipt's **Download button is permanent**: each tap asks Kit for a fresh signed file link that **lasts 5 minutes** (`X-Amz-Expires=300`), so a PDF passed on to another app after that, or through the Gmail app's share (Google appends `&shem=…`, breaking the signature), shows Amazon's `SignatureDoesNotMatch` page; tapping Download again always works. **Kit already sends the right name** (`response-content-disposition=inline; filename="What-Your-Practice-Actually-Sells.pdf"`): **on a Mac it saves correctly**. **On an iPhone, both the thank-you page and the receipt save as `5lkoia3rv1pwvcjxzfya8eky39cb`**, Kit's storage key at the end of the URL, because iOS names viewed PDFs from the URL. *(V79 said the thank-you page gave the right name; Buyer3 proved that wrong.)* **The Gmail app** opens links in Google's own browser, which has no Save to Files; Gmail → Settings → Default apps → Safari fixes it (David's phone is set). **David asked Kit support 2026-10-17** whether product files can keep the real name in the URL; record the answer here. No workarounds in the emails, and no extra copy (David). The S3 detour left an **unpublished "Go to URL" product `293717`** at path `what-your-practice-actually-sells-new` (its bucket deleted); "Go to page" is Kit's fixed receipt label for a URL product. |
 
 ---
 
