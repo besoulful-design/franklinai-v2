@@ -15,6 +15,7 @@ section of CLAUDE.md, copied from the GlowPT repo's 2026-09-12 trim.
 **Sections, newest bank first.** When a later trim banks more, add a new numbered
 section ABOVE section 1 and say what it holds.
 
+0w. Lines replaced in V80 (sign-off names the company; download facts corrected).
 0v. Lines replaced in V79 (guide delivery reverted to Kit).
 0u. Lines replaced in V78 (guide delivery from this root).
 0t. Lines replaced in V77 (guide delivery plan).
@@ -33,6 +34,22 @@ section ABOVE section 1 and say what it holds.
 1. The full text of CLAUDE.md Version 57, exactly as it stood before the V58 trim.
 2. `AWS-MIGRATION-HANDOFF.md`, the working note from the 2026-09-25 move to Amplify.
 3. `CLAUDE-MD-TRIM-HANDOFF.md`, the note that started the V58 trim.
+
+---
+
+# 0w. LINES REPLACED IN V80 (2026-10-17): FranklinAI in every email; guide download facts corrected
+
+# FranklinAI — Project Instructions (Version 79, Current)
+
+- **Next (David, 2026-10-17):** (1) **Put "FranklinAI" in every email** (Open Items). (2) **Issue 1:** test-send the Kit draft to Dolly, schedule on David's word. **The guide is on the shelf and proven,** delivered by Kit's own download (Open Items, "Guide delivery": tried our own link, reverted).
+
+| **Confirmation email** | **Live since 2026-10-16:** subject *Confirm your subscription to The Operator*; top line *Thanks for signing up for The Operator. Tap the button below to confirm, and the next issue will come straight to your inbox.*; button *Confirm Your Subscription*; closing *Glad you're here.* / *Warmest wishes,* / *David*. Edited only in Kit (Landing pages & forms → the form → Settings → Confirmation email → Edit Email Contents); the MCP cannot reach it. |
+
+- **Kit emails and issues sign off "Warmest wishes," then "David"** (David, 2026-10-16).
+
+| ~~Guide delivery: own link, real file name~~ | **Tried 2026-10-16/17 and REVERTED to Kit; do not retry.** Kit's product (`293598`) delivers the PDF itself. **What actually happens with it:** the thank-you page's Download saves to Files with the right name; the receipt email's Download opens the PDF in a viewer from Kit's storage, which also saves to Files but under a random name (`5lkoia3rv1pwvcjxzfya8eky39cb`). **That random name on the email path is the accepted cost** (David, 2026-10-17: keep it all in Kit, simplest, fewest issues). *(The V76 note that Gmail had "no clean way to save it at all" was wrong: David's Files app shows both copies saved.)* **What was tried:** a "Go to URL" product (`293717`, now **unpublished**, path `what-your-practice-actually-sells-new`) pointing at the PDF in an S3 bucket in `franklinai-web`. The right name came through everywhere, but **the Gmail app's own browser offers only Download / Save to Drive for an outside PDF link, never Save to Files**, whether the file is served as a download or to view; its Download hides the file inside the Gmail app. Kit's link escapes this because it opens in a viewer. **The bucket was deleted 2026-10-17.** Kit's receipt button reads "Go to page" for a URL product and "Download" for a download product; the label is fixed. Test purchases cost only the Stripe and Kit fees (the $37 pays out to the LLC); a receipt can be re-tapped any number of times without a new purchase. |
+
+| **Emails never name FranklinAI — NEXT** | David, 2026-10-16, after a test signup: the confirmation, the welcome and (same template) every email carry no business name; too nondescript. His ideas: **"FranklinAI" stacked under the "David" sign-off**, and/or **an email footer like the site's footer** (kite and wordmark). Not decided or built. A footer belongs on the shared "Text only" template (covers sequences and broadcasts, **not** the confirmation email, which lives on the form). The kite needs a hosted PNG (email clients render SVG poorly). The look and words are David's call; the copy rules bind them. |
 
 ---
 
