@@ -15,6 +15,7 @@ section of CLAUDE.md, copied from the GlowPT repo's 2026-09-12 trim.
 **Sections, newest bank first.** When a later trim banks more, add a new numbered
 section ABOVE section 1 and say what it holds.
 
+0bb. Lines replaced in V85 (newsletter-site signups wired like the website's).
 0aa. Lines replaced in V84 (Issue 1 sent, sender FranklinAI, GlowPT on Stripe).
 0z. Lines replaced in V83 (iPhone file name: Safari only, with Kit).
 0y. Lines replaced in V82 (Netlify gone, Kit address kept, test subscribers cleared).
@@ -38,6 +39,18 @@ section ABOVE section 1 and say what it holds.
 1. The full text of CLAUDE.md Version 57, exactly as it stood before the V58 trim.
 2. `AWS-MIGRATION-HANDOFF.md`, the working note from the 2026-09-25 move to Amplify.
 3. `CLAUDE-MD-TRIM-HANDOFF.md`, the note that started the V58 trim.
+
+---
+
+# 0bb. LINES REPLACED IN V85 (2026-10-20): newsletter-site signups get our confirmation, redirect and welcome
+
+# FranklinAI — Project Instructions (Version 84, Current)
+
+| **Newsletter site** | `https://franklinai.kit.com` (Kit's subdomain), where sent issues are published. Profile set 2026-10-20: name **FranklinAI**, byline **The Operator**, description = the site's one-sentence newsletter description, photo = the kite on navy (`FranklinAI-kite-profile.png`, 800×800, rendered from the inline `KiteLogo`; kept in David's Downloads, not this repo). **Its "Built with Kit" badge would not switch off** (clicking it in the editor did nothing); parked, a question for Kit support if it ever matters. Edited in **Audience growth → Newsletter site**, then **Publish**. |
+
+| **Automated emails** | All from **FranklinAI** (the default sender) on the **"Text only"** template (Classic, the default), **its "Built with Kit" badge off** (Broadcasts → Email templates → Text only → Additional; one switch covers every email). **Welcome:** sequence *The Operator: welcome* (`2931894`), one email, sent right away, triggered by a **Rule** (subscribes to form *The Operator site signup* → this sequence). **Buyer follow-up:** sequence *Guide buyers: follow-up* (`2931893`, email `10441959`), one email with **Operator line A** (buyers join the list directly, confirmed by the test purchase), **delay 2 days** (sends at the sequence's 11 AM Eastern), triggered by the **Visual automation "Guide buyers"** (Product purchased → this sequence; Rules has no purchase trigger). Copy from the 2026-10-16 claude.ai handoff (banked). The sign-off still names David personally (Copy Rules). |
+
+| **Subscribers** | **Three as of 2026-10-20:** **Felix** (`felixzheng0813@…`, David's husband, a real reader since 2026-10-17), **Kevin** (`kevin.e.gard@…`, a real PT reader since 2026-10-07) and **Dolly** (`besoulful+dolly@…`), the test reader kept so David sees each issue arrive. **Every other test address is unsubscribed** (buyer1, buyer2, buyer3, steve-tester, testerknox, earlier ones), so **unsubscribe any new test address before an issue goes out.** Unsubscribing a buyer does not touch their purchase or download. Kit's lists lag a minute after an unsubscribe. |
 
 ---
 
