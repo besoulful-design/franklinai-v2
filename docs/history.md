@@ -15,6 +15,7 @@ section of CLAUDE.md, copied from the GlowPT repo's 2026-09-12 trim.
 **Sections, newest bank first.** When a later trim banks more, add a new numbered
 section ABOVE section 1 and say what it holds.
 
+0aa. Lines replaced in V84 (Issue 1 sent, sender FranklinAI, GlowPT on Stripe).
 0z. Lines replaced in V83 (iPhone file name: Safari only, with Kit).
 0y. Lines replaced in V82 (Netlify gone, Kit address kept, test subscribers cleared).
 0x. Lines replaced in V81 (Issue 1 test-sent and approved).
@@ -37,6 +38,50 @@ section ABOVE section 1 and say what it holds.
 1. The full text of CLAUDE.md Version 57, exactly as it stood before the V58 trim.
 2. `AWS-MIGRATION-HANDOFF.md`, the working note from the 2026-09-25 move to Amplify.
 3. `CLAUDE-MD-TRIM-HANDOFF.md`, the note that started the V58 trim.
+
+---
+
+# 0aa. LINES REPLACED IN V84 (2026-10-20): Issue 1 sent, sender FranklinAI, latest-issue button, GlowPT billing facts
+
+# FranklinAI — Project Instructions (Version 83, Current)
+
+- **Next (David, 2026-10-17):** (1) **Issue 1:** test-sent and approved; **schedule it on David's word only.** (2) The iPhone file name is **with Kit** (Open Items, "Guide delivery"); nothing to do on our side. (3) After Issue 1: send new subscribers to the latest issue (Open Items). **The guide is on the shelf and proven** (three purchases), delivered by Kit's own download; **every email signs off with the company name.**
+
+- **Issue 1 of The Operator:** built in Kit as a broadcast **draft** (id `26443173`, to all subscribers, "Text only" template; one link, the guide's Kit page; **no discovery-call link**). **Test-sent to Dolly 2026-10-17 and approved by David** (subject, sign-off, guide link through to checkout all checked). **Not sent:** David schedules it, on his word only, and the Reel posts the same morning. **Issue dates live in the Content Calendar.** **Cadence is monthly as of 2026-10-03.**
+
+- **The reconciliation e-book** — one-time, self-serve, **$37**, titled **"What Your Practice Actually Sells."** **The book is written** (about 7,600 words, eleven chapters plus an index; the file is David's and lives in the claude.ai project), **the card and modal are live**, **the checkout is live on Kit Commerce** (since 2026-10-16; the first real purchase is the next step).
+
+| **A BAA is click-through at signup**, version-stamped, under an org-level AWS BAA active since August 2026. | Nothing yet. |
+
+| **No billing in the product. Zero Stripe.** Collection is manual. | **No renewal, cancellation, refund or trial claims of any kind.** |
+
+| **Demo data only** until the clinic BAA text clears attorney review. | **Nothing implying live clinics are in production.** |
+
+- ⛔ **No renewal or cancellation claims.** Counsel has an open question on **state auto-renewal statutes**.
+
+| **The reconciliation e-book** | $37, one-time | **Self-serve.** The first paid yes. | **First** product on Available; More Info opens `EbookModal` | **Live and buyable** on Kit Commerce since 2026-10-16 (first real purchase pending) |
+
+| **Sender** | **David Peterson <david@franklinaisolutions.com>**, confirmed, default. |
+
+| **Kit MCP** | **Connected 2026-10-04** as a claude.ai connector (David's call), so a Code session can read the account directly. **It needs the Creator plan** (lost on Free). **It can also write** (subscribers, broadcasts, products): **read freely, but show David the exact change and get his yes before any write.** `list_forms` is avoided: Kit warns it can publish unsaved form edits. **It cannot** upload a file, edit a product page, edit forms or the confirmation email, create Rules or Visual automations, edit email templates, or send a test or schedule a broadcast: those are David's clicks. **A test send** is the **eye icon** at the right end of the broadcast editor's toolbar (Preview), then send a test; links in a test email open Kit's "Link preview" page, which is normal. |
+
+| **Test subscribers** | **Only two active as of 2026-10-17: `besoulful+dolly@…` (Dolly)**, the test reader, kept so David sees each issue arrive; and **Kevin** (`kevin.e.gard@…`, a real PT reader since 2026-10-07; keep him). **Every other test address is unsubscribed** (buyer1, buyer2, buyer3, steve-tester, testerknox, and earlier ones), so **unsubscribe any new test address before an issue goes out.** Unsubscribing a buyer does not touch their purchase or download. Kit's lists lag a minute after an unsubscribe. |
+
+| **Automated emails** | All from David Peterson on the **"Text only"** template (Classic, the default), **its "Built with Kit" badge off** (Broadcasts → Email templates → Text only → Additional; one switch covers every email). **Welcome:** sequence *The Operator: welcome* (`2931894`), one email, sent right away, triggered by a **Rule** (subscribes to form *The Operator site signup* → this sequence). **Buyer follow-up:** sequence *Guide buyers: follow-up* (`2931893`, email `10441959`), one email with **Operator line A** (buyers join the list directly, confirmed by the test purchase), **delay 2 days** (sends at the sequence's 11 AM Eastern), triggered by the **Visual automation "Guide buyers"** (Product purchased → this sequence; Rules has no purchase trigger). Copy from the 2026-10-16 claude.ai handoff (banked). **Sender stays David Peterson** (David, 2026-10-16). |
+
+Where Kit sends a reader after they confirm (form redirect). **No nav** (David, 2026-10-16): the card leads, with `paddingTop: clamp(56px, 16vh, 160px)` above it, then the footer. The card copies the newsletter card's masthead (**Newsletter** / **The Operator**), then *"Thanks for confirming. You're on the list for The Operator. The next issue will come straight to your inbox."* (the welcome email's own sentences) and a ghost **Visit FranklinAI** button to `/`. `App()` picks it from the path; **`npm run build` copies `dist/index.html` to `dist/confirmed/index.html`** so Amplify serves it with a 200 (its fallback served a 404 status). **Keep both.**
+
+- **No renewal, cancellation, refund or trial claims about GlowPT.**
+
+| **Send new subscribers to the latest issue after they confirm — DAVID WANTS THIS** | A broadcast goes once, to whoever is Confirmed at send time, so a new subscriber waits up to a month. The welcome deliberately links no issue (no monthly upkeep). The redirect now lands on our own `/confirmed` page, the natural place for a "read the latest issue" link once issues exist as Kit web pages. **Do after Issue 1 is sent.** |
+
+| **GlowPT clinic BAA text** | With the attorney. **Demo data only until it clears.** |
+
+| **GlowPT billing** | No Stripe. Collection manual. Belongs in the GlowPT repo. |
+
+| **GlowPT auto-renewal statutes** | Open with counsel. **No renewal or cancellation claims on either site until answered.** |
+
+| **Click-through vs signature** on the clinic BAA | Undecided. If signature wins, self-serve onboarding gains a manual step and this copy must reflect it. |
 
 ---
 
