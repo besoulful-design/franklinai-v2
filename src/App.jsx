@@ -238,6 +238,12 @@ function Hero() {
 // the success line to "You're in."
 const KIT_FORM_URL = 'https://app.kit.com/forms/9962049/subscriptions';
 
+// The latest issue of The Operator on Kit's newsletter site, linked from the
+// /confirmed page so a new subscriber can read it right away instead of
+// waiting up to a month. UPDATE THIS WHEN EACH NEW ISSUE IS SENT (Kit shows
+// the post's link on the "Congrats" screen after sending).
+const LATEST_ISSUE_URL = 'https://franklinai.kit.com/posts/you-re-running-an-insurance-practice-with-cash-model-marketing';
+
 function NewsletterModal({ onClose }) {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState('idle'); // idle | submitting | success | error
@@ -759,6 +765,11 @@ function Confirmed() {
           <a href="/" className="btn btn--ghost" style={{ marginTop: '0' }}>
             Visit FranklinAI
           </a>
+          <div style={{ marginTop: '12px' }}>
+            <a href={LATEST_ISSUE_URL} target="_blank" rel="noopener noreferrer" className="btn btn--ghost" style={{ marginTop: '0' }}>
+              Read the Latest Issue
+            </a>
+          </div>
         </div>
       </div>
     </section>
