@@ -15,6 +15,7 @@ section of CLAUDE.md, copied from the GlowPT repo's 2026-09-12 trim.
 **Sections, newest bank first.** When a later trim banks more, add a new numbered
 section ABOVE section 1 and say what it holds.
 
+0cc. Lines replaced in V86 (Issue 1 Reel posted, PA sales tax), plus the 2026-10-21 handoff.
 0bb. Lines replaced in V85 (newsletter-site signups wired like the website's).
 0aa. Lines replaced in V84 (Issue 1 sent, sender FranklinAI, GlowPT on Stripe).
 0z. Lines replaced in V83 (iPhone file name: Safari only, with Kit).
@@ -39,6 +40,72 @@ section ABOVE section 1 and say what it holds.
 1. The full text of CLAUDE.md Version 57, exactly as it stood before the V58 trim.
 2. `AWS-MIGRATION-HANDOFF.md`, the working note from the 2026-09-25 move to Amplify.
 3. `CLAUDE-MD-TRIM-HANDOFF.md`, the note that started the V58 trim.
+
+---
+
+# 0cc. LINES REPLACED IN V86 (2026-10-21): Issue 1 Reel posted, send-day routine, PA sales tax on the guide
+
+# FranklinAI — Project Instructions (Version 85, Current)
+
+- **Next (David, 2026-10-20):** **Issue 1 is SENT** (2026-10-20); David posts the Reel. **With every new issue: update `LATEST_ISSUE_URL` in `App.jsx`** (the `/confirmed` page's "Read the Latest Issue" button). The iPhone file name is **with Kit**; nothing to do here. **Every email now comes from "FranklinAI"** and signs off with the company name.
+
+| **Revenue / Kit Commerce** | **Payouts connected 2026-09-26** (Settings → Revenue → Set up payments): a **Stripe Express** account under Kit, login `david@franklinaisolutions.com`. **Business type Company, Single-member LLC, legal name FranklinAI Solutions LLC** with the LLC's EIN; website `https://franklinaisolutions.com`; industry **Digital products → Books**; David as account representative. **Payout bank: the LLC's Bluevine business checking** (it shows in Stripe as **Coastal Community Bank**, Bluevine's partner bank; that is correct). **Statement descriptor `FRANKLINAI`** in both Stripe and Kit's Commerce settings (Stripe's default truncated to "FRANKLINAISOLUTIONS.CO", which reads as a different domain and invites disputes). Payouts **weekly on Fridays**. Details changed later via **Open in Stripe** on that page. **Product live 2026-10-16:** *What Your Practice Actually Sells*, id `293598`, $37 standard one-time, the final PDF delivered as an emailed download link, page `https://franklinai.kit.com/products/what-your-practice-actually-sells` (Kit's subdomain, no DNS); page text is the description David approved 2026-10-16, image the book cover, button *Buy the Guide*, badge off on the page and the thank-you page. **First purchase 2026-10-16** (David's own, `besoulful+buyer1@…`, $37, personal card): the buyer was added as an **active subscriber directly, no double opt-in, no tag**; receipt and download arrived; the card shows **"FranklinAI"** and $37. Kit collects no sales tax (receipt shows 0.00): an accountant question. ⛔ Never record account numbers, SSN, or home address here (public repo). |
+
+## The 2026-10-21 handoff from claude.ai (deleted from ~/Downloads once used)
+
+## Handoff to Claude Code · repo `franklinai-v2` (`~/Downloads/franklinai-v2`) · from claude.ai, 2026-10-21
+
+**Scope: update `CLAUDE.md` only.** No code changes, no Kit writes, no AWS. The site is as V85 describes it. This note records what happened after V85 was written so the file's CURRENT STATE stops saying "David posts the Reel."
+
+**Do not touch:** `App.jsx`, the Calendar (claude.ai maintains it; the October 20 pass is already written there), anything in Kit.
+
+## What happened after V85 (2026-10-20, evening)
+
+1. **The Issue 1 Reel posted** from @franklinaisolutions at **5:37 PM Eastern, 2026-10-20**, with the custom cover (`issue01-reel-cover-full.png`), the final caption with all five tags, and Instagram's **AI label on** (shows as "AI content" under the handle). It is the account's first post. Checked after posting: the home feed's 4:5 crop hides the footer lockup and his lower legs (by design; the title, captions and cover copy sit inside that band); full screen shows everything; the cover is in the grid.
+2. **Sales tax on the guide, David's call (2026-10-19):** keep $37 and **pay Pennsylvania's sales tax out of PA sales**, no price change, no tax line in any copy. He will register for a PA sales tax license through myPATH and confirm two things with an accountant: whether PA allows tax-included pricing without a separate line on the receipt, and the filing schedule. Other states only matter past their economic-nexus thresholds (commonly $100,000 a year per state), far off. Nothing for the site, Kit, or the emails to do.
+3. **Send-day routine for every issue, from now on** (recorded in the Calendar; one line of it belongs here because it is a code step): send the broadcast in Kit, publish it to Kit's newsletter site, **Code updates `LATEST_ISSUE_URL`** in `App.jsx` to the new post, then David posts the Reel.
+
+## Edits to `CLAUDE.md`, in place
+
+**CURRENT STATE, the "Next" line.** Replace:
+
+> - **Next (David, 2026-10-20):** **Issue 1 is SENT** (2026-10-20); David posts the Reel. **With every new issue: update `LATEST_ISSUE_URL` in `App.jsx`** (the `/confirmed` page's "Read the Latest Issue" button). The iPhone file name is **with Kit**; nothing to do here. **Every email now comes from "FranklinAI"** and signs off with the company name.
+
+with:
+
+> - **Next (David, 2026-10-21):** **Issue 1 is out on both surfaces:** sent 2026-10-20, and **the Reel posted from @franklinaisolutions at 5:37 PM the same day** (cover, caption, AI label on; the feed's 4:5 crop hides the footer by design). Next issue: **Issue 2, 2026-11-03** (dates in the Calendar). **Send-day routine, every issue:** Kit broadcast → publish to the newsletter site → **Code updates `LATEST_ISSUE_URL` in `App.jsx`** → David posts the Reel. The iPhone file name is **with Kit**; nothing to do here. **Every email comes from "FranklinAI"** and signs off with the company name.
+
+**Kit table, the "Revenue / Kit Commerce" row.** Replace the sentence:
+
+> Kit collects no sales tax (receipt shows 0.00): an accountant question.
+
+with:
+
+> Kit collects no US sales tax (receipts show 0.00). **David's call 2026-10-19: keep $37 and pay Pennsylvania's share out of PA sales; no price change, no tax line in any copy.** He registers for a PA sales tax license (myPATH) and confirms tax-included pricing and the filing schedule with an accountant. Other states only past their nexus thresholds. Nothing for this site or Kit to do.
+
+**Open Items.** Add one row (not closed; it is David's, not the repo's):
+
+> | **PA sales tax on the guide — DAVID** | Decided 2026-10-19: pay it out of the $37 (see Kit table). Open until the PA license exists and the accountant has answered tax-included pricing and the filing schedule. No copy or code change. |
+
+**Change History.** Add:
+
+> - **V86** (2026-10-21) — Issue 1 Reel posted 2026-10-20 (AI label on); send-day routine recorded; PA sales tax decision (pay it out of $37) recorded.
+
+Bump the first line to **Version 86**.
+
+## Verification
+
+| Check | Expect |
+|---|---|
+| `head -1 CLAUDE.md` | `Version 86, Current` |
+| `grep -c "David posts the Reel" CLAUDE.md` | 0 |
+| `grep -c "5:37 PM" CLAUDE.md` | 1 |
+| `grep -c "pay Pennsylvania's share" CLAUDE.md` | 1 |
+| `grep -c "PA sales tax on the guide" CLAUDE.md` | 1 |
+| `grep -c "V86" CLAUDE.md` | 1 |
+| Pre-commit hook | passes (growth under 2 KB; if it trips, bank the replaced lines in `docs/history.md` first) |
+
+Commit, push, report the version and the file's size and delta. Nothing needs pasting into claude.ai.
 
 ---
 
