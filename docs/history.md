@@ -15,6 +15,7 @@ section of CLAUDE.md, copied from the GlowPT repo's 2026-09-12 trim.
 **Sections, newest bank first.** When a later trim banks more, add a new numbered
 section ABOVE section 1 and say what it holds.
 
+0gg. Lines replaced in V90 (newsletter-site badge hidden by Custom CSS).
 0ff. Lines replaced in V89 (sign-off becomes David Peterson; both confirmation emails match).
 0ee. Lines removed in V88 (unused kite file deleted; mystery-signup watch dropped).
 0dd. Lines removed in V87 (old items cut: nav/footer fine-tuning, Microsoft 365 DKIM, modal Escape key).
@@ -43,6 +44,14 @@ section ABOVE section 1 and say what it holds.
 1. The full text of CLAUDE.md Version 57, exactly as it stood before the V58 trim.
 2. `AWS-MIGRATION-HANDOFF.md`, the working note from the 2026-09-25 move to Amplify.
 3. `CLAUDE-MD-TRIM-HANDOFF.md`, the note that started the V58 trim.
+
+---
+
+# 0gg. LINES REPLACED IN V90 (2026-10-21): the newsletter site's "Built with Kit" badge hidden by Custom CSS
+
+# FranklinAI — Project Instructions (Version 89, Current)
+
+| **Newsletter site** | `https://franklinai.kit.com` (Kit's subdomain), where sent issues are published. Profile set 2026-10-20: name **FranklinAI**, byline **The Operator**, description = the site's one-sentence newsletter description, photo = the kite on navy (`FranklinAI-kite-profile.png`, 800×800, rendered from the inline `KiteLogo`; kept in David's Downloads, not this repo). **Its "Built with Kit" badge would not switch off** (clicking it in the editor did nothing); parked, a question for Kit support if it ever matters. Edited in **Audience growth → Newsletter site**, then **Publish**. **⚠️ Its Subscribe boxes (profile page and every post) are a SEPARATE form, "Newsletter site", with its own settings under the editor's Sign Up Form:** confirmation email set 2026-10-20 to match ours (subject *Confirm your subscription to The Operator*, same top line and *Confirm Your Subscription* button, closing identical to the site form's: *Glad you're here.* / *Warmest wishes,* / *David Peterson* / *FranklinAI Solutions LLC*, since 2026-10-21), redirect **`https://franklinaisolutions.com/confirmed`**. Its on-page success line ("Success! You've been added to the list…") does not mention confirming and has no documented setting; a question for Kit support with the badge. **Tested end to end 2026-10-20** (`+kitsite2`: our email, our page, the welcome). |
 
 ---
 
