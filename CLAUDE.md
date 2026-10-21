@@ -1,4 +1,4 @@
-# FranklinAI — Project Instructions (Version 87, Current)
+# FranklinAI — Project Instructions (Version 88, Current)
 
 > **READ THIS FILE BEFORE MAKING ANY CHANGE TO THIS REPO.** Read all of it, not just the section you think applies. **If a value looks arbitrary, it is almost certainly hand-tuned and documented here. Look it up first.** A morning was once lost re-deriving a footer geometry this file already specified.
 
@@ -11,7 +11,7 @@
 - **Live:** franklinaisolutions.com on **AWS Amplify** (account `franklinai-web`), DNS in **Route 53**, David's Microsoft 365 mail intact. **The Operator** signup is wired to **Kit form `9962049`**, double opt-in ON, and Kit sends as the domain, on the **Creator plan, monthly** since 2026-10-14. Confirmed by David 2026-09-25.
 - **Next (David, 2026-10-21):** **Issue 1 is out on both surfaces:** sent 2026-10-20, and **the Reel posted from @franklinaisolutions at 5:37 PM the same day** (cover, caption, AI label on; the feed's 4:5 crop hides the footer by design). Next issue: **Issue 2, 2026-11-03** (dates in the Calendar). **Send-day routine, every issue:** Kit broadcast → publish to the newsletter site → **Code updates `LATEST_ISSUE_URL` in `App.jsx`** → David posts the Reel. The iPhone file name is **with Kit**; nothing to do here. **Every email comes from "FranklinAI"** and signs off with the company name.
 - **Issue 1 of The Operator: SENT 2026-10-20** (broadcast `26443173`) to all 3 subscribers (Felix, Kevin, Dolly), from **FranklinAI**, and **published to Kit's newsletter site** at `https://franklinai.kit.com/posts/you-re-running-an-insurance-practice-with-cash-model-marketing` (the slug Kit derives from the subject). **Issue dates live in the Content Calendar.** **Cadence is monthly as of 2026-10-03.**
-- **Watching:** the mystery third signup (Open Items). **Netlify is gone for this site** (2026-10-17); it now hosts only McKenzie.
+- **Netlify is gone for this site** (2026-10-17); it now hosts only McKenzie.
 - **Measured at V74:** `App.jsx` is **798 lines**; the `$350` decoy sits at **lines 123 and 532**.
 - **Older version-by-version narrative (V12 to V57) is in `docs/history.md`.** The "Everything else from Version N remains in force" chain that used to open this file was removed on 2026-09-26. **Do not start a new one.**
 
@@ -524,9 +524,7 @@ Every `.site-card` carries inline **`paddingTop: '16px'`** and **`paddingBottom:
 
 ## Kite Logo Mark — Locked SVG
 
-> **WRONG-FILE TRAP.** There are **two** `KiteLogo` definitions and they are **not** the same drawing. The **live** one is **inline at the top of `src/App.jsx`** (viewBox `62 10 101 240`, width `size * 101/240`). **`src/components/KiteLogo.jsx` is DEAD CODE** — nothing imports it, and it carries a different mark (viewBox `0 0 220 270`, plus blueprint grid lines). **Edit the inline one.** Deleting the dead file is a reasonable future cleanup.
-
-The **inline** `KiteLogo` is the single source of truth for the mark. `size` sets the height; width is `size × (101 / 240)`.
+The `KiteLogo` **inline at the top of `src/App.jsx`** is the single source of truth for the mark. `size` sets the height; width is `size × (101 / 240)`.
 
 **ViewBox:** `62 10 101 240`
 
@@ -950,7 +948,6 @@ A good one **names the repo in its first line**, states the scope and what not t
 | ~~E-book: the first real purchase~~ | **✅ Done 2026-10-16:** David bought it from the live site; the sale, receipt, download, follow-up and card descriptor all worked. Buyers join the list directly (active), so the follow-up keeps **Operator line A**; delay set to **2 days**. |
 | **Guide delivery: the iPhone file name — WITH KIT, nothing to do here** | **Kit delivers the guide (product `293598`); the 2026-10-16/17 detour through our own S3 link is over: never again (David).** **Verified 2026-10-17 with three purchases:** checkout, thank-you page, receipt, list join and follow-up all work. The receipt's **Download button is permanent**: each tap asks Kit for a fresh signed file link that **lasts 5 minutes** (`X-Amz-Expires=300`), so a PDF passed on to another app after that, or through the Gmail app's share (Google appends `&shem=…`, breaking the signature), shows Amazon's `SignatureDoesNotMatch` page; tapping Download again always works. **Kit already sends the right name** (`response-content-disposition=inline; filename="What-Your-Practice-Actually-Sells.pdf"`): **on a Mac it saves correctly**. **On an iPhone, both the thank-you page and the receipt save as `5lkoia3rv1pwvcjxzfya8eky39cb`**, Kit's storage key at the end of the URL, because iOS names viewed PDFs from the URL. *(V79 said the thank-you page gave the right name; Buyer3 proved that wrong.)* **The Gmail app** opens links in Google's own browser, which has no Save to Files; Gmail → Settings → Default apps → Safari fixes it (David's phone is set). **Narrowed 2026-10-17 at Kit's request: it is Safari only.** The same receipt link saved in **Chrome on the iPhone** keeps the right name; **Safari** names it from the URL. David reported this to Kit support (Ira, a human, escalated it to Kit's product team with screenshots), asking that product file URLs end in the real file name. **Any fix is Kit's; record their answer here if it comes.** No workarounds in the emails, and no extra copy (David). The S3 detour left an **unpublished "Go to URL" product `293717`** at path `what-your-practice-actually-sells-new` (its bucket deleted); "Go to page" is Kit's fixed receipt label for a URL product. |
 | ~~Emails never name FranklinAI~~ | **✅ Done 2026-10-17:** the sign-off names the company (see Copy Rules). A kite-and-wordmark footer on the "Text only" template was considered and not built (images get blocked, reads as marketing); revisit only if David asks. |
-| **The mystery third signup — WATCH** | 2026-09-25: an iPhone test signup's confirm tap never reached Kit (timeline: Delivered 4:23 PM, Opened 4:23 PM, Clicked 6:21 PM, the click being David later on the Mac). Kit shows "Subscription confirmed!" for any confirm link, including a used one, so the phone tap likely opened a different link; which one was never established. A clean fourth test entirely on the iPhone worked. **No fault found in the site or Kit.** **Watch for real readers piling up as Unconfirmed** in Kit (filter by status); if so, read a few per-subscriber timelines first; Kit can re-send the confirmation. |
 | ~~Kit mailing address → a real one~~ | **Closed 2026-10-17: David keeps Kit's stand-in address** (see Kit table). |
 | ~~Send new subscribers to the latest issue~~ | **✅ Done 2026-10-20:** the `/confirmed` page's **Read the Latest Issue** button. **Upkeep: update `LATEST_ISSUE_URL` with each issue.** |
 | ~~Remove "Built with Kit"~~ | **✅ Done 2026-10-16:** off on the email template, the product page, the thank-you page and the form; Kit's own confirm page replaced by `/confirmed`. |
@@ -967,7 +964,6 @@ A good one **names the repo in its first line**, states the scope and what not t
 | ~~Click-through vs signature~~ | **✅ Click-through** (David, 2026-10-20). |
 | **Fictitious-name registration** | Raised 2026-09-01, not acted on. Both sites lead with "FranklinAI" while the entity is FranklinAI Solutions LLC; PA generally requires a fictitious-name registration. **Nobody involved is a lawyer; nothing changed on this basis.** A cheap question for the open attorney engagement. |
 | **PA sales tax on the guide — DAVID** | Decided 2026-10-19: pay it out of the $37 (see Kit table). Open until the PA license exists and the accountant has answered tax-included pricing and the filing schedule. No copy or code change. |
-| **Dead `src/components/KiteLogo.jsx`** | Nothing imports it; a different mark. Safe to delete in a cleanup. |
 | ~~Public vs private repos~~ | **✅ CLOSED 2026-09-26.** `glowpt` is **private** (no forks found; full-history secret scan clean; nothing needed rotating; Amplify still builds; recorded in GlowPT's CLAUDE.md). **`franklinai-v2` stays PUBLIC on purpose** for the claude.ai pointer. **Standing rule: never commit a secret or anything confidential to this repo, and keep sensitive business or legal detail brief here.** |
 
 ---
@@ -976,6 +972,7 @@ A good one **names the repo in its first line**, states the scope and what not t
 
 *One line per version. The full entries for V12–V57 are in `docs/history.md` (section 1, "Change History").*
 
+- **V88** (2026-10-21) — Unused `src/components/KiteLogo.jsx` deleted (`9f25bac`, same bundle as live); the mystery-signup watch dropped at David's word.
 - **V87** (2026-10-21) — Three old items cut at David's word: the nav/footer fine-tuning note, the Microsoft 365 DKIM open item, the modal Escape-key note.
 - **V86** (2026-10-21) — Issue 1 Reel posted 2026-10-20 (AI label on); send-day routine recorded; PA sales tax decision (pay it out of $37) recorded.
 - **V85** (2026-10-20) — Signups on Kit's newsletter site now get our confirmation email, land on `/confirmed`, and get the welcome (a second Rule); tested.

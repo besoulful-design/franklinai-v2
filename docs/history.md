@@ -15,6 +15,7 @@ section of CLAUDE.md, copied from the GlowPT repo's 2026-09-12 trim.
 **Sections, newest bank first.** When a later trim banks more, add a new numbered
 section ABOVE section 1 and say what it holds.
 
+0ee. Lines removed in V88 (unused kite file deleted; mystery-signup watch dropped).
 0dd. Lines removed in V87 (old items cut: nav/footer fine-tuning, Microsoft 365 DKIM, modal Escape key).
 0cc. Lines replaced in V86 (Issue 1 Reel posted, PA sales tax), plus the 2026-10-21 handoff.
 0bb. Lines replaced in V85 (newsletter-site signups wired like the website's).
@@ -41,6 +42,22 @@ section ABOVE section 1 and say what it holds.
 1. The full text of CLAUDE.md Version 57, exactly as it stood before the V58 trim.
 2. `AWS-MIGRATION-HANDOFF.md`, the working note from the 2026-09-25 move to Amplify.
 3. `CLAUDE-MD-TRIM-HANDOFF.md`, the note that started the V58 trim.
+
+---
+
+# 0ee. LINES REMOVED OR REPLACED IN V88 (2026-10-21): unused src/components/KiteLogo.jsx deleted (`9f25bac`); the mystery third signup dropped at David's word
+
+# FranklinAI — Project Instructions (Version 87, Current)
+
+- **Watching:** the mystery third signup (Open Items). **Netlify is gone for this site** (2026-10-17); it now hosts only McKenzie.
+
+> **WRONG-FILE TRAP.** There are **two** `KiteLogo` definitions and they are **not** the same drawing. The **live** one is **inline at the top of `src/App.jsx`** (viewBox `62 10 101 240`, width `size * 101/240`). **`src/components/KiteLogo.jsx` is DEAD CODE** — nothing imports it, and it carries a different mark (viewBox `0 0 220 270`, plus blueprint grid lines). **Edit the inline one.** Deleting the dead file is a reasonable future cleanup.
+
+The **inline** `KiteLogo` is the single source of truth for the mark. `size` sets the height; width is `size × (101 / 240)`.
+
+| **The mystery third signup — WATCH** | 2026-09-25: an iPhone test signup's confirm tap never reached Kit (timeline: Delivered 4:23 PM, Opened 4:23 PM, Clicked 6:21 PM, the click being David later on the Mac). Kit shows "Subscription confirmed!" for any confirm link, including a used one, so the phone tap likely opened a different link; which one was never established. A clean fourth test entirely on the iPhone worked. **No fault found in the site or Kit.** **Watch for real readers piling up as Unconfirmed** in Kit (filter by status); if so, read a few per-subscriber timelines first; Kit can re-send the confirmation. |
+
+| **Dead `src/components/KiteLogo.jsx`** | Nothing imports it; a different mark. Safe to delete in a cleanup. |
 
 ---
 
