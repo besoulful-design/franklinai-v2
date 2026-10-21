@@ -1,4 +1,4 @@
-# FranklinAI — Project Instructions (Version 86, Current)
+# FranklinAI — Project Instructions (Version 87, Current)
 
 > **READ THIS FILE BEFORE MAKING ANY CHANGE TO THIS REPO.** Read all of it, not just the section you think applies. **If a value looks arbitrary, it is almost certainly hand-tuned and documented here. Look it up first.** A morning was once lost re-deriving a footer geometry this file already specified.
 
@@ -12,7 +12,6 @@
 - **Next (David, 2026-10-21):** **Issue 1 is out on both surfaces:** sent 2026-10-20, and **the Reel posted from @franklinaisolutions at 5:37 PM the same day** (cover, caption, AI label on; the feed's 4:5 crop hides the footer by design). Next issue: **Issue 2, 2026-11-03** (dates in the Calendar). **Send-day routine, every issue:** Kit broadcast → publish to the newsletter site → **Code updates `LATEST_ISSUE_URL` in `App.jsx`** → David posts the Reel. The iPhone file name is **with Kit**; nothing to do here. **Every email comes from "FranklinAI"** and signs off with the company name.
 - **Issue 1 of The Operator: SENT 2026-10-20** (broadcast `26443173`) to all 3 subscribers (Felix, Kevin, Dolly), from **FranklinAI**, and **published to Kit's newsletter site** at `https://franklinai.kit.com/posts/you-re-running-an-insurance-practice-with-cash-model-marketing` (the slug Kit derives from the subject). **Issue dates live in the Content Calendar.** **Cadence is monthly as of 2026-10-03.**
 - **Watching:** the mystery third signup (Open Items). **Netlify is gone for this site** (2026-10-17); it now hosts only McKenzie.
-- **Coming:** David will fine-tune the nav/footer nudges, kite sizes and F-vs-crossbar margins. The current values and their history are under **Locked Geometry**.
 - **Measured at V74:** `App.jsx` is **798 lines**; the `$350` decoy sits at **lines 123 and 532**.
 - **Older version-by-version narrative (V12 to V57) is in `docs/history.md`.** The "Everything else from Version N remains in force" chain that used to open this file was removed on 2026-09-26. **Do not start a new one.**
 
@@ -558,7 +557,7 @@ The kite is NOT a symmetric diamond. Vertices: top (110,20), right (148,88), bot
 
 ---
 
-## Locked Geometry — the hand-tuned values (David will fine-tune these)
+## Locked Geometry — the hand-tuned values
 
 **Every value here was landed by eye or by a documented measurement. Change one only on David's instruction, and record the new value and why here.** The full history of how each was reached is in `docs/history.md` (search "V48", "V30", "V31").
 
@@ -615,7 +614,7 @@ Both lockups are positioned by inline `transform: translateX(...)`, same value o
 
 **What actually fixed it:** the two per-line changes to the copyright above. Nothing structural.
 
-> **"Closed" governs geometry, not every character.** A closed section can take a copy change (V54 removed the comma from "Solutions LLC") **if you prove it moves nothing, and say how you proved it.** **David's upcoming fine-tuning is his call and reopens only the values he names.**
+> **"Closed" governs geometry, not every character.** A closed section can take a copy change (V54 removed the comma from "Solutions LLC") **if you prove it moves nothing, and say how you proved it.**
 
 ---
 
@@ -655,8 +654,6 @@ No email in the footer, and **no mailing address**, which is why Kit's stand-in 
 All four modals (`EbookModal`, `GlowPTModal`, `CaseStudyModal`, `NewsletterModal`) lock page scroll via a `useEffect` setting `document.body.style.overflow = 'hidden'` on mount, restoring on unmount; each closes on the X, a backdrop click, **or the bottom Close**. **`NewsletterModal` also closes itself 2.5s after a successful signup**, through a second `useEffect` that clears its timer on unmount.
 
 **The bottom Close (David, 2026-09-27: close from top or bottom, consistent throughout)** is one shared **`ModalCloseButton`**, the last thing in every modal, 24px below the content above it: "Close", Inter 13px/600, #8892a4, transparent, **1px frame rgba(136, 146, 164, 0.35)**, radius 12px, padding `10px 20px` (the modal-button size). **Grey, not a blue ghost, on purpose:** in `GlowPTModal` it sits under the filled discovery-call button and must not take the bottom, strongest position. Not a divider; the four-divider count is unchanged.
-
-> **Accessibility gap:** no Escape key, no focus trap. glowpt.app solved this with one shared **`useModal`** hook (scroll lock, Escape, focus trap, focus restore, `role="dialog"`, `aria-modal`). **If a fifth modal arrives, port the hook rather than writing a fifth copy.**
 
 ---
 
@@ -830,7 +827,7 @@ better technology and a clear focus on what a business needs.
 
 ## Locked Inline Styles — the tuning rows
 
-**Only the hand-tuned values live here; `App.jsx` holds everything else, and the full old table is in `docs/history.md`.** These are the values David will fine-tune; see **Locked Geometry** for why each is what it is.
+**Only the hand-tuned values live here; `App.jsx` holds everything else, and the full old table is in `docs/history.md`.** See **Locked Geometry** for why each is what it is.
 
 | Element | Inline styles |
 |---|---|
@@ -970,8 +967,6 @@ A good one **names the repo in its first line**, states the scope and what not t
 | ~~Click-through vs signature~~ | **✅ Click-through** (David, 2026-10-20). |
 | **Fictitious-name registration** | Raised 2026-09-01, not acted on. Both sites lead with "FranklinAI" while the entity is FranklinAI Solutions LLC; PA generally requires a fictitious-name registration. **Nobody involved is a lawyer; nothing changed on this basis.** A cheap question for the open attorney engagement. |
 | **PA sales tax on the guide — DAVID** | Decided 2026-10-19: pay it out of the $37 (see Kit table). Open until the PA license exists and the accountant has answered tax-included pricing and the filing schedule. No copy or code change. |
-| **Mail authentication, the remainder** | Still absent: **Microsoft 365 DKIM**. Adding it, and later tightening DMARC past `p=none`, are each their own change in Route 53 with a mail test both ways. |
-| **Modal accessibility** | No Escape key or focus trap. Port glowpt.app's `useModal` if a fifth modal arrives, or sooner. |
 | **Dead `src/components/KiteLogo.jsx`** | Nothing imports it; a different mark. Safe to delete in a cleanup. |
 | ~~Public vs private repos~~ | **✅ CLOSED 2026-09-26.** `glowpt` is **private** (no forks found; full-history secret scan clean; nothing needed rotating; Amplify still builds; recorded in GlowPT's CLAUDE.md). **`franklinai-v2` stays PUBLIC on purpose** for the claude.ai pointer. **Standing rule: never commit a secret or anything confidential to this repo, and keep sensitive business or legal detail brief here.** |
 
@@ -981,6 +976,7 @@ A good one **names the repo in its first line**, states the scope and what not t
 
 *One line per version. The full entries for V12–V57 are in `docs/history.md` (section 1, "Change History").*
 
+- **V87** (2026-10-21) — Three old items cut at David's word: the nav/footer fine-tuning note, the Microsoft 365 DKIM open item, the modal Escape-key note.
 - **V86** (2026-10-21) — Issue 1 Reel posted 2026-10-20 (AI label on); send-day routine recorded; PA sales tax decision (pay it out of $37) recorded.
 - **V85** (2026-10-20) — Signups on Kit's newsletter site now get our confirmation email, land on `/confirmed`, and get the welcome (a second Rule); tested.
 - **V84** (2026-10-20) — **Issue 1 sent** (Felix, Kevin, Dolly) and on Kit's newsletter site; sender is now **FranklinAI**; `/confirmed` gets **Read the Latest Issue** (`826c0b3`, confirmed by David); GlowPT's Stripe billing and final agreements recorded.

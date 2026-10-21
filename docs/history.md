@@ -15,6 +15,7 @@ section of CLAUDE.md, copied from the GlowPT repo's 2026-09-12 trim.
 **Sections, newest bank first.** When a later trim banks more, add a new numbered
 section ABOVE section 1 and say what it holds.
 
+0dd. Lines removed in V87 (old items cut: nav/footer fine-tuning, Microsoft 365 DKIM, modal Escape key).
 0cc. Lines replaced in V86 (Issue 1 Reel posted, PA sales tax), plus the 2026-10-21 handoff.
 0bb. Lines replaced in V85 (newsletter-site signups wired like the website's).
 0aa. Lines replaced in V84 (Issue 1 sent, sender FranklinAI, GlowPT on Stripe).
@@ -40,6 +41,26 @@ section ABOVE section 1 and say what it holds.
 1. The full text of CLAUDE.md Version 57, exactly as it stood before the V58 trim.
 2. `AWS-MIGRATION-HANDOFF.md`, the working note from the 2026-09-25 move to Amplify.
 3. `CLAUDE-MD-TRIM-HANDOFF.md`, the note that started the V58 trim.
+
+---
+
+# 0dd. LINES REMOVED OR REPLACED IN V87 (2026-10-21): David cut three old items (nav/footer fine-tuning, Microsoft 365 DKIM, modal Escape key)
+
+# FranklinAI — Project Instructions (Version 86, Current)
+
+- **Coming:** David will fine-tune the nav/footer nudges, kite sizes and F-vs-crossbar margins. The current values and their history are under **Locked Geometry**.
+
+## Locked Geometry — the hand-tuned values (David will fine-tune these)
+
+> **"Closed" governs geometry, not every character.** A closed section can take a copy change (V54 removed the comma from "Solutions LLC") **if you prove it moves nothing, and say how you proved it.** **David's upcoming fine-tuning is his call and reopens only the values he names.**
+
+> **Accessibility gap:** no Escape key, no focus trap. glowpt.app solved this with one shared **`useModal`** hook (scroll lock, Escape, focus trap, focus restore, `role="dialog"`, `aria-modal`). **If a fifth modal arrives, port the hook rather than writing a fifth copy.**
+
+**Only the hand-tuned values live here; `App.jsx` holds everything else, and the full old table is in `docs/history.md`.** These are the values David will fine-tune; see **Locked Geometry** for why each is what it is.
+
+| **Mail authentication, the remainder** | Still absent: **Microsoft 365 DKIM**. Adding it, and later tightening DMARC past `p=none`, are each their own change in Route 53 with a mail test both ways. |
+
+| **Modal accessibility** | No Escape key or focus trap. Port glowpt.app's `useModal` if a fifth modal arrives, or sooner. |
 
 ---
 
