@@ -15,6 +15,7 @@ section of CLAUDE.md, copied from the GlowPT repo's 2026-09-12 trim.
 **Sections, newest bank first.** When a later trim banks more, add a new numbered
 section ABOVE section 1 and say what it holds.
 
+0ff. Lines replaced in V89 (sign-off becomes David Peterson; both confirmation emails match).
 0ee. Lines removed in V88 (unused kite file deleted; mystery-signup watch dropped).
 0dd. Lines removed in V87 (old items cut: nav/footer fine-tuning, Microsoft 365 DKIM, modal Escape key).
 0cc. Lines replaced in V86 (Issue 1 Reel posted, PA sales tax), plus the 2026-10-21 handoff.
@@ -42,6 +43,22 @@ section ABOVE section 1 and say what it holds.
 1. The full text of CLAUDE.md Version 57, exactly as it stood before the V58 trim.
 2. `AWS-MIGRATION-HANDOFF.md`, the working note from the 2026-09-25 move to Amplify.
 3. `CLAUDE-MD-TRIM-HANDOFF.md`, the note that started the V58 trim.
+
+---
+
+# 0ff. LINES REPLACED IN V89 (2026-10-21): every Kit email signs "David Peterson"; the two confirmation emails end the same way
+
+# FranklinAI — Project Instructions (Version 88, Current)
+
+- **Next (David, 2026-10-21):** **Issue 1 is out on both surfaces:** sent 2026-10-20, and **the Reel posted from @franklinaisolutions at 5:37 PM the same day** (cover, caption, AI label on; the feed's 4:5 crop hides the footer by design). Next issue: **Issue 2, 2026-11-03** (dates in the Calendar). **Send-day routine, every issue:** Kit broadcast → publish to the newsletter site → **Code updates `LATEST_ISSUE_URL` in `App.jsx`** → David posts the Reel. The iPhone file name is **with Kit**; nothing to do here. **Every email comes from "FranklinAI"** and signs off with the company name.
+
+| **Confirmation email** | **Live since 2026-10-16:** subject *Confirm your subscription to The Operator*; top line *Thanks for signing up for The Operator. Tap the button below to confirm, and the next issue will come straight to your inbox.*; button *Confirm Your Subscription*; closing *Glad you're here.* / *Warmest wishes,* / *David* with *FranklinAI Solutions LLC* on the next line (a Shift+Return line break, 2026-10-17). Edited only in Kit (Landing pages & forms → the form → Settings → Confirmation email → Edit Email Contents); the MCP cannot reach it. |
+
+| **Automated emails** | All from **FranklinAI** (the default sender) on the **"Text only"** template (Classic, the default), **its "Built with Kit" badge off** (Broadcasts → Email templates → Text only → Additional; one switch covers every email). **Welcome:** sequence *The Operator: welcome* (`2931894`), one email, sent right away, triggered by **two Rules**: subscribes to form *The Operator site signup* → this sequence, and (since 2026-10-20) subscribes to form *Newsletter site* → this sequence. **Buyer follow-up:** sequence *Guide buyers: follow-up* (`2931893`, email `10441959`), one email with **Operator line A** (buyers join the list directly, confirmed by the test purchase), **delay 2 days** (sends at the sequence's 11 AM Eastern), triggered by the **Visual automation "Guide buyers"** (Product purchased → this sequence; Rules has no purchase trigger). Copy from the 2026-10-16 claude.ai handoff (banked). The sign-off still names David personally (Copy Rules). |
+
+| **Newsletter site** | `https://franklinai.kit.com` (Kit's subdomain), where sent issues are published. Profile set 2026-10-20: name **FranklinAI**, byline **The Operator**, description = the site's one-sentence newsletter description, photo = the kite on navy (`FranklinAI-kite-profile.png`, 800×800, rendered from the inline `KiteLogo`; kept in David's Downloads, not this repo). **Its "Built with Kit" badge would not switch off** (clicking it in the editor did nothing); parked, a question for Kit support if it ever matters. Edited in **Audience growth → Newsletter site**, then **Publish**. **⚠️ Its Subscribe boxes (profile page and every post) are a SEPARATE form, "Newsletter site", with its own settings under the editor's Sign Up Form:** confirmation email set 2026-10-20 to match ours (subject *Confirm your subscription to The Operator*, same top line and *Confirm Your Subscription* button, closing *Glad you're here.* / *David* / *FranklinAI Solutions LLC*, no "Warmest wishes," by David's choice), redirect **`https://franklinaisolutions.com/confirmed`**. Its on-page success line ("Success! You've been added to the list…") does not mention confirming and has no documented setting; a question for Kit support with the badge. **Tested end to end 2026-10-20** (`+kitsite2`: our email, our page, the welcome). |
+
+- **Kit emails and issues sign off "Warmest wishes,", a paragraph gap, then "David" with "FranklinAI Solutions LLC" on the line directly under it** (David, 2026-10-17: the emails must name the company; full legal name, no comma). In the MCP's content_tree that is one paragraph with text `David\nFranklinAI Solutions LLC`, which Kit renders as a `<br/>`. Live on the confirmation, welcome, buyer follow-up and the Issue 1 draft.
 
 ---
 
