@@ -1,4 +1,4 @@
-# FranklinAI — Project Instructions (Version 91, Current)
+# FranklinAI — Project Instructions (Version 92, Current)
 
 > **READ THIS FILE BEFORE MAKING ANY CHANGE TO THIS REPO.** Read all of it, not just the section you think applies. **If a value looks arbitrary, it is almost certainly hand-tuned and documented here. Look it up first.** A morning was once lost re-deriving a footer geometry this file already specified.
 
@@ -8,128 +8,79 @@
 
 ## CURRENT STATE (edit these lines in place; do not start a new chain)
 
-- **Live:** franklinaisolutions.com on **AWS Amplify** (account `franklinai-web`), DNS in **Route 53**, David's Microsoft 365 mail intact. **The Operator** signup is wired to **Kit form `9962049`**, double opt-in ON, and Kit sends as the domain, on the **Creator plan, monthly** since 2026-10-14. Confirmed by David 2026-09-25.
-- **Next (David, 2026-10-21):** **Issue 1 is out on both surfaces:** sent 2026-10-20, and **the Reel posted from @franklinaisolutions at 5:37 PM the same day** (cover, caption, AI label on; the feed's 4:5 crop hides the footer by design). Next issue: **Issue 2, 2026-11-03** (dates in the Calendar). **Send-day routine, every issue:** Kit broadcast → publish to the newsletter site → **Code updates `LATEST_ISSUE_URL` in `App.jsx`** → David posts the Reel. The iPhone file name is **with Kit**; nothing to do here. **Every email comes from "FranklinAI"** and signs off "David Peterson" over the company name.
-- **Issue 1 of The Operator: SENT 2026-10-20** (broadcast `26443173`) to all 3 subscribers (Felix, Kevin, Dolly), from **FranklinAI**, and **published to Kit's newsletter site** at `https://franklinai.kit.com/posts/you-re-running-an-insurance-practice-with-cash-model-marketing` (the slug Kit derives from the subject). **Issue dates live in the Content Calendar.** **Cadence is monthly as of 2026-10-03.**
-- **Netlify is gone for this site** (2026-10-17); it now hosts only McKenzie.
+- **Live:** franklinaisolutions.com on **AWS Amplify** (account `franklinai-web`), DNS in **Route 53**, David's Microsoft 365 mail intact. **The Operator** signup wired to **Kit form `9962049`**, double opt-in ON; Kit sends as the domain, on the **Creator plan, monthly** since 2026-10-14.
+- **Next (David, 2026-10-21):** **Issue 2, 2026-11-03** (dates live in the Calendar). **Send-day routine, every issue:** Kit broadcast → publish to the newsletter site → **Code updates `LATEST_ISSUE_URL` in `App.jsx`** → David posts the Reel from @franklinaisolutions (AI label on; the feed's 4:5 crop hides the footer by design). **Every email comes from "FranklinAI"** and signs off "David Peterson" over the company name.
+- **Issue 1 of The Operator: SENT 2026-10-20** (broadcast `26443173`) to all 3 subscribers, published at `https://franklinai.kit.com/posts/you-re-running-an-insurance-practice-with-cash-model-marketing` (the slug Kit derives from the subject); its Reel posted the same day. **Cadence is monthly as of 2026-10-03.**
 - **Measured at V91:** `App.jsx` is **853 lines**; the `$350` decoy sits at **lines 143 and 558**.
-- **Older version-by-version narrative (V12 to V57) is in `docs/history.md`.** The "Everything else from Version N remains in force" chain that used to open this file was removed on 2026-09-26. **Do not start a new one.**
+- **Older narrative is in `docs/history.md`:** the full V91 text before the V92 trim is section 0ii; V12 to V57 are section 1. **Do not start a "remains in force" chain.**
 
 ---
 
-## ⚖️ WHAT MAY BE ADDED TO THIS FILE (set 2026-09-26, copied from GlowPT)
+## ⚖️ What May Be Added to This File
 
-**This file loads IN FULL at the start of every session, so its size is a tax on every thread.** On 2026-09-26 it measured **167,777 bytes**, up ~42 KB in one day. GlowPT's reached 478 KB before the same fix. **The cause was Claude, not David:** each version wrote a long narrative and told the next to do the same.
+**This file loads IN FULL at the start of every session, in Code and claude.ai, so its size is a tax on every thread.** It reached 167,777 bytes on 2026-09-26 (trimmed in V58) and 115,100 on 2026-10-25 (trimmed in V92). **The cause both times was Claude:** each version wrote a narrative and told the next to do the same.
 
-**⛔ THIS FILE IS A GUIDE, NOT A JOURNAL.**
+**⛔ A GUIDE, NOT A JOURNAL.** Add only **a durable rule** (one or two lines, where a future session will find it), **a change in current state** (by **editing the existing line**), or **a short entry for recent work** (what broke, the rule it leaves, what was observed). **The reasoning and narrative of a fix belong in the commit message**; nothing the code already says, no second copy of a rule.
 
-**A session may add:**
-- **A durable rule**, one or two lines, where a future session will find it.
-- **A change in current state**, by **editing the existing line**, not appending one beside it.
-- **A short entry for recent work**: what broke, the rule it leaves, what was observed. **Not the investigation.**
+**⛔ NOTHING LEAVES THIS FILE UNTIL IT IS IN `docs/history.md`, VERBATIM.** Bank first, then cut. **The pre-commit hook enforces it** (`scripts/hooks/pre-commit`, on via `git config core.hooksPath scripts/hooks`; local config, so a fresh clone must turn it on): it blocks a commit where CLAUDE.md loses lines without `docs/history.md` staged, or grows by more than 2 KB with nothing banked. Skip once with `git commit --no-verify`, visibly.
 
-**It does NOT go here:** the reasoning and narrative of a fix (**that belongs in the commit message**, permanent and searchable with `git log`); anything the code already says; a second copy of a rule already stated.
+**▶ EVERY SESSION REPORTS THIS FILE'S SIZE AND ITS OWN DELTA IN ITS CLOSING MESSAGE:** `stat -f%z CLAUDE.md` against `git cat-file -s <the session's first commit>:CLAUDE.md`. David checks with `git log --format='%h %ad %s' --date=short -- CLAUDE.md`.
 
-**⛔ NOTHING LEAVES THIS FILE UNTIL IT IS IN `docs/history.md`, VERBATIM.** Any removal, any day. Bank first, then cut. **A git pre-commit hook enforces it** (`scripts/hooks/pre-commit`, on via `git config core.hooksPath scripts/hooks`): it blocks a commit where CLAUDE.md loses lines without `docs/history.md` staged, and one where CLAUDE.md grows by more than 2 KB with nothing banked. Skip once with `git commit --no-verify`, visibly. *(`core.hooksPath` is local git config; a fresh clone must turn it on again.)*
+**🧹 TRIM WHEN IT PASSES ~100 KB** (lowered from ~150 KB on 2026-10-25, when the V92 trim landed at about 85 KB): (1) bank the full text into `docs/history.md`; (2) archive whole finished sections; (3) check live operational facts (the AWS and Kit records) did not leave with the history; (4) condense recent entries to headline + what broke + the rule + what was observed; (5) **lift every durable rule into place before archiving its entry**; (6) **probe the result by name for every rule and value that must survive** (extract the old file's backticked code, quoted strings, colors, px values, URLs and IDs; check each is still present).
 
-**▶ EVERY SESSION REPORTS THIS FILE'S SIZE AND ITS OWN DELTA IN ITS CLOSING MESSAGE:** `stat -f%z CLAUDE.md` against `git cat-file -s <the session's first commit>:CLAUDE.md`. Self-reported, so not a control; David checks with `git log --format='%h %ad %s' --date=short -- CLAUDE.md`.
-
-**🧹 TRIM WHEN IT PASSES ~150 KB**, in this order: (1) bank the full text into `docs/history.md` first; (2) archive whole finished sections; (3) check live operational facts did not leave with the history (here: the AWS and Kit records); (4) condense recent entries to headline + what broke + the rule + what was observed; (5) **lift every durable rule into place before archiving its entry**; (6) **probe the result for the rules that must survive, by name.**
-
-**📚 THERE ARE ONLY TWO FILES:** this one (loads every session, holds what must be known) and `docs/history.md` (loads never, holds why). **Do not invent a third, and do not narrate the bookkeeping to David.** Do it quietly and report the result.
+**📚 ONLY TWO FILES:** this one (loads every session, holds what must be known) and `docs/history.md` (loads never, holds why). **Do not invent a third, and do not narrate the bookkeeping to David**; do it quietly and report the result.
 
 ---
 
-## CRITICAL: Source File Rule
+## One Copy, Read by Code and claude.ai
 
-**Applies when working in claude.ai. In Claude Code, see the next section.**
+**This file lives only as `CLAUDE.md` on `main`.** Claude Code loads it automatically. **claude.ai reads it through a pointer in its project instructions** (since V59; nothing is pasted): it runs, in its own computer, `curl -sL -H 'Cache-Control: no-cache' "https://raw.githubusercontent.com/besoulful-design/franklinai-v2/main/CLAUDE.md?v=$(date +%s)" -o /home/claude/CLAUDE.md`, reads the file and states the version on its first line. **Not claude.ai's fetch tool** (it serves a stale saved copy and ignores cache-busters). **GitHub's raw copy can lag a push by up to 5 minutes:** if David names a newer version, claude.ai waits and runs the command again, never working from an older version than the one he names. **No Code-tuned and claude.ai-tuned variants.**
 
-**Claude must ALWAYS read the current `App.jsx` from the project files before making any code change.** The project file is the single source of truth for the live code. David replaces it routinely after each deploy. Never work from a cached copy, a previous output, or memory of what the file contained in an earlier turn.
+> ⚠️ **The pointer works only because this repo is PUBLIC, David's deliberate choice on 2026-09-26** (`glowpt` is private). **Never commit a secret or anything confidential here, never the book's text or PDF** (a paid product; it lives in the claude.ai project), and keep sensitive business or legal detail brief. If the repo goes private, claude.ai needs another route and this note changes.
 
-> **Known lag:** the project snapshot is hand-replaced, so it can trail the repo by a push. When the snapshot and a just-confirmed push disagree, the push is live and the snapshot is stale — say so rather than silently reverting the newer change.
-
-> **There is ONE copy of this document: `CLAUDE.md` on `main` in the repo (since V59).** The claude.ai project instructions are a short pointer telling each claude.ai session to read `https://raw.githubusercontent.com/besoulful-design/franklinai-v2/main/CLAUDE.md` and state the version it read. **Nothing is pasted into claude.ai any more.** ⚠️ **The pointer works only because this repo is PUBLIC, which David chose deliberately on 2026-09-26.** Never commit a secret here, **and never commit the book's text or PDF** (a paid product; the guide file lives in the claude.ai project and the PDF is built there). If it is ever made private, claude.ai needs another route (GitHub linked to the project, or pasting again) and this note must change. **How the pointer reads it (rewritten in claude.ai and pasted by David on 2026-10-04):** claude.ai's **fetch tool is NOT used**, because it serves a stale saved copy and ignores cache-busters (the 09-26 "add a cache-buster" instruction kept failing and is retired). The pointer tells claude.ai to run, in its own computer, `curl -sL -H 'Cache-Control: no-cache' "https://raw.githubusercontent.com/besoulful-design/franklinai-v2/main/CLAUDE.md?v=$(date +%s)" -o /home/claude/CLAUDE.md`, read the file, and state the version on its first line. **GitHub's raw copy can still lag a push by up to 5 minutes**: if David names a newer version, claude.ai waits, runs the same command again, and never works from an older version than the one he names.
-
----
-
-## Working in Claude Code vs claude.ai
-
-**This file lives in one place: `CLAUDE.md` at the repo root.** Claude Code loads it automatically; claude.ai fetches it from GitHub through the pointer in its project instructions. **Do not maintain a Code-tuned variant and a claude.ai-tuned variant.**
-
-> **The GlowPT repo** is a *different* repo at `~/Downloads/glowpt` with its own `CLAUDE.md` and its own AWS backend. This file does not govern its architecture. **Any handoff into Code should name the repo in its first line.** But **copy rules DO cross** (see *Copy Rules Travel With the Voice*), and **one content list is shared** (see *The two sites' shared bullet list*).
+**In claude.ai, read the current `App.jsx` from the project files before any code change**, never a cached copy or memory. The snapshot is hand-replaced and can trail the repo by a push: when it disagrees with a just-confirmed push, the push is live; say so rather than silently reverting the newer change.
 
 | Job | Tool |
 |---|---|
-| Editing `App.jsx`, the repo, anything on disk | Claude Code |
+| Editing `App.jsx`, the repo, anything on disk; maintaining **this file** | Claude Code |
 | Route 53 records for franklinaisolutions.com | Claude Code, from this root (see *Working across the two repos*) |
-| Strategy, positioning, copy decisions, arguing a call through | claude.ai |
-| Maintaining **this file** (`CLAUDE.md`) | Claude Code |
-| Producing or revising the **Content Calendar** | claude.ai |
-| Newsletter drafting | claude.ai |
+| Strategy, positioning, copy decisions, arguing a call through; the **Content Calendar**; newsletter drafting | claude.ai |
 
-**Rules that apply everywhere, both tools, no exceptions:** the Logo Accent gold rule, all locked inline styles and render values, the three-tier heading system, the Copy Rules and Forbidden Words, the CSS/JSX Boundary Rules, and the Design Rules.
+**Rules that apply everywhere, both tools:** the Logo Accent gold rule, all locked inline styles and render values, the three-tier heading system, the Copy Rules and Forbidden Words, the CSS/JSX Boundary Rules, and the Design Rules.
 
-> **When a handoff note and this file disagree, the handoff note wins for that session.** Apply the note, push the code, **then** update this document to record it.
+> **When a handoff note and this file disagree, the note wins for that session:** apply it, push, **then** update this document. **The GlowPT repo** (`~/Downloads/glowpt`) is a *different* repo with its own `CLAUDE.md` and AWS backend; **any handoff into Code names the repo in its first line.** Copy rules and one content list DO cross (below).
 
 ---
 
 ## Copy Rules Travel With the Voice, Not the Repo
 
-**David's rule, set 2026-08-27.** The **Copy Rules** and **Forbidden Words** bind **anywhere a PT owner reads FranklinAI's words**: this site, the GlowPT product site and app, and **Kit** (the confirmation email, the Kit Commerce product page, every broadcast). A buyer reads glowpt.app and franklinaisolutions.com in one sitting; they are one house.
+**David, 2026-08-27:** the **Copy Rules** and **Forbidden Words** bind **anywhere a PT owner reads FranklinAI's words**: this site, the GlowPT site and app, and **Kit** (confirmation emails, the product page, every broadcast). One house.
 
-- **Never fix an em-dash rule with a find-and-replace.** A bare `—` used as an empty-value placeholder is a UI glyph, not prose (GlowPT's dashboard Streak column keeps six on purpose).
-- **A dash used as a LABEL SEPARATOR becomes the middot `·`.**
-- **Any feature that generates user-facing text with a model must carry the rule in its prompt** ("Do not use em dashes in your response."), or generated text escapes it.
-- **User-facing copy does not all live in the obvious folder.** Before declaring a copy rule applied, check the delivery surfaces too (GlowPT's Lambdas kept em dashes four days after `src/` was swept). **Kit is one of those surfaces.**
-- **Code comments and this document are exempt.** The rule governs shipped strings a visitor can read.
+- **Never fix an em-dash rule with a find-and-replace.** A bare `—` used as an empty-value placeholder is a UI glyph, not prose (GlowPT's dashboard Streak column keeps six on purpose). **A dash used as a LABEL SEPARATOR becomes the middot `·`.**
+- **Model-generated user-facing text carries the rule in its prompt** ("Do not use em dashes in your response.").
+- **Check the delivery surfaces too** (GlowPT's Lambdas kept em dashes four days after `src/` was swept). **Kit is one of those surfaces.** Code comments and this document are exempt.
 
----
-
-## The two sites' shared bullet list
-
-**The eight GlowPT feature bullets are one list living in two repos.** They must stay **word-identical and in the same order** in both:
-
-- **Here:** `features` inside `GlowPTModal`, `src/App.jsx`.
-- **There:** `whatGlowptIs.points` in `glowpt/src/lib/marketing.js`.
-
-**Both arrays carry a five-line comment naming the other.** That comment is the only safeguard: **nothing enforces the match at build time.** *(David's rule, 2026-08-30: a buyer who meets two descriptions of one product thinks it is unsettled. The old "glowpt.app carries 5 of the 8, do not reconcile" instruction is RETIRED. Do not reinstate it.)*
-
-> **Verify the match by parsing both arrays and comparing element by element**, never by eyeballing two eight-item lists. *(Verified this way at V54: 8 and 8, identical and same order.)*
-
-**What still differs between the sites, deliberately:** the **first sentence** of the pitch (this site names the niche, glowpt.app does not), and glowpt.app carries **a price line and a signup path** this modal does not need.
+**The eight GlowPT feature bullets are one list in two repos**, **word-identical, same order**: `features` inside `GlowPTModal`, `src/App.jsx`, and `whatGlowptIs.points` in `glowpt/src/lib/marketing.js`. **Each array carries a five-line comment naming the other; nothing enforces the match at build time.** *(David, 2026-08-30: two descriptions of one product read as unsettled; the old "glowpt.app carries 5 of the 8" instruction is RETIRED.)* **Verify by parsing both arrays and comparing element by element**, never by eye.
 
 ---
 
 ## Source-of-Truth Documents
 
-**The Content Calendar** (a claude.ai document) is the source of truth for all content and marketing. This file intentionally holds **no** content/marketing specifics beyond what the site displays. The calendar is **newsletter-led**: *The Operator*, **monthly** (the first Tuesday internally; the public copy says only "monthly"), 400–600 words, free, written Sunday on a phone. **Instagram is the only discovery surface.** **The discovery call is the only door** for the custom build (GlowPT has a second door); **each issue makes one ask, matched to the issue** (see Offer Ladder). The addressee is the **owner**; the office manager is the multiplier. The spearhead is **model confusion** ("You're running an insurance practice with cash-model marketing"), across **six spines**: (A) model confusion, (B) plan-of-care completion, (C) team, hiring, retention, and modeling, (D) your numbers, (E) AI in your practice, (F) systems and delegation. The four-video YouTube arc is **parked whole**.
+**The Content Calendar** (a claude.ai document) is the source of truth for all content and marketing; this file holds none beyond what the site displays. It is **newsletter-led**: *The Operator*, **monthly** (the first Tuesday internally; public copy says only "monthly"), 400–600 words, free, written Sunday on a phone. **Instagram is the only discovery surface.** **The discovery call is the only door** for the custom build (GlowPT has a second); **each issue makes one ask, matched to the issue** (see Offer Ladder). The addressee is the **owner**; the office manager is the multiplier. The spearhead is **model confusion** ("You're running an insurance practice with cash-model marketing"), across **six spines**: (A) model confusion, (B) plan-of-care completion, (C) team, hiring, retention, and modeling, (D) your numbers, (E) AI in your practice, (F) systems and delegation. The four-video YouTube arc is **parked whole**.
 
-> **Calendar points worth knowing here (read the calendar for the rest):**
-> - **Issue dates live in the Calendar, not here.** This file was wrong about Issue 1's date three times.
-> - **The book is the source.** *What Your Practice Actually Sells* is finished; **on a sentence a reader meets on more than one surface, the book's wording wins** — a deliberate exception to "the deployed page wins".
-> - **The spearhead is the front door, not a leash.** Only **D** and **C** are downstream of it. **E's lift half and F stand on their own feet.** Spine E is two wells, the line and the lift; leading with the line is a **strong default, not a law**.
-> - **Two retired framings the site copy must never reintroduce:** **"nobody decided"**, and **the front-desk-versus-therapist split**.
-> - **"cash practice" and "advanced care" are interchangeable, and neither is retired.**
+> **Calendar points worth knowing here:**
+> - **Issue dates live in the Calendar, not here** (this file was wrong about Issue 1's date three times).
+> - **The book is the source.** On a sentence a reader meets on more than one surface, **the book's wording wins**, a deliberate exception to "the deployed page wins".
+> - **The spearhead is the front door, not a leash.** Only **D** and **C** are downstream of it; **E's lift half and F stand on their own feet.** Spine E is two wells, the line and the lift; leading with the line is a **strong default, not a law**.
+> - **Never reintroduce two retired framings:** **"nobody decided"**, and **the front-desk-versus-therapist split**. **"cash practice" and "advanced care" are interchangeable; neither is retired.**
 > - **"The Operator" is the newsletter's title; the masthead standfirst rule is retired.**
-> - **The promise line reads the same on all three surfaces** (issue top, Instagram graphic): **"For physical therapy practices."** *(No longer a standalone sentence on the site since 2026-10-04: the niche is named inside the one-sentence description instead. Whether the issue top and the graphic follow is a Calendar call.)* **The cadence word ("monthly") also sits in the Instagram bio of @franklinaisolutions** ("a free monthly newsletter for physical therapy practices"), so a cadence change has that place to check too.
+> - **The promise line "For physical therapy practices."** is the issue top and the Instagram graphic; on the site the niche sits inside the one-sentence description (since 2026-10-04). **"monthly" also sits in the Instagram bio of @franklinaisolutions** ("a free monthly newsletter for physical therapy practices"); a cadence change checks it too.
 > - **The readiness ladder:** newsletter (cold follow) → email (a self-paced question) → discovery call (the door).
-> - **The Instagram account is @franklinaisolutions**, linked from the site footer (the glyph on the © line). Its record (posts, the 3D Ben, the profile picture) lives in the Calendar, not here.
+> - **The Instagram account is @franklinaisolutions**, linked from the site footer (the glyph on the © line); its record (posts, the 3D Ben, the profile picture) lives in the Calendar.
 
-**This file** covers the **website build**: structure, styling, copy rules, locked values, the product facts the site displays, the **pricing of every rung**, **hosting and DNS**, and **the Kit account behind the site**. **It is the authority for everything it states.**
+**This file** covers the **website build**: structure, styling, copy rules, locked values, the product facts the site displays, the **pricing of every rung**, **hosting and DNS**, and **the Kit account**. **It is the authority for everything it states.**
 
----
-
-## What No Longer Has a Home
-
-The deleted Business Plan also held **market sizing, unit economics, the HIPAA architecture decision, the roadmap, and risks.** None of that moved here. **The offer ladder's rungs** now live here; its marketing strategy lives in the Calendar.
-
-**Still homeless:** unit economics, market sizing, the HIPAA architecture reasoning, and the **GlowPT/AWS backend architecture** (which lives in the GlowPT repo). **Legal/entity work** is business territory; only the displayed legal name is a site fact.
-
-**Do not reconstruct the homeless parts from memory and do not cite them.** Say plainly there is no source.
-
-> **Narrow exception:** the **GlowPT** section records a handful of GlowPT commercial facts **only because this site links into that flow and must not lie about it** — marketing constraints, never architecture. Source: the GlowPT repo's `docs/commercial-handoff.md`; **the GlowPT code wins on any disagreement.**
->
-> **This site's own hosting and Kit account are NOT homeless.** They are recorded in full below. Org-level AWS setup (management account, org BAA, Identity Center) stays out beyond what is needed to operate this site.
+**No home, so no source:** market sizing, unit economics, the HIPAA architecture reasoning, the roadmap and risks (from the deleted Business Plan), and the **GlowPT/AWS backend architecture** (the GlowPT repo). **Do not reconstruct them from memory or cite them; say plainly there is no source.** Legal/entity work is business territory; only the displayed legal name is a site fact. *Narrow exception:* the **GlowPT** section records a few commercial facts **only because this site links into that flow and must not lie about it** (source: the GlowPT repo's `docs/commercial-handoff.md`; **the GlowPT code wins**).
 
 ---
 
@@ -137,193 +88,125 @@ The deleted Business Plan also held **market sizing, unit economics, the HIPAA a
 
 FranklinAI builds custom web apps and tools for businesses — web apps, internal tools, and client-facing portals — built around a client's specific way of working rather than off-the-shelf templates. Based in Philadelphia, serving local and remote clients.
 
-> **Legal entity.** **FranklinAI Solutions LLC** (Pennsylvania); **"FranklinAI"** is the brand / fictitious name. The **wordmark lockup carries the full legal name** — "FranklinAI" over **"Solutions LLC"** in both nav and footer. The footer copyright is just "© {year}".
->
-> **⚠️ NO COMMA. `FranklinAI Solutions LLC`, never `FranklinAI Solutions, LLC`.** The no-comma form is what appears everywhere the entity is legally named: both attorney-review contract drafts in the GlowPT repo, glowpt.app's `src/lib/legal.js`, and the **AWS management account's Company-name field, which the org BAA binds to.** **Use it on any new surface and never reintroduce the comma for typographic taste.** The Kit Commerce payout setup takes this form too. glowpt.app's footer carries `© {year} FranklinAI Solutions LLC`, so both sites spell it identically.
+> **Legal entity: FranklinAI Solutions LLC** (Pennsylvania); **"FranklinAI"** is the brand. The **wordmark lockup carries the full legal name** ("FranklinAI" over **"Solutions LLC"**, nav and footer); the footer copyright is just "© {year}". **⚠️ NO COMMA: `FranklinAI Solutions LLC`, never `FranklinAI Solutions, LLC`**, as in the GlowPT contract drafts, glowpt.app's `src/lib/legal.js`, the Kit Commerce payout setup, and the **AWS management account's Company-name field, which the org BAA binds to.** glowpt.app's footer carries `© {year} FranklinAI Solutions LLC`. **Never reintroduce the comma for typographic taste.**
 
-> **The company's work email lives on this domain.** `david@franklinaisolutions.com` is **Microsoft 365, bought through GoDaddy**. It is also David's AWS Identity Center username, the org's budget-alert address, his AWS Builder ID, **and the Kit login and The Operator's sending address**. **Its delivery depends on records in this domain's Route 53 zone.** Treat those as the most dangerous thing in this repo's orbit.
+> **The work email lives on this domain.** `david@franklinaisolutions.com` is **Microsoft 365, bought through GoDaddy**; also David's AWS Identity Center username, the org's budget-alert address, his AWS Builder ID, **the Kit login and The Operator's sending address**. **Its delivery depends on records in this domain's Route 53 zone: the most dangerous thing in this repo's orbit.**
 
-**Packaged products under the FranklinAI umbrella:**
+**Products under the umbrella:**
+- **GlowPT** — a daily patient check-in app for physical therapy clinics. Clinics subscribe; their patients use it free. Separately branded (amber/navy, **glowpt.app**); on this site it wears FranklinAI's navy-and-blue. **Live, self-serve since V49.**
+- **The reconciliation e-book** — **"What Your Practice Actually Sells,"** **$37**, one-time, self-serve. Written (about 7,600 words, eleven chapters plus an index; the file lives in the claude.ai project); **checkout live on Kit Commerce since 2026-10-16.** ⛔ **The e-book card is NEVER taken down** (David, 2026-09-27). **Do not suggest it.** No coming-soon strip, no pre-sell.
+- Everything else is **custom-build work**, scoped after a discovery call, from $10,000.
+- **Clarity is retired** from the site and lineup: re-add nothing of it unless David asks. Parked, not dead.
 
-- **GlowPT** — a daily patient check-in app for physical therapy clinics. Clinics subscribe; their patients use it free. Separately branded (amber/navy, its own logo, **glowpt.app**), but on this site it wears FranklinAI's navy-and-blue. **Live, and self-serve since V49.**
-- **The reconciliation e-book** — one-time, self-serve, **$37**, titled **"What Your Practice Actually Sells."** **The book is written** (about 7,600 words, eleven chapters plus an index; the file is David's and lives in the claude.ai project), **the card and modal are live**, **the checkout is live on Kit Commerce** (since 2026-10-16; proven by three test purchases).
-  > ⛔ **The e-book card is NEVER taken down** (David, 2026-09-27). **Do not suggest it.** No coming-soon strip, no pre-sell.
+**Niche-forward front door.** FranklinAI is an umbrella; the headline speaks to the practice and the umbrella breathes one layer down. **Do not "reconcile" it back to a broad headline.**
+- **Headline: "Built for Your Practice"** (no period; two lines). **Subline: "Built to Handle HIPAA"** (title case, no period): it **proves** the niche, the only place HIPAA appears.
+- **Below the fold stays broad:** the About bio closes on **"what a business needs."**; How It Works and Discovery stay broadly worded; the hero label **"Custom Apps & Tools"** stays generic. **Do not add a sentence that walls the umbrella off.**
+- **The niche is named in** the **headline**, the **newsletter card**, and the **GlowPT teaser** ("physical therapy patients"); **not the About bio.** The **e-book's Kit Commerce product page MAY name physical therapy**; **the site's e-book card and modal deliberately do not.**
 
-Everything else is **custom-build work** — scoped after a discovery call, priced from $10,000.
-
-> **Clarity is retired from the site and the product lineup.** Do not re-add a Clarity product, modal, teaser, or pricing block unless David explicitly asks. It is parked, not dead.
-
-### Positioning note — niche-forward front door
-
-**FranklinAI is an umbrella company. The front door is niche-forward: the headline speaks to the practice, and the umbrella breathes one layer down. Do not "reconcile" it back to a broad headline.**
-
-- **Headline: "Built for Your Practice"** (no period; two lines).
-- **Subline: "Built to Handle HIPAA"** (title case, no period). It **proves** the niche. The only place HIPAA appears on the page.
-- **The umbrella breathes below the fold.** The About bio is fully broad, closing on **"what a business needs."** How It Works and Discovery stay broadly worded. The hero label **"Custom Apps & Tools"** stays generic. **Do not add a sentence that walls the umbrella off.**
-
-> **Where the niche is named:** the **headline**, the **newsletter card**, and the **GlowPT teaser** ("physical therapy patients"). **Not the About bio** — there it would be a wall. The **e-book's Kit Commerce product page MAY name physical therapy** (it is standalone and must say who it is for); **the site's e-book card and modal deliberately do not.**
-
-## Flagship Example
-
-The McKenzie Arm Care app — a custom patient-care web app with user login, journaling, symptom and progress logs, in-app messaging, an admin portal, smart alerts, and email notifications. Proof-of-work for the custom-build service. Use confirmed with permission.
+**Flagship example:** the McKenzie Arm Care app — a custom patient-care web app with user login, journaling, symptom and progress logs, in-app messaging, an admin portal, smart alerts, and email notifications. Proof-of-work for custom builds; use confirmed with permission.
 
 ---
 
-## GlowPT — the two-door product
+## GlowPT — the Two-Door Product
 
-**A marketing constraint list, not architecture.** Source: the GlowPT repo's `docs/commercial-handoff.md`; **the GlowPT code wins on any disagreement.**
+**Marketing constraints, not architecture** (source: the GlowPT repo's `docs/commercial-handoff.md`; **the GlowPT code wins**).
 
 | Fact | What the site may say |
 |---|---|
-| **Signup is fully self-serve.** `glowpt.app/onboard` is a ~4-field form creating the clinic, manager and patient link. | "Sign up online." "Set up your clinic in a minute." |
-| **Activation is NOT self-serve.** A new clinic starts **closed**; David flips it manually, which is where the BAA and first payment are confirmed. | **Nothing implying patients can start checking in right after signup.** |
-| **Two agreements are click-through at signup and FINAL** (the BAA and the Subscription Agreement, version-stamped, accepted online; no attorney, David's call 2026-10-20), under an org-level AWS BAA active since August 2026. | Nothing yet. |
-| **Billing is on Stripe since 2026-10-20:** a $350/month subscription that **renews monthly and can be cancelled anytime** (Subscription Agreement §6; GlowPT shows `RENEWAL_LINE` "Renews monthly. Cancel anytime." on `/onboard`), plus a Stripe billing portal for managers. Lives entirely in the GlowPT repo. | **This site still makes no billing claims.** If one is ever added, use GlowPT's `RENEWAL_LINE` word for word; **no refund or trial claims.** |
-| **Demo data only until a clinic signs and pays** (GlowPT's rule; cyber insurance is still on David's list before the first real patient). | **Nothing implying live clinics are in production.** |
+| **Signup is self-serve:** `glowpt.app/onboard`, a ~4-field form creating the clinic, manager and patient link. | "Sign up online." "Set up your clinic in a minute." |
+| **Activation is NOT self-serve.** A clinic starts **closed**; David flips it manually, where the BAA and first payment are confirmed. | **Nothing implying patients can start checking in right after signup.** |
+| **Two click-through agreements at signup, FINAL** (BAA and Subscription Agreement, version-stamped; no attorney, David's call 2026-10-20), under an org-level AWS BAA active since August 2026. | Nothing yet. |
+| **Billing on Stripe since 2026-10-20:** $350/month, **renews monthly, cancel anytime** (Subscription Agreement §6; GlowPT's `RENEWAL_LINE` "Renews monthly. Cancel anytime." on `/onboard`), plus a Stripe billing portal. All in the GlowPT repo. | **No billing claims here.** If one is ever added, use `RENEWAL_LINE` word for word; **no refund or trial claims.** |
+| **Demo data only until a clinic signs and pays** (cyber insurance is on David's list before the first real patient). | **Nothing implying live clinics are in production.** |
 | **$350 covers the clinic with no patient limit.** | Feature bullet 3 says so. |
 
-**Hard constraints:**
-- ⛔ **No billing, refund or trial claims on this site.** Renewal and cancellation are GlowPT's to state (its `RENEWAL_LINE`); David settled the auto-renewal question himself on 2026-10-20 (Pennsylvania has no auto-renewal statute).
-- ⛔ **Never put an `@glowpt.app` address in a `mailto:`.** glowpt.app has **no root MX record**; mail bounces silently. The contact address is **`david@franklinaisolutions.com`**, everywhere, both sites.
-- ⛔ **Never describe GlowPT as providing an exercise plan or exercise prescription.** See the permanent exclusion under **GlowPT Modal**.
+- ⛔ **No billing, refund or trial claims on this site.** David settled auto-renewal on 2026-10-20 (Pennsylvania has no auto-renewal statute).
+- ⛔ **Never put an `@glowpt.app` address in a `mailto:`**: glowpt.app has **no root MX record**; mail bounces silently. The contact is **`david@franklinaisolutions.com`**, both sites.
+- ⛔ **Never describe GlowPT as providing an exercise plan or exercise prescription** (see **GlowPT Modal**).
 
-**How the two doors reconcile:** the activation flip and the discovery call are the same human step where the BAA and the money get confirmed. The owner who wants to talk first **books the call**; the owner who wants to start **signs up, lands closed, emails David**. **Two doors, one gate.**
+**Two doors, one gate:** the activation flip and the discovery call are the same human step where the BAA and the money are confirmed. The owner who wants to talk first **books the call**; the owner who wants to start **signs up, lands closed, emails David**.
 
-**What differs between the two sites, deliberately:** (1) the pitch's **first sentence** (this site names the niche; glowpt.app, already GlowPT-branded, does not); **the second sentence is identical on all four surfaces**; (2) glowpt.app carries the price line and signup path; (3) **glowpt.app's landing header is deliberately self-sufficient** (reached by URL, search, QR and forwards) — **do not thin it.** The bullets, the entity spelling and the hosting (both Amplify, separate accounts) no longer differ.
-
-> **A thin "handoff-only" FranklinAI modal was proposed and rejected.** **A visitor should reach the price and the feature list before a signup link**, which is why the self-serve door is inside the modal, not on the card.
+**What differs between the sites, deliberately:** (1) the pitch's **first sentence** (this site names the niche); **the second sentence is identical on all four surfaces**; (2) glowpt.app carries **the price line and signup path**; (3) **glowpt.app's landing header is deliberately self-sufficient** (reached by URL, search, QR and forwards) — **do not thin it.** **A thin "handoff-only" modal here was rejected:** a visitor reaches the price and feature list before a signup link, so the self-serve door is inside the modal, not on the card.
 
 ---
 
-## The Offer Ladder
+## The Offer Ladder and Pricing
 
 **The content is free; the ladder is where the money is.**
 
 | Rung | Price | Sells how | On the site | Status |
 |---|---|---|---|---|
-| **The Operator newsletter** | Free | The free engine, on **Kit**. **Not a product.** | Its own card between Hero and Available | **Live and wired**, Kit form `9962049`, double opt-in |
-| **The reconciliation e-book** | $37, one-time | **Self-serve.** The first paid yes. | **First** product on Available; More Info opens `EbookModal` | **Live and buyable** on Kit Commerce since 2026-10-16 (proven by three test purchases) |
+| **The Operator newsletter** | Free | The free engine, on **Kit**. **Not a product.** | Its own card between Hero and Available | **Live**, Kit form `9962049`, double opt-in |
+| **The reconciliation e-book** | $37, one-time | **Self-serve.** The first paid yes. | **First** product on Available; More Info opens `EbookModal` | **Live** on Kit Commerce since 2026-10-16 |
 | **GlowPT** | $350 / month | **Two doors: `glowpt.app/onboard` or the discovery call**, both landing at manual activation. | Available card; both CTAs in `GlowPTModal` | Live |
 | **The custom build** | From $10,000 | Needs the discovery call. | Custom Pricing | Live |
 
-**One ask per issue, matched to the issue** (David, 2026-10-16; **reverses** the August 30 rule that every issue closes on the discovery call and the guide never sells from the close). Issues the guide answers (the model-confusion issues: 1, 2, 4) **close on the guide**; issues it does not answer (AI, systems and similar) **close on the discovery call**. **Never both. GlowPT is never pitched inside an issue.** The call stays on the site and in the guide's P.S., so the path is newsletter, guide, call.
+**One ask per issue, matched to the issue** (David, 2026-10-16; **reverses** the August 30 rule that every issue closes on the call). Issues the guide answers (the model-confusion issues: 1, 2, 4) **close on the guide**; others (AI, systems and similar) **close on the discovery call**. **Never both. GlowPT is never pitched inside an issue.** The call stays on the site and in the guide's P.S.: newsletter, guide, call.
 
-**The e-book:**
-- **Book one is reconciliation** — the newsletter gives the diagnosis free; the book sells the way out.
-- **Checkout: Kit Commerce, DECIDED 2026-09-25.** **Gumroad is merchant of record** (handles US sales tax and EU VAT); **Kit Commerce is not**, so that liability sits with FranklinAI Solutions LLC. **David chose Kit anyway because every buyer lands on the list, which is the point of the $37 rung.** **Gumroad or Payhip only if Kit Commerce fails in practice.** Do not assume Stripe directly (Kit Commerce pays out through a Stripe connection set up inside Kit).
-- **Price appears in three places that move together:** `App.jsx` (**once**, inside the `EbookModal` button label "Buy the Guide · $37"), this file, and the Kit product (id `293598`). **$37 in all three.**
+**The e-book:** **book one is reconciliation** (the newsletter gives the diagnosis free; the book sells the way out). **Checkout: Kit Commerce, DECIDED 2026-09-25.** **Gumroad is merchant of record** (US sales tax, EU VAT); **Kit Commerce is not**, so that liability sits with FranklinAI Solutions LLC; **David chose Kit anyway because every buyer lands on the list, the point of the $37 rung.** **Gumroad or Payhip only if Kit Commerce fails in practice.** Do not assume Stripe directly (Kit pays out through its own Stripe connection). **The price lives in three places that move together:** `App.jsx` (**once**, in the `EbookModal` button label "Buy the Guide · $37"), this file, and the Kit product (id `293598`).
 
----
+**GlowPT's price:** $350 / month, flat, **no patient limit**, shown in the GlowPT modal. **If it changes, THREE places move: `App.jsx`, this file, and `glowpt/src/lib/marketing.js` (`MONTHLY_PRICE_USD`).** ⚠️ **The price line at `glowpt.app/onboard` is a CONTRACT REQUIREMENT** (Subscription Agreement §5.1: "$350 per month, **or the amount stated at sign-up**"; that line IS the amount stated): never remove it or edit it as marketing copy. It is **two constants on two lines** (`PRICE_LINE` "$350 per month, per clinic." and `PATIENTS_FREE_LINE` "Patients join free.") because one string stranded "free." alone on iPhone portrait. **Do not recombine them.**
 
-## Pricing Model
-
-- **GlowPT** — $350 / month, flat, **no patient limit**, displayed in the GlowPT modal. **If it changes, THREE places move: `App.jsx`, this file, and `glowpt/src/lib/marketing.js` (`MONTHLY_PRICE_USD`).**
-  > ⚠️ **The price line at `glowpt.app/onboard` is a CONTRACT REQUIREMENT.** Subscription Agreement §5.1 says "$350 per month, **or the amount stated at sign-up**", and that on-screen line IS the amount stated. Never remove it or edit it as marketing copy. It is **two constants on two lines** (`PRICE_LINE` "$350 per month, per clinic." and `PATIENTS_FREE_LINE` "Patients join free.") because one string stranded "free." alone on iPhone portrait. **Do not recombine them.**
-- **The e-book** — **$37**, one-time, shown once: in `EbookModal`'s button label. Not shown on the card.
-
-**Custom Pricing:**
-- **The Build** — From $10,000. Whisper subtext: "New features quoted and built one at a time, as you grow." (Inter 15px, #8892a4, marginTop: '0')
-- **Monthly Care** — $350 / month. Optional.
+**Custom Pricing:** **The Build** — From $10,000, whisper subtext "New features quoted and built one at a time, as you grow." (Inter 15px, #8892a4, marginTop: '0'). **Monthly Care** — $350 / month, optional.
 
 > ## ⚠️ THE `$350` DECOY — read before changing GlowPT's price
->
-> **`$350` appears TWICE in `App.jsx` and only one is GlowPT.**
-> - **Line 143**, inside `GlowPTModal`'s footer: **GlowPT.**
-> - **Line 558**, `Monthly Care`'s `price: '$350'` in `Pricing()`: **the custom build's hosting-and-maintenance retainer.** Unrelated.
->
-> **If GlowPT's price moves, line 558 must NOT move with it.** **The line numbers drift whenever anything above them changes; treat them as a hint and confirm by the surrounding function name.**
+> **`$350` appears TWICE in `App.jsx` and only one is GlowPT:** **line 143**, inside `GlowPTModal`'s footer (**GlowPT**), and **line 558**, `Monthly Care`'s `price: '$350'` in `Pricing()` (**the custom build's hosting-and-maintenance retainer**, unrelated). **If GlowPT's price moves, line 558 must NOT move with it.** Line numbers drift; confirm by the surrounding function name.
 
-**Order rationale.** The e-book sits first (cheapest paid yes, under the newsletter whose diagnosis it answers), GlowPT second (recurring flagship), then Custom Work as proof, bridging into How It Works and Custom Pricing.
+**Order rationale.** The e-book first (cheapest paid yes, under the newsletter whose diagnosis it answers), GlowPT second (recurring flagship), then Custom Work as proof, into How It Works and Custom Pricing.
 
-## Primary CTA
+## Primary CTA and Email Option
 
-"Book a Free Discovery Call" — hero card, GlowPT modal, Discovery CTA card. Never in the nav or footer. **Title case, no period.**
+"Book a Free Discovery Call" — hero card, GlowPT modal, Discovery CTA card. Never in the nav or footer. **Title case, no period.** Full-page buttons (hero + Discovery): `padding: '11px 22px', fontSize: '14px'`. Modal buttons: `padding: '10px 20px', fontSize: '13px'`, deliberately the smallest; **one exception:** "Buy the Guide · $37" is `12px 26px` at `15px` (David, 2026-10-04: too small for the pop-up's only action). **Link:** `https://cal.com/david-peterson-40s7lw/free-discovery-call`, new tab (`target="_blank" rel="noopener noreferrer"`).
 
-- **Full-page primary buttons (hero + Discovery):** `padding: '11px 22px', fontSize: '14px'`.
-- **Modal buttons:** `padding: '10px 20px', fontSize: '13px'` — deliberately the smallest. **One exception:** the e-book's "Buy the Guide · $37" is `12px 26px` at `15px` (David, 2026-10-04: the modal size was too small for the pop-up's only action).
+> **The filled style is exclusive to the discovery call, site-wide.** Every transaction button is a ghost: "Buy the Guide · $37", "Bring GlowPT to Your Clinic", "Subscribe for Free". **Flipping one to `btn--primary` needs David's explicit say-so** (declined in V49).
 
-**Scheduling link:** `https://cal.com/david-peterson-40s7lw/free-discovery-call`, new tab (`target="_blank" rel="noopener noreferrer"`).
-
-> **The filled style is exclusive to the discovery call, site-wide.** Every transaction button is a ghost: "Buy the Guide · $37", "Bring GlowPT to Your Clinic", "Subscribe for Free". **Flipping a transaction button to `btn--primary` requires David's explicit say-so** (considered and declined in V49).
-
-## Email Option Under the Discovery CTA
-
-`EmailOption` renders beneath the button on the **Discovery CTA card only**: "Not ready to schedule?" then **"Email"** on its own line (via `<br />`), a mailto to **`david@franklinaisolutions.com`**. **No period.** Inter 15px, #8892a4, link #60a5fa at 600, marginTop 18px. Not in the footer, hero, or any modal. It is the middle rung of the readiness ladder.
+`EmailOption`, **on the Discovery CTA card only** (the middle rung of the readiness ladder): "Not ready to schedule?" then **"Email"** on its own line (via `<br />`), a mailto to **`david@franklinaisolutions.com`**. **No period.** Inter 15px, #8892a4, link #60a5fa at 600, marginTop 18px.
 
 ## Newsletter Card — Live and Wired
 
-*The Operator* has **its own card**, between Hero and Available. **It is a card, not a "strip"** (the component is still named `NewsletterStrip`, legacy); do not reintroduce "quiet strip" sizing. **Not a product card; never on the Available card.**
-
-**The masthead lockup (both lines upright):**
+*The Operator* has **its own card** between Hero and Available: **a card, not a "strip"** (the component keeps the legacy name `NewsletterStrip`; no "quiet strip" sizing), **never a product card, never on the Available card.** Both masthead lines upright:
 - **Header "Newsletter"** — blue `card-heading`, `clamp(36px, 5.5vw, 58px)`, `lineHeight: '1.2'`, `marginBottom: 'clamp(4px, 1.5vw, 10px)'`.
 - **Subhead "The Operator"** — white Playfair, `clamp(30px, 5vw, 35px)`, 800, `lineHeight: '1.1'`, `marginTop: '0'`, `marginBottom: '14px'`.
-- **Description** (Inter 15px, #8892a4, `marginTop: '0'`, `marginBottom: '18px'`, `lineHeight: '1.5'`): **"A monthly newsletter for physical therapy practices that takes a look at what's going on in your practice and what to do about it."** (David, 2026-10-04)
+- **Description** (Inter 15px, #8892a4, `marginTop: '0'`, `marginBottom: '18px'`, `lineHeight: '1.5'`): **"A monthly newsletter for physical therapy practices that takes a look at what's going on in your practice and what to do about it."** (David, 2026-10-04). **It appears twice, word for word (card and `NewsletterModal`); they move together.** "about" and "it." are joined by `&nbsp;` so "it." never sits alone on iPhone portrait. `grep -c "A monthly newsletter for physical therapy practices"` → **2**.
+- **Action:** one ghost button **"Subscribe for Free"** (`btn btn--ghost`, `marginTop: '0'`) opening `NewsletterModal`. **No email field on the card** (an inline field was a dead click; V39 reversed V28); **do not re-propose it unless David asks.**
 
-> **The description appears twice, word for word the same** (card and `NewsletterModal`). **They move together.** In the code "about" and "it." are joined by `&nbsp;` so "it." never sits alone on the last line on iPhone portrait; keep it. `grep -c "A monthly newsletter for physical therapy practices"` → **2**.
-
-**The card's action:** one ghost button **"Subscribe for Free"** (`btn btn--ghost`, `marginTop: '0'`) opening `NewsletterModal`. **No email field on the card** — a bold button draws the first click, so an inline field was a dead click (V39 reversed V28). **Do not re-propose the inline field unless David asks.**
-
-**`NewsletterModal`** (the fourth modal): title **"The Operator"**, subline **"Free to subscribe."** (Inter 14px/600/#8899b0), the same description as the card, then a `borderTop` divider wrapping a **`<form>`**: an email input (cream #f0e6d3 on rgba(255,255,255,0.04), 1px border rgba(96,165,250,0.3), 8px radius, **16px font to prevent iOS zoom**, `WebkitAppearance: 'none'`, flex `1 1 220px`, maxWidth 280px, 44px tall, **`name="email_address"`, `required`**) and the ghost Subscribe button (**`type="submit"`**). Under the form, a note **"Then check your email to confirm."** (Inter 14px, #8892a4, marginTop 12px, centered), **hidden once the success line shows**. Then the shared bottom Close.
-- **The 44px alignment fix:** `height`/`minHeight: '44px'`, `boxSizing: 'border-box'`, `display: 'inline-flex'`, centering, and **`marginTop: '0'`** (cancels `.btn`'s `margin-top: 8px`). Keep all of them.
-
-**How the wired form behaves:**
+**`NewsletterModal`** (the fourth modal): title **"The Operator"**, subline **"Free to subscribe."** (Inter 14px/600/#8899b0), the same description, then a `borderTop` divider wrapping a **`<form>`**: an email input (cream #f0e6d3 on rgba(255,255,255,0.04), 1px border rgba(96,165,250,0.3), 8px radius, **16px font to prevent iOS zoom**, `WebkitAppearance: 'none'`, flex `1 1 220px`, maxWidth 280px, 44px tall, **`name="email_address"`, `required`**) and the ghost Subscribe button (**`type="submit"`**). Under it, **"Then check your email to confirm."** (Inter 14px, #8892a4, marginTop 12px, centered), **hidden once the success line shows**; then the shared bottom Close. **The 44px alignment fix:** `height`/`minHeight: '44px'`, `boxSizing: 'border-box'`, `display: 'inline-flex'`, centering, and **`marginTop: '0'`** (cancels `.btn`'s `margin-top: 8px`); keep all of them.
 
 | Moment | What happens |
 |---|---|
 | Submit | `fetch` POST of a `FormData` with **`email_address`** to **`https://app.kit.com/forms/9962049/subscriptions`** (`KIT_FORM_URL`), header `Accept: application/json`. Kit answers any origin with `{"status":"success"}` or `{"status":"failed","errors":{"fields":[...]}}`. |
 | In flight | Input and button disabled; button reads **"Subscribing…"**. |
-| Success | Row replaced by **"Almost there. Check your email to confirm."** (`role="status"`); the modal **closes itself after 2.5 seconds**. *(The note under the form exists because this line can be missed. A three-line success state that stayed open was tried and rejected as too wordy on 2026-09-27; keep the one line and the auto-close.)* |
-| Kit rejects the address | Modal stays open: **"That email address doesn't look right. Check it and try again."** (`role="alert"`) |
-| Anything else fails | Modal stays open: **"That didn’t go through. Please try again in a moment."** |
+| Success | Row replaced by **"Almost there. Check your email to confirm."** (`role="status"`; Inter 15px, #f0e6d3, lineHeight 1.5, min-height 44px so the modal does not jump); the modal **closes itself after 2.5 seconds** (a three-line success state that stayed open was rejected as too wordy, 2026-09-27). |
+| Kit rejects the address | Stays open: **"That email address doesn't look right. Check it and try again."** (`role="alert"`; Inter 14px, #8899b0, lineHeight 1.5, centered) |
+| Anything else fails | Stays open: **"That didn’t go through. Please try again in a moment."** |
 
-> **If Kit's double opt-in is ever turned OFF, change the success line to "You're in."** Double opt-in is ON by David's choice (keeps fake and mistyped addresses off the list).
->
+**If Kit's double opt-in is ever turned OFF, change the success line to "You're in."** It is ON by David's choice (keeps fake and mistyped addresses off the list).
 
 ## Tech Stack
 
-React + Vite, plain CSS (no Tailwind), **AWS Amplify Hosting**, GitHub. **This site is a pure static build: no backend, no serverless functions, no env files.** Kit's form endpoint works from the browser and the Kit Commerce checkout is a plain link, so **no remaining wiring needs a backend. Do not propose one.** **The Kit form ID `9962049` is public by nature** and lives in `App.jsx` as a constant.
-
-> **Stack boundary.** **site → Amplify, account `franklinai-web`, hosting only. Newsletter and (soon) the e-book checkout → Kit. GlowPT → AWS account `glowpt-prod`, its own repo. McKenzie Arm Care → Supabase, still hosted on Netlify, its own folder.**
+React + Vite, plain CSS (no Tailwind), **AWS Amplify Hosting**, GitHub. **A pure static build: no backend, no serverless functions, no env files.** Kit's form endpoint works from the browser and the checkout is a plain link, so **nothing needs a backend. Do not propose one.** **The Kit form ID `9962049` is public by nature**, a constant in `App.jsx`. **Stack boundary:** site → Amplify (account `franklinai-web`, hosting only); newsletter and the e-book checkout → Kit; GlowPT → AWS account `glowpt-prod`, its own repo; McKenzie Arm Care → Supabase, hosted on Netlify, its own folder.
 
 ---
 
 ## Hosting and DNS (AWS)
 
-**franklinaisolutions.com moved from Netlify to AWS Amplify Hosting on 2026-09-25**, no downtime, no lost mail. **Add any future records in Route 53, never in Netlify.**
-
-### Where everything lives
+**On AWS Amplify since 2026-09-25** (moved from Netlify with no downtime or lost mail). **Netlify is gone for this site** (David deleted the site `franklinai-solutions` and its zone on 2026-10-17 after confirming every record live in Route 53; glowpt.app's leftover zone too); **it holds only McKenzie (`mckenziearmcare.com`): leave it alone.** **New records go in Route 53.**
 
 | Thing | Value |
 |---|---|
-| **AWS account** | **`franklinai-web`, 359813812260**, in the org's **`Workloads`** OU (`ou-i93g-vvz3dnxq`) beside `glowpt-prod`. Root email `besoulful+aws-franklinai-web@gmail.com`. **Not** the management account (billing, org BAA, Bedrock) and **never** `glowpt-prod` (patient data). |
-| **Region** | **`us-east-1`**, always. |
-| **Access** | IAM Identity Center user `david`, permission set `AdministratorAccess`. CLI profile **`franklinai-web`** in `~/.aws/config` (`sso_session = glowpt`; one login covers all three profiles for 8 hours). |
-| **Amplify app** | name **`franklinai-web`**, appId **`dtrvxjb8lde3p`**, branch **`main`**, default address `https://main.dtrvxjb8lde3p.amplifyapp.com`. Framework "None", SSR disabled, Standard build instance, default build image, **no environment variables**. |
-| **Custom domain** | apex and `www`, both → `main`. Certificate **AMPLIFY_MANAGED** (`*.franklinaisolutions.com`, Amazon RSA 2048), renews itself. CloudFront target `dbgirmwp1juc8.cloudfront.net`. |
-| **Route 53 zone** | **`Z0616895187ZTAR49DY5P`**. Nameservers: `ns-561.awsdns-06.net`, `ns-389.awsdns-48.com`, `ns-1501.awsdns-59.org`, `ns-1898.awsdns-45.co.uk`. Negative-caching TTL effectively **900s (15 minutes)**. |
-| **Registrar** | **GoDaddy, registrar only.** Only the nameserver list changed there. **Do not touch anything else at GoDaddy, and never touch the Microsoft 365 tenant, as part of site work.** |
-| **GitHub link** | GitHub app **"AWS Amplify (us-east-1)"** on `besoulful-design`, repository access **`glowpt` + `franklinai-v2` only**. Removing `glowpt` would break GlowPT's builds. |
-| **Cost** | About $1–2/month. The org's $150 budget alarm covers every account. |
+| **AWS account** | **`franklinai-web`, 359813812260**, in the org's **`Workloads`** OU (`ou-i93g-vvz3dnxq`) beside `glowpt-prod`; root email `besoulful+aws-franklinai-web@gmail.com`. **Not** the management account (billing, org BAA, Bedrock); **never** `glowpt-prod` (patient data). Region **`us-east-1`**, always. |
+| **Access** | Identity Center user `david`, permission set `AdministratorAccess`; CLI profile **`franklinai-web`** in `~/.aws/config` (`sso_session = glowpt`; one login covers all three profiles for 8 hours). |
+| **Amplify app** | **`franklinai-web`**, appId **`dtrvxjb8lde3p`**, branch **`main`**, `https://main.dtrvxjb8lde3p.amplifyapp.com`; framework "None", SSR disabled, Standard build instance, default image, **no environment variables**. Domain: apex and `www` → `main`; certificate **AMPLIFY_MANAGED** (`*.franklinaisolutions.com`, Amazon RSA 2048, self-renewing); CloudFront target `dbgirmwp1juc8.cloudfront.net`. |
+| **Route 53 zone** | **`Z0616895187ZTAR49DY5P`**; nameservers `ns-561.awsdns-06.net`, `ns-389.awsdns-48.com`, `ns-1501.awsdns-59.org`, `ns-1898.awsdns-45.co.uk`; negative-caching TTL effectively **900s (15 minutes)**. |
+| **Registrar** | **GoDaddy, registrar only** (only the nameservers changed there). **Touch nothing else at GoDaddy, and never the Microsoft 365 tenant, in site work.** |
+| **GitHub link** | App **"AWS Amplify (us-east-1)"** on `besoulful-design`, access to **`glowpt` + `franklinai-v2` only** (removing `glowpt` breaks GlowPT's builds). |
+| **Cost** | About $1–2/month, under the org's $150 budget alarm. Faster than Netlify to David's eye; **nobody has timed it, so quote no number.** |
 
-> David reports the site loads noticeably faster on Amplify. **Nobody has timed it; do not quote a number.**
+**In the repo (`0279ffe`):** **`amplify.yml`** (`nvm install`, `nvm use`, `node --version`, `npm ci`, `npm run build`; artifacts `dist`; caches `node_modules`); **`.nvmrc`** = **`24`** (bump Node here, not in `amplify.yml`); **`customHttp.yml`** (**HSTS** `max-age=31536000` everywhere; **`no-cache`** `public, max-age=0, must-revalidate` on `**/*.html`; hashed assets may be cached hard).
 
-### What lives in the repo, and what does NOT
+**Outside git, recorded here because no diff shows them:** **Amplify rewrites** (read with `aws amplify get-app --app-id dtrvxjb8lde3p --profile franklinai-web`), in order: (1) **`https://www.franklinaisolutions.com` → `https://franklinaisolutions.com`, 301**; (2) **`/<*>` → `/index.html`, `404-200`**, Amplify's default, fine with no router (**if a router is ever added, do not trust it**; GlowPT needed a regex SPA rewrite); **the domain association**; **the Kit account** (below); and **`.claude/settings.local.json`**, David's narrow Route 53 permission file (gitignored, `fb01e32`). **Any change to settings outside git must be recorded here.**
 
-**In the repo (commit `0279ffe`):** **`amplify.yml`** (`nvm install`, `nvm use`, `node --version`, `npm ci`, `npm run build`; artifacts `dist`; caches `node_modules`); **`.nvmrc`** = **`24`** (bump Node here, not in `amplify.yml`); **`customHttp.yml`** (**HSTS** `max-age=31536000` on everything, **`no-cache`** `public, max-age=0, must-revalidate` on `**/*.html`; Vite's hashed assets may be cached hard).
-
-**NOT in the repo — Amplify app settings** (read with `aws amplify get-app --app-id dtrvxjb8lde3p --profile franklinai-web`):
-- **Rewrites and redirects, in order:** (1) **`https://www.franklinaisolutions.com` → `https://franklinaisolutions.com`, 301** (matches Netlify's old behaviour; without it `www` served a 200); (2) **`/<*>` → `/index.html`, `404-200`**, Amplify's default. Fine for a single page with no router. **If a router is ever added, do not trust this default**: GlowPT had to replace it with a regex SPA rewrite.
-- **The domain association** (apex + `www`, managed certificate).
-
-**NOT in the repo — the Kit account's settings.** See **Kit**.
-
-**In the repo but NOT in git: `.claude/settings.local.json`**, David's narrow Route 53 permission file (gitignored, `fb01e32`). See *Working across the two repos*.
-
-> **Any change to settings outside git must be recorded here**, because nothing in git will show it.
-
-### The DNS records, and why the mail ones are sacred
-
-**Route 53's own listing is the authority** (`aws route53 list-resource-record-sets --hosted-zone-id Z0616895187ZTAR49DY5P --profile franklinai-web`). The zone was copied from Netlify's panel, not from `dig` (`dig` cannot list a zone).
+**Route 53's own listing is the authority** (`aws route53 list-resource-record-sets --hosted-zone-id Z0616895187ZTAR49DY5P --profile franklinai-web`; `dig` cannot list a zone).
 
 | Name | Type | Value | What it does |
 |---|---|---|---|
@@ -340,91 +223,62 @@ React + Vite, plain CSS (no Tailwind), **AWS Amplify Hosting**, GitHub. **This s
 | **`cka2._domainkey`** | CNAME | `dkim2.dm-8d22d771.sg2.convertkit.com.` | **Kit DKIM key 2.** TTL 300. |
 | **`_dmarc`** | TXT | `"v=DMARC1; p=none;"` | **DMARC, monitor-only**, added with David's explicit yes. `p=none` never blocks anything, so it cannot interfere with Microsoft 365 mail. TTL 300. |
 
-**Not present, deliberately:** AAAA, CAA, **Microsoft 365 DKIM**, **DNSSEC (no DS record at the registry)**. **Do not add any of them as a side effect of other work.** Tightening DMARC past `p=none` is a legitimate future change, but only as its own change, after checking both Microsoft 365 and Kit mail pass, tested with a mail round-trip.
+**Not present, deliberately:** AAAA, CAA, **Microsoft 365 DKIM**, **DNSSEC (no DS record at the registry)**. **Add none of them as a side effect of other work.** Tightening DMARC past `p=none` is a legitimate future change only as its own change, after both Microsoft 365 and Kit mail pass, tested with a mail round-trip.
 
-> **The rule for every DNS change on this domain:** one change at a time; **copy any mail or verification record exactly, oddities included**; **before writing a record read off a screenshot, confirm its target resolves**; verify each record on a Route 53 nameserver directly (`dig @ns-561.awsdns-06.net <name> <type>`) and **re-read the apex MX and TXT on the same query**; after anything that could touch mail, **David sends a test email both ways** (to and from an outside address).
+> **The rule for every DNS change:** one change at a time; **copy any mail or verification record exactly, oddities included**; **before writing a record read off a screenshot, confirm its target resolves**; verify each record on a Route 53 nameserver directly (`dig @ns-561.awsdns-06.net <name> <type>`) and **re-read the apex MX and TXT on the same query**; after anything that could touch mail, **David sends a test email both ways** (to and from an outside address).
 
-### The switch method (reuse it for McKenzie)
+**The Netlify-to-Amplify switch method** (reuse it for McKenzie) is written out in `docs/history.md` section 0ii: inventory the old zone; prove the new host first; copy every record; issue the certificate before the switch; rehearse with `curl --resolve`; compare both providers' answers and check the registry for a DS record; only then David swaps nameservers and tests mail both ways.
 
-1. **Inventory** the old zone from the provider's panel, all of it.
-2. **Build and prove the new host first** on its private address, comparing files byte by byte with the live site.
-3. **Create the new zone and copy every record** except the old host's website and NS/SOA records.
-4. **Issue the certificate BEFORE the switch** by adding the validation CNAME in the **old** DNS as well.
-5. **Rehearse** with `curl --resolve <domain>:443:<cloudfront ip>` to check the certificate and redirects before any visitor sees them.
-6. **Compare every record on both providers' nameservers directly**, and check the registry for a **DS record** (a DNSSEC DS pointing at the old provider breaks resolution).
-7. **Only then** David swaps the nameservers at the registrar, then tests mail both ways.
-
-**Reassurances that were true:** the nameserver change is reversible; sending mail servers retry for days, so a mistake delays mail rather than losing it; while caches hold the old nameservers, both providers serve identical answers.
-
-### Traps — do not repeat them
-
-- **`.nvmrc` is read by Netlify too.** Any file Amplify reads may also be read by whatever else still builds the repo.
-- **The Amplify console can default to the wrong region** (it once showed "AWS Amplify (us-east-2)"). **Check account and region in the console header before every Amplify or Route 53 click.**
-- **Safari's pop-up handling breaks the GitHub step inside the Amplify console.** Go to **github.com/settings/installations → AWS Amplify (us-east-1) → Configure → Repository access**; clicking a repo name adds it; then refresh in Amplify.
-- **Never click "Edit YML file" in the Amplify console** (it can commit `amplify.yml` back into the repo; the file in git is the source).
-- **No Amplify firewall (WAF).** Not justified; ignore the console's "Enable firewall" card.
-- **The Claude Code safety system blocks `aws organizations` writes and Identity Center grants.** David does those in the console.
-- **Route 53 writes from this root need the permission file** (see *Working across the two repos*). **A command with `export PATH=...` in front no longer matches a prefix allowlist**, and **auto-approve flags trip the classifier**; try the plain command first.
-- **`--hosted-zone-config Comment=...` shorthand splits on commas** (pass JSON), and **zsh globs unquoted `--query ChangeInfo.[Id,Status]`** (quote JMESPath with brackets).
+**Traps — do not repeat them:**
+- **Any file Amplify reads may also be read by whatever else builds the repo** (`.nvmrc` was read by Netlify too).
+- **Check account and region in the console header before every Amplify or Route 53 click** (it once showed "AWS Amplify (us-east-2)").
+- **Safari's pop-up handling breaks the GitHub step in the Amplify console:** use **github.com/settings/installations → AWS Amplify (us-east-1) → Configure → Repository access**, click the repo name, then refresh in Amplify.
+- **Never click "Edit YML file" in the Amplify console** (it can commit `amplify.yml` back; the file in git is the source). **No Amplify firewall (WAF)**; ignore the "Enable firewall" card.
+- **The Claude Code safety system blocks `aws organizations` writes and Identity Center grants;** David does those in the console.
+- **Route 53 writes from this root need the permission file.** **An `export PATH=...` prefix no longer matches a prefix allowlist** and **auto-approve flags trip the classifier**; try the plain command first. **`--hosted-zone-config Comment=...` shorthand splits on commas** (pass JSON); **zsh globs unquoted `--query ChangeInfo.[Id,Status]`** (quote it).
 - **The AWS console and the terminal are different sessions.** Run `aws sso login --profile …` in the background; Safari opens and David approves with Touch ID. **Do not hand him a command to paste.**
-- **A brand-new DNS name can "fail validation" for up to 15 minutes** (negative caching). **Wait and validate again; do not change the records.**
-- **Never click Kit's "Set this up for me"** (it asks to connect Kit to the DNS provider). Records go in by hand.
-- **Measure before theorizing.** Read the account with one CLI call before arguing with AWS.
-
-### Netlify: gone (2026-10-17)
-
-**David deleted the franklinai site (`franklinai-solutions`) and the franklinaisolutions.com DNS zone in Netlify on 2026-10-17**, after checking that every record in that zone was live in Route 53 and the live nameservers were Amazon's; a test email to `david@` arrived afterwards. **The leftover glowpt.app zone in Netlify went the same day** (recorded in GlowPT's CLAUDE.md). **Netlify now holds only McKenzie (`mckenziearmcare.com`, site and zone); leave it alone.** Pushes to this repo no longer build on Netlify.
+- **A brand-new DNS name can "fail validation" for up to 15 minutes** (negative caching): **wait and validate again; do not change the records.**
+- **Never click Kit's "Set this up for me"** (it connects Kit to the DNS provider); records go in by hand.
+- **Measure before theorizing:** read the account with one CLI call before arguing with AWS.
 
 ---
 
-## Kit (newsletter platform)
+## Kit (Newsletter Platform)
 
-**Kit's settings live in Kit's web app (`app.kit.com`), not in git. This section is their record. Any change in Kit that affects what readers receive must be recorded here.**
+**Kit's settings live in Kit's web app (`app.kit.com`), not in git; this is their record. Any Kit change that affects what readers receive is recorded here.**
 
 | Thing | Value |
 |---|---|
-| **Account** | Login **`david@franklinaisolutions.com`**, owner David Peterson, account name **FranklinAI**, website `https://franklinaisolutions.com`. Created 2026-09-25. |
-| **Plan** | **Creator, billed monthly ($39 + tax, on the 14th; renews 2026-11-14)**, chosen by David 2026-10-14 on his card; can drop to Free any month. **Creator caps the list at 1,000 subscribers** (Free allows 10,000): revisit near 1,000. Chosen over Free for the **Kit MCP**, **sequences and automations**, and removing Kit branding. ⚠️ **A lapsed trial is NOT a silent fall back to Free:** when the 2026-09-25 Creator trial ended (2026-10-09), Kit locked the account and **stopped sending confirmation emails** until a plan was picked. **After any plan change, send a test signup through to Confirmed.** (Fixed and tested 2026-10-14: `+confirm1` arrived in the inbox and confirmed.) |
-| **Form** | **"The Operator site signup"**, **ID `9962049`**, inline, template "Clare", **published**. Its Kit styling and "success message" setting are unused: the site posts to its endpoint from its own form. **After confirming, readers are redirected to `https://franklinaisolutions.com/confirmed`** (our own page since 2026-10-16; Kit's default page carried a badge that cannot be switched off). |
-| **Double opt-in** | **ON.** Form Settings → Confirmation email: *Send confirmation email* ticked, *Auto-confirm* unticked. |
-| **Confirmation email** | **Live since 2026-10-16:** subject *Confirm your subscription to The Operator*; top line *Thanks for signing up for The Operator. Tap the button below to confirm, and the next issue will come straight to your inbox.*; button *Confirm Your Subscription*; closing *Glad you're here.* / *Warmest wishes,* / *David Peterson* with *FranklinAI Solutions LLC* on the next line (a Shift+Return line break; full name since 2026-10-21). **The newsletter site's confirmation email ends exactly the same way; keep the two matching.** Edited only in Kit (Landing pages & forms → the form → Settings → Confirmation email → Edit Email Contents); the MCP cannot reach it. |
-| **Sender** | **FranklinAI <david@franklinaisolutions.com>**, confirmed, default (David, 2026-10-20: "reads more like a company newsletter"; **reverses** the 2026-10-16 "sender stays David Peterson"). Edited in **Settings → Email → Email addresses** (click the name). Every broadcast, sequence, receipt and the confirmation email follow the default. |
-| **Verified sending domain** | **`franklinaisolutions.com`, validated 2026-09-25** with the four Kit records above. Gmail's "via n.convertkit.com" label is gone. |
-| **Mailing address (email footer)** | **Kit's shared stand-in: 600 1st Ave, Ste 330 PMB 92768, Seattle, WA 98104-2246.** Allowed for Kit emails only; **mail there is not forwarded.** David's home address declined for privacy. **Kept by David's choice (2026-10-17); do not suggest a PO box again.** If it ever changes: **Settings → Email → Mailing address**, prefixed **`FranklinAI Solutions LLC, `**. **Never print Kit's address anywhere outside Kit.** |
-| **Brand name in Kit** | "FranklinAI". The legal name belongs in the footer address and the Kit Commerce payout setup. |
-| **Privacy settings** | GDPR consent page: **Don't show to anyone.** Unsubscribe survey: **off.** |
-| **Revenue / Kit Commerce** | **Payouts connected 2026-09-26** (Settings → Revenue → Set up payments): a **Stripe Express** account under Kit, login `david@franklinaisolutions.com`. **Business type Company, Single-member LLC, legal name FranklinAI Solutions LLC** with the LLC's EIN; website `https://franklinaisolutions.com`; industry **Digital products → Books**; David as account representative. **Payout bank: the LLC's Bluevine business checking** (it shows in Stripe as **Coastal Community Bank**, Bluevine's partner bank; that is correct). **Statement descriptor `FRANKLINAI`** in both Stripe and Kit's Commerce settings (Stripe's default truncated to "FRANKLINAISOLUTIONS.CO", which reads as a different domain and invites disputes). Payouts **weekly on Fridays**. Details changed later via **Open in Stripe** on that page. **Product live 2026-10-16:** *What Your Practice Actually Sells*, id `293598`, $37 standard one-time, the final PDF delivered as an emailed download link, page `https://franklinai.kit.com/products/what-your-practice-actually-sells` (Kit's subdomain, no DNS); page text is the description David approved 2026-10-16, image the book cover, button *Buy the Guide*, badge off on the page and the thank-you page. **First purchase 2026-10-16** (David's own, `besoulful+buyer1@…`, $37, personal card): the buyer was added as an **active subscriber directly, no double opt-in, no tag**; receipt and download arrived; the card shows **"FranklinAI"** and $37. Kit collects no US sales tax (receipts show 0.00). **David's call 2026-10-19: keep $37 and pay Pennsylvania's share out of PA sales; no price change, no tax line in any copy.** He registers for a PA sales tax license (myPATH) and confirms tax-included pricing and the filing schedule with an accountant. Other states only past their nexus thresholds. Nothing for this site or Kit to do. ⛔ Never record account numbers, SSN, or home address here (public repo). |
-| **Kit MCP** | **Connected 2026-10-04** as a claude.ai connector (David's call), so a Code session can read the account directly. **It needs the Creator plan** (lost on Free). **It can also write** (subscribers, broadcasts, products): **read freely, but show David the exact change and get his yes before any write.** `list_forms` is avoided: Kit warns it can publish unsaved form edits. **It cannot** upload a file, edit a product page, edit forms or the confirmation email, create Rules or Visual automations, edit email templates, or send a test or schedule a broadcast: those are David's clicks. **A test send** is the **eye icon** at the right end of the broadcast editor's toolbar (Preview), then send a test; links in a test email open Kit's "Link preview" page, which is normal. **`update_broadcast` with `public: true`** is the Publish page's **"Add to your Newsletter site"**. |
-| **Subscribers** | **Three as of 2026-10-20:** **Felix** (`felixzheng0813@…`, David's husband, a real reader since 2026-10-17), **Kevin** (`kevin.e.gard@…`, a real PT reader since 2026-10-07) and **Dolly** (`besoulful+dolly@…`), the test reader kept so David sees each issue arrive. **Every other test address is unsubscribed** (buyer1, buyer2, buyer3, steve-tester, testerknox, kitsite, kitsite2, earlier ones), so **unsubscribe any new test address before an issue goes out.** Unsubscribing a buyer does not touch their purchase or download. Kit's lists lag a minute after an unsubscribe. |
-| **Automated emails** | All from **FranklinAI** (the default sender) on the **"Text only"** template (Classic, the default), **its "Built with Kit" badge off** (Broadcasts → Email templates → Text only → Additional; one switch covers every email). **Welcome:** sequence *The Operator: welcome* (`2931894`), one email, sent right away, triggered by **two Rules**: subscribes to form *The Operator site signup* → this sequence, and (since 2026-10-20) subscribes to form *Newsletter site* → this sequence. **Buyer follow-up:** sequence *Guide buyers: follow-up* (`2931893`, email `10441959`), one email with **Operator line A** (buyers join the list directly, confirmed by the test purchase), **delay 2 days** (sends at the sequence's 11 AM Eastern), triggered by the **Visual automation "Guide buyers"** (Product purchased → this sequence; Rules has no purchase trigger). Copy from the 2026-10-16 claude.ai handoff (banked). Both sign off *David Peterson* (Copy Rules). |
-| **Newsletter site** | `https://franklinai.kit.com` (Kit's subdomain), where sent issues are published. Profile set 2026-10-20: name **FranklinAI**, byline **The Operator**, description = the site's one-sentence newsletter description, photo = the kite on navy (`FranklinAI-kite-profile.png`, 800×800, rendered from the inline `KiteLogo`; kept in David's Downloads, not this repo). **Its "Built with Kit" badge is hidden by Custom CSS** (2026-10-21, Kit support's fix: the editor has no working badge toggle). It lives in **Design & Template → Advanced → Custom CSS**: `a.color-badge.p-2.flex.items-center.justify-center.transition-transform.transform.scale-100.hover\:scale-105.duration-300 { display: none !important; }`. Checked live on the profile page and the Issue 1 post (`display: none`). **If the badge ever comes back, Kit renamed its classes:** replace it with `a.color-badge { display: none !important; }`. The editor preview still shows the badge; only the live site matters. Edited in **Audience growth → Newsletter site**, then **Publish**. **⚠️ Its Subscribe boxes (profile page and every post) are a SEPARATE form, "Newsletter site", with its own settings under the editor's Sign Up Form:** confirmation email set 2026-10-20 to match ours (subject *Confirm your subscription to The Operator*, same top line and *Confirm Your Subscription* button, closing identical to the site form's: *Glad you're here.* / *Warmest wishes,* / *David Peterson* / *FranklinAI Solutions LLC*, since 2026-10-21), redirect **`https://franklinaisolutions.com/confirmed`**. Its on-page success line ("Success! You've been added to the list…") does not mention confirming and has no documented setting; a question for Kit support if it ever matters. **Tested end to end 2026-10-20** (`+kitsite2`: our email, our page, the welcome). |
+| **Account** | Login **`david@franklinaisolutions.com`**, owner David Peterson, account name **FranklinAI**, website `https://franklinaisolutions.com`; created 2026-09-25. Brand name in Kit "FranklinAI" (the legal name only in the footer address and payouts). GDPR consent page: **Don't show to anyone.** Unsubscribe survey: **off.** |
+| **Plan** | **Creator, monthly ($39 + tax on the 14th; renews 2026-11-14)**, David's card; can drop to Free any month. **Creator caps the list at 1,000** (Free allows 10,000): revisit near 1,000. Kept for the **Kit MCP**, sequences and automations, and no Kit branding. ⚠️ **A lapsed plan locks the account and stops confirmation emails** (it happened 2026-10-09); **after any plan change, send a test signup through to Confirmed.** |
+| **Form** | **"The Operator site signup"**, **ID `9962049`**, inline, template "Clare", **published**; its Kit styling and "success message" are unused (the site posts to its endpoint). **Double opt-in ON** (Form Settings → Confirmation email: *Send confirmation email* ticked, *Auto-confirm* unticked). **After confirming, readers go to `https://franklinaisolutions.com/confirmed`** (Kit's default page carries a badge that cannot be switched off). |
+| **Confirmation email** | Subject *Confirm your subscription to The Operator*; top line *Thanks for signing up for The Operator. Tap the button below to confirm, and the next issue will come straight to your inbox.*; button *Confirm Your Subscription*; closing *Glad you're here.* / *Warmest wishes,* / *David Peterson* with *FranklinAI Solutions LLC* on the next line (Shift+Return). **The newsletter site's form ends exactly the same way; keep them matching.** Edited only in Kit (Landing pages & forms → the form → Settings → Confirmation email → Edit Email Contents); the MCP cannot reach it. |
+| **Sender** | **FranklinAI <david@franklinaisolutions.com>**, the default (David, 2026-10-20: "reads more like a company newsletter"), in **Settings → Email → Email addresses** (click the name); every broadcast, sequence, receipt and confirmation follows it. Sending domain `franklinaisolutions.com` verified 2026-09-25 (the four Kit DNS records). |
+| **Mailing address (email footer)** | **Kit's shared stand-in: 600 1st Ave, Ste 330 PMB 92768, Seattle, WA 98104-2246**, for Kit emails only; **mail there is not forwarded.** **David's choice (2026-10-17); do not suggest a PO box again. Never print Kit's address outside Kit.** To change it: **Settings → Email → Mailing address**, prefixed **`FranklinAI Solutions LLC, `**. |
+| **Payouts (Kit Commerce)** | A **Stripe Express** account under Kit (Settings → Revenue → Set up payments), login `david@franklinaisolutions.com`, as **Company, Single-member LLC, FranklinAI Solutions LLC** with the LLC's EIN; industry **Digital products → Books**. Paid **weekly on Fridays** to the LLC's **Bluevine business checking** (shown in Stripe as **Coastal Community Bank**, Bluevine's partner bank; correct). **Statement descriptor `FRANKLINAI`** in Stripe and Kit (the default "FRANKLINAISOLUTIONS.CO" reads as another domain and invites disputes). Changes via **Open in Stripe**. ⛔ Never record account numbers, SSN or home address here (public repo). |
+| **The guide (product)** | *What Your Practice Actually Sells*, id `293598`, $37 one-time, the final PDF by emailed download link, page `https://franklinai.kit.com/products/what-your-practice-actually-sells` (Kit's subdomain, no DNS), button *Buy the Guide*, badge off on the page and the thank-you page. **Buyers join as active subscribers directly** (no double opt-in, no tag); card statements read **"FranklinAI"**. Kit collects no US sales tax: **David's call 2026-10-19: keep $37 and pay Pennsylvania's share out of PA sales; no price change, no tax line in any copy** (other states only past their nexus thresholds; his open questions are in Open Items). |
+| **Kit MCP** | A claude.ai connector since 2026-10-04; **needs the Creator plan.** **It can write: read freely, but show David the exact change and get his yes before any write.** Avoid `list_forms` (Kit warns it can publish unsaved form edits). **It cannot** upload a file, edit a product page, forms, the confirmation email or email templates, create Rules or Visual automations, or send a test or schedule a broadcast: David's clicks. **A test send:** the **eye icon** (Preview) at the right end of the broadcast editor's toolbar; links in a test email open Kit's "Link preview" page, which is normal. **`update_broadcast` with `public: true`** = the Publish page's **"Add to your Newsletter site"**. |
+| **Subscribers** | **Three as of 2026-10-20:** **Felix** (`felixzheng0813@…`, David's husband), **Kevin** (`kevin.e.gard@…`, a PT reader), **Dolly** (`besoulful+dolly@…`, the test reader kept so David sees each issue arrive). **Every other test address is unsubscribed; unsubscribe any new one before an issue goes out** (a buyer's purchase and download are unaffected). Lists lag a minute after an unsubscribe. |
+| **Automated emails** | All from **FranklinAI** on the **"Text only"** template (Classic, the default), **its "Built with Kit" badge off** (Broadcasts → Email templates → Text only → Additional; one switch for every email). **Welcome:** sequence *The Operator: welcome* (`2931894`), one email, right away, via **two Rules** (subscribes to form *The Operator site signup*, or to form *Newsletter site*). **Buyer follow-up:** sequence *Guide buyers: follow-up* (`2931893`, email `10441959`), one email with **Operator line A** (buyers join the list directly), **delay 2 days** (sends at 11 AM Eastern), via the **Visual automation "Guide buyers"** (Product purchased; Rules has no purchase trigger). No kite-and-wordmark email footer unless David asks (images get blocked; it reads as marketing). |
+| **Newsletter site** | `https://franklinai.kit.com`, where sent issues are published; **Audience growth → Newsletter site**, then **Publish**. Profile: name **FranklinAI**, byline **The Operator**, the site's one-sentence newsletter description, photo the kite on navy (`FranklinAI-kite-profile.png`, 800×800, rendered from the inline `KiteLogo`; in David's Downloads, not this repo). **"Built with Kit" badge hidden by Custom CSS** (Kit support's fix, 2026-10-21; **Design & Template → Advanced → Custom CSS**): `a.color-badge.p-2.flex.items-center.justify-center.transition-transform.transform.scale-100.hover\:scale-105.duration-300 { display: none !important; }`. **If it ever comes back, Kit renamed its classes:** use `a.color-badge { display: none !important; }`. The editor preview still shows it; only the live site matters. **⚠️ Its Subscribe boxes are a SEPARATE form, "Newsletter site"** (the editor's Sign Up Form): our confirmation email, redirect **`https://franklinaisolutions.com/confirmed`**, the welcome by the second Rule (tested end to end 2026-10-20). Its on-page success line ("Success! You've been added to the list…") does not mention confirming and has no documented setting. |
 
-> **Reading Kit's numbers.** The **summary boxes** at the top of Subscribers **lag** by minutes to an hour; **the list below, with its "Total: N", is live.** **Kit's page does not refresh itself**: a subscriber who has just confirmed still shows **Unconfirmed** (the normal state between signup and the tap) until you reload, and a **"Status is Confirmed" filter hides them** entirely. **"Opened" can be inflated by Gmail fetching images**, so treat open rates as rough. The per-subscriber page shows Delivered / Opened / Clicked with **exact times on hover** — the tool for diagnosing a stuck signup.
+> **Reading Kit's numbers.** The **summary boxes** atop Subscribers **lag** minutes to an hour; **the list's "Total: N" is live.** The page does not refresh itself: a just-confirmed subscriber shows **Unconfirmed** (normal between signup and the tap) until you reload, and a **"Status is Confirmed" filter hides them.** **"Opened" can be inflated by Gmail fetching images.** The per-subscriber page shows Delivered / Opened / Clicked with **exact times on hover**, the tool for a stuck signup.
 
 ---
 
-## Repo
+## Repo, Domain, Icons, Scheduling
 
-github.com/besoulful-design/franklinai-v2 · local path `~/Downloads/franklinai-v2`
-*(Sibling: github.com/besoulful-design/glowpt · `~/Downloads/glowpt`)*
+github.com/besoulful-design/franklinai-v2 · local path `~/Downloads/franklinai-v2` *(sibling: github.com/besoulful-design/glowpt · `~/Downloads/glowpt`)*. **Pushing to `main` deploys through Amplify** (about a minute and a half; every push is a build, so batching commits reads better). **HTML is served `no-cache`**: a deploy shows on the next load; hard refresh with Cmd+Shift+R; favicon changes need the tab closed and reopened. **Domain:** franklinaisolutions.com (registrar GoDaddy, DNS in Route 53, hosting on Amplify, Kit sends as it); GlowPT's site is **glowpt.app**.
 
-**Pushing to `main` deploys the live site through Amplify** (about a minute and a half). Every push is a build; batching commits reads better. **HTML is served `no-cache`**, so a new deploy shows on the next load; hard refresh with Cmd+Shift+R; favicon changes need the tab closed and reopened.
+**Public assets** (`public/`): `public/david.png` (headshot, 400×400, shown as a 120px circle) · `public/apple-touch-icon.png` (180×180, kite on navy, bolt #fbbf24) · `public/favicon.svg` (SVG favicon, same mark) · `public/icons.svg` (sprite). The tab title is just "FranklinAI."
 
-## Domain
-
-franklinaisolutions.com. **Registrar GoDaddy; DNS in Route 53 (`franklinai-web`); hosting on Amplify; Kit sends as this domain.** GlowPT's site: **glowpt.app**.
-
-## Favicon / iPhone Icon
-
-SVG favicon and 180×180 PNG apple-touch-icon, kite mark on navy with the bolt in #fbbf24. Tab title shows just "FranklinAI." Files in `public/`.
+**Cal.com:** account slug `david-peterson-40s7lw` · event "Free Discovery Call" · slug `free-discovery-call` · 30 minutes · Cal Video · `https://cal.com/david-peterson-40s7lw/free-discovery-call`
 
 ---
 
 ## Brand Kit
 
-### Colors
-
-| Role | Value |
+| Color role | Value |
 |---|---|
 | Background / Navy | #070f24 |
 | Accent Blue | #60a5fa — all blues, section headings, links, prices, buttons, logo strokes, "Solutions LLC" |
@@ -439,200 +293,104 @@ SVG favicon and 180×180 PNG apple-touch-icon, kite mark on navy with the bolt i
 | Cool blue-grey sublines | #8899b0 — modal sublines and the newsletter error line |
 | Headings / white sub-titles | #ffffff |
 
-> **#070f24 reads as dark blue only as a large filled block**; as thin text on white it reads black, so the Instagram posts use **#1e3a5f** for text on white. On the site every ground is navy, so this never bites here.
+> **#070f24 reads as dark blue only as a large filled block**; as thin text on white it reads black, so the Instagram posts use **#1e3a5f** for text on white (never an issue on the site, where every ground is navy). **GlowPT keeps its own amber/navy brand on glowpt.app: do not carry GlowPT amber into this repo, or FranklinAI blue into that one.** Only the *voice* and the shared bullet list cross.
 
-> **GlowPT keeps its own amber/navy brand on glowpt.app.** **Do not carry GlowPT amber into this repo, or FranklinAI blue into that one.** Only the *voice* and the shared bullet list cross.
-
-### Typography
-
-| Role | Font | Weight | Size / Notes |
+| Type role | Font | Weight | Size / Notes |
 |---|---|---|---|
 | Hero label ("Custom / Apps & Tools") | Playfair Display | 700 | **clamp(40px, 6vw, 64px)**, blue, two lines, **lineHeight 1.1**, letterSpacing 0.04em, **marginBottom clamp(2px, 1vw, 8px)** |
 | Hero headline ("Built for / Your Practice") | Playfair Display | 800 | **clamp(37.5px, 5.75vw, 57.5px)**, white, two lines (break after "for"), marginBottom 10px, **no period** |
-| Hero trust subline | Inter | 400 | 15px, #8892a4; **"Built to Handle HIPAA"**, title case, **no period** |
+| Hero trust subline | Inter | 400 | 15px, #8892a4; **"Built to Handle HIPAA"**, title case, **no period**; marginTop 0, marginBottom clamp(4px, 1vw, 8px), no link |
 | Section card headings (all seven, incl. "Newsletter") | Playfair Display | 800 | **clamp(36px, 5.5vw, 58px)**, blue, **lineHeight 1.2** (About 1.1), **marginBottom clamp(4px, 1.5vw, 10px)** |
 | — "Behind FranklinAI" | Playfair Display | 800 | two lines via `<br />`, lineHeight 1.1; "Behind Franklin" blue, **"AI" white** |
 | Secondary sub-titles (incl. "The Operator") | Playfair Display | 700–800 | **clamp(30px, 5vw, 35px)**, **all white** |
-| Newsletter description (card **and** modal, identical) | Inter | 400 | 15px, #8892a4, lineHeight 1.5 |
-| Newsletter email input | Inter | 400 | **16px** (prevents iOS zoom), 44px tall |
-| Newsletter success line | Inter | 400 | 15px, #f0e6d3, lineHeight 1.5, min-height 44px so the modal does not jump |
-| Newsletter error line | Inter | 400 | 14px, #8899b0, lineHeight 1.5, centered |
 | Product teaser | Inter (card-text) | 400 | 16px, #8892a4 |
 | Ghost buttons | Inter (btn--ghost) | 600–700 | 15px, **title case, no period** |
-| Price numbers | Playfair Display | 700 | **27.7px**, blue |
-| Price descriptors | Playfair Display | 700 | 20px, blue |
+| Price numbers / descriptors | Playfair Display | 700 | **27.7px** / 20px, blue |
 | Modal titles | Playfair Display | — | `.modal__title`, marginTop 6px |
 | Modal sublines | Inter | 600 | 14px, #8899b0, marginBottom 16px |
 | Modal feature rows (GlowPT and case study, one shared `ModalFeatureList`) | Inter | 400 / 700 check | 15px, #f0e6d3 text, #60a5fa check, single column |
-| Nav name | Playfair Display | 700 | clamp(40.95px, 4.35vw, 50.4px), blue with "AI" white |
-| **Nav "Solutions LLC"** | Inter | 800 | clamp(25.6px, 2.72vw, 31.5px), #60a5fa. **No comma.** |
-| Footer name | Playfair Display | 700 | 32px, blue with "AI" white |
-| **Footer "Solutions LLC"** | Inter | 800 | 20px, #60a5fa. **No comma.** |
-| Footer small print (2 lines) | Inter | 400 | 13px, #8892a4, each `display: block`, centered by the column's `text-align`; "© {year}" also carries `translateX(-3px)` (see Locked Geometry) |
-| Email option text | Inter | 400 | 15px, #8892a4, link #60a5fa at 600 |
 
-Google Fonts import (locked, in `index.html`):
-`Playfair+Display:ital,wght@0,700;0,800;1,800&family=Inter:wght@400;500;600;700;800`
+**Nav, footer, newsletter and email-option type is specified in those sections.** Google Fonts import (locked, in `index.html`): `Playfair+Display:ital,wght@0,700;0,800;1,800&family=Inter:wght@400;500;600;700;800`. Nothing on the page is italic, so the `1,800` italic face is unused, left in. **The Instagram posts set "The Operator" in Inter; the site's subhead stays Playfair. Do not "reconcile" them.** ⚠️ **If a rule does not state `fontStyle`, it is one inherited value away from a face you did not choose** (glowpt.app's hero rendered italic in Safari until pinned with `fontStyle: 'normal'`).
 
-> Nothing on the page is italic, so the `1,800` italic face is unused — left in for now. **The Instagram posts set "The Operator" in Inter; the site's subhead stays Playfair. Do not "reconcile" them.**
->
-> ⚠️ **If a rule does not state `fontStyle`, it is one inherited value away from a face you did not choose.** glowpt.app's hero rendered italic in Safari and upright in Chrome until pinned with `fontStyle: 'normal'`.
+**Three-tier headings:** (1) **hero** label and headline; (2) **section card headings**: Newsletter, Available, Custom Work, How It Works, Custom Pricing, Behind FranklinAI, Let's Build; (3) **secondary sub-titles**, all white (sizes in the table). Price numbers are a separate fixed size, **27.7px**. **No heading on the page is italic or off-tier.**
 
----
+**Gold is logo-only.** #fbbf24 has exactly one home: **the kite's lightning bolt**, never a copy, heading, or sub-title color. **Every sub-title is white** (The Operator, the e-book name, GlowPT, David Peterson, McKenzie Arm Care, step and pricing-tier titles); **every section heading is blue**; **"AI" in the wordmark (nav, footer, About heading) is white.** For emphasis use weight, a label, or a thin rule, **not** gold.
 
-## Logo Accent — Gold Is Logo-Only
+**Card padding:** every `.site-card` carries inline **`paddingTop: '16px'`** and **`paddingBottom: '24px'`** (sides 40px). Each `card-heading` carries **`marginBottom: 'clamp(4px, 1.5vw, 10px)'`** and an explicit **`lineHeight: '1.2'`** (About 1.1); without it headings inherit the body's `1.6` and pad ~15px of dead space. **No negative-margin pulls anywhere below a heading.** Both `step-stack` wrappers sit at `marginTop: '0'`; the About headshot at `margin: '14px auto 10px'`.
 
-Gold (#fbbf24) has exactly one home: **the kite's lightning bolt.** Never a copy, heading, or sub-title color. **Every sub-title is white** (The Operator, the e-book name, GlowPT, David Peterson, McKenzie Arm Care, step and pricing-tier titles). **Every section heading is blue.** **"AI" in the wordmark (nav, footer, About heading) is white.** If a sub-title needs emphasis, use weight, a label, or a thin rule, **not** gold.
-
-## Header Sizing — Three Tiers
-
-1. **Hero** — label **clamp(40px, 6vw, 64px)** blue, lineHeight 1.1; headline **clamp(37.5px, 5.75vw, 57.5px)** white, no period.
-2. **Section card headings** — **clamp(36px, 5.5vw, 58px)**, blue, **lineHeight 1.2** (About 1.1), **marginBottom clamp(4px, 1.5vw, 10px)**: Newsletter, Available, Custom Work, How It Works, Custom Pricing, Behind FranklinAI, Let's Build.
-3. **Secondary sub-titles** — **clamp(30px, 5vw, 35px)**, **all white**.
-
-Price numbers are a separate fixed size: **27.7px**. **No heading on the page is italic or off-tier.**
-
-## Card Padding and Heading Spacing
-
-Every `.site-card` carries inline **`paddingTop: '16px'`** and **`paddingBottom: '24px'`**; sides stay 40px. Each `card-heading` carries **`marginBottom: 'clamp(4px, 1.5vw, 10px)'`** and an explicit **`lineHeight: '1.2'`** (About 1.1) — without it headings inherit the body's `1.6` and pad ~15px of dead space. **No negative-margin pulls anywhere below a heading.** Both `step-stack` wrappers sit at `marginTop: '0'`; the About headshot at `margin: '14px auto 10px'`.
-
-## Page-Wide iOS Text Guard
-
-`App()` returns a single wrapping **`<div style={{ WebkitTextSizeAdjust: '100%' }}>`** around Nav, main, and Footer, so iOS Safari does not inflate text on rotation. **Give it no other styles.** Key is `WebkitTextSizeAdjust` (capital W). Do **not** use `none` — it kills pinch-zoom.
-
----
+**iOS text guard:** `App()` returns a single wrapping **`<div style={{ WebkitTextSizeAdjust: '100%' }}>`** around Nav, main, and Footer, so iOS Safari does not inflate text on rotation. **Give it no other styles** (capital W; **not `none`**, which kills pinch-zoom).
 
 ## Design Rules
 
 - Single unified dark navy everywhere; dark mode locked via `color-scheme: only light`
 - All content in `.site-card` (max-width 640px, margin 0 auto, text-align center, radius 16px); section headings inside the card at the top
-- **No heading on the page is italic**
 - No dividers between sections or inside cards, except **four** `borderTop` rules: the GlowPT modal footer, the e-book modal footer, the newsletter modal form divider, and the page footer. **The two Available products are separated by spacing, not a rule.**
-- No em dashes anywhere in copy, ever — on this site, glowpt.app and Kit
-- No step numbers in How It Works *(the `steps` array's unused `number` field and the `id="financial-clarity"` on Available are harmless leftovers)*
-- Gold is reserved for the logo bolt only
+- No em dashes in copy, ever (site, glowpt.app, Kit). No step numbers in How It Works *(the `steps` array's unused `number` field and the `id="financial-clarity"` on Available are harmless leftovers)*
 - Responsive sizing uses `clamp()` with **absolute pixel values**
 - **All buttons are title case with no period.** Section headings take no period.
 - **Form controls are pinned to a matching 44px height** with the button's inherited `.btn` top margin zeroed
-- **Center a stack of differently-sized lines by block layout + `text-align: center`, never by flex shrink-to-content.** Container a block with `text-align: center`, every line `display: block`. **The house standard for any centered stack.**
-- **Geometric centering is not always optical centering.** A line can measure 0.00px centered and still read off. **Verify against the reference the eye uses**; if a line is provably centered but still looks wrong, the remedy is an explicit documented optical correction, not a re-derivation of the layout.
-- **In a stacked pair of buttons, the BOTTOM one is the stronger position** (the terminal action). **A filled button placed last is the most dominant thing in the block.** Order and weight are separate levers.
-- **Copy that appears twice must move twice.** Within this file: the newsletter description and the "Subscribe for Free" label (card + modal). **Across repos:** the GlowPT pitch's second sentence and the eight feature bullets. **Across into a document:** the `EbookModal`'s first two paragraphs echo the book's chapter 1, and **the book wins.**
-- **When a two-sentence line must break the same way everywhere, make it two elements, not one string.** Control the break; do not hope for it.
+- **Center a stack of differently-sized lines by block layout + `text-align: center`, never by flex shrink-to-content**: a block container with `text-align: center`, every line `display: block`. **The house standard for any centered stack.**
+- **Geometric centering is not always optical centering.** A line can measure 0.00px centered and still read off. **Verify against the reference the eye uses**; if a line is provably centered and still looks wrong, the remedy is an explicit documented optical correction, not a re-derivation of the layout.
+- **In a stacked pair of buttons, the BOTTOM one is the stronger position** (the terminal action); **a filled button placed last is the most dominant thing in the block.** Order and weight are separate levers.
+- **Copy that appears twice must move twice:** the newsletter description and "Subscribe for Free" (card + modal); **across repos**, the GlowPT pitch's second sentence and the eight bullets; **into a document**, the `EbookModal`'s first two paragraphs echo the book's chapter 1, and **the book wins.**
+- **When a two-sentence line must break the same way everywhere, make it two elements, not one string.**
 - **A state change inside a modal must not make the modal jump** (the newsletter success line carries `minHeight: '44px'`).
 
 ---
 
 ## Kite Logo Mark — Locked SVG
 
-The `KiteLogo` **inline at the top of `src/App.jsx`** is the single source of truth for the mark. `size` sets the height; width is `size × (101 / 240)`.
-
-**ViewBox:** `62 10 101 240`
+The `KiteLogo` **inline at the top of `src/App.jsx`** is the single source of truth for the mark. `size` sets the height; width is `size × (101 / 240)`. **ViewBox:** `62 10 101 240`.
 
 | Element | Fill |
 |---|---|
-| Kite top-right panel | #1e3a5f |
-| Kite bottom-right panel | #0f2340 |
-| Kite top-left panel | #0f2340 |
-| Kite bottom-left panel | #1e3a5f |
-| Kite outline + crosslines | stroke="#60a5fa" |
-| String (kite to bolt) | stroke="#60a5fa" |
-| Lightning bolt main fill | #fbbf24 |
-| Lightning bolt hot core | white at opacity="0.6" |
-| String (bolt to key) | stroke="#60a5fa" |
-| Key ring, shaft, teeth | #60a5fa |
+| Kite panels: top-right / bottom-right / top-left / bottom-left | #1e3a5f / #0f2340 / #0f2340 / #1e3a5f |
+| Kite outline + crosslines; both string segments; key ring, shaft, teeth | #60a5fa (`stroke="#60a5fa"` for lines) |
+| Lightning bolt main fill / hot core | #fbbf24 / white at opacity="0.6" |
 | String tail below key | stroke="#60a5fa" at opacity="0.3" |
 
-### Kite geometry — the crossbar is the true centerline
-
-The kite is NOT a symmetric diamond. Vertices: top (110,20), right (148,88), bottom (110,120), left (72,88). The cross-spar at **viewBox y=88** is the true visual horizontal centerline, NOT the bounding-box midpoint. For a kite of height `H`, the crossbar sits **`(88 - 10) / 240 × H = 0.325 × H`** px from the top.
-
-| Location | size prop | Rendered width | Crossbar from top |
-|---|---|---|---|
-| Nav | 130 | 54.71px | **42.25px** |
-| Footer | 105 | **44.19px** | **34.12px** |
-
-**The nav kite carries NO `site-nav__logo` className**; it is wrapped in `<span style={{ flexShrink: 0, display: 'flex' }}>`. This dodges a stale `.site-nav__logo { height: 168px !important }` rule in `global.css` (dead code). **If a kite size changes, the crossbar figure and the F-vs-crossbar margin below change with it.**
+**The crossbar is the true centerline.** The kite is NOT a symmetric diamond: vertices top (110,20), right (148,88), bottom (110,120), left (72,88). The cross-spar at **viewBox y=88** is the visual horizontal centerline, NOT the bounding-box midpoint: for a kite of height `H` it sits **`(88 - 10) / 240 × H = 0.325 × H`** px from the top. **Nav** (size 130): 54.71px wide, crossbar at **42.25px**. **Footer** (size 105): **44.19px** wide, crossbar at **34.12px**. **The nav kite carries NO `site-nav__logo` className** (it dodges a stale `.site-nav__logo { height: 168px !important }` rule, dead code in `global.css`). **If a kite size changes, the crossbar figure and the F-vs-crossbar margin change with it.**
 
 ---
 
-## Locked Geometry — the hand-tuned values
+## Locked Geometry — the Hand-Tuned Values
 
-**Every value here was landed by eye or by a documented measurement. Change one only on David's instruction, and record the new value and why here.** The full history of how each was reached is in `docs/history.md` (search "V48", "V30", "V31").
+**Every value here was landed by eye or by a documented measurement. Change one only on David's instruction, and record the new value and why here.** History in `docs/history.md` (search "V48", "V30", "V31").
 
-### Vertical: wordmark F vs kite crossbar
-
-1. **Kite crossbar** is at `0.325 × kiteHeight` from the kite top.
-2. **The capital "F" optical center**, Playfair Display at `line-height: 1`, sits **0.561em below the top of the text line**.
-
-The brand row uses `align-items: flex-start`, so `F_center_from_top = marginTop + 0.561 × nameFontSize`. Set equal to the **crossbar** and solve for `marginTop`.
-
+**Vertical: the wordmark F sits on the kite crossbar.** The brand row uses `align-items: flex-start`, so `F_center_from_top = marginTop + 0.561 × nameFontSize` (the capital "F" optical center, Playfair Display at `line-height: 1`, sits **0.561em below the top of the text line**). Set it equal to the crossbar (`0.325 × kiteHeight`) and solve for `marginTop`:
 - **Nav wordmark `marginTop`: `clamp(13.98px, calc(42.25px - 2.44vw), 19.28px)`**
 - **Footer text column `marginTop`: `16.17px`** (0.325 × 105 − 0.561 × 32). It was `13.16px` from June 21, leaving the F 2.8px above the crossbar; the nav was fixed on July 26 (`f50588e`) and the footer was not, until David saw it on 2026-10-25. Measured after: F center 0.21px from the crossbar (nav 0.38px).
+- **To check it, measure the F's ink center against the crossbar line** (a canvas `measureText('F')` plus the glyph's range rect), not the text box. The horizontal dials do not affect this math.
 
-The horizontal dials below do not affect this math.
-
-### Horizontal: the `translateX` dials
-
-Both lockups are positioned by inline `transform: translateX(...)`, same value on desktop and iPhone; a transform never consumes layout width.
-
+**Horizontal: the `translateX` dials** (same value on desktop and iPhone; a transform never consumes layout width):
 - **Nav brand `<a>`: `transform: 'translateX(-26px)'`** — the lockup-level dial.
-- **Footer brand row `<div>`: `transform: 'translateX(-17px)'`** — the footer's single lockup dial. **Hand-tuned:** David, 2026-10-25, by eye on the live site (`-14px` read slightly right, `-20px` too far left, `-17px` centered).
-- **Footer text column `<div>`: no `transform`.**
+- **Footer brand row `<div>`: `transform: 'translateX(-17px)'`** — the footer's single dial. **Hand-tuned:** David, 2026-10-25, by eye on the live site (`-14px` read slightly right, `-20px` too far left, `-17px` centered). **Footer text column: no `transform`.**
 
-> **Why the dials differ, and why that is correct.** The nav kite is *relatively smaller* next to its larger wordmark (kite-to-text width ratio ~0.22 vs the footer's ~0.27), so the heavier nav wordmark pulls the optical center further right. **Do not "reconcile" the two dials to one number.**
+> **The dials differ correctly:** the nav kite is *relatively smaller* next to its larger wordmark (kite-to-text width ratio ~0.22 vs the footer's ~0.27), so the heavier nav wordmark pulls the optical center further right. **Do not "reconcile" them to one number.** **Do not "derive" the footer dial from box math:** a session shipped `(kiteWidth 44.19 + gap 4) / 2 = 24.09px` as `-24.09px` and David rejected it at once (it dragged the signature left). **The dial is an optical judgement, not a centering equation**; the kite deliberately hangs left of the centered text.
 >
-> **Do not "derive" the footer dial from box math.** A session computed `(kiteWidth 44.19 + gap 4) / 2 = 24.09px`, shipped `-24.09px`, and David rejected it immediately: it dragged the signature left. **The dial is an optical judgement, not a centering equation.** The kite deliberately hangs left of the centered text.
->
-> **"FranklinAI" is the widest line in both lockups and sets the column width** (nav 252.8px vs the subline's 222.6px; footer 160.5px vs 146.9px, measured at V54), so the subline's text can change without moving either lockup. **To prove a text change cannot move a lockup, toggle the string in the running DOM and compare the container's box, not the text's.**
+> **"FranklinAI" is the widest line in both lockups and sets the column width** (nav 252.8px vs the subline's 222.6px; footer 160.5px vs 146.9px, at V54), so sublines can change without moving either lockup. **To prove a text change cannot move a lockup, compare the container's box in the running DOM before and after, not the text's.**
 
-### Per-line nudges: ONE, on the copyright
+**Per-line nudges: ONE, on the copyright.** Nav "Solutions LLC", footer "Solutions LLC" and footer "franklinaisolutions.com": none. **Footer "© {year}": `translateX(-3px)`, a deliberate optical correction.** The footer Instagram glyph has none of its own; it sits inside the © line and rides that line's `-3px`. **Do NOT add a per-line `translateX` to any other line**; fix the *centering method* (block + `text-align`) first, and reach for an optical correction only when a line is provably centered and still reads wrong.
 
-| Line | Nudge |
-|---|---|
-| Nav "Solutions LLC" | none |
-| Footer "Solutions LLC" | none |
-| Footer "franklinaisolutions.com" | none |
-| **Footer "© {year}"** | **`translateX(-3px)` — deliberate optical correction** |
-| Footer Instagram glyph | none of its own; it sits inside the © line, so it rides that line's `-3px` |
+> **Why the copyright line is the exception:** it is geometrically centered to **0.00px**, but `©` is a light hollow circle beside four solid digits, so the ink leans right by roughly **2.2px**; solving for a balancing gap returns a **negative** number, so no tightening can fix it. **`-3px` was landed by David's eye on the live site** (the arithmetic favored `-2px`; V31's stripping of an old `-2px` from this line caused a recurring "the copyright isn't centered" complaint). **The gap after `©` is a fixed 2px CSS margin, not a word space:** `&copy;<span style={{ marginLeft: '2px' }}>{year}</span>`, no literal space (a thin-space glyph depends on the font). **Do not put the plain space back.**
 
-**Do NOT add a per-line `translateX` to any other line.** If a subline looks off-center, first fix the *centering method* (block + `text-align`), and only reach for an optical correction when the line is provably centered and still reads wrong.
+**The footer lockup is CLOSED.** The kite on the **left**, one text column to its right holding **all four lines** (wordmark, "Solutions LLC", the domain, the copyright with the Instagram glyph at its end), centered with each other. **Do not restructure it, do not move the fine print out of the column, and do not recompute the `-17px` dial.** **Tried and reverted; do not try again:** (1) **`alignSelf: 'stretch'` on the fine-print spans while the column stayed flex** (V46; no effect, the *column* was still flex); (2) **the dial changed from `-14px` to a "derived" `-24.09px`** (dragged the signature left); (3) **the fine print moved out of the column into its own page-centered block** (rejected on sight); (4) **removing the footer dial entirely** (same); (5) **the Instagram glyph as a fifth line of its own** (2026-10-25; made the footer too tall). The copyright was fixed by the two per-line changes above, nothing structural.
 
-> **Why the copyright line is the exception.** It is geometrically centered to **0.00px**. But `©` is a light hollow circle beside four solid digits, so the ink leans right by roughly **2.2px**; solving for a balancing gap returns a **negative** number, which proves no tightening can fix it. **`-3px` was landed by David's eye against the live site**; the arithmetic favored `-2px`. (V31 had stripped an old `-2px` from all lines; stripping it from this one was an over-correction and caused a recurring "the copyright isn't centered" complaint.)
->
-> **The gap after `©` is a fixed 2px CSS margin, not a word space:** `&copy;<span style={{ marginLeft: '2px' }}>{year}</span>`, no literal space. It renders identically in every browser; a thin-space glyph depends on the font. **Do not put the plain space back.**
-
-### The footer lockup is CLOSED
-
-**The structure is correct, hand-tuned, and settled.** The kite on the **left**, a single text column to its right holding **all four lines** — wordmark, "Solutions LLC", the domain, the copyright — centered with each other. **Do not restructure it, do not move the fine print out of the column, and do not recompute the `-17px` dial.**
-
-**Everything in this list was tried and reverted. Do not try them again:**
-1. **`alignSelf: 'stretch'` on the fine-print spans while the column stayed flex** (V46) — no effect, because the *column* was still a flex container.
-2. **Changing the brand-row dial from `-14px` to a "derived" `-24.09px`** — mathematically defensible, visually wrong; it dragged the whole signature left.
-3. **Moving the fine print out of the column into its own page-centered block below the lockup** — rejected on sight.
-4. **Removing the footer dial entirely** so the lockup centered as a unit — same rejection.
-
-**What actually fixed it:** the two per-line changes to the copyright above. Nothing structural.
-
-> **"Closed" governs geometry, not every character.** A closed section can take a copy change (V54 removed the comma from "Solutions LLC") **if you prove it moves nothing, and say how you proved it.** The Instagram glyph went onto the © line this way on 2026-10-25, proven by the text column's width, the brand row's left edge and the © line's top, measured before and after at 1024px and 390px (all unchanged). A fifth line of its own was tried first and rejected: it made the footer too tall.
+> **"Closed" governs geometry, not every character.** A closed section can take a copy change (V54 removed the comma from "Solutions LLC"; the Instagram glyph joined the © line on 2026-10-25) **if you prove it moves nothing, and say how**: measure the text column's width, the brand row's left edge and the lines' tops before and after, at desktop and iPhone widths.
 
 ---
 
 ## Nav
 
-- Sticky (`position: sticky; top: 0`); logo and wordmark only — no CTA, no links, no tagline
-- `padding: '6px 24px'`
+- Sticky (`position: sticky; top: 0`); logo and wordmark only — no CTA, no links, no tagline; `padding: '6px 24px'`
 - Brand link: `gap: '4px'`, `alignItems: 'flex-start'`, `transform: 'translateX(-26px)'`
 - Kite: inline `KiteLogo size={130}`, wrapped in `<span style={{ flexShrink: 0, display: 'flex' }}>`, NO className
-- Wordmark div: `marginTop: 'clamp(13.98px, calc(42.25px - 2.44vw), 19.28px)'`; `.site-nav__wordmark` is `display: flex; flex-direction: column; align-items: flex-start` in `global.css`
-- Name `clamp(40.95px, 4.35vw, 50.4px)` blue with "AI" white; **"Solutions LLC"** (no comma) **Inter 800**, `clamp(25.6px, 2.72vw, 31.5px)`, blue, `lineHeight '1'`, `marginTop '3px'`, **no `transform`**
-- Responsive sizing via inline `clamp()`, not media queries
-
-> The nav wordmark is still a flex column and has **not** shown the footer's centering problem (a single subline under a single wordmark). If it ever does, apply the block + `text-align` standard.
+- Wordmark div: `marginTop: 'clamp(13.98px, calc(42.25px - 2.44vw), 19.28px)'`; `.site-nav__wordmark` is `display: flex; flex-direction: column; align-items: flex-start` in `global.css` (no centering problem so far; if one appears, apply the block + `text-align` standard)
+- Name (Playfair 700) `clamp(40.95px, 4.35vw, 50.4px)` blue with "AI" white; **"Solutions LLC"** (no comma) **Inter 800**, `clamp(25.6px, 2.72vw, 31.5px)`, #60a5fa, `lineHeight '1'`, `marginTop '3px'`, **no `transform`**. Responsive via inline `clamp()`, not media queries.
 
 ## Footer — Fully Self-Contained in App.jsx
 
-**The footer uses NO CSS classes from `global.css`.** Entirely inline styles; the `global.css` `.site-footer*` rules are dead code. A scaled-down signature (kite 105, name 32px), kite-to-wordmark gap `4px`.
+**NO CSS classes from `global.css`** (its `.site-footer*` rules are dead code); entirely inline. A scaled-down signature (kite 105, name 32px), kite-to-wordmark gap `4px`.
 
 - **Footer outer:** `padding: '24px 24px 20px'`, `borderTop: '1px solid rgba(96, 165, 250, 0.12)'`, `marginTop: '0'`, `display: 'flex'`, `justifyContent: 'center'`.
 - **Brand row:** `display: 'flex'`, `alignItems: 'flex-start'`, `gap: '4px'`, **`transform: 'translateX(-17px)'`**.
@@ -643,82 +401,49 @@ Both lockups are positioned by inline `transform: translateX(...)`, same value o
   3. **franklinaisolutions.com** — Inter 400, 13px, #8892a4, lineHeight 1.5, marginTop 8px. **No transform.**
   4. **© {year}** — Inter 400, 13px, #8892a4, lineHeight 1.5, **`transform: 'translateX(-3px)'`**, year in a nested span with **`marginLeft: '2px'`**; then, on the same line, **the Instagram glyph** (David, 2026-10-25): a link to `https://www.instagram.com/franklinaisolutions/` (new tab, `aria-label` "FranklinAI on Instagram"), `display: 'inline-block'`, `marginLeft: '8px'`, `verticalAlign: '-2px'`, `lineHeight: 0`, color `#60a5fa`, holding `InstagramGlyph size={13}` (`fill="currentColor"`). **The glyph is Meta's official path**, copied byte for byte from `Instagram_Glyph_Black.svg` in Meta's 2023 Instagram brand asset pack; never hand-drawn.
 
-> **The spans are `display: block`, so each BOX is the full column width regardless of its text.** Measuring a line's bounding box returns the column width every time. **Measure the column against the widest line, or measure the text itself.**
-
-No email in the footer, and **no mailing address**, which is why Kit's stand-in address needs no matching site change.
+> **The spans are `display: block`, so each BOX is the full column width regardless of its text**: measure the column against the widest line, or the text itself. No email and **no mailing address** in the footer, which is why Kit's stand-in address needs no site change.
 
 ---
 
-## Scroll Lock on Modals
+## Modals
 
-All four modals (`EbookModal`, `GlowPTModal`, `CaseStudyModal`, `NewsletterModal`) lock page scroll via a `useEffect` setting `document.body.style.overflow = 'hidden'` on mount, restoring on unmount; each closes on the X, a backdrop click, **or the bottom Close**. **`NewsletterModal` also closes itself 2.5s after a successful signup**, through a second `useEffect` that clears its timer on unmount.
-
-**The bottom Close (David, 2026-09-27: close from top or bottom, consistent throughout)** is one shared **`ModalCloseButton`**, the last thing in every modal, 24px below the content above it: "Close", Inter 13px/600, #8892a4, transparent, **1px frame rgba(136, 146, 164, 0.35)**, radius 12px, padding `10px 20px` (the modal-button size). **Grey, not a blue ghost, on purpose:** in `GlowPTModal` it sits under the filled discovery-call button and must not take the bottom, strongest position. Not a divider; the four-divider count is unchanged.
+All four (`EbookModal`, `GlowPTModal`, `CaseStudyModal`, `NewsletterModal`) lock page scroll via a `useEffect` setting `document.body.style.overflow = 'hidden'` on mount, restoring on unmount; each closes on the X, a backdrop click, **or the bottom Close**. **`NewsletterModal` also closes itself 2.5s after a successful signup** (a second `useEffect` clears its timer on unmount). **The bottom Close** (David, 2026-09-27: close from top or bottom, consistently) is one shared **`ModalCloseButton`**, last in every modal, 24px below the content: "Close", Inter 13px/600, #8892a4, transparent, **1px frame rgba(136, 146, 164, 0.35)**, radius 12px, padding `10px 20px`. **Grey, not a blue ghost, on purpose:** in `GlowPTModal` it sits under the filled discovery-call button and must not take the bottom, strongest position. Not a divider.
 
 ---
 
 ## Page Sections (in order)
 
-All sections use `.section` → `.container` → `.site-card`. **Order: Hero → Newsletter (The Operator) → Available → Custom Work → How It Works → Custom Pricing → About → Discovery CTA.** The page reads as one sentence: here's what I do → the free thing worth following → what's available → proof I build custom → how the work goes and what it costs → who I am → let's talk.
+All sections use `.section` → `.container` → `.site-card`. **Order: Hero → Newsletter (The Operator) → Available → Custom Work → How It Works → Custom Pricing → About → Discovery CTA**, read as one sentence: here's what I do → the free thing worth following → what's available → proof I build custom → how the work goes and what it costs → who I am → let's talk.
 
-### Hero
+**Hero:** label "Custom" / "Apps & Tools"; headline **"Built for" / "Your Practice"**; trust subline **"Built to Handle HIPAA"** (values in the type table); CTA "Book a Free Discovery Call" (`btn btn--primary`, `padding: '11px 22px', fontSize: '14px'`, cal.com, new tab). No `EmailOption`. **Newsletter (`NewsletterStrip`):** see Newsletter Card.
 
-- **Label** (Playfair 700, clamp(40px, 6vw, 64px), #60a5fa): "Custom" / "Apps & Tools" — two lines, lineHeight 1.1, letterSpacing 0.04em, marginBottom clamp(2px, 1vw, 8px)
-- **Headline** (Playfair 800, clamp(37.5px, 5.75vw, 57.5px), white): **"Built for" / "Your Practice"** — break after "for", marginBottom 10px, **no period**
-- **Trust subline** (Inter 15px, #8892a4, marginTop 0, marginBottom clamp(4px, 1vw, 8px)): **"Built to Handle HIPAA"** — title case, **no period**, no link
-- **CTA:** "Book a Free Discovery Call" — `btn btn--primary`, `padding: '11px 22px', fontSize: '14px'`, cal.com, new tab. No `EmailOption`.
+### Available (`AvailableForPractice`)
 
-### Newsletter (The Operator) — `NewsletterStrip`
+The e-book first, GlowPT second; state flags `ebookOpen` and `glowOpen`. **Spacing (locked):** heading → first product **12px** (e-book `<h3>` `marginTop: '12px'`); title → teaser **10px** each (`marginBottom: '10px'`); teaser → button **16px** each (e-book teaser `marginBottom: '0'`; buttons `marginTop: '16px'`); between products **28px** (GlowPT `<h3>` `marginTop: '28px'`). Both titles Playfair 800, clamp(30px, 5vw, 35px), white, lineHeight 1.2.
 
-See **Newsletter Card** above.
+- **The e-book:** title **"What Your Practice Actually Sells"**; teaser (`card-text`) **"A guide for owners running two business models in one building, an insurance practice and a cash practice, and making them work together."**; "More Info" (btn--ghost) → `EbookModal`.
+- **GlowPT:** title "GlowPT"; teaser (`card-text`, `:last-of-type`, no inline overrides) **"The GlowPT app keeps physical therapy patients engaged between visits. More completed plans of care and the clinic stays full."** (identical to the modal description; **the second sentence is identical on all four surfaces**); "More Info" (btn--ghost) → `GlowPTModal`. **All GlowPT buttons stay inside the modal**: a visitor reaches the price and features before a signup link.
 
-### Available (Product Card) — `AvailableForPractice`
+**EbookModal** (mirrors `GlowPTModal`): title (`modal__title`, marginTop 6px) **"What Your Practice Actually Sells"**, **no subline** (David removed "A self-serve playbook. $37, yours to download." on 2026-10-04). Body, three `modal__text` paragraphs:
+1. *"The marketing pushes the premium programs, the packages, the specialty work, the thing that looks good on a flyer. The money arrives when a patient finishes a plan of care, visit after visit, over weeks. Those are two different businesses."*
+2. *"You are running both. Most practices are. And the two are pulling against each other in every role in the building, because your team is being asked to sell advanced care and get patients to the end of their care at the same time, with nobody telling them which one wins when they collide."*
+3. *"This guide walks you through the fix: decide what your practice actually is, then say it in one sentence your whole team can repeat. Not a tactic, not a tool. The one thing that lets everything else line up behind it."*
 
-Two products, the e-book first, GlowPT second. State flags `ebookOpen` and `glowOpen`.
+**Paragraphs 1 and 2 are the book's final chapter 1, word for word** (`f841663`, David, 2026-10-16), **and the book wins**; **never reintroduce the two retired framings** (the accident framing and the departmental split). **Footer** (borderTop hairline, paddingTop 24px, centered): one **ghost** button **"Buy the Guide · $37"** (`padding: '12px 26px', fontSize: '15px', marginTop: '0'`; the price lives in the label, joined by a middot; **no standalone price line**) linking to `https://franklinai.kit.com/products/what-your-practice-actually-sells` (`target="_blank" rel="noopener noreferrer"`), then **"A downloadable PDF."** (Inter 14px, #8892a4, lineHeight 1.5, marginTop 12px), then the shared Close.
 
-**Spacing (locked):** heading → first product **12px** (e-book `<h3>` `marginTop: '12px'`); title → teaser **10px** each (`marginBottom: '10px'`); teaser → button **16px** each (e-book teaser `marginBottom: '0'`; buttons `marginTop: '16px'`); between products **28px** (GlowPT `<h3>` `marginTop: '28px'`). Both titles: Playfair 800, clamp(30px, 5vw, 35px), white, lineHeight 1.2.
+**GlowPT Modal:** title "GlowPT" (marginTop 6px); subline **"Sign up online, or book a call first."** (its word order matches the button order; **it promises nothing about timing**); description **"The GlowPT app keeps physical therapy patients engaged between visits. More completed plans of care and the clinic stays full."** (**"More completed plans of care" deliberately echoes bullet 5 — do not "vary" it**; the old setup sentence "Patients walk out doing great, then drift off before their plan of care is done." stays deleted on both sites); **eight** feature lines; price $350 / month; **two CTAs.**
 
-**Product 1 — the e-book:**
-- **Title:** **"What Your Practice Actually Sells"**
-- **Teaser** (`card-text`): **"A guide for owners running two business models in one building, an insurance practice and a cash practice, and making them work together."**
-- **Button:** "More Info" (btn--ghost) → `EbookModal`
-
-**Product 2 — GlowPT:**
-- **Title:** "GlowPT"
-- **Teaser** (`card-text`, `:last-of-type`, no inline overrides): **"The GlowPT app keeps physical therapy patients engaged between visits. More completed plans of care and the clinic stays full."** *(Identical to the modal description. Names the niche; glowpt.app's first sentence deliberately does not. **The second sentence is identical on all four surfaces.**)*
-- **Button:** "More Info" (btn--ghost) → `GlowPTModal`
-
-> **All GlowPT buttons stay inside the modal.** A visitor reaches the price and features before a signup link. **Do not move the self-serve door up to the card.**
-
-**EbookModal** (scroll-locked, mirrors `GlowPTModal`):
-- **Title** (`modal__title`, marginTop 6px): **"What Your Practice Actually Sells"**
-- **No subline** (David removed "A self-serve playbook. $37, yours to download." on 2026-10-04: not needed with the buy at the bottom). The title goes straight into the body.
-- **Body — three `modal__text` paragraphs:**
-  1. *"The marketing pushes the premium programs, the packages, the specialty work, the thing that looks good on a flyer. The money arrives when a patient finishes a plan of care, visit after visit, over weeks. Those are two different businesses."*
-  2. *"You are running both. Most practices are. And the two are pulling against each other in every role in the building, because your team is being asked to sell advanced care and get patients to the end of their care at the same time, with nobody telling them which one wins when they collide."*
-  3. *"This guide walks you through the fix: decide what your practice actually is, then say it in one sentence your whole team can repeat. Not a tactic, not a tool. The one thing that lets everything else line up behind it."*
-  > **Paragraphs 1 and 2 are the book's final chapter 1, word for word** (`f841663`, David, 2026-10-16), **and the book wins.** **Never reintroduce the two retired framings** (the accident framing and the departmental split).
-- **Footer** (borderTop hairline, paddingTop 24px, centered): one **ghost** button **"Buy the Guide · $37"** (`padding: '12px 26px', fontSize: '15px', marginTop: '0'`; the price lives in the label, joined by a middot; **no standalone price line**), then **"A downloadable PDF."** (Inter 14px, #8892a4, lineHeight 1.5, marginTop 12px), then the shared Close. **Links to `https://franklinai.kit.com/products/what-your-practice-actually-sells`** with `target="_blank" rel="noopener noreferrer"`, styles unchanged.
-
-**GlowPT Modal** (scroll-locked): title "GlowPT" (marginTop 6px); subline; description; **eight** feature lines; price $350 / month; **two CTAs.**
-
-- **Subline:** **"Sign up online, or book a call first."** Its word order matches the button order. **It promises nothing about timing** (activation is manual).
-- **Description:** **"The GlowPT app keeps physical therapy patients engaged between visits. More completed plans of care and the clinic stays full."** Identical to the card teaser. **"More completed plans of care" deliberately echoes bullet 5 — do not "vary" it.** The old setup sentence "Patients walk out doing great, then drift off before their plan of care is done." stays deleted on both sites.
-
-**The eight feature lines, in live order.** ⚠️ **This exact list, in this exact order, also lives in `glowpt/src/lib/marketing.js`. Change one, change the other.**
-
+**The eight feature lines, in live order** (⚠️ **the same list, same order, lives in `glowpt/src/lib/marketing.js`; change one, change the other**):
 1. "A 30-second daily check-in, with warm encouragement that keeps patients coming back."
 2. "A private journal and weekly streaks, in every patient's pocket."
-3. **"One subscription covers the clinic and the patients join for free."** *(Written three times; this is the keeper. It answers the per-seat math every owner silently does. **"the patients join for free" names its subject** so "for free" cannot attach to the subscription with `$350` below it.)*
+3. **"One subscription covers the clinic and the patients join for free."** *(Written three times; the keeper. It answers the per-seat math every owner silently does; **"the patients join for free" names its subject** so "for free" cannot attach to the subscription with `$350` below it.)*
 4. "Reaches every patient, not just the ones you can bill remote monitoring on."
 5. **"More completed plans of care, because engaged patients finish their care."**
 6. "Zero work for your therapists. No building, no monitoring, no calls."
 7. **"Runs alongside any EMR. Nothing to set up, nothing to integrate."** *(Seventh, not eighth.)*
 8. **"A weekly roster summary and a clinic dashboard to follow activity, trends, and flags."** ("flags" verified live in the dashboard.)
 
-**The exercise-plan exclusion — permanent.** Line 2 said "a personal exercise plan" until July 15, 2026. **Do not put that back. GlowPT has no exercise plan and never will** — that is the wedge separating it from the HEP tools clinics buy and never use. It has a **movement checklist**: a record of what the patient did, not a plan.
-
-**The modal footer:**
+**The exercise-plan exclusion is permanent.** Line 2 said "a personal exercise plan" until July 15, 2026. **Do not put that back. GlowPT has no exercise plan and never will**; that is the wedge separating it from the HEP tools clinics buy and never use. It has a **movement checklist**: a record of what the patient did, not a plan.
 
 ```
 ──────────────── (borderTop hairline, paddingTop 24px, textAlign center)
@@ -727,45 +452,17 @@ Two products, the e-book first, GlowPT second. State flags `ebookOpen` and `glow
    [ Book a Free Discovery Call   ]   ← btn--primary → cal.com
 ```
 
-- Both `padding: '10px 20px', fontSize: '13px'`, both `target="_blank" rel="noopener noreferrer"`.
-- The **second** button sits in a `<div style={{ marginTop: '12px' }}>` with its own `marginTop: '0'`; the first keeps `.btn`'s inherited 8px. **If the order changes, the wrapper moves to whichever button is second.**
-- ⚠️ **The ghost's label and destination match glowpt.app's own primary button** (`<Link to="/onboard">`). **If that label changes, this one changes with it.**
+Both buttons `padding: '10px 20px', fontSize: '13px'`, `target="_blank" rel="noopener noreferrer"`. The **second** sits in a `<div style={{ marginTop: '12px' }}>` with its own `marginTop: '0'`; the first keeps `.btn`'s inherited 8px (**if the order changes, the wrapper moves to whichever is second**). ⚠️ **The ghost's label and destination match glowpt.app's own primary button** (`<Link to="/onboard">`); **if that label changes, this one changes with it.** **Settled; do not silently redo:** (1) **self-serve first, call second** (David's call, after being told the bottom is the stronger position); (2) **styles NOT flipped**; (3) **the discovery call stays in this modal** (a $350/month product keeps the option to talk first).
 
-> **Settled; do not silently redo:** (1) **self-serve first, call second** — David's call, made after being told the bottom is the stronger position; (2) **styles NOT flipped** — the filled style stays exclusive to the discovery call; (3) **the discovery call stays in this modal** (a $350/month product keeps the option to talk first).
+### The rest of the page
 
-### Custom Work
+- **Custom Work:** title (card-title, white, clamp(30px, 5vw, 35px)) "McKenzie Arm Care"; two-sentence teaser; **"Case Study"** ghost button (marginTop 16px) → `CaseStudyModal`: title "McKenzie Arm Care" (marginTop 6px, no "Case Study" label inside), full description, the six features in the **same check-mark list as GlowPT** (`ModalFeatureList`, with `last` so the gap to Close stays 24px), each ending in a period. **The tech note ("Built with React, Supabase…") was removed by David on 2026-09-27; do not restore it.**
+- **How It Works** (capital I, always): three steps, Discovery / Build / Grow; no step numbers rendered; parallel two-sentence structure; step-stack `marginTop: '0'`; step title wrapper marginBottom 10px; copy broadly worded.
+- **Custom Pricing:** two tiers, step-stack `marginTop: '0'`: **The Build** (`pricePrefix: 'From'`, `$10,000`, whisper subtext) and **Monthly Care** (`$350`, `/ month`). Price line Playfair 700, 27.7px, blue, marginTop 4px. ⚠️ **Monthly Care's `$350` is the decoy.**
+- **About** (heading "Behind FranklinAI", two lines via `<br />`, lineHeight 1.1, "Behind Franklin" blue, **"AI" white**): headshot `public/david.png`, 120px circle, objectFit cover, **margin '14px auto 10px'**, 3px border rgba(96,165,250,0.3); "David Peterson" (white, marginTop 0); then the bio.
+- **Discovery CTA:** heading **"Let's Build"**; copy "Every project starts with a conversation. Tell us what you need or what's not working, and we'll figure out what to build."; CTA "Book a Free Discovery Call" (`marginTop: 'clamp(4px, 1vw, 8px)', padding: '11px 22px', fontSize: '14px'`); `<EmailOption />` beneath, the **only** place it appears. Section `id="discovery"`.
 
-Heading "Custom Work". Title (card-title, white, clamp(30px, 5vw, 35px)) "McKenzie Arm Care"; two-sentence teaser; **"Case Study"** ghost button (marginTop 16px) → `CaseStudyModal`: title "McKenzie Arm Care" (marginTop 6px, no "Case Study" label inside); full description; the six features in the **same check-mark list as GlowPT** (`ModalFeatureList`, with `last` so the gap to Close stays 24px), each ending in a period. **The tech note ("Built with React, Supabase…") was removed by David on 2026-09-27; do not restore it.**
-
-### How It Works
-
-Heading "How It Works" (capital I, always). Three steps: Discovery / Build / Grow. No step numbers rendered. Parallel two-sentence structure. step-stack `marginTop: '0'`; step title wrapper marginBottom 10px. Copy stays broadly worded.
-
-### Custom Pricing
-
-Heading "Custom Pricing". Two tiers, step-stack `marginTop: '0'`: **The Build** (`pricePrefix: 'From'`, `$10,000`, whisper subtext) and **Monthly Care** (`$350`, `/ month`). Price line Playfair 700, 27.7px, blue, marginTop 4px. ⚠️ **Monthly Care's `$350` is the decoy.**
-
-### About (heading "Behind FranklinAI")
-
-Heading two lines via `<br />`, lineHeight 1.1; "Behind Franklin" blue, **"AI" white**. **Headshot:** `public/david.png`, 120px circle, objectFit cover, **margin '14px auto 10px'**, 3px border rgba(96,165,250,0.3). **Name:** "David Peterson" (white, marginTop 0), then the bio below.
-
-### Discovery CTA
-
-Heading **"Let's Build"**. Copy: "Every project starts with a conversation. Tell us what you need or what's not working, and we'll figure out what to build." CTA "Book a Free Discovery Call" (`marginTop: 'clamp(4px, 1vw, 8px)', padding: '11px 22px', fontSize: '14px'`), `<EmailOption />` beneath — the **only** place it appears. Section `id="discovery"`.
-
----
-
-### The `/confirmed` page (not on the home page)
-
-Where Kit sends a reader after they confirm (form redirect). **No nav** (David, 2026-10-16): the card leads, with `paddingTop: clamp(56px, 16vh, 160px)` above it, then the footer. The card copies the newsletter card's masthead (**Newsletter** / **The Operator**), then *"Thanks for confirming. You're on the list for The Operator. The next issue will come straight to your inbox."* (the welcome email's own sentences) then two ghost buttons: **Visit FranklinAI** (to `/`) and, second in a 12px wrapper, **Read the Latest Issue**, which opens `LATEST_ISSUE_URL` (Kit's newsletter-site post of the latest issue) in a new tab. **⛔ Update `LATEST_ISSUE_URL` each time an issue is sent**; Kit's "Congrats" screen after sending shows the post's link. `App()` picks it from the path; **`npm run build` copies `dist/index.html` to `dist/confirmed/index.html`** so Amplify serves it with a 200 (its fallback served a 404 status). **Keep both.**
-
-## Scheduling — Cal.com
-
-Account slug `david-peterson-40s7lw` · Event "Free Discovery Call" · slug `free-discovery-call` · 30 minutes · Cal Video · `https://cal.com/david-peterson-40s7lw/free-discovery-call`
-
-## Public Assets
-
-`public/david.png` (headshot, 400×400, shown as 120px circle) · `public/apple-touch-icon.png` (180×180, kite on navy, bolt #fbbf24) · `public/favicon.svg` · `public/icons.svg` (sprite)
+**The `/confirmed` page** (where Kit sends a reader after confirming): **no nav** (David, 2026-10-16); the card leads, with `paddingTop: clamp(56px, 16vh, 160px)` above it, then the footer. The card copies the newsletter masthead (**Newsletter** / **The Operator**), then *"Thanks for confirming. You're on the list for The Operator. The next issue will come straight to your inbox."* (the welcome email's own sentences), then two ghost buttons: **Visit FranklinAI** (to `/`) and, second in a 12px wrapper, **Read the Latest Issue**, opening `LATEST_ISSUE_URL` (the newsletter-site post of the latest issue) in a new tab. **⛔ Update `LATEST_ISSUE_URL` each time an issue is sent** (Kit's "Congrats" screen after sending shows the post's link). `App()` chooses the page by path; **`npm run build` copies `dist/index.html` to `dist/confirmed/index.html`** so Amplify serves it with a 200 (its fallback served a 404 status). **Keep both.**
 
 ---
 
@@ -773,37 +470,21 @@ Account slug `david-peterson-40s7lw` · Event "Free Discovery Call" · slug `fre
 
 **These bind anywhere a PT owner reads FranklinAI's words, glowpt.app and Kit included.**
 
-- No em dashes anywhere, ever
-- No "software" (use "web apps and tools" or "apps")
-- Avoid "in plain English" (and similar) — it can read as excluding non-native English speakers
+- No em dashes anywhere, ever. No "software" (use "web apps and tools" or "apps"). Avoid "in plain English" (and similar); it can read as excluding non-native English speakers.
 - Tone: warm, plain-spoken, builder-to-business-owner. No brochure language, no consultant register.
-- All section headings title case, **no period**; **"Built to Handle HIPAA"** title case, no period
-- **All buttons are title case with no period**, primary and ghost alike
-- The "Email" link has **no period** and points to **david@franklinaisolutions.com**
-- Modal feature lines end with periods
-- **GlowPT is always one word, capital G and PT.** It may be named **"the GlowPT app"** in running copy (the one-word rule governs the token, not whether "app" sits beside it).
-- FranklinAI is always one word, capital F and capital AI; the "AI" renders white wherever the wordmark appears. The footer copyright is just "© {year}".
-- **⚠️ THE LEGAL ENTITY IS WRITTEN `FranklinAI Solutions LLC`, WITH NO COMMA.** Do not reintroduce the comma anywhere, on either site.
+- Section headings title case, **no period**; **"Built to Handle HIPAA"** title case, no period. **All buttons title case with no period**, primary and ghost alike. The "Email" link has **no period** and points to **david@franklinaisolutions.com**. Modal feature lines end with periods.
+- **GlowPT is always one word, capital G and PT**; it may be **"the GlowPT app"** in running copy. FranklinAI is always one word, capital F and capital AI; the "AI" renders white wherever the wordmark appears. The footer copyright is just "© {year}".
+- **⚠️ THE LEGAL ENTITY IS WRITTEN `FranklinAI Solutions LLC`, WITH NO COMMA**, anywhere, on either site.
 - **⚠️ NEVER END A CLAUSE ON A FLOATING "FOR FREE" OR "FREE" WHERE A PRICE IS NEARBY.** It attaches to whatever the reader last held in mind, usually the thing being sold. **Give it an explicit subject** ("the patients join for free"). Same trap for "included", "at no cost" and "on us".
-- **The newsletter description is duplicated on purpose (card + modal, identical). Any edit changes BOTH.** `grep -c "A monthly newsletter for physical therapy practices"` → **2**.
-- **Kit emails and issues sign off "Warmest wishes,", a paragraph gap, then "David Peterson" with "FranklinAI Solutions LLC" on the line directly under it** (David, 2026-10-17: the emails must name the company, full legal name, no comma; **full name since 2026-10-21**: the From line says FranklinAI, so the sign-off is the only place readers learn who writes, and he writes as their consultant, not a friend). In the MCP's content_tree that is one paragraph with text `David Peterson\nFranklinAI Solutions LLC`, which Kit renders as a `<br/>`. Live on both confirmation emails (which add *Glad you're here.* above it), the welcome and the buyer follow-up. Issue 1 went out signed "David".
-- **The GlowPT pitch's second sentence and the eight bullets are duplicated ACROSS REPOS. Any edit changes BOTH repos.** `grep -c "More completed plans of care and the clinic stays full"` → **2** here, **1** in `glowpt/src/lib/marketing.js`.
-- **The book wins on shared sentences.** Where any surface repeats a sentence from *What Your Practice Actually Sells*, the book's wording is canonical.
-- **"Guide" is the format word for the e-book on every public surface** (David, 2026-10-04, **reversing** the 2026-09-26 switch to "playbook": "guide" reads better). The site, the Kit Commerce product page and the book itself all say "guide". **Do not reintroduce "playbook".** The book's title and the newsletter's name are unchanged.
-- **Two retired framings are banned from all site copy:** never **"nobody decided"**; never **split the building into the front desk versus the therapists.**
-- **"cash practice" and "advanced care" are interchangeable and neither is retired.**
+- **Duplicated on purpose, edited together:** the newsletter description (card + modal; `grep -c "A monthly newsletter for physical therapy practices"` → **2**); **across repos**, the GlowPT pitch's second sentence and the eight bullets (`grep -c "More completed plans of care and the clinic stays full"` → **2** here, **1** in `glowpt/src/lib/marketing.js`).
+- **Kit emails and issues sign off "Warmest wishes,", a paragraph gap, then "David Peterson" with "FranklinAI Solutions LLC" directly under it** (full legal name, no comma; the From line says FranklinAI, so the sign-off is where readers learn who writes, as their consultant, not a friend). In the MCP's content_tree: one paragraph with text `David Peterson\nFranklinAI Solutions LLC` (Kit renders a `<br/>`). Both confirmation emails add *Glad you're here.* above it.
+- **The book wins on shared sentences:** where any surface repeats a sentence from *What Your Practice Actually Sells*, the book's wording is canonical.
+- **"Guide" is the e-book's format word on every public surface** (David, 2026-10-04, **reversing** the switch to "playbook"): the site, the Kit product page and the book. **Do not reintroduce "playbook".**
+- **Two retired framings are banned:** never **"nobody decided"**; never **split the building into the front desk versus the therapists.** **"cash practice" and "advanced care" are interchangeable; neither is retired.**
 - **No job title, employer, or present-tense employment fact anywhere in site copy.**
-- **Never describe GlowPT as providing an exercise plan or exercise prescription.**
-- **No billing, refund or trial claims about GlowPT on this site**; renewal wording, if ever needed, is GlowPT's `RENEWAL_LINE` verbatim.
-- **Nothing implying a GlowPT clinic can start checking patients in immediately after signup.**
+- **GlowPT:** never an exercise plan or exercise prescription; **no billing, refund or trial claims** on this site (renewal wording, if ever needed, is GlowPT's `RENEWAL_LINE` verbatim); **nothing implying a clinic can start checking patients in immediately after signup.**
 
-## Forbidden Words in Copy
-
-- "software" (use "web apps and tools" or "apps")
-- "in plain English" (and similar)
-- "upsell" (it turns patients into targets; say "premium add-ons," "the premium sell," or "advanced care")
-- "treatment room" (therapists work on the floor, in the gym, in the open clinic; it reads like a physician's office; glowpt.app uses "treatment areas")
-- Em dashes — anywhere, ever
+**Forbidden words:** "software" (use "web apps and tools" or "apps"); "in plain English" (and similar); "upsell" (it turns patients into targets; say "premium add-ons," "the premium sell," or "advanced care"); "treatment room" (therapists work on the floor, in the gym, in the open clinic; it reads like a physician's office; glowpt.app uses "treatment areas"); em dashes — anywhere, ever.
 
 ## Bio (About Section) — Locked
 
@@ -817,45 +498,19 @@ That experience is what FranklinAI is built on. Custom apps and tools
 are the next step in work he's been doing his whole career, now with
 better technology and a clear focus on what a business needs.
 
-> **Four things are deliberate:**
-> - **No job title and no employer.** Do not write a current role, employer, or clinic back in.
-> - **No niche.** The bio is the umbrella's proof. **Do not "reconcile" it to the niche-forward headline** (proposed and rejected).
-> - **"Healthcare, research, and education" and "nonprofit and for-profit" are two different axes and stay in separate clauses** (sector vs tax structure).
-> - **"That experience" in paragraph 2 depends on paragraph 1.** If paragraph 1 is rewritten, check paragraph 2 still has something to point at.
-
----
-
-## Locked Inline Styles — the tuning rows
-
-**Only the hand-tuned values live here; `App.jsx` holds everything else, and the full old table is in `docs/history.md`.** See **Locked Geometry** for why each is what it is.
-
-| Element | Inline styles |
-|---|---|
-| Nav brand `<a>` | gap '4px', alignItems 'flex-start', **transform 'translateX(-26px)'** |
-| Nav kite | `KiteLogo size={130}` (inline component) in `<span style={{ flexShrink: 0, display: 'flex' }}>`, no className |
-| Nav wordmark `<div>` | **marginTop 'clamp(13.98px, calc(42.25px - 2.44vw), 19.28px)'** |
-| Nav "Solutions LLC" `<span>` | Inter 800, 'clamp(25.6px, 2.72vw, 31.5px)', #60a5fa, lineHeight '1', marginTop '3px', **no transform** |
-| Footer brand row `<div>` | display 'flex', alignItems 'flex-start', gap '4px', **transform 'translateX(-17px)'** — hand-tuned, do not derive |
-| Footer kite | `KiteLogo size={105}` (inline component) in `<span style={{ flexShrink: 0, display: 'flex' }}>` |
-| Footer text column `<div>` | textAlign 'center', **marginTop '16.17px'**, block layout, **no flex, no transform** |
-| Footer "Solutions LLC" `<span>` | display 'block', Inter 800, '20px', letterSpacing '0.02em', #60a5fa, marginTop '2px', **no transform** |
-| Footer domain `<span>` | display 'block', Inter '13px', #8892a4, lineHeight 1.5, marginTop '8px', **no transform** |
-| **Footer copyright `<span>`** | display 'block', Inter '13px', #8892a4, lineHeight 1.5, **transform 'translateX(-3px)'** — the only per-line nudge |
-| **Footer copyright year `<span>`** | **marginLeft '2px'**, no literal space after `&copy;` |
-| Footer Instagram link `<a>` (inside the copyright span) | display 'inline-block', marginLeft '8px', verticalAlign '-2px', lineHeight 0, color '#60a5fa'; `InstagramGlyph size={13}` |
-| Newsletter modal email `<input>` / Subscribe `<button>` | height/minHeight '44px', boxSizing 'border-box'; button inline-flex centered, **marginTop '0'** |
+> **Four things are deliberate:** **no job title and no employer** (do not write a role, employer, or clinic back in); **no niche** (the bio is the umbrella's proof; **do not "reconcile" it to the niche-forward headline**, proposed and rejected); **"Healthcare, research, and education" and "nonprofit and for-profit" are two different axes and stay in separate clauses** (sector vs tax structure); **"That experience" in paragraph 2 depends on paragraph 1**, so a rewrite of paragraph 1 must leave it something to point at.
 
 ---
 
 ## CSS / JSX Boundary Rules
 
 - **App root:** a single `<div style={{ WebkitTextSizeAdjust: '100%' }}>`, one property only.
-- **Footer:** fully inline, NO CSS classes; text column is block layout, every line `display: block`.
+- **Footer:** fully inline, NO CSS classes; text column block layout, every line `display: block`.
 - **Nav:** `global.css` classes for layout plus inline overrides; the nav kite does not use `.site-nav__logo`.
-- **Newsletter card:** `.section` / `.container` / `.site-card` / `.card-heading` plus inline styles; the card's only action is a ghost button opening the modal. The modal's input, button, success and error lines are fully inline-styled. **Placeholder styling would need a `global.css` `::placeholder` rule** and is deliberately not added.
+- **Newsletter card:** `.section` / `.container` / `.site-card` / `.card-heading` plus inline styles; the modal's input, button, success and error lines fully inline. **Placeholder styling would need a `global.css` `::placeholder` rule** and is deliberately not added.
 - **Available card:** `.card-heading` / `.card-text` / `.btn` plus inline overrides; modal sublines, bodies, price blocks and dividers fully inline.
-- **Custom Work:** `.card-title` / `.card-text` / `.btn`; `CaseStudyModal` is inline-styled through the shared `ModalFeatureList` (the `.modal__features` / `.modal__feature` / `.modal__stack` rules in `global.css` are now dead code).
-- **Primary buttons:** all three use `btn btn--primary` plus inline sizing. Do not remove the sizing without setting new explicit sizing.
+- **Custom Work:** `.card-title` / `.card-text` / `.btn`; `CaseStudyModal` is inline-styled through the shared `ModalFeatureList` (the `.modal__features` / `.modal__feature` / `.modal__stack` rules in `global.css` are dead code).
+- **Primary buttons:** all three use `btn btn--primary` plus inline sizing; do not remove the sizing without setting new explicit sizing.
 - **Fixes are JSX-only via inline styles.** Avoid `global.css` edits. Public assets go in `public/`.
 
 ---
@@ -864,155 +519,66 @@ better technology and a clear focus on what a business needs.
 
 ### In Claude Code
 
-Edit the repo in place. **Read this file first.** **Confirm the working directory before touching anything** (GlowPT is a separate repo).
+**Read this file first; confirm the working directory** (GlowPT is a separate repo). Edit the repo in place.
 
-> ## ✍️ EDIT AND PUSH DIRECTLY
->
-> **David's rule: make the change, then `git commit` and `git push` yourself. Do not hand him a copy-paste command.** GlowPT's CLAUDE.md says the same.
->
-> **The one exception: a permission only David can grant.** Claude Code refuses to let Claude write its own permission rules, even with David's go-ahead. Give him **one** Run-able block and say plainly what it does.
+> ✍️ **EDIT AND PUSH DIRECTLY** (David's rule, GlowPT's too): **make the change, `git commit` and `git push` yourself; never hand him a copy-paste command.** **The one exception:** a permission only David can grant (Claude Code won't let Claude write its own permission rules, even with his go-ahead): give him **one** Run-able block and say plainly what it does.
 
 **The sequence for a change:**
-
 1. **Read this document and the real files.**
-2. **Make the code change** and verify by string checks — old strings at zero, new strings present, no em dashes, no forbidden words. **A predicted line count is an estimate, never a verification, and never a fact for this file**; any line count here is measured on the pushed file. For a **visual** change, measure the rendered result in the browser **against the reference the eye actually uses**. **For wiring, prove the failure path locally and let David prove the success path on the live site** (e.g. an invalid `a@b` proves the site reaches Kit without creating a subscriber).
-3. **Push the code.** The push deploys through Amplify (no AWS login needed). **Do not tell David it is live until the live site serves it**: fetch the page, find its `assets/index-*.js`, and grep that for the new string. A build can take longer than the usual minute and a half.
-4. **Wait for David to confirm the change works on the live site.** Verification by measurement is not confirmation; his eyes on the live site are. *(Waived twice for copy-only changes on his direct instruction; keep waiting on anything visual.)*
-5. **Then update `CLAUDE.md`**, as a separate commit: edit the lines that changed **in place** (CURRENT STATE and the affected section), bump the version number on the first line, add a one-line Change History entry. **Put the reasoning of the fix in the commit message, not here.** Anything removed is banked in `docs/history.md` first (the hook enforces it).
-6. **Tell David the new version number and report the file's size and delta.** **Nothing needs pasting into claude.ai**: it reads the pushed file. If David ever asks for the whole text in chat, give it in one fenced block with four backticks (the file contains triple-backtick blocks); no clipboard, no file card.
+2. **Change, then verify by string checks** (old strings at zero, new present, no em dashes, no forbidden words). **A predicted line count is never a verification or a fact for this file**; counts here are measured on the pushed file. **Visual change:** measure the rendered result in the browser **against the reference the eye actually uses**. **Wiring:** prove the failure path locally and let David prove the success path live (an invalid `a@b` proves the site reaches Kit without creating a subscriber).
+3. **Push** (Amplify deploys; no AWS login). **Do not tell David it is live until the live site serves it**: fetch the page, find its `assets/index-*.js`, and grep that for the new string (a build can take longer than the usual minute and a half).
+4. **Wait for David to confirm on the live site.** Measurement is not confirmation; his eyes are. *(Waived twice for copy-only changes on his direct instruction; keep waiting on anything visual.)*
+5. **Then update `CLAUDE.md`** in a separate commit: changed lines **in place** (CURRENT STATE and the affected section), a version bump, one Change History line; **the reasoning goes in the commit message**; anything removed is banked first (the hook enforces it).
+6. **Tell David the new version and the file's size and delta.** Nothing is pasted into claude.ai. If he asks for the whole text in chat, give it in one fenced block with four backticks (the file contains triple-backtick blocks); no clipboard, no file card.
 
-**Rules on maintaining this file:**
-- **Record the reasoning that governs future decisions, not the story of how it was reached.** A rule plus one line of why belongs here; the narrative belongs in the commit message or `docs/history.md`.
-- **When a rule is REVERSED, say so and delete the old instruction** (banking it). A retired rule next to its replacement is worse than either alone.
-- **A version bump for one string is legitimate.** A file quoting a string the code no longer contains is the rot to avoid.
-- **Never write the doc before the push**, and not before David confirms.
-- **Record what lives outside git** (Amplify settings, Route 53 records, Kit settings). No diff will show them.
-- **Read the live code when updating**, to catch drift.
+**Maintaining this file:** the reasoning that governs future decisions, not the story; **when a rule is REVERSED, say so and delete the old instruction** (banked), since a retired rule beside its replacement is worse than either; a version bump for one string is legitimate (a file quoting a string the code no longer contains is the rot to avoid); **never write the doc before the push and David's confirmation**; **record what lives outside git** (Amplify, Route 53, Kit); read the live code when updating, to catch drift.
 
 ### Working across the two repos
 
-A session here may edit the GlowPT repo, and vice versa, when:
-- **David asks for it explicitly.** Do not reach across on your own initiative.
-- **You read the other repo's `CLAUDE.md` first.** GlowPT has its own house copy rule (statements sentence case with a period; labels Title Case without; no all-caps; AP preposition conventions).
-- **You say plainly which repo each change landed in**, with commit hashes.
-- **The session's ROOT sets its powers: AWS-, database-, deploy-, or legal-touching work runs from a session STARTED in the GlowPT project**, which carries the AWS allowlist, per-project memory and its auto-loaded `CLAUDE.md`. Copy and layout work may run from either root. A session rooted here whose task turns toward AWS should say so and stop rather than improvise around missing permissions.
-- **ONE exception: Route 53 record work for franklinaisolutions.com runs from this root** (David's waiver, 2026-09-25: "it would only confuse things to be bouncing projects"). **`.claude/settings.local.json`** here (gitignored) allows exactly:
+Edit the GlowPT repo from here (or this repo from there) only when **David asks explicitly**, after **reading the other repo's `CLAUDE.md`** (GlowPT's house copy rule: statements sentence case with a period; labels Title Case without; no all-caps; AP preposition conventions), and **say plainly which repo each change landed in**, with commit hashes. **Prefer a GlowPT session for anything touching GlowPT's behavior**; copy is the safe case.
+
+- **The session's ROOT sets its powers: AWS-, database-, deploy-, or legal-touching work runs from a session STARTED in the GlowPT project** (its AWS allowlist, memory and `CLAUDE.md`); copy and layout work from either. A session here whose task turns toward AWS says so and stops rather than improvise around missing permissions.
+- **ONE exception: Route 53 record work for franklinaisolutions.com runs from this root** (David, 2026-09-25: "it would only confuse things to be bouncing projects"). **`.claude/settings.local.json`** here (gitignored) allows exactly:
   - `Bash(aws route53 change-resource-record-sets --hosted-zone-id Z0616895187ZTAR49DY5P *)`
   - `Bash(aws route53 list-resource-record-sets --hosted-zone-id Z0616895187ZTAR49DY5P *)`
   - `Bash(aws route53 get-change *)`
   - `Bash(aws route53 wait resource-record-sets-changed *)`
   - `Bash(dig *)`
 
-  **Everything else AWS (Amplify settings, Organizations, Identity Center, other accounts, `glowpt-prod`) still belongs in a GlowPT-rooted session.** Keep each command a single command starting with the allowed prefix (`--hosted-zone-id` first), not a `&&` chain. **Claude cannot create or widen this file itself**; that is David's decision and keystrokes.
-- **Prefer the GlowPT session for anything touching GlowPT's behavior.** Copy is the safe case.
+  **Everything else AWS (Amplify settings, Organizations, Identity Center, other accounts, `glowpt-prod`) belongs in a GlowPT-rooted session.** One command at a time, starting with the allowed prefix (`--hosted-zone-id` first), no `&&` chain. **Claude cannot create or widen this file**; that is David's decision and keystrokes.
 
-> **Previewing this site from a GlowPT session:** `preview_start` resolves `.claude/launch.json` from the session's own folder, so add a temporary configuration there (`runtimeArgs: ["--prefix", "/Users/mac/Downloads/franklinai-v2", "run", "dev"]`), verify, then restore the file with `git checkout`. Port 5173 is shared; stop the other server first. **Dead ends:** a `vite build --base=./` over `file://` renders blank (ES modules blocked by CORS); the Browser pane's screenshot did not follow a scroll down this long page (bring the footer into view with a temporary negative `document.body.style.marginTop`, reverted immediately).
->
-> **Say which verification you actually did.** Build and string checks are not the same as looking at it.
+> **Previewing from a GlowPT session:** `preview_start` reads `.claude/launch.json` from the session's own folder: add a temporary configuration there (`runtimeArgs: ["--prefix", "/Users/mac/Downloads/franklinai-v2", "run", "dev"]`), then restore it with `git checkout` (port 5173 is shared; stop the other server first). **Comparing an older version:** check it out in a `git worktree` (symlink `node_modules`) and serve it from a temporary `launch.json` entry on another port; remove both after. **Dead ends:** `vite build --base=./` over `file://` renders blank (ES modules blocked by CORS); the Browser pane's screenshot does not follow a scroll down this long page (bring the footer up with a temporary negative `document.body.style.marginTop`, reverted at once). **Say which verification you actually did**: build and string checks are not looking at it.
 
-### Working with David in web consoles (AWS, Kit, GitHub)
+### Working with David
 
-- David uses **Safari**, not Chrome. The built-in browser pane is not logged in to his accounts and probably not visible to him; **give him Safari links instead.**
-- **One step per message**; say before each step whether it is invisible or visible; **ask for a screenshot before any Save or Create button** that changes something. Several steps at once confuse him; one decision per message works.
-- **Walk him around upsells explicitly** (Kit pushed a card-required trial with annual pre-selected, and an offer to connect Stripe or Gumroad; both sidestepped).
-- **Never enter or ask him to type card, bank or password details on Claude's behalf**; he types those himself.
-- **He reads work email on his phone and is wary of Outlook on the web**; a confirmation link can be opened on the phone.
-- **When a theory is wrong, say so and stop guessing.**
-- **In Kit, give menu paths from the dashboard, not URLs** (David, 2026-10-16: "stop sending me links"), and **read Kit's help article before sending him to find a setting** (guessing cost him an hour that day).
+- **He uses Safari, not Chrome;** the built-in browser pane is not logged in to his accounts: **give him Safari links**, except **in Kit, where he wants menu paths from the dashboard, not URLs** (2026-10-16: "stop sending me links"), after **reading Kit's help article** (guessing cost him an hour).
+- **One step per message**, saying whether it is invisible or visible; **a screenshot before any Save or Create button** that changes something; one decision per message.
+- **Walk him around upsells explicitly** (Kit pushed a card-required trial with annual pre-selected, and an offer to connect Stripe or Gumroad). **Never enter or ask him to type card, bank or password details on Claude's behalf.** He reads work email on his phone and is wary of Outlook on the web.
+- **When a theory is wrong, say so and stop guessing.** **Secrets:** redact them in the command itself so they never render on screen.
+- **Strategic discussion before code.** **Flag conflicts with established decisions rather than executing silently**; hold a sound position, **but if David reaffirms, it is his call: execute it in full and record it.** **A flagged-and-declined concern is parked in Open Items**, with the problem and the fix. **When David says a thing is settled, it is closed**; a clever measurement does not reopen it. **"Settled" belongs to David, not this document:** when he asks for something it forbids, say what it says and why, then do what he asks.
 
-### In claude.ai
-
-**What lives there:** strategy, positioning, copy decisions, arguing a call through, newsletter drafting, and the **Content Calendar**. Handoff notes into Code are written there. **This document is maintained in Code**; claude.ai fetches it from GitHub at the start of each conversation (the pointer, V59) and reads it as spec.
-
-### Handoff notes into Code
-
-A good one **names the repo in its first line**, states the scope and what not to touch, gives exact find/replace strings, says plainly when it supersedes a locked string here, ends with a verification table, and **tells Code to update `CLAUDE.md` after the push**. **It must carry the editorial reasoning, not just the strings** — Code can read the code but cannot reconstruct why a decision was made or what was rejected. Handoff notes dropped in the repo or `~/Downloads/` are session inputs, not sources; once used, bank them in `docs/history.md` and delete them.
-
-### Both
-
-**Strategic discussion before code.** David thinks decisions through conversationally first. **Flag conflicts with established decisions proactively rather than executing silently**, then hold the position if the reasoning is sound — **and if David reaffirms, it is his call: execute it in full and record the decision.**
-
-- **A flagged-and-declined concern is parked in Open Items, not dropped**, with what the problem was and what the fix would be. (Bullet 3's "for free" was raised, declined, and fixed by David himself minutes later in one line because it was written down.)
-- **When David says a thing is settled, it is closed.** A closed item is not reopened by a clever measurement.
-- **But "settled" belongs to David, not to this document.** When he asks for something this file forbids, say what the file says and why, then do what he asks.
-
-**No phantom sources.** Two documents: this one and the Content Calendar (plus `docs/history.md`, the archive of this one). The GlowPT repo's `docs/commercial-handoff.md` is a real file and the source for the GlowPT section.
-
-**Dates live in the Content Calendar, not here.**
-
-**Secrets.** When giving David a command that could return a secret, redact it in the command itself so it never renders on screen.
+**claude.ai** holds strategy, positioning, copy decisions, newsletter drafting and the Calendar, and writes the handoff notes. **A good handoff note names the repo in its first line**, states scope and what not to touch, gives exact find/replace strings, says when it supersedes a locked string here, ends with a verification table, **tells Code to update `CLAUDE.md` after the push**, and **carries the editorial reasoning, not just the strings** (Code cannot reconstruct why a decision was made or what was rejected). Handoff notes dropped in the repo or `~/Downloads/` are inputs, not sources: once used, bank them in `docs/history.md` and delete them. **No phantom sources:** this file, the Calendar, `docs/history.md`, and the GlowPT repo's `docs/commercial-handoff.md`. **Dates live in the Calendar.**
 
 ---
 
 ## Open Items
 
+*Only what is still open; finished items are archived in `docs/history.md`.*
+
 | Item | Status |
 |---|---|
-| ~~E-book: the first real purchase~~ | **✅ Done 2026-10-16:** David bought it from the live site; the sale, receipt, download, follow-up and card descriptor all worked. Buyers join the list directly (active), so the follow-up keeps **Operator line A**; delay set to **2 days**. |
-| **Guide delivery: the iPhone file name — WITH KIT, nothing to do here** | **Kit delivers the guide (product `293598`); the 2026-10-16/17 detour through our own S3 link is over: never again (David).** **Verified 2026-10-17 with three purchases:** checkout, thank-you page, receipt, list join and follow-up all work. The receipt's **Download button is permanent**: each tap asks Kit for a fresh signed file link that **lasts 5 minutes** (`X-Amz-Expires=300`), so a PDF passed on to another app after that, or through the Gmail app's share (Google appends `&shem=…`, breaking the signature), shows Amazon's `SignatureDoesNotMatch` page; tapping Download again always works. **Kit already sends the right name** (`response-content-disposition=inline; filename="What-Your-Practice-Actually-Sells.pdf"`): **on a Mac it saves correctly**. **On an iPhone, both the thank-you page and the receipt save as `5lkoia3rv1pwvcjxzfya8eky39cb`**, Kit's storage key at the end of the URL, because iOS names viewed PDFs from the URL. *(V79 said the thank-you page gave the right name; Buyer3 proved that wrong.)* **The Gmail app** opens links in Google's own browser, which has no Save to Files; Gmail → Settings → Default apps → Safari fixes it (David's phone is set). **Narrowed 2026-10-17 at Kit's request: it is Safari only.** The same receipt link saved in **Chrome on the iPhone** keeps the right name; **Safari** names it from the URL. David reported this to Kit support (Ira, a human, escalated it to Kit's product team with screenshots), asking that product file URLs end in the real file name. **Any fix is Kit's; record their answer here if it comes.** No workarounds in the emails, and no extra copy (David). The S3 detour left an **unpublished "Go to URL" product `293717`** at path `what-your-practice-actually-sells-new` (its bucket deleted); "Go to page" is Kit's fixed receipt label for a URL product. |
-| ~~Emails never name FranklinAI~~ | **✅ Done 2026-10-17:** the sign-off names the company (see Copy Rules). A kite-and-wordmark footer on the "Text only" template was considered and not built (images get blocked, reads as marketing); revisit only if David asks. |
-| ~~Kit mailing address → a real one~~ | **Closed 2026-10-17: David keeps Kit's stand-in address** (see Kit table). |
-| ~~Send new subscribers to the latest issue~~ | **✅ Done 2026-10-20:** the `/confirmed` page's **Read the Latest Issue** button. **Upkeep: update `LATEST_ISSUE_URL` with each issue.** |
-| ~~Remove "Built with Kit"~~ | **✅ Done 2026-10-16:** off on the email template, the product page, the thank-you page and the form; Kit's own confirm page replaced by `/confirmed`. |
-| ~~Email series and automations~~ | **✅ Built 2026-10-16:** the welcome and the buyer follow-up (see Kit table). |
-| ~~Kit confirmation email wording~~ | **✅ Live 2026-10-16** (see Kit table). |
-| ~~Test subscribers~~ | **✅ Done 2026-10-03:** one left (Dolly). |
-| ~~Kit trial lapse~~ | **✅ Done 2026-10-14:** David chose Creator monthly; confirmations tested working (see Kit table). |
-| ~~Book text says "guide"~~ | **✅ Done 2026-10-13:** the cover line reads "A guide from The Operator" and the text carries no "playbook". |
-| ~~Issue 1 paragraph 3 near-quotes the book~~ | **✅ Matched 2026-10-16** (David's yes): "The tactics that push packages were written for a cash-pay model, where the sale is the revenue." Updated in the Kit draft. |
-| ~~Retire Netlify for this site~~ | **✅ Done 2026-10-17:** site and zone deleted, glowpt.app's zone too; McKenzie untouched; mail tested. |
-| ~~GlowPT clinic BAA text~~ | **✅ Final 2026-10-20** with no attorney (David's call); accepted online with the Subscription Agreement. Details in the GlowPT repo. |
-| ~~GlowPT billing~~ | **✅ On Stripe 2026-10-20** (GlowPT repo). This site makes no billing claims. |
-| ~~GlowPT auto-renewal statutes~~ | **✅ Settled by David 2026-10-20:** Pennsylvania has no auto-renewal statute; the agreement discloses renewal and cancel-anytime. |
-| ~~Click-through vs signature~~ | **✅ Click-through** (David, 2026-10-20). |
+| **Guide download name on iPhone Safari — WITH KIT** | Kit delivers the guide (`293598`); **our own S3 link: never again** (David). Safari on an iPhone names the PDF from the URL (Kit's storage key, `5lkoia3rv1pwvcjxzfya8eky39cb`); a Mac and iPhone Chrome keep the right name. Download links last 5 minutes (`X-Amz-Expires=300`; a later share shows `SignatureDoesNotMatch`); tapping the receipt's Download again always works. Reported to Kit (escalated to the product team): **any fix is Kit's; record their answer here.** No workarounds or extra copy in the emails. Leftover: an unpublished "Go to URL" product `293717`. |
 | **Fictitious-name registration** | Raised 2026-09-01, not acted on. Both sites lead with "FranklinAI" while the entity is FranklinAI Solutions LLC; PA generally requires a fictitious-name registration. **Nobody involved is a lawyer; nothing changed on this basis.** A cheap question for the open attorney engagement. |
-| **PA sales tax on the guide — DAVID** | Decided 2026-10-19: pay it out of the $37 (see Kit table). Open until the PA license exists and the accountant has answered tax-included pricing and the filing schedule. No copy or code change. |
-| ~~Public vs private repos~~ | **✅ CLOSED 2026-09-26.** `glowpt` is **private** (no forks found; full-history secret scan clean; nothing needed rotating; Amplify still builds; recorded in GlowPT's CLAUDE.md). **`franklinai-v2` stays PUBLIC on purpose** for the claude.ai pointer. **Standing rule: never commit a secret or anything confidential to this repo, and keep sensitive business or legal detail brief here.** |
+| **PA sales tax on the guide — DAVID** | Decided 2026-10-19: pay it out of the $37 (see Kit). Open until the PA license (myPATH) exists and the accountant has answered tax-included pricing and the filing schedule. No copy or code change. |
 
 ---
 
 ## Change History
 
-*One line per version. The full entries for V12–V57 are in `docs/history.md` (section 1, "Change History").*
+*One line per version, last five here. V58–V91 are in `docs/history.md` section 0ii (the full V91 text); V12–V57 in section 1.*
 
+- **V92** (2026-10-25) — **Trimmed from 115,100 bytes** (David's go-ahead): full V91 text banked verbatim (`docs/history.md` 0ii); finished Open Items, Change History before V88 and narratives archived; duplicates merged (the inline-styles table into Nav and Footer; Header Sizing and the nav/footer/newsletter type rows into their sections); every value, copy string, ID and rule kept, probed by name; the trim line lowered to ~100 KB (~80 KB was proposed, but the trimmed file is about 85 KB).
 - **V91** (2026-10-25) — Instagram glyph added to the footer's © line, linking to @franklinaisolutions; lockup proven unmoved. Footer dial `-14px` → `-17px` by David's eye; text column `13.16px` → `16.17px` by the formula, with his yes, so the F sits on the crossbar (`1473d21`, `0c4d79d`, `2feae50`, `b82b2ce`, `6a34f4d`).
 - **V90** (2026-10-21) — The newsletter site's "Built with Kit" badge hidden by Custom CSS (Kit support's fix); checked live.
-- **V89** (2026-10-21) — Every Kit email signs "David Peterson"; the newsletter site's confirmation email now ends like the site's (Warmest wishes added back).
+- **V89** (2026-10-21) — Every Kit email signs "David Peterson"; the newsletter site's confirmation email now ends like the site's.
 - **V88** (2026-10-21) — Unused `src/components/KiteLogo.jsx` deleted (`9f25bac`, same bundle as live); the mystery-signup watch dropped at David's word.
-- **V87** (2026-10-21) — Three old items cut at David's word: the nav/footer fine-tuning note, the Microsoft 365 DKIM open item, the modal Escape-key note.
-- **V86** (2026-10-21) — Issue 1 Reel posted 2026-10-20 (AI label on); send-day routine recorded; PA sales tax decision (pay it out of $37) recorded.
-- **V85** (2026-10-20) — Signups on Kit's newsletter site now get our confirmation email, land on `/confirmed`, and get the welcome (a second Rule); tested.
-- **V84** (2026-10-20) — **Issue 1 sent** (Felix, Kevin, Dolly) and on Kit's newsletter site; sender is now **FranklinAI**; `/confirmed` gets **Read the Latest Issue** (`826c0b3`, confirmed by David); GlowPT's Stripe billing and final agreements recorded.
-- **V83** (2026-10-17) — The iPhone file name is Safari only (Chrome keeps the right name); reported to Kit's product team; nothing more to do here.
-- **V82** (2026-10-17) — Netlify gone for this site (site and zone, plus glowpt.app's zone); Kit's stand-in mailing address kept; only Dolly and Kevin left on the list; Ira at Kit on the file name.
-- **V81** (2026-10-17) — Issue 1 test-sent to Dolly and approved by David; it waits only for his word to schedule. Where Kit's test send lives.
-- **V80** (2026-10-17) — Every Kit email signs off "David / FranklinAI Solutions LLC". Guide download facts corrected: Kit names the file right on a Mac; iPhones save Kit's storage key; Kit support asked.
-- **V79** (2026-10-17) — Guide delivery from our own S3 link tried and reverted: the Gmail app offers no Save to Files for it. Kit delivers the guide; the email path's random file name is accepted.
-- **V78** (2026-10-16) — The guide-delivery AWS work runs from this root (David); the PDF must be re-saved to ~/Downloads first.
-- **V77** (2026-10-16) — Kit support confirmed the receipt link cannot keep the file name; next is delivering the guide from our own link (plan in Open Items).
-- **V76** (2026-10-16) — The random download name traced to the receipt link opening the PDF from Kit's storage; the question for Kit support recorded.
-- **V75** (2026-10-16) — **First real purchase worked end to end**; buyers join the list directly, so the follow-up keeps line A, delay now 2 days. Issue 1 sentence matched to the book. New open item: the download's random file name.
-- **V74** (2026-10-16) — **The guide is on the shelf:** Kit product `293598` at $37, site button live, pop-up matches the book. Kit welcome, buyer follow-up, live confirmation email, badges off, `/confirmed` page; Issue 1 drafted. **One ask per issue** (reverses every-issue-closes-on-the-call). Next: the real purchase, then FranklinAI in the emails.
-- **V73** (2026-10-14) — **Kit on Creator monthly** (the lapsed trial had stopped confirmations; tested working again). New wants: remove Kit branding, email series and automations.
-- **V72** (2026-10-14) — Book status: text final (~7,600 words), PDF typeset in claude.ai not Canva, copyright page under the LLC; Issue 1 moved again (dates in the Calendar); never commit the book to this repo.
-- **V71** (2026-10-04) — The claude.ai pointer now reads this file with `curl` in its own computer; its fetch tool served stale copies and is retired for this.
-- **V70** (2026-10-04) — **"Guide" replaces "playbook" everywhere** (reverses V62). `EbookModal`: subline removed, price moved into a larger button "Buy the Guide · $37", "A downloadable PDF." under it (`984c456`, `0ff7be2`, confirmed by David).
-- **V69** (2026-10-04) — Newsletter description is one sentence, identical on card and modal ("A monthly newsletter for physical therapy practices…", `275814d`, `49a754f`, confirmed by David). **Kit MCP connected.** New open item: send new subscribers to the latest issue.
-- **V68** (2026-10-03) — Kit test subscribers down to one (Dolly), ready for Issue 1.
-- **V67** (2026-10-03) — **The Operator goes monthly**: "Delivered monthly" on the card and in the modal (`3f80dda`, confirmed live by David). Rule: check the live site before saying a push is live.
-- **V66** (2026-09-27) — Modals: a framed grey bottom Close on all four; signup modal trimmed (first description sentence out, "Then check your email to confirm." under the form); case study uses GlowPT's check list, tech note removed. Kit read-out and test subscribers updated.
-- **V65** (2026-09-27) — Issue 1 pushed back a week; **the e-book card never comes down** (David); playbook PDF due Tuesday; fifth test subscriber.
-- **V64** (2026-09-26) — claude.ai read a stale V62: recorded the two caches (GitHub raw 5 min, claude.ai's fetch tool) and the cache-buster now in the pointer.
-- **V63** (2026-09-26) — **Kit Commerce step 1 done**: Stripe Express payouts as the LLC to Bluevine, descriptor `FRANKLINAI`. Product waits on the final PDF; no placeholder product.
-- **V62** (2026-09-26) — **"Playbook" replaces "guide" for the e-book on the site** (card teaser, modal subline, modal paragraph 3, button "Buy the Playbook"; `fd6b95a`, confirmed live by David). New copy rule; the book follows later. Checkout waits on the LLC business bank account; Stripe to be set up as the company with the EIN.
-- **V61** (2026-09-26) — GlowPT follow-up done in a GlowPT session: private, no forks, history clean, nothing rotated, builds fine. Open item closed.
-- **V60** (2026-09-26) — **`glowpt` made private; `franklinai-v2` kept public on purpose** (the claude.ai pointer needs it). New rule: never commit a secret here. GlowPT history scan left for a GlowPT session.
-- **V59** (2026-09-26) — **claude.ai now reads this file from GitHub** through a pointer in its project instructions (David pasted it; the V57 paste is gone). One copy only; no more pasting. Recorded that both repos are public, unplanned, as an open decision.
-- **V58** (2026-09-26) — **Trimmed from 167,777 bytes to a guide**, the GlowPT way. The full V57 text, `AWS-MIGRATION-HANDOFF.md` and the trim handoff were banked verbatim in the new `docs/history.md`; the version chain became a CURRENT STATE block; narratives were condensed to rules; the inline-styles table kept only the tuning rows (David will fine-tune them); new **What may be added to this file** section and a pre-commit hook (`scripts/hooks/pre-commit`) enforcing bank-first. Process changed: **edit in place, not regenerate whole; print the whole doc in chat only when David asks.** Version number kept on the first line at David's request.
-- **V57** (2026-09-25) — The Operator wired to Kit form `9962049` (double opt-in); Kit sends as the domain (four Route 53 records incl. DMARC `p=none`); `EbookModal` paragraphs 1–2 matched to the book; Route 53 permission file for this root. Commits `d89f4f0`, `8024666`, `fb01e32`.
-- **V56** (2026-09-25) — Site moved from Netlify to AWS Amplify, account `franklinai-web`, no downtime, mail intact. Commit `0279ffe`.
-- **V55** — Session-rooting rule: AWS/DB/deploy/legal work from a GlowPT-rooted session.
-- **V54** — "Solutions, LLC" → "Solutions LLC" in both lockups; proven not to move either. Commit `84f74c9`.
-- **V53** — Bullet 3 → "...and the patients join for free."; the floating-"for free" rule.
-- **V52** — The two sites' eight bullets made identical, reversing the 5-vs-8 rule.
-- **V12–V51** — see `docs/history.md`.
