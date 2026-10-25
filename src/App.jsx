@@ -664,13 +664,13 @@ function Footer() {
           (half the kite width + gap), so this translateX lands the wordmark AND the
           fine print near the page's center. Single dial, desktop + mobile.
           -14px until 2026-10-25, when David saw it read slightly right; -20px
-          puts the text 4px right of center, like the nav's (3.35px). */}
+          read too far left; -17px is halfway back, by David's eye. */}
       <div
         style={{
           display: 'flex',
           alignItems: 'flex-start',
           gap: '4px',
-          transform: 'translateX(-20px)'
+          transform: 'translateX(-17px)'
         }}
       >
         <span style={{ flexShrink: 0, display: 'flex' }}>
