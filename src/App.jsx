@@ -681,8 +681,10 @@ function Footer() {
             centers via the column's textAlign:center. Deliberately not a flex
             column: flex shrink-to-content centering computes differently across
             engines (Safari), which is what kept the copyright reading off-center.
-            Block max-content + text-align is identical in every browser. */}
-        <div style={{ textAlign: 'center', marginTop: '13.16px' }}>
+            Block max-content + text-align is identical in every browser.
+            marginTop puts the F's center on the kite crossbar: 0.325 x 105
+            - 0.561 x 32 = 16.17px (was 13.16px, 2.8px high, until 2026-10-25). */}
+        <div style={{ textAlign: 'center', marginTop: '16.17px' }}>
           <a
             href="/"
             style={{
