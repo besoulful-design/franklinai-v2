@@ -756,26 +756,27 @@ function Footer() {
                 3.66px word space, deterministic in every browser, unlike a
                 thin-space glyph which depends on the font having it. */}
             &copy;<span style={{ marginLeft: '2px' }}>{year}</span>
+            {/* Instagram, the account's one discovery surface, at the end of this
+                line (David, 2026-10-25; a fifth line of its own made the footer
+                too tall). Sized to the text so the line does not grow, and the
+                line stays far narrower than "FranklinAI", so the column cannot
+                widen and the lockup cannot move. It rides this line's -3px. */}
+            <a
+              href="https://www.instagram.com/franklinaisolutions/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="FranklinAI on Instagram"
+              style={{
+                display: 'inline-block',
+                marginLeft: '8px',
+                verticalAlign: '-2px',
+                lineHeight: 0,
+                color: '#60a5fa'
+              }}
+            >
+              <InstagramGlyph size={13} />
+            </a>
           </span>
-          {/* Instagram, the account's one discovery surface. A fifth block line in
-              the text column: same centering method as the lines above (block +
-              the column's textAlign), no transform, no per-line nudge. The glyph
-              is smaller than every line above it, so it cannot widen the column
-              ("FranklinAI" still sets the width). */}
-          <a
-            href="https://www.instagram.com/franklinaisolutions/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="FranklinAI on Instagram"
-            style={{
-              display: 'block',
-              marginTop: '10px',
-              lineHeight: 0,
-              color: '#60a5fa'
-            }}
-          >
-            <InstagramGlyph size={22} />
-          </a>
         </div>
       </div>
     </footer>
