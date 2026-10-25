@@ -1,4 +1,4 @@
-# FranklinAI — Project Instructions (Version 90, Current)
+# FranklinAI — Project Instructions (Version 91, Current)
 
 > **READ THIS FILE BEFORE MAKING ANY CHANGE TO THIS REPO.** Read all of it, not just the section you think applies. **If a value looks arbitrary, it is almost certainly hand-tuned and documented here. Look it up first.** A morning was once lost re-deriving a footer geometry this file already specified.
 
@@ -12,7 +12,7 @@
 - **Next (David, 2026-10-21):** **Issue 1 is out on both surfaces:** sent 2026-10-20, and **the Reel posted from @franklinaisolutions at 5:37 PM the same day** (cover, caption, AI label on; the feed's 4:5 crop hides the footer by design). Next issue: **Issue 2, 2026-11-03** (dates in the Calendar). **Send-day routine, every issue:** Kit broadcast → publish to the newsletter site → **Code updates `LATEST_ISSUE_URL` in `App.jsx`** → David posts the Reel. The iPhone file name is **with Kit**; nothing to do here. **Every email comes from "FranklinAI"** and signs off "David Peterson" over the company name.
 - **Issue 1 of The Operator: SENT 2026-10-20** (broadcast `26443173`) to all 3 subscribers (Felix, Kevin, Dolly), from **FranklinAI**, and **published to Kit's newsletter site** at `https://franklinai.kit.com/posts/you-re-running-an-insurance-practice-with-cash-model-marketing` (the slug Kit derives from the subject). **Issue dates live in the Content Calendar.** **Cadence is monthly as of 2026-10-03.**
 - **Netlify is gone for this site** (2026-10-17); it now hosts only McKenzie.
-- **Measured at V74:** `App.jsx` is **798 lines**; the `$350` decoy sits at **lines 123 and 532**.
+- **Measured at V91:** `App.jsx` is **853 lines**; the `$350` decoy sits at **lines 143 and 558**.
 - **Older version-by-version narrative (V12 to V57) is in `docs/history.md`.** The "Everything else from Version N remains in force" chain that used to open this file was removed on 2026-09-26. **Do not start a new one.**
 
 ---
@@ -113,6 +113,7 @@
 > - **"The Operator" is the newsletter's title; the masthead standfirst rule is retired.**
 > - **The promise line reads the same on all three surfaces** (issue top, Instagram graphic): **"For physical therapy practices."** *(No longer a standalone sentence on the site since 2026-10-04: the niche is named inside the one-sentence description instead. Whether the issue top and the graphic follow is a Calendar call.)* **The cadence word ("monthly") also sits in the Instagram bio of @franklinaisolutions** ("a free monthly newsletter for physical therapy practices"), so a cadence change has that place to check too.
 > - **The readiness ladder:** newsletter (cold follow) → email (a self-paced question) → discovery call (the door).
+> - **The Instagram account is @franklinaisolutions**, linked from the site footer (the glyph on the © line). Its record (posts, the 3D Ben, the profile picture) lives in the Calendar, not here.
 
 **This file** covers the **website build**: structure, styling, copy rules, locked values, the product facts the site displays, the **pricing of every rung**, **hosting and DNS**, and **the Kit account behind the site**. **It is the authority for everything it states.**
 
@@ -227,10 +228,10 @@ The McKenzie Arm Care app — a custom patient-care web app with user login, jou
 > ## ⚠️ THE `$350` DECOY — read before changing GlowPT's price
 >
 > **`$350` appears TWICE in `App.jsx` and only one is GlowPT.**
-> - **Line 123**, inside `GlowPTModal`'s footer: **GlowPT.**
-> - **Line 533**, `Monthly Care`'s `price: '$350'` in `Pricing()`: **the custom build's hosting-and-maintenance retainer.** Unrelated.
+> - **Line 143**, inside `GlowPTModal`'s footer: **GlowPT.**
+> - **Line 558**, `Monthly Care`'s `price: '$350'` in `Pricing()`: **the custom build's hosting-and-maintenance retainer.** Unrelated.
 >
-> **If GlowPT's price moves, line 533 must NOT move with it.** **The line numbers drift whenever anything above them changes; treat them as a hint and confirm by the surrounding function name.**
+> **If GlowPT's price moves, line 558 must NOT move with it.** **The line numbers drift whenever anything above them changes; treat them as a hint and confirm by the surrounding function name.**
 
 **Order rationale.** The e-book sits first (cheapest paid yes, under the newsletter whose diagnosis it answers), GlowPT second (recurring flagship), then Custom Work as proof, bridging into How It Works and Custom Pricing.
 
@@ -567,7 +568,7 @@ The kite is NOT a symmetric diamond. Vertices: top (110,20), right (148,88), bot
 The brand row uses `align-items: flex-start`, so `F_center_from_top = marginTop + 0.561 × nameFontSize`. Set equal to the **crossbar** and solve for `marginTop`.
 
 - **Nav wordmark `marginTop`: `clamp(13.98px, calc(42.25px - 2.44vw), 19.28px)`**
-- **Footer text column `marginTop`: `13.16px`**
+- **Footer text column `marginTop`: `16.17px`** (0.325 × 105 − 0.561 × 32). It was `13.16px` from June 21, leaving the F 2.8px above the crossbar; the nav was fixed on July 26 (`f50588e`) and the footer was not, until David saw it on 2026-10-25. Measured after: F center 0.21px from the crossbar (nav 0.38px).
 
 The horizontal dials below do not affect this math.
 
@@ -576,7 +577,7 @@ The horizontal dials below do not affect this math.
 Both lockups are positioned by inline `transform: translateX(...)`, same value on desktop and iPhone; a transform never consumes layout width.
 
 - **Nav brand `<a>`: `transform: 'translateX(-26px)'`** — the lockup-level dial.
-- **Footer brand row `<div>`: `transform: 'translateX(-14px)'`** — the footer's single lockup dial. **Hand-tuned.**
+- **Footer brand row `<div>`: `transform: 'translateX(-17px)'`** — the footer's single lockup dial. **Hand-tuned:** David, 2026-10-25, by eye on the live site (`-14px` read slightly right, `-20px` too far left, `-17px` centered).
 - **Footer text column `<div>`: no `transform`.**
 
 > **Why the dials differ, and why that is correct.** The nav kite is *relatively smaller* next to its larger wordmark (kite-to-text width ratio ~0.22 vs the footer's ~0.27), so the heavier nav wordmark pulls the optical center further right. **Do not "reconcile" the two dials to one number.**
@@ -593,6 +594,7 @@ Both lockups are positioned by inline `transform: translateX(...)`, same value o
 | Footer "Solutions LLC" | none |
 | Footer "franklinaisolutions.com" | none |
 | **Footer "© {year}"** | **`translateX(-3px)` — deliberate optical correction** |
+| Footer Instagram glyph | none of its own; it sits inside the © line, so it rides that line's `-3px` |
 
 **Do NOT add a per-line `translateX` to any other line.** If a subline looks off-center, first fix the *centering method* (block + `text-align`), and only reach for an optical correction when the line is provably centered and still reads wrong.
 
@@ -602,17 +604,17 @@ Both lockups are positioned by inline `transform: translateX(...)`, same value o
 
 ### The footer lockup is CLOSED
 
-**The structure is correct, hand-tuned, and settled.** The kite on the **left**, a single text column to its right holding **all four lines** — wordmark, "Solutions LLC", the domain, the copyright — centered with each other. **Do not restructure it, do not move the fine print out of the column, and do not recompute the `-14px` dial.**
+**The structure is correct, hand-tuned, and settled.** The kite on the **left**, a single text column to its right holding **all four lines** — wordmark, "Solutions LLC", the domain, the copyright — centered with each other. **Do not restructure it, do not move the fine print out of the column, and do not recompute the `-17px` dial.**
 
 **Everything in this list was tried and reverted. Do not try them again:**
 1. **`alignSelf: 'stretch'` on the fine-print spans while the column stayed flex** (V46) — no effect, because the *column* was still a flex container.
 2. **Changing the brand-row dial from `-14px` to a "derived" `-24.09px`** — mathematically defensible, visually wrong; it dragged the whole signature left.
 3. **Moving the fine print out of the column into its own page-centered block below the lockup** — rejected on sight.
-4. **Removing the `-14px` dial entirely** so the lockup centered as a unit — same rejection.
+4. **Removing the footer dial entirely** so the lockup centered as a unit — same rejection.
 
 **What actually fixed it:** the two per-line changes to the copyright above. Nothing structural.
 
-> **"Closed" governs geometry, not every character.** A closed section can take a copy change (V54 removed the comma from "Solutions LLC") **if you prove it moves nothing, and say how you proved it.**
+> **"Closed" governs geometry, not every character.** A closed section can take a copy change (V54 removed the comma from "Solutions LLC") **if you prove it moves nothing, and say how you proved it.** The Instagram glyph went onto the © line this way on 2026-10-25, proven by the text column's width, the brand row's left edge and the © line's top, measured before and after at 1024px and 390px (all unchanged). A fifth line of its own was tried first and rejected: it made the footer too tall.
 
 ---
 
@@ -633,13 +635,13 @@ Both lockups are positioned by inline `transform: translateX(...)`, same value o
 **The footer uses NO CSS classes from `global.css`.** Entirely inline styles; the `global.css` `.site-footer*` rules are dead code. A scaled-down signature (kite 105, name 32px), kite-to-wordmark gap `4px`.
 
 - **Footer outer:** `padding: '24px 24px 20px'`, `borderTop: '1px solid rgba(96, 165, 250, 0.12)'`, `marginTop: '0'`, `display: 'flex'`, `justifyContent: 'center'`.
-- **Brand row:** `display: 'flex'`, `alignItems: 'flex-start'`, `gap: '4px'`, **`transform: 'translateX(-14px)'`**.
+- **Brand row:** `display: 'flex'`, `alignItems: 'flex-start'`, `gap: '4px'`, **`transform: 'translateX(-17px)'`**.
 - **Kite** (left): inline `KiteLogo size={105}` in `<span style={{ flexShrink: 0, display: 'flex' }}>`, no className.
-- **Text column** (right): **a plain block**, `textAlign: 'center'`, `marginTop: '13.16px'`, **no flex, no `transform`**. Every line `display: block`:
+- **Text column** (right): **a plain block**, `textAlign: 'center'`, `marginTop: '16.17px'`, **no flex, no `transform`**. Every line `display: block`:
   1. **FranklinAI** — Playfair 700, 32px, lineHeight 1, blue with "AI" white, inside a `display: block` home link `<a>` (textDecoration none, color inherit). **The widest line; sets the column width.**
   2. **Solutions LLC** — Inter 800, 20px, blue, `letterSpacing: '0.02em'`, marginTop 2px, inside the same link. **No comma.**
   3. **franklinaisolutions.com** — Inter 400, 13px, #8892a4, lineHeight 1.5, marginTop 8px. **No transform.**
-  4. **© {year}** — Inter 400, 13px, #8892a4, lineHeight 1.5, **`transform: 'translateX(-3px)'`**, year in a nested span with **`marginLeft: '2px'`**.
+  4. **© {year}** — Inter 400, 13px, #8892a4, lineHeight 1.5, **`transform: 'translateX(-3px)'`**, year in a nested span with **`marginLeft: '2px'`**; then, on the same line, **the Instagram glyph** (David, 2026-10-25): a link to `https://www.instagram.com/franklinaisolutions/` (new tab, `aria-label` "FranklinAI on Instagram"), `display: 'inline-block'`, `marginLeft: '8px'`, `verticalAlign: '-2px'`, `lineHeight: 0`, color `#60a5fa`, holding `InstagramGlyph size={13}` (`fill="currentColor"`). **The glyph is Meta's official path**, copied byte for byte from `Instagram_Glyph_Black.svg` in Meta's 2023 Instagram brand asset pack; never hand-drawn.
 
 > **The spans are `display: block`, so each BOX is the full column width regardless of its text.** Measuring a line's bounding box returns the column width every time. **Measure the column against the widest line, or measure the text itself.**
 
@@ -833,13 +835,14 @@ better technology and a clear focus on what a business needs.
 | Nav kite | `KiteLogo size={130}` (inline component) in `<span style={{ flexShrink: 0, display: 'flex' }}>`, no className |
 | Nav wordmark `<div>` | **marginTop 'clamp(13.98px, calc(42.25px - 2.44vw), 19.28px)'** |
 | Nav "Solutions LLC" `<span>` | Inter 800, 'clamp(25.6px, 2.72vw, 31.5px)', #60a5fa, lineHeight '1', marginTop '3px', **no transform** |
-| Footer brand row `<div>` | display 'flex', alignItems 'flex-start', gap '4px', **transform 'translateX(-14px)'** — hand-tuned, do not derive |
+| Footer brand row `<div>` | display 'flex', alignItems 'flex-start', gap '4px', **transform 'translateX(-17px)'** — hand-tuned, do not derive |
 | Footer kite | `KiteLogo size={105}` (inline component) in `<span style={{ flexShrink: 0, display: 'flex' }}>` |
-| Footer text column `<div>` | textAlign 'center', **marginTop '13.16px'**, block layout, **no flex, no transform** |
+| Footer text column `<div>` | textAlign 'center', **marginTop '16.17px'**, block layout, **no flex, no transform** |
 | Footer "Solutions LLC" `<span>` | display 'block', Inter 800, '20px', letterSpacing '0.02em', #60a5fa, marginTop '2px', **no transform** |
 | Footer domain `<span>` | display 'block', Inter '13px', #8892a4, lineHeight 1.5, marginTop '8px', **no transform** |
 | **Footer copyright `<span>`** | display 'block', Inter '13px', #8892a4, lineHeight 1.5, **transform 'translateX(-3px)'** — the only per-line nudge |
 | **Footer copyright year `<span>`** | **marginLeft '2px'**, no literal space after `&copy;` |
+| Footer Instagram link `<a>` (inside the copyright span) | display 'inline-block', marginLeft '8px', verticalAlign '-2px', lineHeight 0, color '#60a5fa'; `InstagramGlyph size={13}` |
 | Newsletter modal email `<input>` / Subscribe `<button>` | height/minHeight '44px', boxSizing 'border-box'; button inline-flex centered, **marginTop '0'** |
 
 ---
@@ -972,6 +975,7 @@ A good one **names the repo in its first line**, states the scope and what not t
 
 *One line per version. The full entries for V12–V57 are in `docs/history.md` (section 1, "Change History").*
 
+- **V91** (2026-10-25) — Instagram glyph added to the footer's © line, linking to @franklinaisolutions; lockup proven unmoved. Footer dial `-14px` → `-17px` by David's eye; text column `13.16px` → `16.17px` by the formula, with his yes, so the F sits on the crossbar (`1473d21`, `0c4d79d`, `2feae50`, `b82b2ce`, `6a34f4d`).
 - **V90** (2026-10-21) — The newsletter site's "Built with Kit" badge hidden by Custom CSS (Kit support's fix); checked live.
 - **V89** (2026-10-21) — Every Kit email signs "David Peterson"; the newsletter site's confirmation email now ends like the site's (Warmest wishes added back).
 - **V88** (2026-10-21) — Unused `src/components/KiteLogo.jsx` deleted (`9f25bac`, same bundle as live); the mystery-signup watch dropped at David's word.

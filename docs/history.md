@@ -15,6 +15,7 @@ section of CLAUDE.md, copied from the GlowPT repo's 2026-09-12 trim.
 **Sections, newest bank first.** When a later trim banks more, add a new numbered
 section ABOVE section 1 and say what it holds.
 
+0hh. Lines replaced in V91 (Instagram glyph, footer dial, F on the crossbar), plus the 2026-10-25 Instagram handoff.
 0gg. Lines replaced in V90 (newsletter-site badge hidden by Custom CSS).
 0ff. Lines replaced in V89 (sign-off becomes David Peterson; both confirmation emails match).
 0ee. Lines removed in V88 (unused kite file deleted; mystery-signup watch dropped).
@@ -44,6 +45,140 @@ section ABOVE section 1 and say what it holds.
 1. The full text of CLAUDE.md Version 57, exactly as it stood before the V58 trim.
 2. `AWS-MIGRATION-HANDOFF.md`, the working note from the 2026-09-25 move to Amplify.
 3. `CLAUDE-MD-TRIM-HANDOFF.md`, the note that started the V58 trim.
+
+---
+
+# 0hh. LINES REPLACED IN V91 (2026-10-25): Instagram glyph on the footer's © line; footer dial -17px; footer text column 16.17px
+
+# FranklinAI — Project Instructions (Version 90, Current)
+
+- **Measured at V74:** `App.jsx` is **798 lines**; the `$350` decoy sits at **lines 123 and 532**.
+
+> - **Line 123**, inside `GlowPTModal`'s footer: **GlowPT.**
+
+> - **Line 533**, `Monthly Care`'s `price: '$350'` in `Pricing()`: **the custom build's hosting-and-maintenance retainer.** Unrelated.
+
+> **If GlowPT's price moves, line 533 must NOT move with it.** **The line numbers drift whenever anything above them changes; treat them as a hint and confirm by the surrounding function name.**
+
+- **Footer text column `marginTop`: `13.16px`**
+
+- **Footer brand row `<div>`: `transform: 'translateX(-14px)'`** — the footer's single lockup dial. **Hand-tuned.**
+
+**The structure is correct, hand-tuned, and settled.** The kite on the **left**, a single text column to its right holding **all four lines** — wordmark, "Solutions LLC", the domain, the copyright — centered with each other. **Do not restructure it, do not move the fine print out of the column, and do not recompute the `-14px` dial.**
+
+4. **Removing the `-14px` dial entirely** so the lockup centered as a unit — same rejection.
+
+> **"Closed" governs geometry, not every character.** A closed section can take a copy change (V54 removed the comma from "Solutions LLC") **if you prove it moves nothing, and say how you proved it.**
+
+- **Brand row:** `display: 'flex'`, `alignItems: 'flex-start'`, `gap: '4px'`, **`transform: 'translateX(-14px)'`**.
+
+- **Text column** (right): **a plain block**, `textAlign: 'center'`, `marginTop: '13.16px'`, **no flex, no `transform`**. Every line `display: block`:
+
+  4. **© {year}** — Inter 400, 13px, #8892a4, lineHeight 1.5, **`transform: 'translateX(-3px)'`**, year in a nested span with **`marginLeft: '2px'`**.
+
+| Footer brand row `<div>` | display 'flex', alignItems 'flex-start', gap '4px', **transform 'translateX(-14px)'** — hand-tuned, do not derive |
+
+| Footer text column `<div>` | textAlign 'center', **marginTop '13.16px'**, block layout, **no flex, no transform** |
+
+## The 2026-10-25 handoff from claude.ai (deleted from ~/Downloads once used)
+
+# Handoff · Instagram link in the site footer · 2026-10-25
+
+**Repo: `franklinai-v2` (`~/Downloads/franklinai-v2`), file `src/App.jsx`.** Not GlowPT. Read `CLAUDE.md` (Version 90) first, all of it, then this note. Where this note and CLAUDE.md disagree, this note wins for this session; update CLAUDE.md after the push, per its own process.
+
+## What and why
+
+FranklinAI's Instagram account, **@franklinaisolutions**, is live with its first post (October 24) and is the one discovery surface in the Content Calendar. The site has no link to it. Add one: the Instagram glyph, in the footer, linking to the account.
+
+**Why the footer and not a card.** A visitor looks for a social link in the footer; it appears on both pages (`/` and `/confirmed`) with no second edit; and the nav is locked to logo and wordmark only. The Newsletter card was considered and set aside: the card's only action is the Subscribe button, by rule, and a second link there competes with it.
+
+**Why a glyph and not a word.** The footer is a signature, not a menu. One small mark in the accent blue reads as part of the lockup; the word "Instagram" would read as a nav item.
+
+## The conflict with CLAUDE.md, flagged on purpose
+
+CLAUDE.md says **the footer lockup is CLOSED**: do not restructure it, do not move the fine print out of the column, do not recompute the `-14px` dial. It also says a closed section can take a change **if you prove it moves nothing and say how you proved it** (the V54 precedent, "Solutions, LLC" to "Solutions LLC").
+
+This change adds a fifth block line to the text column, below the copyright. It touches no dial, no `marginTop` on the column, no line above it. The proof required is below. Do not touch anything else in `Footer()`.
+
+## The change
+
+In `Footer()`, directly after the copyright `<span>` (the one with `transform: 'translateX(-3px)'`) and before the closing `</div>` of the text column, add one block line:
+
+```jsx
+          {/* Instagram, the account's one discovery surface. A fifth block line in
+              the text column: same centering method as the lines above (block +
+              the column's textAlign), no transform, no per-line nudge. The glyph
+              is smaller than every line above it, so it cannot widen the column
+              ("FranklinAI" still sets the width). */}
+          <a
+            href="https://www.instagram.com/franklinaisolutions/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="FranklinAI on Instagram"
+            style={{
+              display: 'block',
+              marginTop: '10px',
+              lineHeight: 0,
+              color: '#60a5fa'
+            }}
+          >
+            <InstagramGlyph size={22} />
+          </a>
+```
+
+Add an `InstagramGlyph` component near `KiteLogo` at the top of the file. **Do not hand-draw the glyph.** Take the official path from one of these two sources, in this order of preference:
+
+1. **Meta's brand resources** (Instagram glyph, from `about.meta.com/brand/resources/instagram/instagram-brand`): download the glyph SVG, paste its path data into an inline `<svg>` with `viewBox` from the file, `fill="currentColor"`, `width` and `height` from the `size` prop, `role="img"`, `aria-hidden="true"` (the link carries the label). Meta's guidelines allow the glyph in a single color; it will inherit `#60a5fa` from the link.
+2. If that download is awkward in the session, the **`simple-icons`** package (pinned, e.g. `simple-icons@13.x`) ships the Instagram path as data; copy the path string into the same inline component. Do not add the package as a runtime dependency; copy the path and leave `package.json` alone.
+
+No new CSS. No `global.css` edits. No new divider (the four-divider count stands). Gold stays on the kite bolt only.
+
+## Copy and rules check
+
+- The only text is the `aria-label`: **"FranklinAI on Instagram"**. No period, FranklinAI one word, capital AI. Title case not required; it is not a button.
+- No em dashes anywhere in the change.
+- No forbidden words.
+- The link opens in a new tab with `rel="noopener noreferrer"`, like every outbound link on the site.
+
+## Verification
+
+| Check | How | Expected |
+|---|---|---|
+| Old state absent | `grep -c "instagram.com" src/App.jsx` before | 0 |
+| New state present | `grep -c "instagram.com/franklinaisolutions" src/App.jsx` after | 1 |
+| Glyph in both pages | Load `/` and `/confirmed` in the dev server | glyph under the copyright on both |
+| The column did not widen | In the running DOM, measure the text column `<div>`'s width before and after the change | identical (FranklinAI still the widest line, 160.5px at V54) |
+| The lockup did not move | Measure the brand row `<div>`'s bounding box left edge before and after | identical |
+| Nothing above the glyph moved | Measure the copyright span's top before and after | identical |
+| Phone | iPhone portrait (Safari responsive mode at 390px) | glyph centered under the copyright, footer height grows by the glyph plus 10px, nothing else changes |
+| Em dashes and forbidden words | grep the diff | none |
+| Live | After the push, fetch `franklinaisolutions.com`, find `assets/index-*.js`, grep for `instagram.com/franklinaisolutions` | present |
+| David's eyes | He confirms on the live site | before CLAUDE.md is touched |
+
+Say which of these you actually ran.
+
+## After David confirms: CLAUDE.md, Version 91
+
+Edit in place, one commit, reasoning in the commit message, not the file:
+
+1. **Footer — Fully Self-Contained in App.jsx:** the text column has five lines; add line 5: **Instagram glyph**, 22px, `#60a5fa` via `currentColor`, inside a block link to `https://www.instagram.com/franklinaisolutions/`, `aria-label` "FranklinAI on Instagram", `marginTop` 10px, no transform. Note that the glyph is Meta's official path (say which source), not hand-drawn.
+2. **The footer lockup is CLOSED:** add one line recording that the Instagram line was added on 2026-10-25 under the "closed governs geometry, not every character" rule, and how the no-move proof was done (the three measurements above).
+3. **Per-line nudges: ONE:** add a row "Footer Instagram glyph: none."
+4. **Locked Inline Styles table:** add the row for the glyph link.
+5. **Brand Kit → Typography:** no change (it is not type). **Logo Accent:** no change (gold untouched).
+6. **Source-of-Truth Documents → Calendar points worth knowing:** add: **the Instagram account is @franklinaisolutions**, linked from the footer; the account's record (posts, the 3D Ben, the profile picture) lives in the Content Calendar, not here.
+7. **Open Items:** nothing new.
+8. **CURRENT STATE:** no new line; this is not a state change, it is a footer fact. If you must note it, edit the existing "Live:" line in place.
+9. Bump the first line to **Version 91** and add one Change History line: `V91 (2026-10-25) — Instagram glyph added to the footer text column (fifth line), linking to @franklinaisolutions; lockup proven unmoved.`
+10. Report the file's size and delta in the closing message, per CLAUDE.md.
+
+Nothing leaves CLAUDE.md, so `docs/history.md` should not need staging; if the pre-commit hook objects to the edited lines, bank the old footer paragraph verbatim in `docs/history.md` first, then commit.
+
+## Context Code does not need but might wonder about
+
+The Instagram account's face is a 3D-rendered Ben (since October 24, replacing the clay Franklin); the profile picture is on the navy ground. None of that touches the site. The site's kite mark and the account's key are the same reference. The Calendar's "The Instagram Account" section is the record if anyone asks.
+
+Once used, bank this note in `docs/history.md` and delete it from wherever it was dropped.
 
 ---
 
