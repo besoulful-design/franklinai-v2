@@ -662,13 +662,15 @@ function Footer() {
     >
       {/* kite + text column. The text column sits right of the lockup's center
           (half the kite width + gap), so this translateX lands the wordmark AND the
-          fine print near the page's center. Single dial, desktop + mobile. */}
+          fine print near the page's center. Single dial, desktop + mobile.
+          -14px until 2026-10-25, when David saw it read slightly right; -20px
+          puts the text 4px right of center, like the nav's (3.35px). */}
       <div
         style={{
           display: 'flex',
           alignItems: 'flex-start',
           gap: '4px',
-          transform: 'translateX(-14px)'
+          transform: 'translateX(-20px)'
         }}
       >
         <span style={{ flexShrink: 0, display: 'flex' }}>
