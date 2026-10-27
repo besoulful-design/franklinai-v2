@@ -1,4 +1,4 @@
-# FranklinAI — Project Instructions (Version 92, Current)
+# FranklinAI — Project Instructions (Version 93, Current)
 
 > **READ THIS FILE BEFORE MAKING ANY CHANGE TO THIS REPO.** Read all of it, not just the section you think applies. **If a value looks arbitrary, it is almost certainly hand-tuned and documented here. Look it up first.** A morning was once lost re-deriving a footer geometry this file already specified.
 
@@ -9,7 +9,7 @@
 ## CURRENT STATE (edit these lines in place; do not start a new chain)
 
 - **Live:** franklinaisolutions.com on **AWS Amplify** (account `franklinai-web`), DNS in **Route 53**, David's Microsoft 365 mail intact. **The Operator** signup wired to **Kit form `9962049`**, double opt-in ON; Kit sends as the domain, on the **Creator plan, monthly** since 2026-10-14.
-- **Next (David, 2026-10-21):** **Issue 2, 2026-11-03** (dates live in the Calendar). **Send-day routine, every issue:** Kit broadcast → publish to the newsletter site → **Code updates `LATEST_ISSUE_URL` in `App.jsx`** → David posts the Reel from @franklinaisolutions (AI label on; the feed's 4:5 crop hides the footer by design). **Every email comes from "FranklinAI"** and signs off "David Peterson" over the company name.
+- **Next (David, 2026-10-27):** **Issue 2, 2026-11-17** (dates live in the Calendar; Issues 3 and 4 slid with it). **Send-day routine, every issue:** Kit broadcast → publish to the newsletter site → **Code updates `LATEST_ISSUE_URL` in `App.jsx`** → David posts the Reel from @franklinaisolutions (confirm Instagram's AI label). Between issues: one Instagram post a week, a carousel and a static alternating, built in the Reel kit, never a site matter. **Every email comes from "FranklinAI"** and signs off "David Peterson" over the company name.
 - **Issue 1 of The Operator: SENT 2026-10-20** (broadcast `26443173`) to all 3 subscribers, published at `https://franklinai.kit.com/posts/you-re-running-an-insurance-practice-with-cash-model-marketing` (the slug Kit derives from the subject); its Reel posted the same day. **Cadence is monthly as of 2026-10-03.**
 - **Measured at V91:** `App.jsx` is **853 lines**; the `$350` decoy sits at **lines 143 and 558**.
 - **Older narrative is in `docs/history.md`:** the full V91 text before the V92 trim is section 0ii; V12 to V57 are section 1. **Do not start a "remains in force" chain.**
@@ -74,9 +74,9 @@
 > - **The spearhead is the front door, not a leash.** Only **D** and **C** are downstream of it; **E's lift half and F stand on their own feet.** Spine E is two wells, the line and the lift; leading with the line is a **strong default, not a law**.
 > - **Never reintroduce two retired framings:** **"nobody decided"**, and **the front-desk-versus-therapist split**. **"cash practice" and "advanced care" are interchangeable; neither is retired.**
 > - **"The Operator" is the newsletter's title; the masthead standfirst rule is retired.**
-> - **The promise line "For physical therapy practices."** is the issue top and the Instagram graphic; on the site the niche sits inside the one-sentence description (since 2026-10-04). **"monthly" also sits in the Instagram bio of @franklinaisolutions** ("a free monthly newsletter for physical therapy practices"); a cadence change checks it too.
+> - **"A free monthly newsletter for physical therapy practices"** is now one phrase on every Instagram surface (the bio, the Reel's spoken close, every caption, the carousel's last slide) and the site's description carries the same niche and cadence. **A cadence or niche change checks all of them, and the Calendar lists them.**
 > - **The readiness ladder:** newsletter (cold follow) → email (a self-paced question) → discovery call (the door).
-> - **The Instagram account is @franklinaisolutions**, linked from the site footer (the glyph on the © line); its record (posts, the 3D Ben, the profile picture) lives in the Calendar.
+> - **The Instagram account is @franklinaisolutions**, linked from the site footer (the glyph on the © line); its record (posts, the 3D Ben, the profile picture) lives in the Calendar. The first carousel posted 2026-10-27; the post look, the key asset and the build script live in the Reel kit (`~/Downloads/operator-reel-kit-v5`), not this repo.
 
 **This file** covers the **website build**: structure, styling, copy rules, locked values, the product facts the site displays, the **pricing of every rung**, **hosting and DNS**, and **the Kit account**. **It is the authority for everything it states.**
 
@@ -577,8 +577,8 @@ Edit the GlowPT repo from here (or this repo from there) only when **David asks 
 
 *One line per version, last five here. V58–V91 are in `docs/history.md` section 0ii (the full V91 text); V12–V57 in section 1.*
 
+- **V93** (2026-10-27) — Issue 2's date moved (CURRENT STATE); weekly Instagram posts between issues; one phrase, "A free monthly newsletter for physical therapy practices", on every Instagram surface; the first carousel and the Reel kit noted (claude.ai handoff, no site change).
 - **V92** (2026-10-25) — **Trimmed from 115,100 bytes** (David's go-ahead): full V91 text banked verbatim (`docs/history.md` 0ii); finished Open Items, Change History before V88 and narratives archived; duplicates merged (the inline-styles table into Nav and Footer; Header Sizing and the nav/footer/newsletter type rows into their sections); every value, copy string, ID and rule kept, probed by name; the trim line lowered to ~100 KB (~80 KB was proposed, but the trimmed file is about 85 KB).
 - **V91** (2026-10-25) — Instagram glyph added to the footer's © line, linking to @franklinaisolutions; lockup proven unmoved. Footer dial `-14px` → `-17px` by David's eye; text column `13.16px` → `16.17px` by the formula, with his yes, so the F sits on the crossbar (`1473d21`, `0c4d79d`, `2feae50`, `b82b2ce`, `6a34f4d`).
 - **V90** (2026-10-21) — The newsletter site's "Built with Kit" badge hidden by Custom CSS (Kit support's fix); checked live.
 - **V89** (2026-10-21) — Every Kit email signs "David Peterson"; the newsletter site's confirmation email now ends like the site's.
-- **V88** (2026-10-21) — Unused `src/components/KiteLogo.jsx` deleted (`9f25bac`, same bundle as live); the mystery-signup watch dropped at David's word.

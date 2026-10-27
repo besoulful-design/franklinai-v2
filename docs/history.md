@@ -15,6 +15,7 @@ section of CLAUDE.md, copied from the GlowPT repo's 2026-09-12 trim.
 **Sections, newest bank first.** When a later trim banks more, add a new numbered
 section ABOVE section 1 and say what it holds.
 
+0jj. Lines replaced in V93 (Issue 2's date, weekly Instagram posts, the one-phrase rule), plus the 2026-10-27 handoff.
 0ii. The full text of CLAUDE.md Version 91, exactly as it stood before the V92 trim (2026-10-25).
 0hh. Lines replaced in V91 (Instagram glyph, footer dial, F on the crossbar), plus the 2026-10-25 Instagram handoff.
 0gg. Lines replaced in V90 (newsletter-site badge hidden by Custom CSS).
@@ -46,6 +47,44 @@ section ABOVE section 1 and say what it holds.
 1. The full text of CLAUDE.md Version 57, exactly as it stood before the V58 trim.
 2. `AWS-MIGRATION-HANDOFF.md`, the working note from the 2026-09-25 move to Amplify.
 3. `CLAUDE-MD-TRIM-HANDOFF.md`, the note that started the V58 trim.
+
+---
+
+# 0jj. LINES REPLACED IN V93 (2026-10-27): Issue 2's new date, weekly Instagram posts, one phrase on every Instagram surface
+
+# FranklinAI — Project Instructions (Version 92, Current)
+
+- **Next (David, 2026-10-21):** **Issue 2, 2026-11-03** (dates live in the Calendar). **Send-day routine, every issue:** Kit broadcast → publish to the newsletter site → **Code updates `LATEST_ISSUE_URL` in `App.jsx`** → David posts the Reel from @franklinaisolutions (AI label on; the feed's 4:5 crop hides the footer by design). **Every email comes from "FranklinAI"** and signs off "David Peterson" over the company name.
+
+> - **The promise line "For physical therapy practices."** is the issue top and the Instagram graphic; on the site the niche sits inside the one-sentence description (since 2026-10-04). **"monthly" also sits in the Instagram bio of @franklinaisolutions** ("a free monthly newsletter for physical therapy practices"); a cadence change checks it too.
+
+> - **The Instagram account is @franklinaisolutions**, linked from the site footer (the glyph on the © line); its record (posts, the 3D Ben, the profile picture) lives in the Calendar.
+
+- **V88** (2026-10-21) — Unused `src/components/KiteLogo.jsx` deleted (`9f25bac`, same bundle as live); the mystery-signup watch dropped at David's word.
+
+## The 2026-10-27 handoff from claude.ai (pasted into the Code session)
+
+Handoff, 2026-10-27 (Tue, 1:25 PM), from claude.ai. Repo: franklinai-v2 (~/Downloads/franklinai-v2). Scope: CLAUDE.md only; no App.jsx change, no push to the site. Read CLAUDE.md V92 first.
+
+Three lines in CLAUDE.md are stale after today's Calendar pass. Edit in place, bump to V93, one Change History line; bank nothing (nothing is removed, only reworded), but the hook may still want docs/history.md staged if the byte delta trips it.
+
+1. CURRENT STATE, the "Next" line. Find:
+   **Next (David, 2026-10-21):** **Issue 2, 2026-11-03** (dates live in the Calendar). **Send-day routine, every issue:** Kit broadcast → publish to the newsletter site → **Code updates `LATEST_ISSUE_URL` in `App.jsx`** → David posts the Reel from @franklinaisolutions (AI label on; the feed's 4:5 crop hides the footer by design).
+   Replace with:
+   **Next (David, 2026-10-27):** **Issue 2, 2026-11-17** (dates live in the Calendar; Issues 3 and 4 slid with it). **Send-day routine, every issue:** Kit broadcast → publish to the newsletter site → **Code updates `LATEST_ISSUE_URL` in `App.jsx`** → David posts the Reel from @franklinaisolutions (confirm Instagram's AI label). Between issues: one Instagram post a week, a carousel and a static alternating, built in the Reel kit, never a site matter.
+   Reason: the date moved on 10-27; the Reel has had no footer since 10-24.
+
+2. Source-of-Truth Documents, the Calendar bullet that begins "**The promise line "For physical therapy practices."** is the issue top and the Instagram graphic". Replace the whole bullet with:
+   - **"A free monthly newsletter for physical therapy practices"** is now one phrase on every Instagram surface (the bio, the Reel's spoken close, every caption, the carousel's last slide) and the site's description carries the same niche and cadence. **A cadence or niche change checks all of them, and the Calendar lists them.**
+   Reason: the Reel carries no graphic since 10-24; David set the one-phrase rule today.
+
+3. Same section, the Instagram bullet ending "its record (posts, the 3D Ben, the profile picture) lives in the Calendar." Append: " The first carousel posted 2026-10-27; the post look, the key asset and the build script live in the Reel kit (`~/Downloads/operator-reel-kit-v5`), not this repo."
+
+Verify: grep -c "2026-11-17" CLAUDE.md → 1; grep -c "hides the footer" CLAUDE.md → 0; grep -c "one phrase on every Instagram surface" → 1. No em dashes added. Report V93 and the file's size and delta.
+
+Optional, outside the repo (the kit in ~/Downloads/operator-reel-kit-v5, not git):
+a. harness.py line `FONTS = '/home/claude/fonts'` is a claude.ai workspace path; change to the fonts folder beside the script (os.path.join(os.path.dirname(__file__), 'fonts')) so it runs on the Mac. README says to copy fonts to /home/claude/fonts; update that sentence.
+b. build-carousel.py (written today in claude.ai) still points BEN, HKEY and the font paths at claude.ai's container. Repoint: BEN → ben/Ben_start_9x16.png, HKEY → ben/ben-key-navy-2048.png, Playfair → fonts/Playfair.ttf. INTER expects static OTF weights by name (Inter-Bold.otf etc.); the kit has the variable fonts/Inter.ttf, so switch inter() to set_variation_by_name on it, as play() already does. Run it, confirm the six PNGs match the posted ones byte-for-byte or visually, and run harness.py on them.
 
 ---
 
