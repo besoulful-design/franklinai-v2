@@ -15,6 +15,7 @@ section of CLAUDE.md, copied from the GlowPT repo's 2026-09-12 trim.
 **Sections, newest bank first.** When a later trim banks more, add a new numbered
 section ABOVE section 1 and say what it holds.
 
+0ll. Lines replaced in V95 (five-book series order; first-Tuesday rule corrected).
 0kk. Lines replaced in V94 (Instagram glyph 50% bigger, footer dial -19px).
 0jj. Lines replaced in V93 (Issue 2's date, weekly Instagram posts, the one-phrase rule), plus the 2026-10-27 handoff.
 0ii. The full text of CLAUDE.md Version 91, exactly as it stood before the V92 trim (2026-10-25).
@@ -50,6 +51,14 @@ section ABOVE section 1 and say what it holds.
 3. `CLAUDE-MD-TRIM-HANDOFF.md`, the note that started the V58 trim.
 
 ---
+
+# 0ll. LINES REPLACED IN V95 (2026-10-31): the guides as a five-book series; the first-Tuesday rule corrected
+
+# FranklinAI — Project Instructions (Version 94, Current)
+
+**The Content Calendar** (a claude.ai document) is the source of truth for all content and marketing; this file holds none beyond what the site displays. It is **newsletter-led**: *The Operator*, **monthly** (the first Tuesday internally; public copy says only "monthly"), 400–600 words, free, written Sunday on a phone. **Instagram is the only discovery surface.** **The discovery call is the only door** for the custom build (GlowPT has a second); **each issue makes one ask, matched to the issue** (see Offer Ladder). The addressee is the **owner**; the office manager is the multiplier. The spearhead is **model confusion** ("You're running an insurance practice with cash-model marketing"), across **six spines**: (A) model confusion, (B) plan-of-care completion, (C) team, hiring, retention, and modeling, (D) your numbers, (E) AI in your practice, (F) systems and delegation. The four-video YouTube arc is **parked whole**.
+
+- **V90** (2026-10-21) — The newsletter site's "Built with Kit" badge hidden by Custom CSS (Kit support's fix); checked live.
 
 # 0kk. LINES REPLACED IN V94 (2026-10-31): the Instagram glyph 50% bigger by a transform; the footer dial -17px to -19px
 

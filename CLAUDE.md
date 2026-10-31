@@ -1,4 +1,4 @@
-# FranklinAI — Project Instructions (Version 94, Current)
+# FranklinAI — Project Instructions (Version 95, Current)
 
 > **READ THIS FILE BEFORE MAKING ANY CHANGE TO THIS REPO.** Read all of it, not just the section you think applies. **If a value looks arbitrary, it is almost certainly hand-tuned and documented here. Look it up first.** A morning was once lost re-deriving a footer geometry this file already specified.
 
@@ -66,7 +66,7 @@
 
 ## Source-of-Truth Documents
 
-**The Content Calendar** (a claude.ai document) is the source of truth for all content and marketing; this file holds none beyond what the site displays. It is **newsletter-led**: *The Operator*, **monthly** (the first Tuesday internally; public copy says only "monthly"), 400–600 words, free, written Sunday on a phone. **Instagram is the only discovery surface.** **The discovery call is the only door** for the custom build (GlowPT has a second); **each issue makes one ask, matched to the issue** (see Offer Ladder). The addressee is the **owner**; the office manager is the multiplier. The spearhead is **model confusion** ("You're running an insurance practice with cash-model marketing"), across **six spines**: (A) model confusion, (B) plan-of-care completion, (C) team, hiring, retention, and modeling, (D) your numbers, (E) AI in your practice, (F) systems and delegation. The four-video YouTube arc is **parked whole**.
+**The Content Calendar** (a claude.ai document) is the source of truth for all content and marketing; this file holds none beyond what the site displays. It is **newsletter-led**: *The Operator*, **monthly** (a Tuesday, on dates set in the Calendar; public copy says only "monthly"), 400–600 words, free, written Sunday on a phone. **Instagram is the only discovery surface.** **The discovery call is the only door** for the custom build (GlowPT has a second); **each issue makes one ask, matched to the issue** (see Offer Ladder). The addressee is the **owner**; the office manager is the multiplier. The spearhead is **model confusion** ("You're running an insurance practice with cash-model marketing"), across **six spines**: (A) model confusion, (B) plan-of-care completion, (C) team, hiring, retention, and modeling, (D) your numbers, (E) AI in your practice, (F) systems and delegation. **The guides are a five-book series in the order A, B, C, F, E; the order and each book's shape live in the Calendar.** The four-video YouTube arc is **parked whole**.
 
 > **Calendar points worth knowing here:**
 > - **Issue dates live in the Calendar, not here** (this file was wrong about Issue 1's date three times).
@@ -577,8 +577,8 @@ Edit the GlowPT repo from here (or this repo from there) only when **David asks 
 
 *One line per version, last five here. V58–V91 are in `docs/history.md` section 0ii (the full V91 text); V12–V57 in section 1.*
 
+- **V95** (2026-10-31) — The guides are a five-book series, A, B, C, F, E (Calendar's October 31 pass); the retired first-Tuesday rule corrected to dates set in the Calendar.
 - **V94** (2026-10-31) — Footer Instagram glyph 50% bigger by `scale(1.5)`, lockup proven unmoved; footer dial `-17px` → `-19px` at David's word and approved by his eye (`b8d8977`, `2779496`).
 - **V93** (2026-10-27) — Issue 2's date moved (CURRENT STATE); weekly Instagram posts between issues; one phrase, "A free monthly newsletter for physical therapy practices", on every Instagram surface; the first carousel and the Reel kit noted (claude.ai handoff, no site change).
 - **V92** (2026-10-25) — **Trimmed from 115,100 bytes** (David's go-ahead): full V91 text banked verbatim (`docs/history.md` 0ii); finished Open Items, Change History before V88 and narratives archived; duplicates merged (the inline-styles table into Nav and Footer; Header Sizing and the nav/footer/newsletter type rows into their sections); every value, copy string, ID and rule kept, probed by name; the trim line lowered to ~100 KB (~80 KB was proposed, but the trimmed file is about 85 KB).
 - **V91** (2026-10-25) — Instagram glyph added to the footer's © line, linking to @franklinaisolutions; lockup proven unmoved. Footer dial `-14px` → `-17px` by David's eye; text column `13.16px` → `16.17px` by the formula, with his yes, so the F sits on the crossbar (`1473d21`, `0c4d79d`, `2feae50`, `b82b2ce`, `6a34f4d`).
-- **V90** (2026-10-21) — The newsletter site's "Built with Kit" badge hidden by Custom CSS (Kit support's fix); checked live.
