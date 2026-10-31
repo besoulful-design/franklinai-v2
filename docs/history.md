@@ -15,6 +15,7 @@ section of CLAUDE.md, copied from the GlowPT repo's 2026-09-12 trim.
 **Sections, newest bank first.** When a later trim banks more, add a new numbered
 section ABOVE section 1 and say what it holds.
 
+0mm. Lines replaced in V96 (the guide's Kit page gains the cash-practice passage).
 0ll. Lines replaced in V95 (five-book series order; first-Tuesday rule corrected).
 0kk. Lines replaced in V94 (Instagram glyph 50% bigger, footer dial -19px).
 0jj. Lines replaced in V93 (Issue 2's date, weekly Instagram posts, the one-phrase rule), plus the 2026-10-27 handoff.
@@ -51,6 +52,14 @@ section ABOVE section 1 and say what it holds.
 3. `CLAUDE-MD-TRIM-HANDOFF.md`, the note that started the V58 trim.
 
 ---
+
+# 0mm. LINES REPLACED IN V96 (2026-10-31): the guide's Kit page gains the cash-practice passage
+
+# FranklinAI — Project Instructions (Version 95, Current)
+
+| **The guide (product)** | *What Your Practice Actually Sells*, id `293598`, $37 one-time, the final PDF by emailed download link, page `https://franklinai.kit.com/products/what-your-practice-actually-sells` (Kit's subdomain, no DNS), button *Buy the Guide*, badge off on the page and the thank-you page. **Buyers join as active subscribers directly** (no double opt-in, no tag); card statements read **"FranklinAI"**. Kit collects no US sales tax: **David's call 2026-10-19: keep $37 and pay Pennsylvania's share out of PA sales; no price change, no tax line in any copy** (other states only past their nexus thresholds; his open questions are in Open Items). |
+
+- **V91** (2026-10-25) — Instagram glyph added to the footer's © line, linking to @franklinaisolutions; lockup proven unmoved. Footer dial `-14px` → `-17px` by David's eye; text column `13.16px` → `16.17px` by the formula, with his yes, so the F sits on the crossbar (`1473d21`, `0c4d79d`, `2feae50`, `b82b2ce`, `6a34f4d`).
 
 # 0ll. LINES REPLACED IN V95 (2026-10-31): the guides as a five-book series; the first-Tuesday rule corrected
 
