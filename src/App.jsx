@@ -762,9 +762,12 @@ function Footer() {
             &copy;<span style={{ marginLeft: '2px' }}>{year}</span>
             {/* Instagram, the account's one discovery surface, at the end of this
                 line (David, 2026-10-25; a fifth line of its own made the footer
-                too tall). Sized to the text so the line does not grow, and the
-                line stays far narrower than "FranklinAI", so the column cannot
-                widen and the lockup cannot move. It rides this line's -3px. */}
+                too tall). Laid out at the text's size so the line does not grow, and
+                the line stays far narrower than "FranklinAI", so the column cannot
+                widen and the lockup cannot move. It rides this line's -3px. Drawn
+                50% bigger by a transform (David, 2026-10-31), which takes no layout
+                room, so the (c) line stays put; it grows rightward from its left edge,
+                keeping the 8px gap. Do not raise size={13} instead: that moves the line. */}
             <a
               href="https://www.instagram.com/franklinaisolutions/"
               target="_blank"
@@ -775,7 +778,9 @@ function Footer() {
                 marginLeft: '8px',
                 verticalAlign: '-2px',
                 lineHeight: 0,
-                color: '#60a5fa'
+                color: '#60a5fa',
+                transform: 'scale(1.5)',
+                transformOrigin: 'left center'
               }}
             >
               <InstagramGlyph size={13} />
