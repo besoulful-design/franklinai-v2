@@ -664,13 +664,15 @@ function Footer() {
           (half the kite width + gap), so this translateX lands the wordmark AND the
           fine print near the page's center. Single dial, desktop + mobile.
           -14px until 2026-10-25, when David saw it read slightly right; -20px
-          read too far left; -17px is halfway back, by David's eye. */}
+          read too far left; -17px is halfway back, by David's eye. -19px since
+          2026-10-31: the bigger Instagram glyph added weight on the right, and
+          David asked for a small nudge left. */}
       <div
         style={{
           display: 'flex',
           alignItems: 'flex-start',
           gap: '4px',
-          transform: 'translateX(-17px)'
+          transform: 'translateX(-19px)'
         }}
       >
         <span style={{ flexShrink: 0, display: 'flex' }}>
