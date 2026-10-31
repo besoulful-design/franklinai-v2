@@ -1,4 +1,4 @@
-# FranklinAI — Project Instructions (Version 93, Current)
+# FranklinAI — Project Instructions (Version 94, Current)
 
 > **READ THIS FILE BEFORE MAKING ANY CHANGE TO THIS REPO.** Read all of it, not just the section you think applies. **If a value looks arbitrary, it is almost certainly hand-tuned and documented here. Look it up first.** A morning was once lost re-deriving a footer geometry this file already specified.
 
@@ -11,7 +11,7 @@
 - **Live:** franklinaisolutions.com on **AWS Amplify** (account `franklinai-web`), DNS in **Route 53**, David's Microsoft 365 mail intact. **The Operator** signup wired to **Kit form `9962049`**, double opt-in ON; Kit sends as the domain, on the **Creator plan, monthly** since 2026-10-14.
 - **Next (David, 2026-10-27):** **Issue 2, 2026-11-17** (dates live in the Calendar; Issues 3 and 4 slid with it). **Send-day routine, every issue:** Kit broadcast → publish to the newsletter site → **Code updates `LATEST_ISSUE_URL` in `App.jsx`** → David posts the Reel from @franklinaisolutions (confirm Instagram's AI label). Between issues: one Instagram post a week, a carousel and a static alternating, built in the Reel kit, never a site matter. **Every email comes from "FranklinAI"** and signs off "David Peterson" over the company name.
 - **Issue 1 of The Operator: SENT 2026-10-20** (broadcast `26443173`) to all 3 subscribers, published at `https://franklinai.kit.com/posts/you-re-running-an-insurance-practice-with-cash-model-marketing` (the slug Kit derives from the subject); its Reel posted the same day. **Cadence is monthly as of 2026-10-03.**
-- **Measured at V91:** `App.jsx` is **853 lines**; the `$350` decoy sits at **lines 143 and 558**.
+- **Measured at V94:** `App.jsx` is **860 lines**; the `$350` decoy sits at **lines 143 and 558**.
 - **Older narrative is in `docs/history.md`:** the full V91 text before the V92 trim is section 0ii; V12 to V57 are section 1. **Do not start a "remains in force" chain.**
 
 ---
@@ -364,7 +364,7 @@ The `KiteLogo` **inline at the top of `src/App.jsx`** is the single source of tr
 
 **Horizontal: the `translateX` dials** (same value on desktop and iPhone; a transform never consumes layout width):
 - **Nav brand `<a>`: `transform: 'translateX(-26px)'`** — the lockup-level dial.
-- **Footer brand row `<div>`: `transform: 'translateX(-17px)'`** — the footer's single dial. **Hand-tuned:** David, 2026-10-25, by eye on the live site (`-14px` read slightly right, `-20px` too far left, `-17px` centered). **Footer text column: no `transform`.**
+- **Footer brand row `<div>`: `transform: 'translateX(-19px)'`** — the footer's single dial. **Hand-tuned:** David, by eye on the live site: 2026-10-25, `-14px` read slightly right, `-20px` too far left, `-17px` centered; 2026-10-31, once the Instagram glyph grew, he asked for a small nudge left and approved `-19px`. **Footer text column: no `transform`.**
 
 > **The dials differ correctly:** the nav kite is *relatively smaller* next to its larger wordmark (kite-to-text width ratio ~0.22 vs the footer's ~0.27), so the heavier nav wordmark pulls the optical center further right. **Do not "reconcile" them to one number.** **Do not "derive" the footer dial from box math:** a session shipped `(kiteWidth 44.19 + gap 4) / 2 = 24.09px` as `-24.09px` and David rejected it at once (it dragged the signature left). **The dial is an optical judgement, not a centering equation**; the kite deliberately hangs left of the centered text.
 >
@@ -374,7 +374,7 @@ The `KiteLogo` **inline at the top of `src/App.jsx`** is the single source of tr
 
 > **Why the copyright line is the exception:** it is geometrically centered to **0.00px**, but `©` is a light hollow circle beside four solid digits, so the ink leans right by roughly **2.2px**; solving for a balancing gap returns a **negative** number, so no tightening can fix it. **`-3px` was landed by David's eye on the live site** (the arithmetic favored `-2px`; V31's stripping of an old `-2px` from this line caused a recurring "the copyright isn't centered" complaint). **The gap after `©` is a fixed 2px CSS margin, not a word space:** `&copy;<span style={{ marginLeft: '2px' }}>{year}</span>`, no literal space (a thin-space glyph depends on the font). **Do not put the plain space back.**
 
-**The footer lockup is CLOSED.** The kite on the **left**, one text column to its right holding **all four lines** (wordmark, "Solutions LLC", the domain, the copyright with the Instagram glyph at its end), centered with each other. **Do not restructure it, do not move the fine print out of the column, and do not recompute the `-17px` dial.** **Tried and reverted; do not try again:** (1) **`alignSelf: 'stretch'` on the fine-print spans while the column stayed flex** (V46; no effect, the *column* was still flex); (2) **the dial changed from `-14px` to a "derived" `-24.09px`** (dragged the signature left); (3) **the fine print moved out of the column into its own page-centered block** (rejected on sight); (4) **removing the footer dial entirely** (same); (5) **the Instagram glyph as a fifth line of its own** (2026-10-25; made the footer too tall). The copyright was fixed by the two per-line changes above, nothing structural.
+**The footer lockup is CLOSED.** The kite on the **left**, one text column to its right holding **all four lines** (wordmark, "Solutions LLC", the domain, the copyright with the Instagram glyph at its end), centered with each other. **Do not restructure it, do not move the fine print out of the column, and do not recompute the `-19px` dial.** **Tried and reverted; do not try again:** (1) **`alignSelf: 'stretch'` on the fine-print spans while the column stayed flex** (V46; no effect, the *column* was still flex); (2) **the dial changed from `-14px` to a "derived" `-24.09px`** (dragged the signature left); (3) **the fine print moved out of the column into its own page-centered block** (rejected on sight); (4) **removing the footer dial entirely** (same); (5) **the Instagram glyph as a fifth line of its own** (2026-10-25; made the footer too tall). The copyright was fixed by the two per-line changes above, nothing structural.
 
 > **"Closed" governs geometry, not every character.** A closed section can take a copy change (V54 removed the comma from "Solutions LLC"; the Instagram glyph joined the © line on 2026-10-25) **if you prove it moves nothing, and say how**: measure the text column's width, the brand row's left edge and the lines' tops before and after, at desktop and iPhone widths.
 
@@ -393,13 +393,13 @@ The `KiteLogo` **inline at the top of `src/App.jsx`** is the single source of tr
 **NO CSS classes from `global.css`** (its `.site-footer*` rules are dead code); entirely inline. A scaled-down signature (kite 105, name 32px), kite-to-wordmark gap `4px`.
 
 - **Footer outer:** `padding: '24px 24px 20px'`, `borderTop: '1px solid rgba(96, 165, 250, 0.12)'`, `marginTop: '0'`, `display: 'flex'`, `justifyContent: 'center'`.
-- **Brand row:** `display: 'flex'`, `alignItems: 'flex-start'`, `gap: '4px'`, **`transform: 'translateX(-17px)'`**.
+- **Brand row:** `display: 'flex'`, `alignItems: 'flex-start'`, `gap: '4px'`, **`transform: 'translateX(-19px)'`**.
 - **Kite** (left): inline `KiteLogo size={105}` in `<span style={{ flexShrink: 0, display: 'flex' }}>`, no className.
 - **Text column** (right): **a plain block**, `textAlign: 'center'`, `marginTop: '16.17px'`, **no flex, no `transform`**. Every line `display: block`:
   1. **FranklinAI** — Playfair 700, 32px, lineHeight 1, blue with "AI" white, inside a `display: block` home link `<a>` (textDecoration none, color inherit). **The widest line; sets the column width.**
   2. **Solutions LLC** — Inter 800, 20px, blue, `letterSpacing: '0.02em'`, marginTop 2px, inside the same link. **No comma.**
   3. **franklinaisolutions.com** — Inter 400, 13px, #8892a4, lineHeight 1.5, marginTop 8px. **No transform.**
-  4. **© {year}** — Inter 400, 13px, #8892a4, lineHeight 1.5, **`transform: 'translateX(-3px)'`**, year in a nested span with **`marginLeft: '2px'`**; then, on the same line, **the Instagram glyph** (David, 2026-10-25): a link to `https://www.instagram.com/franklinaisolutions/` (new tab, `aria-label` "FranklinAI on Instagram"), `display: 'inline-block'`, `marginLeft: '8px'`, `verticalAlign: '-2px'`, `lineHeight: 0`, color `#60a5fa`, holding `InstagramGlyph size={13}` (`fill="currentColor"`). **The glyph is Meta's official path**, copied byte for byte from `Instagram_Glyph_Black.svg` in Meta's 2023 Instagram brand asset pack; never hand-drawn.
+  4. **© {year}** — Inter 400, 13px, #8892a4, lineHeight 1.5, **`transform: 'translateX(-3px)'`**, year in a nested span with **`marginLeft: '2px'`**; then, on the same line, **the Instagram glyph** (David, 2026-10-25): a link to `https://www.instagram.com/franklinaisolutions/` (new tab, `aria-label` "FranklinAI on Instagram"), `display: 'inline-block'`, `marginLeft: '8px'`, `verticalAlign: '-2px'`, `lineHeight: 0`, color `#60a5fa`, **`transform: 'scale(1.5)'`, `transformOrigin: 'left center'`** (David, 2026-10-31: drawn at 19.5px; a transform takes no layout room, so the © text stays put and the 8px gap holds; **raising the size prop instead moves the line**), holding `InstagramGlyph size={13}` (`fill="currentColor"`). **The glyph is Meta's official path**, copied byte for byte from `Instagram_Glyph_Black.svg` in Meta's 2023 Instagram brand asset pack; never hand-drawn.
 
 > **The spans are `display: block`, so each BOX is the full column width regardless of its text**: measure the column against the widest line, or the text itself. No email and **no mailing address** in the footer, which is why Kit's stand-in address needs no site change.
 
@@ -577,8 +577,8 @@ Edit the GlowPT repo from here (or this repo from there) only when **David asks 
 
 *One line per version, last five here. V58–V91 are in `docs/history.md` section 0ii (the full V91 text); V12–V57 in section 1.*
 
+- **V94** (2026-10-31) — Footer Instagram glyph 50% bigger by `scale(1.5)`, lockup proven unmoved; footer dial `-17px` → `-19px` at David's word and approved by his eye (`b8d8977`, `2779496`).
 - **V93** (2026-10-27) — Issue 2's date moved (CURRENT STATE); weekly Instagram posts between issues; one phrase, "A free monthly newsletter for physical therapy practices", on every Instagram surface; the first carousel and the Reel kit noted (claude.ai handoff, no site change).
 - **V92** (2026-10-25) — **Trimmed from 115,100 bytes** (David's go-ahead): full V91 text banked verbatim (`docs/history.md` 0ii); finished Open Items, Change History before V88 and narratives archived; duplicates merged (the inline-styles table into Nav and Footer; Header Sizing and the nav/footer/newsletter type rows into their sections); every value, copy string, ID and rule kept, probed by name; the trim line lowered to ~100 KB (~80 KB was proposed, but the trimmed file is about 85 KB).
 - **V91** (2026-10-25) — Instagram glyph added to the footer's © line, linking to @franklinaisolutions; lockup proven unmoved. Footer dial `-14px` → `-17px` by David's eye; text column `13.16px` → `16.17px` by the formula, with his yes, so the F sits on the crossbar (`1473d21`, `0c4d79d`, `2feae50`, `b82b2ce`, `6a34f4d`).
 - **V90** (2026-10-21) — The newsletter site's "Built with Kit" badge hidden by Custom CSS (Kit support's fix); checked live.
-- **V89** (2026-10-21) — Every Kit email signs "David Peterson"; the newsletter site's confirmation email now ends like the site's.

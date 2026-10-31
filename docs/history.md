@@ -15,6 +15,7 @@ section of CLAUDE.md, copied from the GlowPT repo's 2026-09-12 trim.
 **Sections, newest bank first.** When a later trim banks more, add a new numbered
 section ABOVE section 1 and say what it holds.
 
+0kk. Lines replaced in V94 (Instagram glyph 50% bigger, footer dial -19px).
 0jj. Lines replaced in V93 (Issue 2's date, weekly Instagram posts, the one-phrase rule), plus the 2026-10-27 handoff.
 0ii. The full text of CLAUDE.md Version 91, exactly as it stood before the V92 trim (2026-10-25).
 0hh. Lines replaced in V91 (Instagram glyph, footer dial, F on the crossbar), plus the 2026-10-25 Instagram handoff.
@@ -49,6 +50,22 @@ section ABOVE section 1 and say what it holds.
 3. `CLAUDE-MD-TRIM-HANDOFF.md`, the note that started the V58 trim.
 
 ---
+
+# 0kk. LINES REPLACED IN V94 (2026-10-31): the Instagram glyph 50% bigger by a transform; the footer dial -17px to -19px
+
+# FranklinAI — Project Instructions (Version 93, Current)
+
+- **Measured at V91:** `App.jsx` is **853 lines**; the `$350` decoy sits at **lines 143 and 558**.
+
+- **Footer brand row `<div>`: `transform: 'translateX(-17px)'`** — the footer's single dial. **Hand-tuned:** David, 2026-10-25, by eye on the live site (`-14px` read slightly right, `-20px` too far left, `-17px` centered). **Footer text column: no `transform`.**
+
+**The footer lockup is CLOSED.** The kite on the **left**, one text column to its right holding **all four lines** (wordmark, "Solutions LLC", the domain, the copyright with the Instagram glyph at its end), centered with each other. **Do not restructure it, do not move the fine print out of the column, and do not recompute the `-17px` dial.** **Tried and reverted; do not try again:** (1) **`alignSelf: 'stretch'` on the fine-print spans while the column stayed flex** (V46; no effect, the *column* was still flex); (2) **the dial changed from `-14px` to a "derived" `-24.09px`** (dragged the signature left); (3) **the fine print moved out of the column into its own page-centered block** (rejected on sight); (4) **removing the footer dial entirely** (same); (5) **the Instagram glyph as a fifth line of its own** (2026-10-25; made the footer too tall). The copyright was fixed by the two per-line changes above, nothing structural.
+
+- **Brand row:** `display: 'flex'`, `alignItems: 'flex-start'`, `gap: '4px'`, **`transform: 'translateX(-17px)'`**.
+
+  4. **© {year}** — Inter 400, 13px, #8892a4, lineHeight 1.5, **`transform: 'translateX(-3px)'`**, year in a nested span with **`marginLeft: '2px'`**; then, on the same line, **the Instagram glyph** (David, 2026-10-25): a link to `https://www.instagram.com/franklinaisolutions/` (new tab, `aria-label` "FranklinAI on Instagram"), `display: 'inline-block'`, `marginLeft: '8px'`, `verticalAlign: '-2px'`, `lineHeight: 0`, color `#60a5fa`, holding `InstagramGlyph size={13}` (`fill="currentColor"`). **The glyph is Meta's official path**, copied byte for byte from `Instagram_Glyph_Black.svg` in Meta's 2023 Instagram brand asset pack; never hand-drawn.
+
+- **V89** (2026-10-21) — Every Kit email signs "David Peterson"; the newsletter site's confirmation email now ends like the site's.
 
 # 0jj. LINES REPLACED IN V93 (2026-10-27): Issue 2's new date, weekly Instagram posts, one phrase on every Instagram surface
 
